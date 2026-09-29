@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nursing Career - Online Exam</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    color:#172033;
+}
+
+.header{
+    background:linear-gradient(135deg,#075e54,#087f8c);
+    color:white;
+    padding:25px 18px;
+    text-align:center;
+}
+
+.header h1{
+    font-size:28px;
+    margin-bottom:7px;
+}
+
+.header p{
+    font-size:14px;
+    opacity:.9;
+}
+
+.container{
+    max-width:700px;
+    margin:20px auto;
+    padding:15px;
+}
+
+.card{
+    background:white;
+    border-radius:18px;
+    padding:22px;
+    margin-bottom:18px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.exam-title{
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:8px;
+}
+
+.info{
+    color:#667085;
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+.timer{
+    background:#fff3cd;
+    color:#8a5a00;
+    padding:12px;
+    border-radius:10px;
+    text-align:center;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.question{
+    font-size:19px;
+    font-weight:bold;
+    line-height:1.5;
+    margin-bottom:18px;
+}
+
+.option{
+    display:block;
+    border:2px solid #e4e7ec;
+    border-radius:12px;
+    padding:14px;
+    margin:10px 0;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.option:hover{
+    border-color:#087f8c;
+    background:#f0fbfc;
+}
+
+.option input{
+    margin-right:10px;
+}
+
+.buttons{
+    display:flex;
+    gap:10px;
+    margin-top:20px;
+}
+
+button{
+    flex:1;
+    border:none;
+    padding:14px;
+    border-radius:12px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.prev{
+    background:#e9eef5;
+    color:#172033;
+}
+
+.next{
+    background:#087f8c;
+    color:white;
+}
+
+.submit{
+    background:#d92d20;
+    color:white;
+}
+
+.progress{
+    height:8px;
+    background:#e5e7eb;
+    border-radius:10px;
+    overflow:hidden;
+    margin:15px 0;
+}
+
+.progress-bar{
+    height:100%;
+    background:#087f8c;
+    width:20%;
+}
+
+.result{
+    text-align:center;
+}
+
+.score{
+    font-size:42px;
+    font-weight:bold;
+    color:#087f8c;
+    margin:15px;
+}
+
+.hidden{
+    display:none;
+}
+
+.start-btn{
+    width:100%;
+    background:#087f8c;
+    color:white;
+    margin-top:10px;
+}
+
+@media(max-width:600px){
+    .header h1{
+        font-size:24px;
+    }
+
+    .card{
+        padding:18px;
+    }
+
+    .question{
+        font-size:17px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>🩺 NURSING CAREER</h1>
+    <p>BSc Nursing • Licensing Examination • Government Job Preparation</p>
+</div>
+
+<div class="container">
+
+    <div id="startScreen" class="card">
+
+        <div class="exam-title">
+            BSc Nursing Model Test
+        </div>
+
+        <div class="info">
+            📚 5 Questions &nbsp; | &nbsp;
+            ⏱️ 5 Minutes &nbsp; | &nbsp;
+            ❌ Negative Marking: 0.25
+        </div>
+
+        <p>
+            Test your nursing knowledge with this quick revision exam.
+        </p>
+
+        <button class="start-btn" onclick="startExam()">
+            🚀 START EXAM
+        </button>
+
+    </div>
+
+
+    <div id="examScreen" class="hidden">
+
+        <div class="card">
+
+            <div class="timer">
+                ⏱️ Time Remaining:
+                <span id="timer">05:00</span>
+            </div>
+
+            <div>
+                Question
+                <span id="questionNumber">1</span>
+                / 5
+            </div>
+
+            <div class="progress">
+                <div id="progressBar" class="progress-bar"></div>
+            </div>
+
+            <div id="questionText" class="question"></div>
+
+            <div id="options"></div>
+
+            <div class="buttons">
+                <button class="prev" onclick="previousQuestion()">
+                    ← Previous
+                </button>
+
+                <button class="next" onclick="nextQuestion()">
+                    Next →
+                </button>
+            </div>
+
+            <button
+                class="submit"
+                onclick="submitExam()"
+                style="width:100%;margin-top:10px;">
+                Submit Exam
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div id="resultScreen" class="hidden">
+
+        <div class="card result">
+
+            <h2>🎉 Exam Completed!</h2>
+
+            <p>Your Score</p>
+
+            <div id="score" class="score">0</div>
+
+            <p id="resultDetails"></p>
+
+            <button
+                class="start-btn"
+                onclick="location.reload()">
+                🔄 Try Again
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+const questions = [
+
+{
+question:"What is the normal adult respiratory rate?",
+options:[
+"8–10 breaths/min",
+"12–20 breaths/min",
+"22–30 breaths/min",
+"30–40 breaths/min"
+],
+answer:1
+},
+
+{
+question:"Which vitamin deficiency causes scurvy?",
+options:[
+"Vitamin A",
+"Vitamin B12",
+"Vitamin C",
+"Vitamin D"
+],
+answer:2
+},
+
+{
+question:"What is the normal adult pulse rate?",
+options:[
+"20–40 beats/min",
+"40–50 beats/min",
+"60–100 beats/min",
+"120–150 beats/min"
+],
+answer:2
+},
+
+{
+question:"Which organ pumps blood throughout the body?",
+options:[
+"Liver",
+"Kidney",
+"Heart",
+"Lung"
+],
+answer:2
+},
+
+{
+question:"Which route is commonly used for intramuscular injection?",
+options:[
+"Deltoid muscle",
+"Cornea",
+"Trachea",
+"Esophagus"
+],
+answer:0
+}
+
+];
+
+let currentQuestion=0;
+let selectedAnswers=[];
+let timeLeft=300;
+let timerInterval;
+
+function startExam(){
+
+document.getElementById("startScreen")
+.classList.add("hidden");
+
+document.getElementById("examScreen")
+.classList.remove("hidden");
+
+showQuestion();
+
+timerInterval=setInterval(function(){
+
+timeLeft--;
+
+let minutes=Math.floor(timeLeft/60);
+let seconds=timeLeft%60;
+
+document.getElementById("timer").textContent=
+String(minutes).padStart(2,"0")+":"+
+String(seconds).padStart(2,"0");
+
+if(timeLeft<=0){
+clearInterval(timerInterval);
+submitExam();
+}
+
+},1000);
+
+}
+
+function showQuestion(){
+
+let q=questions[currentQuestion];
+
+document.getElementById("questionNumber")
+.textContent=currentQuestion+1;
+
+document.getElementById("questionText")
+.textContent=q.question;
+
+let html="";
+
+q.options.forEach(function(option,index){
+
+let checked=
+selectedAnswers[currentQuestion]===index
+?"checked"
+:"";
+
+html+=`
+<label class="option">
+<input type="radio"
+name="answer"
+value="${index}"
+${checked}
+onchange="selectAnswer(${index})">
+${option}
+</label>
+`;
+
+});
+
+document.getElementById("options").innerHTML=html;
+
+let progress=
+((currentQuestion+1)/questions.length)*100;
+
+document.getElementById("progressBar")
+.style.width=progress+"%";
+
+}
+
+function selectAnswer(index){
+
+selectedAnswers[currentQuestion]=index;
+
+}
+
+function nextQuestion(){
+
+if(currentQuestion<questions.length-1){
+
+currentQuestion++;
+
+showQuestion();
+
+}else{
+
+alert("This is the last question. You can submit the exam.");
+
+}
+
+}
+
+function previousQuestion(){
+
+if(currentQuestion>0){
+
+currentQuestion--;
+
+showQuestion();
+
+}
+
+}
+
+function submitExam(){
+
+clearInterval(timerInterval);
+
+let correct=0;
+let answered=0;
+
+questions.forEach(function(q,index){
+
+if(selectedAnswers[index]!==undefined){
+
+answered++;
+
+if(selectedAnswers[index]===q.answer){
+
+correct++;
+
+}
+
+}
+
+});
+
+let wrong=answered-correct;
+
+let score=correct-(wrong*0.25);
+
+if(score<0) score=0;
+
+document.getElementById("examScreen")
+.classList.add("hidden");
+
+document.getElementById("resultScreen")
+.classList.remove("hidden");
+
+document.getElementById("score")
+.textContent=score.toFixed(2);
+
+document.getElementById("resultDetails")
+.innerHTML=
+"Correct: "+correct+
+"<br>Wrong: "+wrong+
+"<br>Unanswered: "+
+(questions.length-answered)+
+"<br><br>Total Questions: "+
+questions.length;
+
+}
+
+</script>
+
+</body>
+</html>
