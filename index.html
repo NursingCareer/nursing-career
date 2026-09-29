@@ -2,313 +2,413 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Nursing Career - Online Exam</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nursing Career</title>
 
 <style>
-*{box-sizing:border-box}
-body{
+
+*{
+ box-sizing:border-box;
  margin:0;
- font-family:Arial,sans-serif;
- background:#f3f7fb;
+ padding:0;
+}
+
+body{
+ font-family:Arial, sans-serif;
+ background:#f4f8fb;
  color:#172033;
 }
+
 .header{
- background:linear-gradient(135deg,#087f8c,#12a4a8);
+ background:linear-gradient(135deg,#006d77,#00a6a6);
  color:white;
  padding:28px 18px;
  text-align:center;
 }
+
 .logo{
- font-size:28px;
- font-weight:800;
+ font-size:30px;
+ font-weight:900;
+ letter-spacing:1px;
 }
-.tag{
+
+.tagline{
  margin-top:8px;
- font-size:15px;
+ font-size:14px;
+ opacity:.95;
 }
+
 .container{
- max-width:650px;
- margin:25px auto;
- padding:0 15px;
+ max-width:700px;
+ margin:auto;
+ padding:20px 15px;
 }
-.card{
+
+.hero{
  background:white;
- border-radius:20px;
- padding:22px;
- box-shadow:0 8px 30px #00000012;
- margin-bottom:18px;
+ border-radius:24px;
+ padding:28px 20px;
+ text-align:center;
+ box-shadow:0 10px 35px #00000012;
 }
-h1{font-size:27px;margin:5px 0 12px}
-.info{
+
+.badge{
+ display:inline-block;
+ background:#e4fafa;
+ color:#007b83;
+ padding:8px 14px;
+ border-radius:30px;
+ font-size:13px;
+ font-weight:bold;
+ margin-bottom:15px;
+}
+
+.hero h1{
+ font-size:30px;
+ margin-bottom:12px;
+}
+
+.hero p{
  color:#667085;
- font-size:15px;
  line-height:1.7;
+ font-size:15px;
 }
-.btn{
+
+.start-btn{
  width:100%;
  border:0;
- border-radius:14px;
- padding:16px;
- margin-top:18px;
- font-size:17px;
- font-weight:700;
- cursor:pointer;
- background:#078b96;
+ margin-top:22px;
+ padding:17px;
+ border-radius:15px;
+ background:linear-gradient(135deg,#007f86,#00a6a6);
  color:white;
+ font-size:18px;
+ font-weight:800;
+ cursor:pointer;
 }
-.btn:hover{opacity:.9}
-.hidden{display:none}
 
-.topbar{
+.section-title{
+ margin:25px 0 12px;
+ font-size:21px;
+ font-weight:800;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,1fr);
+ gap:12px;
+}
+
+.card{
+ background:white;
+ border-radius:18px;
+ padding:20px 15px;
+ box-shadow:0 6px 25px #0000000d;
+}
+
+.icon{
+ font-size:28px;
+ margin-bottom:10px;
+}
+
+.card h3{
+ font-size:16px;
+ margin-bottom:6px;
+}
+
+.card p{
+ color:#667085;
+ font-size:13px;
+ line-height:1.5;
+}
+
+.exam-card{
+ background:white;
+ border-radius:20px;
+ padding:20px;
+ margin-top:12px;
+ box-shadow:0 6px 25px #0000000d;
+}
+
+.exam-top{
  display:flex;
  justify-content:space-between;
  align-items:center;
  gap:10px;
- margin-bottom:18px;
 }
-.timer{
- background:#fff0f0;
- color:#d92d20;
- padding:10px 15px;
- border-radius:12px;
+
+.exam-title{
+ font-size:18px;
  font-weight:800;
 }
-.progress{
- height:9px;
- background:#e5e7eb;
+
+.available{
+ color:#087f5b;
+ background:#e8f8f1;
+ padding:6px 10px;
  border-radius:20px;
- overflow:hidden;
- margin:15px 0;
+ font-size:12px;
+ font-weight:bold;
 }
-.progress div{
- height:100%;
- width:0;
- background:#08a0a8;
- transition:.3s;
-}
-.question{
- font-size:19px;
- font-weight:700;
- line-height:1.5;
- margin:20px 0;
-}
-.option{
- display:block;
- padding:14px;
- margin:10px 0;
- border:2px solid #e4e7ec;
- border-radius:13px;
- cursor:pointer;
- transition:.2s;
-}
-.option:hover{
- border-color:#08a0a8;
- background:#f0fcfc;
-}
-.option.selected{
- border-color:#08a0a8;
- background:#e4fafa;
-}
-.option input{margin-right:10px}
 
-.nav{
+.exam-info{
  display:flex;
- gap:10px;
+ gap:8px;
+ flex-wrap:wrap;
+ margin-top:13px;
 }
-.nav button{flex:1}
 
-.result{
- text-align:center;
+.exam-info span{
+ background:#f2f4f7;
+ padding:7px 10px;
+ border-radius:9px;
+ font-size:12px;
+ color:#475467;
 }
-.score{
- font-size:48px;
- font-weight:800;
- color:#087f8c;
- margin:15px 0;
-}
-.stat{
- display:grid;
- grid-template-columns:repeat(3,1fr);
- gap:10px;
- margin:20px 0;
-}
-.stat div{
- padding:15px 5px;
- background:#f5f7fa;
+
+.exam-btn{
+ width:100%;
+ margin-top:15px;
+ padding:13px;
+ border:0;
  border-radius:12px;
+ background:#087f8c;
+ color:white;
+ font-weight:700;
+ font-size:15px;
 }
-.stat b{
- display:block;
- font-size:23px;
-}
-.review{
- text-align:left;
- border-top:1px solid #eee;
- padding:15px 0;
-}
-.correct{color:#087f5b;font-weight:700}
-.wrong{color:#d92d20;font-weight:700}
-.skip{color:#667085;font-weight:700}
 
 .footer{
  text-align:center;
+ padding:30px 15px;
  color:#98a2b3;
  font-size:13px;
- padding:25px;
+}
+
+.watermark{
+ margin-top:8px;
+ font-weight:bold;
+ color:#087f8c;
 }
 
 @media(max-width:500px){
- h1{font-size:24px}
- .question{font-size:17px}
- .card{padding:18px}
+
+ .logo{
+  font-size:25px;
+ }
+
+ .hero h1{
+  font-size:25px;
+ }
+
+ .grid{
+  grid-template-columns:1fr 1fr;
+ }
+
 }
+
 </style>
 </head>
 
 <body>
 
 <header class="header">
- <div class="logo">🩺 NURSING CAREER</div>
- <div class="tag">
+
+ <div class="logo">
+ 🩺 NURSING CAREER
+ </div>
+
+ <div class="tagline">
  BSc Nursing • Licensing Examination • Government Job Preparation
  </div>
+
 </header>
 
-<div class="container">
 
-<!-- HOME -->
-<section id="home" class="card">
- <h1>BSc Nursing Model Test</h1>
+<main class="container">
 
- <div class="info">
- 📚 <b id="totalText">10 Questions</b><br>
- ⏱️ 10 Minutes<br>
- ❌ Negative Marking: 0.25<br>
- 🎯 One mark for each correct answer
+
+<!-- HERO -->
+
+<section class="hero">
+
+ <div class="badge">
+ 🎯 NURSING EXAM PREPARATION PLATFORM
  </div>
 
- <p class="info">
- Test your nursing knowledge with this quick revision exam.
+ <h1>
+ Prepare Smart. Practice More. Achieve More.
+ </h1>
+
+ <p>
+ BSc Nursing Licensing Examination, Government Job
+ Preparation এবং Nursing MCQ Practice-এর জন্য
+ আপনার অনলাইন প্রস্তুতি প্ল্যাটফর্ম।
  </p>
 
- <button class="btn" onclick="startExam()">🚀 START EXAM</button>
+ <button class="start-btn" onclick="startExam()">
+ 🚀 START MODEL TEST
+ </button>
+
 </section>
 
 
-<!-- EXAM -->
-<section id="exam" class="hidden">
+
+<!-- FEATURES -->
+
+<h2 class="section-title">
+ ✨ What You Can Practice
+</h2>
+
+<div class="grid">
 
  <div class="card">
-
-  <div class="topbar">
-   <b id="qNumber">Question 1/10</b>
-   <div class="timer" id="timer">10:00</div>
-  </div>
-
-  <div class="progress">
-   <div id="progressBar"></div>
-  </div>
-
-  <div id="questionBox"></div>
-
-  <div class="nav">
-   <button class="btn" onclick="previousQuestion()">← Previous</button>
-   <button class="btn" onclick="nextQuestion()">Next →</button>
-  </div>
-
-  <button class="btn" onclick="submitExam()">
-   📝 SUBMIT EXAM
-  </button>
-
+  <div class="icon">📚</div>
+  <h3>Subject Wise MCQ</h3>
+  <p>
+  বিভিন্ন Nursing subject অনুযায়ী প্রশ্ন অনুশীলন করুন।
+  </p>
  </div>
 
-</section>
-
-
-<!-- RESULT -->
-<section id="result" class="hidden">
-
- <div class="card result">
-
-  <h1>🎉 Exam Completed</h1>
-
-  <div class="score" id="score">0</div>
-
-  <div class="stat">
-   <div>
-    <b id="correct">0</b>
-    Correct
-   </div>
-
-   <div>
-    <b id="wrong">0</b>
-    Wrong
-   </div>
-
-   <div>
-    <b id="skipped">0</b>
-    Skipped
-   </div>
-  </div>
-
-  <p id="percentage"></p>
-
-  <button class="btn" onclick="showReview()">
-   📖 REVIEW ANSWERS
-  </button>
-
-  <button class="btn" onclick="location.reload()">
-   🔄 TRY AGAIN
-  </button>
-
+ <div class="card">
+  <div class="icon">📝</div>
+  <h3>Model Test</h3>
+  <p>
+  Real exam-এর মতো timed model test দিন।
+  </p>
  </div>
 
- <div id="reviewBox"></div>
+ <div class="card">
+  <div class="icon">⏱️</div>
+  <h3>Exam Timer</h3>
+  <p>
+  নির্দিষ্ট সময়ের মধ্যে পরীক্ষা শেষ করার practice করুন।
+  </p>
+ </div>
 
-</section>
+ <div class="card">
+  <div class="icon">📊</div>
+  <h3>Instant Result</h3>
+  <p>
+  পরীক্ষা শেষে score ও answer review দেখুন।
+  </p>
+ </div>
 
 </div>
 
+
+
+<!-- AVAILABLE EXAM -->
+
+<h2 class="section-title">
+ 📝 Available Model Tests
+</h2>
+
+
+<div class="exam-card">
+
+ <div class="exam-top">
+
+  <div class="exam-title">
+   BSc Nursing Model Test
+  </div>
+
+  <div class="available">
+   AVAILABLE
+  </div>
+
+ </div>
+
+
+ <div class="exam-info">
+
+  <span>📚 10 Questions</span>
+
+  <span>⏱️ 10 Minutes</span>
+
+  <span>❌ Negative 0.25</span>
+
+ </div>
+
+
+ <button class="exam-btn" onclick="startExam()">
+ START EXAM →
+ </button>
+
+</div>
+
+
+
+<!-- COMING SOON -->
+
+<h2 class="section-title">
+ 🚀 Coming Soon
+</h2>
+
+<div class="grid">
+
+ <div class="card">
+  <div class="icon">🩺</div>
+  <h3>Licensing Exam</h3>
+  <p>
+  BSc Nursing Licensing Examination preparation.
+  </p>
+ </div>
+
+ <div class="card">
+  <div class="icon">🏛️</div>
+  <h3>Government Job</h3>
+  <p>
+  BPSC ও সরকারি চাকরির Nursing MCQ practice.
+  </p>
+ </div>
+
+ <div class="card">
+  <div class="icon">🏆</div>
+  <h3>Leaderboard</h3>
+  <p>
+  ভবিষ্যতে performance ranking system যুক্ত হবে।
+  </p>
+ </div>
+
+ <div class="card">
+  <div class="icon">📖</div>
+  <h3>Answer Explanation</h3>
+  <p>
+  গুরুত্বপূর্ণ প্রশ্নের বিস্তারিত explanation।
+  </p>
+ </div>
+
+</div>
+
+
+</main>
+
+
 <footer class="footer">
- © 2026 Nursing Career • Online Examination Platform
+
+ © 2026 Nursing Career
+
+ <div class="watermark">
+ NURSING CAREER
+ </div>
+
 </footer>
+
 
 
 <script>
 
-const questions = [
+function startExam(){
 
-{
- q:"What is the normal resting heart rate of an adult?",
- options:["40–50 beats/min","60–100 beats/min","110–130 beats/min","130–150 beats/min"],
- answer:1
-},
+ alert(
+  "Model Test শুরু করার জন্য পরবর্তী ধাপে Exam Page যুক্ত করা হবে।"
+ );
 
-{
- q:"Which organ is primarily responsible for pumping blood throughout the body?",
- options:["Liver","Kidney","Heart","Lung"],
- answer:2
-},
+}
 
-{
- q:"Which vitamin is mainly produced in the skin by sunlight?",
- options:["Vitamin A","Vitamin B12","Vitamin C","Vitamin D"],
- answer:3
-},
+</script>
 
-{
- q:"What is the normal respiratory rate of an adult?",
- options:["4–8/min","12–20/min","25–35/min","40–50/min"],
- answer:1
-},
-
-{
- q:"Which route is commonly used for intramuscular injection?",
- options:["IM","IV","ID","Oral"],
- answer:0
-},
-
-{
- q:"Which blood group is known as the universal donor for red blood cells?",
- options:["
+</body>
+</html>
