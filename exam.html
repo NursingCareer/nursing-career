@@ -7,2823 +7,2822 @@
 <title>Nursing Career - Online Nursing MCQ Examination</title>
 
 <style>
-
 *{
-  box-sizing:border-box;
-}
-
-:root{
-  --primary:#075985;
-  --secondary:#0284c7;
-  --bg:#f4f7fb;
-  --card:#ffffff;
-  --text:#172033;
-  --muted:#64748b;
-  --border:#dbe3ec;
-  --green:#16a34a;
-  --red:#dc2626;
-  --yellow:#f59e0b;
-}
-
-body.dark{
-  --bg:#0f172a;
-  --card:#1e293b;
-  --text:#f1f5f9;
-  --muted:#cbd5e1;
-  --border:#334155;
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
 body{
-  margin:0;
-  font-family:Arial,Helvetica,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  transition:.2s;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f7fb;
+    color:#172033;
+    transition:.3s;
+}
+
+body.dark{
+    background:#101827;
+    color:#f1f5f9;
 }
 
 header{
-  background:linear-gradient(
-    135deg,
-    #075985,
-    #0284c7
-  );
-  color:white;
-  text-align:center;
-  padding:25px 12px;
+    background:linear-gradient(135deg,#075985,#0ea5e9,#14b8a6);
+    color:white;
+    padding:22px 15px;
+    text-align:center;
 }
 
 header h1{
-  margin:0;
-  font-size:28px;
+    font-size:28px;
+    margin-bottom:7px;
 }
 
 header p{
-  margin:7px 0 0;
+    opacity:.95;
 }
 
 .homebar{
-  background:var(--card);
-  padding:12px;
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  flex-wrap:wrap;
-  box-shadow:0 2px 7px #0002;
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+    padding:12px;
+    background:white;
+    box-shadow:0 2px 10px #00000012;
 }
 
-button{
-  border:0;
-  border-radius:8px;
-  padding:11px 17px;
-  background:var(--primary);
-  color:white;
-  cursor:pointer;
-  font-size:15px;
+.dark .homebar{
+    background:#182235;
 }
 
-button:hover{
-  opacity:.9;
+.homebar button{
+    border:0;
+    padding:10px 16px;
+    border-radius:10px;
+    cursor:pointer;
+    background:#e0f2fe;
+    color:#075985;
+    font-weight:bold;
 }
 
 .container{
-  max-width:1050px;
-  margin:20px auto;
-  padding:0 12px;
+    max-width:1100px;
+    margin:25px auto;
+    padding:0 15px;
 }
 
-.card,
-.section,
-.startBox,
-.result{
-  background:var(--card);
-  border-radius:14px;
-  box-shadow:0 3px 12px #0002;
+.card{
+    background:white;
+    border-radius:18px;
+    padding:24px;
+    margin-bottom:20px;
+    box-shadow:0 8px 30px #0000000d;
 }
 
-.startBox{
-  padding:25px;
+.dark .card{
+    background:#182235;
 }
 
-.startBox h2{
-  margin-top:0;
+.course-banner{
+    background:linear-gradient(135deg,#0f766e,#14b8a6);
+    color:white;
+    padding:25px;
+    border-radius:18px;
+    margin-bottom:20px;
 }
 
-.input,
-select{
-  width:100%;
-  padding:13px;
-  border:1px solid var(--border);
-  background:var(--card);
-  color:var(--text);
-  border-radius:9px;
-  font-size:16px;
-  margin:7px 0 12px;
+.course-banner h2{
+    margin-bottom:8px;
 }
 
-.startBtn{
-  width:100%;
-  padding:15px;
-  font-size:18px;
+select,
+input{
+    width:100%;
+    padding:13px;
+    border:1px solid #cbd5e1;
+    border-radius:10px;
+    margin-top:7px;
+    margin-bottom:15px;
+    font-size:15px;
 }
 
-.hidden{
-  display:none!important;
+.dark select,
+.dark input{
+    background:#111827;
+    color:white;
+    border-color:#475569;
 }
 
-/* Dashboard */
+label{
+    font-weight:bold;
+}
+
+.btn{
+    border:0;
+    padding:13px 20px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+    background:#0284c7;
+    color:white;
+}
+
+.btn:hover{
+    opacity:.9;
+}
+
+.btn.green{
+    background:#059669;
+}
+
+.btn.red{
+    background:#dc2626;
+}
 
 .dashboard{
-  display:grid;
-  grid-template-columns:
-    repeat(4,1fr);
-  gap:12px;
-  margin-bottom:20px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin-bottom:20px;
 }
 
 .stat{
-  background:var(--card);
-  padding:18px;
-  border-radius:12px;
-  box-shadow:0 2px 8px #0002;
-  text-align:center;
+    background:linear-gradient(135deg,#0284c7,#14b8a6);
+    color:white;
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
 }
 
-.statIcon{
-  font-size:25px;
+.stat h2{
+    font-size:28px;
+    margin-bottom:5px;
 }
 
-.statValue{
-  font-size:26px;
-  font-weight:bold;
-  margin:5px 0;
+.subject-info{
+    padding:12px;
+    border-radius:10px;
+    background:#ecfeff;
+    color:#155e75;
+    margin-bottom:15px;
 }
 
-.statLabel{
-  color:var(--muted);
-  font-size:13px;
+.dark .subject-info{
+    background:#12313b;
+    color:#a5f3fc;
 }
 
-/* Exam */
-
-.examTop{
-  background:var(--card);
-  padding:14px;
-  border-radius:12px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-bottom:15px;
-  box-shadow:0 2px 8px #0002;
+.exam-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:15px;
 }
 
 .timer{
-  font-size:22px;
-  font-weight:bold;
-  color:var(--red);
+    background:#fee2e2;
+    color:#b91c1c;
+    padding:10px 16px;
+    border-radius:10px;
+    font-weight:bold;
 }
 
-.progressBox{
-  background:var(--card);
-  padding:12px;
-  border-radius:10px;
-  margin-bottom:15px;
+.progress-wrap{
+    background:#e2e8f0;
+    height:10px;
+    border-radius:20px;
+    overflow:hidden;
+    margin:10px 0 20px;
 }
 
-.progressTrack{
-  height:10px;
-  background:#e2e8f0;
-  border-radius:10px;
-  overflow:hidden;
+.progress{
+    height:100%;
+    background:linear-gradient(90deg,#0284c7,#14b8a6);
+    width:0%;
 }
 
-.progressBar{
-  height:100%;
-  width:0%;
-  background:var(--secondary);
-  transition:.3s;
+.nav-grid{
+    display:grid;
+    grid-template-columns:repeat(10,1fr);
+    gap:7px;
+    margin-bottom:20px;
 }
 
-/* Question */
-
-.questionCard{
-  background:var(--card);
-  padding:20px;
-  margin-bottom:15px;
-  border-radius:13px;
-  box-shadow:0 2px 8px #0002;
-  position:relative;
+.nav-grid button{
+    padding:8px;
+    border:0;
+    border-radius:7px;
+    cursor:pointer;
+    background:#e2e8f0;
 }
 
-.questionTitle{
-  font-weight:bold;
-  line-height:1.6;
-  margin-bottom:15px;
+.nav-grid button.active{
+    background:#0284c7;
+    color:white;
 }
 
-.subjectBadge{
-  display:inline-block;
-  background:#e0f2fe;
-  color:#075985;
-  border-radius:20px;
-  padding:4px 9px;
-  font-size:11px;
-  margin-left:5px;
+.nav-grid button.answered{
+    background:#bbf7d0;
+    color:#166534;
+}
+
+.nav-grid button.marked{
+    outline:3px solid #f59e0b;
+}
+
+.question-card{
+    border:1px solid #e2e8f0;
+    border-radius:15px;
+    padding:20px;
+    margin-bottom:18px;
+}
+
+.dark .question-card{
+    border-color:#334155;
+}
+
+.badges{
+    display:flex;
+    gap:7px;
+    flex-wrap:wrap;
+    margin-bottom:12px;
+}
+
+.badge{
+    display:inline-block;
+    background:#dbeafe;
+    color:#1d4ed8;
+    padding:5px 10px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.badge.course{
+    background:#ccfbf1;
+    color:#0f766e;
+}
+
+.question-text{
+    font-size:19px;
+    font-weight:bold;
+    line-height:1.5;
+    margin-bottom:15px;
 }
 
 .option{
-  display:block;
-  padding:12px;
-  border:1px solid var(--border);
-  border-radius:9px;
-  margin:8px 0;
-  cursor:pointer;
+    display:block;
+    padding:12px;
+    margin:8px 0;
+    border:1px solid #cbd5e1;
+    border-radius:10px;
+    cursor:pointer;
 }
 
 .option:hover{
-  background:#eff6ff;
+    background:#f0f9ff;
+}
+
+.dark .option:hover{
+    background:#243244;
 }
 
 .option input{
-  margin-right:8px;
+    width:auto;
+    margin:0 8px 0 0;
 }
 
-.option.selected{
-  border-color:var(--secondary);
-  background:#e0f2fe;
+.mark-btn{
+    margin-top:10px;
+    border:0;
+    background:#fef3c7;
+    color:#92400e;
+    padding:8px 12px;
+    border-radius:8px;
+    cursor:pointer;
 }
 
-.markBtn{
-  position:absolute;
-  right:15px;
-  top:15px;
-  padding:6px 10px;
-  font-size:12px;
-  background:#64748b;
+.result-box{
+    text-align:center;
+    background:linear-gradient(135deg,#0f766e,#0284c7);
+    color:white;
+    padding:30px;
+    border-radius:18px;
+    margin-bottom:20px;
 }
 
-.markBtn.marked{
-  background:#f59e0b;
+.result-score{
+    font-size:48px;
+    font-weight:bold;
 }
 
-.questionNav{
-  display:flex;
-  gap:6px;
-  flex-wrap:wrap;
-  margin-bottom:15px;
+.result-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+    margin-top:20px;
 }
 
-.navQ{
-  width:38px;
-  height:38px;
-  padding:0;
-  background:#64748b;
+.result-stat{
+    background:#ffffff22;
+    padding:15px;
+    border-radius:10px;
 }
 
-.navQ.answered{
-  background:var(--green);
+.review-item{
+    padding:16px;
+    border-radius:12px;
+    margin-bottom:12px;
+    background:#f8fafc;
+    border-left:5px solid #94a3b8;
 }
 
-.navQ.marked{
-  background:var(--yellow);
+.dark .review-item{
+    background:#111827;
 }
 
-.submitBtn{
-  width:100%;
-  padding:16px;
-  font-size:18px;
-  margin:10px 0 25px;
+.review-item.correct{
+    border-left-color:#16a34a;
 }
 
-/* Result */
-
-.result{
-  padding:25px;
-}
-
-.score{
-  font-size:40px;
-  font-weight:bold;
-  color:var(--primary);
-}
-
-.resultGrid{
-  display:grid;
-  grid-template-columns:
-    repeat(4,1fr);
-  gap:10px;
-  margin:20px 0;
-}
-
-.resultStat{
-  background:var(--bg);
-  padding:15px;
-  border-radius:10px;
-  text-align:center;
-}
-
-/* Review */
-
-.reviewItem{
-  padding:17px;
-  margin:12px 0;
-  border-radius:10px;
-  background:var(--bg);
-  border-left:5px solid #64748b;
-}
-
-.reviewItem.correct{
-  border-left-color:var(--green);
-}
-
-.reviewItem.wrong{
-  border-left-color:var(--red);
-}
-
-.reviewItem.unanswered{
-  border-left-color:var(--yellow);
-}
-
-.explanation{
-  background:#eff6ff;
-  padding:12px;
-  border-radius:8px;
-  margin-top:12px;
-  line-height:1.6;
-}
-
-/* Sections */
-
-.section{
-  padding:20px;
-  margin-top:20px;
-}
-
-.section h2{
-  margin-top:0;
-}
-
-.tableWrap{
-  overflow-x:auto;
+.review-item.wrong{
+    border-left-color:#dc2626;
 }
 
 table{
-  width:100%;
-  border-collapse:collapse;
-  min-width:600px;
+    width:100%;
+    border-collapse:collapse;
 }
 
-th,
-td{
-  padding:10px;
-  border-bottom:1px solid var(--border);
-  text-align:center;
+th,td{
+    padding:10px;
+    border-bottom:1px solid #e2e8f0;
+    text-align:left;
 }
 
-th{
-  background:var(--bg);
+.dark th,
+.dark td{
+    border-color:#334155;
 }
 
-/* Subject performance */
-
-.subjectBox{
-  margin:12px 0;
+.hidden{
+    display:none!important;
 }
-
-.subjectName{
-  display:flex;
-  justify-content:space-between;
-  margin-bottom:5px;
-}
-
-.subjectTrack{
-  height:10px;
-  background:#e2e8f0;
-  border-radius:10px;
-  overflow:hidden;
-}
-
-.subjectFill{
-  height:100%;
-  background:var(--secondary);
-}
-
-/* Toast */
 
 .toast{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#0f172a;
-  color:white;
-  padding:13px 17px;
-  border-radius:9px;
-  display:none;
-  z-index:9999;
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#172033;
+    color:white;
+    padding:13px 18px;
+    border-radius:10px;
+    display:none;
+    z-index:9999;
 }
-
-/* Mobile */
 
 @media(max-width:800px){
+    .dashboard{
+        grid-template-columns:repeat(2,1fr);
+    }
 
-  .dashboard{
-    grid-template-columns:
-      repeat(2,1fr);
-  }
+    .result-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
 
-  .resultGrid{
-    grid-template-columns:
-      repeat(2,1fr);
-  }
-
+    .nav-grid{
+        grid-template-columns:repeat(6,1fr);
+    }
 }
 
-@media(max-width:550px){
+@media(max-width:500px){
+    header h1{
+        font-size:22px;
+    }
 
-  header h1{
-    font-size:22px;
-  }
+    .dashboard,
+    .result-grid{
+        grid-template-columns:1fr 1fr;
+    }
 
-  .container{
-    padding:0 8px;
-  }
+    .nav-grid{
+        grid-template-columns:repeat(5,1fr);
+    }
 
-  .dashboard{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .examTop{
-    align-items:stretch;
-  }
-
-  .examTop>*{
-    width:100%;
-    text-align:center;
-  }
-
-  .resultGrid{
-    grid-template-columns:1fr 1fr;
-  }
-
+    .question-text{
+        font-size:17px;
+    }
 }
-
 </style>
 </head>
 
 <body>
 
 <header>
-
-<h1>🩺 Nursing Career</h1>
-
-<p>
-Online Nursing MCQ Examination
-</p>
-
+    <h1>🩺 Nursing Career</h1>
+    <p>Online Nursing MCQ Examination</p>
 </header>
 
-
 <div class="homebar">
-
-<button onclick="goHome()">
-🏠 Home
-</button>
-
-<button onclick="toggleDark()">
-🌙 Dark Mode
-</button>
-
-<button onclick="scrollDashboard()">
-📊 Dashboard
-</button>
-
+    <button onclick="location.href='index.html'">🏠 Home</button>
+    <button onclick="toggleDark()">🌙 Dark Mode</button>
+    <button onclick="document.getElementById('dashboard').scrollIntoView()">📊 Dashboard</button>
 </div>
-
 
 <div class="container">
 
+<!-- DASHBOARD -->
+<section id="dashboard" class="dashboard">
 
-<!-- =========================
-     DASHBOARD
-========================= -->
+    <div class="stat">
+        <h2 id="totalExams">0</h2>
+        <p>Total Exams</p>
+    </div>
 
-<div id="dashboardArea">
+    <div class="stat">
+        <h2 id="avgScore">0%</h2>
+        <p>Average Score</p>
+    </div>
 
-<div class="dashboard">
+    <div class="stat">
+        <h2 id="bestScore">0%</h2>
+        <p>Best Score</p>
+    </div>
 
-<div class="stat">
+    <div class="stat">
+        <h2 id="accuracy">0%</h2>
+        <p>Accuracy</p>
+    </div>
 
-<div class="statIcon">📝</div>
+</section>
 
-<div
-class="statValue"
-id="totalExams">
-0
-</div>
+<!-- START -->
+<section id="startScreen">
 
-<div class="statLabel">
-Total Exams
-</div>
+    <div id="courseBanner" class="course-banner">
+        <h2 id="selectedCourseTitle">🩺 Nursing Course</h2>
+        <p id="selectedCourseDescription">
+            Select your nursing course and start your MCQ examination.
+        </p>
+    </div>
 
-</div>
+    <div class="card">
 
+        <h2>🎓 Select Course</h2>
 
-<div class="stat">
+        <label>Course</label>
 
-<div class="statIcon">📈</div>
+        <select id="courseSelect">
 
-<div
-class="statValue"
-id="averageScore">
-0%
-</div>
+            <option value="Diploma in Nursing Science">
+                Diploma in Nursing Science
+            </option>
 
-<div class="statLabel">
-Average Score
-</div>
+            <option value="B.Sc. in Nursing">
+                B.Sc. in Nursing
+            </option>
 
-</div>
+            <option value="Diploma in Nursing">
+                Diploma in Nursing
+            </option>
 
+        </select>
 
-<div class="stat">
+        <label>Student Name</label>
 
-<div class="statIcon">🏆</div>
+        <input
+            type="text"
+            id="studentName"
+            placeholder="Enter your name"
+        >
 
-<div
-class="statValue"
-id="bestScore">
-0%
-</div>
+        <label>Subject</label>
 
-<div class="statLabel">
-Best Score
-</div>
+        <select id="subjectSelect"></select>
 
-</div>
+        <div id="subjectInfo" class="subject-info"></div>
 
+        <button class="btn green" onclick="startExam()">
+            🚀 Start Exam
+        </button>
 
-<div class="stat">
+    </div>
 
-<div class="statIcon">🎯</div>
+</section>
 
-<div
-class="statValue"
-id="accuracy">
-0%
-</div>
 
-<div class="statLabel">
-Accuracy
-</div>
+<!-- EXAM -->
+<section id="examScreen" class="hidden">
 
-</div>
+    <div class="card">
 
-</div>
+        <div class="exam-top">
 
-</div>
+            <div>
+                <b id="examStudent"></b>
+                <br>
+                <span id="examCourse"></span>
+                <br>
+                <span id="examSubject"></span>
+            </div>
 
+            <div class="timer">
+                ⏱️ <span id="timer">30:00</span>
+            </div>
 
-<!-- =========================
-     START
-========================= -->
+        </div>
 
-<div
-id="startBox"
-class="startBox"
->
+        <div>
+            Question
+            <b id="currentNumber">1</b>
+            /
+            <b id="totalQuestions">60</b>
+        </div>
 
-<h2>
-🚀 Start Your Nursing Exam
-</h2>
+        <div class="progress-wrap">
+            <div id="progress" class="progress"></div>
+        </div>
 
-<p>
-Enter your name and choose a subject.
-</p>
+        <div id="questionNav" class="nav-grid"></div>
 
+        <div id="questionsContainer"></div>
 
-<input
-id="studentName"
-class="input"
-type="text"
-maxlength="40"
-placeholder="Enter your name"
->
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
 
+            <button class="btn" onclick="previousQuestion()">
+                ◀ Previous
+            </button>
 
-<select
-id="subjectSelect"
-class="input"
->
+            <button class="btn" onclick="nextQuestion()">
+                Next ▶
+            </button>
 
-<option value="All">
-📚 All Subjects
-</option>
+            <button class="btn red" onclick="submitExam()">
+                📝 Submit Exam
+            </button>
 
-<option value="Fundamentals">
-Fundamentals of Nursing
-</option>
+        </div>
 
-<option value="Anatomy">
-Anatomy
-</option>
+    </div>
 
-<option value="Physiology">
-Physiology
-</option>
+</section>
 
-<option value="Pharmacology">
-Pharmacology
-</option>
 
-<option value="Medical">
-Medical-Surgical Nursing
-</option>
+<!-- RESULT -->
+<section id="resultScreen" class="hidden">
 
-<option value="Pediatric">
-Pediatric Nursing
-</option>
+    <div class="result-box">
 
-<option value="Community">
-Community Health Nursing
-</option>
+        <h2>🎉 Examination Result</h2>
 
-<option value="Nutrition">
-Nutrition
-</option>
+        <p id="resultStudent"></p>
+        <p id="resultCourse"></p>
 
-</select>
+        <div class="result-score">
+            <span id="resultPercentage">0%</span>
+        </div>
 
+        <p>
+            Score:
+            <b id="resultScore">0/60</b>
+        </p>
 
-<button
-class="startBtn"
-onclick="startExam()"
->
-🚀 Start Exam
-</button>
+        <div class="result-grid">
 
-</div>
+            <div class="result-stat">
+                <b id="correctCount">0</b>
+                <br>
+                Correct
+            </div>
 
+            <div class="result-stat">
+                <b id="wrongCount">0</b>
+                <br>
+                Wrong
+            </div>
 
-<!-- =========================
-     EXAM
-========================= -->
+            <div class="result-stat">
+                <b id="unansweredCount">0</b>
+                <br>
+                Unanswered
+            </div>
 
-<div
-id="exam"
-class="hidden"
->
+            <div class="result-stat">
+                <b id="markedCount">0</b>
+                <br>
+                Marked
+            </div>
 
+        </div>
 
-<div class="examTop">
+        <br>
 
-<div>
-👤
-<b id="examStudent">
-</b>
-</div>
+        <button class="btn green" onclick="retakeExam()">
+            🔄 Retake
+        </button>
 
+        <button class="btn" onclick="reviewWrongOnly()">
+            ❌ Review Wrong Only
+        </button>
 
-<div>
-📚
-<b id="examSubject">
-</b>
-</div>
+    </div>
 
+    <div class="card">
 
-<div class="timer"
-id="timer">
-30:00
-</div>
+        <h2>📖 Answer Review</h2>
 
-</div>
+        <div id="reviewContainer"></div>
 
+    </div>
 
-<div class="progressBox">
+</section>
 
-<div>
-<b id="progressText">
-0 / 60 answered
-</b>
-</div>
 
-<div class="progressTrack">
+<!-- PERFORMANCE -->
+<section class="card">
 
-<div
-id="progressBar"
-class="progressBar">
-</div>
+    <h2>📊 Subject Performance</h2>
 
-</div>
+    <div id="subjectPerformance"></div>
 
-</div>
+</section>
 
 
-<div
-id="questionNavigation"
-class="questionNav">
-</div>
+<!-- HISTORY -->
+<section class="card">
 
+    <h2>📚 Exam History</h2>
 
-<form id="examForm">
+    <div style="overflow:auto;">
 
-<div id="questions"></div>
+        <table>
 
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Course</th>
+                    <th>Subject</th>
+                    <th>Score</th>
+                    <th>%</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
 
-<button
-type="submit"
-class="submitBtn"
->
-✅ Submit Exam
-</button>
+            <tbody id="historyTable"></tbody>
 
-</form>
+        </table>
 
-</div>
+    </div>
 
+</section>
 
-<!-- =========================
-     RESULT
-========================= -->
 
-<div
-id="result"
-class="result hidden">
-</div>
+<!-- LEADERBOARD -->
+<section class="card">
 
+    <h2>🏆 Leaderboard</h2>
 
-<!-- =========================
-     SUBJECT PERFORMANCE
-========================= -->
+    <div style="overflow:auto;">
 
-<div class="section">
+        <table>
 
-<h2>
-📚 Subject Performance
-</h2>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Course</th>
+                    <th>Score</th>
+                    <th>%</th>
+                </tr>
+            </thead>
 
-<div id="subjectPerformance">
-<p>
-No performance data yet.
-</p>
-</div>
+            <tbody id="leaderboardTable"></tbody>
 
-</div>
+        </table>
 
+    </div>
 
-<!-- =========================
-     HISTORY
-========================= -->
-
-<div class="section">
-
-<h2>
-📊 Exam History
-</h2>
-
-<div
-class="tableWrap"
-id="historyData">
-</div>
-
-
-<button
-onclick="clearHistory()"
-style="background:#dc2626;margin-top:12px;"
->
-🗑️ Clear History
-</button>
+</section>
 
 </div>
 
-
-<!-- =========================
-     LEADERBOARD
-========================= -->
-
-<div class="section">
-
-<h2>
-🏆 Leaderboard
-</h2>
-
-<p>
-Top scores saved on this browser.
-</p>
-
-<div
-class="tableWrap"
-id="leaderboardData">
-</div>
-
-
-<button
-onclick="clearLeaderboard()"
-style="background:#dc2626;margin-top:12px;"
->
-🗑️ Clear Leaderboard
-</button>
-
-</div>
-
-
-</div>
-
-
-<div
-id="toast"
-class="toast">
-</div>
+<div id="toast" class="toast"></div>
 
 
 <script>
 
-
-/* =====================================================
-   QUESTION DATABASE
-===================================================== */
-
-const baseQuestions=[
-
-{
-subject:"Fundamentals",
-q:"What is the normal adult body temperature approximately?",
-o:["35°C","37°C","40°C","42°C"],
-a:1,
-e:"A normal adult body temperature is approximately 37°C, although normal values can vary."
-},
-
-{
-subject:"Fundamentals",
-q:"Which position commonly helps a patient breathe more easily?",
-o:["High Fowler's","Supine","Prone","Lithotomy"],
-a:0,
-e:"High Fowler's position elevates the upper body and can help improve lung expansion."
-},
-
-{
-subject:"Fundamentals",
-q:"Which vital sign measures pressure of blood against arterial walls?",
-o:["Pulse","Temperature","Blood pressure","Respiration"],
-a:2,
-e:"Blood pressure measures the force of circulating blood against arterial walls."
-},
-
-{
-subject:"Fundamentals",
-q:"What is the primary purpose of hand hygiene?",
-o:["Improve appetite","Prevent infection","Reduce pain","Increase blood pressure"],
-a:1,
-e:"Hand hygiene reduces microorganisms and helps prevent the spread of infection."
-},
-
-{
-subject:"Fundamentals",
-q:"Which instrument is used to listen to heart and lung sounds?",
-o:["Stethoscope","Thermometer","Glucometer","Scale"],
-a:0,
-e:"A stethoscope is used for auscultation of heart, lung and other body sounds."
-},
-
-{
-subject:"Anatomy",
-q:"Which organ pumps blood throughout the body?",
-o:["Liver","Heart","Kidney","Lung"],
-a:1,
-e:"The heart pumps blood through the pulmonary and systemic circulations."
-},
-
-{
-subject:"Anatomy",
-q:"Which organ is primarily responsible for gas exchange?",
-o:["Heart","Liver","Lungs","Stomach"],
-a:2,
-e:"The lungs contain alveoli where oxygen and carbon dioxide are exchanged."
-},
-
-{
-subject:"Anatomy",
-q:"How many chambers does the human heart have?",
-o:["2","3","4","5"],
-a:2,
-e:"The human heart has four chambers: two atria and two ventricles."
-},
-
-{
-subject:"Anatomy",
-q:"Which organ filters blood and produces urine?",
-o:["Kidney","Heart","Pancreas","Spleen"],
-a:0,
-e:"The kidneys filter blood and produce urine."
-},
-
-{
-subject:"Anatomy",
-q:"What is the largest organ of the human body?",
-o:["Liver","Skin","Heart","Brain"],
-a:1,
-e:"The skin is the largest organ of the human body."
-},
-
-{
-subject:"Physiology",
-q:"What is the main function of red blood cells?",
-o:["Fight infection","Carry oxygen","Produce hormones","Digest food"],
-a:1,
-e:"Red blood cells contain hemoglobin and transport oxygen."
-},
-
-{
-subject:"Physiology",
-q:"Which blood cells are mainly involved in immunity?",
-o:["Red blood cells","White blood cells","Platelets","Plasma"],
-a:1,
-e:"White blood cells are major components of the immune system."
-},
-
-{
-subject:"Physiology",
-q:"What is the main function of platelets?",
-o:["Oxygen transport","Blood clotting","Digestion","Hormone production"],
-a:1,
-e:"Platelets participate in formation of blood clots."
-},
-
-{
-subject:"Physiology",
-q:"Which system controls many body functions through hormones?",
-o:["Endocrine system","Skeletal system","Respiratory system","Digestive system"],
-a:0,
-e:"The endocrine system produces hormones that regulate many physiological processes."
-},
-
-{
-subject:"Pharmacology",
-q:"What is pharmacology primarily concerned with?",
-o:["Bones","Drugs and their effects","Muscles only","Nutrition only"],
-a:1,
-e:"Pharmacology studies drugs and their actions and effects."
-},
-
-{
-subject:"Pharmacology",
-q:"Which route places medication under the tongue?",
-o:["Oral","Sublingual","Intramuscular","Topical"],
-a:1,
-e:"Sublingual medication is placed under the tongue for absorption through oral mucosa."
-},
-
-{
-subject:"Pharmacology",
-q:"Which route delivers medication directly into a vein?",
-o:["IV","IM","SC","Oral"],
-a:0,
-e:"Intravenous administration delivers medication directly into a vein."
-},
-
-{
-subject:"Medical",
-q:"Diabetes mellitus is primarily associated with problems involving which hormone?",
-o:["Insulin","Melatonin","Thyroxine","Adrenaline"],
-a:0,
-e:"Insulin is central to regulation of blood glucose."
-},
-
-{
-subject:"Medical",
-q:"Hypertension refers to persistently elevated:",
-o:["Body temperature","Blood pressure","Pulse only","Blood sugar only"],
-a:1,
-e:"Hypertension means persistently elevated blood pressure."
-},
-
-{
-subject:"Medical",
-q:"Which condition is associated with high blood glucose?",
-o:["Diabetes mellitus","Anemia","Fracture","Asthma"],
-a:0,
-e:"Diabetes mellitus involves elevated blood glucose due to problems with insulin production, action or both."
-},
-
-{
-subject:"Pediatric",
-q:"Why is age-appropriate communication important when caring for children?",
-o:["Developmental abilities differ","All children communicate identically","Communication is unnecessary","Only adults need explanations"],
-a:0,
-e:"Children's communication abilities differ according to developmental stage."
-},
-
-{
-subject:"Pediatric",
-q:"Growth and development monitoring is especially important during:",
-o:["Childhood","Only adulthood","Only old age","Never"],
-a:0,
-e:"Growth and development monitoring during childhood helps identify normal progress and possible concerns."
-},
-
-{
-subject:"Community",
-q:"What is an important goal of community health nursing?",
-o:["Disease prevention","Building roads","Selling products","Manufacturing cars"],
-a:0,
-e:"Community health nursing focuses on health promotion and disease prevention."
-},
-
-{
-subject:"Community",
-q:"Immunization primarily helps protect against:",
-o:["Infectious diseases","Broken bones","Hair loss","Eye color changes"],
-a:0,
-e:"Vaccination stimulates immune protection against specific infectious diseases."
-},
-
-{
-subject:"Nutrition",
-q:"Which nutrient is an important source of energy?",
-o:["Carbohydrate","Water only","Mineral only","Vitamin only"],
-a:0,
-e:"Carbohydrates are an important energy source."
-},
-
-{
-subject:"Nutrition",
-q:"Which nutrient is especially important for tissue growth and repair?",
-o:["Protein","Water","Salt","Fiber only"],
-a:0,
-e:"Protein provides amino acids required for tissue growth and repair."
-},
-
-{
-subject:"Nutrition",
-q:"Which vitamin is associated with normal vision?",
-o:["Vitamin A","Vitamin C","Vitamin K","Vitamin B12"],
-a:0,
-e:"Vitamin A is important for normal vision."
-},
-
-{
-subject:"Nutrition",
-q:"Which mineral is important for healthy bones and teeth?",
-o:["Calcium","Sodium","Chloride","Iodine"],
-a:0,
-e:"Calcium is important for bones and teeth and also has roles in muscle and nerve function."
-}
-
-];
-
-
-const variations=[
-
-"Which statement is correct?",
-
-"Which option is correct?",
-
-"What is the correct answer?",
-
-"Which of the following is correct?",
-
-"Select the correct answer.",
-
-"Which answer is most appropriate?",
-
-"Which statement is true?",
-
-"Choose the correct option.",
-
-"Which answer best describes this?",
-
-"What should the nurse identify?"
-
-];
-
-
-const questionDB=[];
-
-
-for(
-let i=0;
-i<5000;
-i++
-){
-
-const base=
-baseQuestions[
-i%baseQuestions.length
-];
-
-const variation=
-variations[
-Math.floor(
-i/baseQuestions.length
-)%variations.length
-];
-
-
-questionDB.push({
-
-subject:base.subject,
-
-q:
-(i+1)+
-". "+
-base.q+
-" "+
-variation,
-
-o:[...base.o],
-
-a:base.a,
-
-e:base.e
-
-});
-
-}
-
-
-/* =====================================================
-   VARIABLES
-===================================================== */
-
-let currentQuestions=[];
-
-let currentStudent="";
-
-let markedQuestions=[];
-
-let submitted=false;
-
-let timeLeft=1800;
-
-let timerInterval;
-
-
-/* =====================================================
-   SHUFFLE
-===================================================== */
-
-function shuffle(arr){
-
-const a=[...arr];
-
-for(
-let i=a.length-1;
-i>0;
-i--
-){
-
-const j=
-Math.floor(
-Math.random()*(i+1)
-);
-
-[a[i],a[j]]=
-[a[j],a[i]];
-
-}
-
-return a;
-
-}
-
-
-/* =====================================================
-   START
-===================================================== */
-
-function startExam(){
-
-const name=
-document
-.getElementById("studentName")
-.value
-.trim();
-
-if(!name){
-
-showToast(
-"Please enter your name."
-);
-
-return;
-
-}
-
-
-currentStudent=name;
-
-
-const subject=
-document
-.getElementById("subjectSelect")
-.value;
-
-
-let pool=
-subject==="All"
-?
-questionDB
-:
-questionDB.filter(
-q=>q.subject===subject
-);
-
-
-currentQuestions=
-shuffle(pool).slice(0,60);
-
-
-markedQuestions=[];
-
-submitted=false;
-
-
-document
-.getElementById("startBox")
-.classList
-.add("hidden");
-
-
-document
-.getElementById("exam")
-.classList
-.remove("hidden");
-
-
-document
-.getElementById("examStudent")
-.textContent=
-currentStudent;
-
-
-document
-.getElementById("examSubject")
-.textContent=
-subject;
-
-
-renderQuestions();
-
-renderNavigation();
-
-startTimer();
-
-updateProgress();
-
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
-
-}
-
-
-/* =====================================================
-   QUESTIONS
-===================================================== */
-
-function renderQuestions(){
-
-const box=
-document.getElementById(
-"questions"
-);
-
-box.innerHTML="";
-
-
-currentQuestions.forEach(
-(item,index)=>{
-
-const card=
-document.createElement(
-"div"
-);
-
-card.className=
-"questionCard";
-
-card.id=
-"question-"+index;
-
-
-let html=`
-
-<button
-type="button"
-class="markBtn"
-id="mark-${index}"
-onclick="toggleMark(${index})"
->
-🚩 Mark
-</button>
-
-<div class="questionTitle">
-
-${item.q}
-
-<span class="subjectBadge">
-${item.subject}
-</span>
-
-</div>
-
-`;
-
-
-item.o.forEach(
-(option,optIndex)=>{
-
-html+=`
-
-<label
-class="option"
->
-
-<input
-type="radio"
-name="q${index}"
-value="${optIndex}"
-onchange="answerChanged(${index})"
->
-
-${option}
-
-</label>
-
-`;
-
-});
-
-
-card.innerHTML=html;
-
-box.appendChild(card);
-
-});
-
-}
-
-
-/* =====================================================
-   NAVIGATION
-===================================================== */
-
-function renderNavigation(){
-
-const nav=
-document.getElementById(
-"questionNavigation"
-);
-
-nav.innerHTML="";
-
-
-currentQuestions.forEach(
-(item,index)=>{
-
-const btn=
-document.createElement(
-"button"
-);
-
-btn.type="button";
-
-btn.className="navQ";
-
-btn.textContent=index+1;
-
-btn.id=
-"nav-"+index;
-
-btn.onclick=()=>{
-
-document
-.getElementById(
-"question-"+index
-)
-.scrollIntoView({
-behavior:"smooth"
-});
+/* =========================================================
+   COURSE DATABASE
+========================================================= */
+
+const courseSubjects = {
+
+    "Diploma in Nursing Science":[
+        "Fundamentals",
+        "Anatomy",
+        "Physiology",
+        "Pharmacology",
+        "Medical",
+        "Pediatric",
+        "Community",
+        "Nutrition"
+    ],
+
+    "B.Sc. in Nursing":[
+        "Fundamentals",
+        "Anatomy",
+        "Physiology",
+        "Pharmacology",
+        "Medical",
+        "Pediatric",
+        "Community",
+        "Nutrition"
+    ],
+
+    "Diploma in Nursing":[
+        "Fundamentals",
+        "Anatomy",
+        "Physiology",
+        "Medical",
+        "Community",
+        "Nutrition"
+    ]
 
 };
 
-nav.appendChild(btn);
+
+const courseDescriptions = {
+
+    "Diploma in Nursing Science":
+        "Course-focused MCQ practice for Diploma in Nursing Science students.",
+
+    "B.Sc. in Nursing":
+        "Comprehensive MCQ practice for B.Sc. in Nursing students.",
+
+    "Diploma in Nursing":
+        "Core nursing MCQ practice for Diploma in Nursing students."
+
+};
+
+
+/* =========================================================
+   REAL COURSE-WISE QUESTION BANK
+========================================================= */
+
+const baseQuestions = [
+
+/* =========================
+   DIPLOMA IN NURSING SCIENCE
+========================= */
+
+{
+course:"Diploma in Nursing Science",
+subject:"Fundamentals",
+q:"What is the normal approximate body temperature of a healthy adult?",
+options:["34°C","37°C","40°C","42°C"],
+answer:1,
+exp:"Normal adult body temperature is approximately 37°C."
+},
+
+{
+course:"Diploma in Nursing Science",
+subject:"Fundamentals",
+q:"Which position is commonly used to improve lung expansion in a patient with breathing difficulty?",
+options:["High Fowler's","Trendelenburg","Prone","Lithotomy"],
+answer:0,
+exp:"High Fowler's position can promote lung expansion."
+},
+
+{
+course:"Diploma in Nursing Science",
+subject:"Fundamentals",
+q:"Which instrument is commonly used to measure blood pressure?",
+options:["Stethoscope only","Sphygmomanometer","Thermometer","Otoscope"],
+answer:1,
+exp:"A sphygmomanometer is used to measure blood pressure."
+},
+
+{
+course:"Diploma in Nursing Science",
+subject:"Fundamentals",
+q:"What is the most important basic measure for reducing transmission of infection?",
+options:["Hand hygiene","Bed rest","Exercise","Increasing room temperature"],
+answer:0,
+exp:"Proper hand hygiene is one of the most important infection-prevention measures."
+},
+
+{
+course:"Diploma in Nursing Science",
+subject:"Fundamentals",
+q:"Which instrument is commonly used to listen to heart and lung sounds?",
+options:["Stethoscope","Thermometer","Glucometer","Syringe"],
+answer:0,
+exp:"A stethoscope is used for auscultation."
+},
+
+{
+course:"Diploma in Nursing Science",
+subject:"Fundamentals",
+q:"Which route involves administration of a medication directly into a vein?",
+options:["Oral","Intramuscular","Intravenous","Topical"],
+answer:2,
+exp:"Intravenous administration delivers medication into a vein."
+},
+
+{
+course:"Diploma in Nursing Science",
+subject:"Fundamentals",
+q:"What is the purpose of maintaining accurate nursing documentation?",
+options:[
+"To provide a clear patient-care record",
+"To replace patient assessment",
+"To avoid communication",
+"To reduce observation"
+],
+answer:0,
+exp:"Accurate documentation supports continuity and communication of patient care."
+},
+
+{
+course:"Diploma in Nursing Science",
+subject:"Fundamentals",
+q:"Which is an example of a vital sign?",
+options:["Blood pressure","Hair color","Height only","Shoe size"],
+answer:0,
+exp:"Blood pressure is one of the commonly monitored vital signs."
+},
+
+{
+course:"Diploma in Nursing Science",
+subject:"Anatomy",
+q:"Which organ pumps blood throughout the body?",
+options:["Liver","Heart","Kidney","Stomach"],
+answer:1,
+exp:"The heart pumps blood through the circulatory system."
+},
+
+{
+course:"Diploma in Nursing Science",
+subject:"Anatomy",
+q:"How many chambers does the human heart normally have?",
+options:["2","3","4","5"],
+answer:2,
+exp:"The human heart has four chambers."
+},
+
+{
+course:"Diploma in Nursing Science",
+subject:"Anatomy",
+q:"Which organs are primarily responsible for gas exchange?",
+options:["Kidneys","Lungs","Liver","Pancreas"],
+answer:1,
+exp:"The lungs perform gas exchange between air and blood."
+},
+
+{
+course:"Diploma in Nursing Science",
+subject:"Anatomy",
+q:"Which organ is mainly responsible for filtering blood and producing urine?",
+options:["Kidney","Heart","Lung","Spleen"],
+answer:0,
+exp:"The kidneys filter blood and form urine."
+},
+
+{
+course:"Diploma in Nursing Science",
+subject:"Anatomy",
+q:"What is the largest organ of the human body?",
+options:["Liver","Skin","Heart","Lung"],
+answer:1,
+exp:"The skin is the largest organ of the human body."
+},
+
+{
+course:"Diploma in Nursing Science",
+subject:"Physiology",
+q:"Which blood cells primarily transport oxygen?",
+options:["Platelets","Red blood cells","White blood cells","Plasma cells"],
+answer:1,
+exp:"Red blood cells contain hemoglobin and transport oxygen."
+},
+
+{
+course:"Diploma in Nursing Science",
+subject:"Physiology",
+q:"What is a major function of white blood cells?",
+options:["Blood clotting","Immune defense","Oxygen transport","Bone formation"],
+answer:1,
+exp:"White blood cells participate in immune defense."
+},
+
+{
+course:"Diploma in Nursing Science",
+subject:"Physiology",
+q:"What is the main role of platelets?",
+options:["Oxygen transport","Blood clotting","Digestion","Hormone production"],
+answer:1,
+exp:"Platelets help in blood clot formation."
+},
+
+{
+course:"Diploma in Nursing Science",
+subject:"Physiology",
+q:"What do endocrine glands primarily produce?",
+options:["Hormones","Bile","Urine","Red blood cells"],
+answer:0,
+exp:"Endocrine glands secrete hormones."
+},
+
+{
+course:"Diploma in Nursing Science",
+subject:"Medical",
+q:"Diabetes mellitus is characterized by a problem involving which substance?",
+options:["Insulin","Hemoglobin only","Bile","Calcium"],
+answer:0,
+exp:"Diabetes mellitus involves impaired insulin production, action, or both."
+},
+
+{
+course:"Diploma in Nursing Science",
+subject:"Medical",
+q:"Hypertension refers to persistently elevated:",
+options:[
+"Body temperature",
+"Blood pressure",
+"Blood oxygen only",
+"Heart size"
+],
+answer:1,
+exp:"Hypertension means persistently elevated blood pressure."
+},
+
+{
+course:"Diploma in Nursing Science",
+subject:"Medical",
+q:"Which condition is associated with elevated blood glucose?",
+options:["Diabetes mellitus","Anemia","Asthma","Fracture"],
+answer:0,
+exp:"Diabetes mellitus is associated with elevated blood glucose."
+},
+
+{
+course:"Diploma in Nursing Science",
+subject:"Community",
+q:"What is one major purpose of immunization?",
+options:[
+"Prevent selected infectious diseases",
+"Increase blood pressure",
+"Cause infection",
+"Reduce oxygen transport"
+],
+answer:0,
+exp:"Immunization helps prevent selected infectious diseases."
+},
+
+{
+course:"Diploma in Nursing Science",
+subject:"Community",
+q:"Which activity is important for community disease prevention?",
+options:[
+"Health education",
+"Skipping hygiene",
+"Sharing contaminated equipment",
+"Avoiding all exercise"
+],
+answer:0,
+exp:"Health education is an important component of disease prevention."
+},
+
+{
+course:"Diploma in Nursing Science",
+subject:"Nutrition",
+q:"Which nutrient is an important source of energy?",
+options:["Carbohydrate","Water only","Minerals only","Fiber only"],
+answer:0,
+exp:"Carbohydrates are an important source of energy."
+},
+
+{
+course:"Diploma in Nursing Science",
+subject:"Nutrition",
+q:"Which nutrient is especially important for tissue growth and repair?",
+options:["Protein","Water","Sodium only","Vitamin C only"],
+answer:0,
+exp:"Protein is important for growth and tissue repair."
+},
+
+{
+course:"Diploma in Nursing Science",
+subject:"Nutrition",
+q:"Vitamin A is especially important for:",
+options:["Vision","Blood clotting only","Hearing only","Bone movement"],
+answer:0,
+exp:"Vitamin A plays an important role in normal vision."
+},
+
+{
+course:"Diploma in Nursing Science",
+subject:"Nutrition",
+q:"Calcium is particularly important for healthy:",
+options:["Bones and teeth","Hair only","Skin color","Lungs only"],
+answer:0,
+exp:"Calcium is important for bones and teeth."
+
+
+/* =========================
+   B.SC. IN NURSING
+========================= */
+
+},
+
+{
+course:"B.Sc. in Nursing",
+subject:"Fundamentals",
+q:"Which nursing action best supports safe patient identification before care?",
+options:[
+"Use appropriate patient identifiers",
+"Ask another patient",
+"Guess from the room number",
+"Skip identification"
+],
+answer:0,
+exp:"Using appropriate identifiers supports patient safety."
+},
+
+{
+course:"B.Sc. in Nursing",
+subject:"Fundamentals",
+q:"Which principle is central to standard precautions?",
+options:[
+"Treat potentially infectious materials with appropriate precautions",
+"Use antibiotics for every patient",
+"Avoid all patient contact",
+"Only isolate surgical patients"
+],
+answer:0,
+exp:"Standard precautions are applied according to potential exposure to infectious material."
+},
+
+{
+course:"B.Sc. in Nursing",
+subject:"Fundamentals",
+q:"Which assessment technique involves listening to internal body sounds?",
+options:["Auscultation","Inspection","Palpation","Percussion"],
+answer:0,
+exp:"Auscultation involves listening to body sounds, commonly with a stethoscope."
+},
+
+{
+course:"B.Sc. in Nursing",
+subject:"Fundamentals",
+q:"Which nursing process step involves collecting patient information?",
+options:["Assessment","Planning","Implementation","Evaluation"],
+answer:0,
+exp:"Assessment is the data-collection phase of the nursing process."
+},
+
+{
+course:"B.Sc. in Nursing",
+subject:"Fundamentals",
+q:"Which nursing process step involves establishing desired patient outcomes?",
+options:["Planning","Assessment","Implementation","Evaluation"],
+answer:0,
+exp:"Planning includes setting goals and expected outcomes."
+},
+
+{
+course:"B.Sc. in Nursing",
+subject:"Fundamentals",
+q:"Which action is appropriate when maintaining patient confidentiality?",
+options:[
+"Share information only with authorized persons",
+"Discuss patient information publicly",
+"Post patient details online",
+"Tell unrelated visitors"
+],
+answer:0,
+exp:"Patient information should be protected and shared appropriately."
+},
+
+{
+course:"B.Sc. in Nursing",
+subject:"Anatomy",
+q:"Which structure separates the thoracic and abdominal cavities?",
+options:["Diaphragm","Femur","Scapula","Patella"],
+answer:0,
+exp:"The diaphragm separates the thoracic and abdominal cavities."
+},
+
+{
+course:"B.Sc. in Nursing",
+subject:"Anatomy",
+q:"Which chamber of the heart pumps oxygenated blood into systemic circulation?",
+options:[
+"Left ventricle",
+"Right ventricle",
+"Right atrium",
+"Left atrium"
+],
+answer:0,
+exp:"The left ventricle pumps oxygenated blood into systemic circulation."
+},
+
+{
+course:"B.Sc. in Nursing",
+subject:"Anatomy",
+q:"Which blood vessel carries oxygenated blood from the lungs to the heart?",
+options:[
+"Pulmonary vein",
+"Pulmonary artery",
+"Vena cava",
+"Aorta"
+],
+answer:0,
+exp:"Pulmonary veins carry oxygenated blood to the left atrium."
+},
+
+{
+course:"B.Sc. in Nursing",
+subject:"Anatomy",
+q:"Which part of the brain is primarily associated with balance and coordination?",
+options:["Cerebellum","Medulla","Hypothalamus","Pituitary"],
+answer:0,
+exp:"The cerebellum plays an important role in coordination and balance."
+},
+
+{
+course:"B.Sc. in Nursing",
+subject:"Physiology",
+q:"What is the primary function of hemoglobin?",
+options:[
+"Transport oxygen",
+"Produce insulin",
+"Digest proteins",
+"Form urine"
+],
+answer:0,
+exp:"Hemoglobin binds and transports oxygen in red blood cells."
+},
+
+{
+course:"B.Sc. in Nursing",
+subject:"Physiology",
+q:"Which hormone lowers blood glucose concentration?",
+options:["Insulin","Glucagon","Adrenaline","Thyroxine"],
+answer:0,
+exp:"Insulin promotes uptake and storage of glucose, lowering blood glucose."
+},
+
+{
+course:"B.Sc. in Nursing",
+subject:"Physiology",
+q:"Which hormone generally increases blood glucose?",
+options:["Glucagon","Insulin","Calcitonin","Melatonin"],
+answer:0,
+exp:"Glucagon promotes processes that increase blood glucose."
+},
+
+{
+course:"B.Sc. in Nursing",
+subject:"Physiology",
+q:"What is the main function of the kidneys in maintaining homeostasis?",
+options:[
+"Regulate fluid and electrolyte balance",
+"Pump blood",
+"Exchange oxygen",
+"Produce bile"
+],
+answer:0,
+exp:"The kidneys help regulate fluids, electrolytes and waste removal."
+},
+
+{
+course:"B.Sc. in Nursing",
+subject:"Pharmacology",
+q:"Pharmacology is the study of:",
+options:[
+"Drugs and their effects",
+"Bones only",
+"Food preparation",
+"Hospital architecture"
+],
+answer:0,
+exp:"Pharmacology studies drugs and their effects on living systems."
+},
+
+{
+course:"B.Sc. in Nursing",
+subject:"Pharmacology",
+q:"What does the sublingual route mean?",
+options:[
+"Under the tongue",
+"Into the muscle",
+"Into the vein",
+"On the skin"
+],
+answer:0,
+exp:"Sublingual administration means placing medication under the tongue."
+},
+
+{
+course:"B.Sc. in Nursing",
+subject:"Pharmacology",
+q:"Which route delivers medication directly into a vein?",
+options:[
+"Intravenous",
+"Oral",
+"Subcutaneous",
+"Topical"
+],
+answer:0,
+exp:"Intravenous administration delivers medication into a vein."
+},
+
+{
+course:"B.Sc. in Nursing",
+subject:"Pharmacology",
+q:"Why is checking medication information important before administration?",
+options:[
+"To promote medication safety",
+"To increase errors",
+"To avoid assessment",
+"To replace documentation"
+],
+answer:0,
+exp:"Medication information should be checked to promote safe administration."
+},
+
+{
+course:"B.Sc. in Nursing",
+subject:"Medical",
+q:"Which condition is commonly associated with airway inflammation and variable airflow limitation?",
+options:["Asthma","Fracture","Hypertension","Anemia"],
+answer:0,
+exp:"Asthma involves airway inflammation and variable airflow limitation."
+},
+
+{
+course:"B.Sc. in Nursing",
+subject:"Medical",
+q:"Anemia generally refers to a reduction in:",
+options:[
+"Red blood cell mass or hemoglobin",
+"Body temperature",
+"Bone length",
+"Skin thickness"
+],
+answer:0,
+exp:"Anemia involves reduced red cell mass or hemoglobin."
+},
+
+{
+course:"B.Sc. in Nursing",
+subject:"Medical",
+q:"Which disease primarily affects blood glucose regulation?",
+options:[
+"Diabetes mellitus",
+"Asthma",
+"Otitis",
+"Fracture"
+],
+answer:0,
+exp:"Diabetes mellitus is a disorder of glucose regulation."
+},
+
+{
+course:"B.Sc. in Nursing",
+subject:"Medical",
+q:"Which term describes difficulty breathing?",
+options:["Dyspnea","Edema","Cyanosis","Jaundice"],
+answer:0,
+exp:"Dyspnea means difficult or uncomfortable breathing."
+},
+
+{
+course:"B.Sc. in Nursing",
+subject:"Pediatric",
+q:"Why is growth monitoring important in pediatric nursing?",
+options:[
+"To identify growth problems early",
+"To prevent all infections",
+"To replace physical examination",
+"To determine adult height exactly"
+],
+answer:0,
+exp:"Growth monitoring helps identify possible growth problems."
+},
+
+{
+course:"B.Sc. in Nursing",
+subject:"Pediatric",
+q:"Which approach is generally appropriate when communicating with a young child?",
+options:[
+"Use age-appropriate language",
+"Use only complex medical terminology",
+"Ignore the child",
+"Speak only to unrelated people"
+],
+answer:0,
+exp:"Communication should be adapted to the child's developmental level."
+},
+
+{
+course:"B.Sc. in Nursing",
+subject:"Pediatric",
+q:"What is an important goal of pediatric nursing?",
+options:[
+"Support health, growth and development",
+"Prevent all normal development",
+"Avoid family communication",
+"Ignore developmental differences"
+],
+answer:0,
+exp:"Pediatric nursing supports health, growth and development."
+},
+
+{
+course:"B.Sc. in Nursing",
+subject:"Community",
+q:"Which concept focuses on preventing disease before it occurs?",
+options:[
+"Primary prevention",
+"Rehabilitation only",
+"Emergency treatment",
+"End-stage care"
+],
+answer:0,
+exp:"Primary prevention aims to prevent disease before it occurs."
+},
+
+{
+course:"B.Sc. in Nursing",
+subject:"Community",
+q:"What is an important purpose of community health education?",
+options:[
+"Promote healthy behaviors",
+"Increase disease transmission",
+"Discourage prevention",
+"Replace all clinical care"
+],
+answer:0,
+exp:"Health education can promote healthy behaviors and disease prevention."
+},
+
+{
+course:"B.Sc. in Nursing",
+subject:"Community",
+q:"Which intervention can reduce the spread of communicable diseases?",
+options:[
+"Appropriate vaccination",
+"Ignoring symptoms",
+"Poor sanitation",
+"Sharing contaminated items"
+],
+answer:0,
+exp:"Vaccination is an important public-health intervention for selected diseases."
+},
+
+{
+course:"B.Sc. in Nursing",
+subject:"Nutrition",
+q:"Which nutrient provides approximately 4 kcal per gram?",
+options:["Carbohydrate","Fat","Alcohol","Water"],
+answer:0,
+exp:"Carbohydrate provides approximately 4 kcal per gram."
+},
+
+{
+course:"B.Sc. in Nursing",
+subject:"Nutrition",
+q:"Which nutrient provides approximately 9 kcal per gram?",
+options:["Fat","Protein","Carbohydrate","Water"],
+answer:0,
+exp:"Fat provides approximately 9 kcal per gram."
+},
+
+{
+course:"B.Sc. in Nursing",
+subject:"Nutrition",
+q:"Which nutrient is essential for building and repairing body tissues?",
+options:["Protein","Water","Sodium only","Fiber only"],
+answer:0,
+exp:"Protein is essential for tissue building and repair."
+},
+
+{
+course:"B.Sc. in Nursing",
+subject:"Nutrition",
+q:"Which vitamin is important for calcium absorption and bone health?",
+options:["Vitamin D","Vitamin B12","Vitamin K only","Vitamin B1"],
+answer:0,
+exp:"Vitamin D supports calcium absorption and bone health."
+
+
+/* =========================
+   DIPLOMA IN NURSING
+========================= */
+
+},
+
+{
+course:"Diploma in Nursing",
+subject:"Fundamentals",
+q:"Which device is commonly used to measure body temperature?",
+options:["Thermometer","Stethoscope","Syringe","Glucometer"],
+answer:0,
+exp:"A thermometer is used to measure body temperature."
+},
+
+{
+course:"Diploma in Nursing",
+subject:"Fundamentals",
+q:"Which action is important before and after many patient-care procedures?",
+options:[
+"Hand hygiene",
+"Skipping assessment",
+"Changing the diagnosis",
+"Avoiding documentation"
+],
+answer:0,
+exp:"Hand hygiene is important before and after many patient-care procedures."
+},
+
+{
+course:"Diploma in Nursing",
+subject:"Fundamentals",
+q:"Which position has the patient lying on the back?",
+options:[
+"Supine",
+"Prone",
+"Lateral",
+"Trendelenburg"
+],
+answer:0,
+exp:"Supine position means lying on the back."
+},
+
+{
+course:"Diploma in Nursing",
+subject:"Fundamentals",
+q:"Which position has the patient lying on the abdomen?",
+options:[
+"Prone",
+"Supine",
+"Fowler's",
+"Lithotomy"
+],
+answer:0,
+exp:"Prone position means lying on the abdomen."
+},
+
+{
+course:"Diploma in Nursing",
+subject:"Fundamentals",
+q:"Why should nurses observe changes in a patient's condition?",
+options:[
+"To identify problems and communicate them appropriately",
+"To avoid patient care",
+"To replace all investigations",
+"To eliminate documentation"
+],
+answer:0,
+exp:"Observation helps nurses recognize changes and communicate important findings."
+},
+
+{
+course:"Diploma in Nursing",
+subject:"Anatomy",
+q:"Which organ is primarily responsible for pumping blood?",
+options:["Heart","Kidney","Liver","Stomach"],
+answer:0,
+exp:"The heart pumps blood."
+},
+
+{
+course:"Diploma in Nursing",
+subject:"Anatomy",
+q:"Which organs are responsible for breathing and gas exchange?",
+options:["Lungs","Kidneys","Liver","Spleen"],
+answer:0,
+exp:"The lungs are the main organs of respiration and gas exchange."
+},
+
+{
+course:"Diploma in Nursing",
+subject:"Anatomy",
+q:"Which organ produces bile?",
+options:["Liver","Heart","Kidney","Lung"],
+answer:0,
+exp:"The liver produces bile."
+},
+
+{
+course:"Diploma in Nursing",
+subject:"Anatomy",
+q:"Which organ stores urine before urination?",
+options:["Urinary bladder","Kidney","Liver","Small intestine"],
+answer:0,
+exp:"The urinary bladder stores urine."
+},
+
+{
+course:"Diploma in Nursing",
+subject:"Physiology",
+q:"Which blood component helps with clotting?",
+options:["Platelets","Red blood cells","White blood cells","Plasma glucose"],
+answer:0,
+exp:"Platelets play an important role in blood clotting."
+},
+
+{
+course:"Diploma in Nursing",
+subject:"Physiology",
+q:"Which blood cells are mainly involved in immune defense?",
+options:["White blood cells","Red blood cells","Platelets","Reticulocytes only"],
+answer:0,
+exp:"White blood cells participate in immune defense."
+},
+
+{
+course:"Diploma in Nursing",
+subject:"Physiology",
+q:"Which cells mainly transport oxygen?",
+options:["Red blood cells","Platelets","White blood cells","Bone cells"],
+answer:0,
+exp:"Red blood cells transport oxygen using hemoglobin."
+},
+
+{
+course:"Diploma in Nursing",
+subject:"Medical",
+q:"What does hypertension mean?",
+options:[
+"High blood pressure",
+"Low body temperature",
+"Low blood glucose",
+"High body height"
+],
+answer:0,
+exp:"Hypertension means elevated blood pressure."
+},
+
+{
+course:"Diploma in Nursing",
+subject:"Medical",
+q:"Which condition is associated with high blood glucose?",
+options:[
+"Diabetes mellitus",
+"Fracture",
+"Asthma only",
+"Anemia only"
+],
+answer:0,
+exp:"Diabetes mellitus is associated with high blood glucose."
+},
+
+{
+course:"Diploma in Nursing",
+subject:"Medical",
+q:"Which symptom commonly describes difficulty breathing?",
+options:["Dyspnea","Edema","Rash","Jaundice"],
+answer:0,
+exp:"Dyspnea means difficulty or discomfort in breathing."
+},
+
+{
+course:"Diploma in Nursing",
+subject:"Medical",
+q:"Which disease commonly involves narrowing or inflammation of the airways?",
+options:["Asthma","Fracture","Hypertension","Anemia"],
+answer:0,
+exp:"Asthma involves airway inflammation and variable airflow limitation."
+},
+
+{
+course:"Diploma in Nursing",
+subject:"Community",
+q:"What is the main purpose of immunization?",
+options:[
+"Prevent selected infectious diseases",
+"Cause infection",
+"Increase disease transmission",
+"Replace hygiene"
+],
+answer:0,
+exp:"Immunization helps protect against selected infectious diseases."
+},
+
+{
+course:"Diploma in Nursing",
+subject:"Community",
+q:"Which is an example of health promotion?",
+options:[
+"Health education",
+"Poor sanitation",
+"Sharing contaminated equipment",
+"Ignoring prevention"
+],
+answer:0,
+exp:"Health education is an important health-promotion activity."
+},
+
+{
+course:"Diploma in Nursing",
+subject:"Community",
+q:"Which practice helps reduce the spread of infection?",
+options:[
+"Proper hand hygiene",
+"Sharing used needles",
+"Ignoring waste disposal",
+"Avoiding clean water"
+],
+answer:0,
+exp:"Proper hand hygiene helps reduce transmission of infection."
+},
+
+{
+course:"Diploma in Nursing",
+subject:"Nutrition",
+q:"Which nutrient is a major energy source?",
+options:["Carbohydrate","Water","Minerals","Vitamins only"],
+answer:0,
+exp:"Carbohydrates are a major source of energy."
+},
+
+{
+course:"Diploma in Nursing",
+subject:"Nutrition",
+q:"Which nutrient helps build and repair tissues?",
+options:["Protein","Water","Sodium","Fiber only"],
+answer:0,
+exp:"Protein supports tissue growth and repair."
+},
+
+{
+course:"Diploma in Nursing",
+subject:"Nutrition",
+q:"Which vitamin is associated with normal vision?",
+options:["Vitamin A","Vitamin D","Vitamin B1","Vitamin B12"],
+answer:0,
+exp:"Vitamin A is important for normal vision."
+},
+
+{
+course:"Diploma in Nursing",
+subject:"Nutrition",
+q:"Which mineral is important for bones and teeth?",
+options:["Calcium","Iron only","Sodium only","Potassium only"],
+answer:0,
+exp:"Calcium is important for healthy bones and teeth."
+}
+
+];
+
+
+/* =========================================================
+   CREATE QUESTION DATABASE
+   Each course remains separate.
+========================================================= */
+
+let questionDB = [];
+
+
+/*
+   Add each real question multiple times with
+   different practice versions.
+   This gives a large practice bank while
+   keeping course separation.
+*/
+
+const variations = [
+    "",
+    " Choose the correct answer.",
+    " Select the best answer.",
+    " Which option is correct?",
+    " Identify the correct option.",
+    " Choose the most appropriate answer.",
+    " Select the correct response.",
+    " Which statement is correct?",
+    " What is the correct answer?",
+    " Pick the correct option."
+];
+
+
+baseQuestions.forEach((item,index)=>{
+
+    variations.forEach((variation,v)=>{
+
+        questionDB.push({
+
+            id:(index+1)+"-"+v,
+
+            course:item.course,
+
+            subject:item.subject,
+
+            q:item.q + variation,
+
+            options:[...item.options],
+
+            answer:item.answer,
+
+            exp:item.exp
+
+        });
+
+    });
 
 });
 
+
+/* =========================================================
+   STATE
+========================================================= */
+
+let examQuestions=[];
+let currentIndex=0;
+let answers=[];
+let marked=[];
+let timerInterval=null;
+let secondsLeft=1800;
+let examFinished=false;
+
+
+/* =========================================================
+   HELPERS
+========================================================= */
+
+function $(id){
+    return document.getElementById(id);
 }
 
 
-function answerChanged(index){
+function escapeHTML(str){
 
-updateNavigation(index);
-
-updateProgress();
-
-}
-
-
-function updateNavigation(index){
-
-const selected=
-document.querySelector(
-`input[name="q${index}"]:checked`
-);
-
-
-const btn=
-document.getElementById(
-"nav-"+index
-);
-
-
-if(selected){
-
-btn.classList.add(
-"answered"
-);
-
-}else{
-
-btn.classList.remove(
-"answered"
-);
-
-}
+    return String(str)
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
 
 }
 
 
-/* =====================================================
-   MARK
-===================================================== */
+function shuffle(array){
 
-function toggleMark(index){
+    const arr=[...array];
 
-const btn=
-document.getElementById(
-"mark-"+index
-);
+    for(let i=arr.length-1;i>0;i--){
 
+        const j=Math.floor(Math.random()*(i+1));
 
-if(markedQuestions.includes(index)){
+        [arr[i],arr[j]]=[arr[j],arr[i]];
 
-markedQuestions=
-markedQuestions.filter(
-x=>x!==index
-);
+    }
 
-btn.classList.remove(
-"marked"
-);
-
-btn.textContent="🚩 Mark";
-
-}else{
-
-markedQuestions.push(index);
-
-btn.classList.add(
-"marked"
-);
-
-btn.textContent="🚩 Marked";
-
-}
+    return arr;
 
 }
 
 
-/* =====================================================
-   PROGRESS
-===================================================== */
+function toast(message){
 
-function updateProgress(){
+    const box=$("toast");
 
-let answered=0;
+    box.textContent=message;
 
+    box.style.display="block";
 
-currentQuestions.forEach(
-(item,index)=>{
-
-if(
-document.querySelector(
-`input[name="q${index}"]:checked`
-)
-){
-
-answered++;
-
-}
-
-});
-
-
-const percentage=
-(answered/60)*100;
-
-
-document
-.getElementById(
-"progressText"
-)
-.textContent=
-answered+
-" / 60 answered";
-
-
-document
-.getElementById(
-"progressBar"
-)
-.style.width=
-percentage+"%";
+    setTimeout(()=>{
+        box.style.display="none";
+    },2200);
 
 }
 
 
-/* =====================================================
+/* =========================================================
+   COURSE UI
+========================================================= */
+
+function updateCourseUI(){
+
+    const course=$("courseSelect").value;
+
+    $("selectedCourseTitle").textContent="🎓 "+course;
+
+    $("selectedCourseDescription").textContent=
+        courseDescriptions[course];
+
+    const subjects=courseSubjects[course];
+
+    $("subjectSelect").innerHTML=
+        `<option value="All">All Subjects</option>`+
+        subjects.map(s=>`<option value="${s}">${s}</option>`).join("");
+
+    $("subjectInfo").textContent=
+        "Available subjects: "+subjects.join(", ");
+
+}
+
+
+function loadCourseFromURL(){
+
+    const params=new URLSearchParams(location.search);
+
+    const course=params.get("course");
+
+    if(course && courseSubjects[course]){
+
+        $("courseSelect").value=course;
+
+    }
+
+    updateCourseUI();
+
+}
+
+
+/* =========================================================
+   START EXAM
+========================================================= */
+
+function startExam(){
+
+    const name=$("studentName").value.trim();
+
+    if(!name){
+
+        toast("Please enter your name.");
+
+        $("studentName").focus();
+
+        return;
+
+    }
+
+    const course=$("courseSelect").value;
+
+    const subject=$("subjectSelect").value;
+
+
+    /*
+       VERY IMPORTANT:
+       Filter by COURSE first.
+       Therefore questions from another course
+       can never appear.
+    */
+
+    let pool=questionDB.filter(
+        q=>q.course===course
+    );
+
+
+    if(subject!=="All"){
+
+        pool=pool.filter(
+            q=>q.subject===subject
+        );
+
+    }
+
+
+    if(pool.length===0){
+
+        toast("No questions available for this selection.");
+
+        return;
+
+    }
+
+
+    examQuestions=shuffle(pool).slice(
+        0,
+        Math.min(60,pool.length)
+    );
+
+
+    currentIndex=0;
+
+    answers=new Array(examQuestions.length).fill(null);
+
+    marked=new Array(examQuestions.length).fill(false);
+
+    secondsLeft=1800;
+
+    examFinished=false;
+
+
+    $("startScreen").classList.add("hidden");
+
+    $("resultScreen").classList.add("hidden");
+
+    $("examScreen").classList.remove("hidden");
+
+
+    $("examStudent").textContent="👤 "+name;
+
+    $("examCourse").textContent="🎓 "+course;
+
+    $("examSubject").textContent="📚 "+subject;
+
+    $("totalQuestions").textContent=examQuestions.length;
+
+
+    buildNavigation();
+
+    renderQuestion();
+
+    startTimer();
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =========================================================
+   QUESTION NAVIGATION
+========================================================= */
+
+function buildNavigation(){
+
+    const nav=$("questionNav");
+
+    nav.innerHTML="";
+
+    examQuestions.forEach((q,i)=>{
+
+        const btn=document.createElement("button");
+
+        btn.textContent=i+1;
+
+        btn.id="nav-"+i;
+
+        btn.onclick=()=>{
+
+            currentIndex=i;
+
+            renderQuestion();
+
+        };
+
+        nav.appendChild(btn);
+
+    });
+
+    updateNavigation();
+
+}
+
+
+function updateNavigation(){
+
+    examQuestions.forEach((q,i)=>{
+
+        const btn=$("nav-"+i);
+
+        if(!btn) return;
+
+        btn.className="";
+
+        if(i===currentIndex){
+            btn.classList.add("active");
+        }
+
+        if(answers[i]!==null){
+            btn.classList.add("answered");
+        }
+
+        if(marked[i]){
+            btn.classList.add("marked");
+        }
+
+    });
+
+}
+
+
+function renderQuestion(){
+
+    const q=examQuestions[currentIndex];
+
+    if(!q) return;
+
+
+    $("currentNumber").textContent=currentIndex+1;
+
+
+    $("progress").style.width=
+        ((currentIndex+1)/examQuestions.length*100)+"%";
+
+
+    let html=`
+
+        <div class="question-card">
+
+            <div class="badges">
+
+                <span class="badge">
+                    ${escapeHTML(q.subject)}
+                </span>
+
+                <span class="badge course">
+                    ${escapeHTML(q.course)}
+                </span>
+
+            </div>
+
+            <div class="question-text">
+                ${currentIndex+1}. ${escapeHTML(q.q)}
+            </div>
+
+    `;
+
+
+    q.options.forEach((option,i)=>{
+
+        const checked=
+            answers[currentIndex]===i
+            ? "checked"
+            : "";
+
+
+        html+=`
+
+            <label class="option">
+
+                <input
+                    type="radio"
+                    name="questionOption"
+                    value="${i}"
+                    ${checked}
+                    onchange="selectAnswer(${i})"
+                >
+
+                ${String.fromCharCode(65+i)}.
+                ${escapeHTML(option)}
+
+            </label>
+
+        `;
+
+    });
+
+
+    html+=`
+
+            <button
+                class="mark-btn"
+                onclick="toggleMark()"
+            >
+                ${marked[currentIndex]?"🚩 Marked":"🚩 Mark"}
+            </button>
+
+        </div>
+
+    `;
+
+
+    $("questionsContainer").innerHTML=html;
+
+    updateNavigation();
+
+}
+
+
+function selectAnswer(index){
+
+    answers[currentIndex]=index;
+
+    updateNavigation();
+
+}
+
+
+function toggleMark(){
+
+    marked[currentIndex]=!marked[currentIndex];
+
+    renderQuestion();
+
+}
+
+
+function nextQuestion(){
+
+    if(currentIndex<examQuestions.length-1){
+
+        currentIndex++;
+
+        renderQuestion();
+
+    }
+
+}
+
+
+function previousQuestion(){
+
+    if(currentIndex>0){
+
+        currentIndex--;
+
+        renderQuestion();
+
+    }
+
+}
+
+
+/* =========================================================
    TIMER
-===================================================== */
+========================================================= */
 
 function startTimer(){
 
-clearInterval(timerInterval);
+    clearInterval(timerInterval);
 
-timeLeft=1800;
-
-updateTimer();
+    updateTimer();
 
 
-timerInterval=
-setInterval(
-()=>{
+    timerInterval=setInterval(()=>{
 
-timeLeft--;
+        secondsLeft--;
 
-updateTimer();
+        updateTimer();
 
 
-if(timeLeft<=0){
+        if(secondsLeft<=0){
 
-clearInterval(
-timerInterval
-);
+            clearInterval(timerInterval);
 
-submitExam(true);
+            toast("Time is over. Exam submitted.");
 
-}
+            submitExam(true);
 
-},
-1000
-);
+        }
+
+    },1000);
 
 }
 
 
 function updateTimer(){
 
-const min=
-Math.floor(
-timeLeft/60
-);
+    const minutes=Math.floor(secondsLeft/60);
 
-const sec=
-timeLeft%60;
+    const seconds=secondsLeft%60;
 
-
-document
-.getElementById(
-"timer"
-)
-.textContent=
-String(min)
-.padStart(2,"0")
-+
-":"
-+
-String(sec)
-.padStart(2,"0");
+    $("timer").textContent=
+        String(minutes).padStart(2,"0")
+        +":"+
+        String(seconds).padStart(2,"0");
 
 }
 
 
-/* =====================================================
+/* =========================================================
    SUBMIT
-===================================================== */
-
-document
-.getElementById("examForm")
-.addEventListener(
-"submit",
-function(e){
-
-e.preventDefault();
-
-submitExam(false);
-
-}
-);
-
+========================================================= */
 
 function submitExam(auto=false){
 
-if(submitted)return;
+    if(examFinished) return;
 
 
-const unanswered=
-currentQuestions.filter(
-(item,index)=>
-!document.querySelector(
-`input[name="q${index}"]:checked`
-)
-).length;
+    const unanswered=
+        answers.filter(a=>a===null).length;
 
 
-if(
-!auto &&
-unanswered>0
-){
+    if(!auto && unanswered>0){
 
-const confirmSubmit=
-confirm(
-"You have "+
-unanswered+
-" unanswered question(s).\n\nSubmit anyway?"
-);
+        const ok=confirm(
+            unanswered+
+            " question(s) are unanswered. Submit anyway?"
+        );
+
+        if(!ok) return;
+
+    }
 
 
-if(!confirmSubmit){
+    examFinished=true;
 
-return;
+    clearInterval(timerInterval);
 
-}
+
+    calculateResult();
 
 }
 
 
-submitted=true;
-
-clearInterval(
-timerInterval
-);
-
-
-let correct=0;
-
-let wrong=0;
-
-let unansweredCount=0;
-
-let review=[];
-
-
-currentQuestions.forEach(
-(item,index)=>{
-
-const selected=
-document.querySelector(
-`input[name="q${index}"]:checked`
-);
-
-
-if(!selected){
-
-unansweredCount++;
-
-review.push({
-
-item,
-
-index,
-
-selected:null,
-
-status:"unanswered"
-
-});
-
-return;
-
-}
-
-
-const answer=
-Number(
-selected.value
-);
-
-
-if(answer===item.a){
-
-correct++;
-
-review.push({
-
-item,
-
-index,
-
-selected:answer,
-
-status:"correct"
-
-});
-
-}else{
-
-wrong++;
-
-review.push({
-
-item,
-
-index,
-
-selected:answer,
-
-status:"wrong"
-
-});
-
-}
-
-});
-
-
-const total=
-currentQuestions.length;
-
-
-const percentage=
-Math.round(
-(correct/total)*100
-);
-
-
-const subject=
-document
-.getElementById(
-"subjectSelect"
-)
-.value;
-
-
-saveHistory({
-
-name:currentStudent,
-
-subject,
-
-correct,
-
-wrong,
-
-unanswered:unansweredCount,
-
-total,
-
-percentage,
-
-date:
-new Date()
-.toLocaleString()
-
-});
-
-
-saveLeaderboard({
-
-name:currentStudent,
-
-subject,
-
-correct,
-
-total,
-
-percentage,
-
-date:
-new Date()
-.toLocaleString()
-
-});
-
-
-showResult(
-correct,
-wrong,
-unansweredCount,
-total,
-percentage,
-review,
-auto
-);
-
-
-updateDashboard();
-
-showHistory();
-
-showLeaderboard();
-
-showSubjectPerformance();
-
-}
-
-
-/* =====================================================
+/* =========================================================
    RESULT
-===================================================== */
+========================================================= */
 
-function showResult(
-correct,
-wrong,
-unanswered,
-total,
-percentage,
-review,
-auto
-){
+function calculateResult(){
 
-document
-.getElementById("exam")
-.classList
-.add("hidden");
+    let correct=0;
+
+    let wrong=0;
+
+    let unanswered=0;
 
 
-const result=
-document.getElementById(
-"result"
-);
+    examQuestions.forEach((q,i)=>{
 
-result.classList.remove(
-"hidden"
-);
+        if(answers[i]===null){
 
+            unanswered++;
 
-let html=`
+        }
+        else if(answers[i]===q.answer){
 
-<h2>
-🎉 Exam Completed
-</h2>
+            correct++;
 
-<p>
-👤 <b>Student:</b>
-${escapeHTML(currentStudent)}
-</p>
+        }
+        else{
 
-${
-auto
-?
-"<p>⏰ Time finished. Exam submitted automatically.</p>"
-:
-""
-}
+            wrong++;
 
-<div class="score">
-${correct}/${total}
-</div>
+        }
 
-<p>
-<b>Percentage:</b>
-${percentage}%
-</p>
+    });
 
 
-<div class="resultGrid">
+    const total=examQuestions.length;
 
-<div class="resultStat">
-<h3>✅</h3>
-<b>${correct}</b>
-<br>
-Correct
-</div>
-
-<div class="resultStat">
-<h3>❌</h3>
-<b>${wrong}</b>
-<br>
-Wrong
-</div>
-
-<div class="resultStat">
-<h3>⚠️</h3>
-<b>${unanswered}</b>
-<br>
-Unanswered
-</div>
-
-<div class="resultStat">
-<h3>🎯</h3>
-<b>${percentage}%</b>
-<br>
-Score
-</div>
-
-</div>
+    const percentage=
+        Math.round((correct/total)*100);
 
 
-<button
-onclick="showStartScreen()"
->
-🔄 Take Another Exam
-</button>
+    $("resultScore").textContent=
+        correct+"/"+total;
 
-<button
-onclick="showOnlyWrong()"
-style="background:#dc2626;"
->
-❌ Review Wrong Only
-</button>
+    $("resultPercentage").textContent=
+        percentage+"%";
 
+    $("correctCount").textContent=correct;
 
-<h2 style="margin-top:30px;">
-📝 Answer Review
-</h2>
+    $("wrongCount").textContent=wrong;
 
-<div id="reviewArea">
+    $("unansweredCount").textContent=unanswered;
 
-`;
+    $("markedCount").textContent=
+        marked.filter(Boolean).length;
 
 
-review.forEach(
-r=>{
+    const name=$("studentName").value.trim();
 
-html+=createReviewHTML(r);
+    const course=$("courseSelect").value;
 
-});
-
-
-html+=`
-
-</div>
-
-`;
+    const subject=$("subjectSelect").value;
 
 
-result.innerHTML=html;
+    $("resultStudent").textContent=
+        "👤 "+name;
+
+    $("resultCourse").textContent=
+        "🎓 "+course+" | 📚 "+subject;
 
 
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
+    saveHistory(
+        name,
+        course,
+        subject,
+        correct,
+        total,
+        percentage
+    );
 
 
-window.currentReview=
-review;
+    saveLeaderboard(
+        name,
+        course,
+        correct,
+        total,
+        percentage
+    );
+
+
+    renderReview();
+
+    updateDashboard();
+
+    renderHistory();
+
+    renderLeaderboard();
+
+    renderSubjectPerformance();
+
+
+    $("examScreen").classList.add("hidden");
+
+    $("resultScreen").classList.remove("hidden");
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
 
 }
 
 
-/* =====================================================
-   REVIEW HTML
-===================================================== */
+/* =========================================================
+   REVIEW
+========================================================= */
 
-function createReviewHTML(r){
+function renderReview(onlyWrong=false){
 
-const item=r.item;
-
-
-let yourAnswer=
-r.selected===null
-?
-"Not answered"
-:
-item.o[r.selected];
+    let html="";
 
 
-let status=
-r.status==="correct"
-?
-"✅ Correct"
-:
-r.status==="wrong"
-?
-"❌ Wrong"
-:
-"⚠️ Unanswered";
+    examQuestions.forEach((q,i)=>{
+
+        const userAnswer=answers[i];
+
+        const isCorrect=
+            userAnswer===q.answer;
+
+        if(onlyWrong && isCorrect){
+            return;
+        }
 
 
-return`
+        let status;
 
-<div
-class="reviewItem ${r.status}"
-data-status="${r.status}"
->
+        if(userAnswer===null){
 
-<b>
-Q${r.index+1}.
-${item.q}
-</b>
+            status="⚪ Unanswered";
 
-<p>
-<b>Your answer:</b>
-${yourAnswer}
-</p>
+        }
+        else if(isCorrect){
 
-<p>
-<b>Correct answer:</b>
-${item.o[item.a]}
-</p>
+            status="✅ Correct";
 
-<strong>
-${status}
-</strong>
+        }
+        else{
 
-<div class="explanation">
+            status="❌ Wrong";
 
-📖
-<b>Explanation:</b>
-
-<br>
-
-${item.e}
-
-</div>
-
-</div>
-
-`;
-
-}
+        }
 
 
-/* =====================================================
-   ONLY WRONG
-===================================================== */
+        html+=`
 
-function showOnlyWrong(){
+            <div class="review-item ${
+                isCorrect ? "correct" :
+                userAnswer===null ? "" : "wrong"
+            }">
 
-const area=
-document.getElementById(
-"reviewArea"
-);
+                <b>
+                    ${i+1}. ${escapeHTML(q.q)}
+                </b>
 
-const items=
-area.querySelectorAll(
-".reviewItem"
-);
+                <p>
+                    <strong>Your Answer:</strong>
+                    ${
+                        userAnswer===null
+                        ? "Not answered"
+                        : escapeHTML(q.options[userAnswer])
+                    }
+                </p>
+
+                <p>
+                    <strong>Correct Answer:</strong>
+                    ${escapeHTML(q.options[q.answer])}
+                </p>
+
+                <p>
+                    <strong>Status:</strong> ${status}
+                </p>
+
+                <p>
+                    <strong>Explanation:</strong>
+                    ${escapeHTML(q.exp)}
+                </p>
+
+            </div>
+
+        `;
+
+    });
 
 
-items.forEach(
-item=>{
-
-if(
-item.dataset.status!=="wrong"
-){
-
-item.classList.add(
-"hidden"
-);
-
-}else{
-
-item.classList.remove(
-"hidden"
-);
-
-}
-
-});
-
-
-showToast(
-"Showing wrong answers only."
-);
+    $("reviewContainer").innerHTML=
+        html ||
+        "<p>No questions to review.</p>";
 
 }
 
 
-/* =====================================================
-   START AGAIN
-===================================================== */
+function reviewWrongOnly(){
 
-function showStartScreen(){
+    renderReview(true);
 
-document
-.getElementById("result")
-.classList
-.add("hidden");
-
-
-document
-.getElementById("exam")
-.classList
-.add("hidden");
-
-
-document
-.getElementById("startBox")
-.classList
-.remove("hidden");
-
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
+    $("resultScreen").scrollIntoView({
+        behavior:"smooth"
+    });
 
 }
 
 
-/* =====================================================
+/* =========================================================
+   RETAKE
+========================================================= */
+
+function retakeExam(){
+
+    $("resultScreen").classList.add("hidden");
+
+    $("startScreen").classList.remove("hidden");
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =========================================================
    HISTORY
-===================================================== */
+========================================================= */
 
-function saveHistory(data){
-
-let history=
-JSON.parse(
-localStorage.getItem(
-"nursingExamHistory"
-)||"[]"
-);
-
-
-history.unshift(data);
-
-
-history=
-history.slice(0,50);
-
-
-localStorage.setItem(
-"nursingExamHistory",
-JSON.stringify(history)
-);
-
-}
-
-
-function getHistory(){
-
-return JSON.parse(
-localStorage.getItem(
-"nursingExamHistory"
-)||"[]"
-);
-
-}
-
-
-function showHistory(){
-
-const box=
-document.getElementById(
-"historyData"
-);
-
-const history=
-getHistory();
-
-
-if(history.length===0){
-
-box.innerHTML=
-"<p>No exam history yet.</p>";
-
-return;
-
-}
-
-
-let html=`
-
-<table>
-
-<tr>
-
-<th>Name</th>
-<th>Subject</th>
-<th>Score</th>
-<th>Correct</th>
-<th>Wrong</th>
-<th>Date</th>
-
-</tr>
-
-`;
-
-
-history.forEach(
-h=>{
-
-html+=`
-
-<tr>
-
-<td>
-${escapeHTML(h.name)}
-</td>
-
-<td>
-${h.subject}
-</td>
-
-<td>
-<b>${h.percentage}%</b>
-</td>
-
-<td>
-${h.correct}
-</td>
-
-<td>
-${h.wrong}
-</td>
-
-<td>
-${h.date}
-</td>
-
-</tr>
-
-`;
-
-});
-
-
-html+=`</table>`;
-
-
-box.innerHTML=html;
-
-}
-
-
-function clearHistory(){
-
-if(
-!confirm(
-"Clear all exam history?"
-)
+function saveHistory(
+    name,
+    course,
+    subject,
+    correct,
+    total,
+    percentage
 ){
 
-return;
+    let history=
+        JSON.parse(
+            localStorage.getItem("nursingExamHistory")
+            || "[]"
+        );
+
+
+    history.unshift({
+
+        name,
+        course,
+        subject,
+        correct,
+        total,
+        percentage,
+
+        date:new Date().toLocaleString()
+
+    });
+
+
+    history=history.slice(0,50);
+
+
+    localStorage.setItem(
+        "nursingExamHistory",
+        JSON.stringify(history)
+    );
 
 }
 
 
-localStorage.removeItem(
-"nursingExamHistory"
-);
+function renderHistory(){
+
+    const history=
+        JSON.parse(
+            localStorage.getItem("nursingExamHistory")
+            || "[]"
+        );
 
 
-updateDashboard();
+    $("historyTable").innerHTML=
+        history.map(item=>`
 
-showHistory();
+            <tr>
 
-showSubjectPerformance();
+                <td>${escapeHTML(item.name)}</td>
 
-showToast(
-"History cleared."
-);
+                <td>${escapeHTML(item.course)}</td>
+
+                <td>${escapeHTML(item.subject)}</td>
+
+                <td>${item.correct}/${item.total}</td>
+
+                <td>${item.percentage}%</td>
+
+                <td>${escapeHTML(item.date)}</td>
+
+            </tr>
+
+        `).join("");
 
 }
 
 
-/* =====================================================
+/* =========================================================
    LEADERBOARD
-===================================================== */
+========================================================= */
 
-function saveLeaderboard(data){
-
-let board=
-JSON.parse(
-localStorage.getItem(
-"nursingLeaderboard"
-)||"[]"
-);
-
-
-board.push(data);
-
-
-board.sort(
-(a,b)=>{
-
-if(
-b.percentage!==a.percentage
+function saveLeaderboard(
+    name,
+    course,
+    correct,
+    total,
+    percentage
 ){
 
-return b.percentage-
-a.percentage;
-
-}
-
-return b.correct-a.correct;
-
-}
-);
+    let board=
+        JSON.parse(
+            localStorage.getItem("nursingLeaderboard")
+            || "[]"
+        );
 
 
-board=
-board.slice(0,20);
+    board.push({
+
+        name,
+        course,
+        correct,
+        total,
+        percentage
+
+    });
 
 
-localStorage.setItem(
-"nursingLeaderboard",
-JSON.stringify(board)
-);
+    board.sort((a,b)=>{
 
-}
+        if(b.percentage!==a.percentage){
 
+            return b.percentage-a.percentage;
 
-function showLeaderboard(){
+        }
 
-const box=
-document.getElementById(
-"leaderboardData"
-);
+        return b.correct-a.correct;
+
+    });
 
 
-const board=
-JSON.parse(
-localStorage.getItem(
-"nursingLeaderboard"
-)||"[]"
-);
+    board=board.slice(0,20);
 
 
-if(board.length===0){
-
-box.innerHTML=
-"<p>No leaderboard data yet.</p>";
-
-return;
+    localStorage.setItem(
+        "nursingLeaderboard",
+        JSON.stringify(board)
+    );
 
 }
 
 
-let html=`
+function renderLeaderboard(){
 
-<table>
-
-<tr>
-
-<th>Rank</th>
-<th>Student</th>
-<th>Subject</th>
-<th>Score</th>
-<th>Date</th>
-
-</tr>
-
-`;
+    const board=
+        JSON.parse(
+            localStorage.getItem("nursingLeaderboard")
+            || "[]"
+        );
 
 
-board.forEach(
-(b,i)=>{
+    $("leaderboardTable").innerHTML=
+        board.map((item,i)=>`
 
-html+=`
+            <tr>
 
-<tr>
+                <td>${i+1}</td>
 
-<td>
+                <td>${escapeHTML(item.name)}</td>
 
-${
-i===0
-?"🥇"
-:
-i===1
-?"🥈"
-:
-i===2
-?"🥉"
-:
-i+1
-}
+                <td>${escapeHTML(item.course)}</td>
 
-</td>
+                <td>${item.correct}/${item.total}</td>
 
-<td>
-${escapeHTML(b.name)}
-</td>
+                <td>${item.percentage}%</td>
 
-<td>
-${b.subject}
-</td>
+            </tr>
 
-<td>
-<b>${b.percentage}%</b>
-</td>
-
-<td>
-${b.date}
-</td>
-
-</tr>
-
-`;
-
-});
-
-
-html+=`</table>`;
-
-
-box.innerHTML=html;
+        `).join("");
 
 }
 
 
-function clearLeaderboard(){
-
-if(
-!confirm(
-"Clear leaderboard?"
-)
-){
-
-return;
-
-}
-
-
-localStorage.removeItem(
-"nursingLeaderboard"
-);
-
-
-showLeaderboard();
-
-showToast(
-"Leaderboard cleared."
-);
-
-}
-
-
-/* =====================================================
+/* =========================================================
    DASHBOARD
-===================================================== */
+========================================================= */
 
 function updateDashboard(){
 
-const history=
-getHistory();
+    const history=
+        JSON.parse(
+            localStorage.getItem("nursingExamHistory")
+            || "[]"
+        );
 
 
-const total=
-history.length;
+    $("totalExams").textContent=
+        history.length;
 
 
-document
-.getElementById(
-"totalExams"
-)
-.textContent=
-total;
+    if(history.length===0){
+
+        $("avgScore").textContent="0%";
+
+        $("bestScore").textContent="0%";
+
+        $("accuracy").textContent="0%";
+
+        return;
+
+    }
 
 
-if(total===0){
-
-document
-.getElementById(
-"averageScore"
-)
-.textContent="0%";
-
-document
-.getElementById(
-"bestScore"
-)
-.textContent="0%";
-
-document
-.getElementById(
-"accuracy"
-)
-.textContent="0%";
-
-return;
-
-}
+    const avg=
+        history.reduce(
+            (sum,x)=>sum+x.percentage,
+            0
+        )/history.length;
 
 
-const avg=
-Math.round(
-history.reduce(
-(sum,h)=>
-sum+
-Number(h.percentage),
-0
-)/total
-);
+    const best=
+        Math.max(
+            ...history.map(x=>x.percentage)
+        );
 
 
-const best=
-Math.max(
-...history.map(
-h=>Number(h.percentage)
-)
-);
+    let totalCorrect=0;
+
+    let totalQuestions=0;
 
 
-const totalCorrect=
-history.reduce(
-(sum,h)=>
-sum+
-Number(h.correct||0),
-0
-);
+    history.forEach(x=>{
+
+        totalCorrect+=x.correct;
+
+        totalQuestions+=x.total;
+
+    });
 
 
-const totalQuestions=
-history.reduce(
-(sum,h)=>
-sum+
-Number(h.total||0),
-0
-);
+    const accuracy=
+        totalQuestions
+        ? (totalCorrect/totalQuestions)*100
+        : 0;
 
 
-const acc=
-totalQuestions
-?
-Math.round(
-(totalCorrect/
-totalQuestions)*100
-)
-:
-0;
+    $("avgScore").textContent=
+        Math.round(avg)+"%";
 
+    $("bestScore").textContent=
+        best+"%";
 
-document
-.getElementById(
-"averageScore"
-)
-.textContent=
-avg+"%";
-
-
-document
-.getElementById(
-"bestScore"
-)
-.textContent=
-best+"%";
-
-
-document
-.getElementById(
-"accuracy"
-)
-.textContent=
-acc+"%";
+    $("accuracy").textContent=
+        Math.round(accuracy)+"%";
 
 }
 
 
-/* =====================================================
+/* =========================================================
    SUBJECT PERFORMANCE
-===================================================== */
+========================================================= */
 
-function showSubjectPerformance(){
+function renderSubjectPerformance(){
 
-const box=
-document.getElementById(
-"subjectPerformance"
-);
-
-
-const history=
-getHistory();
+    const history=
+        JSON.parse(
+            localStorage.getItem("nursingExamHistory")
+            || "[]"
+        );
 
 
-if(history.length===0){
-
-box.innerHTML=
-"<p>No performance data yet.</p>";
-
-return;
-
-}
+    const data={};
 
 
-const subjects={};
+    history.forEach(item=>{
+
+        if(!data[item.subject]){
+
+            data[item.subject]=[];
+
+        }
+
+        data[item.subject].push(item.percentage);
+
+    });
 
 
-history.forEach(
-h=>{
+    if(Object.keys(data).length===0){
 
-if(!subjects[h.subject]){
+        $("subjectPerformance").innerHTML=
+            "<p>No exam data yet.</p>";
 
-subjects[h.subject]=[];
+        return;
 
-}
-
-subjects[h.subject]
-.push(
-Number(h.percentage)
-);
-
-});
+    }
 
 
-let html="";
+    $("subjectPerformance").innerHTML=
+        Object.entries(data)
+        .map(([subject,scores])=>{
 
+            const avg=
+                scores.reduce((a,b)=>a+b,0)
+                /scores.length;
 
-Object.keys(subjects)
-.forEach(
-subject=>{
+            return `
 
-const values=
-subjects[subject];
+                <div style="margin:15px 0">
 
+                    <b>
+                        ${escapeHTML(subject)}
+                    </b>
 
-const avg=
-Math.round(
-values.reduce(
-(a,b)=>a+b,
-0
-)/values.length
-);
+                    <div class="progress-wrap">
 
+                        <div
+                            class="progress"
+                            style="width:${Math.round(avg)}%"
+                        ></div>
 
-html+=`
+                    </div>
 
-<div class="subjectBox">
+                    <small>
+                        Average: ${Math.round(avg)}%
+                    </small>
 
-<div class="subjectName">
+                </div>
 
-<b>
-${subject}
-</b>
+            `;
 
-<span>
-${avg}%
-</span>
-
-</div>
-
-
-<div class="subjectTrack">
-
-<div
-class="subjectFill"
-style="width:${avg}%"
-></div>
-
-</div>
-
-</div>
-
-`;
-
-});
-
-
-box.innerHTML=html;
+        })
+        .join("");
 
 }
 
 
-/* =====================================================
+/* =========================================================
    DARK MODE
-===================================================== */
+========================================================= */
 
 function toggleDark(){
 
-document
-.body
-.classList
-.toggle("dark");
+    document.body.classList.toggle("dark");
+
+    localStorage.setItem(
+        "nursingDarkMode",
+        document.body.classList.contains("dark")
+    );
+
+}
 
 
-localStorage.setItem(
-"nursingDarkMode",
-document.body.classList.contains(
-"dark"
-)
+function loadDarkMode(){
+
+    const dark=
+        localStorage.getItem("nursingDarkMode")
+        ==="true";
+
+    if(dark){
+
+        document.body.classList.add("dark");
+
+    }
+
+}
+
+
+/* =========================================================
+   EVENTS
+========================================================= */
+
+$("courseSelect").addEventListener(
+    "change",
+    updateCourseUI
 );
 
 
-showToast(
-document.body.classList.contains(
-"dark"
-)
-?
-"Dark mode ON"
-:
-"Dark mode OFF"
-);
+/* =========================================================
+   INITIALIZE
+========================================================= */
 
-}
+loadDarkMode();
 
-
-/* =====================================================
-   TOAST
-===================================================== */
-
-function showToast(message){
-
-const toast=
-document.getElementById(
-"toast"
-);
-
-
-toast.textContent=
-message;
-
-
-toast.style.display=
-"block";
-
-
-setTimeout(
-()=>{
-
-toast.style.display=
-"none";
-
-},
-2000
-);
-
-}
-
-
-/* =====================================================
-   HOME
-===================================================== */
-
-function goHome(){
-
-window.location.href=
-"index.html";
-
-}
-
-
-/* =====================================================
-   DASHBOARD SCROLL
-===================================================== */
-
-function scrollDashboard(){
-
-document
-.getElementById(
-"dashboardArea"
-)
-.scrollIntoView({
-behavior:"smooth"
-});
-
-}
-
-
-/* =====================================================
-   ESCAPE HTML
-===================================================== */
-
-function escapeHTML(text){
-
-const div=
-document.createElement(
-"div"
-);
-
-div.textContent=
-String(text);
-
-return div.innerHTML;
-
-}
-
-
-/* =====================================================
-   LOAD
-===================================================== */
-
-if(
-localStorage.getItem(
-"nursingDarkMode"
-)==="true"
-){
-
-document
-.body
-.classList
-.add("dark");
-
-}
-
+loadCourseFromURL();
 
 updateDashboard();
 
-showHistory();
+renderHistory();
 
-showLeaderboard();
+renderLeaderboard();
 
-showSubjectPerformance();
-
+renderSubjectPerformance();
 
 </script>
 
