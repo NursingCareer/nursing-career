@@ -1,70 +1,143 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Nursing Career Exam</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Nursing Career - Online Nursing MCQ Examination</title>
 
 <style>
+*{box-sizing:border-box}
 body{
-    font-family:Arial,sans-serif;
-    background:#f4f7fb;
-    margin:0;
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f4f7fb;
+  color:#172033;
 }
 header{
-    background:#007bff;
-    color:white;
-    text-align:center;
-    padding:25px;
+  background:#075985;
+  color:white;
+  text-align:center;
+  padding:20px 10px;
 }
+header h1{margin:0 0 6px}
+header p{margin:0}
 .container{
-    max-width:800px;
-    margin:20px auto;
-    padding:15px;
+  max-width:900px;
+  margin:20px auto;
+  padding:0 12px;
 }
-.top{
-    background:white;
-    padding:15px;
-    border-radius:10px;
-    display:flex;
-    justify-content:space-between;
-    margin-bottom:15px;
+.topbar{
+  background:white;
+  padding:15px;
+  border-radius:12px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-bottom:15px;
+  box-shadow:0 2px 8px #0001;
+  flex-wrap:wrap;
 }
+select,button{
+  border:0;
+  border-radius:8px;
+  padding:11px 15px;
+  font-size:15px;
+  cursor:pointer;
+}
+select{border:1px solid #ddd;background:white}
+button{
+  background:#075985;
+  color:white;
+}
+button:hover{opacity:.9}
 .timer{
-    background:#dc3545;
-    color:white;
-    padding:8px 15px;
-    border-radius:7px;
-    font-weight:bold;
+  font-size:20px;
+  font-weight:bold;
+  color:#dc2626;
 }
 .card{
-    background:white;
-    padding:18px;
-    margin:15px 0;
-    border-radius:10px;
+  background:white;
+  margin-bottom:15px;
+  padding:18px;
+  border-radius:12px;
+  box-shadow:0 2px 8px #0001;
+}
+.q{
+  font-weight:bold;
+  margin-bottom:12px;
+  line-height:1.5;
 }
 .option{
-    display:block;
-    padding:10px;
-    margin:7px 0;
-    border:1px solid #ddd;
-    border-radius:7px;
+  display:block;
+  padding:11px;
+  margin:7px 0;
+  border:1px solid #ddd;
+  border-radius:8px;
+  cursor:pointer;
 }
-button{
-    border:0;
-    padding:13px 25px;
-    border-radius:7px;
-    background:#007bff;
-    color:white;
-    font-size:16px;
-    cursor:pointer;
+.option:hover{background:#f0f9ff}
+.option input{margin-right:8px}
+.submit{
+  width:100%;
+  font-size:18px;
+  padding:15px;
+  margin:10px 0 25px;
 }
 .result{
-    display:none;
-    background:white;
-    padding:25px;
-    border-radius:10px;
-    text-align:center;
+  background:white;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 2px 8px #0001;
+}
+.score{
+  font-size:32px;
+  font-weight:bold;
+  color:#075985;
+}
+.review{
+  margin-top:20px;
+}
+.reviewItem{
+  padding:15px;
+  border-radius:10px;
+  margin:10px 0;
+  border-left:5px solid #999;
+  background:#f8fafc;
+}
+.correct{border-left-color:#16a34a}
+.wrong{border-left-color:#dc2626}
+.unanswered{border-left-color:#f59e0b}
+.hidden{display:none}
+.history{
+  margin-top:20px;
+  background:white;
+  padding:20px;
+  border-radius:12px;
+}
+.history table{
+  width:100%;
+  border-collapse:collapse;
+}
+.history th,.history td{
+  padding:8px;
+  border-bottom:1px solid #ddd;
+  text-align:center;
+}
+.badge{
+  display:inline-block;
+  background:#e0f2fe;
+  color:#075985;
+  padding:5px 9px;
+  border-radius:20px;
+  font-size:12px;
+}
+@media(max-width:600px){
+  header h1{font-size:22px}
+  .container{padding:0 8px}
+  .topbar{align-items:stretch}
+  .topbar>*{width:100%}
+  .timer{text-align:center}
 }
 </style>
 </head>
@@ -72,888 +145,832 @@ button{
 <body>
 
 <header>
-<h1>Nursing Career</h1>
-<p>Online Nursing MCQ Examination</p>
+  <h1>🩺 Nursing Career</h1>
+  <p>Online Nursing MCQ Examination</p>
 </header>
 
 <div class="container">
 
-<div id="exam">
+  <div class="topbar">
+    <select id="subject">
+      <option value="All">All Subjects</option>
+      <option value="Fundamentals">Fundamentals of Nursing</option>
+      <option value="Anatomy">Anatomy</option>
+      <option value="Physiology">Physiology</option>
+      <option value="Pharmacology">Pharmacology</option>
+      <option value="Medical">Medical-Surgical Nursing</option>
+      <option value="Pediatric">Pediatric Nursing</option>
+      <option value="Community">Community Health Nursing</option>
+      <option value="Nutrition">Nutrition</option>
+    </select>
 
-<div class="top">
-<b>Questions: <span id="total">60</span></b>
-<b class="timer" id="timer">30:00</b>
-</div>
+    <div>
+      Questions: <b>60</b>
+    </div>
 
-<form id="form">
+    <div class="timer" id="timer">30:00</div>
+  </div>
 
-<div id="questions"></div>
+  <div id="exam">
+    <form id="examForm">
+      <div id="questions"></div>
+      <button type="submit" class="submit">✅ Submit Exam</button>
+    </form>
+  </div>
 
-<button type="submit">Submit Exam</button>
+  <div id="result" class="result hidden"></div>
 
-</form>
-
-</div>
-
-
-<div id="result" class="result">
-
-<h2>Exam Result</h2>
-
-<h1>
-<span id="score">0</span>/60
-</h1>
-
-<h3>
-Percentage: <span id="percent">0</span>%
-</h3>
-
-<p>
-Correct: <span id="correct">0</span>
-</p>
-
-<p>
-Wrong: <span id="wrong">0</span>
-</p>
-
-<p>
-Unanswered: <span id="unanswered">0</span>
-</p>
-
-<button onclick="location.reload()">
-Retake Exam
-</button>
+  <div class="history">
+    <h2>📊 Exam History</h2>
+    <div id="historyData"></div>
+  </div>
 
 </div>
-
-</div>
-
 
 <script>
 
-/* =========================
-   QUESTION DATABASE
-========================= */
+/* =====================================================
+   NURSING QUESTION DATABASE
+   5000 QUESTION ENTRIES ARE GENERATED HERE
+   NO JSON FILE REQUIRED
+===================================================== */
 
-const database = [
+const baseQuestions = [
 
 {
-q:"What is the normal adult body temperature?",
-o:["35°C","37°C","39°C","41°C"],
+subject:"Fundamentals",
+q:"What is the normal adult body temperature approximately?",
+o:["35°C","37°C","40°C","42°C"],
 a:1
 },
 
 {
+subject:"Fundamentals",
+q:"Which position is commonly used to help a patient breathe more easily?",
+o:["High Fowler's","Supine","Prone","Lithotomy"],
+a:0
+},
+
+{
+subject:"Fundamentals",
+q:"Which vital sign measures the pressure of blood against arterial walls?",
+o:["Pulse","Temperature","Blood pressure","Respiration"],
+a:2
+},
+
+{
+subject:"Fundamentals",
+q:"What is the primary purpose of hand hygiene?",
+o:["Improve appetite","Prevent infection","Reduce pain","Increase blood pressure"],
+a:1
+},
+
+{
+subject:"Fundamentals",
+q:"Which device is commonly used to measure blood pressure?",
+o:["Thermometer","Sphygmomanometer","Stethoscope only","Glucometer"],
+a:1
+},
+
+{
+subject:"Anatomy",
 q:"Which organ pumps blood throughout the body?",
 o:["Liver","Heart","Kidney","Lung"],
 a:1
 },
 
 {
+subject:"Anatomy",
+q:"Which organ is primarily responsible for gas exchange?",
+o:["Heart","Liver","Lungs","Stomach"],
+a:2
+},
+
+{
+subject:"Anatomy",
 q:"How many chambers does the human heart have?",
 o:["2","3","4","5"],
 a:2
 },
 
 {
-q:"Which organ is primarily responsible for breathing?",
-o:["Heart","Liver","Lungs","Kidney"],
-a:2
+subject:"Anatomy",
+q:"Which organ filters blood and produces urine?",
+o:["Kidney","Heart","Pancreas","Spleen"],
+a:0
 },
 
 {
+subject:"Anatomy",
 q:"What is the largest organ of the human body?",
 o:["Liver","Skin","Heart","Brain"],
 a:1
 },
 
 {
-q:"Which blood cells help fight infection?",
+subject:"Physiology",
+q:"What is the main function of red blood cells?",
+o:["Fight infection","Carry oxygen","Produce hormones","Digest food"],
+a:1
+},
+
+{
+subject:"Physiology",
+q:"Which blood cells are mainly involved in immunity?",
 o:["Red blood cells","White blood cells","Platelets","Plasma"],
 a:1
 },
 
 {
-q:"Which blood cells carry oxygen?",
-o:["White blood cells","Red blood cells","Platelets","Plasma"],
-a:1
-},
-
-{
+subject:"Physiology",
 q:"What is the main function of platelets?",
-o:["Carry oxygen","Fight infection","Help blood clot","Digest food"],
-a:2
-},
-
-{
-q:"Which organ filters waste from the blood?",
-o:["Heart","Kidney","Lung","Stomach"],
+o:["Oxygen transport","Blood clotting","Digestion","Hormone production"],
 a:1
 },
 
 {
-q:"Which part of the body controls most activities?",
-o:["Heart","Brain","Liver","Kidney"],
-a:1
-},
-
-{
-q:"What is the normal number of lungs in an adult?",
-o:["1","2","3","4"],
-a:1
-},
-
-{
-q:"Which vitamin is produced in the skin by sunlight?",
-o:["Vitamin A","Vitamin B","Vitamin C","Vitamin D"],
-a:3
-},
-
-{
-q:"Which mineral is important for strong bones?",
-o:["Iron","Calcium","Sodium","Potassium"],
-a:1
-},
-
-{
-q:"What is the basic unit of life?",
-o:["Tissue","Organ","Cell","Bone"],
-a:2
-},
-
-{
-q:"Which organ produces insulin?",
-o:["Liver","Pancreas","Kidney","Heart"],
-a:1
-},
-
-{
-q:"What is the main function of the stomach?",
-o:["Pump blood","Digest food","Filter blood","Produce urine"],
-a:1
-},
-
-{
-q:"Which system is responsible for transporting blood?",
-o:["Digestive system","Circulatory system","Nervous system","Skeletal system"],
-a:1
-},
-
-{
-q:"Which system controls body movement and coordination?",
-o:["Nervous system","Digestive system","Respiratory system","Urinary system"],
-a:0
-},
-
-{
-q:"Which organ stores urine?",
-o:["Kidney","Bladder","Liver","Stomach"],
-a:1
-},
-
-{
-q:"What is the medical term for high blood pressure?",
-o:["Hypotension","Hypertension","Hypoglycemia","Anemia"],
-a:1
-},
-
-{
-q:"What is the medical term for low blood pressure?",
-o:["Hypertension","Hypotension","Hyperthermia","Anemia"],
-a:1
-},
-
-{
-q:"Which instrument measures blood pressure?",
-o:["Thermometer","Stethoscope","Sphygmomanometer","Otoscope"],
-a:2
-},
-
-{
-q:"Which instrument measures body temperature?",
-o:["Thermometer","Stethoscope","Syringe","Otoscope"],
-a:0
-},
-
-{
-q:"Which instrument is commonly used to listen to heart sounds?",
-o:["Thermometer","Stethoscope","Syringe","Scale"],
-a:1
-},
-
-{
-q:"What does CPR stand for?",
-o:["Cardiac Pressure Response","Cardiopulmonary Resuscitation","Clinical Patient Recovery","Cardiac Patient Rescue"],
-a:1
-},
-
-{
-q:"Which nutrient is the body's main source of energy?",
-o:["Protein","Carbohydrate","Vitamin","Mineral"],
-a:1
-},
-
-{
-q:"Which nutrient is important for tissue growth and repair?",
-o:["Protein","Water","Salt","Vitamin C"],
-a:0
-},
-
-{
-q:"Which organ is mainly responsible for detoxification?",
-o:["Heart","Liver","Lung","Brain"],
-a:1
-},
-
-{
-q:"What is anemia commonly associated with?",
-o:["Low hemoglobin","High temperature","High blood pressure","High glucose"],
-a:0
-},
-
-{
-q:"Which disease is caused by Mycobacterium tuberculosis?",
-o:["Malaria","Tuberculosis","Influenza","Cholera"],
-a:1
-},
-
-{
-q:"Which disease is commonly transmitted by mosquitoes?",
-o:["Malaria","Diabetes","Hypertension","Asthma"],
-a:0
-},
-
-{
-q:"Which organ is part of the respiratory system?",
-o:["Lung","Kidney","Stomach","Pancreas"],
-a:0
-},
-
-{
-q:"Which organ is part of the digestive system?",
-o:["Stomach","Heart","Kidney","Lung"],
-a:0
-},
-
-{
-q:"Which body system includes bones?",
-o:["Skeletal system","Respiratory system","Digestive system","Endocrine system"],
-a:0
-},
-
-{
-q:"Which joint is found at the knee?",
-o:["Hinge joint","Ball-and-socket joint","Pivot joint","Fixed joint"],
-a:0
-},
-
-{
-q:"Which bone is commonly called the thigh bone?",
-o:["Tibia","Femur","Radius","Ulna"],
-a:1
-},
-
-{
-q:"Which bone is commonly called the upper arm bone?",
-o:["Femur","Humerus","Tibia","Fibula"],
-a:1
-},
-
-{
-q:"Which blood type is known as the universal red-cell donor?",
-o:["AB+","A+","O−","B+"],
-a:2
-},
-
-{
-q:"Which blood type is known as the universal plasma donor?",
-o:["AB","O","A","B"],
-a:0
-},
-
-{
-q:"Which part of the eye controls the amount of light entering?",
-o:["Retina","Iris","Cornea","Lens"],
-a:1
-},
-
-{
-q:"Which sense organ is responsible for hearing?",
-o:["Eye","Ear","Nose","Skin"],
-a:1
-},
-
-{
-q:"Which sense organ detects smell?",
-o:["Eye","Ear","Nose","Tongue"],
-a:2
-},
-
-{
-q:"Which organ is responsible for taste?",
-o:["Tongue","Ear","Eye","Skin"],
-a:0
-},
-
-{
-q:"What is the normal resting adult pulse generally around?",
-o:["10–20 bpm","60–100 bpm","150–200 bpm","200–250 bpm"],
-a:1
-},
-
-{
-q:"What does BMI stand for?",
-o:["Body Mass Index","Blood Measurement Index","Body Muscle Indicator","Blood Mass Indicator"],
-a:0
-},
-
-{
-q:"Which condition involves elevated blood glucose?",
-o:["Diabetes mellitus","Anemia","Asthma","Arthritis"],
-a:0
-},
-
-{
-q:"Which hormone lowers blood glucose?",
-o:["Insulin","Adrenaline","Thyroxine","Cortisol"],
-a:0
-},
-
-{
-q:"Which gland produces thyroid hormones?",
-o:["Thyroid gland","Pituitary gland","Pancreas","Adrenal gland"],
-a:0
-},
-
-{
-q:"Which organ produces bile?",
-o:["Stomach","Liver","Kidney","Pancreas"],
-a:1
-},
-
-{
-q:"Where is bile stored?",
-o:["Gallbladder","Stomach","Kidney","Pancreas"],
-a:0
-},
-
-{
-q:"Which part of the digestive system absorbs most nutrients?",
-o:["Small intestine","Large intestine","Stomach","Esophagus"],
-a:0
-},
-
-{
-q:"Which part mainly absorbs water from remaining food?",
-o:["Small intestine","Large intestine","Stomach","Esophagus"],
-a:1
-},
-
-{
-q:"What is dehydration?",
-o:["Excess body water","Insufficient body water","High blood pressure","Low oxygen"],
-a:1
-},
-
-{
-q:"Which electrolyte is important for nerve and muscle function?",
-o:["Sodium","Oxygen","Hemoglobin","Glucose"],
-a:0
-},
-
-{
-q:"Which electrolyte is especially important for normal cardiac rhythm?",
-o:["Potassium","Iron","Glucose","Protein"],
-a:0
-},
-
-{
-q:"What is infection control primarily intended to prevent?",
-o:["Disease transmission","Weight gain","Bone growth","Vision problems"],
-a:0
-},
-
-{
-q:"What is hand hygiene used for?",
-o:["Prevent infection","Increase blood pressure","Improve vision","Increase appetite"],
-a:0
-},
-
-{
-q:"Which type of microorganism can cause many infections?",
-o:["Bacteria","Oxygen","Water","Calcium"],
-a:0
-},
-
-{
-q:"Viruses require what to reproduce?",
-o:["Host cells","Bones","Water only","Red blood cells only"],
-a:0
-},
-
-{
-q:"What is inflammation commonly characterized by?",
-o:["Redness and swelling","Hair growth","Bone shortening","Low appetite only"],
-a:0
-},
-
-{
-q:"Which organ is responsible for urine formation?",
-o:["Kidney","Bladder","Liver","Lung"],
-a:0
-},
-
-{
-q:"What is the main function of red blood cells?",
-o:["Transport oxygen","Fight infection","Clot blood","Digest food"],
-a:0
-},
-
-{
-q:"What is the main function of white blood cells?",
-o:["Fight infection","Carry oxygen","Store bile","Digest fat"],
-a:0
-},
-
-{
-q:"What is the main function of hemoglobin?",
-o:["Carry oxygen","Digest food","Filter urine","Produce insulin"],
-a:0
-},
-
-{
-q:"Which body system is responsible for hormone regulation?",
+subject:"Physiology",
+q:"Which system controls many body functions through hormones?",
 o:["Endocrine system","Skeletal system","Respiratory system","Digestive system"],
 a:0
 },
 
 {
-q:"Which gland is often called the master gland?",
-o:["Pituitary gland","Thyroid gland","Pancreas","Adrenal gland"],
+subject:"Physiology",
+q:"Which gas is required for normal cellular respiration?",
+o:["Oxygen","Nitrogen","Helium","Hydrogen"],
 a:0
 },
 
 {
-q:"Which organ is located in the chest and protected by the ribs?",
-o:["Heart","Kidney","Bladder","Stomach"],
-a:0
-},
-
-{
-q:"Which organ is located mainly in the upper right abdomen?",
-o:["Liver","Heart","Bladder","Kidney"],
-a:0
-},
-
-{
-q:"What is the purpose of a sterile technique?",
-o:["Prevent contamination","Increase appetite","Lower height","Improve hearing"],
-a:0
-},
-
-{
-q:"Which position is commonly used for a patient lying flat on the back?",
-o:["Supine","Prone","Lateral","Sitting"],
-a:0
-},
-
-{
-q:"Which position means lying face down?",
-o:["Supine","Prone","Fowler's","Sitting"],
+subject:"Pharmacology",
+q:"What is pharmacology primarily concerned with?",
+o:["Bones","Drugs and their effects","Muscles only","Nutrition only"],
 a:1
 },
 
 {
-q:"Which position has the patient lying on the side?",
-o:["Lateral","Supine","Prone","Standing"],
+subject:"Pharmacology",
+q:"Which route involves placing medication under the tongue?",
+o:["Oral","Sublingual","Intramuscular","Topical"],
+a:1
+},
+
+{
+subject:"Pharmacology",
+q:"Which route delivers medication directly into a vein?",
+o:["IV","IM","SC","Oral"],
 a:0
 },
 
 {
-q:"What does PPE stand for?",
-o:["Personal Protective Equipment","Patient Protection Examination","Primary Patient Equipment","Personal Prevention Exercise"],
+subject:"Medical",
+q:"Diabetes mellitus is primarily associated with problems involving which hormone?",
+o:["Insulin","Melatonin","Thyroxine","Adrenaline"],
 a:0
 },
 
 {
-q:"Which item is commonly considered PPE?",
-o:["Gloves","Notebook","Pillow","Cup"],
+subject:"Medical",
+q:"Hypertension refers to persistently elevated:",
+o:["Body temperature","Blood pressure","Pulse only","Blood sugar only"],
+a:1
+},
+
+{
+subject:"Medical",
+q:"Which symptom is commonly associated with dehydration?",
+o:["Excessive hydration","Dry mouth","Increased urine output","Weight gain"],
+a:1
+},
+
+{
+subject:"Pediatric",
+q:"Which healthcare professional commonly provides routine nursing care to children?",
+o:["Nurse","Architect","Engineer","Pilot"],
 a:0
 },
 
 {
-q:"What is the purpose of gloves in healthcare?",
-o:["Reduce contamination risk","Measure temperature","Measure weight","Improve hearing"],
+subject:"Pediatric",
+q:"Growth and development monitoring is especially important during:",
+o:["Childhood","Only adulthood","Only old age","Never"],
 a:0
 },
 
 {
-q:"Which vital sign measures body temperature?",
-o:["Temperature","Pulse","Respiration","Blood pressure"],
+subject:"Community",
+q:"What is an important goal of community health nursing?",
+o:["Disease prevention","Building roads","Selling products","Manufacturing cars"],
 a:0
 },
 
 {
-q:"Which vital sign measures heart rate?",
-o:["Pulse","Temperature","Respiration","Blood pressure"],
+subject:"Community",
+q:"Immunization primarily helps protect against:",
+o:["Infectious diseases","Broken bones","Hair loss","Eye color changes"],
 a:0
 },
 
 {
-q:"Which vital sign measures breathing rate?",
-o:["Respiration","Pulse","Temperature","Blood pressure"],
+subject:"Nutrition",
+q:"Which nutrient is an important source of energy?",
+o:["Carbohydrate","Water only","Mineral only","Vitamin only"],
 a:0
 },
 
 {
-q:"Which vital sign measures pressure in arteries?",
-o:["Blood pressure","Temperature","Pulse","Respiration"],
+subject:"Nutrition",
+q:"Which nutrient is especially important for tissue growth and repair?",
+o:["Protein","Water","Salt","Fiber only"],
 a:0
 },
 
 {
-q:"What is tachycardia?",
-o:["Abnormally fast heart rate","Abnormally slow heart rate","Low temperature","High blood sugar"],
+subject:"Nutrition",
+q:"Which vitamin is associated with normal vision?",
+o:["Vitamin A","Vitamin C","Vitamin K","Vitamin B12"],
 a:0
 },
 
 {
-q:"What is bradycardia?",
-o:["Abnormally slow heart rate","Abnormally fast heart rate","High temperature","High blood pressure"],
+subject:"Nutrition",
+q:"Which mineral is important for healthy bones and teeth?",
+o:["Calcium","Sodium only","Chloride only","Iodine only"],
 a:0
 },
 
 {
-q:"What is fever?",
-o:["Elevated body temperature","Low blood pressure","Low glucose","Low pulse"],
+subject:"Fundamentals",
+q:"Which instrument is used to listen to heart and lung sounds?",
+o:["Stethoscope","Thermometer","Glucometer","Scale"],
 a:0
 },
 
 {
-q:"What is hypoglycemia?",
-o:["Low blood glucose","High blood glucose","Low oxygen","High temperature"],
+subject:"Fundamentals",
+q:"Which practice helps reduce the spread of microorganisms?",
+o:["Hand hygiene","Sharing needles","Ignoring infection control","Reusing contaminated equipment"],
 a:0
 },
 
 {
-q:"What is hyperglycemia?",
-o:["High blood glucose","Low blood glucose","Low temperature","Low blood pressure"],
+subject:"Anatomy",
+q:"Which organ is responsible for most digestion and nutrient absorption?",
+o:["Small intestine","Heart","Lung","Kidney"],
 a:0
 },
 
 {
-q:"Which organ removes carbon dioxide from the blood?",
-o:["Lungs","Kidneys","Stomach","Liver"],
+subject:"Anatomy",
+q:"Which part of the brain is primarily associated with coordination?",
+o:["Cerebellum","Liver","Kidney","Pancreas"],
 a:0
 },
 
 {
-q:"Which gas is essential for cellular respiration?",
-o:["Oxygen","Nitrogen","Carbon dioxide","Hydrogen"],
+subject:"Physiology",
+q:"What is the main function of the respiratory system?",
+o:["Gas exchange","Blood clotting","Food storage","Bone formation"],
 a:0
 },
 
 {
-q:"Which gas is mainly removed during exhalation?",
-o:["Carbon dioxide","Oxygen","Helium","Hydrogen"],
+subject:"Physiology",
+q:"What does the circulatory system transport?",
+o:["Blood and substances throughout the body","Only food","Only air","Only urine"],
 a:0
 },
 
 {
-q:"What is the main function of the skeletal system?",
-o:["Support and protection","Digest food","Pump blood","Produce urine"],
+subject:"Medical",
+q:"Asthma primarily affects which body system?",
+o:["Respiratory system","Skeletal system","Digestive system","Reproductive system"],
 a:0
 },
 
 {
-q:"What is the main function of muscles?",
-o:["Produce movement","Filter blood","Digest food","Store urine"],
+subject:"Medical",
+q:"Which condition involves abnormally high blood glucose?",
+o:["Diabetes mellitus","Anemia","Fracture","Asthma"],
 a:0
 },
 
 {
-q:"Which muscle is responsible for breathing?",
-o:["Diaphragm","Biceps","Triceps","Quadriceps"],
+subject:"Pediatric",
+q:"Children require age-appropriate communication because:",
+o:["Developmental abilities differ","All children communicate identically","Communication is unnecessary","Only adults need explanations"],
 a:0
 },
 
 {
-q:"Which organ is responsible for thinking and memory?",
-o:["Brain","Heart","Liver","Kidney"],
+subject:"Community",
+q:"Health education is an important component of:",
+o:["Health promotion","Vehicle repair","Construction","Accounting"],
 a:0
 },
 
 {
-q:"Which part of the nervous system includes the brain and spinal cord?",
-o:["Central nervous system","Digestive system","Endocrine system","Skeletal system"],
-a:0
-},
-
-{
-q:"Which structure connects the brain to the rest of the body?",
-o:["Spinal cord","Femur","Trachea","Esophagus"],
-a:0
-},
-
-{
-q:"What is the main function of the skin?",
-o:["Protection","Pumping blood","Producing urine","Digesting food"],
-a:0
-},
-
-{
-q:"Which layer is the outermost layer of skin?",
-o:["Epidermis","Dermis","Muscle","Bone"],
-a:0
-},
-
-{
-q:"Which blood component is mostly liquid?",
-o:["Plasma","Platelets","Red cells","White cells"],
-a:0
-},
-
-{
-q:"What is the main function of plasma?",
-o:["Transport substances","Pump blood","Produce insulin","Digest food"],
-a:0
-},
-
-{
-q:"Which organ produces most clotting factors?",
-o:["Liver","Heart","Lung","Kidney"],
-a:0
-},
-
-{
-q:"Which vitamin is important for normal blood clotting?",
-o:["Vitamin K","Vitamin C","Vitamin D","Vitamin B12"],
-a:0
-},
-
-{
-q:"Which vitamin is important for vision?",
-o:["Vitamin A","Vitamin C","Vitamin D","Vitamin K"],
-a:0
-},
-
-{
-q:"Which mineral is essential for hemoglobin production?",
-o:["Iron","Calcium","Sodium","Potassium"],
-a:0
-},
-
-{
-q:"Which disease is characterized by narrowing of airways?",
-o:["Asthma","Diabetes","Anemia","Arthritis"],
-a:0
-},
-
-{
-q:"Which organ is affected primarily by asthma?",
-o:["Lungs","Kidneys","Liver","Stomach"],
-a:0
-},
-
-{
-q:"What is pneumonia?",
-o:["Infection/inflammation of lung tissue","Bone disease","Kidney stone","Skin allergy"],
-a:0
-},
-
-{
-q:"What is a fracture?",
-o:["Break in a bone","Lung infection","High blood pressure","Low glucose"],
-a:0
-},
-
-{
-q:"What is a wound?",
-o:["Damage to body tissue","High blood sugar","Low temperature","Bone growth"],
-a:0
-},
-
-{
-q:"What is edema?",
-o:["Swelling caused by excess fluid","Low blood sugar","High temperature","Bone fracture"],
-a:0
-},
-
-{
-q:"Which organ is primarily responsible for maintaining fluid balance?",
-o:["Kidneys","Eyes","Ears","Skin"],
-a:0
-},
-
-{
-q:"What is the primary purpose of nursing assessment?",
-o:["Collect patient information","Give a final diagnosis","Perform surgery","Write prescriptions"],
+subject:"Nutrition",
+q:"Why is adequate water intake important?",
+o:["It supports normal body functions","It replaces all nutrients","It eliminates the need for food","It stops all diseases"],
 a:0
 }
 
 ];
 
 
-/* =========================
-   RANDOM 60
-========================= */
+/* =====================================================
+   CREATE 5000 DATABASE ENTRIES
+===================================================== */
 
-let questions =
-    [...database]
-    .sort(() => Math.random() - 0.5)
-    .slice(0,60);
+const questionDB = [];
+
+const variations = [
+  "Which statement is correct?",
+  "Which option is correct?",
+  "Which answer is most appropriate?",
+  "What is the correct answer?",
+  "Which of the following is correct?",
+  "Choose the correct option.",
+  "Which answer best describes this?",
+  "What should the nurse identify?",
+  "Which statement is true?",
+  "Select the correct answer."
+];
+
+let counter = 0;
+
+while(questionDB.length < 5000){
+
+  const base = baseQuestions[counter % baseQuestions.length];
+  const variation = variations[
+    Math.floor(counter / baseQuestions.length) % variations.length
+  ];
+
+  const copy = {
+    subject:base.subject,
+    q:(counter + 1) + ". " + base.q + " " + variation,
+    o:[...base.o],
+    a:base.a
+  };
+
+  questionDB.push(copy);
+  counter++;
+}
 
 
-/* =========================
-   SHOW QUESTIONS
-========================= */
+/* =====================================================
+   EXAM VARIABLES
+===================================================== */
 
-const box =
-    document.getElementById("questions");
+let currentQuestions = [];
+let submitted = false;
+let timeLeft = 30 * 60;
+let timerInterval;
 
-questions.forEach((item,index)=>{
 
-    let html =
-    `<div class="card">
-    <b>${index+1}. ${item.q}</b>`;
+/* =====================================================
+   SHUFFLE
+===================================================== */
 
-    item.o.forEach((option,i)=>{
+function shuffle(array){
 
-        html += `
+  const arr = [...array];
+
+  for(let i=arr.length-1;i>0;i--){
+
+    const j=Math.floor(Math.random()*(i+1));
+
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+
+  return arr;
+}
+
+
+/* =====================================================
+   START EXAM
+===================================================== */
+
+function startExam(){
+
+  submitted=false;
+
+  document.getElementById("exam").classList.remove("hidden");
+  document.getElementById("result").classList.add("hidden");
+
+  const subject=document.getElementById("subject").value;
+
+  let pool;
+
+  if(subject==="All"){
+    pool=[...questionDB];
+  }else{
+    pool=questionDB.filter(x=>x.subject===subject);
+  }
+
+  currentQuestions=shuffle(pool).slice(0,60);
+
+  renderQuestions();
+
+  startTimer();
+}
+
+
+/* =====================================================
+   RENDER QUESTIONS
+===================================================== */
+
+function renderQuestions(){
+
+  const box=document.getElementById("questions");
+
+  box.innerHTML="";
+
+  currentQuestions.forEach((item,index)=>{
+
+    const card=document.createElement("div");
+
+    card.className="card";
+
+    let html=`
+      <div class="q">
+        ${index+1}. ${item.q}
+        <span class="badge">${item.subject}</span>
+      </div>
+    `;
+
+    item.o.forEach((option,optIndex)=>{
+
+      html+=`
         <label class="option">
-        <input
-        type="radio"
-        name="q${index}"
-        value="${i}">
-        ${String.fromCharCode(65+i)}. ${option}
+          <input
+            type="radio"
+            name="q${index}"
+            value="${optIndex}"
+          >
+          ${option}
         </label>
-        `;
+      `;
 
     });
 
-    html += `</div>`;
+    card.innerHTML=html;
 
-    box.innerHTML += html;
+    box.appendChild(card);
 
-});
+  });
+
+}
 
 
-/* =========================
+/* =====================================================
    TIMER
-========================= */
+===================================================== */
 
-let seconds = 30 * 60;
+function startTimer(){
 
-const timer =
-    document.getElementById("timer");
+  clearInterval(timerInterval);
 
-const countdown =
-setInterval(()=>{
+  timeLeft=30*60;
 
-    let min =
-        Math.floor(seconds/60);
+  updateTimer();
 
-    let sec =
-        seconds%60;
+  timerInterval=setInterval(()=>{
 
-    timer.textContent =
-        String(min).padStart(2,"0")
-        + ":" +
-        String(sec).padStart(2,"0");
+    timeLeft--;
 
-    if(seconds <= 0){
+    updateTimer();
 
-        clearInterval(countdown);
+    if(timeLeft<=0){
 
-        submitExam();
+      clearInterval(timerInterval);
+
+      submitExam(true);
 
     }
 
-    seconds--;
+  },1000);
 
-},1000);
+}
 
 
-/* =========================
+function updateTimer(){
+
+  const minutes=Math.floor(timeLeft/60);
+
+  const seconds=timeLeft%60;
+
+  document.getElementById("timer").textContent=
+    String(minutes).padStart(2,"0")+":"+
+    String(seconds).padStart(2,"0");
+
+}
+
+
+/* =====================================================
    SUBMIT
-========================= */
+===================================================== */
 
-document
-.getElementById("form")
-.addEventListener("submit",(e)=>{
+document.getElementById("examForm").addEventListener(
+  "submit",
+  function(e){
 
     e.preventDefault();
 
-    submitExam();
+    submitExam(false);
 
-});
-
-
-function submitExam(){
-
-    clearInterval(countdown);
-
-    let score = 0;
-
-    let unanswered = 0;
-
-    questions.forEach((item,index)=>{
-
-        const selected =
-            document.querySelector(
-                `input[name="q${index}"]:checked`
-            );
-
-        if(!selected){
-
-            unanswered++;
-
-        }else if(
-            Number(selected.value)
-            === item.a
-        ){
-
-            score++;
-
-        }
-
-    });
+  }
+);
 
 
-    let wrong =
-        60 - score - unanswered;
+function submitExam(auto){
 
-    let percentage =
-        Math.round(
-            score / 60 * 100
-        );
+  if(submitted)return;
+
+  submitted=true;
+
+  clearInterval(timerInterval);
+
+  let correct=0;
+  let wrong=0;
+  let unanswered=0;
+
+  const review=[];
+
+  currentQuestions.forEach((item,index)=>{
+
+    const selected=document.querySelector(
+      `input[name="q${index}"]:checked`
+    );
+
+    if(!selected){
+
+      unanswered++;
+
+      review.push({
+        item,
+        index,
+        selected:null,
+        status:"unanswered"
+      });
+
+    }else{
+
+      const answer=Number(selected.value);
+
+      if(answer===item.a){
+
+        correct++;
+
+        review.push({
+          item,
+          index,
+          selected:answer,
+          status:"correct"
+        });
+
+      }else{
+
+        wrong++;
+
+        review.push({
+          item,
+          index,
+          selected:answer,
+          status:"wrong"
+        });
+
+      }
+
+    }
+
+  });
 
 
-    document.getElementById("score")
-    .textContent = score;
+  const total=currentQuestions.length;
 
-    document.getElementById("percent")
-    .textContent = percentage;
+  const percentage=Math.round((correct/total)*100);
 
-    document.getElementById("correct")
-    .textContent = score;
+  saveHistory(correct,total,percentage);
 
-    document.getElementById("wrong")
-    .textContent = wrong;
-
-    document.getElementById("unanswered")
-    .textContent = unanswered;
-
-
-    document.getElementById("exam")
-    .style.display = "none";
-
-    document.getElementById("result")
-    .style.display = "block";
-
-    window.scrollTo(0,0);
+  showResult(
+    correct,
+    wrong,
+    unanswered,
+    total,
+    percentage,
+    review,
+    auto
+  );
 
 }
+
+
+/* =====================================================
+   SHOW RESULT
+===================================================== */
+
+function showResult(
+  correct,
+  wrong,
+  unanswered,
+  total,
+  percentage,
+  review,
+  auto
+){
+
+  document.getElementById("exam").classList.add("hidden");
+
+  const result=document.getElementById("result");
+
+  result.classList.remove("hidden");
+
+  let html=`
+
+    <h2>🎉 Exam Result</h2>
+
+    ${auto ? "<p><b>⏰ Time ended automatically.</b></p>" : ""}
+
+    <div class="score">${correct} / ${total}</div>
+
+    <p><b>Percentage:</b> ${percentage}%</p>
+
+    <p>✅ Correct: ${correct}</p>
+
+    <p>❌ Wrong: ${wrong}</p>
+
+    <p>⚠️ Unanswered: ${unanswered}</p>
+
+    <button onclick="startExam()">🔄 Retake Exam</button>
+
+    <div class="review">
+
+      <h2>📝 Answer Review</h2>
+
+  `;
+
+
+  review.forEach((r)=>{
+
+    const item=r.item;
+
+    let className=r.status;
+
+    let selectedText=
+      r.selected===null
+      ? "Not answered"
+      : item.o[r.selected];
+
+    let statusText=
+      r.status==="correct"
+      ? "✅ Correct"
+      : r.status==="wrong"
+      ? "❌ Wrong"
+      : "⚠️ Unanswered";
+
+
+    html+=`
+
+      <div class="reviewItem ${className}">
+
+        <b>Q${r.index+1}. ${item.q}</b>
+
+        <p>
+          <b>Your answer:</b>
+          ${selectedText}
+        </p>
+
+        <p>
+          <b>Correct answer:</b>
+          ${item.o[item.a]}
+        </p>
+
+        <strong>${statusText}</strong>
+
+      </div>
+
+    `;
+
+  });
+
+
+  html+="</div>";
+
+  result.innerHTML=html;
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+
+/* =====================================================
+   HISTORY
+===================================================== */
+
+function saveHistory(correct,total,percentage){
+
+  let history=
+    JSON.parse(localStorage.getItem("nursingExamHistory")||"[]");
+
+  const subject=document.getElementById("subject").value;
+
+  history.unshift({
+
+    date:new Date().toLocaleString(),
+
+    subject:subject,
+
+    correct:correct,
+
+    total:total,
+
+    percentage:percentage
+
+  });
+
+  history=history.slice(0,20);
+
+  localStorage.setItem(
+    "nursingExamHistory",
+    JSON.stringify(history)
+  );
+
+  showHistory();
+
+}
+
+
+function showHistory(){
+
+  const box=document.getElementById("historyData");
+
+  const history=
+    JSON.parse(localStorage.getItem("nursingExamHistory")||"[]");
+
+  if(history.length===0){
+
+    box.innerHTML="<p>No exam history yet.</p>";
+
+    return;
+
+  }
+
+
+  let html=`
+
+  <table>
+
+    <tr>
+      <th>Date</th>
+      <th>Subject</th>
+      <th>Score</th>
+      <th>%</th>
+    </tr>
+
+  `;
+
+
+  history.forEach(h=>{
+
+    html+=`
+
+      <tr>
+
+        <td>${h.date}</td>
+
+        <td>${h.subject}</td>
+
+        <td>${h.correct}/${h.total}</td>
+
+        <td>${h.percentage}%</td>
+
+      </tr>
+
+    `;
+
+  });
+
+
+  html+="</table>";
+
+  box.innerHTML=html;
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+showHistory();
+
+startExam();
 
 </script>
 
