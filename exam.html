@@ -1,694 +1,3 @@
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nursing Career - Model Test</title>
-
-<style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-<script>
-  <script>
-document.querySelectorAll('input[type="radio"]').forEach(function(option) {
-  option.addEventListener('change', function() {
-
-    document.querySelectorAll(
-      'input[name="' + this.name + '"]'
-    ).forEach(function(item) {
-      item.parentElement.style.background = "";
-      item.parentElement.style.borderColor = "";
-    });
-
-    this.parentElement.style.background = "#ecfdf5";
-    this.parentElement.style.borderColor = "#0f766e";
-  });
-});
-</script>
-
-let timeLeft = 600;
-
-const timer = setInterval(function() {
-  let minutes = Math.floor(timeLeft / 60);
-  let seconds = timeLeft % 60;
-
-  console.log(
-    "Time Left: " +
-    minutes + ":" + String(seconds).padStart(2, "0")
-  );
-
-  timeLeft--;
-
-  if (timeLeft < 0) {
-    clearInterval(timer);
-    alert("Time is up!");
-  }
-}, 1000);
-</script>
-
-body{
-  font-family:Arial, sans-serif;
-  background:#f4f7fb;
-  color:#1f2937;
-}
-<div style="background:#0f766e;color:white;padding:12px;text-align:center;font-weight:bold;">
-  Question <span id="currentQuestion">1</span> of 10
-</div>
-
-header{
-  background:linear-gradient(135deg,#0f766e,#0891b2);
-  color:white;
-  padding:18px 20px;
-  position:sticky;
-  top:0;
-  z-index:10;
-  box-shadow:0 3px 12px rgba(0,0,0,.15);
-}
-
-.header-inner{
-  max-width:1000px;
-  margin:auto;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:15px;
-}
-
-.logo{
-  font-size:24px;
-  font-weight:bold;
-}
-
-.home-btn{
-  color:white;
-  text-decoration:none;
-  background:rgba(255,255,255,.15);
-  padding:9px 15px;
-  border-radius:8px;
-}
-
-.container{
-  max-width:900px;
-  margin:30px auto;
-  padding:0 15px;
-}
-
-.test-header{
-  background:white;
-  padding:25px;
-  border-radius:16px;
-  box-shadow:0 5px 20px rgba(0,0,0,.08);
-  margin-bottom:20px;
-}
-
-.test-header h1{
-  color:#0f766e;
-  margin-bottom:8px;
-}
-
-.test-info{
-  display:flex;
-  justify-content:space-between;
-  gap:15px;
-  margin-top:18px;
-  flex-wrap:wrap;
-}
-
-.info-box{
-  flex:1;
-  min-width:130px;
-  background:#f0fdfa;
-  padding:14px;
-  border-radius:10px;
-  text-align:center;
-}
-
-.info-box strong{
-  display:block;
-  font-size:20px;
-  color:#0f766e;
-}
-
-.progress-wrap{
-  margin-top:20px;
-}
-
-.progress-text{
-  display:flex;
-  justify-content:space-between;
-  margin-bottom:7px;
-  font-size:14px;
-}
-
-.progress{
-  height:9px;
-  background:#e5e7eb;
-  border-radius:20px;
-  overflow:hidden;
-}
-
-.progress-bar{
-  height:100%;
-  width:10%;
-  background:#0f766e;
-  transition:.3s;
-}
-
-.question-card{
-  background:white;
-  padding:25px;
-  border-radius:16px;
-  margin-bottom:18px;
-  box-shadow:0 4px 15px rgba(0,0,0,.07);
-}
-
-.question-number{
-  display:inline-block;
-  background:#ccfbf1;
-  color:#0f766e;
-  padding:6px 11px;
-  border-radius:20px;
-  font-size:13px;
-  font-weight:bold;
-  margin-bottom:12px;
-}
-
-.question{
-  font-size:19px;
-  font-weight:bold;
-  line-height:1.5;
-  margin-bottom:18px;
-}
-
-.option{
-  display:block;
-  border:2px solid #e5e7eb;
-  padding:14px;
-  margin:10px 0;
-  border-radius:10px;
-  cursor:pointer;
-  transition:.2s;
-}
-
-.option:hover{
-  border-color:#0f766e;
-  background:#f0fdfa;
-}
-
-.option input{
-  margin-right:10px;
-}
-
-.option.selected{
-  border-color:#0f766e;
-  background:#ecfdf5;
-}
-
-.submit-btn,
-.retake-btn{
-  border:0;
-  width:100%;
-  padding:15px;
-  border-radius:10px;
-  font-size:17px;
-  font-weight:bold;
-  cursor:pointer;
-  color:white;
-  background:#0f766e;
-  margin-top:10px;
-}
-
-.submit-btn:hover,
-  function submitExam(){
-
-```
-const answers = {
-    q1:"b",
-    q2:"c",
-    q3:"d",
-    q4:"b",
-    q5:"b",
-    q6:"a",
-    q7:"a",
-    q8:"c",
-    q9:"b",
-    q10:"c"
-};
-
-let score = 0;
-
-for(let q in answers){
-
-    const selected =
-        document.querySelector(
-            'input[name="' + q + '"]:checked'
-        );
-
-    const question =
-        document.querySelector(
-            'input[name="' + q + '"]'
-        ).closest(".question");
-
-    const oldResult =
-        question.querySelector(".answer-result");
-
-    if(oldResult){
-        oldResult.remove();
-    }
-
-    const result = document.createElement("div");
-    result.className = "answer-result";
-    result.style.marginTop = "12px";
-    result.style.padding = "10px";
-    result.style.borderRadius = "10px";
-
-    if(selected && selected.value === answers[q]){
-
-        score++;
-
-        result.innerHTML =
-            "✅ Correct Answer";
-
-        result.style.background = "#ecfdf5";
-        result.style.color = "#047857";
-
-    }else{
-
-        let correctText =
-            question.querySelector(
-                'input[value="' + answers[q] + '"]'
-            ).parentElement.innerText;
-
-        let yourText =
-            selected
-            ? selected.parentElement.innerText
-            : "No answer selected";
-
-        result.innerHTML =
-            "❌ Your Answer: " + yourText +
-            "<br>✅ Correct Answer: " + correctText;
-
-        result.style.background = "#fef2f2";
-        result.style.color = "#b91c1c";
-    }
-
-    question.appendChild(result);
-}
-
-document.getElementById("result").style.display = "block";
-
-document.getElementById("score").innerText =
-    score + " / 10";
-
-if(score >= 8){
-
-    document.getElementById("message").innerText =
-        "Excellent! Keep preparing for the Licensing Examination.";
-
-}else if(score >= 5){
-
-    document.getElementById("message").innerText =
-        "Good attempt! Revise the important topics again.";
-
-}else{
-
-    document.getElementById("message").innerText =
-        "Keep practicing. You can improve with revision.";
-}
-
-document.getElementById("result").scrollIntoView({
-    behavior:"smooth",
-    block:"center"
-});
-```
-
-}
-
-.retake-btn:hover{
-  background:#115e59;
-}
-
-.result{
-  display:none;
-  background:white;
-  padding:35px 25px;
-  border-radius:18px;
-  text-align:center;
-  box-shadow:0 5px 20px rgba(0,0,0,.1);
-}
-
-.result h2{
-  color:#0f766e;
-  margin-bottom:15px;
-}
-
-.score{
-  font-size:48px;
-  font-weight:bold;
-  color:#0891b2;
-  margin:15px 0;
-}
-
-.result-message{
-  font-size:17px;
-  margin-bottom:20px;
-}
-
-footer{
-  text-align:center;
-  padding:25px;
-  color:#6b7280;
-}
-
-@media(max-width:600px){
-  .header-inner{
-    flex-direction:column;
-  }
-
-  .test-header,
-  .question-card{
-    padding:20px;
-  }
-
-  .question{
-    font-size:17px;
-  }
-
-  .info-box{
-    min-width:100%;
-  }
-}
-</style>
-
-</head>
-
-<body>
-
-<header>
-  <div class="header-inner">
-    <div class="logo">🩺 Nursing Career</div>
-    <a class="home-btn" href="index.html">🏠 Home</a>
-  </div>
-</header>
-
-<div class="container">
-
-  <div class="test-header">
-    <h1>📝 Nursing Career Model Test</h1>
-    <p>Test your basic nursing knowledge and check your score.</p>
-
-```
-<div class="test-info">
-  <div class="info-box">
-    <strong>10</strong>
-    Questions
-  </div>
-
-  <div class="info-box">
-    <strong id="timer">10:00</strong>
-    Time Left
-  </div>
-
-  <div class="info-box">
-    <strong>100%</strong>
-    Total
-  </div>
-</div>
-
-<div class="progress-wrap">
-  <div class="progress-text">
-    <span id="progressText">Question 1 of 10</span>
-    <span id="progressPercent">10%</span>
-  </div>
-
-  <div class="progress">
-    <div class="progress-bar" id="progressBar"></div>
-  </div>
-</div>
-```
-
-  </div>
-
-  <form id="quizForm">
-
-```
-<div class="question-card">
-  <span class="question-number">Question 1</span>
-  <div class="question">What is the normal respiratory rate for an adult?</div>
-
-  <label class="option">
-    <input type="radio" name="q1" value="a"> A. 5–10 breaths/min
-  </label>
-
-  <label class="option">
-    <input type="radio" name="q1" value="b"> B. 12–20 breaths/min
-  </label>
-
-  <label class="option">
-    <input type="radio" name="q1" value="c"> C. 25–35 breaths/min
-  </label>
-
-  <label class="option">
-    <input type="radio" name="q1" value="d"> D. 40–50 breaths/min
-  </label>
-</div>
-
-
-<div class="question-card">
-  <span class="question-number">Question 2</span>
-  <div class="question">Which organ pumps blood throughout the body?</div>
-
-  <label class="option">
-    <input type="radio" name="q2" value="a"> A. Liver
-  </label>
-
-  <label class="option">
-    <input type="radio" name="q2" value="b"> B. Kidney
-  </label>
-
-  <label class="option">
-    <input type="radio" name="q2" value="c"> C. Heart
-  </label>
-
-  <label class="option">
-    <input type="radio" name="q2" value="d"> D. Lung
-  </label>
-</div>
-
-
-<div class="question-card">
-  <span class="question-number">Question 3</span>
-  <div class="question">Which vitamin is produced in the skin by sunlight?</div>
-
-  <label class="option">
-    <input type="radio" name="q3" value="a"> A. Vitamin A
-  </label>
-
-  <label class="option">
-    <input type="radio" name="q3" value="b"> B. Vitamin B
-  </label>
-
-  <label class="option">
-    <input type="radio" name="q3" value="c"> C. Vitamin C
-  </label>
-
-  <label class="option">
-    <input type="radio" name="q3" value="d"> D. Vitamin D
-  </label>
-</div>
-
-
-<div class="question-card">
-  <span class="question-number">Question 4</span>
-  <div class="question">What is the approximate normal body temperature?</div>
-
-  <label class="option">
-    <input type="radio" name="q4" value="a"> A. 35°C
-  </label>
-
-  <label class="option">
-    <input type="radio" name="q4" value="b"> B. 37°C
-  </label>
-
-  <label class="option">
-    <input type="radio" name="q4" value="c"> C. 39°C
-  </label>
-
-  <label class="option">
-    <input type="radio" name="q4" value="d"> D. 41°C
-  </label>
-</div>
-
-
-<div class="question-card">
-  <span class="question-number">Question 5</span>
-  <div class="question">Which blood cells help fight infection?</div>
-
-  <label class="option">
-    <input type="radio" name="q5" value="a"> A. RBC
-  </label>
-
-  <label class="option">
-    <input type="radio" name="q5" value="b"> B. WBC
-  </label>
-
-  <label class="option">
-    <input type="radio" name="q5" value="c"> C. Platelets
-  </label>
-
-  <label class="option">
-    <input type="radio" name="q5" value="d"> D. Plasma
-  </label>
-</div>
-
-
-<div class="question-card">
-  <span class="question-number">Question 6</span>
-  <div class="question">An intramuscular injection is given into the:</div>
-
-  <label class="option">
-    <input type="radio" name="q6" value="a"> A. Muscle
-  </label>
-
-  <label class="option">
-    <input type="radio" name="q6" value="b"> B. Vein
-  </label>
-
-  <label class="option">
-    <input type="radio" name="q6" value="c"> C. Skin surface
-  </label>
-
-  <label class="option">
-    <input type="radio" name="q6" value="d"> D. Artery
-  </label>
-</div>
-
-
-<div class="question-card">
-  <span class="question-number">Question 7</span>
-  <div class="question">What does BP stand for?</div>
-
-  <label class="option">
-    <input type="radio" name="q7" value="a"> A. Blood Pressure
-  </label>
-
-  <label class="option">
-    <input type="radio" name="q7" value="b"> B. Body Pulse
-  </label>
-
-  <label class="option">
-    <input type="radio" name="q7" value="c"> C. Blood Pulse
-  </label>
-
-  <label class="option">
-    <input type="radio" name="q7" value="d"> D. Body Pressure
-  </label>
-</div>
-
-
-<div class="question-card">
-  <span class="question-number">Question 8</span>
-  <div class="question">Which instrument is used to measure blood pressure?</div>
-
-  <label class="option">
-    <input type="radio" name="q8" value="a"> A. Thermometer
-  </label>
-
-  <label class="option">
-    <input type="radio" name="q8" value="b"> B. Stethoscope
-  </label>
-
-  <label class="option">
-    <input type="radio" name="q8" value="c"> C. Sphygmomanometer
-  </label>
-
-  <label class="option">
-    <input type="radio" name="q8" value="d"> D. Glucometer
-  </label>
-</div>
-
-
-<div class="question-card">
-  <span class="question-number">Question 9</span>
-  <div class="question">Scurvy is caused by a deficiency of which vitamin?</div>
-
-  <label class="option">
-    <input type="radio" name="q9" value="a"> A. Vitamin A
-  </label>
-
-  <label class="option">
-    <input type="radio" name="q9" value="b"> B. Vitamin C
-  </label>
-
-  <label class="option">
-    <input type="radio" name="q9" value="c"> C. Vitamin D
-  </label>
-
-  <label class="option">
-    <input type="radio" name="q9" value="d"> D. Vitamin K
-  </label>
-</div>
-
-
-<div class="question-card">
-  <span class="question-number">Question 10</span>
-  <div class="question">Where does gas exchange mainly occur?</div>
-
-  <label class="option">
-    <input type="radio" name="q10" value="a"> A. Heart
-  </label>
-
-  <label class="option">
-    <input type="radio" name="q10" value="b"> B. Kidney
-  </label>
-
-  <label class="option">
-    <input type="radio" name="q10" value="c"> C. Lungs
-  </label>
-
-  <label class="option">
-    <input type="radio" name="q10" value="d"> D. Liver
-  </label>
-</div>
-
-<button type="button" class="submit-btn" onclick="submitTest()">
-  Submit Test
-</button>
-```
-
-  </form>
-
-  <div class="result" id="result">
-    <h2>🎉 Test Completed!</h2>
-
-```
-<div class="score" id="score">0/10</div>
-
-<div class="result-message" id="resultMessage">
-  Keep practicing!
-</div>
-
-<button class="retake-btn" onclick="location.reload()">
-  🔄 Retake Test
-</button>
-
-<button class="retake-btn" onclick="location.href='index.html'">
-  🏠 Back to Home
-</button>
-```
-
-  </div>
-
-</div>
-
-<footer>
-  © 2026 Nursing Career | Nursing Exam Preparation
-</footer>
-
 <script>
 
 const answers = {
@@ -702,6 +11,19 @@ const answers = {
   q8:"c",
   q9:"b",
   q10:"c"
+};
+
+const correctAnswers = {
+  q1:"B. 12–20 breaths/min",
+  q2:"C. Heart",
+  q3:"D. Vitamin D",
+  q4:"B. 37°C",
+  q5:"B. WBC",
+  q6:"A. Muscle",
+  q7:"A. Blood Pressure",
+  q8:"C. Sphygmomanometer",
+  q9:"B. Vitamin C",
+  q10:"C. Lungs"
 };
 
 let timeLeft = 600;
@@ -721,6 +43,7 @@ const timer = setInterval(function(){
   if(timeLeft <= 0){
     clearInterval(timer);
     submitTest();
+    return;
   }
 
   timeLeft--;
@@ -728,6 +51,7 @@ const timer = setInterval(function(){
 },1000);
 
 
+// Answer select highlight
 document.querySelectorAll(".option input").forEach(function(input){
 
   input.addEventListener("change",function(){
@@ -737,7 +61,9 @@ document.querySelectorAll(".option input").forEach(function(input){
     document.querySelectorAll(
       'input[name="' + name + '"]'
     ).forEach(function(item){
+
       item.parentElement.classList.remove("selected");
+
     });
 
     this.parentElement.classList.add("selected");
@@ -749,15 +75,18 @@ document.querySelectorAll(".option input").forEach(function(input){
 });
 
 
+// Progress
 function updateProgress(){
 
   let answered = 0;
 
-  for(let i=1;i<=10;i++){
+  for(let i = 1; i <= 10; i++){
 
-    if(document.querySelector(
-      'input[name="q' + i + '"]:checked'
-    )){
+    if(
+      document.querySelector(
+        'input[name="q' + i + '"]:checked'
+      )
+    ){
       answered++;
     }
 
@@ -777,6 +106,7 @@ function updateProgress(){
 }
 
 
+// Submit Exam
 function submitTest(){
 
   if(submitted) return;
@@ -786,14 +116,60 @@ function submitTest(){
 
   let score = 0;
 
-  for(let i=1;i<=10;i++){
+  let reviewHTML = "";
+
+  for(let i = 1; i <= 10; i++){
+
+    const questionNumber = "q" + i;
 
     const selected = document.querySelector(
-      'input[name="q' + i + '"]:checked'
+      'input[name="' + questionNumber + '"]:checked'
     );
 
-    if(selected && selected.value === answers["q" + i]){
+    const selectedText = selected
+      ? selected.parentElement.textContent.trim()
+      : "No answer selected";
+
+    const correctText = correctAnswers[questionNumber];
+
+    if(selected && selected.value === answers[questionNumber]){
+
       score++;
+
+      reviewHTML += `
+        <div style="
+          text-align:left;
+          padding:14px;
+          margin:10px 0;
+          border-radius:10px;
+          background:#ecfdf5;
+          border:1px solid #a7f3d0;
+        ">
+          <strong>Question ${i} — Correct ✓</strong>
+          <br>
+          Your Answer: ${selectedText}
+        </div>
+      `;
+
+    }else{
+
+      reviewHTML += `
+        <div style="
+          text-align:left;
+          padding:14px;
+          margin:10px 0;
+          border-radius:10px;
+          background:#fef2f2;
+          border:1px solid #fecaca;
+        ">
+          <strong>Question ${i} — Incorrect ✗</strong>
+          <br>
+          Your Answer: ${selectedText}
+          <br>
+          <strong>Correct Answer: ${correctText}</strong>
+        </div>
+      `;
+
     }
 
   }
@@ -801,7 +177,6 @@ function submitTest(){
   const percentage = score * 10;
 
   document.getElementById("quizForm").style.display = "none";
-
   document.querySelector(".test-header").style.display = "none";
 
   document.getElementById("result").style.display = "block";
@@ -826,9 +201,28 @@ function submitTest(){
 
   }
 
+
+  // Show answer review
+  const reviewBox = document.createElement("div");
+
+  reviewBox.innerHTML = `
+    <h3 style="
+      color:#0f766e;
+      margin:25px 0 15px;
+    ">
+      Answer Review
+    </h3>
+
+    ${reviewHTML}
+  `;
+
+  document.getElementById("result").appendChild(reviewBox);
+
+  document.getElementById("result").scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
+
 }
 
 </script>
-
-</body>
-</html>
