@@ -1,2666 +1,1872 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>Anatomy | B.Sc. Nursing | Nursing Career</title>
+<title>Complete Anatomy | Nursing Career</title>
 
 <style>
-
-/* =========================
-   GLOBAL
-========================= */
-
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#f4f7fb;
-    color:#172033;
-    line-height:1.6;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f4f7fb;
+  color:#172033;
+  line-height:1.7;
 }
 
-a{
-    text-decoration:none;
-    color:inherit;
-}
-
-button,
-input{
-    font-family:inherit;
-}
-
-
-/* =========================
-   HEADER
-========================= */
-
-.header{
-    position:sticky;
-    top:0;
-    z-index:999;
-
-    background:linear-gradient(
-        135deg,
-        #071f3d,
-        #087f8c
-    );
-
-    color:white;
-
-    box-shadow:
-    0 4px 20px rgba(0,0,0,.18);
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:linear-gradient(135deg,#071952,#088395,#35A29F);
+  color:white;
+  padding:15px 20px;
+  box-shadow:0 4px 18px rgba(0,0,0,.18);
 }
 
 .header-inner{
-    max-width:1150px;
-    margin:auto;
-
-    padding:15px 18px;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    gap:15px;
+  max-width:1150px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
 }
 
 .logo{
-    font-size:21px;
-    font-weight:900;
-    letter-spacing:.5px;
+  font-size:22px;
+  font-weight:900;
+  letter-spacing:1px;
 }
 
 .logo span{
-    color:#58f1d1;
+  display:block;
+  font-size:11px;
+  opacity:.85;
+  letter-spacing:2px;
 }
 
-.header-buttons{
-    display:flex;
-    gap:8px;
+.back-btn{
+  text-decoration:none;
+  color:white;
+  border:1px solid rgba(255,255,255,.4);
+  padding:8px 14px;
+  border-radius:20px;
+  font-size:13px;
 }
-
-.header-btn{
-    border:1px solid rgba(255,255,255,.25);
-
-    background:rgba(255,255,255,.12);
-
-    color:white;
-
-    padding:8px 13px;
-
-    border-radius:20px;
-
-    font-size:13px;
-    font-weight:bold;
-}
-
-
-/* =========================
-   HERO
-========================= */
 
 .hero{
-
-    background:
-    radial-gradient(
-        circle at 80% 20%,
-        rgba(73,230,207,.20),
-        transparent 30%
-    ),
-
-    linear-gradient(
-        135deg,
-        #061a34,
-        #087f8c
-    );
-
-    color:white;
-
-    padding:55px 18px 65px;
-}
-
-.hero-inner{
-    max-width:1150px;
-    margin:auto;
-}
-
-.hero-badge{
-
-    display:inline-block;
-
-    padding:7px 14px;
-
-    border-radius:30px;
-
-    background:
-    rgba(255,255,255,.13);
-
-    border:
-    1px solid rgba(255,255,255,.25);
-
-    font-size:12px;
-    font-weight:bold;
-
-    margin-bottom:18px;
+  background:linear-gradient(135deg,#071952,#088395);
+  color:white;
+  padding:55px 20px 70px;
+  text-align:center;
 }
 
 .hero h1{
-
-    font-size:
-    clamp(35px,8vw,65px);
-
-    line-height:1.05;
-
-    margin-bottom:14px;
-}
-
-.hero h1 span{
-    color:#57efd0;
+  font-size:42px;
+  line-height:1.15;
+  margin-bottom:12px;
 }
 
 .hero p{
-
-    max-width:720px;
-
-    font-size:16px;
-
-    color:
-    rgba(255,255,255,.88);
+  max-width:750px;
+  margin:auto;
+  opacity:.92;
 }
 
-.hero-stats{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:12px;
-
-    max-width:700px;
-
-    margin-top:28px;
+.badges{
+  margin-top:25px;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
 }
 
-.hero-stat{
-
-    padding:15px;
-
-    border-radius:15px;
-
-    background:
-    rgba(255,255,255,.10);
-
-    border:
-    1px solid rgba(255,255,255,.15);
+.badge{
+  background:rgba(255,255,255,.15);
+  padding:8px 14px;
+  border-radius:20px;
+  font-size:13px;
 }
-
-.hero-stat strong{
-
-    display:block;
-
-    font-size:21px;
-}
-
-.hero-stat span{
-
-    font-size:12px;
-
-    color:
-    rgba(255,255,255,.75);
-}
-
-
-/* =========================
-   CONTAINER
-========================= */
 
 .container{
-
-    max-width:1150px;
-
-    margin:auto;
-
-    padding:
-    38px 16px;
+  max-width:1150px;
+  margin:auto;
+  padding:30px 18px 60px;
 }
-
-
-/* =========================
-   SECTION
-========================= */
-
-.section{
-    margin-bottom:45px;
-}
-
-.section-title{
-
-    font-size:27px;
-
-    color:#071f3d;
-
-    margin-bottom:5px;
-}
-
-.section-subtitle{
-
-    color:#707b8d;
-
-    font-size:14px;
-
-    margin-bottom:20px;
-}
-
-
-/* =========================
-   SEARCH
-========================= */
 
 .search-box{
-
-    background:white;
-
-    padding:18px;
-
-    border-radius:20px;
-
-    box-shadow:
-    0 7px 25px rgba(25,45,75,.08);
-
-    margin-bottom:35px;
+  background:white;
+  padding:18px;
+  border-radius:18px;
+  box-shadow:0 5px 20px rgba(0,0,0,.07);
+  margin-top:-35px;
+  position:relative;
 }
 
-.search-box label{
-
-    display:block;
-
-    font-size:13px;
-
-    font-weight:bold;
-
-    margin-bottom:8px;
-
-    color:#334155;
+.search-box input{
+  width:100%;
+  border:2px solid #e4eaf2;
+  border-radius:14px;
+  padding:14px 16px;
+  font-size:15px;
+  outline:none;
 }
 
-.search-input{
-
-    width:100%;
-
-    border:
-    1px solid #dfe5ed;
-
-    outline:none;
-
-    padding:14px 16px;
-
-    border-radius:13px;
-
-    font-size:15px;
-
-    background:#f8fafc;
+.search-box input:focus{
+  border-color:#088395;
 }
 
-.search-input:focus{
-
-    border-color:#087f8c;
-
-    background:white;
-
-    box-shadow:
-    0 0 0 3px
-    rgba(8,127,140,.10);
+.intro{
+  margin-top:30px;
+  background:white;
+  padding:25px;
+  border-radius:20px;
+  box-shadow:0 5px 20px rgba(0,0,0,.06);
 }
 
-
-/* =========================
-   OVERVIEW CARDS
-========================= */
-
-.overview-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:16px;
+.intro h2{
+  color:#071952;
+  margin-bottom:10px;
 }
 
-.overview-card{
-
-    background:white;
-
-    border:
-    1px solid #e5eaf1;
-
-    border-radius:19px;
-
-    padding:22px;
-
-    box-shadow:
-    0 5px 20px
-    rgba(25,45,75,.07);
-
-    transition:.2s;
+.system{
+  margin-top:30px;
+  background:white;
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:0 7px 25px rgba(0,0,0,.07);
 }
 
-.overview-card:hover{
-
-    transform:
-    translateY(-4px);
-
-    box-shadow:
-    0 10px 28px
-    rgba(25,45,75,.11);
+.system-head{
+  background:linear-gradient(135deg,#071952,#088395);
+  color:white;
+  padding:22px;
 }
 
-.card-icon{
-
-    width:52px;
-    height:52px;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    border-radius:16px;
-
-    background:#e9fbf8;
-
-    font-size:26px;
-
-    margin-bottom:12px;
+.system-head h2{
+  font-size:25px;
 }
 
-.overview-card h3{
-
-    font-size:18px;
-
-    color:#102a43;
-
-    margin-bottom:5px;
+.system-head p{
+  opacity:.9;
+  margin-top:5px;
 }
 
-.overview-card p{
-
-    color:#718096;
-
-    font-size:13px;
+.content{
+  padding:25px;
 }
 
-
-/* =========================
-   SYSTEM GRID
-========================= */
-
-.system-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(2,1fr);
-
-    gap:15px;
+.topic{
+  margin-bottom:28px;
 }
 
-.system-card{
-
-    position:relative;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:15px;
-
-    background:white;
-
-    padding:19px;
-
-    border:
-    1px solid #e4e9f0;
-
-    border-radius:18px;
-
-    box-shadow:
-    0 4px 16px
-    rgba(20,40,70,.05);
-
-    cursor:pointer;
-
-    transition:.2s;
+.topic h3{
+  color:#088395;
+  border-left:5px solid #35A29F;
+  padding-left:12px;
+  margin-bottom:10px;
+  font-size:20px;
 }
 
-.system-card:hover{
-
-    transform:
-    translateY(-3px);
-
-    border-color:#0a9699;
-
-    box-shadow:
-    0 9px 25px
-    rgba(20,40,70,.11);
+.topic h4{
+  color:#071952;
+  margin:15px 0 6px;
 }
 
-.system-icon{
-
-    width:55px;
-    height:55px;
-
-    flex-shrink:0;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    border-radius:16px;
-
-    background:#effaf9;
-
-    font-size:27px;
+.topic ul{
+  padding-left:22px;
 }
 
-.system-info{
-
-    flex:1;
+.topic li{
+  margin:5px 0;
 }
 
-.system-info h3{
-
-    color:#102a43;
-
-    font-size:17px;
-
-    margin-bottom:3px;
+.info-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
+  margin-top:15px;
 }
 
-.system-info p{
-
-    color:#768295;
-
-    font-size:13px;
+.info-card{
+  background:#f4f9fb;
+  padding:17px;
+  border-radius:14px;
+  border-left:4px solid #088395;
 }
 
-.system-arrow{
-
-    font-size:22px;
-
-    color:#087f8c;
+.info-card strong{
+  color:#071952;
 }
 
-
-/* =========================
-   CONTENT BOX
-========================= */
-
-.content-box{
-
-    background:white;
-
-    border-radius:20px;
-
-    padding:25px;
-
-    border:
-    1px solid #e4e9f0;
-
-    box-shadow:
-    0 5px 20px
-    rgba(25,45,75,.06);
-
-    margin-top:20px;
+.exam{
+  background:#fff7df;
+  border-left:5px solid #f0a500;
+  padding:18px;
+  border-radius:14px;
+  margin-top:20px;
 }
 
-.content-box h3{
-
-    color:#073b66;
-
-    margin-bottom:9px;
+.clinical{
+  background:#eef8f2;
+  border-left:5px solid #27ae60;
+  padding:18px;
+  border-radius:14px;
+  margin-top:20px;
 }
 
-.content-box p{
-
-    color:#5f6c7e;
-
-    font-size:14px;
-
-    margin-bottom:12px;
-}
-
-.content-box ul{
-
-    padding-left:20px;
-
-    color:#5f6c7e;
-
-    font-size:14px;
-}
-
-.content-box li{
-
-    margin-bottom:6px;
-}
-
-
-/* =========================
-   QUICK REVISION
-========================= */
-
-.revision{
-
-    background:
-    linear-gradient(
-        135deg,
-        #071f3d,
-        #087f8c
-    );
-
-    color:white;
-
-    border-radius:23px;
-
-    padding:27px;
-
-    margin-bottom:45px;
-}
-
-.revision h2{
-
-    margin-bottom:7px;
-}
-
-.revision > p{
-
-    color:
-    rgba(255,255,255,.82);
-
-    font-size:14px;
-
-    margin-bottom:20px;
-}
-
-.revision-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(2,1fr);
-
-    gap:11px;
-}
-
-.revision-item{
-
-    background:
-    rgba(255,255,255,.10);
-
-    border:
-    1px solid
-    rgba(255,255,255,.15);
-
-    padding:14px;
-
-    border-radius:13px;
-
-    font-size:13px;
-}
-
-
-/* =========================
-   EXAM POINTS
-========================= */
-
-.exam-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(2,1fr);
-
-    gap:15px;
-}
-
-.exam-card{
-
-    background:white;
-
-    border-left:
-    5px solid #087f8c;
-
-    padding:20px;
-
-    border-radius:15px;
-
-    box-shadow:
-    0 4px 16px
-    rgba(20,40,70,.06);
-}
-
-.exam-card h3{
-
-    color:#102a43;
-
-    font-size:16px;
-
-    margin-bottom:8px;
-}
-
-.exam-card p{
-
-    color:#687589;
-
-    font-size:13px;
-}
-
-
-/* =========================
-   MCQ
-========================= */
-
-.mcq-container{
-
-    display:grid;
-
-    gap:16px;
+.mcq-section{
+  margin-top:30px;
 }
 
 .mcq{
-
-    background:white;
-
-    border:
-    1px solid #e3e8ef;
-
-    border-radius:18px;
-
-    padding:20px;
-
-    box-shadow:
-    0 4px 16px
-    rgba(20,40,70,.05);
-}
-
-.mcq-number{
-
-    color:#087f8c;
-
-    font-size:12px;
-
-    font-weight:800;
-
-    margin-bottom:5px;
-}
-
-.mcq-question{
-
-    font-weight:700;
-
-    color:#172033;
-
-    margin-bottom:13px;
+  background:#f8fafc;
+  border:1px solid #e3e9f0;
+  padding:18px;
+  border-radius:15px;
+  margin-bottom:14px;
 }
 
 .option{
-
-    padding:9px 12px;
-
-    border-radius:9px;
-
-    background:#f5f7fa;
-
-    margin-bottom:7px;
-
-    color:#596579;
-
-    font-size:13px;
+  margin:5px 0;
+  padding:7px 10px;
+  background:white;
+  border-radius:8px;
 }
 
 .answer{
-
-    margin-top:10px;
-
-    padding:10px 12px;
-
-    border-radius:10px;
-
-    background:#e9fbf8;
-
-    color:#087f8c;
-
-    font-size:13px;
-
-    font-weight:bold;
+  margin-top:9px;
+  color:#087f5b;
+  font-weight:bold;
 }
 
-
-/* =========================
-   CTA
-========================= */
-
-.cta{
-
-    text-align:center;
-
-    background:white;
-
-    border:
-    1px solid #e4e9f0;
-
-    border-radius:22px;
-
-    padding:30px 20px;
-
-    box-shadow:
-    0 5px 20px
-    rgba(25,45,75,.06);
+.revision{
+  margin-top:30px;
+  background:linear-gradient(135deg,#071952,#088395);
+  color:white;
+  padding:25px;
+  border-radius:20px;
 }
 
-.cta h2{
-
-    color:#071f3d;
-
-    margin-bottom:8px;
+.revision li{
+  margin:7px 0;
 }
 
-.cta p{
-
-    color:#718096;
-
-    font-size:14px;
-
-    margin-bottom:18px;
+footer{
+  background:#071952;
+  color:white;
+  text-align:center;
+  padding:30px 15px;
 }
 
-.cta-buttons{
-
-    display:flex;
-
-    justify-content:center;
-
-    flex-wrap:wrap;
-
-    gap:10px;
+footer strong{
+  color:#6fffe9;
 }
 
-.cta-btn{
+@media(max-width:650px){
 
-    display:inline-block;
+  .hero{
+    padding:40px 15px 55px;
+  }
 
-    background:#087f8c;
+  .hero h1{
+    font-size:31px;
+  }
 
-    color:white;
+  .container{
+    padding:25px 12px 45px;
+  }
 
-    padding:11px 18px;
+  .content{
+    padding:18px;
+  }
 
-    border-radius:25px;
-
-    font-size:13px;
-
-    font-weight:bold;
-}
-
-.cta-btn.secondary{
-
-    background:#071f3d;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-.footer{
-
-    background:#06172c;
-
-    color:white;
-
-    text-align:center;
-
-    padding:32px 16px;
-
-    margin-top:45px;
-}
-
-.footer-title{
-
+  .system-head h2{
     font-size:21px;
+  }
 
-    font-weight:900;
+  .topic h3{
+    font-size:18px;
+  }
 
-    margin-bottom:5px;
+  .header-inner{
+    flex-direction:column;
+  }
 }
-
-.footer p{
-
-    color:#aeb9c9;
-
-    font-size:13px;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:850px){
-
-    .overview-grid{
-
-        grid-template-columns:1fr;
-    }
-
-    .system-grid{
-
-        grid-template-columns:1fr;
-    }
-
-    .exam-grid{
-
-        grid-template-columns:1fr;
-    }
-
-}
-
-@media(max-width:600px){
-
-    .header-inner{
-
-        padding:13px 12px;
-    }
-
-    .logo{
-
-        font-size:18px;
-    }
-
-    .header-btn{
-
-        padding:7px 10px;
-
-        font-size:11px;
-    }
-
-    .hero{
-
-        padding:
-        42px 16px 50px;
-    }
-
-    .hero-stats{
-
-        grid-template-columns:
-        repeat(3,1fr);
-    }
-
-    .hero-stat{
-
-        padding:11px 7px;
-    }
-
-    .hero-stat strong{
-
-        font-size:17px;
-    }
-
-    .hero-stat span{
-
-        font-size:10px;
-    }
-
-    .container{
-
-        padding:
-        28px 13px;
-    }
-
-    .section-title{
-
-        font-size:23px;
-    }
-
-    .content-box{
-
-        padding:20px;
-    }
-
-    .revision{
-
-        padding:22px 17px;
-    }
-
-    .revision-grid{
-
-        grid-template-columns:1fr;
-    }
-
-}
-
-
-/* =========================
-   SEARCH HIDE
-========================= */
-
-.hidden{
-    display:none !important;
-}
-
 </style>
-
 </head>
-
 
 <body>
 
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      NURSING CAREER
+      <span>B.Sc IN NURSING EDUCATION</span>
+    </div>
 
-<!-- =========================
-     HEADER
-========================= -->
-
-<header class="header">
-
-<div class="header-inner">
-
-<a href="https://nursingcareer.github.io/nursing-career/"
-class="logo">
-
-NURSING <span>CAREER</span>
-
-</a>
-
-
-<div class="header-buttons">
-
-<a href="https://nursingcareer.github.io/nursing-career/bsc-nursing.html"
-class="header-btn">
-
-← B.Sc Nursing
-
-</a>
-
-<a href="https://nursingcareer.github.io/nursing-career/"
-class="header-btn">
-
-Home
-
-</a>
-
-</div>
-
-</div>
-
+    <a class="back-btn"
+       href="https://nursingcareer.github.io/nursing-career/bsc-nursing.html">
+      ← B.Sc Nursing
+    </a>
+  </div>
 </header>
 
 
-
-<!-- =========================
-     HERO
-========================= -->
-
 <section class="hero">
 
-<div class="hero-inner">
+  <h1>Complete Human Anatomy</h1>
 
-<div class="hero-badge">
+  <p>
+    System-wise detailed Anatomy study resource for
+    B.Sc. in Nursing students. Learn structure, location,
+    parts, relations, blood supply, nerve supply and clinical anatomy.
+  </p>
 
-B.Sc. IN NURSING • 1ST YEAR
-
-</div>
-
-<h1>
-
-ANATOMY
-<span>Hub</span>
-
-</h1>
-
-<p>
-
-Complete Anatomy learning resource for
-B.Sc. Nursing students — systems, structures,
-important concepts, clinical connections,
-exam points and quick revision.
-
-</p>
-
-
-<div class="hero-stats">
-
-<div class="hero-stat">
-
-<strong>12+</strong>
-
-<span>Major Systems</span>
-
-</div>
-
-
-<div class="hero-stat">
-
-<strong>50+</strong>
-
-<span>Key Topics</span>
-
-</div>
-
-
-<div class="hero-stat">
-
-<strong>MCQ</strong>
-
-<span>Exam Practice</span>
-
-</div>
-
-</div>
-
-</div>
+  <div class="badges">
+    <div class="badge">13 Major Systems</div>
+    <div class="badge">B.Sc Nursing</div>
+    <div class="badge">Clinical Anatomy</div>
+    <div class="badge">Exam Revision</div>
+  </div>
 
 </section>
 
 
+<div class="container">
 
-<main class="container">
+<div class="search-box">
+  <input
+    type="text"
+    id="searchInput"
+    placeholder="🔍 Search Anatomy topic..."
+    onkeyup="searchTopic()">
+</div>
 
 
-<!-- =========================
-     SEARCH
-========================= -->
+<section class="intro">
 
-<section class="search-box">
+<h2>📚 Anatomy কী?</h2>
 
-<label for="topicSearch">
+<p>
+Anatomy হলো মানবদেহের গঠন বা structure সম্পর্কে বিজ্ঞান।
+মানবদেহের বিভিন্ন অঙ্গ কোথায় অবস্থিত, তাদের আকৃতি,
+অংশ, পারস্পরিক সম্পর্ক, blood supply, nerve supply এবং
+কীভাবে বিভিন্ন organ একে অপরের সঙ্গে সম্পর্কিত—এসব Anatomy-এর
+মূল বিষয়।
+</p>
 
-🔎 Search Anatomy Topics
-
-</label>
-
-<input
-id="topicSearch"
-class="search-input"
-type="text"
-placeholder="Search skeletal, heart, brain, kidney..."
-onkeyup="searchTopics()">
+<p style="margin-top:10px;">
+B.Sc. Nursing শিক্ষার্থীদের জন্য Anatomy অত্যন্ত গুরুত্বপূর্ণ,
+কারণ clinical assessment, disease process, medication,
+injection, surgery, emergency care এবং nursing procedure
+বোঝার জন্য মানবদেহের স্বাভাবিক structure জানা প্রয়োজন।
+</p>
 
 </section>
 
 
+<!-- ================= SKELETAL ================= -->
 
-<!-- =========================
-     OVERVIEW
-========================= -->
+<section class="system">
 
-<section class="section searchable">
-
-<h2 class="section-title">
-
-Anatomy — Quick Overview
-
-</h2>
-
-<p class="section-subtitle">
-
-মানবদেহের গঠন সম্পর্কে systematic ধারণা তৈরির
-জন্য Anatomy হলো Nursing-এর অন্যতম foundation subject।
-
-</p>
-
-
-<div class="overview-grid">
-
-
-<div class="overview-card">
-
-<div class="card-icon">
-🦴
+<div class="system-head">
+<h2>🦴 1. Skeletal System</h2>
+<p>মানবদেহের framework বা কাঠামোগত ব্যবস্থা</p>
 </div>
 
-<h3>Body Structure</h3>
+<div class="content">
+
+<div class="topic">
+
+<h3>Definition</h3>
 
 <p>
-
-মানবদেহের অঙ্গ, টিস্যু, অস্থি,
-পেশি ও বিভিন্ন anatomical structure সম্পর্কে ধারণা।
-
+Skeletal system হলো bones, cartilage, joints এবং supporting
+structures-এর সমন্বয়ে গঠিত দেহের framework।
+প্রাপ্তবয়স্ক মানুষের skeleton সাধারণত <strong>206টি bone</strong>
+দিয়ে গঠিত।
 </p>
 
 </div>
 
 
-<div class="overview-card">
+<div class="topic">
 
-<div class="card-icon">
-🧩
-</div>
-
-<h3>Organ Systems</h3>
-
-<p>
-
-Body-এর বিভিন্ন organ system কীভাবে
-গঠিত এবং কোথায় অবস্থিত তা শেখা।
-
-</p>
-
-</div>
-
-
-<div class="overview-card">
-
-<div class="card-icon">
-🩺
-</div>
-
-<h3>Clinical Connection</h3>
-
-<p>
-
-Anatomical knowledge ব্যবহার করে
-clinical signs, procedures এবং patient care বোঝা সহজ হয়।
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     MAJOR SYSTEMS
-========================= -->
-
-<section class="section">
-
-<h2 class="section-title">
-
-Major Body Systems
-
-</h2>
-
-<p class="section-subtitle">
-
-নিচের systemগুলো Anatomy-এর গুরুত্বপূর্ণ অংশ।
-প্রতিটি system-এর basic structure ও nursing relevance পড়ুন।
-
-</p>
-
-
-<div class="system-grid">
-
-
-<div class="system-card searchable">
-
-<div class="system-icon">
-🦴
-</div>
-
-<div class="system-info">
-
-<h3>Skeletal System</h3>
-
-<p>
-Bones, joints, cartilage এবং skeleton
-</p>
-
-</div>
-
-<div class="system-arrow">
-›
-</div>
-
-</div>
-
-
-
-<div class="system-card searchable">
-
-<div class="system-icon">
-💪
-</div>
-
-<div class="system-info">
-
-<h3>Muscular System</h3>
-
-<p>
-Muscles, movement and body posture
-</p>
-
-</div>
-
-<div class="system-arrow">
-›
-</div>
-
-</div>
-
-
-
-<div class="system-card searchable">
-
-<div class="system-icon">
-❤️
-</div>
-
-<div class="system-info">
-
-<h3>Cardiovascular System</h3>
-
-<p>
-Heart, blood vessels and circulation
-</p>
-
-</div>
-
-<div class="system-arrow">
-›
-</div>
-
-</div>
-
-
-
-<div class="system-card searchable">
-
-<div class="system-icon">
-🫁
-</div>
-
-<div class="system-info">
-
-<h3>Respiratory System</h3>
-
-<p>
-Airways, lungs and breathing
-</p>
-
-</div>
-
-<div class="system-arrow">
-›
-</div>
-
-</div>
-
-
-
-<div class="system-card searchable">
-
-<div class="system-icon">
-🧠
-</div>
-
-<div class="system-info">
-
-<h3>Nervous System</h3>
-
-<p>
-Brain, spinal cord and nerves
-</p>
-
-</div>
-
-<div class="system-arrow">
-›
-</div>
-
-</div>
-
-
-
-<div class="system-card searchable">
-
-<div class="system-icon">
-🍽️
-</div>
-
-<div class="system-info">
-
-<h3>Digestive System</h3>
-
-<p>
-GI tract and digestive organs
-</p>
-
-</div>
-
-<div class="system-arrow">
-›
-</div>
-
-</div>
-
-
-
-<div class="system-card searchable">
-
-<div class="system-icon">
-💧
-</div>
-
-<div class="system-info">
-
-<h3>Urinary System</h3>
-
-<p>
-Kidneys, ureters, bladder and urethra
-</p>
-
-</div>
-
-<div class="system-arrow">
-›
-</div>
-
-</div>
-
-
-
-<div class="system-card searchable">
-
-<div class="system-icon">
-🧪
-</div>
-
-<div class="system-info">
-
-<h3>Endocrine System</h3>
-
-<p>
-Hormone-producing glands
-</p>
-
-</div>
-
-<div class="system-arrow">
-›
-</div>
-
-</div>
-
-
-
-<div class="system-card searchable">
-
-<div class="system-icon">
-♀️
-</div>
-
-<div class="system-info">
-
-<h3>Reproductive System</h3>
-
-<p>
-Male and female reproductive organs
-</p>
-
-</div>
-
-<div class="system-arrow">
-›
-</div>
-
-</div>
-
-
-
-<div class="system-card searchable">
-
-<div class="system-icon">
-🛡️
-</div>
-
-<div class="system-info">
-
-<h3>Lymphatic System</h3>
-
-<p>
-Lymph, lymph nodes and lymphatic organs
-</p>
-
-</div>
-
-<div class="system-arrow">
-›
-</div>
-
-</div>
-
-
-
-<div class="system-card searchable">
-
-<div class="system-icon">
-👁️
-</div>
-
-<div class="system-info">
-
-<h3>Special Senses</h3>
-
-<p>
-Eye, ear, smell, taste and sensation
-</p>
-
-</div>
-
-<div class="system-arrow">
-›
-</div>
-
-</div>
-
-
-
-<div class="system-card searchable">
-
-<div class="system-icon">
-🧬
-</div>
-
-<div class="system-info">
-
-<h3>Integumentary System</h3>
-
-<p>
-Skin, hair, nails and glands
-</p>
-
-</div>
-
-<div class="system-arrow">
-›
-</div>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     SKELETAL
-========================= -->
-
-<section class="section searchable">
-
-<h2 class="section-title">
-
-🦴 Skeletal System
-
-</h2>
-
-<p class="section-subtitle">
-
-Human skeleton-এর structure এবং major bones সম্পর্কে
-basic ধারণা।
-
-</p>
-
-
-<div class="content-box">
-
-<h3>Key Concepts</h3>
+<h3>Main Functions</h3>
 
 <ul>
-
-<li>Adult human skeleton contains 206 bones.</li>
-
-<li>Skeleton provides support and protection.</li>
-
-<li>Bone marrow is important for blood cell formation.</li>
-
-<li>Joints allow movement between bones.</li>
-
-<li>Cartilage provides support and reduces friction.</li>
-
-<li>Axial skeleton includes skull, vertebral column and thoracic cage.</li>
-
-<li>Appendicular skeleton includes limbs and their girdles.</li>
-
+<li>শরীরকে support প্রদান করে</li>
+<li>দেহের shape বজায় রাখে</li>
+<li>Brain, spinal cord, heart ও lungs-এর মতো গুরুত্বপূর্ণ organ protect করে</li>
+<li>Muscle-এর attachment-এর মাধ্যমে movement-এ সাহায্য করে</li>
+<li>Bone marrow-এ blood cell তৈরি হয়</li>
+<li>Calcium ও phosphate-এর reservoir হিসেবে কাজ করে</li>
 </ul>
 
 </div>
 
-</section>
+
+<div class="topic">
+
+<h3>Division of Skeleton</h3>
+
+<div class="info-grid">
+
+<div class="info-card">
+<strong>Axial Skeleton</strong>
+<p>Skull, vertebral column, ribs ও sternum নিয়ে গঠিত।</p>
+</div>
+
+<div class="info-card">
+<strong>Appendicular Skeleton</strong>
+<p>Upper limb, lower limb এবং তাদের girdle নিয়ে গঠিত।</p>
+</div>
+
+</div>
+
+</div>
 
 
+<div class="topic">
 
-<!-- =========================
-     MUSCULAR
-========================= -->
-
-<section class="section searchable">
-
-<h2 class="section-title">
-
-💪 Muscular System
-
-</h2>
-
-<p class="section-subtitle">
-
-Movement, posture এবং বিভিন্ন body function-এর সঙ্গে
-muscles-এর সম্পর্ক।
-
-</p>
-
-
-<div class="content-box">
-
-<h3>Three Major Types of Muscle</h3>
+<h3>Major Bones</h3>
 
 <ul>
-
-<li><strong>Skeletal muscle</strong> — voluntary movement-এর সঙ্গে প্রধানত যুক্ত।</li>
-
-<li><strong>Smooth muscle</strong> — internal organs-এর wall-এ পাওয়া যায়।</li>
-
-<li><strong>Cardiac muscle</strong> — heart-এর muscular wall তৈরি করে।</li>
-
+<li>Skull</li>
+<li>Clavicle</li>
+<li>Scapula</li>
+<li>Humerus</li>
+<li>Radius</li>
+<li>Ulna</li>
+<li>Carpal bones</li>
+<li>Metacarpals</li>
+<li>Phalanges</li>
+<li>Vertebrae</li>
+<li>Ribs</li>
+<li>Sternum</li>
+<li>Pelvis</li>
+<li>Femur</li>
+<li>Patella</li>
+<li>Tibia</li>
+<li>Fibula</li>
+<li>Tarsal bones</li>
+<li>Metatarsals</li>
 </ul>
 
 </div>
 
-</section>
 
+<div class="topic">
 
+<h3>Vertebral Column</h3>
 
-<!-- =========================
-     CARDIOVASCULAR
-========================= -->
-
-<section class="section searchable">
-
-<h2 class="section-title">
-
-❤️ Cardiovascular System
-
-</h2>
-
-<p class="section-subtitle">
-
-Heart এবং blood vessels-এর structure।
-
+<p>
+Vertebral column বা মেরুদণ্ড হলো শরীরের প্রধান axial support।
+এটি spinal cord-কে protect করে।
 </p>
 
-
-<div class="content-box">
-
-<h3>Important Anatomy</h3>
-
 <ul>
-
-<li>Heart is located in the thoracic cavity between the lungs.</li>
-
-<li>Heart has four chambers: right atrium, right ventricle, left atrium and left ventricle.</li>
-
-<li>Major blood vessels include aorta, pulmonary arteries, pulmonary veins and venae cavae.</li>
-
-<li>Valves help maintain one-way flow of blood.</li>
-
-<li>Coronary circulation supplies blood to the cardiac muscle.</li>
-
+<li>Cervical vertebrae — 7</li>
+<li>Thoracic vertebrae — 12</li>
+<li>Lumbar vertebrae — 5</li>
+<li>Sacral vertebrae — fused</li>
+<li>Coccygeal vertebrae — fused</li>
 </ul>
 
 </div>
 
+
+<div class="topic">
+
+<h3>Types of Joints</h3>
+
+<ul>
+<li>Fibrous joint</li>
+<li>Cartilaginous joint</li>
+<li>Synovial joint</li>
+</ul>
+
+<p>
+Synovial joint-এর উদাহরণ হলো shoulder, elbow, hip এবং knee joint।
+</p>
+
+</div>
+
+
+<div class="clinical">
+
+<strong>🩺 Clinical Anatomy</strong>
+
+<ul>
+<li>Fracture = bone-এর continuity ভেঙে যাওয়া</li>
+<li>Osteoporosis = bone density কমে যাওয়া</li>
+<li>Osteomyelitis = bone infection</li>
+<li>Dislocation = joint-এর articulating surfaces-এর abnormal separation</li>
+</ul>
+
+</div>
+
+
+<div class="exam">
+
+<strong>🎯 High-Yield Exam Points</strong>
+
+<ul>
+<li>Adult skeleton = 206 bones</li>
+<li>Longest bone = Femur</li>
+<li>Smallest bone = Stapes</li>
+<li>Largest sesamoid bone = Patella</li>
+<li>Spinal cord vertebral canal-এর মধ্যে থাকে</li>
+</ul>
+
+</div>
+
+</div>
 </section>
 
 
+<!-- ================= MUSCULAR ================= -->
 
-<!-- =========================
-     RESPIRATORY
-========================= -->
+<section class="system">
 
-<section class="section searchable">
+<div class="system-head">
+<h2>💪 2. Muscular System</h2>
+<p>Movement ও body function-এর জন্য গুরুত্বপূর্ণ system</p>
+</div>
 
-<h2 class="section-title">
+<div class="content">
 
-🫁 Respiratory System
+<div class="topic">
 
-</h2>
+<h3>Types of Muscle</h3>
 
-<div class="content-box">
+<div class="info-grid">
 
-<h3>Main Structures</h3>
+<div class="info-card">
+<strong>Skeletal Muscle</strong>
+<p>Striated এবং voluntary muscle।</p>
+</div>
+
+<div class="info-card">
+<strong>Smooth Muscle</strong>
+<p>Non-striated এবং involuntary muscle।</p>
+</div>
+
+<div class="info-card">
+<strong>Cardiac Muscle</strong>
+<p>Heart-এ পাওয়া যায় এবং involuntary।</p>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="topic">
+
+<h3>Major Muscles</h3>
 
 <ul>
+<li>Masseter</li>
+<li>Temporalis</li>
+<li>Sternocleidomastoid</li>
+<li>Trapezius</li>
+<li>Pectoralis major</li>
+<li>Latissimus dorsi</li>
+<li>Rectus abdominis</li>
+<li>External oblique</li>
+<li>Biceps brachii</li>
+<li>Triceps brachii</li>
+<li>Gluteus maximus</li>
+<li>Quadriceps</li>
+<li>Hamstrings</li>
+<li>Gastrocnemius</li>
+</ul>
 
-<li>Nose and nasal cavity</li>
+</div>
 
+
+<div class="topic">
+
+<h3>Muscle Structure</h3>
+
+<p>
+একটি skeletal muscle-এর প্রধান structural organization হলো:
+</p>
+
+<ul>
+<li>Muscle</li>
+<li>Fascicle</li>
+<li>Muscle fiber</li>
+<li>Myofibril</li>
+<li>Actin ও myosin filaments</li>
+</ul>
+
+</div>
+
+
+<div class="topic">
+
+<h3>Tendon and Fascia</h3>
+
+<p>
+<strong>Tendon</strong> muscle-কে bone-এর সঙ্গে যুক্ত করে।
+<strong>Fascia</strong> muscle ও অন্যান্য tissue-কে surround এবং support করে।
+</p>
+
+</div>
+
+
+<div class="clinical">
+
+<strong>🩺 Clinical Anatomy</strong>
+
+<ul>
+<li>Muscle strain</li>
+<li>Muscle atrophy</li>
+<li>Muscle spasm</li>
+<li>Paralysis</li>
+<li>Muscular dystrophy</li>
+</ul>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ================= CARDIO ================= -->
+
+<section class="system">
+
+<div class="system-head">
+<h2>❤️ 3. Cardiovascular System</h2>
+<p>Heart এবং blood vessels-এর সম্পূর্ণ anatomy</p>
+</div>
+
+<div class="content">
+
+<div class="topic">
+
+<h3>Location of Heart</h3>
+
+<p>
+Heart thoracic cavity-এর mediastinum-এ অবস্থিত।
+এটি দুই ফুসফুসের মাঝখানে এবং sternum-এর posterior দিকে থাকে।
+Heart-এর বেশিরভাগ অংশ midline-এর বাম পাশে অবস্থান করে।
+</p>
+
+</div>
+
+
+<div class="topic">
+
+<h3>Covering of Heart</h3>
+
+<ul>
+<li>Pericardium</li>
+<li>Fibrous pericardium</li>
+<li>Serous pericardium</li>
+</ul>
+
+</div>
+
+
+<div class="topic">
+
+<h3>Four Chambers</h3>
+
+<div class="info-grid">
+
+<div class="info-card">
+<strong>Right Atrium</strong>
+<p>Systemic circulation থেকে deoxygenated blood গ্রহণ করে।</p>
+</div>
+
+<div class="info-card">
+<strong>Right Ventricle</strong>
+<p>Blood pulmonary circulation-এ পাঠায়।</p>
+</div>
+
+<div class="info-card">
+<strong>Left Atrium</strong>
+<p>Lungs থেকে oxygenated blood গ্রহণ করে।</p>
+</div>
+
+<div class="info-card">
+<strong>Left Ventricle</strong>
+<p>Systemic circulation-এ oxygenated blood pump করে।</p>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="topic">
+
+<h3>Heart Valves</h3>
+
+<ul>
+<li>Tricuspid valve</li>
+<li>Mitral/Bicuspid valve</li>
+<li>Pulmonary valve</li>
+<li>Aortic valve</li>
+</ul>
+
+</div>
+
+
+<div class="topic">
+
+<h3>Great Vessels</h3>
+
+<ul>
+<li>Superior vena cava</li>
+<li>Inferior vena cava</li>
+<li>Pulmonary trunk</li>
+<li>Pulmonary veins</li>
+<li>Aorta</li>
+</ul>
+
+</div>
+
+
+<div class="topic">
+
+<h3>Coronary Circulation</h3>
+
+<p>
+Heart muscle বা myocardium-এর নিজস্ব blood supply coronary arteries
+দিয়ে হয়। প্রধান coronary arteries হলো right coronary artery
+এবং left coronary artery।
+</p>
+
+</div>
+
+
+<div class="exam">
+
+<strong>🎯 High-Yield Points</strong>
+
+<ul>
+<li>Heart = 4 chambers</li>
+<li>Left ventricle-এর wall সবচেয়ে thick</li>
+<li>Tricuspid valve = right atrioventricular valve</li>
+<li>Mitral valve = left atrioventricular valve</li>
+<li>Aorta systemic circulation-এর প্রধান artery</li>
+</ul>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ================= RESPIRATORY ================= -->
+
+<section class="system">
+
+<div class="system-head">
+<h2>🫁 4. Respiratory System</h2>
+<p>Gas exchange-এর জন্য দায়ী system</p>
+</div>
+
+<div class="content">
+
+<div class="topic">
+
+<h3>Respiratory Tract</h3>
+
+<ul>
+<li>Nose</li>
+<li>Nasal cavity</li>
 <li>Pharynx</li>
-
 <li>Larynx</li>
-
 <li>Trachea</li>
-
 <li>Bronchi</li>
-
 <li>Bronchioles</li>
-
-<li>Lungs</li>
-
 <li>Alveoli</li>
-
 </ul>
 
+</div>
+
+
+<div class="topic">
+
+<h3>Lungs</h3>
+
 <p>
-
-Alveoli are the major sites of gas exchange
-between air and blood.
-
+Right lung সাধারণত তিনটি lobe নিয়ে গঠিত:
+Superior, Middle ও Inferior lobe।
+Left lung-এ দুইটি lobe থাকে: Superior ও Inferior lobe।
+Left lung-এ cardiac notch থাকে।
 </p>
 
 </div>
 
-</section>
 
+<div class="topic">
 
-
-<!-- =========================
-     NERVOUS
-========================= -->
-
-<section class="section searchable">
-
-<h2 class="section-title">
-
-🧠 Nervous System
-
-</h2>
-
-<div class="content-box">
-
-<h3>Major Divisions</h3>
+<h3>Pleura</h3>
 
 <ul>
-
-<li>Central nervous system — brain and spinal cord.</li>
-
-<li>Peripheral nervous system — nerves outside the brain and spinal cord.</li>
-
-<li>Autonomic nervous system regulates many involuntary functions.</li>
-
-<li>Brain is protected by the skull and meninges.</li>
-
-<li>Spinal cord is protected by the vertebral column.</li>
-
+<li>Visceral pleura</li>
+<li>Parietal pleura</li>
+<li>Pleural cavity</li>
 </ul>
 
 </div>
 
+
+<div class="topic">
+
+<h3>Alveoli</h3>
+
+<p>
+Alveoli হলো lungs-এর microscopic air sacs যেখানে oxygen ও carbon
+dioxide-এর প্রধান gas exchange হয়।
+</p>
+
+</div>
+
+
+<div class="topic">
+
+<h3>Diaphragm</h3>
+
+<p>
+Diaphragm হলো প্রধান muscle of respiration। এটি thoracic cavity
+ও abdominal cavity-এর মধ্যে partition তৈরি করে।
+</p>
+
+</div>
+
+
+<div class="clinical">
+
+<strong>🩺 Clinical Anatomy</strong>
+
+<ul>
+<li>Pneumonia</li>
+<li>Pleural effusion</li>
+<li>Pneumothorax</li>
+<li>Asthma</li>
+<li>Respiratory failure</li>
+</ul>
+
+</div>
+
+</div>
 </section>
 
 
+<!-- ================= NERVOUS ================= -->
 
-<!-- =========================
-     DIGESTIVE
-========================= -->
+<section class="system">
 
-<section class="section searchable">
+<div class="system-head">
+<h2>🧠 5. Nervous System</h2>
+<p>Control, coordination এবং communication system</p>
+</div>
 
-<h2 class="section-title">
+<div class="content">
 
-🍽️ Digestive System
+<div class="topic">
 
-</h2>
-
-<div class="content-box">
-
-<h3>Digestive Tract</h3>
+<h3>Main Divisions</h3>
 
 <ul>
+<li>Central Nervous System — Brain + Spinal cord</li>
+<li>Peripheral Nervous System — Cranial + spinal nerves</li>
+<li>Autonomic Nervous System — Sympathetic + parasympathetic</li>
+</ul>
 
+</div>
+
+
+<div class="topic">
+
+<h3>Brain</h3>
+
+<ul>
+<li>Cerebrum</li>
+<li>Cerebellum</li>
+<li>Brainstem</li>
+<li>Midbrain</li>
+<li>Pons</li>
+<li>Medulla oblongata</li>
+</ul>
+
+</div>
+
+
+<div class="topic">
+
+<h3>Cerebral Lobes</h3>
+
+<ul>
+<li>Frontal lobe</li>
+<li>Parietal lobe</li>
+<li>Temporal lobe</li>
+<li>Occipital lobe</li>
+</ul>
+
+</div>
+
+
+<div class="topic">
+
+<h3>Meninges</h3>
+
+<ul>
+<li>Dura mater</li>
+<li>Arachnoid mater</li>
+<li>Pia mater</li>
+</ul>
+
+</div>
+
+
+<div class="topic">
+
+<h3>CSF</h3>
+
+<p>
+Cerebrospinal fluid brain ও spinal cord-কে cushion, protection এবং
+metabolic support প্রদান করে।
+</p>
+
+</div>
+
+
+<div class="topic">
+
+<h3>Cranial Nerves</h3>
+
+<p>
+মানবদেহে 12 pairs of cranial nerves রয়েছে।
+এগুলো sensory, motor অথবা mixed function সম্পন্ন করতে পারে।
+</p>
+
+</div>
+
+
+<div class="clinical">
+
+<strong>🩺 Clinical Anatomy</strong>
+
+<ul>
+<li>Stroke</li>
+<li>Meningitis</li>
+<li>Hydrocephalus</li>
+<li>Spinal cord injury</li>
+<li>Peripheral nerve injury</li>
+</ul>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ================= DIGESTIVE ================= -->
+
+<section class="system">
+
+<div class="system-head">
+<h2>🍽️ 6. Digestive System</h2>
+<p>Food digestion, absorption ও elimination-এর system</p>
+</div>
+
+<div class="content">
+
+<div class="topic">
+
+<h3>Alimentary Canal</h3>
+
+<ul>
 <li>Mouth</li>
-
 <li>Pharynx</li>
-
 <li>Esophagus</li>
-
 <li>Stomach</li>
-
 <li>Small intestine</li>
-
 <li>Large intestine</li>
-
 <li>Rectum</li>
-
 <li>Anal canal</li>
-
 </ul>
 
-<h3 style="margin-top:18px;">
-Accessory Organs
-</h3>
+</div>
+
+
+<div class="topic">
+
+<h3>Small Intestine</h3>
 
 <ul>
+<li>Duodenum</li>
+<li>Jejunum</li>
+<li>Ileum</li>
+</ul>
 
+<p>
+Small intestine-এ digestion ও nutrient absorption-এর গুরুত্বপূর্ণ
+ধাপ সম্পন্ন হয়।
+</p>
+
+</div>
+
+
+<div class="topic">
+
+<h3>Large Intestine</h3>
+
+<ul>
+<li>Cecum</li>
+<li>Appendix</li>
+<li>Ascending colon</li>
+<li>Transverse colon</li>
+<li>Descending colon</li>
+<li>Sigmoid colon</li>
+<li>Rectum</li>
+</ul>
+
+</div>
+
+
+<div class="topic">
+
+<h3>Accessory Organs</h3>
+
+<ul>
 <li>Liver</li>
-
 <li>Gallbladder</li>
-
 <li>Pancreas</li>
-
+<li>Salivary glands</li>
 </ul>
 
 </div>
 
+
+<div class="clinical">
+
+<strong>🩺 Clinical Anatomy</strong>
+
+<ul>
+<li>Appendicitis</li>
+<li>Peptic ulcer</li>
+<li>Hepatitis</li>
+<li>Cholecystitis</li>
+<li>Pancreatitis</li>
+</ul>
+
+</div>
+
+</div>
 </section>
 
 
+<!-- ================= URINARY ================= -->
 
-<!-- =========================
-     URINARY
-========================= -->
+<section class="system">
 
-<section class="section searchable">
+<div class="system-head">
+<h2>💧 7. Urinary System</h2>
+<p>Urine formation এবং fluid balance-এর system</p>
+</div>
 
-<h2 class="section-title">
+<div class="content">
 
-💧 Urinary System
+<div class="topic">
 
-</h2>
-
-<div class="content-box">
-
-<h3>Main Structures</h3>
+<h3>Main Organs</h3>
 
 <ul>
-
-<li>Kidneys</li>
-
-<li>Ureters</li>
-
+<li>Two kidneys</li>
+<li>Two ureters</li>
 <li>Urinary bladder</li>
-
 <li>Urethra</li>
-
 </ul>
 
+</div>
+
+
+<div class="topic">
+
+<h3>Kidney</h3>
+
 <p>
-
-Kidneys are important organs for urine formation,
-fluid balance and maintenance of internal environment.
-
+Kidney posterior abdominal wall-এর দিকে অবস্থিত। Kidney-এর প্রধান
+অংশ হলো cortex ও medulla। Medulla-তে renal pyramids থাকে।
 </p>
 
 </div>
 
+
+<div class="topic">
+
+<h3>Nephron</h3>
+
+<ul>
+<li>Renal corpuscle</li>
+<li>Glomerulus</li>
+<li>Bowman's capsule</li>
+<li>Proximal convoluted tubule</li>
+<li>Loop of Henle</li>
+<li>Distal convoluted tubule</li>
+<li>Collecting duct</li>
+</ul>
+
+</div>
+
+
+<div class="topic">
+
+<h3>Urinary Bladder</h3>
+
+<p>
+Urinary bladder হলো urine storage-এর hollow muscular organ।
+Urine ureter দিয়ে bladder-এ আসে এবং urethra দিয়ে বাইরে বের হয়।
+</p>
+
+</div>
+
+
+<div class="clinical">
+
+<strong>🩺 Clinical Anatomy</strong>
+
+<ul>
+<li>Urinary tract infection</li>
+<li>Renal stone</li>
+<li>Renal failure</li>
+<li>Hydronephrosis</li>
+<li>Urinary retention</li>
+</ul>
+
+</div>
+
+</div>
 </section>
 
 
+<!-- ================= ENDOCRINE ================= -->
 
-<!-- =========================
-     ENDOCRINE
-========================= -->
+<section class="system">
 
-<section class="section searchable">
+<div class="system-head">
+<h2>🧪 8. Endocrine System</h2>
+<p>Hormone-producing glands</p>
+</div>
 
-<h2 class="section-title">
+<div class="content">
 
-🧪 Endocrine System
+<div class="topic">
 
-</h2>
-
-<div class="content-box">
-
-<h3>Important Endocrine Glands</h3>
+<h3>Major Endocrine Glands</h3>
 
 <ul>
-
 <li>Pituitary gland</li>
-
 <li>Thyroid gland</li>
-
 <li>Parathyroid glands</li>
-
 <li>Adrenal glands</li>
-
 <li>Pancreatic islets</li>
-
 <li>Pineal gland</li>
-
-<li>Ovaries and testes</li>
-
-</ul>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     REPRODUCTIVE
-========================= -->
-
-<section class="section searchable">
-
-<h2 class="section-title">
-
-♀️ Reproductive System
-
-</h2>
-
-<div class="content-box">
-
-<h3>Female Reproductive Organs</h3>
-
-<ul>
-
-<li>Ovaries</li>
-
-<li>Uterine tubes</li>
-
-<li>Uterus</li>
-
-<li>Vagina</li>
-
-</ul>
-
-<h3 style="margin-top:18px;">
-Male Reproductive Organs
-</h3>
-
-<ul>
-
-<li>Testes</li>
-
-<li>Epididymis</li>
-
-<li>Vas deferens</li>
-
-<li>Seminal vesicles</li>
-
-<li>Prostate gland</li>
-
-<li>Penis</li>
-
-</ul>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     LYMPHATIC
-========================= -->
-
-<section class="section searchable">
-
-<h2 class="section-title">
-
-🛡️ Lymphatic System
-
-</h2>
-
-<div class="content-box">
-
-<h3>Important Structures</h3>
-
-<ul>
-
-<li>Lymphatic vessels</li>
-
-<li>Lymph nodes</li>
-
-<li>Spleen</li>
-
 <li>Thymus</li>
+<li>Ovaries</li>
+<li>Testes</li>
+</ul>
 
+</div>
+
+
+<div class="topic">
+
+<h3>Pituitary Gland</h3>
+
+<p>
+Pituitary gland brain-এর নিচে sella turcica অঞ্চলে অবস্থিত।
+এটি endocrine system-এর গুরুত্বপূর্ণ regulatory gland।
+</p>
+
+</div>
+
+
+<div class="topic">
+
+<h3>Thyroid Gland</h3>
+
+<p>
+Thyroid gland neck-এর anterior অংশে trachea-এর সামনে অবস্থিত।
+এর দুইটি lobe এবং একটি isthmus থাকে।
+</p>
+
+</div>
+
+
+<div class="topic">
+
+<h3>Adrenal Gland</h3>
+
+<p>
+প্রতিটি kidney-এর superior pole-এর উপর একটি করে adrenal gland থাকে।
+এর cortex ও medulla দুইটি প্রধান অংশ।
+</p>
+
+</div>
+
+
+<div class="clinical">
+
+<strong>🩺 Clinical Anatomy</strong>
+
+<ul>
+<li>Goiter</li>
+<li>Hyperthyroidism</li>
+<li>Hypothyroidism</li>
+<li>Diabetes mellitus</li>
+<li>Addison disease</li>
+</ul>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ================= FEMALE ================= -->
+
+<section class="system">
+
+<div class="system-head">
+<h2>👩 9. Female Reproductive System</h2>
+<p>Female reproductive organs-এর anatomy</p>
+</div>
+
+<div class="content">
+
+<div class="topic">
+
+<h3>Main Organs</h3>
+
+<ul>
+<li>Ovaries</li>
+<li>Uterine tubes</li>
+<li>Uterus</li>
+<li>Cervix</li>
+<li>Vagina</li>
+<li>External genitalia</li>
+</ul>
+
+</div>
+
+
+<div class="topic">
+
+<h3>Ovary</h3>
+
+<p>
+Ovary female gonad। এটি ova উৎপাদন করে এবং প্রধান reproductive
+hormone secretion-এর সঙ্গে সম্পর্কিত।
+</p>
+
+</div>
+
+
+<div class="topic">
+
+<h3>Uterus</h3>
+
+<p>
+Uterus একটি muscular hollow organ। এর প্রধান অংশ হলো:
+</p>
+
+<ul>
+<li>Fundus</li>
+<li>Body</li>
+<li>Isthmus</li>
+<li>Cervix</li>
+</ul>
+
+</div>
+
+
+<div class="topic">
+
+<h3>Uterine Tube</h3>
+
+<ul>
+<li>Infundibulum</li>
+<li>Ampulla</li>
+<li>Isthmus</li>
+<li>Uterine part</li>
+</ul>
+
+<p>
+Ampulla হলো fertilization-এর common site।
+</p>
+
+</div>
+
+
+<div class="clinical">
+
+<strong>🩺 Clinical Anatomy</strong>
+
+<ul>
+<li>Ectopic pregnancy</li>
+<li>Ovarian cyst</li>
+<li>Uterine fibroid</li>
+<li>Pelvic inflammatory disease</li>
+</ul>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ================= MALE ================= -->
+
+<section class="system">
+
+<div class="system-head">
+<h2>👨 10. Male Reproductive System</h2>
+<p>Male reproductive organs-এর anatomy</p>
+</div>
+
+<div class="content">
+
+<div class="topic">
+
+<h3>Main Organs</h3>
+
+<ul>
+<li>Testes</li>
+<li>Epididymis</li>
+<li>Vas deferens</li>
+<li>Seminal vesicles</li>
+<li>Prostate gland</li>
+<li>Penis</li>
+<li>Scrotum</li>
+</ul>
+
+</div>
+
+
+<div class="topic">
+
+<h3>Testis</h3>
+
+<p>
+Testis হলো male gonad। এটি sperm production এবং male reproductive
+hormone secretion-এর জন্য গুরুত্বপূর্ণ।
+</p>
+
+</div>
+
+
+<div class="topic">
+
+<h3>Epididymis & Vas Deferens</h3>
+
+<p>
+Epididymis testis-এর posterior aspect-এ থাকে এবং sperm maturation
+ও storage-এর সঙ্গে সম্পর্কিত। Vas deferens sperm transport করে।
+</p>
+
+</div>
+
+
+<div class="topic">
+
+<h3>Accessory Glands</h3>
+
+<ul>
+<li>Seminal vesicles</li>
+<li>Prostate gland</li>
+<li>Bulbourethral glands</li>
+</ul>
+
+</div>
+
+
+<div class="clinical">
+
+<strong>🩺 Clinical Anatomy</strong>
+
+<ul>
+<li>Benign prostatic enlargement</li>
+<li>Testicular torsion</li>
+<li>Cryptorchidism</li>
+<li>Epididymitis</li>
+</ul>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ================= LYMPHATIC ================= -->
+
+<section class="system">
+
+<div class="system-head">
+<h2>🛡️ 11. Lymphatic System</h2>
+<p>Fluid balance ও immune defense-এর গুরুত্বপূর্ণ system</p>
+</div>
+
+<div class="content">
+
+<div class="topic">
+
+<h3>Main Components</h3>
+
+<ul>
+<li>Lymph</li>
+<li>Lymphatic capillaries</li>
+<li>Lymphatic vessels</li>
+<li>Lymph nodes</li>
+<li>Spleen</li>
+<li>Thymus</li>
 <li>Tonsils</li>
-
 </ul>
 
+</div>
+
+
+<div class="topic">
+
+<h3>Major Lymphatic Ducts</h3>
+
+<ul>
+<li>Thoracic duct</li>
+<li>Right lymphatic duct</li>
+</ul>
+
+</div>
+
+
+<div class="topic">
+
+<h3>Lymph Nodes</h3>
+
 <p>
-
-The lymphatic system contributes to fluid balance
-and immune defense.
-
+Lymph nodes lymph filter করে এবং immune response-এর গুরুত্বপূর্ণ
+স্থান হিসেবে কাজ করে।
 </p>
 
 </div>
 
-</section>
+
+<div class="topic">
+
+<h3>Spleen</h3>
+
+<p>
+Spleen একটি গুরুত্বপূর্ণ lymphoid organ। এটি immune function,
+blood filtration এবং পুরোনো blood cell removal-এর সঙ্গে যুক্ত।
+</p>
+
+</div>
 
 
+<div class="clinical">
 
-<!-- =========================
-     SPECIAL SENSES
-========================= -->
-
-<section class="section searchable">
-
-<h2 class="section-title">
-
-👁️ Special Senses
-
-</h2>
-
-<div class="content-box">
-
-<h3>Major Sense Organs</h3>
+<strong>🩺 Clinical Anatomy</strong>
 
 <ul>
-
-<li>Eye — vision</li>
-
-<li>Ear — hearing and balance</li>
-
-<li>Nose — smell</li>
-
-<li>Tongue — taste</li>
-
-<li>Skin — touch, pressure, temperature and pain sensation</li>
-
+<li>Lymphadenopathy</li>
+<li>Lymphedema</li>
+<li>Lymphoma</li>
+<li>Splenomegaly</li>
 </ul>
 
 </div>
 
+</div>
 </section>
 
 
+<!-- ================= SPECIAL SENSES ================= -->
 
-<!-- =========================
-     INTEGUMENTARY
-========================= -->
+<section class="system">
 
-<section class="section searchable">
+<div class="system-head">
+<h2>👁️ 12. Special Senses</h2>
+<p>Vision, hearing, balance, smell ও taste</p>
+</div>
 
-<h2 class="section-title">
+<div class="content">
 
-🧴 Integumentary System
+<div class="topic">
 
-</h2>
-
-<div class="content-box">
-
-<h3>Components</h3>
+<h3>Eye</h3>
 
 <ul>
+<li>Eyeball</li>
+<li>Cornea</li>
+<li>Sclera</li>
+<li>Choroid</li>
+<li>Retina</li>
+<li>Lens</li>
+<li>Aqueous humour</li>
+<li>Vitreous humour</li>
+<li>Optic nerve</li>
+</ul>
 
-<li>Skin</li>
+</div>
 
+
+<div class="topic">
+
+<h3>Ear</h3>
+
+<ul>
+<li>External ear</li>
+<li>Middle ear</li>
+<li>Inner ear</li>
+<li>Cochlea</li>
+<li>Vestibule</li>
+<li>Semicircular canals</li>
+</ul>
+
+<p>
+Cochlea hearing-এর সঙ্গে এবং vestibular apparatus balance-এর সঙ্গে
+সম্পর্কিত।
+</p>
+
+</div>
+
+
+<div class="topic">
+
+<h3>Smell & Taste</h3>
+
+<p>
+Olfactory system smell বা গন্ধ অনুভূতিতে এবং taste buds স্বাদ
+অনুভূতিতে গুরুত্বপূর্ণ ভূমিকা পালন করে।
+</p>
+
+</div>
+
+
+<div class="clinical">
+
+<strong>🩺 Clinical Anatomy</strong>
+
+<ul>
+<li>Cataract</li>
+<li>Glaucoma</li>
+<li>Otitis media</li>
+<li>Hearing loss</li>
+<li>Vertigo</li>
+</ul>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ================= INTEGUMENTARY ================= -->
+
+<section class="system">
+
+<div class="system-head">
+<h2>🧴 13. Integumentary System</h2>
+<p>Skin ও skin appendages</p>
+</div>
+
+<div class="content">
+
+<div class="topic">
+
+<h3>Layers of Skin</h3>
+
+<ul>
+<li>Epidermis</li>
+<li>Dermis</li>
+<li>Subcutaneous tissue</li>
+</ul>
+
+</div>
+
+
+<div class="topic">
+
+<h3>Epidermis</h3>
+
+<p>
+Epidermis হলো skin-এর outer layer। এটি প্রধানত keratinized
+stratified squamous epithelium দিয়ে গঠিত।
+</p>
+
+</div>
+
+
+<div class="topic">
+
+<h3>Dermis</h3>
+
+<p>
+Dermis epidermis-এর নিচে অবস্থিত এবং এতে blood vessels,
+nerves, hair follicles ও glands থাকে।
+</p>
+
+</div>
+
+
+<div class="topic">
+
+<h3>Skin Appendages</h3>
+
+<ul>
 <li>Hair</li>
-
 <li>Nails</li>
-
 <li>Sweat glands</li>
-
 <li>Sebaceous glands</li>
-
 </ul>
-
-<p>
-
-Skin provides protection and participates in
-temperature regulation and sensation.
-
-</p>
 
 </div>
 
+
+<div class="topic">
+
+<h3>Functions of Skin</h3>
+
+<ul>
+<li>Protection</li>
+<li>Temperature regulation</li>
+<li>Sensation</li>
+<li>Prevention of fluid loss</li>
+<li>Vitamin D synthesis-এর সঙ্গে সম্পর্কিত</li>
+</ul>
+
+</div>
+
+
+<div class="clinical">
+
+<strong>🩺 Clinical Anatomy</strong>
+
+<ul>
+<li>Burn</li>
+<li>Pressure ulcer</li>
+<li>Dermatitis</li>
+<li>Skin infection</li>
+<li>Decubitus ulcer</li>
+</ul>
+
+</div>
+
+</div>
 </section>
 
 
-
-<!-- =========================
-     QUICK REVISION
-========================= -->
+<!-- ================= REVISION ================= -->
 
 <section class="revision">
 
-<h2>
+<h2>⚡ Final Anatomy Quick Revision</h2>
 
-⚡ Anatomy Quick Revision
-
-</h2>
-
-<p>
-
-শেষ মুহূর্তে দ্রুত revision-এর জন্য গুরুত্বপূর্ণ
-high-yield points।
-
-</p>
-
-
-<div class="revision-grid">
-
-
-<div class="revision-item">
-
-🦴 Adult skeleton → <strong>206 bones</strong>
-
-</div>
-
-
-<div class="revision-item">
-
-❤️ Heart → <strong>4 chambers</strong>
-
-</div>
-
-
-<div class="revision-item">
-
-🫁 Main gas exchange → <strong>Alveoli</strong>
-
-</div>
-
-
-<div class="revision-item">
-
-🧠 CNS → <strong>Brain + spinal cord</strong>
-
-</div>
-
-
-<div class="revision-item">
-
-💧 Urinary system → <strong>Kidney, ureter, bladder, urethra</strong>
-
-</div>
-
-
-<div class="revision-item">
-
-🍽️ Small intestine → <strong>Duodenum, jejunum, ileum</strong>
-
-</div>
-
-
-<div class="revision-item">
-
-🧪 Major endocrine control gland → <strong>Pituitary</strong>
-
-</div>
-
-
-<div class="revision-item">
-
-🛡️ Lymphatic organ → <strong>Spleen</strong>
-
-</div>
-
-
-</div>
+<ul>
+<li>Adult human skeleton = 206 bones</li>
+<li>Longest bone = Femur</li>
+<li>Smallest bone = Stapes</li>
+<li>Heart = 4 chambers</li>
+<li>Right lung = 3 lobes</li>
+<li>Left lung = 2 lobes</li>
+<li>Main site of gas exchange = Alveoli</li>
+<li>CNS = Brain + Spinal cord</li>
+<li>Kidney-এর functional unit = Nephron</li>
+<li>Small intestine = Duodenum + Jejunum + Ileum</li>
+<li>Uterus-এর প্রধান অংশ = Fundus, body, isthmus, cervix</li>
+<li>Skin-এর প্রধান layers = Epidermis + Dermis</li>
+<li>Thyroid = Neck-এর anterior region</li>
+<li>Spleen = Important lymphoid organ</li>
+</ul>
 
 </section>
 
 
+<!-- ================= MCQ ================= -->
 
-<!-- =========================
-     EXAM POINTS
-========================= -->
+<section class="system mcq-section">
 
-<section class="section">
+<div class="system-head">
+<h2>📝 Anatomy Practice MCQ</h2>
+<p>Quick revision questions</p>
+</div>
 
-<h2 class="section-title">
-
-🎯 Anatomy Important Exam Points
-
-</h2>
-
-<p class="section-subtitle">
-
-B.Sc Nursing examination এবং nursing competitive
-exam-এর জন্য আগে এগুলো revise করুন।
-
-</p>
+<div class="content">
 
 
-<div class="exam-grid">
-
-
-<div class="exam-card">
-
-<h3>
-01. Bones
-</h3>
-
-<p>
-Axial and appendicular skeleton,
-major bones, joints and bone functions।
-</p>
-
+<div class="mcq">
+<strong>1. একজন প্রাপ্তবয়স্ক মানুষের সাধারণত কতটি bone থাকে?</strong>
+<div class="option">A. 196</div>
+<div class="option">B. 206</div>
+<div class="option">C. 216</div>
+<div class="option">D. 226</div>
+<div class="answer">✓ Answer: B. 206</div>
 </div>
 
 
-<div class="exam-card">
-
-<h3>
-02. Heart
-</h3>
-
-<p>
-Chambers, valves, great vessels,
-coronary circulation and location।
-</p>
-
+<div class="mcq">
+<strong>2. Human body-এর longest bone কোনটি?</strong>
+<div class="option">A. Tibia</div>
+<div class="option">B. Humerus</div>
+<div class="option">C. Femur</div>
+<div class="option">D. Radius</div>
+<div class="answer">✓ Answer: C. Femur</div>
 </div>
 
 
-<div class="exam-card">
-
-<h3>
-03. Brain
-</h3>
-
-<p>
-Major brain parts, meninges,
-cranial nerves and spinal cord।
-</p>
-
+<div class="mcq">
+<strong>3. Heart-এর chamber কতটি?</strong>
+<div class="option">A. 2</div>
+<div class="option">B. 3</div>
+<div class="option">C. 4</div>
+<div class="option">D. 5</div>
+<div class="answer">✓ Answer: C. 4</div>
 </div>
 
 
-<div class="exam-card">
-
-<h3>
-04. Respiratory Tract
-</h3>
-
-<p>
-Upper and lower respiratory tract,
-lungs and alveoli।
-</p>
-
+<div class="mcq">
+<strong>4. Gas exchange প্রধানত কোথায় হয়?</strong>
+<div class="option">A. Trachea</div>
+<div class="option">B. Bronchus</div>
+<div class="option">C. Alveoli</div>
+<div class="option">D. Larynx</div>
+<div class="answer">✓ Answer: C. Alveoli</div>
 </div>
 
 
-<div class="exam-card">
-
-<h3>
-05. Digestive Tract
-</h3>
-
-<p>
-GI tract sequence and accessory
-digestive organs।
-</p>
-
+<div class="mcq">
+<strong>5. CNS কোন দুটি অংশ নিয়ে গঠিত?</strong>
+<div class="option">A. Brain ও nerves</div>
+<div class="option">B. Brain ও spinal cord</div>
+<div class="option">C. Spinal cord ও muscles</div>
+<div class="option">D. Brain ও heart</div>
+<div class="answer">✓ Answer: B. Brain ও spinal cord</div>
 </div>
 
 
-<div class="exam-card">
-
-<h3>
-06. Urinary System
-</h3>
-
-<p>
-Kidney structure, ureters,
-bladder and urethra।
-</p>
-
+<div class="mcq">
+<strong>6. Kidney-এর functional unit কোনটি?</strong>
+<div class="option">A. Neuron</div>
+<div class="option">B. Alveolus</div>
+<div class="option">C. Nephron</div>
+<div class="option">D. Osteon</div>
+<div class="answer">✓ Answer: C. Nephron</div>
 </div>
 
+
+<div class="mcq">
+<strong>7. Small intestine-এর কোন অংশটি প্রথম?</strong>
+<div class="option">A. Ileum</div>
+<div class="option">B. Jejunum</div>
+<div class="option">C. Duodenum</div>
+<div class="option">D. Cecum</div>
+<div class="answer">✓ Answer: C. Duodenum</div>
 </div>
 
+
+<div class="mcq">
+<strong>8. Thyroid gland কোথায় অবস্থিত?</strong>
+<div class="option">A. Chest</div>
+<div class="option">B. Neck</div>
+<div class="option">C. Abdomen</div>
+<div class="option">D. Pelvis</div>
+<div class="answer">✓ Answer: B. Neck</div>
+</div>
+
+
+<div class="mcq">
+<strong>9. Skin-এর outermost layer কোনটি?</strong>
+<div class="option">A. Dermis</div>
+<div class="option">B. Epidermis</div>
+<div class="option">C. Fascia</div>
+<div class="option">D. Muscle</div>
+<div class="answer">✓ Answer: B. Epidermis</div>
+</div>
+
+
+<div class="mcq">
+<strong>10. Female reproductive system-এর প্রধান female gonad কোনটি?</strong>
+<div class="option">A. Uterus</div>
+<div class="option">B. Ovary</div>
+<div class="option">C. Cervix</div>
+<div class="option">D. Vagina</div>
+<div class="answer">✓ Answer: B. Ovary</div>
+</div>
+
+
+</div>
 </section>
 
 
-
-<!-- =========================
-     MCQ
-========================= -->
-
-<section class="section">
-
-<h2 class="section-title">
-
-📝 Anatomy MCQ Practice
-
-</h2>
-
-<p class="section-subtitle">
-
-প্রথম revision-এর জন্য basic Anatomy MCQ।
-
-</p>
-
-
-<div class="mcq-container">
-
-
-<div class="mcq">
-
-<div class="mcq-number">
-QUESTION 01
-</div>
-
-<div class="mcq-question">
-
-How many bones are present in the adult human skeleton?
-
-</div>
-
-<div class="option">
-A. 201
-</div>
-
-<div class="option">
-B. 206
-</div>
-
-<div class="option">
-C. 210
-</div>
-
-<div class="option">
-D. 216
-</div>
-
-<div class="answer">
-✓ Answer: B. 206
-</div>
-
-</div>
-
-
-
-<div class="mcq">
-
-<div class="mcq-number">
-QUESTION 02
-</div>
-
-<div class="mcq-question">
-
-How many chambers are present in the human heart?
-
-</div>
-
-<div class="option">
-A. 2
-</div>
-
-<div class="option">
-B. 3
-</div>
-
-<div class="option">
-C. 4
-</div>
-
-<div class="option">
-D. 5
-</div>
-
-<div class="answer">
-✓ Answer: C. 4
-</div>
-
-</div>
-
-
-
-<div class="mcq">
-
-<div class="mcq-number">
-QUESTION 03
-</div>
-
-<div class="mcq-question">
-
-The main site of gas exchange in the lungs is the—
-
-</div>
-
-<div class="option">
-A. Trachea
-</div>
-
-<div class="option">
-B. Bronchus
-</div>
-
-<div class="option">
-C. Alveoli
-</div>
-
-<div class="option">
-D. Larynx
-</div>
-
-<div class="answer">
-✓ Answer: C. Alveoli
-</div>
-
-</div>
-
-
-
-<div class="mcq">
-
-<div class="mcq-number">
-QUESTION 04
-</div>
-
-<div class="mcq-question">
-
-Which organs form the central nervous system?
-
-</div>
-
-<div class="option">
-A. Brain and spinal cord
-</div>
-
-<div class="option">
-B. Brain and muscles
-</div>
-
-<div class="option">
-C. Spinal cord and bones
-</div>
-
-<div class="option">
-D. Nerves and muscles
-</div>
-
-<div class="answer">
-✓ Answer: A. Brain and spinal cord
-</div>
-
-</div>
-
-
-
-<div class="mcq">
-
-<div class="mcq-number">
-QUESTION 05
-</div>
-
-<div class="mcq-question">
-
-Which organ is primarily responsible for urine formation?
-
-</div>
-
-<div class="option">
-A. Liver
-</div>
-
-<div class="option">
-B. Kidney
-</div>
-
-<div class="option">
-C. Bladder
-</div>
-
-<div class="option">
-D. Ureter
-</div>
-
-<div class="answer">
-✓ Answer: B. Kidney
-</div>
-
-</div>
-
-
-
-<div class="mcq">
-
-<div class="mcq-number">
-QUESTION 06
-</div>
-
-<div class="mcq-question">
-
-Which gland is commonly called the master gland?
-
-</div>
-
-<div class="option">
-A. Thyroid
-</div>
-
-<div class="option">
-B. Adrenal
-</div>
-
-<div class="option">
-C. Pituitary
-</div>
-
-<div class="option">
-D. Pineal
-</div>
-
-<div class="answer">
-✓ Answer: C. Pituitary
-</div>
-
-</div>
-
-
-
-<div class="mcq">
-
-<div class="mcq-number">
-QUESTION 07
-</div>
-
-<div class="mcq-question">
-
-Which organ is the main site of bile production?
-
-</div>
-
-<div class="option">
-A. Stomach
-</div>
-
-<div class="option">
-B. Pancreas
-</div>
-
-<div class="option">
-C. Liver
-</div>
-
-<div class="option">
-D. Gallbladder
-</div>
-
-<div class="answer">
-✓ Answer: C. Liver
-</div>
-
-</div>
-
-
-
-<div class="mcq">
-
-<div class="mcq-number">
-QUESTION 08
 </div>
-
-<div class="mcq-question">
-
-Which organ stores bile?
-
-</div>
-
-<div class="option">
-A. Liver
-</div>
-
-<div class="option">
-B. Gallbladder
-</div>
-
-<div class="option">
-C. Pancreas
-</div>
-
-<div class="option">
-D. Stomach
-</div>
-
-<div class="answer">
-✓ Answer: B. Gallbladder
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     CTA
-========================= -->
-
-<section class="cta">
 
-<h2>
 
-🚀 Continue Your Nursing Journey
+<footer>
 
-</h2>
+<p><strong>NURSING CAREER</strong></p>
 
 <p>
-
-Anatomy শেষ করে B.Sc Nursing-এর অন্যান্য
-subject-এ এগিয়ে যান।
-
+B.Sc in Nursing • Anatomy • Nursing Education
 </p>
 
-
-<div class="cta-buttons">
-
-<a class="cta-btn"
-href="https://nursingcareer.github.io/nursing-career/bsc-nursing.html">
-
-← B.Sc Nursing Subjects
-
-</a>
-
-
-<a class="cta-btn secondary"
-href="https://nursingcareer.github.io/nursing-career/">
-
-🏠 Nursing Career Home
-
-</a>
-
-</div>
-
-</section>
-
-
-</main>
-
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer class="footer">
-
-<div class="footer-title">
-
-NURSING CAREER
-
-</div>
-
-<p>
-
-Your Complete Nursing Education Platform
-
-</p>
-
-<p style="margin-top:8px;">
-
-© 2026 Nursing Career. All Rights Reserved.
-
+<p style="margin-top:8px;font-size:13px;">
+Prepared for nursing students — Nursing Career
 </p>
 
 </footer>
 
 
-
 <script>
 
-/* =========================
-   TOPIC SEARCH
-========================= */
+function searchTopic(){
 
-function searchTopics(){
-
-    const input =
-    document
-    .getElementById("topicSearch")
+  let input =
+    document.getElementById("searchInput")
     .value
     .toLowerCase()
     .trim();
 
-    const items =
-    document
-    .querySelectorAll(".searchable");
+  let systems =
+    document.querySelectorAll(".system");
 
-    items.forEach(function(item){
+  systems.forEach(function(system){
 
-        const text =
-        item.innerText.toLowerCase();
+    if(input === ""){
+      system.style.display = "block";
+      return;
+    }
 
-        if(
-            input === "" ||
-            text.includes(input)
-        ){
+    let text =
+      system.innerText.toLowerCase();
 
-            item.classList.remove("hidden");
+    if(text.includes(input)){
+      system.style.display = "block";
+    }else{
+      system.style.display = "none";
+    }
 
-        }else{
-
-            item.classList.add("hidden");
-
-        }
-
-    });
+  });
 
 }
 
 </script>
 
-
 </body>
-
 </html>
