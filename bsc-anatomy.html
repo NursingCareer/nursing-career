@@ -3,302 +3,145 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Complete Anatomy | Nursing Career</title>
+<title>Skeletal System | Complete Anatomy | Nursing Career</title>
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
 body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:#f4f7fb;
-  color:#172033;
-  line-height:1.7;
+font-family:Arial,sans-serif;
+background:#f4f7fb;
+color:#172033;
+line-height:1.75
 }
-
 header{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:linear-gradient(135deg,#071952,#088395,#35A29F);
-  color:white;
-  padding:15px 20px;
-  box-shadow:0 4px 18px rgba(0,0,0,.18);
+position:sticky;top:0;z-index:1000;
+background:linear-gradient(135deg,#071952,#088395,#35a29f);
+color:white;padding:14px 18px;
+box-shadow:0 4px 18px rgba(0,0,0,.18)
 }
-
-.header-inner{
-  max-width:1150px;
-  margin:auto;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:15px;
+.head{
+max-width:1150px;margin:auto;
+display:flex;justify-content:space-between;
+align-items:center;gap:10px
 }
-
-.logo{
-  font-size:22px;
-  font-weight:900;
-  letter-spacing:1px;
+.logo{font-size:21px;font-weight:900}
+.logo small{display:block;font-size:10px;letter-spacing:2px}
+.back{
+color:white;text-decoration:none;
+border:1px solid #ffffff77;
+padding:7px 13px;border-radius:20px;
+font-size:13px
 }
-
-.logo span{
-  display:block;
-  font-size:11px;
-  opacity:.85;
-  letter-spacing:2px;
-}
-
-.back-btn{
-  text-decoration:none;
-  color:white;
-  border:1px solid rgba(255,255,255,.4);
-  padding:8px 14px;
-  border-radius:20px;
-  font-size:13px;
-}
-
 .hero{
-  background:linear-gradient(135deg,#071952,#088395);
-  color:white;
-  padding:55px 20px 70px;
-  text-align:center;
+background:linear-gradient(135deg,#071952,#088395);
+color:white;text-align:center;
+padding:55px 18px 70px
 }
-
-.hero h1{
-  font-size:42px;
-  line-height:1.15;
-  margin-bottom:12px;
+.hero h1{font-size:42px;line-height:1.2}
+.hero p{max-width:850px;margin:12px auto 0}
+.container{max-width:1150px;margin:auto;padding:25px 15px 60px}
+.search{
+background:white;padding:17px;border-radius:18px;
+box-shadow:0 5px 20px #0000000d;
+margin-top:-38px;position:relative
 }
-
-.hero p{
-  max-width:750px;
-  margin:auto;
-  opacity:.92;
+.search input{
+width:100%;padding:14px;
+border:2px solid #e2e8ef;
+border-radius:12px;font-size:15px;outline:none
 }
-
-.badges{
-  margin-top:25px;
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:10px;
+.chapter{
+background:white;margin-top:28px;
+border-radius:22px;overflow:hidden;
+box-shadow:0 6px 25px #0000000c
 }
-
-.badge{
-  background:rgba(255,255,255,.15);
-  padding:8px 14px;
-  border-radius:20px;
-  font-size:13px;
+.chapter-head{
+background:linear-gradient(135deg,#071952,#088395);
+color:white;padding:25px
 }
-
-.container{
-  max-width:1150px;
-  margin:auto;
-  padding:30px 18px 60px;
-}
-
-.search-box{
-  background:white;
-  padding:18px;
-  border-radius:18px;
-  box-shadow:0 5px 20px rgba(0,0,0,.07);
-  margin-top:-35px;
-  position:relative;
-}
-
-.search-box input{
-  width:100%;
-  border:2px solid #e4eaf2;
-  border-radius:14px;
-  padding:14px 16px;
-  font-size:15px;
-  outline:none;
-}
-
-.search-box input:focus{
-  border-color:#088395;
-}
-
-.intro{
-  margin-top:30px;
-  background:white;
-  padding:25px;
-  border-radius:20px;
-  box-shadow:0 5px 20px rgba(0,0,0,.06);
-}
-
-.intro h2{
-  color:#071952;
-  margin-bottom:10px;
-}
-
-.system{
-  margin-top:30px;
-  background:white;
-  border-radius:22px;
-  overflow:hidden;
-  box-shadow:0 7px 25px rgba(0,0,0,.07);
-}
-
-.system-head{
-  background:linear-gradient(135deg,#071952,#088395);
-  color:white;
-  padding:22px;
-}
-
-.system-head h2{
-  font-size:25px;
-}
-
-.system-head p{
-  opacity:.9;
-  margin-top:5px;
-}
-
-.content{
-  padding:25px;
-}
-
-.topic{
-  margin-bottom:28px;
-}
-
+.chapter-head h2{font-size:27px}
+.content{padding:28px}
+.topic{margin-bottom:32px}
 .topic h3{
-  color:#088395;
-  border-left:5px solid #35A29F;
-  padding-left:12px;
-  margin-bottom:10px;
-  font-size:20px;
+color:#088395;
+border-left:5px solid #35a29f;
+padding-left:12px;
+margin-bottom:12px;
+font-size:21px
 }
-
-.topic h4{
-  color:#071952;
-  margin:15px 0 6px;
+.topic h4{color:#071952;margin:17px 0 7px}
+ul{padding-left:23px}
+li{margin:5px 0}
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+gap:14px;margin-top:15px
 }
-
-.topic ul{
-  padding-left:22px;
+.card{
+background:#f1f8fa;
+border-left:4px solid #088395;
+padding:16px;border-radius:13px
 }
-
-.topic li{
-  margin:5px 0;
+.card strong{color:#071952}
+.note{
+background:#fff9df;
+border-left:6px solid #e0a400;
+padding:20px;border-radius:15px;
+margin:22px 0
 }
-
-.info-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:15px;
-  margin-top:15px;
+.note h3{color:#946800;margin-bottom:8px}
+.high{
+background:#eef3ff;
+border-left:6px solid #3558d5;
+padding:20px;border-radius:15px;
+margin:22px 0
 }
-
-.info-card{
-  background:#f4f9fb;
-  padding:17px;
-  border-radius:14px;
-  border-left:4px solid #088395;
-}
-
-.info-card strong{
-  color:#071952;
-}
-
-.exam{
-  background:#fff7df;
-  border-left:5px solid #f0a500;
-  padding:18px;
-  border-radius:14px;
-  margin-top:20px;
-}
-
+.high h3{color:#2946a7}
 .clinical{
-  background:#eef8f2;
-  border-left:5px solid #27ae60;
-  padding:18px;
-  border-radius:14px;
-  margin-top:20px;
+background:#edfaf2;
+border-left:6px solid #20a05a;
+padding:20px;border-radius:15px;
+margin:22px 0
 }
-
-.mcq-section{
-  margin-top:30px;
+.clinical h3{color:#13733f}
+.short{
+background:#f7f6ff;
+border:1px solid #e1dff4;
+padding:20px;border-radius:15px;
+margin:22px 0
 }
-
+.short h3{color:#4c42a5}
+.q{font-weight:bold;margin-top:13px}
+.a{color:#13733f;margin-top:3px}
 .mcq{
-  background:#f8fafc;
-  border:1px solid #e3e9f0;
-  padding:18px;
-  border-radius:15px;
-  margin-bottom:14px;
+background:#fafbfd;
+border:1px solid #e1e6ed;
+padding:18px;border-radius:15px;
+margin:14px 0
 }
-
-.option{
-  margin:5px 0;
-  padding:7px 10px;
-  background:white;
-  border-radius:8px;
+.opt{
+background:white;
+padding:6px 10px;
+margin:5px 0;
+border-radius:8px
 }
-
-.answer{
-  margin-top:9px;
-  color:#087f5b;
-  font-weight:bold;
-}
-
+.ans{color:#087f5b;font-weight:bold;margin-top:8px}
+.explain{font-size:13px;color:#555}
 .revision{
-  margin-top:30px;
-  background:linear-gradient(135deg,#071952,#088395);
-  color:white;
-  padding:25px;
-  border-radius:20px;
+background:linear-gradient(135deg,#071952,#088395);
+color:white;padding:28px;
+border-radius:20px;margin-top:30px
 }
-
-.revision li{
-  margin:7px 0;
-}
-
 footer{
-  background:#071952;
-  color:white;
-  text-align:center;
-  padding:30px 15px;
+background:#071952;color:white;
+text-align:center;padding:30px
 }
-
-footer strong{
-  color:#6fffe9;
-}
-
 @media(max-width:650px){
-
-  .hero{
-    padding:40px 15px 55px;
-  }
-
-  .hero h1{
-    font-size:31px;
-  }
-
-  .container{
-    padding:25px 12px 45px;
-  }
-
-  .content{
-    padding:18px;
-  }
-
-  .system-head h2{
-    font-size:21px;
-  }
-
-  .topic h3{
-    font-size:18px;
-  }
-
-  .header-inner{
-    flex-direction:column;
-  }
+.hero h1{font-size:31px}
+.content{padding:19px}
+.chapter-head h2{font-size:23px}
+.head{flex-direction:column}
 }
 </style>
 </head>
@@ -306,93 +149,62 @@ footer strong{
 <body>
 
 <header>
-  <div class="header-inner">
-    <div class="logo">
-      NURSING CAREER
-      <span>B.Sc IN NURSING EDUCATION</span>
-    </div>
+<div class="head">
+<div class="logo">
+NURSING CAREER
+<small>B.SC IN NURSING • ANATOMY</small>
+</div>
 
-    <a class="back-btn"
-       href="https://nursingcareer.github.io/nursing-career/bsc-nursing.html">
-      ← B.Sc Nursing
-    </a>
-  </div>
+<a class="back"
+href="https://nursingcareer.github.io/nursing-career/bsc-nursing.html">
+← B.Sc Nursing
+</a>
+</div>
 </header>
 
-
 <section class="hero">
-
-  <h1>Complete Human Anatomy</h1>
-
-  <p>
-    System-wise detailed Anatomy study resource for
-    B.Sc. in Nursing students. Learn structure, location,
-    parts, relations, blood supply, nerve supply and clinical anatomy.
-  </p>
-
-  <div class="badges">
-    <div class="badge">13 Major Systems</div>
-    <div class="badge">B.Sc Nursing</div>
-    <div class="badge">Clinical Anatomy</div>
-    <div class="badge">Exam Revision</div>
-  </div>
-
+<h1>🦴 Skeletal System</h1>
+<p>
+Complete Anatomy Chapter for B.Sc. in Nursing students —
+concept, structure, bones, joints, clinical anatomy,
+hand notes, high-yield points, short questions and MCQs.
+</p>
 </section>
-
 
 <div class="container">
 
-<div class="search-box">
-  <input
-    type="text"
-    id="searchInput"
-    placeholder="🔍 Search Anatomy topic..."
-    onkeyup="searchTopic()">
+<div class="search">
+<input id="search"
+type="text"
+placeholder="🔍 Search Skeletal Anatomy..."
+onkeyup="searchContent()">
 </div>
 
+<!-- INTRO -->
 
-<section class="intro">
+<section class="chapter">
 
-<h2>📚 Anatomy কী?</h2>
-
-<p>
-Anatomy হলো মানবদেহের গঠন বা structure সম্পর্কে বিজ্ঞান।
-মানবদেহের বিভিন্ন অঙ্গ কোথায় অবস্থিত, তাদের আকৃতি,
-অংশ, পারস্পরিক সম্পর্ক, blood supply, nerve supply এবং
-কীভাবে বিভিন্ন organ একে অপরের সঙ্গে সম্পর্কিত—এসব Anatomy-এর
-মূল বিষয়।
-</p>
-
-<p style="margin-top:10px;">
-B.Sc. Nursing শিক্ষার্থীদের জন্য Anatomy অত্যন্ত গুরুত্বপূর্ণ,
-কারণ clinical assessment, disease process, medication,
-injection, surgery, emergency care এবং nursing procedure
-বোঝার জন্য মানবদেহের স্বাভাবিক structure জানা প্রয়োজন।
-</p>
-
-</section>
-
-
-<!-- ================= SKELETAL ================= -->
-
-<section class="system">
-
-<div class="system-head">
-<h2>🦴 1. Skeletal System</h2>
-<p>মানবদেহের framework বা কাঠামোগত ব্যবস্থা</p>
+<div class="chapter-head">
+<h2>📖 Chapter 01 — Skeletal System</h2>
+<p>Complete textbook-style study notes</p>
 </div>
 
 <div class="content">
 
 <div class="topic">
 
-<h3>Definition</h3>
+<h3>1. What is the Skeletal System?</h3>
 
 <p>
-Skeletal system হলো bones, cartilage, joints এবং supporting
-structures-এর সমন্বয়ে গঠিত দেহের framework।
-প্রাপ্তবয়স্ক মানুষের skeleton সাধারণত <strong>206টি bone</strong>
-দিয়ে গঠিত।
+The skeletal system is the structural framework of the human body.
+It consists mainly of bones, cartilage, joints and associated
+connective tissues.
+</p>
+
+<p>
+The skeleton provides support to the body, protects vital organs,
+participates in movement and serves as an important site for
+mineral storage and blood-cell formation.
 </p>
 
 </div>
@@ -400,65 +212,554 @@ structures-এর সমন্বয়ে গঠিত দেহের framewor
 
 <div class="topic">
 
-<h3>Main Functions</h3>
+<h3>2. Functions of the Skeletal System</h3>
 
-<ul>
-<li>শরীরকে support প্রদান করে</li>
-<li>দেহের shape বজায় রাখে</li>
-<li>Brain, spinal cord, heart ও lungs-এর মতো গুরুত্বপূর্ণ organ protect করে</li>
-<li>Muscle-এর attachment-এর মাধ্যমে movement-এ সাহায্য করে</li>
-<li>Bone marrow-এ blood cell তৈরি হয়</li>
-<li>Calcium ও phosphate-এর reservoir হিসেবে কাজ করে</li>
-</ul>
+<div class="grid">
+
+<div class="card">
+<strong>1. Support</strong>
+<p>
+Bones form the framework that supports the body and maintains its shape.
+</p>
+</div>
+
+<div class="card">
+<strong>2. Protection</strong>
+<p>
+Skull protects the brain, vertebral column protects the spinal cord,
+and thoracic cage protects heart and lungs.
+</p>
+</div>
+
+<div class="card">
+<strong>3. Movement</strong>
+<p>
+Bones act as levers and muscles provide the force required for movement.
+</p>
+</div>
+
+<div class="card">
+<strong>4. Blood Cell Formation</strong>
+<p>
+Red bone marrow is an important site of hematopoiesis.
+</p>
+</div>
+
+<div class="card">
+<strong>5. Mineral Storage</strong>
+<p>
+Bone stores important minerals, especially calcium and phosphate.
+</p>
+</div>
+
+<div class="card">
+<strong>6. Fat Storage</strong>
+<p>
+Yellow bone marrow stores fat.
+</p>
+</div>
+
+</div>
+</div>
+
+
+<div class="topic">
+
+<h3>3. Number of Bones</h3>
+
+<p>
+An adult human skeleton normally contains approximately
+<strong>206 bones</strong>.
+</p>
+
+<p>
+Newborns have more individual bones because several bones
+fuse together during growth.
+</p>
 
 </div>
 
 
 <div class="topic">
 
-<h3>Division of Skeleton</h3>
+<h3>4. Divisions of the Skeleton</h3>
 
-<div class="info-grid">
+<h4>Axial Skeleton</h4>
 
-<div class="info-card">
-<strong>Axial Skeleton</strong>
-<p>Skull, vertebral column, ribs ও sternum নিয়ে গঠিত।</p>
-</div>
-
-<div class="info-card">
-<strong>Appendicular Skeleton</strong>
-<p>Upper limb, lower limb এবং তাদের girdle নিয়ে গঠিত।</p>
-</div>
-
-</div>
-
-</div>
-
-
-<div class="topic">
-
-<h3>Major Bones</h3>
+<p>
+The axial skeleton forms the central axis of the body.
+</p>
 
 <ul>
 <li>Skull</li>
-<li>Clavicle</li>
-<li>Scapula</li>
-<li>Humerus</li>
-<li>Radius</li>
-<li>Ulna</li>
-<li>Carpal bones</li>
-<li>Metacarpals</li>
-<li>Phalanges</li>
-<li>Vertebrae</li>
+<li>Vertebral column</li>
 <li>Ribs</li>
 <li>Sternum</li>
-<li>Pelvis</li>
-<li>Femur</li>
-<li>Patella</li>
+</ul>
+
+<h4>Appendicular Skeleton</h4>
+
+<p>
+The appendicular skeleton includes the limbs and the girdles
+that attach the limbs to the axial skeleton.
+</p>
+
+<ul>
+<li>Pectoral girdle</li>
+<li>Upper limbs</li>
+<li>Pelvic girdle</li>
+<li>Lower limbs</li>
+</ul>
+
+</div>
+
+
+<div class="topic">
+
+<h3>5. Classification of Bones</h3>
+
+<div class="grid">
+
+<div class="card">
+<strong>Long Bones</strong>
+<p>Femur, humerus, tibia, radius.</p>
+</div>
+
+<div class="card">
+<strong>Short Bones</strong>
+<p>Carpal and tarsal bones.</p>
+</div>
+
+<div class="card">
+<strong>Flat Bones</strong>
+<p>Some skull bones, sternum and ribs.</p>
+</div>
+
+<div class="card">
+<strong>Irregular Bones</strong>
+<p>Vertebrae and some facial bones.</p>
+</div>
+
+<div class="card">
+<strong>Sesamoid Bones</strong>
+<p>Patella is the major example.</p>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="topic">
+
+<h3>6. Structure of a Long Bone</h3>
+
+<h4>Epiphysis</h4>
+<p>
+The expanded end of a long bone. It mainly contains spongy bone
+and is involved in joint formation.
+</p>
+
+<h4>Diaphysis</h4>
+<p>
+The shaft or central portion of a long bone. It is mainly composed
+of compact bone surrounding the medullary cavity.
+</p>
+
+<h4>Metaphysis</h4>
+<p>
+The region between the diaphysis and epiphysis.
+In growing children, the epiphyseal plate is located in this region.
+</p>
+
+<h4>Periosteum</h4>
+<p>
+A vascular connective tissue membrane covering the external surface
+of bone except at articular surfaces.
+</p>
+
+<h4>Compact Bone</h4>
+<p>
+Dense bone forming the strong outer portion of many bones.
+</p>
+
+<h4>Spongy Bone</h4>
+<p>
+Also called cancellous bone. It contains a network of trabeculae.
+</p>
+
+<h4>Medullary Cavity</h4>
+<p>
+The cavity within the shaft of a long bone containing marrow.
+</p>
+
+</div>
+
+
+<div class="note">
+
+<h3>📝 HAND NOTE — Long Bone</h3>
+
+<ul>
+<li>End → Epiphysis</li>
+<li>Shaft → Diaphysis</li>
+<li>Between them → Metaphysis</li>
+<li>Outer covering → Periosteum</li>
+<li>Dense part → Compact bone</li>
+<li>Trabecular part → Spongy bone</li>
+<li>Inside shaft → Medullary cavity</li>
+</ul>
+
+</div>
+
+
+<!-- SKULL -->
+
+<div class="topic">
+
+<h3>7. Skull — Detailed Anatomy</h3>
+
+<p>
+The skull forms the bony framework of the head. It protects the brain
+and supports the structures of the face.
+</p>
+
+<h4>Major Divisions</h4>
+
+<ul>
+<li>Cranium</li>
+<li>Facial skeleton</li>
+</ul>
+
+<h4>Important Cranial Bones</h4>
+
+<ul>
+<li>Frontal bone</li>
+<li>Parietal bones</li>
+<li>Temporal bones</li>
+<li>Occipital bone</li>
+<li>Sphenoid bone</li>
+<li>Ethmoid bone</li>
+</ul>
+
+<h4>Important Facial Bones</h4>
+
+<ul>
+<li>Maxilla</li>
+<li>Mandible</li>
+<li>Zygomatic bones</li>
+<li>Nasal bones</li>
+<li>Lacrimal bones</li>
+<li>Palatine bones</li>
+<li>Vomer</li>
+<li>Inferior nasal conchae</li>
+</ul>
+
+</div>
+
+
+<div class="topic">
+
+<h3>8. Important Skull Facts</h3>
+
+<ul>
+<li>Frontal bone forms much of the forehead.</li>
+<li>Parietal bones form a large part of the roof and sides of skull.</li>
+<li>Temporal bones are located on the sides of the skull.</li>
+<li>Occipital bone forms the posterior part of skull.</li>
+<li>Mandible is the movable bone of the lower jaw.</li>
+<li>Maxilla forms much of the upper jaw.</li>
+</ul>
+
+</div>
+
+
+<div class="high">
+
+<h3>🎯 HIGH-YIELD — Skull</h3>
+
+<ul>
+<li>Mandible → major movable facial bone.</li>
+<li>Occipital bone contains the foramen magnum.</li>
+<li>Temporal bone is associated with structures of the ear.</li>
+<li>Frontal bone → forehead.</li>
+<li>Parietal bones → roof and sides of skull.</li>
+</ul>
+
+</div>
+
+
+<!-- VERTEBRAL COLUMN -->
+
+<div class="topic">
+
+<h3>9. Vertebral Column</h3>
+
+<p>
+The vertebral column forms the central supporting axis of the body
+and protects the spinal cord.
+</p>
+
+<h4>Regions</h4>
+
+<div class="grid">
+
+<div class="card">
+<strong>Cervical</strong>
+<p>7 vertebrae</p>
+</div>
+
+<div class="card">
+<strong>Thoracic</strong>
+<p>12 vertebrae</p>
+</div>
+
+<div class="card">
+<strong>Lumbar</strong>
+<p>5 vertebrae</p>
+</div>
+
+<div class="card">
+<strong>Sacral</strong>
+<p>Fused vertebrae</p>
+</div>
+
+<div class="card">
+<strong>Coccygeal</strong>
+<p>Usually fused vertebrae</p>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="topic">
+
+<h3>10. Special Vertebrae</h3>
+
+<h4>Atlas — C1</h4>
+<p>
+The first cervical vertebra. It supports the skull and participates
+in nodding movement of the head.
+</p>
+
+<h4>Axis — C2</h4>
+<p>
+The second cervical vertebra. It contains the dens, which allows
+rotation of the head.
+</p>
+
+<h4>Cervical Vertebrae</h4>
+<p>
+There are seven cervical vertebrae.
+</p>
+
+<h4>Thoracic Vertebrae</h4>
+<p>
+There are twelve thoracic vertebrae and they articulate with ribs.
+</p>
+
+<h4>Lumbar Vertebrae</h4>
+<p>
+Five lumbar vertebrae are present and they are relatively large
+because they bear substantial body weight.
+</p>
+
+</div>
+
+
+<div class="note">
+
+<h3>📝 HAND NOTE — Vertebral Column</h3>
+
+<ul>
+<li>Cervical → 7</li>
+<li>Thoracic → 12</li>
+<li>Lumbar → 5</li>
+<li>C1 → Atlas</li>
+<li>C2 → Axis</li>
+<li>Axis has → dens</li>
+<li>Thoracic vertebrae → articulate with ribs</li>
+</ul>
+
+</div>
+
+
+<!-- THORACIC CAGE -->
+
+<div class="topic">
+
+<h3>11. Thoracic Cage</h3>
+
+<p>
+The thoracic cage protects the heart and lungs and participates
+in respiration.
+</p>
+
+<h4>Main Components</h4>
+
+<ul>
+<li>Sternum</li>
+<li>12 pairs of ribs</li>
+<li>Thoracic vertebrae</li>
+</ul>
+
+<h4>Parts of Sternum</h4>
+
+<ul>
+<li>Manubrium</li>
+<li>Body</li>
+<li>Xiphoid process</li>
+</ul>
+
+</div>
+
+
+<div class="topic">
+
+<h3>12. Classification of Ribs</h3>
+
+<h4>True Ribs</h4>
+<p>
+First seven pairs. They attach directly to the sternum through
+their costal cartilages.
+</p>
+
+<h4>False Ribs</h4>
+<p>
+Ribs 8–10 attach indirectly to the sternum.
+</p>
+
+<h4>Floating Ribs</h4>
+<p>
+Ribs 11–12 have no anterior attachment to the sternum.
+</p>
+
+</div>
+
+
+<div class="high">
+
+<h3>🎯 HIGH-YIELD — Thoracic Cage</h3>
+
+<ul>
+<li>12 pairs of ribs.</li>
+<li>Ribs 1–7 → true ribs.</li>
+<li>Ribs 8–10 → false ribs.</li>
+<li>Ribs 11–12 → floating ribs.</li>
+<li>Sternum → manubrium + body + xiphoid process.</li>
+</ul>
+
+</div>
+
+
+<!-- UPPER LIMB -->
+
+<div class="topic">
+
+<h3>13. Upper Limb Bones</h3>
+
+<h4>Pectoral Girdle</h4>
+
+<ul>
+<li>Clavicle</li>
+<li>Scapula</li>
+</ul>
+
+<h4>Arm</h4>
+
+<p>
+The arm contains the humerus.
+</p>
+
+<h4>Forearm</h4>
+
+<ul>
+<li>Radius</li>
+<li>Ulna</li>
+</ul>
+
+<h4>Hand</h4>
+
+<ul>
+<li>8 carpal bones</li>
+<li>5 metacarpals</li>
+<li>14 phalanges</li>
+</ul>
+
+</div>
+
+
+<div class="topic">
+
+<h3>14. Important Upper Limb Facts</h3>
+
+<ul>
+<li>Humerus → bone of arm.</li>
+<li>Radius → lateral forearm in anatomical position.</li>
+<li>Ulna → medial forearm in anatomical position.</li>
+<li>Carpals → wrist.</li>
+<li>Metacarpals → palm.</li>
+<li>Phalanges → fingers.</li>
+</ul>
+
+</div>
+
+
+<div class="note">
+
+<h3>📝 HAND NOTE — Upper Limb</h3>
+
+<ul>
+<li>Shoulder girdle → clavicle + scapula</li>
+<li>Arm → humerus</li>
+<li>Forearm → radius + ulna</li>
+<li>Wrist → 8 carpals</li>
+<li>Palm → 5 metacarpals</li>
+<li>Digits → 14 phalanges</li>
+</ul>
+
+</div>
+
+
+<!-- LOWER LIMB -->
+
+<div class="topic">
+
+<h3>15. Lower Limb Bones</h3>
+
+<h4>Pelvic Girdle</h4>
+
+<p>
+The hip bone is formed by fusion of:
+</p>
+
+<ul>
+<li>Ilium</li>
+<li>Ischium</li>
+<li>Pubis</li>
+</ul>
+
+<h4>Thigh</h4>
+
+<p>
+Femur is the bone of the thigh.
+</p>
+
+<h4>Leg</h4>
+
+<ul>
 <li>Tibia</li>
 <li>Fibula</li>
-<li>Tarsal bones</li>
-<li>Metatarsals</li>
+</ul>
+
+<h4>Foot</h4>
+
+<ul>
+<li>7 tarsal bones</li>
+<li>5 metatarsals</li>
+<li>14 phalanges</li>
 </ul>
 
 </div>
@@ -466,591 +767,195 @@ structures-এর সমন্বয়ে গঠিত দেহের framewor
 
 <div class="topic">
 
-<h3>Vertebral Column</h3>
+<h3>16. Important Lower Limb Facts</h3>
+
+<ul>
+<li>Femur → thigh.</li>
+<li>Patella → knee.</li>
+<li>Tibia → main weight-bearing bone of leg.</li>
+<li>Fibula → lateral bone of leg.</li>
+<li>Tarsals → ankle/foot region.</li>
+<li>Metatarsals → foot.</li>
+<li>Phalanges → toes.</li>
+</ul>
+
+</div>
+
+
+<div class="high">
+
+<h3>🎯 HIGH-YIELD — Lower Limb</h3>
+
+<ul>
+<li>Femur is the longest bone in the body.</li>
+<li>Patella is a sesamoid bone.</li>
+<li>Tibia is the larger medial bone of leg.</li>
+<li>Fibula is the slender lateral bone of leg.</li>
+</ul>
+
+</div>
+
+
+<!-- JOINTS -->
+
+<div class="topic">
+
+<h3>17. Joints</h3>
 
 <p>
-Vertebral column বা মেরুদণ্ড হলো শরীরের প্রধান axial support।
-এটি spinal cord-কে protect করে।
+A joint is the anatomical connection between two or more bones
+or between bone and cartilage.
+</p>
+
+<h4>Major Types</h4>
+
+<ul>
+<li>Fibrous joints</li>
+<li>Cartilaginous joints</li>
+<li>Synovial joints</li>
+</ul>
+
+</div>
+
+
+<div class="topic">
+
+<h3>18. Synovial Joints</h3>
+
+<p>
+Synovial joints are freely movable joints with a joint cavity.
+</p>
+
+<h4>Types</h4>
+
+<ul>
+<li>Ball-and-socket → shoulder, hip</li>
+<li>Hinge → elbow, knee</li>
+<li>Pivot → atlantoaxial joint</li>
+<li>Condyloid → wrist region</li>
+<li>Saddle → thumb carpometacarpal joint</li>
+<li>Plane → some intercarpal joints</li>
+</ul>
+
+</div>
+
+
+<div class="topic">
+
+<h3>19. Cartilage</h3>
+
+<p>
+Cartilage is a specialized connective tissue that provides support,
+flexibility and smooth surfaces at many joints.
 </p>
 
 <ul>
-<li>Cervical vertebrae — 7</li>
-<li>Thoracic vertebrae — 12</li>
-<li>Lumbar vertebrae — 5</li>
-<li>Sacral vertebrae — fused</li>
-<li>Coccygeal vertebrae — fused</li>
+<li>Hyaline cartilage</li>
+<li>Elastic cartilage</li>
+<li>Fibrocartilage</li>
 </ul>
 
 </div>
 
 
+<!-- BONE CELLS -->
+
 <div class="topic">
 
-<h3>Types of Joints</h3>
+<h3>20. Bone Cells</h3>
 
-<ul>
-<li>Fibrous joint</li>
-<li>Cartilaginous joint</li>
-<li>Synovial joint</li>
-</ul>
-
+<h4>Osteoblast</h4>
 <p>
-Synovial joint-এর উদাহরণ হলো shoulder, elbow, hip এবং knee joint।
+Bone-forming cell.
 </p>
 
-</div>
-
-
-<div class="clinical">
-
-<strong>🩺 Clinical Anatomy</strong>
-
-<ul>
-<li>Fracture = bone-এর continuity ভেঙে যাওয়া</li>
-<li>Osteoporosis = bone density কমে যাওয়া</li>
-<li>Osteomyelitis = bone infection</li>
-<li>Dislocation = joint-এর articulating surfaces-এর abnormal separation</li>
-</ul>
-
-</div>
-
-
-<div class="exam">
-
-<strong>🎯 High-Yield Exam Points</strong>
-
-<ul>
-<li>Adult skeleton = 206 bones</li>
-<li>Longest bone = Femur</li>
-<li>Smallest bone = Stapes</li>
-<li>Largest sesamoid bone = Patella</li>
-<li>Spinal cord vertebral canal-এর মধ্যে থাকে</li>
-</ul>
-
-</div>
-
-</div>
-</section>
-
-
-<!-- ================= MUSCULAR ================= -->
-
-<section class="system">
-
-<div class="system-head">
-<h2>💪 2. Muscular System</h2>
-<p>Movement ও body function-এর জন্য গুরুত্বপূর্ণ system</p>
-</div>
-
-<div class="content">
-
-<div class="topic">
-
-<h3>Types of Muscle</h3>
-
-<div class="info-grid">
-
-<div class="info-card">
-<strong>Skeletal Muscle</strong>
-<p>Striated এবং voluntary muscle।</p>
-</div>
-
-<div class="info-card">
-<strong>Smooth Muscle</strong>
-<p>Non-striated এবং involuntary muscle।</p>
-</div>
-
-<div class="info-card">
-<strong>Cardiac Muscle</strong>
-<p>Heart-এ পাওয়া যায় এবং involuntary।</p>
-</div>
-
-</div>
-
-</div>
-
-
-<div class="topic">
-
-<h3>Major Muscles</h3>
-
-<ul>
-<li>Masseter</li>
-<li>Temporalis</li>
-<li>Sternocleidomastoid</li>
-<li>Trapezius</li>
-<li>Pectoralis major</li>
-<li>Latissimus dorsi</li>
-<li>Rectus abdominis</li>
-<li>External oblique</li>
-<li>Biceps brachii</li>
-<li>Triceps brachii</li>
-<li>Gluteus maximus</li>
-<li>Quadriceps</li>
-<li>Hamstrings</li>
-<li>Gastrocnemius</li>
-</ul>
-
-</div>
-
-
-<div class="topic">
-
-<h3>Muscle Structure</h3>
-
+<h4>Osteocyte</h4>
 <p>
-একটি skeletal muscle-এর প্রধান structural organization হলো:
+Mature bone cell.
 </p>
 
-<ul>
-<li>Muscle</li>
-<li>Fascicle</li>
-<li>Muscle fiber</li>
-<li>Myofibril</li>
-<li>Actin ও myosin filaments</li>
-</ul>
-
-</div>
-
-
-<div class="topic">
-
-<h3>Tendon and Fascia</h3>
-
+<h4>Osteoclast</h4>
 <p>
-<strong>Tendon</strong> muscle-কে bone-এর সঙ্গে যুক্ত করে।
-<strong>Fascia</strong> muscle ও অন্যান্য tissue-কে surround এবং support করে।
+Cell involved in bone resorption.
 </p>
 
 </div>
 
 
-<div class="clinical">
+<div class="note">
 
-<strong>🩺 Clinical Anatomy</strong>
+<h3>📝 HAND NOTE — Bone Cells</h3>
 
 <ul>
-<li>Muscle strain</li>
-<li>Muscle atrophy</li>
-<li>Muscle spasm</li>
-<li>Paralysis</li>
-<li>Muscular dystrophy</li>
+<li>Osteoblast → builds bone</li>
+<li>Osteocyte → mature bone cell</li>
+<li>Osteoclast → resorbs bone</li>
 </ul>
 
 </div>
 
-</div>
-</section>
 
-
-<!-- ================= CARDIO ================= -->
-
-<section class="system">
-
-<div class="system-head">
-<h2>❤️ 3. Cardiovascular System</h2>
-<p>Heart এবং blood vessels-এর সম্পূর্ণ anatomy</p>
-</div>
-
-<div class="content">
+<!-- BLOOD SUPPLY -->
 
 <div class="topic">
 
-<h3>Location of Heart</h3>
+<h3>21. Blood Supply of Bone</h3>
 
 <p>
-Heart thoracic cavity-এর mediastinum-এ অবস্থিত।
-এটি দুই ফুসফুসের মাঝখানে এবং sternum-এর posterior দিকে থাকে।
-Heart-এর বেশিরভাগ অংশ midline-এর বাম পাশে অবস্থান করে।
+Bones are vascular structures. Nutrient arteries supply the bone,
+while periosteal vessels contribute to the outer portions.
+</p>
+
+<p>
+Long bones commonly receive a nutrient artery that enters through
+a nutrient foramen and supplies the internal bone and marrow.
 </p>
 
 </div>
 
 
-<div class="topic">
-
-<h3>Covering of Heart</h3>
-
-<ul>
-<li>Pericardium</li>
-<li>Fibrous pericardium</li>
-<li>Serous pericardium</li>
-</ul>
-
-</div>
-
+<!-- BONE MARROW -->
 
 <div class="topic">
 
-<h3>Four Chambers</h3>
+<h3>22. Bone Marrow</h3>
 
-<div class="info-grid">
-
-<div class="info-card">
-<strong>Right Atrium</strong>
-<p>Systemic circulation থেকে deoxygenated blood গ্রহণ করে।</p>
-</div>
-
-<div class="info-card">
-<strong>Right Ventricle</strong>
-<p>Blood pulmonary circulation-এ পাঠায়।</p>
-</div>
-
-<div class="info-card">
-<strong>Left Atrium</strong>
-<p>Lungs থেকে oxygenated blood গ্রহণ করে।</p>
-</div>
-
-<div class="info-card">
-<strong>Left Ventricle</strong>
-<p>Systemic circulation-এ oxygenated blood pump করে।</p>
-</div>
-
-</div>
-
-</div>
-
-
-<div class="topic">
-
-<h3>Heart Valves</h3>
-
-<ul>
-<li>Tricuspid valve</li>
-<li>Mitral/Bicuspid valve</li>
-<li>Pulmonary valve</li>
-<li>Aortic valve</li>
-</ul>
-
-</div>
-
-
-<div class="topic">
-
-<h3>Great Vessels</h3>
-
-<ul>
-<li>Superior vena cava</li>
-<li>Inferior vena cava</li>
-<li>Pulmonary trunk</li>
-<li>Pulmonary veins</li>
-<li>Aorta</li>
-</ul>
-
-</div>
-
-
-<div class="topic">
-
-<h3>Coronary Circulation</h3>
+<h4>Red Bone Marrow</h4>
 
 <p>
-Heart muscle বা myocardium-এর নিজস্ব blood supply coronary arteries
-দিয়ে হয়। প্রধান coronary arteries হলো right coronary artery
-এবং left coronary artery।
+Red marrow is associated with hematopoiesis or blood cell production.
+</p>
+
+<h4>Yellow Bone Marrow</h4>
+
+<p>
+Yellow marrow contains a greater amount of fat and serves as an
+energy reserve.
 </p>
 
 </div>
 
 
-<div class="exam">
-
-<strong>🎯 High-Yield Points</strong>
-
-<ul>
-<li>Heart = 4 chambers</li>
-<li>Left ventricle-এর wall সবচেয়ে thick</li>
-<li>Tricuspid valve = right atrioventricular valve</li>
-<li>Mitral valve = left atrioventricular valve</li>
-<li>Aorta systemic circulation-এর প্রধান artery</li>
-</ul>
-
-</div>
-
-</div>
-</section>
-
-
-<!-- ================= RESPIRATORY ================= -->
-
-<section class="system">
-
-<div class="system-head">
-<h2>🫁 4. Respiratory System</h2>
-<p>Gas exchange-এর জন্য দায়ী system</p>
-</div>
-
-<div class="content">
+<!-- FRACTURE -->
 
 <div class="topic">
 
-<h3>Respiratory Tract</h3>
-
-<ul>
-<li>Nose</li>
-<li>Nasal cavity</li>
-<li>Pharynx</li>
-<li>Larynx</li>
-<li>Trachea</li>
-<li>Bronchi</li>
-<li>Bronchioles</li>
-<li>Alveoli</li>
-</ul>
-
-</div>
-
-
-<div class="topic">
-
-<h3>Lungs</h3>
+<h3>23. Fracture</h3>
 
 <p>
-Right lung সাধারণত তিনটি lobe নিয়ে গঠিত:
-Superior, Middle ও Inferior lobe।
-Left lung-এ দুইটি lobe থাকে: Superior ও Inferior lobe।
-Left lung-এ cardiac notch থাকে।
+A fracture is a break or disruption in the continuity of a bone.
 </p>
 
-</div>
-
-
-<div class="topic">
-
-<h3>Pleura</h3>
+<h4>Common Types</h4>
 
 <ul>
-<li>Visceral pleura</li>
-<li>Parietal pleura</li>
-<li>Pleural cavity</li>
-</ul>
-
-</div>
-
-
-<div class="topic">
-
-<h3>Alveoli</h3>
-
-<p>
-Alveoli হলো lungs-এর microscopic air sacs যেখানে oxygen ও carbon
-dioxide-এর প্রধান gas exchange হয়।
-</p>
-
-</div>
-
-
-<div class="topic">
-
-<h3>Diaphragm</h3>
-
-<p>
-Diaphragm হলো প্রধান muscle of respiration। এটি thoracic cavity
-ও abdominal cavity-এর মধ্যে partition তৈরি করে।
-</p>
-
-</div>
-
-
-<div class="clinical">
-
-<strong>🩺 Clinical Anatomy</strong>
-
-<ul>
-<li>Pneumonia</li>
-<li>Pleural effusion</li>
-<li>Pneumothorax</li>
-<li>Asthma</li>
-<li>Respiratory failure</li>
-</ul>
-
-</div>
-
-</div>
-</section>
-
-
-<!-- ================= NERVOUS ================= -->
-
-<section class="system">
-
-<div class="system-head">
-<h2>🧠 5. Nervous System</h2>
-<p>Control, coordination এবং communication system</p>
-</div>
-
-<div class="content">
-
-<div class="topic">
-
-<h3>Main Divisions</h3>
-
-<ul>
-<li>Central Nervous System — Brain + Spinal cord</li>
-<li>Peripheral Nervous System — Cranial + spinal nerves</li>
-<li>Autonomic Nervous System — Sympathetic + parasympathetic</li>
-</ul>
-
-</div>
-
-
-<div class="topic">
-
-<h3>Brain</h3>
-
-<ul>
-<li>Cerebrum</li>
-<li>Cerebellum</li>
-<li>Brainstem</li>
-<li>Midbrain</li>
-<li>Pons</li>
-<li>Medulla oblongata</li>
-</ul>
-
-</div>
-
-
-<div class="topic">
-
-<h3>Cerebral Lobes</h3>
-
-<ul>
-<li>Frontal lobe</li>
-<li>Parietal lobe</li>
-<li>Temporal lobe</li>
-<li>Occipital lobe</li>
-</ul>
-
-</div>
-
-
-<div class="topic">
-
-<h3>Meninges</h3>
-
-<ul>
-<li>Dura mater</li>
-<li>Arachnoid mater</li>
-<li>Pia mater</li>
-</ul>
-
-</div>
-
-
-<div class="topic">
-
-<h3>CSF</h3>
-
-<p>
-Cerebrospinal fluid brain ও spinal cord-কে cushion, protection এবং
-metabolic support প্রদান করে।
-</p>
-
-</div>
-
-
-<div class="topic">
-
-<h3>Cranial Nerves</h3>
-
-<p>
-মানবদেহে 12 pairs of cranial nerves রয়েছে।
-এগুলো sensory, motor অথবা mixed function সম্পন্ন করতে পারে।
-</p>
-
-</div>
-
-
-<div class="clinical">
-
-<strong>🩺 Clinical Anatomy</strong>
-
-<ul>
-<li>Stroke</li>
-<li>Meningitis</li>
-<li>Hydrocephalus</li>
-<li>Spinal cord injury</li>
-<li>Peripheral nerve injury</li>
-</ul>
-
-</div>
-
-</div>
-</section>
-
-
-<!-- ================= DIGESTIVE ================= -->
-
-<section class="system">
-
-<div class="system-head">
-<h2>🍽️ 6. Digestive System</h2>
-<p>Food digestion, absorption ও elimination-এর system</p>
-</div>
-
-<div class="content">
-
-<div class="topic">
-
-<h3>Alimentary Canal</h3>
-
-<ul>
-<li>Mouth</li>
-<li>Pharynx</li>
-<li>Esophagus</li>
-<li>Stomach</li>
-<li>Small intestine</li>
-<li>Large intestine</li>
-<li>Rectum</li>
-<li>Anal canal</li>
-</ul>
-
-</div>
-
-
-<div class="topic">
-
-<h3>Small Intestine</h3>
-
-<ul>
-<li>Duodenum</li>
-<li>Jejunum</li>
-<li>Ileum</li>
-</ul>
-
-<p>
-Small intestine-এ digestion ও nutrient absorption-এর গুরুত্বপূর্ণ
-ধাপ সম্পন্ন হয়।
-</p>
-
-</div>
-
-
-<div class="topic">
-
-<h3>Large Intestine</h3>
-
-<ul>
-<li>Cecum</li>
-<li>Appendix</li>
-<li>Ascending colon</li>
-<li>Transverse colon</li>
-<li>Descending colon</li>
-<li>Sigmoid colon</li>
-<li>Rectum</li>
-</ul>
-
-</div>
-
-
-<div class="topic">
-
-<h3>Accessory Organs</h3>
-
-<ul>
-<li>Liver</li>
-<li>Gallbladder</li>
-<li>Pancreas</li>
-<li>Salivary glands</li>
+<li>Closed fracture</li>
+<li>Open fracture</li>
+<li>Greenstick fracture</li>
+<li>Comminuted fracture</li>
+<li>Transverse fracture</li>
+<li>Oblique fracture</li>
+<li>Spiral fracture</li>
 </ul>
 
 </div>
@@ -1058,814 +963,359 @@ Small intestine-এ digestion ও nutrient absorption-এর গুরুত্�
 
 <div class="clinical">
 
-<strong>🩺 Clinical Anatomy</strong>
+<h3>🩺 CLINICAL ANATOMY — Nursing Connection</h3>
 
 <ul>
-<li>Appendicitis</li>
-<li>Peptic ulcer</li>
-<li>Hepatitis</li>
-<li>Cholecystitis</li>
-<li>Pancreatitis</li>
-</ul>
 
-</div>
+<li>
+<strong>Fracture:</strong>
+Observe pain, swelling, deformity and neurovascular status.
+</li>
 
-</div>
-</section>
+<li>
+<strong>Osteoporosis:</strong>
+Reduced bone density increases fracture risk.
+</li>
 
+<li>
+<strong>Osteomyelitis:</strong>
+Bone infection requiring appropriate assessment and treatment.
+</li>
 
-<!-- ================= URINARY ================= -->
+<li>
+<strong>Dislocation:</strong>
+Normal relationship between joint surfaces is disturbed.
+</li>
 
-<section class="system">
+<li>
+<strong>Joint injury:</strong>
+Assessment should include movement, pain, swelling and distal circulation.
+</li>
 
-<div class="system-head">
-<h2>💧 7. Urinary System</h2>
-<p>Urine formation এবং fluid balance-এর system</p>
-</div>
-
-<div class="content">
-
-<div class="topic">
-
-<h3>Main Organs</h3>
-
-<ul>
-<li>Two kidneys</li>
-<li>Two ureters</li>
-<li>Urinary bladder</li>
-<li>Urethra</li>
 </ul>
 
 </div>
 
 
-<div class="topic">
+<!-- SHORT QUESTIONS -->
 
-<h3>Kidney</h3>
+<div class="short">
 
-<p>
-Kidney posterior abdominal wall-এর দিকে অবস্থিত। Kidney-এর প্রধান
-অংশ হলো cortex ও medulla। Medulla-তে renal pyramids থাকে।
-</p>
+<h3>✍️ SHORT QUESTIONS & ANSWERS</h3>
 
-</div>
+<div class="q">1. What is the skeletal system?</div>
+<div class="a">Ans: The structural framework of the body consisting mainly of bones, cartilage and joints.</div>
 
+<div class="q">2. How many bones are present in an adult skeleton?</div>
+<div class="a">Ans: Approximately 206.</div>
 
-<div class="topic">
+<div class="q">3. What is the longest bone?</div>
+<div class="a">Ans: Femur.</div>
 
-<h3>Nephron</h3>
+<div class="q">4. What is the smallest bone?</div>
+<div class="a">Ans: Stapes.</div>
 
-<ul>
-<li>Renal corpuscle</li>
-<li>Glomerulus</li>
-<li>Bowman's capsule</li>
-<li>Proximal convoluted tubule</li>
-<li>Loop of Henle</li>
-<li>Distal convoluted tubule</li>
-<li>Collecting duct</li>
-</ul>
+<div class="q">5. What is a sesamoid bone?</div>
+<div class="a">Ans: A bone developing within a tendon; patella is a major example.</div>
 
-</div>
+<div class="q">6. Name the two divisions of skeleton.</div>
+<div class="a">Ans: Axial and appendicular skeleton.</div>
 
+<div class="q">7. How many cervical vertebrae are present?</div>
+<div class="a">Ans: Seven.</div>
 
-<div class="topic">
+<div class="q">8. How many thoracic vertebrae are present?</div>
+<div class="a">Ans: Twelve.</div>
 
-<h3>Urinary Bladder</h3>
+<div class="q">9. How many lumbar vertebrae are present?</div>
+<div class="a">Ans: Five.</div>
 
-<p>
-Urinary bladder হলো urine storage-এর hollow muscular organ।
-Urine ureter দিয়ে bladder-এ আসে এবং urethra দিয়ে বাইরে বের হয়।
-</p>
+<div class="q">10. What is C1 called?</div>
+<div class="a">Ans: Atlas.</div>
 
-</div>
+<div class="q">11. What is C2 called?</div>
+<div class="a">Ans: Axis.</div>
 
+<div class="q">12. What is the dens?</div>
+<div class="a">Ans: A prominent process of the axis that participates in rotation of the atlas and head.</div>
 
-<div class="clinical">
+<div class="q">13. How many pairs of ribs are present?</div>
+<div class="a">Ans: Twelve pairs.</div>
 
-<strong>🩺 Clinical Anatomy</strong>
+<div class="q">14. What are true ribs?</div>
+<div class="a">Ans: Ribs 1–7, which attach directly to the sternum through their costal cartilage.</div>
 
-<ul>
-<li>Urinary tract infection</li>
-<li>Renal stone</li>
-<li>Renal failure</li>
-<li>Hydronephrosis</li>
-<li>Urinary retention</li>
-</ul>
+<div class="q">15. What are floating ribs?</div>
+<div class="a">Ans: Ribs 11–12, which have no anterior attachment to the sternum.</div>
 
-</div>
+<div class="q">16. What connects muscle to bone?</div>
+<div class="a">Ans: Tendon.</div>
 
-</div>
-</section>
+<div class="q">17. What connects bone to bone?</div>
+<div class="a">Ans: Ligament.</div>
 
+<div class="q">18. What is the functional unit of compact bone?</div>
+<div class="a">Ans: Osteon.</div>
 
-<!-- ================= ENDOCRINE ================= -->
+<div class="q">19. What is the bone-forming cell?</div>
+<div class="a">Ans: Osteoblast.</div>
 
-<section class="system">
-
-<div class="system-head">
-<h2>🧪 8. Endocrine System</h2>
-<p>Hormone-producing glands</p>
-</div>
-
-<div class="content">
-
-<div class="topic">
-
-<h3>Major Endocrine Glands</h3>
-
-<ul>
-<li>Pituitary gland</li>
-<li>Thyroid gland</li>
-<li>Parathyroid glands</li>
-<li>Adrenal glands</li>
-<li>Pancreatic islets</li>
-<li>Pineal gland</li>
-<li>Thymus</li>
-<li>Ovaries</li>
-<li>Testes</li>
-</ul>
+<div class="q">20. What is the bone-resorbing cell?</div>
+<div class="a">Ans: Osteoclast.</div>
 
 </div>
 
+
+<!-- MCQ -->
 
 <div class="topic">
 
-<h3>Pituitary Gland</h3>
-
-<p>
-Pituitary gland brain-এর নিচে sella turcica অঞ্চলে অবস্থিত।
-এটি endocrine system-এর গুরুত্বপূর্ণ regulatory gland।
-</p>
-
-</div>
-
-
-<div class="topic">
-
-<h3>Thyroid Gland</h3>
-
-<p>
-Thyroid gland neck-এর anterior অংশে trachea-এর সামনে অবস্থিত।
-এর দুইটি lobe এবং একটি isthmus থাকে।
-</p>
-
-</div>
-
-
-<div class="topic">
-
-<h3>Adrenal Gland</h3>
-
-<p>
-প্রতিটি kidney-এর superior pole-এর উপর একটি করে adrenal gland থাকে।
-এর cortex ও medulla দুইটি প্রধান অংশ।
-</p>
-
-</div>
-
-
-<div class="clinical">
-
-<strong>🩺 Clinical Anatomy</strong>
-
-<ul>
-<li>Goiter</li>
-<li>Hyperthyroidism</li>
-<li>Hypothyroidism</li>
-<li>Diabetes mellitus</li>
-<li>Addison disease</li>
-</ul>
-
-</div>
-
-</div>
-</section>
-
-
-<!-- ================= FEMALE ================= -->
-
-<section class="system">
-
-<div class="system-head">
-<h2>👩 9. Female Reproductive System</h2>
-<p>Female reproductive organs-এর anatomy</p>
-</div>
-
-<div class="content">
-
-<div class="topic">
-
-<h3>Main Organs</h3>
-
-<ul>
-<li>Ovaries</li>
-<li>Uterine tubes</li>
-<li>Uterus</li>
-<li>Cervix</li>
-<li>Vagina</li>
-<li>External genitalia</li>
-</ul>
-
-</div>
-
-
-<div class="topic">
-
-<h3>Ovary</h3>
-
-<p>
-Ovary female gonad। এটি ova উৎপাদন করে এবং প্রধান reproductive
-hormone secretion-এর সঙ্গে সম্পর্কিত।
-</p>
-
-</div>
-
-
-<div class="topic">
-
-<h3>Uterus</h3>
-
-<p>
-Uterus একটি muscular hollow organ। এর প্রধান অংশ হলো:
-</p>
-
-<ul>
-<li>Fundus</li>
-<li>Body</li>
-<li>Isthmus</li>
-<li>Cervix</li>
-</ul>
-
-</div>
-
-
-<div class="topic">
-
-<h3>Uterine Tube</h3>
-
-<ul>
-<li>Infundibulum</li>
-<li>Ampulla</li>
-<li>Isthmus</li>
-<li>Uterine part</li>
-</ul>
-
-<p>
-Ampulla হলো fertilization-এর common site।
-</p>
-
-</div>
-
-
-<div class="clinical">
-
-<strong>🩺 Clinical Anatomy</strong>
-
-<ul>
-<li>Ectopic pregnancy</li>
-<li>Ovarian cyst</li>
-<li>Uterine fibroid</li>
-<li>Pelvic inflammatory disease</li>
-</ul>
-
-</div>
-
-</div>
-</section>
-
-
-<!-- ================= MALE ================= -->
-
-<section class="system">
-
-<div class="system-head">
-<h2>👨 10. Male Reproductive System</h2>
-<p>Male reproductive organs-এর anatomy</p>
-</div>
-
-<div class="content">
-
-<div class="topic">
-
-<h3>Main Organs</h3>
-
-<ul>
-<li>Testes</li>
-<li>Epididymis</li>
-<li>Vas deferens</li>
-<li>Seminal vesicles</li>
-<li>Prostate gland</li>
-<li>Penis</li>
-<li>Scrotum</li>
-</ul>
-
-</div>
-
-
-<div class="topic">
-
-<h3>Testis</h3>
-
-<p>
-Testis হলো male gonad। এটি sperm production এবং male reproductive
-hormone secretion-এর জন্য গুরুত্বপূর্ণ।
-</p>
-
-</div>
-
-
-<div class="topic">
-
-<h3>Epididymis & Vas Deferens</h3>
-
-<p>
-Epididymis testis-এর posterior aspect-এ থাকে এবং sperm maturation
-ও storage-এর সঙ্গে সম্পর্কিত। Vas deferens sperm transport করে।
-</p>
-
-</div>
-
-
-<div class="topic">
-
-<h3>Accessory Glands</h3>
-
-<ul>
-<li>Seminal vesicles</li>
-<li>Prostate gland</li>
-<li>Bulbourethral glands</li>
-</ul>
-
-</div>
-
-
-<div class="clinical">
-
-<strong>🩺 Clinical Anatomy</strong>
-
-<ul>
-<li>Benign prostatic enlargement</li>
-<li>Testicular torsion</li>
-<li>Cryptorchidism</li>
-<li>Epididymitis</li>
-</ul>
-
-</div>
-
-</div>
-</section>
-
-
-<!-- ================= LYMPHATIC ================= -->
-
-<section class="system">
-
-<div class="system-head">
-<h2>🛡️ 11. Lymphatic System</h2>
-<p>Fluid balance ও immune defense-এর গুরুত্বপূর্ণ system</p>
-</div>
-
-<div class="content">
-
-<div class="topic">
-
-<h3>Main Components</h3>
-
-<ul>
-<li>Lymph</li>
-<li>Lymphatic capillaries</li>
-<li>Lymphatic vessels</li>
-<li>Lymph nodes</li>
-<li>Spleen</li>
-<li>Thymus</li>
-<li>Tonsils</li>
-</ul>
-
-</div>
-
-
-<div class="topic">
-
-<h3>Major Lymphatic Ducts</h3>
-
-<ul>
-<li>Thoracic duct</li>
-<li>Right lymphatic duct</li>
-</ul>
-
-</div>
-
-
-<div class="topic">
-
-<h3>Lymph Nodes</h3>
-
-<p>
-Lymph nodes lymph filter করে এবং immune response-এর গুরুত্বপূর্ণ
-স্থান হিসেবে কাজ করে।
-</p>
-
-</div>
-
-
-<div class="topic">
-
-<h3>Spleen</h3>
-
-<p>
-Spleen একটি গুরুত্বপূর্ণ lymphoid organ। এটি immune function,
-blood filtration এবং পুরোনো blood cell removal-এর সঙ্গে যুক্ত।
-</p>
-
-</div>
-
-
-<div class="clinical">
-
-<strong>🩺 Clinical Anatomy</strong>
-
-<ul>
-<li>Lymphadenopathy</li>
-<li>Lymphedema</li>
-<li>Lymphoma</li>
-<li>Splenomegaly</li>
-</ul>
-
-</div>
-
-</div>
-</section>
-
-
-<!-- ================= SPECIAL SENSES ================= -->
-
-<section class="system">
-
-<div class="system-head">
-<h2>👁️ 12. Special Senses</h2>
-<p>Vision, hearing, balance, smell ও taste</p>
-</div>
-
-<div class="content">
-
-<div class="topic">
-
-<h3>Eye</h3>
-
-<ul>
-<li>Eyeball</li>
-<li>Cornea</li>
-<li>Sclera</li>
-<li>Choroid</li>
-<li>Retina</li>
-<li>Lens</li>
-<li>Aqueous humour</li>
-<li>Vitreous humour</li>
-<li>Optic nerve</li>
-</ul>
-
-</div>
-
-
-<div class="topic">
-
-<h3>Ear</h3>
-
-<ul>
-<li>External ear</li>
-<li>Middle ear</li>
-<li>Inner ear</li>
-<li>Cochlea</li>
-<li>Vestibule</li>
-<li>Semicircular canals</li>
-</ul>
-
-<p>
-Cochlea hearing-এর সঙ্গে এবং vestibular apparatus balance-এর সঙ্গে
-সম্পর্কিত।
-</p>
-
-</div>
-
-
-<div class="topic">
-
-<h3>Smell & Taste</h3>
-
-<p>
-Olfactory system smell বা গন্ধ অনুভূতিতে এবং taste buds স্বাদ
-অনুভূতিতে গুরুত্বপূর্ণ ভূমিকা পালন করে।
-</p>
-
-</div>
-
-
-<div class="clinical">
-
-<strong>🩺 Clinical Anatomy</strong>
-
-<ul>
-<li>Cataract</li>
-<li>Glaucoma</li>
-<li>Otitis media</li>
-<li>Hearing loss</li>
-<li>Vertigo</li>
-</ul>
-
-</div>
-
-</div>
-</section>
-
-
-<!-- ================= INTEGUMENTARY ================= -->
-
-<section class="system">
-
-<div class="system-head">
-<h2>🧴 13. Integumentary System</h2>
-<p>Skin ও skin appendages</p>
-</div>
-
-<div class="content">
-
-<div class="topic">
-
-<h3>Layers of Skin</h3>
-
-<ul>
-<li>Epidermis</li>
-<li>Dermis</li>
-<li>Subcutaneous tissue</li>
-</ul>
-
-</div>
-
-
-<div class="topic">
-
-<h3>Epidermis</h3>
-
-<p>
-Epidermis হলো skin-এর outer layer। এটি প্রধানত keratinized
-stratified squamous epithelium দিয়ে গঠিত।
-</p>
-
-</div>
-
-
-<div class="topic">
-
-<h3>Dermis</h3>
-
-<p>
-Dermis epidermis-এর নিচে অবস্থিত এবং এতে blood vessels,
-nerves, hair follicles ও glands থাকে।
-</p>
-
-</div>
-
-
-<div class="topic">
-
-<h3>Skin Appendages</h3>
-
-<ul>
-<li>Hair</li>
-<li>Nails</li>
-<li>Sweat glands</li>
-<li>Sebaceous glands</li>
-</ul>
-
-</div>
-
-
-<div class="topic">
-
-<h3>Functions of Skin</h3>
-
-<ul>
-<li>Protection</li>
-<li>Temperature regulation</li>
-<li>Sensation</li>
-<li>Prevention of fluid loss</li>
-<li>Vitamin D synthesis-এর সঙ্গে সম্পর্কিত</li>
-</ul>
-
-</div>
-
-
-<div class="clinical">
-
-<strong>🩺 Clinical Anatomy</strong>
-
-<ul>
-<li>Burn</li>
-<li>Pressure ulcer</li>
-<li>Dermatitis</li>
-<li>Skin infection</li>
-<li>Decubitus ulcer</li>
-</ul>
-
-</div>
-
-</div>
-</section>
-
-
-<!-- ================= REVISION ================= -->
-
-<section class="revision">
-
-<h2>⚡ Final Anatomy Quick Revision</h2>
-
-<ul>
-<li>Adult human skeleton = 206 bones</li>
-<li>Longest bone = Femur</li>
-<li>Smallest bone = Stapes</li>
-<li>Heart = 4 chambers</li>
-<li>Right lung = 3 lobes</li>
-<li>Left lung = 2 lobes</li>
-<li>Main site of gas exchange = Alveoli</li>
-<li>CNS = Brain + Spinal cord</li>
-<li>Kidney-এর functional unit = Nephron</li>
-<li>Small intestine = Duodenum + Jejunum + Ileum</li>
-<li>Uterus-এর প্রধান অংশ = Fundus, body, isthmus, cervix</li>
-<li>Skin-এর প্রধান layers = Epidermis + Dermis</li>
-<li>Thyroid = Neck-এর anterior region</li>
-<li>Spleen = Important lymphoid organ</li>
-</ul>
-
-</section>
-
-
-<!-- ================= MCQ ================= -->
-
-<section class="system mcq-section">
-
-<div class="system-head">
-<h2>📝 Anatomy Practice MCQ</h2>
-<p>Quick revision questions</p>
-</div>
-
-<div class="content">
-
+<h3>🧠 EASY + HIGH-YIELD MCQ</h3>
 
 <div class="mcq">
-<strong>1. একজন প্রাপ্তবয়স্ক মানুষের সাধারণত কতটি bone থাকে?</strong>
-<div class="option">A. 196</div>
-<div class="option">B. 206</div>
-<div class="option">C. 216</div>
-<div class="option">D. 226</div>
-<div class="answer">✓ Answer: B. 206</div>
+
+<strong>1. Adult human skeleton contains approximately:</strong>
+<div class="opt">A. 196 bones</div>
+<div class="opt">B. 206 bones</div>
+<div class="opt">C. 216 bones</div>
+<div class="opt">D. 226 bones</div>
+<div class="ans">✓ Answer: B. 206 bones</div>
+<div class="explain">Standard adult skeletal count is 206 bones.</div>
+
 </div>
 
 
 <div class="mcq">
-<strong>2. Human body-এর longest bone কোনটি?</strong>
-<div class="option">A. Tibia</div>
-<div class="option">B. Humerus</div>
-<div class="option">C. Femur</div>
-<div class="option">D. Radius</div>
-<div class="answer">✓ Answer: C. Femur</div>
+
+<strong>2. Longest bone of human body is:</strong>
+<div class="opt">A. Tibia</div>
+<div class="opt">B. Humerus</div>
+<div class="opt">C. Femur</div>
+<div class="opt">D. Radius</div>
+<div class="ans">✓ Answer: C. Femur</div>
+
 </div>
 
 
 <div class="mcq">
-<strong>3. Heart-এর chamber কতটি?</strong>
-<div class="option">A. 2</div>
-<div class="option">B. 3</div>
-<div class="option">C. 4</div>
-<div class="option">D. 5</div>
-<div class="answer">✓ Answer: C. 4</div>
+
+<strong>3. Smallest bone of the human body is:</strong>
+<div class="opt">A. Malleus</div>
+<div class="opt">B. Incus</div>
+<div class="opt">C. Stapes</div>
+<div class="opt">D. Patella</div>
+<div class="ans">✓ Answer: C. Stapes</div>
+
 </div>
 
 
 <div class="mcq">
-<strong>4. Gas exchange প্রধানত কোথায় হয়?</strong>
-<div class="option">A. Trachea</div>
-<div class="option">B. Bronchus</div>
-<div class="option">C. Alveoli</div>
-<div class="option">D. Larynx</div>
-<div class="answer">✓ Answer: C. Alveoli</div>
+
+<strong>4. Patella is a:</strong>
+<div class="opt">A. Flat bone</div>
+<div class="opt">B. Long bone</div>
+<div class="opt">C. Sesamoid bone</div>
+<div class="opt">D. Irregular bone</div>
+<div class="ans">✓ Answer: C. Sesamoid bone</div>
+
 </div>
 
 
 <div class="mcq">
-<strong>5. CNS কোন দুটি অংশ নিয়ে গঠিত?</strong>
-<div class="option">A. Brain ও nerves</div>
-<div class="option">B. Brain ও spinal cord</div>
-<div class="option">C. Spinal cord ও muscles</div>
-<div class="option">D. Brain ও heart</div>
-<div class="answer">✓ Answer: B. Brain ও spinal cord</div>
+
+<strong>5. Number of cervical vertebrae is:</strong>
+<div class="opt">A. 5</div>
+<div class="opt">B. 7</div>
+<div class="opt">C. 10</div>
+<div class="opt">D. 12</div>
+<div class="ans">✓ Answer: B. 7</div>
+
 </div>
 
 
 <div class="mcq">
-<strong>6. Kidney-এর functional unit কোনটি?</strong>
-<div class="option">A. Neuron</div>
-<div class="option">B. Alveolus</div>
-<div class="option">C. Nephron</div>
-<div class="option">D. Osteon</div>
-<div class="answer">✓ Answer: C. Nephron</div>
+
+<strong>6. First cervical vertebra is called:</strong>
+<div class="opt">A. Axis</div>
+<div class="opt">B. Atlas</div>
+<div class="opt">C. Sacrum</div>
+<div class="opt">D. Coccyx</div>
+<div class="ans">✓ Answer: B. Atlas</div>
+
 </div>
 
 
 <div class="mcq">
-<strong>7. Small intestine-এর কোন অংশটি প্রথম?</strong>
-<div class="option">A. Ileum</div>
-<div class="option">B. Jejunum</div>
-<div class="option">C. Duodenum</div>
-<div class="option">D. Cecum</div>
-<div class="answer">✓ Answer: C. Duodenum</div>
+
+<strong>7. Second cervical vertebra is:</strong>
+<div class="opt">A. Atlas</div>
+<div class="opt">B. Axis</div>
+<div class="opt">C. Sacrum</div>
+<div class="opt">D. Lumbar</div>
+<div class="ans">✓ Answer: B. Axis</div>
+
 </div>
 
 
 <div class="mcq">
-<strong>8. Thyroid gland কোথায় অবস্থিত?</strong>
-<div class="option">A. Chest</div>
-<div class="option">B. Neck</div>
-<div class="option">C. Abdomen</div>
-<div class="option">D. Pelvis</div>
-<div class="answer">✓ Answer: B. Neck</div>
+
+<strong>8. How many pairs of ribs are normally present?</strong>
+<div class="opt">A. 10</div>
+<div class="opt">B. 11</div>
+<div class="opt">C. 12</div>
+<div class="opt">D. 13</div>
+<div class="ans">✓ Answer: C. 12</div>
+
 </div>
 
 
 <div class="mcq">
-<strong>9. Skin-এর outermost layer কোনটি?</strong>
-<div class="option">A. Dermis</div>
-<div class="option">B. Epidermis</div>
-<div class="option">C. Fascia</div>
-<div class="option">D. Muscle</div>
-<div class="answer">✓ Answer: B. Epidermis</div>
+
+<strong>9. True ribs are:</strong>
+<div class="opt">A. 1–5</div>
+<div class="opt">B. 1–7</div>
+<div class="opt">C. 8–10</div>
+<div class="opt">D. 11–12</div>
+<div class="ans">✓ Answer: B. 1–7</div>
+
 </div>
 
 
 <div class="mcq">
-<strong>10. Female reproductive system-এর প্রধান female gonad কোনটি?</strong>
-<div class="option">A. Uterus</div>
-<div class="option">B. Ovary</div>
-<div class="option">C. Cervix</div>
-<div class="option">D. Vagina</div>
-<div class="answer">✓ Answer: B. Ovary</div>
+
+<strong>10. Floating ribs are:</strong>
+<div class="opt">A. 1–2</div>
+<div class="opt">B. 5–6</div>
+<div class="opt">C. 8–10</div>
+<div class="opt">D. 11–12</div>
+<div class="ans">✓ Answer: D. 11–12</div>
+
 </div>
 
+
+<div class="mcq">
+
+<strong>11. Bone-forming cell is:</strong>
+<div class="opt">A. Osteoclast</div>
+<div class="opt">B. Osteoblast</div>
+<div class="opt">C. Osteocyte</div>
+<div class="opt">D. Chondrocyte</div>
+<div class="ans">✓ Answer: B. Osteoblast</div>
+
+</div>
+
+
+<div class="mcq">
+
+<strong>12. Bone-resorbing cell is:</strong>
+<div class="opt">A. Osteoblast</div>
+<div class="opt">B. Osteocyte</div>
+<div class="opt">C. Osteoclast</div>
+<div class="opt">D. Fibroblast</div>
+<div class="ans">✓ Answer: C. Osteoclast</div>
+
+</div>
+
+
+<div class="mcq">
+
+<strong>13. Which bone is present in the arm?</strong>
+<div class="opt">A. Tibia</div>
+<div class="opt">B. Femur</div>
+<div class="opt">C. Humerus</div>
+<div class="opt">D. Fibula</div>
+<div class="ans">✓ Answer: C. Humerus</div>
+
+</div>
+
+
+<div class="mcq">
+
+<strong>14. Which bone is in the thigh?</strong>
+<div class="opt">A. Tibia</div>
+<div class="opt">B. Femur</div>
+<div class="opt">C. Radius</div>
+<div class="opt">D. Ulna</div>
+<div class="ans">✓ Answer: B. Femur</div>
+
+</div>
+
+
+<div class="mcq">
+
+<strong>15. Functional unit of compact bone is:</strong>
+<div class="opt">A. Nephron</div>
+<div class="opt">B. Neuron</div>
+<div class="opt">C. Osteon</div>
+<div class="opt">D. Alveolus</div>
+<div class="ans">✓ Answer: C. Osteon</div>
+
+</div>
+
+</div>
+
+
+<!-- FINAL -->
+
+<div class="revision">
+
+<h2>⚡ LAST-MINUTE REVISION</h2>
+
+<ul>
+<li>Adult skeleton → 206 bones</li>
+<li>Longest bone → Femur</li>
+<li>Smallest bone → Stapes</li>
+<li>Sesamoid bone → Patella</li>
+<li>Cervical vertebrae → 7</li>
+<li>Thoracic vertebrae → 12</li>
+<li>Lumbar vertebrae → 5</li>
+<li>C1 → Atlas</li>
+<li>C2 → Axis</li>
+<li>Axis → dens</li>
+<li>Ribs → 12 pairs</li>
+<li>True ribs → 1–7</li>
+<li>False ribs → 8–10</li>
+<li>Floating ribs → 11–12</li>
+<li>Arm → Humerus</li>
+<li>Forearm → Radius + Ulna</li>
+<li>Thigh → Femur</li>
+<li>Leg → Tibia + Fibula</li>
+<li>Bone-forming cell → Osteoblast</li>
+<li>Bone-resorbing cell → Osteoclast</li>
+<li>Mature bone cell → Osteocyte</li>
+<li>Compact bone unit → Osteon</li>
+<li>Muscle → bone → Tendon</li>
+<li>Bone → bone → Ligament</li>
+</ul>
+
+</div>
 
 </div>
 </section>
 
-
 </div>
-
 
 <footer>
-
-<p><strong>NURSING CAREER</strong></p>
-
-<p>
-B.Sc in Nursing • Anatomy • Nursing Education
-</p>
-
-<p style="margin-top:8px;font-size:13px;">
-Prepared for nursing students — Nursing Career
-</p>
-
+<strong>NURSING CAREER</strong>
+<p>Complete Anatomy • B.Sc in Nursing</p>
+<p>System-wise Notes • Hand Notes • High-Yield • MCQ</p>
 </footer>
 
-
 <script>
+function searchContent(){
+const value=document.getElementById("search").value.toLowerCase();
+const topics=document.querySelectorAll(".topic,.note,.high,.clinical,.short,.mcq");
 
-function searchTopic(){
+topics.forEach(function(item){
+const text=item.innerText.toLowerCase();
 
-  let input =
-    document.getElementById("searchInput")
-    .value
-    .toLowerCase()
-    .trim();
-
-  let systems =
-    document.querySelectorAll(".system");
-
-  systems.forEach(function(system){
-
-    if(input === ""){
-      system.style.display = "block";
-      return;
-    }
-
-    let text =
-      system.innerText.toLowerCase();
-
-    if(text.includes(input)){
-      system.style.display = "block";
-    }else{
-      system.style.display = "none";
-    }
-
-  });
-
+if(value===""){
+item.style.display="";
+}else{
+item.style.display=text.includes(value)?"":"none";
 }
-
+});
+}
 </script>
 
 </body>
