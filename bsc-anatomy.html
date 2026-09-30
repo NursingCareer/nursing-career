@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>B.Sc. in Nursing | Nursing Career</title>
+<title>Anatomy & Physiology | Nursing Career</title>
 
 <style>
 *{
@@ -29,16 +29,16 @@ a{
   color:white;
   padding:18px 20px;
   display:flex;
-  align-items:center;
   justify-content:space-between;
+  align-items:center;
   position:sticky;
   top:0;
-  z-index:100;
+  z-index:10;
   box-shadow:0 4px 15px rgba(0,0,0,.15);
 }
 
 .logo{
-  font-size:22px;
+  font-size:21px;
   font-weight:800;
 }
 
@@ -54,20 +54,25 @@ a{
   background:linear-gradient(135deg,#0759a5,#2374ed);
   color:white;
   text-align:center;
-  padding:45px 20px 60px;
+  padding:45px 20px 55px;
   border-radius:0 0 45px 45px;
 }
 
-.hero h1{
-  font-size:34px;
+.hero .big-icon{
+  font-size:60px;
   margin-bottom:12px;
 }
 
+.hero h1{
+  font-size:32px;
+  margin-bottom:10px;
+}
+
 .hero p{
-  font-size:17px;
-  line-height:1.6;
   max-width:650px;
   margin:auto;
+  font-size:16px;
+  line-height:1.6;
 }
 
 .container{
@@ -76,98 +81,87 @@ a{
   padding:0 18px;
 }
 
-.intro{
+.card{
   background:white;
   border-radius:28px;
-  padding:30px 20px;
-  text-align:center;
-  box-shadow:0 10px 35px rgba(0,0,0,.08);
-  margin-bottom:28px;
+  padding:25px 20px;
+  margin-bottom:25px;
+  box-shadow:0 8px 30px rgba(0,0,0,.08);
 }
 
-.intro h2{
+.card h2{
   color:#0759a5;
-  font-size:30px;
   margin-bottom:10px;
+  font-size:25px;
 }
 
-.intro p{
+.card p{
   color:#666;
-  font-size:16px;
   line-height:1.6;
 }
 
-.year{
-  background:white;
-  border-radius:28px;
-  overflow:hidden;
-  margin-bottom:30px;
-  box-shadow:0 8px 28px rgba(0,0,0,.08);
-}
-
-.year-head{
-  background:linear-gradient(135deg,#0759a5,#2869e8);
-  color:white;
-  padding:25px;
-}
-
-.year-head h2{
-  font-size:28px;
-  margin-bottom:7px;
-}
-
-.year-head p{
-  font-size:16px;
-}
-
-.subject-list{
-  padding:22px;
-}
-
-.subject{
+.topic{
   display:flex;
   align-items:center;
-  gap:20px;
+  gap:18px;
   background:#f9fbff;
   border:1px solid #e1e7ef;
-  border-radius:24px;
-  padding:22px;
-  margin-bottom:18px;
+  padding:18px;
+  border-radius:22px;
+  margin-bottom:15px;
   transition:.25s;
 }
 
-.subject:last-child{
-  margin-bottom:0;
-}
-
-.subject:hover{
+.topic:hover{
   transform:translateY(-3px);
-  box-shadow:0 8px 22px rgba(0,0,0,.10);
-  border-color:#3a79e8;
+  box-shadow:0 8px 20px rgba(0,0,0,.1);
+  border-color:#2874e8;
 }
 
-.icon{
-  width:90px;
-  height:90px;
-  min-width:90px;
-  border-radius:22px;
-  background:#e4f2ff;
+.topic-icon{
+  width:65px;
+  height:65px;
+  min-width:65px;
+  border-radius:18px;
+  background:#e5f3ff;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:45px;
+  font-size:34px;
 }
 
-.subject h3{
-  font-size:21px;
-  margin-bottom:7px;
-  color:#172033;
+.topic h3{
+  font-size:18px;
+  margin-bottom:5px;
 }
 
-.subject p{
+.topic p{
   color:#777;
-  font-size:15px;
-  line-height:1.4;
+  font-size:14px;
+}
+
+.resource{
+  background:linear-gradient(135deg,#f5f9ff,#eaf4ff);
+  border-radius:20px;
+  padding:18px;
+  margin-bottom:14px;
+}
+
+.resource h3{
+  color:#0759a5;
+  margin-bottom:5px;
+}
+
+.tip{
+  background:linear-gradient(135deg,#0759a5,#2869e8);
+  color:white;
+  border-radius:25px;
+  padding:25px;
+  line-height:1.6;
+}
+
+.tip h2{
+  margin-bottom:10px;
 }
 
 .footer{
@@ -175,17 +169,12 @@ a{
   color:white;
   text-align:center;
   padding:35px 20px;
-  margin-top:40px;
-}
-
-.footer h3{
-  margin-bottom:8px;
 }
 
 .footer p{
   color:#cbd5e1;
+  margin-top:7px;
   font-size:14px;
-  line-height:1.6;
 }
 
 @media(max-width:600px){
@@ -194,36 +183,23 @@ a{
     font-size:27px;
   }
 
-  .hero p{
-    font-size:15px;
+  .hero .big-icon{
+    font-size:50px;
   }
 
-  .intro h2{
-    font-size:26px;
+  .topic{
+    padding:16px;
   }
 
-  .year-head h2{
-    font-size:24px;
+  .topic-icon{
+    width:58px;
+    height:58px;
+    min-width:58px;
+    font-size:29px;
   }
 
-  .subject{
-    padding:18px;
-    gap:16px;
-  }
-
-  .icon{
-    width:72px;
-    height:72px;
-    min-width:72px;
-    font-size:35px;
-  }
-
-  .subject h3{
-    font-size:18px;
-  }
-
-  .subject p{
-    font-size:14px;
+  .topic h3{
+    font-size:17px;
   }
 }
 </style>
@@ -246,11 +222,13 @@ a{
 
 <section class="hero">
 
-  <h1>🎓 B.Sc. in Nursing</h1>
+  <div class="big-icon">🫀</div>
+
+  <h1>Anatomy & Physiology</h1>
 
   <p>
-    Complete B.Sc. Nursing education resources,
-    subjects, notes, clinical learning and examination preparation.
+    Learn the structure and functions of the human body
+    with simple nursing-focused study resources.
   </p>
 
 </section>
@@ -258,275 +236,187 @@ a{
 
 <div class="container">
 
-  <div class="intro">
 
-    <h2>📚 B.Sc. in Nursing</h2>
+  <div class="card">
+
+    <h2>📚 About This Subject</h2>
 
     <p>
-      Select your academic year and choose a subject
-      to explore nursing learning resources.
+      Anatomy deals with the structure of the human body,
+      while Physiology explains how different organs and
+      body systems function normally.
     </p>
 
   </div>
 
 
-  <!-- 1ST YEAR -->
+  <div class="card">
 
-  <section class="year">
-
-    <div class="year-head">
-
-      <h2>📘 1st Year</h2>
-
-      <p>Foundation of Nursing Education</p>
-
-    </div>
-
-    <div class="subject-list">
+    <h2>🧠 Important Topics</h2>
 
 
-      <a href="#" class="subject">
+    <a href="#" class="topic">
 
-        <div class="icon">🗣️</div>
+      <div class="topic-icon">🦴</div>
 
-        <div>
-          <h3>Communicative English</h3>
-          <p>English communication & learning</p>
-        </div>
+      <div>
+        <h3>Skeletal System</h3>
+        <p>Bones, joints and supporting structures</p>
+      </div>
 
-      </a>
-
-
-      <a href="#" class="subject">
-
-        <div class="icon">🧠</div>
-
-        <div>
-          <h3>Behavioral Science</h3>
-          <p>Human behaviour & psychology</p>
-        </div>
-
-      </a>
+    </a>
 
 
-      <!-- ANATOMY DIRECT LINK -->
+    <a href="#" class="topic">
 
-      <a href="https://nursingcareer.github.io/nursing-career/bsc-anatomy.html"
-         class="subject">
+      <div class="topic-icon">💪</div>
 
-        <div class="icon">❤️</div>
+      <div>
+        <h3>Muscular System</h3>
+        <p>Types of muscles and their functions</p>
+      </div>
 
-        <div>
-          <h3>Anatomy</h3>
-          <p>Structure of the human body</p>
-        </div>
-
-      </a>
+    </a>
 
 
-      <a href="#" class="subject">
+    <a href="#" class="topic">
 
-        <div class="icon">🫀</div>
+      <div class="topic-icon">❤️</div>
 
-        <div>
-          <h3>Physiology</h3>
-          <p>Normal body functions</p>
-        </div>
+      <div>
+        <h3>Cardiovascular System</h3>
+        <p>Heart, blood vessels and circulation</p>
+      </div>
 
-      </a>
-
-
-      <a href="#" class="subject">
-
-        <div class="icon">🩺</div>
-
-        <div>
-          <h3>Fundamentals of Nursing</h3>
-          <p>Basic nursing knowledge & skills</p>
-        </div>
-
-      </a>
-
-    </div>
-
-  </section>
+    </a>
 
 
-  <!-- 2ND YEAR -->
+    <a href="#" class="topic">
 
-  <section class="year">
+      <div class="topic-icon">🫁</div>
 
-    <div class="year-head">
+      <div>
+        <h3>Respiratory System</h3>
+        <p>Airways, lungs and respiration</p>
+      </div>
 
-      <h2>📗 2nd Year</h2>
-
-      <p>Core Nursing Sciences</p>
-
-    </div>
-
-    <div class="subject-list">
+    </a>
 
 
-      <a href="#" class="subject">
+    <a href="#" class="topic">
 
-        <div class="icon">💊</div>
+      <div class="topic-icon">🧠</div>
 
-        <div>
-          <h3>Pharmacology</h3>
-          <p>Drugs, actions, indications & nursing considerations</p>
-        </div>
+      <div>
+        <h3>Nervous System</h3>
+        <p>Brain, spinal cord and nerves</p>
+      </div>
 
-      </a>
-
-
-      <a href="#" class="subject">
-
-        <div class="icon">🦠</div>
-
-        <div>
-          <h3>Microbiology</h3>
-          <p>Microorganisms & infectious diseases</p>
-        </div>
-
-      </a>
+    </a>
 
 
-      <a href="#" class="subject">
+    <a href="#" class="topic">
 
-        <div class="icon">👶</div>
+      <div class="topic-icon">🍽️</div>
 
-        <div>
-          <h3>Child Health Nursing</h3>
-          <p>Pediatric nursing & child care</p>
-        </div>
+      <div>
+        <h3>Digestive System</h3>
+        <p>Digestion and absorption of nutrients</p>
+      </div>
 
-      </a>
+    </a>
 
 
-      <a href="#" class="subject">
+    <a href="#" class="topic">
 
-        <div class="icon">🤰</div>
+      <div class="topic-icon">🧪</div>
 
-        <div>
-          <h3>Midwifery</h3>
-          <p>Pregnancy, childbirth & maternal care</p>
-        </div>
+      <div>
+        <h3>Endocrine System</h3>
+        <p>Hormones and endocrine glands</p>
+      </div>
 
-      </a>
+    </a>
+
+
+    <a href="#" class="topic">
+
+      <div class="topic-icon">🫘</div>
+
+      <div>
+        <h3>Urinary System</h3>
+        <p>Kidneys, urine formation and fluid balance</p>
+      </div>
+
+    </a>
+
+  </div>
+
+
+  <div class="card">
+
+    <h2>📖 Nursing Resources</h2>
+
+
+    <div class="resource">
+
+      <h3>📝 Short Notes</h3>
+
+      <p>
+        Easy-to-revise anatomy and physiology notes
+        for nursing students.
+      </p>
 
     </div>
 
-  </section>
 
+    <div class="resource">
 
-  <!-- 3RD YEAR -->
+      <h3>❓ MCQ Practice</h3>
 
-  <section class="year">
-
-    <div class="year-head">
-
-      <h2>📕 3rd Year</h2>
-
-      <p>Advanced Nursing Education</p>
+      <p>
+        Practice important examination-focused questions.
+      </p>
 
     </div>
 
-    <div class="subject-list">
 
+    <div class="resource">
 
-      <a href="#" class="subject">
+      <h3>⭐ Important Questions</h3>
 
-        <div class="icon">🏥</div>
-
-        <div>
-          <h3>Medical Surgical Nursing</h3>
-          <p>Adult health, diseases & nursing management</p>
-        </div>
-
-      </a>
-
-
-      <a href="#" class="subject">
-
-        <div class="icon">🧠</div>
-
-        <div>
-          <h3>Psychiatric Nursing</h3>
-          <p>Mental health & psychiatric nursing</p>
-        </div>
-
-      </a>
-
-
-      <a href="#" class="subject">
-
-        <div class="icon">👩‍⚕️</div>
-
-        <div>
-          <h3>Community Health Nursing</h3>
-          <p>Community health & public health nursing</p>
-        </div>
-
-      </a>
+      <p>
+        High-yield topics for nursing examinations.
+      </p>
 
     </div>
 
-  </section>
 
+    <div class="resource">
 
-  <!-- 4TH YEAR -->
+      <h3>🏥 Clinical Connection</h3>
 
-  <section class="year">
-
-    <div class="year-head">
-
-      <h2>📙 4th Year</h2>
-
-      <p>Professional & Advanced Nursing</p>
+      <p>
+        Understand how anatomy and physiology are
+        connected with clinical nursing practice.
+      </p>
 
     </div>
 
-    <div class="subject-list">
+  </div>
 
 
-      <a href="#" class="subject">
+  <div class="tip">
 
-        <div class="icon">📋</div>
+    <h2>💡 Nursing Tip</h2>
 
-        <div>
-          <h3>Nursing Research</h3>
-          <p>Research methods & evidence-based nursing</p>
-        </div>
+    <p>
+      Anatomy tells you where a structure is,
+      while physiology tells you how that structure works.
+      Understanding both makes clinical nursing much easier.
+    </p>
 
-      </a>
-
-
-      <a href="#" class="subject">
-
-        <div class="icon">👩‍💼</div>
-
-        <div>
-          <h3>Nursing Administration</h3>
-          <p>Nursing management & leadership</p>
-        </div>
-
-      </a>
-
-
-      <a href="#" class="subject">
-
-        <div class="icon">🌍</div>
-
-        <div>
-          <h3>Professional Nursing</h3>
-          <p>Professional practice & career development</p>
-        </div>
-
-      </a>
-
-    </div>
-
-  </section>
+  </div>
 
 </div>
 
@@ -535,7 +425,9 @@ a{
 
   <h3>🩺 Nursing Career</h3>
 
-  <p>Complete Nursing Education Platform</p>
+  <p>
+    Complete Nursing Education Platform
+  </p>
 
   <p>
     B.Sc. Nursing • Diploma Nursing • Midwifery
@@ -546,7 +438,6 @@ a{
   </p>
 
 </footer>
-
 
 </body>
 </html>
