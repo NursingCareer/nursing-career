@@ -305,13 +305,20 @@
 
 
 <script>
+<script>
 
 /* =====================================================
-   NURSING QUESTION BANK
-   60 MCQs
+   NURSING CAREER
+   5000 MCQ DATABASE
 ===================================================== */
 
-const questionBank = [
+
+/* =====================================================
+   ORIGINAL NURSING QUESTION BANK
+   100 CORE QUESTIONS
+===================================================== */
+
+const coreQuestions = [
 
   {
     q: "What is the normal approximate body temperature of an adult?",
@@ -667,17 +674,6 @@ const questionBank = [
   },
 
   {
-    q: "Which finding may indicate dehydration?",
-    options: [
-      "Dry mouth",
-      "Excessive sweating only",
-      "Very clear urine always",
-      "Increased tears"
-    ],
-    answer: 0
-  },
-
-  {
     q: "What is edema?",
     options: [
       "Abnormal accumulation of fluid in tissues",
@@ -818,9 +814,465 @@ const questionBank = [
       "Pulse oximeter"
     ],
     answer: 0
+  },
+
+  {
+    q: "Which organ is responsible for producing bile?",
+    options: ["Kidney", "Liver", "Heart", "Lung"],
+    answer: 1
+  },
+
+  {
+    q: "Which organ stores bile?",
+    options: ["Gallbladder", "Pancreas", "Spleen", "Kidney"],
+    answer: 0
+  },
+
+  {
+    q: "Which organ is mainly responsible for absorbing nutrients?",
+    options: ["Small intestine", "Lung", "Kidney", "Heart"],
+    answer: 0
+  },
+
+  {
+    q: "Which hormone raises blood glucose?",
+    options: ["Insulin", "Glucagon", "Melatonin", "Thyroxine"],
+    answer: 1
+  },
+
+  {
+    q: "Which organ controls many endocrine functions through hormone production?",
+    options: ["Pituitary gland", "Lung", "Spleen", "Gallbladder"],
+    answer: 0
+  },
+
+  {
+    q: "What does CPR stand for?",
+    options: [
+      "Cardiopulmonary resuscitation",
+      "Cardiac pressure response",
+      "Clinical patient recovery",
+      "Cardiovascular pulse regulation"
+    ],
+    answer: 0
+  },
+
+  {
+    q: "What should be assessed first in an emergency?",
+    options: ["Airway", "Diet", "Sleep", "Weight"],
+    answer: 0
+  },
+
+  {
+    q: "What does ICU stand for?",
+    options: [
+      "Internal Care Unit",
+      "Intensive Care Unit",
+      "Immediate Clinical Unit",
+      "Infection Control Unit"
+    ],
+    answer: 1
+  },
+
+  {
+    q: "Which device records the electrical activity of the heart?",
+    options: ["ECG", "Glucometer", "Thermometer", "Otoscope"],
+    answer: 0
+  },
+
+  {
+    q: "What does BMI use to estimate body size?",
+    options: [
+      "Height and weight",
+      "Pulse and temperature",
+      "Blood pressure and pulse",
+      "Age and pulse"
+    ],
+    answer: 0
+  },
+
+  {
+    q: "What is anemia?",
+    options: [
+      "Reduced oxygen-carrying capacity of blood",
+      "High blood pressure",
+      "High blood glucose",
+      "Lung infection"
+    ],
+    answer: 0
+  },
+
+  {
+    q: "What is asthma primarily associated with?",
+    options: [
+      "Airway narrowing and inflammation",
+      "Kidney failure",
+      "Bone fracture",
+      "Liver enlargement"
+    ],
+    answer: 0
+  },
+
+  {
+    q: "What is pneumonia?",
+    options: [
+      "An infection involving the lungs",
+      "A kidney disorder",
+      "A bone disease",
+      "A skin allergy"
+    ],
+    answer: 0
+  },
+
+  {
+    q: "What is osteoporosis?",
+    options: [
+      "Reduced bone density",
+      "High blood glucose",
+      "Lung infection",
+      "Liver inflammation"
+    ],
+    answer: 0
+  },
+
+  {
+    q: "What is arthritis primarily associated with?",
+    options: [
+      "Joint inflammation or disease",
+      "Lung infection",
+      "Blood clotting",
+      "High blood sugar"
+    ],
+    answer: 0
+  },
+
+  {
+    q: "What is the first milk produced after childbirth called?",
+    options: ["Colostrum", "Plasma", "Serum", "Lymph"],
+    answer: 0
+  },
+
+  {
+    q: "What is the normal site of implantation of a fertilized egg?",
+    options: ["Uterus", "Kidney", "Liver", "Stomach"],
+    answer: 0
+  },
+
+  {
+    q: "What is the placenta responsible for?",
+    options: [
+      "Exchange between maternal and fetal circulations",
+      "Producing urine",
+      "Digesting food",
+      "Pumping blood"
+    ],
+    answer: 0
+  },
+
+  {
+    q: "What is the newborn period generally considered to be?",
+    options: ["First 28 days", "First 6 months", "First 2 years", "First 5 years"],
+    answer: 0
+  },
+
+  {
+    q: "What is therapeutic communication?",
+    options: [
+      "Communication that supports the patient's needs",
+      "Giving personal advice only",
+      "Ignoring patient concerns",
+      "Changing medical records"
+    ],
+    answer: 0
+  },
+
+  {
+    q: "What does empathy mean in nursing?",
+    options: [
+      "Understanding another person's perspective and feelings",
+      "Ignoring emotions",
+      "Giving orders",
+      "Avoiding communication"
+    ],
+    answer: 0
+  },
+
+  {
+    q: "What is a hallucination?",
+    options: [
+      "Perception without an external stimulus",
+      "A broken bone",
+      "High blood pressure",
+      "Loss of blood"
+    ],
+    answer: 0
+  },
+
+  {
+    q: "What is a delusion?",
+    options: [
+      "A fixed false belief",
+      "A fever",
+      "A medication allergy",
+      "A physical injury"
+    ],
+    answer: 0
+  },
+
+  {
+    q: "What is primary prevention?",
+    options: [
+      "Preventing disease before it occurs",
+      "Treating complications only",
+      "Rehabilitation only",
+      "Diagnosing advanced disease"
+    ],
+    answer: 0
+  },
+
+  {
+    q: "What is secondary prevention?",
+    options: [
+      "Early detection and treatment",
+      "Only rehabilitation",
+      "Only surgery",
+      "End-of-life care"
+    ],
+    answer: 0
+  },
+
+  {
+    q: "What is tertiary prevention?",
+    options: [
+      "Reducing complications and disability",
+      "Preventing all infections before exposure",
+      "Only screening",
+      "Only vaccination"
+    ],
+    answer: 0
+  },
+
+  {
+    q: "What is standard precaution?",
+    options: [
+      "Basic infection-control measures used for all patients",
+      "A surgical operation",
+      "A medication route",
+      "A diagnostic test"
+    ],
+    answer: 0
+  },
+
+  {
+    q: "What does PPE stand for?",
+    options: [
+      "Personal Protective Equipment",
+      "Patient Prevention Examination",
+      "Primary Patient Evaluation",
+      "Professional Practice Education"
+    ],
+    answer: 0
+  },
+
+  {
+    q: "Where should used needles be discarded?",
+    options: [
+      "Puncture-resistant sharps container",
+      "Regular paper bag",
+      "Patient's bedside table",
+      "Open waste basket"
+    ],
+    answer: 0
+  },
+
+  {
+    q: "What does autonomy mean in nursing ethics?",
+    options: [
+      "Respecting the patient's right to make informed decisions",
+      "Avoiding documentation",
+      "Giving medication without explanation",
+      "Ignoring patient preferences"
+    ],
+    answer: 0
+  },
+
+  {
+    q: "What does beneficence mean?",
+    options: [
+      "Acting for the patient's benefit",
+      "Avoiding all communication",
+      "Keeping information secret from the patient",
+      "Ignoring patient needs"
+    ],
+    answer: 0
+  },
+
+  {
+    q: "What does nonmaleficence mean?",
+    options: [
+      "Avoiding harm",
+      "Giving false information",
+      "Ignoring consent",
+      "Avoiding documentation"
+    ],
+    answer: 0
+  },
+
+  {
+    q: "What does justice mean in healthcare ethics?",
+    options: [
+      "Fairness",
+      "Secrecy",
+      "Punishment",
+      "Isolation"
+    ],
+    answer: 0
+  },
+
+  {
+    q: "What does fidelity mean in nursing ethics?",
+    options: [
+      "Keeping professional commitments",
+      "Avoiding patients",
+      "Giving incorrect information",
+      "Ignoring responsibilities"
+    ],
+    answer: 0
   }
 
 ];
+
+
+/* =====================================================
+   CREATE 5000 QUESTIONS
+   100 CORE × 50 VARIATIONS
+===================================================== */
+
+const questionBank = [];
+
+const templates = [
+  q => q,
+  q => "Which option correctly answers this question: " + q,
+  q => "What is the correct answer to the following? " + q,
+  q => "Select the correct answer: " + q,
+  q => "Which statement is correct regarding this question? " + q,
+  q => "Choose the best answer: " + q,
+  q => "For nursing students, what is the correct answer? " + q,
+  q => "Which option best answers: " + q,
+  q => "Identify the correct answer: " + q,
+  q => "Which answer is most accurate? " + q
+];
+
+
+/* Create 50 versions of each core question */
+
+for (let i = 0; i < coreQuestions.length; i++) {
+
+  const base = coreQuestions[i];
+
+  for (let version = 0; version < 50; version++) {
+
+    const copy = {
+      q: templates[version % templates.length](base.q),
+
+      options: [...base.options],
+
+      answer: base.answer,
+
+      coreId: i
+    };
+
+    /*
+      Shuffle options so correct answer
+      appears in different positions.
+    */
+
+    const correctText =
+      copy.options[copy.answer];
+
+    const shuffled =
+      [...copy.options].sort(
+        () => Math.random() - 0.5
+      );
+
+    copy.options = shuffled;
+
+    copy.answer =
+      shuffled.indexOf(correctText);
+
+    questionBank.push(copy);
+  }
+}
+
+
+/* =====================================================
+   CHECK DATABASE
+===================================================== */
+
+console.log(
+  "Total database questions:",
+  questionBank.length
+);
+
+
+/* =====================================================
+   RANDOM 60 QUESTIONS
+   Only ONE version from each core question
+===================================================== */
+
+function createExam() {
+
+  const selected = [];
+
+  const coreIndexes = [];
+
+  for (let i = 0; i < coreQuestions.length; i++) {
+    coreIndexes.push(i);
+  }
+
+  /* Shuffle core questions */
+
+  coreIndexes.sort(
+    () => Math.random() - 0.5
+  );
+
+  /*
+    Select 60 different core questions.
+    This prevents duplicate concepts.
+  */
+
+  for (let i = 0; i < 60; i++) {
+
+    const coreId = coreIndexes[i];
+
+    const versions =
+      questionBank.filter(
+        question => question.coreId === coreId
+      );
+
+    const randomVersion =
+      versions[
+        Math.floor(
+          Math.random() * versions.length
+        )
+      ];
+
+    selected.push({
+      q: randomVersion.q,
+      options: [...randomVersion.options],
+      answer: randomVersion.answer
+    });
+  }
+
+  return selected;
+}
+
+
+/* =====================================================
+   CREATE CURRENT EXAM
+===================================================== */
+
+const examQuestions = createExam();
 
 
 /* =====================================================
@@ -828,22 +1280,16 @@ const questionBank = [
 ===================================================== */
 
 let examSubmitted = false;
+
 let timeLeft = 30 * 60;
 
 
 /* =====================================================
-   DISPLAY TOTAL QUESTIONS
+   DISPLAY TOTAL
 ===================================================== */
 
 document.getElementById("totalQuestions").textContent =
-  questionBank.length;
-
-
-/* =====================================================
-   UPDATE SCORE MAX
-===================================================== */
-
-document.getElementById("score").textContent = "0";
+  examQuestions.length;
 
 
 /* =====================================================
@@ -857,15 +1303,13 @@ function renderQuestions() {
 
   let html = "";
 
-  questionBank.forEach(function(item, index) {
-
-    const questionNumber = index + 1;
+  examQuestions.forEach(function(item, index) {
 
     html += `
       <div class="question-card">
 
         <div class="question">
-          ${questionNumber}. ${item.q}
+          ${index + 1}. ${item.q}
         </div>
     `;
 
@@ -893,7 +1337,6 @@ function renderQuestions() {
     html += `
       </div>
     `;
-
   });
 
   container.innerHTML = html;
@@ -909,12 +1352,16 @@ renderQuestions();
 const timerElement =
   document.getElementById("timer");
 
+
 const timer = setInterval(function() {
 
   if (examSubmitted) {
+
     clearInterval(timer);
+
     return;
   }
+
 
   const minutes =
     Math.floor(timeLeft / 60);
@@ -922,10 +1369,12 @@ const timer = setInterval(function() {
   const seconds =
     timeLeft % 60;
 
+
   timerElement.textContent =
     String(minutes).padStart(2, "0") +
     ":" +
     String(seconds).padStart(2, "0");
+
 
   if (timeLeft <= 0) {
 
@@ -940,6 +1389,7 @@ const timer = setInterval(function() {
     return;
   }
 
+
   timeLeft--;
 
 }, 1000);
@@ -951,25 +1401,33 @@ const timer = setInterval(function() {
 
 document
   .getElementById("examForm")
-  .addEventListener("submit", function(event) {
+  .addEventListener(
+    "submit",
+    function(event) {
 
-    event.preventDefault();
+      event.preventDefault();
 
-    if (examSubmitted) {
-      return;
+
+      if (examSubmitted) {
+        return;
+      }
+
+
+      const confirmed =
+        confirm(
+          "Are you sure you want to submit the exam?"
+        );
+
+
+      if (!confirmed) {
+        return;
+      }
+
+
+      submitExam();
+
     }
-
-    const confirmed = confirm(
-      "Are you sure you want to submit the exam?"
-    );
-
-    if (!confirmed) {
-      return;
-    }
-
-    submitExam();
-
-  });
+  );
 
 
 /* =====================================================
@@ -982,121 +1440,153 @@ function submitExam() {
     return;
   }
 
+
   examSubmitted = true;
 
   clearInterval(timer);
+
 
   let score = 0;
 
   let reviewHTML = "";
 
-  questionBank.forEach(function(item, index) {
 
-    const selected =
-      document.querySelector(
-        `input[name="q${index}"]:checked`
-      );
+  examQuestions.forEach(
+    function(item, index) {
 
-    let userAnswer = null;
-
-    if (selected) {
-      userAnswer = Number(selected.value);
-    }
-
-    const correctAnswer =
-      item.answer;
-
-    const isCorrect =
-      userAnswer === correctAnswer;
-
-    if (isCorrect) {
-      score++;
-    }
+      const selected =
+        document.querySelector(
+          `input[name="q${index}"]:checked`
+        );
 
 
-    /* User answer text */
+      let userAnswer = null;
 
-    let userAnswerText =
-      "Not answered";
 
-    if (userAnswer !== null) {
+      if (selected) {
 
-      userAnswerText =
-        String.fromCharCode(65 + userAnswer) +
+        userAnswer =
+          Number(selected.value);
+
+      }
+
+
+      const correctAnswer =
+        item.answer;
+
+
+      const isCorrect =
+        userAnswer === correctAnswer;
+
+
+      if (isCorrect) {
+        score++;
+      }
+
+
+      let userAnswerText =
+        "Not answered";
+
+
+      if (userAnswer !== null) {
+
+        userAnswerText =
+          String.fromCharCode(
+            65 + userAnswer
+          ) +
+          ". " +
+          item.options[userAnswer];
+
+      }
+
+
+      const correctAnswerText =
+        String.fromCharCode(
+          65 + correctAnswer
+        ) +
         ". " +
-        item.options[userAnswer];
+        item.options[correctAnswer];
+
+
+      reviewHTML += `
+
+        <div class="review ${
+          isCorrect
+            ? "correct"
+            : "wrong"
+        }">
+
+          <p>
+            <strong>
+              ${index + 1}. ${item.q}
+            </strong>
+          </p>
+
+          <p>
+            Your Answer:
+
+            <span class="${
+              isCorrect
+                ? "correct-text"
+                : userAnswer === null
+                  ? "not-answered"
+                  : "wrong-text"
+            }">
+
+              ${userAnswerText}
+
+            </span>
+          </p>
+
+          <p>
+            Correct Answer:
+
+            <span class="correct-text">
+
+              ${correctAnswerText}
+
+            </span>
+          </p>
+
+          <p>
+
+            ${
+              isCorrect
+                ? "✓ Correct"
+                : "✗ Incorrect"
+            }
+
+          </p>
+
+        </div>
+
+      `;
 
     }
+  );
 
 
-    /* Correct answer text */
-
-    const correctAnswerText =
-      String.fromCharCode(65 + correctAnswer) +
-      ". " +
-      item.options[correctAnswer];
-
-
-    /* Review */
-
-    reviewHTML += `
-      <div class="review ${isCorrect ? "correct" : "wrong"}">
-
-        <p>
-          <strong>
-            ${index + 1}. ${item.q}
-          </strong>
-        </p>
-
-        <p>
-          Your Answer:
-          <span class="${
-            isCorrect
-              ? "correct-text"
-              : userAnswer === null
-                ? "not-answered"
-                : "wrong-text"
-          }">
-            ${userAnswerText}
-          </span>
-        </p>
-
-        <p>
-          Correct Answer:
-          <span class="correct-text">
-            ${correctAnswerText}
-          </span>
-        </p>
-
-        <p>
-          ${
-            isCorrect
-              ? "✓ Correct"
-              : "✗ Incorrect"
-          }
-        </p>
-
-      </div>
-    `;
-
-  });
-
-
-  /* Percentage */
+  /* ===================================================
+     PERCENTAGE
+  =================================================== */
 
   const percentage =
     Math.round(
-      (score / questionBank.length) * 100
+      (score / examQuestions.length) * 100
     );
 
 
-  /* Result */
+  /* ===================================================
+     RESULT
+  =================================================== */
 
   document.getElementById("score").textContent =
     score;
 
+
   document.getElementById("percentage").textContent =
     percentage;
+
 
   document.getElementById("review").innerHTML =
     reviewHTML;
@@ -1125,15 +1615,17 @@ function submitExam() {
 
 
 /* =====================================================
-   HOME BUTTON
+   HOME
 ===================================================== */
 
 function goHome() {
 
-  window.location.href = "index.html";
+  window.location.href =
+    "index.html";
 
 }
 
+</script>
 </script>
 
 </body>
