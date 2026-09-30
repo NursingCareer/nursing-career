@@ -6,7 +6,9 @@
 <title>Nursing Career - Online Nursing MCQ Examination</title>
 
 <style>
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
 
 body{
   margin:0;
@@ -19,11 +21,16 @@ header{
   background:#075985;
   color:white;
   text-align:center;
-  padding:20px 10px;
+  padding:22px 10px;
 }
 
-header h1{margin:0 0 6px}
-header p{margin:0}
+header h1{
+  margin:0 0 6px;
+}
+
+header p{
+  margin:0;
+}
 
 .homebar{
   background:white;
@@ -32,7 +39,6 @@ header p{margin:0}
   box-shadow:0 2px 6px #0001;
 }
 
-.homebtn,
 button{
   background:#075985;
   color:white;
@@ -43,15 +49,45 @@ button{
   font-size:15px;
 }
 
-.homebtn:hover,
 button:hover{
   opacity:.9;
 }
 
+.homebtn{
+  background:#075985;
+}
+
 .container{
-  max-width:900px;
+  max-width:950px;
   margin:20px auto;
   padding:0 12px;
+}
+
+.startBox{
+  background:white;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 2px 8px #0001;
+  margin-bottom:20px;
+}
+
+.startBox h2{
+  margin-top:0;
+}
+
+.nameInput{
+  width:100%;
+  padding:13px;
+  border:1px solid #ccc;
+  border-radius:8px;
+  font-size:16px;
+  margin:8px 0 12px;
+}
+
+.startBtn{
+  width:100%;
+  font-size:18px;
+  padding:14px;
 }
 
 .topbar{
@@ -127,7 +163,7 @@ select{
 }
 
 .score{
-  font-size:32px;
+  font-size:34px;
   font-weight:bold;
   color:#075985;
 }
@@ -168,23 +204,48 @@ select{
   display:none;
 }
 
-.history{
+.section{
   margin-top:20px;
   background:white;
   padding:20px;
   border-radius:12px;
+  box-shadow:0 2px 8px #0001;
 }
 
-.history table{
+.section h2{
+  margin-top:0;
+}
+
+.historyTable,
+.leaderTable{
   width:100%;
   border-collapse:collapse;
 }
 
-.history th,
-.history td{
-  padding:8px;
+.historyTable th,
+.historyTable td,
+.leaderTable th,
+.leaderTable td{
+  padding:10px 7px;
   border-bottom:1px solid #ddd;
   text-align:center;
+}
+
+.rank{
+  font-size:20px;
+  font-weight:bold;
+}
+
+.gold{
+  color:#d4a000;
+}
+
+.silver{
+  color:#777;
+}
+
+.bronze{
+  color:#a0522d;
 }
 
 .badge{
@@ -197,8 +258,20 @@ select{
   margin-left:5px;
 }
 
+.dangerBtn{
+  background:#dc2626;
+  margin-top:12px;
+}
+
+.retakeBtn{
+  margin-top:10px;
+}
+
 @media(max-width:600px){
-  header h1{font-size:22px}
+
+  header h1{
+    font-size:22px;
+  }
 
   .container{
     padding:0 8px;
@@ -216,8 +289,13 @@ select{
     text-align:center;
   }
 
-  .history{
+  .section{
     overflow-x:auto;
+  }
+
+  .historyTable,
+  .leaderTable{
+    min-width:600px;
   }
 }
 </style>
@@ -238,37 +316,105 @@ select{
 
 <div class="container">
 
-  <div class="topbar">
+  <!-- START BOX -->
 
-    <select id="subject">
-      <option value="All">All Subjects</option>
-      <option value="Fundamentals">Fundamentals of Nursing</option>
-      <option value="Anatomy">Anatomy</option>
-      <option value="Physiology">Physiology</option>
-      <option value="Pharmacology">Pharmacology</option>
-      <option value="Medical">Medical-Surgical Nursing</option>
-      <option value="Pediatric">Pediatric Nursing</option>
-      <option value="Community">Community Health Nursing</option>
-      <option value="Nutrition">Nutrition</option>
+  <div id="startBox" class="startBox">
+
+    <h2>📝 Start Nursing Exam</h2>
+
+    <p>
+      Enter your name and select a subject to begin.
+    </p>
+
+    <input
+      type="text"
+      id="studentName"
+      class="nameInput"
+      placeholder="Enter your name"
+      maxlength="40"
+    >
+
+    <select id="subjectSelect" class="nameInput">
+
+      <option value="All">
+        All Subjects
+      </option>
+
+      <option value="Fundamentals">
+        Fundamentals of Nursing
+      </option>
+
+      <option value="Anatomy">
+        Anatomy
+      </option>
+
+      <option value="Physiology">
+        Physiology
+      </option>
+
+      <option value="Pharmacology">
+        Pharmacology
+      </option>
+
+      <option value="Medical">
+        Medical-Surgical Nursing
+      </option>
+
+      <option value="Pediatric">
+        Pediatric Nursing
+      </option>
+
+      <option value="Community">
+        Community Health Nursing
+      </option>
+
+      <option value="Nutrition">
+        Nutrition
+      </option>
+
     </select>
 
-    <div>
-      Questions: <b>60</b>
-    </div>
-
-    <div class="timer" id="timer">
-      30:00
-    </div>
+    <button
+      class="startBtn"
+      onclick="startExam()"
+    >
+      🚀 Start Exam
+    </button>
 
   </div>
 
-  <div id="exam">
+
+  <!-- EXAM -->
+
+  <div id="exam" class="hidden">
+
+    <div class="topbar">
+
+      <div>
+        👤 <b id="examStudent"></b>
+      </div>
+
+      <div>
+        Questions: <b>60</b>
+      </div>
+
+      <div
+        class="timer"
+        id="timer"
+      >
+        30:00
+      </div>
+
+    </div>
 
     <form id="examForm">
 
       <div id="questions"></div>
 
-      <button type="submit" class="submit">
+      <button
+        type="submit"
+        class="submit"
+      >
         ✅ Submit Exam
       </button>
 
@@ -276,22 +422,61 @@ select{
 
   </div>
 
-  <div id="result" class="result hidden"></div>
 
-  <div class="history">
+  <!-- RESULT -->
+
+  <div
+    id="result"
+    class="result hidden"
+  ></div>
+
+
+  <!-- HISTORY -->
+
+  <div class="section">
 
     <h2>📊 Exam History</h2>
 
     <div id="historyData"></div>
 
+    <button
+      class="dangerBtn"
+      onclick="clearHistory()"
+    >
+      🗑️ Clear History
+    </button>
+
+  </div>
+
+
+  <!-- LEADERBOARD -->
+
+  <div class="section">
+
+    <h2>🏆 Leaderboard</h2>
+
+    <p>
+      Highest scores saved on this browser.
+    </p>
+
+    <div id="leaderboardData"></div>
+
+    <button
+      class="dangerBtn"
+      onclick="clearLeaderboard()"
+    >
+      🗑️ Clear Leaderboard
+    </button>
+
   </div>
 
 </div>
 
+
 <script>
 
 /* =====================================================
-   NURSING QUESTION BANK
+   BASE QUESTION BANK
 ===================================================== */
 
 const baseQuestions = [
@@ -604,34 +789,38 @@ e:"Water is essential for many physiological processes, including temperature re
 
 
 /* =====================================================
-   GENERATE 5000 QUESTION RECORDS
+   CREATE 5000 QUESTION RECORDS
 ===================================================== */
 
 const questionDB=[];
 
 const variations=[
-  "Which statement is correct?",
-  "Which option is correct?",
-  "What is the correct answer?",
-  "Which of the following is correct?",
-  "Select the correct answer.",
-  "Which answer is most appropriate?",
-  "Which statement is true?",
-  "Choose the correct option.",
-  "Which answer best describes this?",
-  "What should the nurse identify?"
+"Which statement is correct?",
+"Which option is correct?",
+"What is the correct answer?",
+"Which of the following is correct?",
+"Select the correct answer.",
+"Which answer is most appropriate?",
+"Which statement is true?",
+"Choose the correct option.",
+"Which answer best describes this?",
+"What should the nurse identify?"
 ];
 
 let counter=0;
 
 while(questionDB.length<5000){
 
-  const base=baseQuestions[counter%baseQuestions.length];
+  const base=
+    baseQuestions[
+      counter % baseQuestions.length
+    ];
 
   const variation=
     variations[
-      Math.floor(counter/baseQuestions.length)
-      %variations.length
+      Math.floor(
+        counter/baseQuestions.length
+      ) % variations.length
     ];
 
   questionDB.push({
@@ -663,6 +852,8 @@ while(questionDB.length<5000){
 
 let currentQuestions=[];
 
+let currentStudent="";
+
 let submitted=false;
 
 let timeLeft=30*60;
@@ -680,14 +871,13 @@ function shuffle(array){
 
   for(let i=arr.length-1;i>0;i--){
 
-    const j=Math.floor(
-      Math.random()*(i+1)
-    );
+    const j=
+      Math.floor(
+        Math.random()*(i+1)
+      );
 
-    [arr[i],arr[j]]=[
-      arr[j],arr[i]
-    ];
-
+    [arr[i],arr[j]]=
+    [arr[j],arr[i]];
   }
 
   return arr;
@@ -700,7 +890,53 @@ function shuffle(array){
 
 function startExam(){
 
+  const name=
+    document
+      .getElementById("studentName")
+      .value
+      .trim();
+
+  if(!name){
+
+    alert("Please enter your name first.");
+
+    document
+      .getElementById("studentName")
+      .focus();
+
+    return;
+  }
+
+  currentStudent=name;
+
+  const subject=
+    document
+      .getElementById("subjectSelect")
+      .value;
+
+  let pool;
+
+  if(subject==="All"){
+
+    pool=[...questionDB];
+
+  }else{
+
+    pool=
+      questionDB.filter(
+        x=>x.subject===subject
+      );
+  }
+
+  currentQuestions=
+    shuffle(pool).slice(0,60);
+
   submitted=false;
+
+  document
+    .getElementById("startBox")
+    .classList
+    .add("hidden");
 
   document
     .getElementById("exam")
@@ -712,25 +948,9 @@ function startExam(){
     .classList
     .add("hidden");
 
-  const subject=
-    document.getElementById("subject").value;
-
-  let pool;
-
-  if(subject==="All"){
-
-    pool=[...questionDB];
-
-  }else{
-
-    pool=questionDB.filter(
-      x=>x.subject===subject
-    );
-
-  }
-
-  currentQuestions=
-    shuffle(pool).slice(0,60);
+  document
+    .getElementById("examStudent")
+    .textContent=currentStudent;
 
   renderQuestions();
 
@@ -765,10 +985,13 @@ function renderQuestions(){
       let html=`
 
         <div class="q">
+
           ${index+1}. ${item.q}
+
           <span class="badge">
             ${item.subject}
           </span>
+
         </div>
 
       `;
@@ -791,14 +1014,12 @@ function renderQuestions(){
             </label>
 
           `;
-
         }
       );
 
       card.innerHTML=html;
 
       box.appendChild(card);
-
     }
   );
 }
@@ -816,21 +1037,21 @@ function startTimer(){
 
   updateTimer();
 
-  timerInterval=setInterval(()=>{
+  timerInterval=
+    setInterval(()=>{
 
-    timeLeft--;
+      timeLeft--;
 
-    updateTimer();
+      updateTimer();
 
-    if(timeLeft<=0){
+      if(timeLeft<=0){
 
-      clearInterval(timerInterval);
+        clearInterval(timerInterval);
 
-      submitExam(true);
+        submitExam(true);
+      }
 
-    }
-
-  },1000);
+    },1000);
 }
 
 
@@ -842,7 +1063,8 @@ function updateTimer(){
   const seconds=
     timeLeft%60;
 
-  document.getElementById("timer")
+  document
+    .getElementById("timer")
     .textContent=
       String(minutes).padStart(2,"0")
       +
@@ -865,7 +1087,6 @@ document
       e.preventDefault();
 
       submitExam(false);
-
     }
   );
 
@@ -879,7 +1100,9 @@ function submitExam(auto){
   clearInterval(timerInterval);
 
   let correct=0;
+
   let wrong=0;
+
   let unanswered=0;
 
   const review=[];
@@ -897,9 +1120,13 @@ function submitExam(auto){
         unanswered++;
 
         review.push({
+
           item:item,
+
           index:index,
+
           selected:null,
+
           status:"unanswered"
         });
 
@@ -913,9 +1140,13 @@ function submitExam(auto){
           correct++;
 
           review.push({
+
             item:item,
+
             index:index,
+
             selected:answer,
+
             status:"correct"
           });
 
@@ -924,25 +1155,44 @@ function submitExam(auto){
           wrong++;
 
           review.push({
+
             item:item,
+
             index:index,
+
             selected:answer,
+
             status:"wrong"
           });
-
         }
-
       }
-
     }
   );
 
-  const total=currentQuestions.length;
+  const total=
+    currentQuestions.length;
 
   const percentage=
-    Math.round((correct/total)*100);
+    Math.round(
+      (correct/total)*100
+    );
+
+  const subject=
+    document
+      .getElementById("subjectSelect")
+      .value;
 
   saveHistory(
+    currentStudent,
+    subject,
+    correct,
+    total,
+    percentage
+  );
+
+  saveLeaderboard(
+    currentStudent,
+    subject,
     correct,
     total,
     percentage
@@ -957,11 +1207,15 @@ function submitExam(auto){
     review,
     auto
   );
+
+  showHistory();
+
+  showLeaderboard();
 }
 
 
 /* =====================================================
-   SHOW RESULT + EXPLANATION
+   SHOW RESULT
 ===================================================== */
 
 function showResult(
@@ -987,6 +1241,11 @@ function showResult(
   let html=`
 
     <h2>🎉 Exam Result</h2>
+
+    <p>
+      👤 <b>Student:</b>
+      ${escapeHTML(currentStudent)}
+    </p>
 
     ${
       auto
@@ -1020,16 +1279,20 @@ function showResult(
       ${unanswered}
     </p>
 
-    <button onclick="startExam()">
-      🔄 Retake Exam
+    <button
+      class="retakeBtn"
+      onclick="showStartScreen()"
+    >
+      🔄 Take Another Exam
     </button>
 
     <div class="review">
 
-      <h2>📝 Answer Review & Explanation</h2>
+      <h2>
+        📝 Answer Review & Explanation
+      </h2>
 
   `;
-
 
   review.forEach(r=>{
 
@@ -1058,7 +1321,8 @@ function showResult(
       <div class="reviewItem ${r.status}">
 
         <b>
-          Q${r.index+1}. ${item.q}
+          Q${r.index+1}.
+          ${item.q}
         </b>
 
         <p>
@@ -1086,9 +1350,7 @@ function showResult(
       </div>
 
     `;
-
   });
-
 
   html+=`</div>`;
 
@@ -1102,10 +1364,40 @@ function showResult(
 
 
 /* =====================================================
+   SHOW START SCREEN
+===================================================== */
+
+function showStartScreen(){
+
+  document
+    .getElementById("result")
+    .classList
+    .add("hidden");
+
+  document
+    .getElementById("exam")
+    .classList
+    .add("hidden");
+
+  document
+    .getElementById("startBox")
+    .classList
+    .remove("hidden");
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+}
+
+
+/* =====================================================
    HISTORY
 ===================================================== */
 
 function saveHistory(
+  name,
+  subject,
   correct,
   total,
   percentage
@@ -1118,12 +1410,9 @@ function saveHistory(
       ) || "[]"
     );
 
-  const subject=
-    document.getElementById("subject").value;
-
   history.unshift({
 
-    date:new Date().toLocaleString(),
+    name:name,
 
     subject:subject,
 
@@ -1131,25 +1420,30 @@ function saveHistory(
 
     total:total,
 
-    percentage:percentage
+    percentage:percentage,
+
+    date:
+      new Date()
+      .toLocaleString()
 
   });
 
-  history=history.slice(0,20);
+  history=
+    history.slice(0,50);
 
   localStorage.setItem(
     "nursingExamHistory",
     JSON.stringify(history)
   );
-
-  showHistory();
 }
 
 
 function showHistory(){
 
   const box=
-    document.getElementById("historyData");
+    document.getElementById(
+      "historyData"
+    );
 
   const history=
     JSON.parse(
@@ -1168,13 +1462,20 @@ function showHistory(){
 
   let html=`
 
-    <table>
+    <table class="historyTable">
 
       <tr>
-        <th>Date</th>
+
+        <th>Name</th>
+
         <th>Subject</th>
+
         <th>Score</th>
+
         <th>%</th>
+
+        <th>Date</th>
+
       </tr>
 
   `;
@@ -1185,9 +1486,13 @@ function showHistory(){
 
       <tr>
 
-        <td>${h.date}</td>
+        <td>
+          ${escapeHTML(h.name)}
+        </td>
 
-        <td>${h.subject}</td>
+        <td>
+          ${h.subject}
+        </td>
 
         <td>
           ${h.correct}/${h.total}
@@ -1197,36 +1502,272 @@ function showHistory(){
           ${h.percentage}%
         </td>
 
+        <td>
+          ${h.date}
+        </td>
+
       </tr>
 
     `;
-
   });
 
-  html+=`</table>`;
+  html+=`
+
+    </table>
+
+  `;
 
   box.innerHTML=html;
 }
 
 
-/* =====================================================
-   BACK TO HOME
-===================================================== */
+function clearHistory(){
 
-function goHome(){
+  if(
+    !confirm(
+      "Clear all exam history?"
+    )
+  ){
+    return;
+  }
 
-  window.location.href="index.html";
+  localStorage.removeItem(
+    "nursingExamHistory"
+  );
 
+  showHistory();
 }
 
 
 /* =====================================================
-   INITIALIZE
+   LEADERBOARD
+===================================================== */
+
+function saveLeaderboard(
+  name,
+  subject,
+  correct,
+  total,
+  percentage
+){
+
+  let board=
+    JSON.parse(
+      localStorage.getItem(
+        "nursingLeaderboard"
+      ) || "[]"
+    );
+
+  board.push({
+
+    name:name,
+
+    subject:subject,
+
+    correct:correct,
+
+    total:total,
+
+    percentage:percentage,
+
+    date:
+      new Date()
+      .toLocaleString()
+
+  });
+
+  board.sort(
+    (a,b)=>{
+
+      if(
+        b.percentage !==
+        a.percentage
+      ){
+
+        return b.percentage -
+               a.percentage;
+      }
+
+      return b.correct-a.correct;
+    }
+  );
+
+  board=
+    board.slice(0,20);
+
+  localStorage.setItem(
+    "nursingLeaderboard",
+    JSON.stringify(board)
+  );
+}
+
+
+function showLeaderboard(){
+
+  const box=
+    document.getElementById(
+      "leaderboardData"
+    );
+
+  const board=
+    JSON.parse(
+      localStorage.getItem(
+        "nursingLeaderboard"
+      ) || "[]"
+    );
+
+  if(board.length===0){
+
+    box.innerHTML=
+      "<p>No leaderboard data yet.</p>";
+
+    return;
+  }
+
+  let html=`
+
+    <table class="leaderTable">
+
+      <tr>
+
+        <th>Rank</th>
+
+        <th>Student</th>
+
+        <th>Subject</th>
+
+        <th>Score</th>
+
+        <th>%</th>
+
+        <th>Date</th>
+
+      </tr>
+
+  `;
+
+  board.forEach(
+    (item,index)=>{
+
+      let rankClass="";
+
+      if(index===0){
+        rankClass="gold";
+      }else if(index===1){
+        rankClass="silver";
+      }else if(index===2){
+        rankClass="bronze";
+      }
+
+      html+=`
+
+        <tr>
+
+          <td class="rank ${rankClass}">
+
+            ${
+              index===0
+              ?"🥇"
+              :
+              index===1
+              ?"🥈"
+              :
+              index===2
+              ?"🥉"
+              :
+              index+1
+            }
+
+          </td>
+
+          <td>
+            ${escapeHTML(item.name)}
+          </td>
+
+          <td>
+            ${item.subject}
+          </td>
+
+          <td>
+            ${item.correct}/${item.total}
+          </td>
+
+          <td>
+            <b>${item.percentage}%</b>
+          </td>
+
+          <td>
+            ${item.date}
+          </td>
+
+        </tr>
+
+      `;
+    }
+  );
+
+  html+=`
+
+    </table>
+
+  `;
+
+  box.innerHTML=html;
+}
+
+
+function clearLeaderboard(){
+
+  if(
+    !confirm(
+      "Clear leaderboard?"
+    )
+  ){
+    return;
+  }
+
+  localStorage.removeItem(
+    "nursingLeaderboard"
+  );
+
+  showLeaderboard();
+}
+
+
+/* =====================================================
+   HOME
+===================================================== */
+
+function goHome(){
+
+  window.location.href=
+    "index.html";
+}
+
+
+/* =====================================================
+   SECURITY HELPER
+===================================================== */
+
+function escapeHTML(text){
+
+  const div=
+    document.createElement("div");
+
+  div.textContent=
+    String(text);
+
+  return div.innerHTML;
+}
+
+
+/* =====================================================
+   INITIAL LOAD
 ===================================================== */
 
 showHistory();
 
-startExam();
+showLeaderboard();
 
 </script>
 
