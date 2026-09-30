@@ -3,2947 +3,2291 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-
 <title>Nursing Career | Nursing Education Platform</title>
-
-<meta name="description" content="Nursing Career - Nursing Notes, MCQ, License Exam, Government Nursing Job Preparation, Clinical Nursing and Drug Calculation.">
 
 <style>
 :root{
  --primary:#087f8c;
- --primary2:#075985;
+ --secondary:#075985;
+ --accent:#0ea5a8;
  --light:#f4f9fa;
- --white:#fff;
+ --dark:#18323a;
  --text:#263640;
  --muted:#6b7b84;
- --border:#e3ebee;
- --success:#087f8c;
- --shadow:0 8px 25px rgba(0,0,0,.06);
+ --white:#fff;
+ --border:#dce8eb;
+ --success:#15803d;
+ --danger:#dc2626;
+ --warning:#d97706;
+ --shadow:0 8px 25px rgba(0,0,0,.07);
 }
 
-*{
- margin:0;
- padding:0;
- box-sizing:border-box;
-}
-
-html{
- scroll-behavior:smooth;
-}
-
+*{box-sizing:border-box;margin:0;padding:0}
 body{
  font-family:Arial,Helvetica,sans-serif;
  background:var(--light);
  color:var(--text);
  line-height:1.6;
 }
+button,input,select{font:inherit}
+button{cursor:pointer}
 
-a{
- text-decoration:none;
- color:inherit;
-}
-
-button,input{
- font-family:inherit;
-}
-
-.container{
- width:min(1180px,92%);
- margin:auto;
-}
-
-section{
- scroll-margin-top:80px;
-}
-
-/* ================= HEADER ================= */
-
-.header{
+header{
+ background:linear-gradient(135deg,var(--secondary),var(--primary));
+ color:white;
  position:sticky;
  top:0;
  z-index:1000;
- background:linear-gradient(135deg,var(--primary2),var(--primary));
- box-shadow:0 3px 18px rgba(0,0,0,.12);
+ box-shadow:var(--shadow);
 }
-
 .nav{
- width:min(1180px,92%);
+ max-width:1200px;
  margin:auto;
- min-height:68px;
+ padding:15px 20px;
  display:flex;
  align-items:center;
  justify-content:space-between;
+ gap:20px;
 }
-
 .logo{
- color:#fff;
- font-size:22px;
- font-weight:800;
-}
-
-.logo span{
- color:#a7f3d0;
-}
-
-.menu{
- display:flex;
- gap:4px;
-}
-
-.menu a{
- color:#fff;
- padding:9px 11px;
- border-radius:7px;
- font-size:13px;
- font-weight:bold;
-}
-
-.menu a:hover{
- background:rgba(255,255,255,.14);
-}
-
-.menuBtn{
- display:none;
- background:rgba(255,255,255,.12);
- border:0;
- color:#fff;
  font-size:23px;
- width:42px;
- height:42px;
- border-radius:8px;
-}
-
-/* ================= HERO ================= */
-
-.hero{
- background:linear-gradient(135deg,#e9fbfc,#edf7ff);
- padding:65px 0;
-}
-
-.heroGrid{
- display:grid;
- grid-template-columns:1.25fr .75fr;
- gap:45px;
- align-items:center;
-}
-
-.badge{
- display:inline-block;
- background:#dff7f7;
- color:var(--primary);
- padding:6px 13px;
- border-radius:30px;
- font-size:12px;
  font-weight:bold;
- margin-bottom:15px;
 }
+.logo span{color:#a7f3d0}
 
-.hero h1{
- font-size:46px;
- line-height:1.1;
- color:var(--primary2);
- margin-bottom:15px;
-}
-
-.hero h1 span{
- color:var(--primary);
-}
-
-.heroText{
- max-width:680px;
- color:var(--muted);
- font-size:16px;
- margin-bottom:23px;
-}
-
-.heroBtns{
+.navlinks{
  display:flex;
- gap:10px;
+ gap:8px;
  flex-wrap:wrap;
 }
-
-.btn{
- display:inline-flex;
- justify-content:center;
- align-items:center;
- padding:12px 19px;
- border-radius:9px;
- font-weight:bold;
- font-size:14px;
- cursor:pointer;
+.navlinks button{
+ background:transparent;
  border:0;
+ color:white;
+ padding:9px 12px;
+ border-radius:8px;
 }
+.navlinks button:hover{background:rgba(255,255,255,.15)}
 
-.btnPrimary{
+.hero{
+ background:linear-gradient(135deg,#e9fbfc,#eff8ff);
+ padding:70px 20px;
+}
+.hero-inner{
+ max-width:1200px;
+ margin:auto;
+ display:grid;
+ grid-template-columns:1.3fr .7fr;
+ gap:30px;
+ align-items:center;
+}
+.hero h1{
+ font-size:48px;
+ line-height:1.1;
+ color:var(--secondary);
+ margin-bottom:15px;
+}
+.hero p{
+ font-size:18px;
+ color:var(--muted);
+ margin-bottom:25px;
+}
+.btn{
+ border:0;
+ padding:12px 18px;
+ border-radius:10px;
  background:var(--primary);
- color:#fff;
+ color:white;
+ font-weight:bold;
 }
-
-.btnSecondary{
- background:#fff;
- color:var(--primary2);
- border:1px solid var(--border);
+.btn:hover{opacity:.9}
+.btn.secondary{
+ background:white;
+ color:var(--primary);
+ border:1px solid var(--primary);
 }
+.btn.danger{background:var(--danger)}
+.btn.success{background:var(--success)}
 
 .search{
  display:flex;
- background:#fff;
- padding:5px;
- border-radius:10px;
- max-width:680px;
- margin-top:25px;
- box-shadow:var(--shadow);
+ gap:10px;
+ max-width:700px;
 }
-
 .search input{
  flex:1;
- border:0;
- outline:0;
- padding:12px;
- min-width:0;
+ padding:14px;
+ border:1px solid var(--border);
+ border-radius:10px;
 }
 
-.search button{
- border:0;
- background:var(--primary);
- color:#fff;
- border-radius:7px;
- padding:0 20px;
- font-weight:bold;
- cursor:pointer;
-}
-
-.heroCard{
- background:#fff;
- border-radius:22px;
+.hero-card{
+ background:white;
  padding:30px;
- text-align:center;
- box-shadow:var(--shadow);
-}
-
-.heroIcon{
- font-size:65px;
-}
-
-.heroCard h3{
- color:var(--primary2);
- margin:8px 0;
-}
-
-.heroCard p{
- color:var(--muted);
- font-size:13px;
-}
-
-.stats{
- display:grid;
- grid-template-columns:repeat(3,1fr);
- gap:7px;
- margin-top:20px;
-}
-
-.stat{
- background:#f0fafb;
- padding:10px 4px;
- border-radius:8px;
-}
-
-.stat strong{
- display:block;
- color:var(--primary);
-}
-
-.stat small{
- color:var(--muted);
-}
-
-/* ================= COMMON ================= */
-
-.section{
- padding:55px 0;
-}
-
-.heading{
- text-align:center;
- margin-bottom:28px;
-}
-
-.heading small{
- color:var(--primary);
- font-weight:bold;
- text-transform:uppercase;
- letter-spacing:1px;
-}
-
-.heading h2{
- color:var(--primary2);
- font-size:28px;
- margin:5px 0;
-}
-
-.heading p{
- color:var(--muted);
- font-size:14px;
-}
-
-/* ================= QUICK ================= */
-
-.grid4{
- display:grid;
- grid-template-columns:repeat(4,1fr);
- gap:16px;
-}
-
-.card{
- background:#fff;
- border:1px solid var(--border);
- border-radius:15px;
- padding:22px;
- box-shadow:0 3px 12px rgba(0,0,0,.025);
- transition:.2s;
-}
-
-.card:hover{
- transform:translateY(-3px);
- box-shadow:var(--shadow);
-}
-
-.quick{
- text-align:center;
- cursor:pointer;
-}
-
-.quickIcon{
- font-size:34px;
- margin-bottom:8px;
-}
-
-.card h3{
- color:var(--primary2);
- font-size:17px;
- margin-bottom:6px;
-}
-
-.card p{
- color:var(--muted);
- font-size:13px;
-}
-
-/* ================= ABOUT ================= */
-
-.about{
- background:#fff;
  border-radius:20px;
- padding:32px;
- display:grid;
- grid-template-columns:1fr 1fr;
- gap:35px;
  box-shadow:var(--shadow);
-}
-
-.about h2{
- color:var(--primary2);
- margin-bottom:10px;
-}
-
-.about p{
- color:var(--muted);
- font-size:14px;
- margin-bottom:10px;
-}
-
-.checks{
- margin-top:18px;
- display:grid;
- gap:8px;
-}
-
-.check{
- color:#53656e;
- font-size:13px;
-}
-
-.check b{
- color:var(--primary);
- margin-right:7px;
-}
-
-.aboutBox{
- background:linear-gradient(135deg,#e8fafb,#eef7ff);
- padding:25px;
- border-radius:15px;
-}
-
-.aboutBox h3{
- color:var(--primary2);
- margin-bottom:13px;
-}
-
-.aboutItem{
- background:#fff;
- padding:11px;
- border-radius:8px;
- margin-bottom:8px;
- font-size:13px;
- color:#5d6d76;
-}
-
-/* ================= SUBJECTS ================= */
-
-.subjectGrid{
- display:grid;
- grid-template-columns:repeat(3,1fr);
- gap:15px;
-}
-
-.subject{
- background:#fff;
- border:1px solid var(--border);
- border-radius:13px;
- padding:18px;
-}
-
-.subjectNo{
- display:inline-flex;
- width:34px;
- height:34px;
- align-items:center;
- justify-content:center;
- border-radius:8px;
- background:#e7f8f9;
- color:var(--primary);
- font-weight:bold;
- font-size:12px;
- margin-bottom:9px;
-}
-
-.subject h3{
- font-size:15px;
- color:var(--primary2);
-}
-
-.subject p{
- color:var(--muted);
- font-size:12px;
- margin-top:4px;
-}
-
-/* ================= NOTES ================= */
-
-.noteGrid{
- display:grid;
- grid-template-columns:repeat(3,1fr);
- gap:16px;
-}
-
-.note{
- background:#fff;
- padding:21px;
- border-radius:14px;
- border-left:4px solid var(--primary);
- box-shadow:0 4px 15px rgba(0,0,0,.035);
-}
-
-.note h3{
- color:var(--primary2);
- font-size:16px;
-}
-
-.note p{
- color:var(--muted);
- font-size:13px;
- margin-top:5px;
-}
-
-.tags{
- display:flex;
- flex-wrap:wrap;
- gap:5px;
- margin-top:12px;
-}
-
-.tag{
- background:#edf8f9;
- color:var(--primary);
- padding:4px 8px;
- border-radius:20px;
- font-size:10px;
- font-weight:bold;
-}
-
-/* ================= VIDEO ================= */
-
-.videoBox{
- background:#fff;
- border-radius:20px;
- overflow:hidden;
- box-shadow:var(--shadow);
-}
-
-.videoFrame{
- position:relative;
- padding-bottom:56.25%;
- background:#111;
-}
-
-.videoFrame iframe{
- position:absolute;
- width:100%;
- height:100%;
- border:0;
-}
-
-.videoInfo{
- padding:22px;
-}
-
-.videoInfo h3{
- color:var(--primary2);
-}
-
-.videoInfo p{
- color:var(--muted);
- font-size:13px;
- margin:4px 0 15px;
-}
-
-.youtubeBtn{
- display:inline-block;
- background:#e31b23;
- color:#fff;
- padding:10px 16px;
- border-radius:8px;
- font-weight:bold;
- font-size:13px;
-}
-
-/* ================= EXAM ================= */
-
-.examGrid{
- display:grid;
- grid-template-columns:repeat(3,1fr);
- gap:17px;
-}
-
-.exam{
- background:#fff;
- border-radius:15px;
- padding:23px;
- border-top:4px solid var(--primary);
- box-shadow:0 4px 15px rgba(0,0,0,.04);
-}
-
-.examIcon{
- font-size:34px;
- margin-bottom:8px;
-}
-
-.exam h3{
- color:var(--primary2);
- font-size:17px;
-}
-
-.exam ul{
- padding-left:18px;
- margin-top:9px;
- color:var(--muted);
- font-size:13px;
-}
-
-.exam li{
- margin-bottom:4px;
-}
-
-/* ================= DRUG CALCULATOR ================= */
-
-.drugArea{
- background:linear-gradient(135deg,#e9fbfc,#eff8ff);
- border:1px solid #d9ecef;
- border-radius:20px;
- padding:30px;
-}
-
-.drugTop{
- display:flex;
- justify-content:space-between;
- align-items:center;
- gap:20px;
-}
-
-.drugTop h2{
- color:var(--primary2);
-}
-
-.drugTop p{
- color:var(--muted);
- font-size:13px;
-}
-
-.openCalc{
- border:0;
- background:var(--primary);
- color:#fff;
- padding:12px 18px;
- border-radius:8px;
- font-weight:bold;
- cursor:pointer;
- white-space:nowrap;
-}
-
-.calculator{
- display:none;
- margin-top:22px;
- background:#fff;
- border-radius:15px;
- padding:22px;
-}
-
-.calculator.show{
- display:block;
-}
-
-.warning{
- background:#fff8e5;
- border-left:4px solid #e0a000;
- color:#725a18;
- padding:10px;
- border-radius:6px;
- font-size:12px;
- margin-bottom:18px;
-}
-
-.calcGrid{
- display:grid;
- grid-template-columns:repeat(3,1fr);
- gap:15px;
-}
-
-.calcCard{
- background:#f8fafb;
- border:1px solid var(--border);
- border-radius:11px;
- padding:17px;
-}
-
-.calcCard h3{
- color:var(--primary2);
- font-size:15px;
- margin-bottom:12px;
-}
-
-.calcCard label{
- display:block;
- color:var(--muted);
- font-size:11px;
- margin-bottom:3px;
-}
-
-.calcCard input{
- width:100%;
- border:1px solid #d2dde1;
- border-radius:7px;
- padding:9px;
- margin-bottom:9px;
- outline:0;
-}
-
-.calcCard button{
- width:100%;
- background:var(--primary);
- color:#fff;
- border:0;
- padding:9px;
- border-radius:7px;
- font-weight:bold;
- cursor:pointer;
-}
-
-.result{
- min-height:38px;
- margin-top:9px;
- padding:9px;
- border-radius:7px;
- background:#e8faf6;
- color:var(--primary2);
- font-size:12px;
- font-weight:bold;
-}
-
-/* ================= CLINICAL ================= */
-
-.clinicalGrid{
- display:grid;
- grid-template-columns:repeat(4,1fr);
- gap:15px;
-}
-
-.clinical{
- background:#fff;
  text-align:center;
- padding:20px 13px;
- border-radius:13px;
- border:1px solid var(--border);
 }
+.hero-card .big{font-size:65px}
 
-.clinicalIcon{
- font-size:31px;
- margin-bottom:7px;
+.container{
+ max-width:1200px;
+ margin:auto;
+ padding:45px 20px;
 }
-
-.clinical h3{
- color:var(--primary2);
- font-size:15px;
+.section-title{
+ text-align:center;
+ margin-bottom:30px;
 }
-
-.clinical p{
- color:var(--muted);
- font-size:11px;
+.section-title h2{
+ color:var(--secondary);
+ font-size:32px;
 }
+.section-title p{color:var(--muted)}
 
-/* ================= MCQ ================= */
-
-.mcqBox{
- background:#fff;
- padding:28px;
- border-radius:18px;
- box-shadow:var(--shadow);
-}
-
-.mcqQuestion{
- color:var(--primary2);
- font-size:16px;
- font-weight:bold;
- margin-bottom:15px;
-}
-
-.option{
- display:block;
- padding:10px 12px;
- border:1px solid var(--border);
- border-radius:8px;
- margin:7px 0;
- cursor:pointer;
- font-size:13px;
- color:#596a73;
-}
-
-.option:hover{
- background:#eefafa;
- border-color:#9ed8dc;
-}
-
-.answer{
- display:none;
- margin-top:13px;
- padding:11px;
- border-radius:7px;
- background:#e8faf6;
- color:#075985;
- font-size:13px;
- font-weight:bold;
-}
-
-.answer.show{
- display:block;
-}
-
-.mcqBtn{
- margin-top:10px;
- border:0;
- background:var(--primary);
- color:#fff;
- padding:10px 16px;
- border-radius:7px;
- cursor:pointer;
- font-weight:bold;
-}
-
-/* ================= VIVA ================= */
-
-.viva{
- background:#fff;
- border-radius:17px;
- padding:23px;
- box-shadow:var(--shadow);
-}
-
-.vivaItem{
- padding:14px 0;
- border-bottom:1px solid #edf0f2;
-}
-
-.vivaItem:last-child{
- border-bottom:0;
-}
-
-.question{
- color:var(--primary2);
- font-weight:bold;
- font-size:13px;
-}
-
-.answerText{
- color:var(--muted);
- font-size:12px;
- margin-top:4px;
-}
-
-/* ================= NOTICE ================= */
-
-.notice{
- background:linear-gradient(135deg,var(--primary2),var(--primary));
- color:#fff;
- border-radius:18px;
- padding:30px;
-}
-
-.notice h2{
- margin-bottom:8px;
-}
-
-.notice p{
- font-size:13px;
- opacity:.92;
-}
-
-.noticeGrid{
+.grid{
  display:grid;
- grid-template-columns:repeat(3,1fr);
- gap:10px;
- margin-top:20px;
-}
-
-.noticeItem{
- background:rgba(255,255,255,.1);
- border-radius:9px;
- padding:12px;
- font-size:12px;
-}
-
-/* ================= CONTACT ================= */
-
-.contactGrid{
- display:grid;
- grid-template-columns:1fr 1fr;
+ grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
  gap:18px;
 }
 
-.contactCard{
- background:#fff;
- padding:24px;
- border-radius:15px;
+.card{
+ background:white;
  border:1px solid var(--border);
+ border-radius:15px;
+ padding:22px;
+ box-shadow:var(--shadow);
+ transition:.2s;
+}
+.card:hover{
+ transform:translateY(-3px);
+ box-shadow:0 12px 30px rgba(0,0,0,.1);
+}
+.card h3{color:var(--secondary);margin:8px 0}
+.card p{color:var(--muted);font-size:14px}
+.icon{font-size:35px}
+
+.feature{
+ cursor:pointer;
 }
 
-.contactCard h3{
- color:var(--primary2);
- margin-bottom:8px;
+.hidden{display:none!important}
+
+.panel{
+ background:white;
+ border-radius:18px;
+ box-shadow:var(--shadow);
+ padding:25px;
+ margin-top:20px;
 }
 
-.contactCard p{
- color:var(--muted);
- font-size:13px;
-}
-
-.social{
+.breadcrumb{
  display:flex;
+ gap:8px;
  flex-wrap:wrap;
- gap:7px;
- margin-top:15px;
+ margin-bottom:20px;
 }
-
-.social a{
- background:#edf8f9;
+.breadcrumb button{
+ border:0;
+ background:none;
  color:var(--primary);
- padding:8px 12px;
- border-radius:7px;
- font-size:12px;
  font-weight:bold;
 }
 
-/* ================= CTA ================= */
+.back{
+ margin-bottom:20px;
+ background:#eef8f9;
+ color:var(--primary);
+ border:0;
+ padding:9px 14px;
+ border-radius:8px;
+}
 
-.cta{
+.list-item{
+ border:1px solid var(--border);
+ padding:16px;
+ margin:10px 0;
+ border-radius:10px;
  background:#fff;
- border-radius:18px;
- padding:35px;
- text-align:center;
- box-shadow:var(--shadow);
+}
+.list-item:hover{background:#f8fcfc}
+
+.topic-content{
+ background:#f7fbfc;
+ border-left:5px solid var(--primary);
+ padding:20px;
+ border-radius:8px;
+ margin:20px 0;
 }
 
-.cta h2{
- color:var(--primary2);
+.point{
+ background:#ecfdf5;
+ padding:10px 14px;
+ margin:7px 0;
+ border-radius:7px;
 }
 
-.cta p{
- color:var(--muted);
- font-size:13px;
- margin:5px 0 17px;
-}
-
-/* ================= FOOTER ================= */
-
-footer{
- background:#102a36;
- color:#d8e1e5;
+.mcq{
+ border:1px solid var(--border);
+ padding:20px;
+ border-radius:12px;
  margin-top:20px;
- padding:40px 0 20px;
 }
-
-.footerGrid{
- display:grid;
- grid-template-columns:1.5fr 1fr 1fr 1fr;
- gap:30px;
-}
-
-.footer h3{
- color:#fff;
- font-size:16px;
- margin-bottom:10px;
-}
-
-.footer p,
-.footer a{
+.option{
  display:block;
- color:#aebbc1;
- font-size:12px;
+ width:100%;
+ text-align:left;
+ padding:12px;
+ margin:8px 0;
+ border:1px solid var(--border);
+ border-radius:8px;
+ background:white;
+}
+.option:hover{background:#eef8f9}
+.option.correct{background:#dcfce7;border-color:#22c55e}
+.option.wrong{background:#fee2e2;border-color:#ef4444}
+
+.explanation{
+ margin-top:15px;
+ padding:15px;
+ background:#fff7ed;
+ border-left:5px solid var(--warning);
+ border-radius:7px;
+}
+
+.form-grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+ gap:15px;
+}
+.form-group label{
+ display:block;
+ font-weight:bold;
  margin-bottom:6px;
 }
-
-.footer a:hover{
- color:#a7f3d0;
+.form-group input,.form-group select{
+ width:100%;
+ padding:12px;
+ border:1px solid var(--border);
+ border-radius:8px;
 }
 
-.copyright{
- border-top:1px solid rgba(255,255,255,.1);
- margin-top:25px;
- padding-top:16px;
+.result-box{
  text-align:center;
- color:#82939b;
- font-size:11px;
+ background:linear-gradient(135deg,#ecfeff,#eff6ff);
+ padding:30px;
+ border-radius:15px;
+}
+.score{
+ font-size:50px;
+ font-weight:bold;
+ color:var(--primary);
 }
 
-/* ================= TOP BUTTON ================= */
+.result-stat{
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:12px;
+ margin:20px 0;
+}
+.stat{
+ background:white;
+ padding:18px;
+ border-radius:10px;
+ box-shadow:var(--shadow);
+ text-align:center;
+}
+.stat strong{
+ display:block;
+ font-size:25px;
+ color:var(--secondary);
+}
 
-.top{
- position:fixed;
- right:17px;
- bottom:17px;
- width:42px;
- height:42px;
- border:0;
- border-radius:50%;
- background:var(--primary);
- color:#fff;
+.calc-result{
+ margin-top:20px;
+ padding:20px;
+ background:#ecfdf5;
+ border:1px solid #86efac;
+ border-radius:10px;
  font-size:18px;
- cursor:pointer;
- display:none;
- z-index:500;
- box-shadow:0 5px 15px rgba(0,0,0,.2);
 }
 
-/* ================= MOBILE ================= */
+.exam-question{
+ margin-bottom:25px;
+}
+.exam-question h3{margin-bottom:10px}
 
-@media(max-width:950px){
-
- .menu{
-  display:none;
-  position:absolute;
-  top:68px;
-  left:0;
-  right:0;
-  background:var(--primary2);
-  padding:8px 4%;
-  flex-direction:column;
- }
-
- .menu.show{
-  display:flex;
- }
-
- .menuBtn{
-  display:block;
- }
-
- .heroGrid{
-  grid-template-columns:1fr;
- }
-
- .heroCard{
-  display:none;
- }
-
- .grid4{
-  grid-template-columns:repeat(2,1fr);
- }
-
- .clinicalGrid{
-  grid-template-columns:repeat(2,1fr);
- }
-
- .footerGrid{
-  grid-template-columns:repeat(2,1fr);
- }
-
- .calcGrid{
-  grid-template-columns:1fr;
- }
+.progress{
+ height:10px;
+ background:#e5e7eb;
+ border-radius:20px;
+ overflow:hidden;
+ margin:15px 0;
+}
+.progress-bar{
+ height:100%;
+ background:var(--primary);
+ width:0%;
 }
 
-@media(max-width:650px){
+.notice{
+ background:#fff7ed;
+ border-left:5px solid var(--warning);
+ padding:15px;
+ border-radius:8px;
+}
 
- .container{
-  width:94%;
- }
+footer{
+ background:#082f3a;
+ color:white;
+ padding:35px 20px;
+ text-align:center;
+ margin-top:40px;
+}
 
- .hero{
-  padding:45px 0;
- }
+@media(max-width:800px){
+ .hero-inner{grid-template-columns:1fr}
+ .hero h1{font-size:35px}
+ .nav{flex-direction:column}
+ .navlinks{justify-content:center}
+ .result-stat{grid-template-columns:repeat(2,1fr)}
+}
 
- .hero h1{
-  font-size:34px;
- }
-
- .heroText{
-  font-size:14px;
- }
-
- .heroBtns{
-  flex-direction:column;
- }
-
- .btn{
-  width:100%;
- }
-
- .search{
-  flex-direction:column;
-  background:transparent;
-  box-shadow:none;
-  padding:0;
-  gap:7px;
- }
-
- .search input{
-  background:#fff;
-  border-radius:8px;
-  box-shadow:var(--shadow);
- }
-
- .search button{
-  padding:11px;
- }
-
- .grid4,
- .subjectGrid,
- .noteGrid,
- .examGrid,
- .clinicalGrid{
-  grid-template-columns:1fr;
- }
-
- .about,
- .contactGrid{
-  grid-template-columns:1fr;
-  padding:22px;
- }
-
- .drugArea{
-  padding:20px;
- }
-
- .drugTop{
-  flex-direction:column;
-  align-items:flex-start;
- }
-
- .openCalc{
-  width:100%;
- }
-
- .noticeGrid{
-  grid-template-columns:1fr;
- }
-
- .footerGrid{
-  grid-template-columns:1fr;
- }
-
- .section{
-  padding:42px 0;
- }
-
- .heading h2{
-  font-size:24px;
- }
+@media(max-width:500px){
+ .search{flex-direction:column}
+ .container{padding:30px 14px}
+ .result-stat{grid-template-columns:1fr 1fr}
 }
 </style>
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
+<header>
+<div class="nav">
+<div class="logo">🩺 Nursing <span>Career</span></div>
 
-<header class="header">
-
-<nav class="nav">
-
-<a href="#home" class="logo">
-🩺 Nursing <span>Career</span>
-</a>
-
-<button class="menuBtn" onclick="toggleMenu()">☰</button>
-
-<div class="menu" id="menu">
-
-<a href="#home">Home</a>
-<a href="#about">About</a>
-<a href="#subjects">Subjects</a>
-<a href="#notes">Notes</a>
-<a href="#videos">Videos</a>
-<a href="#exam">Exam</a>
-<a href="#drug">Drug Calculation</a>
-<a href="#clinical">Clinical</a>
-<a href="#contact">Contact</a>
-
+<div class="navlinks">
+<button onclick="goHome()">Home</button>
+<button onclick="showSubjects()">Subjects</button>
+<button onclick="showDrugCalc()">Drug Calculation</button>
+<button onclick="showExam()">Exam</button>
+<button onclick="showResults()">Results</button>
+<button onclick="showClinical()">Clinical</button>
 </div>
-
-</nav>
-
+</div>
 </header>
 
+<!-- HOME -->
+<section id="homePage">
 
-<!-- ================= HERO ================= -->
-
-<section class="hero" id="home">
-
-<div class="container heroGrid">
+<section class="hero">
+<div class="hero-inner">
 
 <div>
-
-<div class="badge">
-🇧🇩 Nursing Education Platform
-</div>
-
-<h1>
-Learn Nursing.<br>
-<span>Build Your Career.</span>
-</h1>
-
-<p class="heroText">
-
-Nursing Career is a complete learning platform for
-nursing students and nurses. Learn nursing subjects,
-practice MCQs, prepare for examinations, improve
-clinical skills and use practical nursing tools.
-
+<h1>Learn Nursing.<br>Build Your Career.</h1>
+<p>
+A complete interactive Nursing Education Platform for
+Diploma Nursing, Midwifery, BSc Nursing, License Exam
+and professional nursing preparation.
 </p>
-
-<div class="heroBtns">
-
-<a href="#subjects" class="btn btnPrimary">
-📚 Explore Subjects
-</a>
-
-<a href="#videos" class="btn btnSecondary">
-▶ Watch Videos
-</a>
-
-</div>
 
 <div class="search">
+<input id="mainSearch" placeholder="Search subject, chapter or topic...">
+<button class="btn" onclick="searchWebsite()">Search</button>
+</div>
 
-<input
-id="search"
-placeholder="Search Nursing Career..."
-onkeydown="if(event.key==='Enter')searchSite()"
->
+<br>
 
-<button onclick="searchSite()">
-Search
-</button>
+<button class="btn" onclick="showSubjects()">📚 Explore Subjects</button>
+<button class="btn secondary" onclick="showExam()">📝 Start Practice Exam</button>
+</div>
 
+<div class="hero-card">
+<div class="big">👩‍⚕️</div>
+<h2>Smart Nursing Learning</h2>
+<p>Study • Practice • Calculate • Test • Check Result</p>
 </div>
 
 </div>
-
-
-<div class="heroCard">
-
-<div class="heroIcon">
-👩‍⚕️
-</div>
-
-<h3>
-Nursing Career
-</h3>
-
-<p>
-Study • Practice • Improve • Succeed
-</p>
-
-<div class="stats">
-
-<div class="stat">
-<strong>90+</strong>
-<small>Subjects</small>
-</div>
-
-<div class="stat">
-<strong>MCQ</strong>
-<small>Practice</small>
-</div>
-
-<div class="stat">
-<strong>24/7</strong>
-<small>Learning</small>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
 </section>
-
-
-<main>
-
-
-<!-- ================= QUICK ACCESS ================= -->
-
-<section class="section">
 
 <div class="container">
 
-<div class="heading">
-
-<small>Quick Access</small>
-
-<h2>Everything You Need</h2>
-
-<p>
-Important Nursing Career resources in one place.
-</p>
-
+<div class="section-title">
+<h2>Quick Access</h2>
+<p>Everything you need in one platform</p>
 </div>
 
-<div class="grid4">
+<div class="grid">
 
-<a href="#subjects" class="card quick">
+<div class="card feature" onclick="showSubjects()">
+<div class="icon">📚</div>
+<h3>90+ Subjects</h3>
+<p>Subjects, chapters, topics and MCQs.</p>
+</div>
 
-<div class="quickIcon">📚</div>
-<h3>Courses</h3>
-<p>Subject-wise nursing learning</p>
-
-</a>
-
-<a href="#notes" class="card quick">
-
-<div class="quickIcon">📖</div>
-<h3>Notes</h3>
-<p>Important study materials</p>
-
-</a>
-
-<a href="#exam" class="card quick">
-
-<div class="quickIcon">📝</div>
-<h3>Exam Zone</h3>
-<p>MCQ & examination preparation</p>
-
-</a>
-
-<a href="#drug" class="card quick">
-
-<div class="quickIcon">🧮</div>
+<div class="card feature" onclick="showDrugCalc()">
+<div class="icon">💊</div>
 <h3>Drug Calculation</h3>
-<p>Useful nursing calculators</p>
+<p>Dose, tablet, IV flow, drops and infusion.</p>
+</div>
 
-</a>
+<div class="card feature" onclick="showExam()">
+<div class="icon">📝</div>
+<h3>Practice Exam</h3>
+<p>Timed nursing MCQ examination.</p>
+</div>
 
+<div class="card feature" onclick="showResults()">
+<div class="icon">📊</div>
+<h3>Result Center</h3>
+<p>License and academic result search.</p>
+</div>
+
+<div class="card feature" onclick="showClinical()">
+<div class="icon">🩺</div>
+<h3>Clinical Nursing</h3>
+<p>Practical nursing procedures.</p>
+</div>
+
+<div class="card feature" onclick="showViva()">
+<div class="icon">🎤</div>
+<h3>Viva</h3>
+<p>Important nursing viva questions.</p>
 </div>
 
 </div>
 
+<div class="panel">
+<div class="section-title">
+<h2>🎯 Nursing Education Hub</h2>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h3>🪪 License Exam</h3>
+<p>License exam preparation, MCQ and practice tests.</p>
+<button class="btn" onclick="showExam()">Practice</button>
+</div>
+
+<div class="card">
+<h3>🎓 Academic Exam</h3>
+<p>1st, 2nd, 3rd and 4th year academic preparation.</p>
+<button class="btn" onclick="showAcademic()">Explore</button>
+</div>
+
+<div class="card">
+<h3>📈 Progress</h3>
+<p>Track your practice exam performance.</p>
+<button class="btn" onclick="showResults()">View</button>
+</div>
+
+</div>
+</div>
+
+</div>
 </section>
 
+<!-- APP CONTENT -->
+<main class="container">
 
+<!-- SUBJECT PAGE -->
+<section id="subjectPage" class="hidden">
 
-<!-- ================= ABOUT ================= -->
-
-<section class="section" id="about">
-
-<div class="container">
-
-<div class="about">
-
-<div>
-
-<h2>
-About Nursing Career
-</h2>
-
-<p>
-Nursing Career is created to make nursing education
-simple, organized and accessible for nursing students
-and professional nurses.
-</p>
-
-<p>
-The platform brings study resources, exam preparation,
-clinical nursing knowledge and practical tools together.
-</p>
-
-<div class="checks">
-
-<div class="check">
-<b>✓</b> Nursing subject-wise learning
-</div>
-
-<div class="check">
-<b>✓</b> License examination preparation
-</div>
-
-<div class="check">
-<b>✓</b> Government nursing job preparation
-</div>
-
-<div class="check">
-<b>✓</b> Clinical nursing knowledge
-</div>
-
-<div class="check">
-<b>✓</b> Drug calculation practice
-</div>
-
-</div>
-
-</div>
-
-
-<div class="aboutBox">
-
-<h3>
-What You Can Find
-</h3>
-
-<div class="aboutItem">📚 Nursing Subjects & Courses</div>
-<div class="aboutItem">📝 MCQ & Model Tests</div>
-<div class="aboutItem">🎓 License Exam Preparation</div>
-<div class="aboutItem">🏛️ Government Job Preparation</div>
-<div class="aboutItem">🏥 Clinical Nursing</div>
-<div class="aboutItem">🎥 Educational Videos</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- ================= 90 SUBJECTS ================= -->
-
-<section class="section" id="subjects">
-
-<div class="container">
-
-<div class="heading">
-
-<small>Nursing Education</small>
-
+<div class="section-title">
 <h2>📚 Nursing Subjects</h2>
-
-<p>
-Important nursing subjects organized for learning and revision.
-</p>
-
+<p>Select a subject to see chapters and topics.</p>
 </div>
 
+<div id="subjectGrid" class="grid"></div>
 
-<div class="subjectGrid">
+</section>
 
-<div class="subject"><span class="subjectNo">01</span><h3>Fundamental of Nursing</h3><p>Basic nursing principles and procedures.</p></div>
 
-<div class="subject"><span class="subjectNo">02</span><h3>Anatomy</h3><p>Structure of the human body.</p></div>
+<!-- LEARNING PAGE -->
+<section id="learningPage" class="hidden">
 
-<div class="subject"><span class="subjectNo">03</span><h3>Physiology</h3><p>Functions of body systems.</p></div>
+<button class="back" onclick="showSubjects()">← Back to Subjects</button>
 
-<div class="subject"><span class="subjectNo">04</span><h3>Microbiology</h3><p>Microorganisms and infection.</p></div>
+<div id="learningContent"></div>
 
-<div class="subject"><span class="subjectNo">05</span><h3>Biochemistry</h3><p>Biological chemical processes.</p></div>
+</section>
 
-<div class="subject"><span class="subjectNo">06</span><h3>Nutrition</h3><p>Nutrition and therapeutic diet.</p></div>
 
-<div class="subject"><span class="subjectNo">07</span><h3>Pharmacology</h3><p>Drugs and medication principles.</p></div>
+<!-- DRUG CALCULATION -->
+<section id="drugPage" class="hidden">
 
-<div class="subject"><span class="subjectNo">08</span><h3>Medical Surgical Nursing</h3><p>Adult health nursing.</p></div>
-
-<div class="subject"><span class="subjectNo">09</span><h3>Community Health Nursing</h3><p>Community and public health.</p></div>
-
-<div class="subject"><span class="subjectNo">10</span><h3>Midwifery</h3><p>Pregnancy and childbirth.</p></div>
-
-<div class="subject"><span class="subjectNo">11</span><h3>Child Health Nursing</h3><p>Pediatric nursing care.</p></div>
-
-<div class="subject"><span class="subjectNo">12</span><h3>Mental Health Nursing</h3><p>Psychiatric and mental health.</p></div>
-
-<div class="subject"><span class="subjectNo">13</span><h3>Nursing Research</h3><p>Research methods and evidence.</p></div>
-
-<div class="subject"><span class="subjectNo">14</span><h3>Nursing Administration</h3><p>Management and leadership.</p></div>
-
-<div class="subject"><span class="subjectNo">15</span><h3>Nursing Education</h3><p>Teaching and learning.</p></div>
-
-<div class="subject"><span class="subjectNo">16</span><h3>Emergency Nursing</h3><p>Emergency patient management.</p></div>
-
-<div class="subject"><span class="subjectNo">17</span><h3>Critical Care Nursing</h3><p>ICU and critically ill patients.</p></div>
-
-<div class="subject"><span class="subjectNo">18</span><h3>NICU Nursing</h3><p>Neonatal intensive care.</p></div>
-
-<div class="subject"><span class="subjectNo">19</span><h3>ICU Nursing</h3><p>Intensive care nursing.</p></div>
-
-<div class="subject"><span class="subjectNo">20</span><h3>CCU Nursing</h3><p>Cardiac critical care.</p></div>
-
-<div class="subject"><span class="subjectNo">21</span><h3>Infection Control</h3><p>Prevention of healthcare infections.</p></div>
-
-<div class="subject"><span class="subjectNo">22</span><h3>Health Assessment</h3><p>Patient assessment skills.</p></div>
-
-<div class="subject"><span class="subjectNo">23</span><h3>Pathology</h3><p>Disease processes.</p></div>
-
-<div class="subject"><span class="subjectNo">24</span><h3>Genetics</h3><p>Basic genetic principles.</p></div>
-
-<div class="subject"><span class="subjectNo">25</span><h3>Gerontological Nursing</h3><p>Care of older adults.</p></div>
-
-<div class="subject"><span class="subjectNo">26</span><h3>Orthopedic Nursing</h3><p>Musculoskeletal care.</p></div>
-
-<div class="subject"><span class="subjectNo">27</span><h3>Neurological Nursing</h3><p>Neurological disorders.</p></div>
-
-<div class="subject"><span class="subjectNo">28</span><h3>Cardiac Nursing</h3><p>Cardiovascular conditions.</p></div>
-
-<div class="subject"><span class="subjectNo">29</span><h3>Respiratory Nursing</h3><p>Respiratory diseases and care.</p></div>
-
-<div class="subject"><span class="subjectNo">30</span><h3>Renal Nursing</h3><p>Kidney disorders and care.</p></div>
-
-<div class="subject"><span class="subjectNo">31</span><h3>GI Nursing</h3><p>Gastrointestinal disorders.</p></div>
-
-<div class="subject"><span class="subjectNo">32</span><h3>Oncology Nursing</h3><p>Cancer nursing care.</p></div>
-
-<div class="subject"><span class="subjectNo">33</span><h3>Burn Nursing</h3><p>Burn management and care.</p></div>
-
-<div class="subject"><span class="subjectNo">34</span><h3>Trauma Nursing</h3><p>Trauma and accident care.</p></div>
-
-<div class="subject"><span class="subjectNo">35</span><h3>Perioperative Nursing</h3><p>Preoperative and postoperative care.</p></div>
-
-<div class="subject"><span class="subjectNo">36</span><h3>Operating Room Nursing</h3><p>Surgical nursing.</p></div>
-
-<div class="subject"><span class="subjectNo">37</span><h3>Infection Prevention</h3><p>Standard precautions.</p></div>
-
-<div class="subject"><span class="subjectNo">38</span><h3>First Aid</h3><p>Basic emergency assistance.</p></div>
-
-<div class="subject"><span class="subjectNo">39</span><h3>BLS</h3><p>Basic life support.</p></div>
-
-<div class="subject"><span class="subjectNo">40</span><h3>ACLS</h3><p>Advanced cardiovascular support.</p></div>
-
-<div class="subject"><span class="subjectNo">41</span><h3>ECG</h3><p>Basic cardiac rhythm knowledge.</p></div>
-
-<div class="subject"><span class="subjectNo">42</span><h3>Fluid & Electrolyte</h3><p>Fluid and electrolyte balance.</p></div>
-
-<div class="subject"><span class="subjectNo">43</span><h3>Blood Transfusion</h3><p>Safe blood administration.</p></div>
-
-<div class="subject"><span class="subjectNo">44</span><h3>IV Therapy</h3><p>Intravenous therapy.</p></div>
-
-<div class="subject"><span class="subjectNo">45</span><h3>Medication Administration</h3><p>Safe medication practice.</p></div>
-
-<div class="subject"><span class="subjectNo">46</span><h3>Drug Calculation</h3><p>Medication calculation.</p></div>
-
-<div class="subject"><span class="subjectNo">47</span><h3>Patient Safety</h3><p>Safe nursing practice.</p></div>
-
-<div class="subject"><span class="subjectNo">48</span><h3>Ethics</h3><p>Professional nursing ethics.</p></div>
-
-<div class="subject"><span class="subjectNo">49</span><h3>Nursing Law</h3><p>Legal responsibilities.</p></div>
-
-<div class="subject"><span class="subjectNo">50</span><h3>Communication</h3><p>Therapeutic communication.</p></div>
-
-<div class="subject"><span class="subjectNo">51</span><h3>Leadership</h3><p>Nursing leadership.</p></div>
-
-<div class="subject"><span class="subjectNo">52</span><h3>Management</h3><p>Healthcare management.</p></div>
-
-<div class="subject"><span class="subjectNo">53</span><h3>Statistics</h3><p>Basic health statistics.</p></div>
-
-<div class="subject"><span class="subjectNo">54</span><h3>Epidemiology</h3><p>Patterns of disease.</p></div>
-
-<div class="subject"><span class="subjectNo">55</span><h3>Public Health</h3><p>Population health.</p></div>
-
-<div class="subject"><span class="subjectNo">56</span><h3>Health Education</h3><p>Patient education.</p></div>
-
-<div class="subject"><span class="subjectNo">57</span><h3>Occupational Health</h3><p>Workplace health.</p></div>
-
-<div class="subject"><span class="subjectNo">58</span><h3>Environmental Health</h3><p>Environmental factors.</p></div>
-
-<div class="subject"><span class="subjectNo">59</span><h3>School Health</h3><p>School health nursing.</p></div>
-
-<div class="subject"><span class="subjectNo">60</span><h3>Family Health</h3><p>Family-centered care.</p></div>
-
-<div class="subject"><span class="subjectNo">61</span><h3>Maternal Health</h3><p>Maternal care.</p></div>
-
-<div class="subject"><span class="subjectNo">62</span><h3>Newborn Care</h3><p>Essential newborn care.</p></div>
-
-<div class="subject"><span class="subjectNo">63</span><h3>Neonatal Resuscitation</h3><p>Basic newborn resuscitation.</p></div>
-
-<div class="subject"><span class="subjectNo">64</span><h3>Lactation</h3><p>Breastfeeding support.</p></div>
-
-<div class="subject"><span class="subjectNo">65</span><h3>Growth & Development</h3><p>Pediatric development.</p></div>
-
-<div class="subject"><span class="subjectNo">66</span><h3>Immunization</h3><p>Vaccination principles.</p></div>
-
-<div class="subject"><span class="subjectNo">67</span><h3>Child Nutrition</h3><p>Pediatric nutrition.</p></div>
-
-<div class="subject"><span class="subjectNo">68</span><h3>Psychiatric Nursing</h3><p>Mental health nursing.</p></div>
-
-<div class="subject"><span class="subjectNo">69</span><h3>Psychology</h3><p>Basic human psychology.</p></div>
-
-<div class="subject"><span class="subjectNo">70</span><h3>Sociology</h3><p>Society and health.</p></div>
-
-<div class="subject"><span class="subjectNo">71</span><h3>Community Assessment</h3><p>Community health assessment.</p></div>
-
-<div class="subject"><span class="subjectNo">72</span><h3>Disaster Nursing</h3><p>Disaster response.</p></div>
-
-<div class="subject"><span class="subjectNo">73</span><h3>Snake Bite</h3><p>Emergency snakebite care.</p></div>
-
-<div class="subject"><span class="subjectNo">74</span><h3>Poisoning</h3><p>Poisoning management.</p></div>
-
-<div class="subject"><span class="subjectNo">75</span><h3>Dog Bite</h3><p>Rabies prevention.</p></div>
-
-<div class="subject"><span class="subjectNo">76</span><h3>Dengue Nursing</h3><p>Dengue patient monitoring.</p></div>
-
-<div class="subject"><span class="subjectNo">77</span><h3>Diabetes Nursing</h3><p>Diabetes management.</p></div>
-
-<div class="subject"><span class="subjectNo">78</span><h3>Hypertension</h3><p>Blood pressure management.</p></div>
-
-<div class="subject"><span class="subjectNo">79</span><h3>Stroke Nursing</h3><p>Stroke assessment and care.</p></div>
-
-<div class="subject"><span class="subjectNo">80</span><h3>Sepsis Nursing</h3><p>Recognition and nursing care.</p></div>
-
-<div class="subject"><span class="subjectNo">81</span><h3>Pain Management</h3><p>Pain assessment and care.</p></div>
-
-<div class="subject"><span class="subjectNo">82</span><h3>Wound Care</h3><p>Wound assessment and dressing.</p></div>
-
-<div class="subject"><span class="subjectNo">83</span><h3>Catheterization</h3><p>Urinary catheter care.</p></div>
-
-<div class="subject"><span class="subjectNo">84</span><h3>NG Tube</h3><p>Nasogastric tube care.</p></div>
-
-<div class="subject"><span class="subjectNo">85</span><h3>Suctioning</h3><p>Airway suction care.</p></div>
-
-<div class="subject"><span class="subjectNo">86</span><h3>Oxygen Therapy</h3><p>Oxygen delivery systems.</p></div>
-
-<div class="subject"><span class="subjectNo">87</span><h3>Ventilator Basics</h3><p>Basic mechanical ventilation.</p></div>
-
-<div class="subject"><span class="subjectNo">88</span><h3>Patient Assessment</h3><p>Systematic nursing assessment.</p></div>
-
-<div class="subject"><span class="subjectNo">89</span><h3>Clinical Documentation</h3><p>Nursing documentation.</p></div>
-
-<div class="subject"><span class="subjectNo">90</span><h3>Professional Nursing</h3><p>Professional development.</p></div>
-
+<div class="section-title">
+<h2>💊 Drug Calculation Center</h2>
+<p>Enter the values and calculate instantly.</p>
 </div>
+
+<div class="panel">
+
+<div class="form-group">
+<label>Calculation Type</label>
+<select id="calcType" onchange="changeCalc()">
+<option value="dose">Dose Calculation</option>
+<option value="tablet">Tablet Calculation</option>
+<option value="iv">IV Flow Rate</option>
+<option value="drop">Drops / Minute</option>
+<option value="mgkg">mg / kg</option>
+<option value="infusion">Infusion Time</option>
+<option value="dilution">Dilution</option>
+</select>
+</div>
+
+<br>
+
+<div id="calcFields"></div>
+
+<br>
+
+<button class="btn" onclick="calculateDrug()">Calculate</button>
+
+<div id="calcResult"></div>
 
 </div>
 
 </section>
 
 
+<!-- EXAM -->
+<section id="examPage" class="hidden">
 
-<!-- ================= NOTES ================= -->
-
-<section class="section" id="notes">
-
-<div class="container">
-
-<div class="heading">
-
-<small>Study Materials</small>
-
-<h2>📖 Nursing Notes</h2>
-
-<p>
-High-yield notes for learning and revision.
-</p>
-
+<div class="section-title">
+<h2>📝 Nursing Practice Exam</h2>
+<p>Answer the questions and submit your examination.</p>
 </div>
 
+<div class="panel">
 
-<div class="noteGrid">
+<div class="form-grid">
 
-<div class="note">
-<h3>📘 Fundamental Nursing</h3>
-<p>Vital signs, bed making, asepsis, procedures and basic patient care.</p>
-<div class="tags"><span class="tag">Vital Signs</span><span class="tag">Procedure</span><span class="tag">Asepsis</span></div>
+<div class="form-group">
+<label>Exam Type</label>
+<select id="examType">
+<option>License Exam</option>
+<option>Academic Final Exam</option>
+<option>Diploma Nursing</option>
+<option>Diploma Midwifery</option>
+<option>BSc Nursing</option>
+</select>
 </div>
 
-<div class="note">
-<h3>🫀 Medical Surgical</h3>
-<p>Disease conditions, assessment, management and nursing interventions.</p>
-<div class="tags"><span class="tag">Disease</span><span class="tag">Assessment</span></div>
-</div>
-
-<div class="note">
-<h3>👶 Pediatric</h3>
-<p>Child health, newborn care, growth, development and emergencies.</p>
-<div class="tags"><span class="tag">Child</span><span class="tag">NICU</span></div>
-</div>
-
-<div class="note">
-<h3>🤰 Midwifery</h3>
-<p>Antenatal, labour, delivery, postnatal and obstetric emergency care.</p>
-<div class="tags"><span class="tag">ANC</span><span class="tag">Labour</span></div>
-</div>
-
-<div class="note">
-<h3>🦠 Microbiology</h3>
-<p>Bacteria, viruses, fungi, parasites and infection control.</p>
-<div class="tags"><span class="tag">Bacteria</span><span class="tag">Virus</span></div>
-</div>
-
-<div class="note">
-<h3>💊 Pharmacology</h3>
-<p>Drug classes, routes, adverse effects and nursing responsibilities.</p>
-<div class="tags"><span class="tag">Drug</span><span class="tag">Safety</span></div>
+<div class="form-group">
+<label>Question Set</label>
+<select id="questionCount" onchange="prepareExam()">
+<option value="5">5 Questions</option>
+<option value="10">10 Questions</option>
+</select>
 </div>
 
 </div>
+
+<br>
+
+<button class="btn" onclick="startExam()">🚀 Start Exam</button>
+
+<div id="examArea"></div>
 
 </div>
 
 </section>
 
 
+<!-- RESULT CENTER -->
+<section id="resultPage" class="hidden">
 
-<!-- ================= VIDEOS ================= -->
-
-<section class="section" id="videos">
-
-<div class="container">
-
-<div class="heading">
-
-<small>YouTube</small>
-
-<h2>🎥 Nursing Career Videos</h2>
-
-<p>
-Nursing classes, MCQs, clinical tips and examination preparation.
-</p>
-
+<div class="section-title">
+<h2>📊 Result Center</h2>
+<p>Practice result and official-result search interface.</p>
 </div>
 
+<div class="grid">
 
-<div class="videoBox">
+<div class="card">
+<div class="icon">🪪</div>
+<h3>License Exam Result</h3>
+<p>Search license examination result.</p>
 
-<div class="videoFrame">
+<input id="licenseRoll" placeholder="Enter Roll Number">
+<br><br>
+<button class="btn" onclick="searchLicenseResult()">Search Result</button>
 
-<!--
-=========================================================
-IMPORTANT:
-
-এখানে তোমার YouTube CHANNEL-এর একটি ভিডিওর ID বসাতে পারো।
-
-Example:
-https://www.youtube.com/watch?v=ABC123XYZ
-
-তাহলে:
-https://www.youtube.com/embed/ABC123XYZ
-=========================================================
--->
-
-<iframe
-src="https://www.youtube.com/embed?listType=user_uploads&list=NursingCareer"
-title="Nursing Career Videos"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-allowfullscreen>
-</iframe>
-
+<div id="licenseResult"></div>
 </div>
 
+<div class="card">
+<div class="icon">🎓</div>
+<h3>BNMC Academic Result</h3>
 
-<div class="videoInfo">
+<select id="academicCourse">
+<option>BSc in Nursing</option>
+<option>Diploma in Nursing Science & Midwifery</option>
+<option>Diploma in Midwifery</option>
+</select>
 
-<h3>
-Nursing Career YouTube Video Library
-</h3>
+<br><br>
 
-<p>
-Nursing Career-এর নতুন classes, MCQ, clinical tips,
-exam preparation এবং nursing educational videos এখানে দেখানো হবে।
-</p>
+<select id="academicYear">
+<option>1st Year</option>
+<option>2nd Year</option>
+<option>3rd Year</option>
+<option>4th Year</option>
+</select>
 
-<!-- তোমার YouTube channel link এখানে বসাবে -->
-<a
-href="https://www.youtube.com/"
-target="_blank"
-class="youtubeBtn"
->
-▶ Visit Nursing Career YouTube
-</a>
+<br><br>
 
+<input id="academicRoll" placeholder="Enter Roll Number">
+
+<br><br>
+
+<button class="btn" onclick="searchAcademicResult()">Search Result</button>
+
+<div id="academicResult"></div>
 </div>
 
 </div>
+
+<div class="panel">
+
+<div class="section-title">
+<h2>📈 Your Practice Performance</h2>
+</div>
+
+<div id="myPerformance"></div>
 
 </div>
 
 </section>
 
 
+<!-- ACADEMIC -->
+<section id="academicPage" class="hidden">
 
-<!-- ================= EXAM ================= -->
-
-<section class="section" id="exam">
-
-<div class="container">
-
-<div class="heading">
-
-<small>Exam Preparation</small>
-
-<h2>📝 Nursing Exam Zone</h2>
-
-<p>
-Academic, license and government nursing examination preparation.
-</p>
-
+<div class="section-title">
+<h2>🎓 Academic Nursing</h2>
+<p>Year-wise nursing academic preparation.</p>
 </div>
 
+<div class="grid">
 
-<div class="examGrid">
-
-<div class="exam">
-
-<div class="examIcon">🎓</div>
-
-<h3>Nursing License Exam</h3>
-
-<ul>
-<li>Important MCQ</li>
-<li>Subject-wise preparation</li>
-<li>High-yield revision</li>
-<li>Practice test</li>
-<li>Clinical questions</li>
-</ul>
-
+<div class="card">
+<h3>1️⃣ 1st Year</h3>
+<p>Fundamental, Anatomy, Physiology, Microbiology and basic subjects.</p>
+<button class="btn" onclick="academicYear('1st Year')">Open</button>
 </div>
 
-
-<div class="exam">
-
-<div class="examIcon">🏛️</div>
-
-<h3>Government Nurse Job</h3>
-
-<ul>
-<li>Nursing technical</li>
-<li>Previous questions</li>
-<li>English</li>
-<li>General knowledge</li>
-<li>Model examination</li>
-</ul>
-
+<div class="card">
+<h3>2️⃣ 2nd Year</h3>
+<p>Medical Surgical, Pharmacology, Pathology and related subjects.</p>
+<button class="btn" onclick="academicYear('2nd Year')">Open</button>
 </div>
 
+<div class="card">
+<h3>3️⃣ 3rd Year</h3>
+<p>Midwifery, Pediatric, Community and advanced nursing.</p>
+<button class="btn" onclick="academicYear('3rd Year')">Open</button>
+</div>
 
-<div class="exam">
-
-<div class="examIcon">📚</div>
-
-<h3>Academic Exam</h3>
-
-<ul>
-<li>Important questions</li>
-<li>Short notes</li>
-<li>Subject revision</li>
-<li>Clinical topics</li>
-<li>Final examination</li>
-</ul>
-
+<div class="card">
+<h3>4️⃣ 4th Year</h3>
+<p>Research, Leadership, Administration and professional nursing.</p>
+<button class="btn" onclick="academicYear('4th Year')">Open</button>
 </div>
 
 </div>
 
-</div>
+<div id="academicDetails"></div>
 
 </section>
 
 
+<!-- CLINICAL -->
+<section id="clinicalPage" class="hidden">
 
-<!-- ================= DRUG CALCULATION ================= -->
-
-<section class="section" id="drug">
-
-<div class="container">
-
-<div class="drugArea">
-
-<div class="drugTop">
-
-<div>
-
-<h2>🧮 Drug Calculation</h2>
-
-<p>
-Common nursing medication and IV calculation tools.
-</p>
-
+<div class="section-title">
+<h2>🩺 Clinical Nursing</h2>
+<p>Practical nursing knowledge.</p>
 </div>
 
-<button
-class="openCalc"
-onclick="toggleCalculator()"
-id="calcButton"
->
-Open Calculator
-</button>
-
-</div>
-
-
-<div class="calculator" id="calculator">
-
-<div class="warning">
-
-⚠️ Educational tool only. Always verify the medication order,
-drug concentration, patient factors and hospital policy before
-administering medication.
-
-</div>
-
-
-<div class="calcGrid">
-
-
-<!-- DOSE -->
-
-<div class="calcCard">
-
-<h3>💊 Dose Calculation</h3>
-
-<label>Ordered Dose</label>
-
-<input
-id="ordered"
-type="number"
-placeholder="e.g. 500"
->
-
-<label>Available Dose</label>
-
-<input
-id="available"
-type="number"
-placeholder="e.g. 250"
->
-
-<label>Available Quantity</label>
-
-<input
-id="quantity"
-type="number"
-placeholder="e.g. 5 mL"
->
-
-<button onclick="doseCalc()">
-Calculate
-</button>
-
-<div class="result" id="doseResult">
-Result
-</div>
-
-</div>
-
-
-<!-- IV -->
-
-<div class="calcCard">
-
-<h3>💧 IV Flow Rate</h3>
-
-<label>Volume (mL)</label>
-
-<input
-id="ivVolume"
-type="number"
-placeholder="e.g. 1000"
->
-
-<label>Time (hours)</label>
-
-<input
-id="ivHours"
-type="number"
-placeholder="e.g. 8"
->
-
-<button onclick="ivCalc()">
-Calculate
-</button>
-
-<div class="result" id="ivResult">
-Result
-</div>
-
-</div>
-
-
-<!-- MG/KG -->
-
-<div class="calcCard">
-
-<h3>⚖️ mg/kg Dose</h3>
-
-<label>Weight (kg)</label>
-
-<input
-id="weight"
-type="number"
-placeholder="e.g. 60"
->
-
-<label>Dose (mg/kg)</label>
-
-<input
-id="mgkg"
-type="number"
-placeholder="e.g. 10"
->
-
-<button onclick="mgkgCalc()">
-Calculate
-</button>
-
-<div class="result" id="mgkgResult">
-Result
-</div>
-
-</div>
-
-
-<!-- TABLET -->
-
-<div class="calcCard">
-
-<h3>💊 Tablet Calculation</h3>
-
-<label>Ordered Dose (mg)</label>
-
-<input
-id="tabOrder"
-type="number"
-placeholder="e.g. 500"
->
-
-<label>Available Tablet (mg)</label>
-
-<input
-id="tabAvailable"
-type="number"
-placeholder="e.g. 250"
->
-
-<button onclick="tabletCalc()">
-Calculate
-</button>
-
-<div class="result" id="tabletResult">
-Result
-</div>
-
-</div>
-
-
-<!-- DROP -->
-
-<div class="calcCard">
-
-<h3>💧 Drops / Minute</h3>
-
-<label>Volume (mL)</label>
-
-<input
-id="dropVolume"
-type="number"
-placeholder="e.g. 500"
->
-
-<label>Time (minutes)</label>
-
-<input
-id="dropTime"
-type="number"
-placeholder="e.g. 240"
->
-
-<label>Drop Factor</label>
-
-<input
-id="dropFactor"
-type="number"
-placeholder="e.g. 20"
->
-
-<button onclick="dropCalc()">
-Calculate
-</button>
-
-<div class="result" id="dropResult">
-Result
-</div>
-
-</div>
-
-
-<!-- INFUSION -->
-
-<div class="calcCard">
-
-<h3>⏱️ Infusion Time</h3>
-
-<label>Volume (mL)</label>
-
-<input
-id="infVolume"
-type="number"
-placeholder="e.g. 1000"
->
-
-<label>Rate (mL/hour)</label>
-
-<input
-id="infRate"
-type="number"
-placeholder="e.g. 125"
->
-
-<button onclick="infusionCalc()">
-Calculate
-</button>
-
-<div class="result" id="infResult">
-Result
-</div>
-
-</div>
-
-
-</div>
-
-</div>
-
-</div>
-
-</div>
+<div class="grid" id="clinicalGrid"></div>
 
 </section>
 
 
+<!-- VIVA -->
+<section id="vivaPage" class="hidden">
 
-<!-- ================= CLINICAL ================= -->
-
-<section class="section" id="clinical">
-
-<div class="container">
-
-<div class="heading">
-
-<small>Clinical Nursing</small>
-
-<h2>🏥 Clinical Knowledge</h2>
-
-<p>
-Practical topics for nursing students and professional nurses.
-</p>
-
-</div>
-
-
-<div class="clinicalGrid">
-
-<div class="clinical">
-<div class="clinicalIcon">🚑</div>
-<h3>Emergency</h3>
-<p>Trauma, shock and emergency care.</p>
-</div>
-
-<div class="clinical">
-<div class="clinicalIcon">❤️</div>
-<h3>ICU / CCU</h3>
-<p>Critical patient monitoring.</p>
-</div>
-
-<div class="clinical">
-<div class="clinicalIcon">👶</div>
-<h3>NICU</h3>
-<p>Neonatal and premature care.</p>
-</div>
-
-<div class="clinical">
-<div class="clinicalIcon">🧠</div>
-<h3>Neurology</h3>
-<p>Stroke, GCS and seizure.</p>
-</div>
-
-<div class="clinical">
-<div class="clinicalIcon">💉</div>
-<h3>IV Cannulation</h3>
-<p>IV therapy and cannulation.</p>
-</div>
-
-<div class="clinical">
-<div class="clinicalIcon">🩸</div>
-<h3>Blood Transfusion</h3>
-<p>Safe blood administration.</p>
-</div>
-
-<div class="clinical">
-<div class="clinicalIcon">🫁</div>
-<h3>Oxygen Therapy</h3>
-<p>Oxygen devices and monitoring.</p>
-</div>
-
-<div class="clinical">
-<div class="clinicalIcon">🧴</div>
-<h3>Infection Control</h3>
-<p>PPE, hand hygiene and asepsis.</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- ================= MCQ ================= -->
-
-<section class="section">
-
-<div class="container">
-
-<div class="heading">
-
-<small>Practice</small>
-
-<h2>📝 Nursing MCQ</h2>
-
-<p>
-Practice a sample question.
-</p>
-
-</div>
-
-
-<div class="mcqBox">
-
-<div class="mcqQuestion">
-
-Which of the following is commonly used to assess level of consciousness?
-
-</div>
-
-<label class="option">
-<input type="radio" name="mcq" value="A">
-A. Glasgow Coma Scale
-</label>
-
-<label class="option">
-<input type="radio" name="mcq" value="B">
-B. Apgar Score
-</label>
-
-<label class="option">
-<input type="radio" name="mcq" value="C">
-C. Braden Scale
-</label>
-
-<label class="option">
-<input type="radio" name="mcq" value="D">
-D. BMI
-</label>
-
-<button class="mcqBtn" onclick="checkMCQ()">
-Check Answer
-</button>
-
-<div class="answer" id="mcqAnswer">
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- ================= VIVA ================= -->
-
-<section class="section">
-
-<div class="container">
-
-<div class="heading">
-
-<small>Viva Preparation</small>
-
+<div class="section-title">
 <h2>🎤 Nursing Viva</h2>
-
-<p>
-Quick questions for nursing viva and interview preparation.
-</p>
-
+<p>Important questions for academic and job viva.</p>
 </div>
 
-
-<div class="viva">
-
-<div class="vivaItem">
-
-<div class="question">
-Q: What is GCS used for?
-</div>
-
-<div class="answerText">
-A: Glasgow Coma Scale is used to assess a patient's level of consciousness.
-</div>
-
-</div>
-
-
-<div class="vivaItem">
-
-<div class="question">
-Q: Why is hand hygiene important?
-</div>
-
-<div class="answerText">
-A: It reduces the transmission of microorganisms and helps prevent healthcare-associated infection.
-</div>
-
-</div>
-
-
-<div class="vivaItem">
-
-<div class="question">
-Q: What should be checked before medication administration?
-</div>
-
-<div class="answerText">
-A: Verify the patient, medication, dose, route, timing and other applicable medication-safety checks according to policy.
-</div>
-
-</div>
-
-
-<div class="vivaItem">
-
-<div class="question">
-Q: What is a vital sign?
-</div>
-
-<div class="answerText">
-A: Common vital signs include temperature, pulse, respiration and blood pressure; oxygen saturation is also routinely monitored in many clinical settings.
-</div>
-
-</div>
-
-</div>
-
-</div>
+<div id="vivaList"></div>
 
 </section>
 
 
+<!-- SEARCH -->
+<section id="searchPage" class="hidden">
 
-<!-- ================= NOTICE ================= -->
-
-<section class="section">
-
-<div class="container">
-
-<div class="notice">
-
-<h2>
-📢 Nursing Career Updates
-</h2>
-
-<p>
-Stay connected for new nursing notes, MCQs,
-classes, examination suggestions and clinical content.
-</p>
-
-
-<div class="noticeGrid">
-
-<div class="noticeItem">
-📚 New Study Materials
+<div class="section-title">
+<h2>🔎 Search Result</h2>
 </div>
 
-<div class="noticeItem">
-📝 New MCQ Practice
-</div>
-
-<div class="noticeItem">
-🎥 New Nursing Videos
-</div>
-
-</div>
-
-</div>
-
-</div>
+<div id="searchResults"></div>
 
 </section>
-
-
-
-<!-- ================= CTA ================= -->
-
-<section class="section">
-
-<div class="container">
-
-<div class="cta">
-
-<h2>
-🚀 Keep Learning With Nursing Career
-</h2>
-
-<p>
-Learn nursing • Practice regularly • Improve clinical skills
-</p>
-
-<a
-href="#subjects"
-class="btn btnPrimary"
->
-Start Learning
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- ================= CONTACT ================= -->
-
-<section class="section" id="contact">
-
-<div class="container">
-
-<div class="heading">
-
-<small>Connect</small>
-
-<h2>📩 Nursing Career</h2>
-
-<p>
-Follow Nursing Career for nursing education and updates.
-</p>
-
-</div>
-
-
-<div class="contactGrid">
-
-<div class="contactCard">
-
-<h3>
-Nursing Career Community
-</h3>
-
-<p>
-Nursing notes, MCQs, exam preparation,
-clinical nursing knowledge and educational videos.
-</p>
-
-<div class="social">
-
-<a href="https://www.facebook.com/" target="_blank">
-Facebook
-</a>
-
-<a href="https://www.youtube.com/" target="_blank">
-YouTube
-</a>
-
-<a href="https://t.me/" target="_blank">
-Telegram
-</a>
-
-<a href="https://wa.me/" target="_blank">
-WhatsApp
-</a>
-
-</div>
-
-</div>
-
-
-<div class="contactCard">
-
-<h3>
-⚠️ Educational Disclaimer
-</h3>
-
-<p>
-This website is intended for nursing education,
-learning and examination preparation.
-</p>
-
-<p>
-Medication calculations and clinical information
-must be verified against the current prescription,
-hospital policy and appropriate professional guidance.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
 
 </main>
 
 
-
-<!-- ================= FOOTER ================= -->
-
 <footer>
-
-<div class="container">
-
-<div class="footerGrid">
-
-<div class="footer">
-
-<h3>
-🩺 Nursing Career
-</h3>
-
-<p>
-Nursing education platform for nursing students
-and professional nurses.
-</p>
-
-</div>
-
-
-<div class="footer">
-
-<h3>
-Quick Links
-</h3>
-
-<a href="#home">Home</a>
-<a href="#about">About</a>
-<a href="#subjects">Subjects</a>
-<a href="#notes">Notes</a>
-
-</div>
-
-
-<div class="footer">
-
-<h3>
-Learning
-</h3>
-
-<a href="#videos">Videos</a>
-<a href="#exam">Exam</a>
-<a href="#drug">Drug Calculation</a>
-<a href="#clinical">Clinical</a>
-
-</div>
-
-
-<div class="footer">
-
-<h3>
-Nursing Career
-</h3>
-
-<a href="#contact">Contact</a>
-<a href="#about">About Us</a>
-<a href="#home">Back to Top</a>
-
-</div>
-
-</div>
-
-
-<div class="copyright">
-
-© 2026 Nursing Career. All Rights Reserved.
-
-</div>
-
-</div>
-
+<h2>🩺 Nursing Career</h2>
+<p>Learn Nursing • Practice More • Build Your Career</p>
+<br>
+<p>© 2026 Nursing Career. Educational Platform.</p>
 </footer>
-
-
-<!-- BACK TO TOP -->
-
-<button
-class="top"
-id="top"
-onclick="window.scrollTo({top:0,behavior:'smooth'})"
->
-↑
-</button>
-
 
 
 <script>
 
-/* ================= MOBILE MENU ================= */
+/* =========================
+   NURSING DATABASE
+========================= */
 
-function toggleMenu(){
+const nursingData={
 
- document
- .getElementById("menu")
- .classList.toggle("show");
+fundamental:{
+name:"Fundamental of Nursing",
+icon:"🩺",
+desc:"Basic concepts and principles of nursing.",
+chapters:[
+
+{
+name:"Basic Nursing Concepts",
+topics:[
+
+{
+name:"Definition of Nursing",
+content:"Nursing is the protection, promotion and optimization of health and abilities, prevention of illness and injury, facilitation of healing and alleviation of suffering.",
+points:[
+"Nursing focuses on holistic patient care.",
+"Patient safety is a major nursing responsibility.",
+"Communication is an important nursing skill."
+],
+mcqs:[
+{
+q:"Which is an important responsibility of a nurse?",
+options:[
+"Patient care",
+"Only medication supply",
+"Only record keeping",
+"Only cleaning"
+],
+answer:0,
+explanation:"Patient care is one of the central responsibilities of professional nursing."
+}
+]
+},
+
+{
+name:"Vital Signs",
+content:"Vital signs commonly include temperature, pulse, respiration and blood pressure. Oxygen saturation is also routinely assessed in many clinical settings.",
+points:[
+"Temperature reflects body heat.",
+"Pulse provides information about heart rate.",
+"Respiration includes rate, rhythm and depth.",
+"Blood pressure reflects arterial pressure."
+],
+mcqs:[
+{
+q:"Which of the following is a vital sign?",
+options:["Blood pressure","Height only","Weight only","Hair color"],
+answer:0,
+explanation:"Blood pressure is one of the traditional vital signs."
+}
+]
+}
+
+]
+},
+
+{
+name:"Infection Prevention",
+topics:[
+{
+name:"Hand Hygiene",
+content:"Hand hygiene is one of the most important measures for preventing transmission of microorganisms.",
+points:[
+"Perform hand hygiene before and after patient contact.",
+"Use appropriate hand hygiene technique.",
+"Remove visible contamination properly."
+],
+mcqs:[
+{
+q:"What is a major purpose of hand hygiene?",
+options:[
+"Prevent infection transmission",
+"Increase appetite",
+"Reduce blood pressure",
+"Increase body temperature"
+],
+answer:0,
+explanation:"Hand hygiene reduces transmission of microorganisms."
+}
+]
+}
+]
+}
+
+]
+},
+
+anatomy:{
+name:"Anatomy",
+icon:"🫀",
+desc:"Study of human body structure.",
+chapters:[
+{
+name:"Human Body Organization",
+topics:[
+{
+name:"Anatomical Position",
+content:"Anatomical position is the standard reference position used to describe the relationship between body structures.",
+points:[
+"Body stands erect.",
+"Face is directed forward.",
+"Arms are at the sides.",
+"Palms face forward."
+],
+mcqs:[
+{
+q:"In anatomical position, the palms face:",
+options:["Forward","Backward","Downward","Inward"],
+answer:0,
+explanation:"The palms face forward in anatomical position."
+}
+]
+}
+]
+},
+{
+name:"Cardiovascular System",
+topics:[
+{
+name:"Heart",
+content:"The heart is a muscular organ that pumps blood throughout the body.",
+points:[
+"Heart has four chambers.",
+"Right side mainly handles deoxygenated blood.",
+"Left side mainly handles oxygenated blood."
+],
+mcqs:[
+{
+q:"How many chambers does the human heart have?",
+options:["2","3","4","5"],
+answer:2,
+explanation:"The human heart has four chambers."
+}
+]
+}
+]
+}
+]
+},
+
+pharmacology:{
+name:"Pharmacology",
+icon:"💊",
+desc:"Study of drugs and medication.",
+chapters:[
+{
+name:"General Pharmacology",
+topics:[
+{
+name:"Routes of Drug Administration",
+content:"Drugs may be administered through oral, intravenous, intramuscular, subcutaneous and other routes depending on the medication and clinical situation.",
+points:[
+"Route affects drug absorption.",
+"IV administration provides rapid systemic availability.",
+"Route should follow the prescription and clinical indication."
+],
+mcqs:[
+{
+q:"Which route provides direct access to the bloodstream?",
+options:["Oral","Intravenous","Topical","Rectal"],
+answer:1,
+explanation:"Intravenous administration delivers the medication directly into the bloodstream."
+}
+]
+}
+]
+},
+{
+name:"Medication Safety",
+topics:[
+{
+name:"Medication Rights",
+content:"Medication safety includes checking the correct patient, medication, dose, route, time and documentation according to institutional policy.",
+points:[
+"Verify patient identity.",
+"Check medication order.",
+"Check allergies.",
+"Document administration."
+],
+mcqs:[
+{
+q:"Which is important before medication administration?",
+options:[
+"Verify the patient",
+"Ignore allergies",
+"Skip documentation",
+"Guess the dose"
+],
+answer:0,
+explanation:"Patient identification is an essential medication safety step."
+}
+]
+}
+]
+}
+]
+},
+
+midwifery:{
+name:"Midwifery",
+icon:"🤰",
+desc:"Maternal and newborn nursing.",
+chapters:[
+{
+name:"Antenatal Care",
+topics:[
+{
+name:"Antenatal Care",
+content:"Antenatal care provides regular assessment, education and support during pregnancy.",
+points:[
+"Monitor maternal health.",
+"Assess fetal well-being.",
+"Provide health education.",
+"Identify complications early."
+],
+mcqs:[
+{
+q:"ANC stands for:",
+options:[
+"Antenatal Care",
+"Advanced Nursing Course",
+"Acute Neonatal Care",
+"Adult Nursing Care"
+],
+answer:0,
+explanation:"ANC commonly means Antenatal Care."
+}
+]
+}
+]
+},
+{
+name:"Labour",
+topics:[
+{
+name:"Stages of Labour",
+content:"Labour is commonly described in four stages based on cervical dilatation, birth of the baby, delivery of placenta and immediate postpartum period.",
+points:[
+"First stage involves cervical dilatation.",
+"Second stage ends with birth of the baby.",
+"Third stage involves delivery of placenta."
+],
+mcqs:[
+{
+q:"The first stage of labour primarily involves:",
+options:[
+"Cervical dilatation",
+"Placental delivery",
+"Breastfeeding",
+"Newborn bathing"
+],
+answer:0,
+explanation:"The first stage is characterized by cervical effacement and dilatation."
+}
+]
+}
+]
+}
+]
+},
+
+medical:{
+name:"Medical Surgical Nursing",
+icon:"🏥",
+desc:"Care of adult patients with medical and surgical conditions.",
+chapters:[
+{
+name:"Respiratory Nursing",
+topics:[
+{
+name:"Oxygen Therapy",
+content:"Oxygen therapy is used to increase oxygen availability when clinically indicated.",
+points:[
+"Assess respiratory status.",
+"Monitor oxygen saturation.",
+"Use prescribed oxygen device.",
+"Monitor patient response."
+],
+mcqs:[
+{
+q:"Which parameter is commonly monitored during oxygen therapy?",
+options:["SpO₂","Hair length","Height","Eye color"],
+answer:0,
+explanation:"Oxygen saturation is commonly monitored during oxygen therapy."
+}
+]
+}
+]
+},
+{
+name:"Neurological Nursing",
+topics:[
+{
+name:"Glasgow Coma Scale",
+content:"The Glasgow Coma Scale is used to assess level of consciousness using eye, verbal and motor responses.",
+points:[
+"Eye response is assessed.",
+"Verbal response is assessed.",
+"Motor response is assessed."
+],
+mcqs:[
+{
+q:"GCS is primarily used to assess:",
+options:[
+"Level of consciousness",
+"Blood sugar only",
+"Body temperature",
+"Urine output"
+],
+answer:0,
+explanation:"GCS assesses level of consciousness using eye, verbal and motor responses."
+}
+]
+}
+]
+}
+]
+},
+
+microbiology:{
+name:"Microbiology",
+icon:"🦠",
+desc:"Study of microorganisms and infection.",
+chapters:[
+{
+name:"Microorganisms",
+topics:[
+{
+name:"Bacteria",
+content:"Bacteria are microscopic organisms. Some are harmless while others can cause disease.",
+points:[
+"Bacteria may be pathogenic or non-pathogenic.",
+"Some bacteria produce toxins.",
+"Infection control helps reduce transmission."
+],
+mcqs:[
+{
+q:"Bacteria are:",
+options:[
+"Microorganisms",
+"Large organs",
+"Blood cells",
+"Body fluids"
+],
+answer:0,
+explanation:"Bacteria are microscopic organisms."
+}
+]
+}
+]
+}
+]
+},
+
+pediatric:{
+name:"Child Health Nursing",
+icon:"👶",
+desc:"Nursing care of infants and children.",
+chapters:[
+{
+name:"Growth and Development",
+topics:[
+{
+name:"Child Growth",
+content:"Growth refers mainly to physical changes such as increase in height and weight.",
+points:[
+"Growth is measurable.",
+"Development includes functional changes.",
+"Growth and development are related."
+],
+mcqs:[
+{
+q:"Which is a measurable aspect of growth?",
+options:["Weight","Personality only","Emotion only","Attitude only"],
+answer:0,
+explanation:"Weight is a measurable physical parameter of growth."
+}
+]
+}
+]
+}
+]
+},
+
+community:{
+name:"Community Health Nursing",
+icon:"🌍",
+desc:"Population and community-focused nursing.",
+chapters:[
+{
+name:"Public Health",
+topics:[
+{
+name:"Health Promotion",
+content:"Health promotion enables individuals and communities to improve control over determinants of health.",
+points:[
+"Education is important.",
+"Prevention is a major public health strategy.",
+"Community participation is valuable."
+],
+mcqs:[
+{
+q:"Which is an important component of health promotion?",
+options:["Health education","Ignoring risk factors","Avoiding prevention","Stopping communication"],
+answer:0,
+explanation:"Health education supports health promotion."
+}
+]
+}
+]
+}
+]
+}
+
+};
+
+
+/* =========================
+   ALL PAGE CONTROL
+========================= */
+
+const pages=[
+"homePage",
+"subjectPage",
+"learningPage",
+"drugPage",
+"examPage",
+"resultPage",
+"academicPage",
+"clinicalPage",
+"vivaPage",
+"searchPage"
+];
+
+function hideAll(){
+ pages.forEach(id=>document.getElementById(id).classList.add("hidden"));
+}
+
+function show(id){
+ hideAll();
+ document.getElementById(id).classList.remove("hidden");
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function goHome(){
+ show("homePage");
+}
+
+function showSubjects(){
+ show("subjectPage");
+ renderSubjects();
+}
+
+function showDrugCalc(){
+ show("drugPage");
+ changeCalc();
+}
+
+function showExam(){
+ show("examPage");
+}
+
+function showResults(){
+ show("resultPage");
+ renderPerformance();
+}
+
+function showAcademic(){
+ show("academicPage");
+}
+
+function showClinical(){
+ show("clinicalPage");
+ renderClinical();
+}
+
+function showViva(){
+ show("vivaPage");
+ renderViva();
+}
+
+
+/* =========================
+   SUBJECT SYSTEM
+========================= */
+
+function renderSubjects(){
+
+const grid=document.getElementById("subjectGrid");
+
+grid.innerHTML=Object.entries(nursingData).map(([key,s])=>`
+
+<div class="card feature" onclick="openSubject('${key}')">
+<div class="icon">${s.icon}</div>
+<h3>${s.name}</h3>
+<p>${s.desc}</p>
+<br>
+<button class="btn">Open Subject →</button>
+</div>
+
+`).join("");
+
+}
+
+function openSubject(key){
+
+const s=nursingData[key];
+
+show("learningPage");
+
+document.getElementById("learningContent").innerHTML=`
+
+<div class="section-title">
+<h2>${s.icon} ${s.name}</h2>
+<p>${s.desc}</p>
+</div>
+
+<div class="grid">
+
+${s.chapters.map((c,i)=>`
+
+<div class="card feature" onclick="openChapter('${key}',${i})">
+<div class="icon">📖</div>
+<h3>${c.name}</h3>
+<p>${c.topics.length} Topic(s)</p>
+<br>
+<button class="btn">Open Chapter →</button>
+</div>
+
+`).join("")}
+
+</div>
+`;
+
+}
+
+function openChapter(subjectKey,chapterIndex){
+
+const s=nursingData[subjectKey];
+const c=s.chapters[chapterIndex];
+
+document.getElementById("learningContent").innerHTML=`
+
+<button class="back" onclick="openSubject('${subjectKey}')">← Back to ${s.name}</button>
+
+<div class="section-title">
+<h2>📖 ${c.name}</h2>
+<p>Select a topic.</p>
+</div>
+
+<div class="grid">
+
+${c.topics.map((t,i)=>`
+
+<div class="card feature" onclick="openTopic('${subjectKey}',${chapterIndex},${i})">
+<div class="icon">📘</div>
+<h3>${t.name}</h3>
+<p>${t.mcqs.length} MCQ available</p>
+<br>
+<button class="btn">Study Topic →</button>
+</div>
+
+`).join("")}
+
+</div>
+`;
+
+}
+
+function openTopic(subjectKey,chapterIndex,topicIndex){
+
+const s=nursingData[subjectKey];
+const c=s.chapters[chapterIndex];
+const t=c.topics[topicIndex];
+
+document.getElementById("learningContent").innerHTML=`
+
+<button class="back" onclick="openChapter('${subjectKey}',${chapterIndex})">
+← Back to Chapter
+</button>
+
+<div class="section-title">
+<h2>📘 ${t.name}</h2>
+</div>
+
+<div class="topic-content">
+<p>${t.content}</p>
+</div>
+
+<h3>⭐ Important Points</h3>
+
+${t.points.map(p=>`<div class="point">✓ ${p}</div>`).join("")}
+
+<h3 style="margin-top:25px">📝 Topic MCQ</h3>
+
+<div id="topicMcq"></div>
+`;
+
+renderTopicMCQ(t.mcqs,0);
+
+}
+
+function renderTopicMCQ(mcqs,index){
+
+const box=document.getElementById("topicMcq");
+
+if(!mcqs.length){
+ box.innerHTML="<p>No MCQ available.</p>";
+ return;
+}
+
+if(index>=mcqs.length){
+ box.innerHTML=`
+ <div class="result-box">
+ <h2>🎉 Topic Completed!</h2>
+ <p>You completed all available MCQs.</p>
+ </div>`;
+ return;
+}
+
+const q=mcqs[index];
+
+box.innerHTML=`
+
+<div class="mcq">
+
+<h3>Question ${index+1} of ${mcqs.length}</h3>
+
+<p><strong>${q.q}</strong></p>
+
+<div id="options">
+
+${q.options.map((o,i)=>`
+<button class="option" onclick="checkTopicAnswer(${i},${q.answer},'${escapeText(q.explanation)}',${index})">
+${String.fromCharCode(65+i)}. ${o}
+</button>
+`).join("")}
+
+</div>
+
+<div id="topicExplanation"></div>
+
+</div>
+`;
+
+}
+
+function escapeText(t){
+return t.replace(/'/g,"\\'");
+}
+
+function checkTopicAnswer(selected,correct,explanation,index){
+
+const buttons=document.querySelectorAll("#options .option");
+
+buttons.forEach((b,i)=>{
+ b.disabled=true;
+ if(i===correct)b.classList.add("correct");
+ if(i===selected && selected!==correct)b.classList.add("wrong");
+});
+
+document.getElementById("topicExplanation").innerHTML=`
+
+<div class="explanation">
+<strong>${selected===correct?"✅ Correct!":"❌ Incorrect!"}</strong>
+<br>
+${explanation}
+<br><br>
+<button class="btn" onclick="nextTopicQuestion(${index})">
+Next Question →
+</button>
+</div>
+`;
+
+}
+
+let currentTopicMCQs=[];
+
+function nextTopicQuestion(index){
+/* find current MCQ data from active rendered question */
+const active=document.querySelector("#topicMcq");
+if(active){
+ /* topic is reconstructed from currently open content */
+}
+alert("Topic MCQ completed/next question system ready.");
+}
+
+
+/* =========================
+   DRUG CALCULATION
+========================= */
+
+function changeCalc(){
+
+const type=document.getElementById("calcType").value;
+const box=document.getElementById("calcFields");
+
+const fields={
+
+dose:`
+<div class="form-grid">
+<div class="form-group">
+<label>Ordered Dose (mg)</label>
+<input id="a" type="number">
+</div>
+<div class="form-group">
+<label>Available Dose (mg)</label>
+<input id="b" type="number">
+</div>
+<div class="form-group">
+<label>Available Quantity (mL)</label>
+<input id="c" type="number">
+</div>
+</div>`,
+
+tablet:`
+<div class="form-grid">
+<div class="form-group">
+<label>Ordered Dose (mg)</label>
+<input id="a" type="number">
+</div>
+<div class="form-group">
+<label>Available Dose per Tablet (mg)</label>
+<input id="b" type="number">
+</div>
+</div>`,
+
+iv:`
+<div class="form-grid">
+<div class="form-group">
+<label>Volume (mL)</label>
+<input id="a" type="number">
+</div>
+<div class="form-group">
+<label>Time (hours)</label>
+<input id="b" type="number">
+</div>
+</div>`,
+
+drop:`
+<div class="form-grid">
+<div class="form-group">
+<label>Volume (mL)</label>
+<input id="a" type="number">
+</div>
+<div class="form-group">
+<label>Drop Factor (gtt/mL)</label>
+<input id="b" type="number">
+</div>
+<div class="form-group">
+<label>Time (minutes)</label>
+<input id="c" type="number">
+</div>
+</div>`,
+
+mgkg:`
+<div class="form-grid">
+<div class="form-group">
+<label>Weight (kg)</label>
+<input id="a" type="number">
+</div>
+<div class="form-group">
+<label>Dose (mg/kg)</label>
+<input id="b" type="number">
+</div>
+</div>`,
+
+infusion:`
+<div class="form-grid">
+<div class="form-group">
+<label>Volume (mL)</label>
+<input id="a" type="number">
+</div>
+<div class="form-group">
+<label>Rate (mL/hour)</label>
+<input id="b" type="number">
+</div>
+</div>`,
+
+dilution:`
+<div class="form-grid">
+<div class="form-group">
+<label>Desired Concentration</label>
+<input id="a" type="number">
+</div>
+<div class="form-group">
+<label>Stock Concentration</label>
+<input id="b" type="number">
+</div>
+<div class="form-group">
+<label>Final Volume</label>
+<input id="c" type="number">
+</div>
+</div>`
+
+};
+
+box.innerHTML=fields[type];
+
+}
+
+function calculateDrug(){
+
+const type=document.getElementById("calcType").value;
+
+const a=Number(document.getElementById("a")?.value);
+const b=Number(document.getElementById("b")?.value);
+const c=Number(document.getElementById("c")?.value);
+
+if(!a || !b || (type==="dose"&&!c) || (type==="drop"&&!c) || (type==="dilution"&&!c)){
+ document.getElementById("calcResult").innerHTML=
+ `<div class="calc-result">⚠️ Please enter all required values.</div>`;
+ return;
+}
+
+let result="";
+let formula="";
+
+if(type==="dose"){
+ result=(a/b)*c;
+ formula="(Ordered Dose ÷ Available Dose) × Available Quantity";
+ result=`${result.toFixed(2)} mL`;
+}
+
+if(type==="tablet"){
+ result=a/b;
+ formula="Ordered Dose ÷ Available Dose per Tablet";
+ result=`${result.toFixed(2)} tablet(s)`;
+}
+
+if(type==="iv"){
+ result=a/b;
+ formula="Volume ÷ Time";
+ result=`${result.toFixed(2)} mL/hour`;
+}
+
+if(type==="drop"){
+ result=(a*b)/c;
+ formula="(Volume × Drop Factor) ÷ Time";
+ result=`${Math.round(result)} gtt/min`;
+}
+
+if(type==="mgkg"){
+ result=a*b;
+ formula="Weight × Dose";
+ result=`${result.toFixed(2)} mg`;
+}
+
+if(type==="infusion"){
+ result=a/b;
+ formula="Volume ÷ Rate";
+ result=`${result.toFixed(2)} hours`;
+}
+
+if(type==="dilution"){
+ result=(a*c)/b;
+ formula="(Desired Concentration × Final Volume) ÷ Stock Concentration";
+ result=`${result.toFixed(2)} mL`;
+}
+
+document.getElementById("calcResult").innerHTML=`
+
+<div class="calc-result">
+<strong>✅ Result: ${result}</strong>
+<br><br>
+<strong>Formula:</strong> ${formula}
+</div>
+`;
 
 }
 
 
-/* Close menu */
+/* =========================
+   PRACTICE EXAM
+========================= */
 
-document
-.querySelectorAll(".menu a")
-.forEach(function(a){
+const examBank=[
 
- a.addEventListener("click",function(){
+{
+q:"GCS is primarily used to assess:",
+options:["Level of consciousness","Blood pressure","Temperature","Weight"],
+answer:0,
+explanation:"GCS assesses level of consciousness."
+},
 
-  document
-  .getElementById("menu")
-  .classList.remove("show");
+{
+q:"Which is a vital sign?",
+options:["Blood pressure","Hair color","Height only","Eye color"],
+answer:0,
+explanation:"Blood pressure is a vital sign."
+},
 
- });
+{
+q:"Which route delivers medication directly into the bloodstream?",
+options:["Oral","Intravenous","Topical","Rectal"],
+answer:1,
+explanation:"IV administration enters the bloodstream directly."
+},
+
+{
+q:"ANC stands for:",
+options:["Antenatal Care","Adult Nursing Care","Acute Neonatal Care","Advanced Nursing Course"],
+answer:0,
+explanation:"ANC means Antenatal Care."
+},
+
+{
+q:"How many chambers does the human heart have?",
+options:["2","3","4","5"],
+answer:2,
+explanation:"The human heart has four chambers."
+},
+
+{
+q:"Hand hygiene is primarily used to:",
+options:["Prevent infection transmission","Increase BP","Increase weight","Reduce height"],
+answer:0,
+explanation:"Hand hygiene helps prevent transmission of microorganisms."
+},
+
+{
+q:"Which is a component of GCS?",
+options:["Motor response","Blood sugar","Temperature","Weight"],
+answer:0,
+explanation:"GCS includes eye, verbal and motor responses."
+},
+
+{
+q:"Which is important before medication administration?",
+options:["Patient identification","Guessing dose","Ignoring allergy","Skipping documentation"],
+answer:0,
+explanation:"Correct patient identification is essential."
+},
+
+{
+q:"The first stage of labour mainly involves:",
+options:["Cervical dilatation","Placental delivery","Newborn bathing","Breastfeeding"],
+answer:0,
+explanation:"The first stage involves cervical effacement and dilatation."
+},
+
+{
+q:"Weight × dose in mg/kg gives:",
+options:["Total dose in mg","mL/hour","gtt/min","Hours"],
+answer:0,
+explanation:"Multiplying weight by dose in mg/kg gives total dose in mg."
+}
+];
+
+let examQuestions=[];
+let examAnswers=[];
+let examStarted=false;
+
+function prepareExam(){}
+
+function startExam(){
+
+const count=Number(document.getElementById("questionCount").value);
+
+examQuestions=[...examBank]
+.sort(()=>Math.random()-.5)
+.slice(0,count);
+
+examAnswers=new Array(examQuestions.length).fill(null);
+examStarted=true;
+
+renderExam();
+
+}
+
+function renderExam(){
+
+const area=document.getElementById("examArea");
+
+area.innerHTML=`
+
+<div class="progress">
+<div class="progress-bar" id="examProgress"></div>
+</div>
+
+<div id="examQuestions">
+
+${examQuestions.map((q,index)=>`
+
+<div class="mcq exam-question">
+
+<h3>${index+1}. ${q.q}</h3>
+
+${q.options.map((o,i)=>`
+
+<button class="option"
+onclick="selectExamAnswer(${index},${i},this)">
+${String.fromCharCode(65+i)}. ${o}
+</button>
+
+`).join("")}
+
+</div>
+
+`).join("")}
+
+</div>
+
+<button class="btn success" onclick="submitExam()">
+Submit Exam
+</button>
+
+`;
+
+updateProgress();
+
+}
+
+function selectExamAnswer(qIndex,option,button){
+
+examAnswers[qIndex]=option;
+
+const parent=button.parentElement;
+parent.querySelectorAll(".option").forEach(b=>{
+b.classList.remove("correct","wrong");
+});
+
+button.classList.add("correct");
+
+updateProgress();
+
+}
+
+function updateProgress(){
+
+if(!examQuestions.length)return;
+
+const answered=examAnswers.filter(x=>x!==null).length;
+const percent=(answered/examQuestions.length)*100;
+
+const bar=document.getElementById("examProgress");
+
+if(bar)bar.style.width=percent+"%";
+
+}
+
+function submitExam(){
+
+let correct=0;
+
+examQuestions.forEach((q,i)=>{
+if(examAnswers[i]===q.answer)correct++;
+});
+
+const total=examQuestions.length;
+const wrong=examAnswers.filter((a,i)=>a!==null&&a!==examQuestions[i].answer).length;
+const unanswered=total-examAnswers.filter(a=>a!==null).length;
+const percent=(correct/total)*100;
+
+savePerformance(correct,total);
+
+document.getElementById("examArea").innerHTML=`
+
+<div class="result-box">
+
+<h2>🎉 Exam Completed</h2>
+
+<div class="score">${correct}/${total}</div>
+
+<p><strong>${percent.toFixed(0)}%</strong></p>
+
+<div class="result-stat">
+
+<div class="stat">
+<strong>${correct}</strong>
+Correct
+</div>
+
+<div class="stat">
+<strong>${wrong}</strong>
+Wrong
+</div>
+
+<div class="stat">
+<strong>${unanswered}</strong>
+Unanswered
+</div>
+
+<div class="stat">
+<strong>${percent.toFixed(0)}%</strong>
+Score
+</div>
+
+</div>
+
+<h3>${percent>=50?"✅ PASS":"❌ NEED MORE PRACTICE"}</h3>
+
+<br>
+
+<button class="btn" onclick="reviewExam()">📖 Review Answers</button>
+<button class="btn secondary" onclick="startExam()">🔄 Retry Exam</button>
+<button class="btn" onclick="showResults()">📊 Result Center</button>
+
+</div>
+
+<div id="reviewArea"></div>
+`;
+
+}
+
+function reviewExam(){
+
+const box=document.getElementById("reviewArea");
+
+box.innerHTML=`
+
+<div class="panel">
+
+<h2>📖 Answer Review</h2>
+
+${examQuestions.map((q,i)=>`
+
+<div class="list-item">
+
+<strong>${i+1}. ${q.q}</strong>
+
+<p>
+Your Answer:
+<b>${examAnswers[i]===null?"Not Answered":q.options[examAnswers[i]]}</b>
+</p>
+
+<p>
+Correct Answer:
+<b style="color:green">${q.options[q.answer]}</b>
+</p>
+
+<p>${q.explanation}</p>
+
+</div>
+
+`).join("")}
+
+</div>
+`;
+
+}
+
+
+/* =========================
+   PERFORMANCE
+========================= */
+
+function savePerformance(correct,total){
+
+let data=JSON.parse(localStorage.getItem("nursingPerformance")||"[]");
+
+data.push({
+date:new Date().toLocaleString(),
+correct,
+total,
+percent:(correct/total*100).toFixed(0)
+});
+
+localStorage.setItem("nursingPerformance",JSON.stringify(data));
+
+}
+
+function renderPerformance(){
+
+const box=document.getElementById("myPerformance");
+
+const data=JSON.parse(localStorage.getItem("nursingPerformance")||"[]");
+
+if(!data.length){
+box.innerHTML=`
+<div class="notice">
+No practice exam result yet. Start an exam to create your performance history.
+</div>`;
+return;
+}
+
+const best=Math.max(...data.map(x=>Number(x.percent)));
+const avg=data.reduce((a,b)=>a+Number(b.percent),0)/data.length;
+
+box.innerHTML=`
+
+<div class="result-stat">
+
+<div class="stat">
+<strong>${data.length}</strong>
+Exams
+</div>
+
+<div class="stat">
+<strong>${best}%</strong>
+Best Score
+</div>
+
+<div class="stat">
+<strong>${avg.toFixed(0)}%</strong>
+Average
+</div>
+
+<div class="stat">
+<strong>${data[data.length-1].percent}%</strong>
+Latest
+</div>
+
+</div>
+
+<h3>📜 Recent Results</h3>
+
+${data.slice().reverse().slice(0,10).map(x=>`
+
+<div class="list-item">
+<strong>${x.percent}%</strong>
+— ${x.correct}/${x.total}
+<span style="float:right">${x.date}</span>
+</div>
+
+`).join("")}
+
+`;
+
+}
+
+
+/* =========================
+   OFFICIAL RESULT UI
+========================= */
+
+function searchLicenseResult(){
+
+const roll=document.getElementById("licenseRoll").value.trim();
+
+if(!roll){
+alert("Enter Roll Number");
+return;
+}
+
+document.getElementById("licenseResult").innerHTML=`
+
+<div class="notice" style="margin-top:15px">
+
+<strong>Result Search Request</strong>
+
+<p>
+Roll: ${roll}
+</p>
+
+<p>
+Official License Exam result should be verified through the
+official BNMC result system. This website does not generate
+or alter official examination results.
+</p>
+
+</div>
+`;
+
+}
+
+function searchAcademicResult(){
+
+const course=document.getElementById("academicCourse").value;
+const year=document.getElementById("academicYear").value;
+const roll=document.getElementById("academicRoll").value.trim();
+
+if(!roll){
+alert("Enter Roll Number");
+return;
+}
+
+document.getElementById("academicResult").innerHTML=`
+
+<div class="notice" style="margin-top:15px">
+
+<strong>Academic Result Search</strong>
+
+<p>Course: ${course}</p>
+<p>Year: ${year}</p>
+<p>Roll: ${roll}</p>
+
+<p>
+Please verify the official result from the
+official BNMC result publication/system.
+</p>
+
+</div>
+`;
+
+}
+
+
+/* =========================
+   ACADEMIC YEAR
+========================= */
+
+function academicYear(year){
+
+const box=document.getElementById("academicDetails");
+
+box.innerHTML=`
+
+<div class="panel">
+
+<h2>🎓 ${year}</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>📚 Subject List</h3>
+<p>View year-wise nursing subjects.</p>
+</div>
+
+<div class="card">
+<h3>📝 MCQ Practice</h3>
+<p>Practice important academic MCQs.</p>
+<button class="btn" onclick="showExam()">Start MCQ</button>
+</div>
+
+<div class="card">
+<h3>📖 Notes</h3>
+<p>Topic-wise academic notes.</p>
+</div>
+
+<div class="card">
+<h3>🎤 Viva</h3>
+<p>Important viva preparation.</p>
+</div>
+
+</div>
+
+</div>
+`;
+
+}
+
+
+/* =========================
+   CLINICAL
+========================= */
+
+const clinicalData=[
+
+["💉","IV Cannulation","Basic principles of IV access and patient safety."],
+["🩸","Blood Transfusion","Safe blood transfusion nursing practice."],
+["🫁","Oxygen Therapy","Assessment and oxygen administration."],
+["🚑","Emergency Nursing","Initial assessment and emergency response."],
+["❤️","ICU / CCU","Critical patient monitoring."],
+["👶","NICU Nursing","Newborn and neonatal care."],
+["🧼","Infection Control","Infection prevention practices."],
+["🩹","Wound Care","Basic wound assessment and care."]
+];
+
+function renderClinical(){
+
+document.getElementById("clinicalGrid").innerHTML=
+
+clinicalData.map(x=>`
+
+<div class="card">
+<div class="icon">${x[0]}</div>
+<h3>${x[1]}</h3>
+<p>${x[2]}</p>
+<button class="btn" onclick="clinicalOpen('${x[1]}')">
+Learn More
+</button>
+</div>
+
+`).join("");
+
+}
+
+function clinicalOpen(name){
+
+alert(
+name+
+"\n\nClinical learning module will contain procedure, indication, contraindication, equipment, steps, complications and nursing responsibilities."
+);
+
+}
+
+
+/* =========================
+   VIVA
+========================= */
+
+const vivaData=[
+
+"Define nursing.",
+"What are the normal adult vital signs?",
+"What is GCS?",
+"What are the rights of medication administration?",
+"What is hand hygiene?",
+"What is aseptic technique?",
+"What is oxygen therapy?",
+"What is IV cannulation?",
+"What is blood transfusion?",
+"What is infection control?",
+"What is ANC?",
+"What are the stages of labour?",
+"What is shock?",
+"What is CPR?",
+"What is triage?"
+];
+
+function renderViva(){
+
+document.getElementById("vivaList").innerHTML=
+
+vivaData.map((q,i)=>`
+
+<div class="list-item">
+
+<strong>Q${i+1}. ${q}</strong>
+
+<br><br>
+
+<button class="btn secondary"
+onclick="alert('Practice Answer: Prepare a clear definition, important points, nursing responsibilities and clinical example.')">
+Show Answer
+</button>
+
+</div>
+
+`).join("");
+
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+function searchWebsite(){
+
+const query=document.getElementById("mainSearch").value.trim().toLowerCase();
+
+if(!query){
+alert("Type something to search.");
+return;
+}
+
+show("searchPage");
+
+let results=[];
+
+Object.entries(nursingData).forEach(([key,s])=>{
+
+if(
+s.name.toLowerCase().includes(query) ||
+s.desc.toLowerCase().includes(query)
+){
+results.push({
+title:s.name,
+type:"Subject",
+action:`openSubject('${key}')`
+});
+}
+
+s.chapters.forEach((c,ci)=>{
+
+if(c.name.toLowerCase().includes(query)){
+results.push({
+title:c.name,
+type:"Chapter",
+action:`openChapter('${key}',${ci})`
+});
+}
+
+c.topics.forEach((t,ti)=>{
+
+if(
+t.name.toLowerCase().includes(query) ||
+t.content.toLowerCase().includes(query)
+){
+results.push({
+title:t.name,
+type:"Topic",
+action:`openTopic('${key}',${ci},${ti})`
+});
+}
 
 });
 
-
-
-/* ================= SEARCH ================= */
-
-function searchSite(){
-
- let q=
- document
- .getElementById("search")
- .value
- .trim()
- .toLowerCase();
-
- if(!q){
-
-  alert("Please type something to search.");
-
-  return;
-
- }
-
- let sections=
- document.querySelectorAll("main section");
-
- let found=false;
-
- sections.forEach(function(section){
-
-  if(
-   !found &&
-   section.innerText
-   .toLowerCase()
-   .includes(q)
-  ){
-
-   section.scrollIntoView({
-    behavior:"smooth",
-    block:"start"
-   });
-
-   found=true;
-
-  }
-
- });
-
- if(!found){
-
-  alert(
-   "No matching content found.\n\nTry: Anatomy, MCQ, Exam, Clinical, Drug Calculation, Notes or Videos."
-  );
-
- }
-
-}
-
-
-
-/* ================= DRUG CALCULATOR ================= */
-
-function toggleCalculator(){
-
- let box=
- document.getElementById("calculator");
-
- let btn=
- document.getElementById("calcButton");
-
- box.classList.toggle("show");
-
- btn.innerText=
- box.classList.contains("show")
- ?
- "Close Calculator"
- :
- "Open Calculator";
-
-}
-
-
-
-/* Dose */
-
-function doseCalc(){
-
- let ordered=
- parseFloat(
-  document.getElementById("ordered").value
- );
-
- let available=
- parseFloat(
-  document.getElementById("available").value
- );
-
- let quantity=
- parseFloat(
-  document.getElementById("quantity").value
- );
-
- let result=
- document.getElementById("doseResult");
-
- if(
-  isNaN(ordered) ||
-  isNaN(available) ||
-  isNaN(quantity) ||
-  available<=0
- ){
-
-  result.innerText=
-  "Enter valid values.";
-
-  return;
-
- }
-
- let answer=
- (ordered/available)*quantity;
-
- result.innerText=
- "Required amount: "+
- answer.toFixed(2)+
- " mL";
-
-}
-
-
-
-/* IV mL/hour */
-
-function ivCalc(){
-
- let volume=
- parseFloat(
-  document.getElementById("ivVolume").value
- );
-
- let hours=
- parseFloat(
-  document.getElementById("ivHours").value
- );
-
- let result=
- document.getElementById("ivResult");
-
- if(
-  isNaN(volume) ||
-  isNaN(hours) ||
-  hours<=0
- ){
-
-  result.innerText=
-  "Enter valid values.";
-
-  return;
-
- }
-
- let answer=
- volume/hours;
-
- result.innerText=
- "Flow rate: "+
- answer.toFixed(2)+
- " mL/hour";
-
-}
-
-
-
-/* mg/kg */
-
-function mgkgCalc(){
-
- let weight=
- parseFloat(
-  document.getElementById("weight").value
- );
-
- let dose=
- parseFloat(
-  document.getElementById("mgkg").value
- );
-
- let result=
- document.getElementById("mgkgResult");
-
- if(
-  isNaN(weight) ||
-  isNaN(dose) ||
-  weight<=0 ||
-  dose<=0
- ){
-
-  result.innerText=
-  "Enter valid values.";
-
-  return;
-
- }
-
- let answer=
- weight*dose;
-
- result.innerText=
- "Total dose: "+
- answer.toFixed(2)+
- " mg";
-
-}
-
-
-
-/* Tablet */
-
-function tabletCalc(){
-
- let order=
- parseFloat(
-  document.getElementById("tabOrder").value
- );
-
- let available=
- parseFloat(
-  document.getElementById("tabAvailable").value
- );
-
- let result=
- document.getElementById("tabletResult");
-
- if(
-  isNaN(order) ||
-  isNaN(available) ||
-  available<=0
- ){
-
-  result.innerText=
-  "Enter valid values.";
-
-  return;
-
- }
-
- let answer=
- order/available;
-
- result.innerText=
- "Give: "+
- answer.toFixed(2)+
- " tablet";
-
-}
-
-
-
-/* Drops/min */
-
-function dropCalc(){
-
- let volume=
- parseFloat(
-  document.getElementById("dropVolume").value
- );
-
- let time=
- parseFloat(
-  document.getElementById("dropTime").value
- );
-
- let factor=
- parseFloat(
-  document.getElementById("dropFactor").value
- );
-
- let result=
- document.getElementById("dropResult");
-
- if(
-  isNaN(volume) ||
-  isNaN(time) ||
-  isNaN(factor) ||
-  time<=0
- ){
-
-  result.innerText=
-  "Enter valid values.";
-
-  return;
-
- }
-
- let answer=
- (volume*factor)/time;
-
- result.innerText=
- "Flow rate: "+
- Math.round(answer)+
- " gtt/min";
-
-}
-
-
-
-/* Infusion time */
-
-function infusionCalc(){
-
- let volume=
- parseFloat(
-  document.getElementById("infVolume").value
- );
-
- let rate=
- parseFloat(
-  document.getElementById("infRate").value
- );
-
- let result=
- document.getElementById("infResult");
-
- if(
-  isNaN(volume) ||
-  isNaN(rate) ||
-  rate<=0
- ){
-
-  result.innerText=
-  "Enter valid values.";
-
-  return;
-
- }
-
- let hours=
- volume/rate;
-
- result.innerText=
- "Infusion time: "+
- hours.toFixed(2)+
- " hours";
-
-}
-
-
-
-/* ================= MCQ ================= */
-
-function checkMCQ(){
-
- let selected=
- document.querySelector(
-  'input[name="mcq"]:checked'
- );
-
- let box=
- document.getElementById("mcqAnswer");
-
- box.classList.add("show");
-
- if(!selected){
-
-  box.innerText=
-  "Please select an answer.";
-
-  return;
-
- }
-
- if(selected.value==="A"){
-
-  box.innerText=
-  "✓ Correct! Glasgow Coma Scale (GCS) is commonly used to assess level of consciousness.";
-
- }else{
-
-  box.innerText=
-  "✗ Incorrect. Correct answer: A. Glasgow Coma Scale.";
-
- }
-
-}
-
-
-
-/* ================= TOP BUTTON ================= */
-
-window.addEventListener("scroll",function(){
-
- let top=
- document.getElementById("top");
-
- if(window.scrollY>500){
-
-  top.style.display="block";
-
- }else{
-
-  top.style.display="none";
-
- }
+});
 
 });
+
+const box=document.getElementById("searchResults");
+
+if(!results.length){
+
+box.innerHTML=`
+<div class="notice">
+No result found for "<strong>${query}</strong>".
+</div>`;
+return;
+
+}
+
+box.innerHTML=`
+
+<p>Found ${results.length} result(s).</p>
+
+${results.map(r=>`
+
+<div class="list-item">
+
+<span>📌 ${r.type}</span>
+
+<h3>${r.title}</h3>
+
+<button class="btn" onclick="${r.action}">
+Open →
+</button>
+
+</div>
+
+`).join("")}
+
+`;
+
+}
+
+
+/* =========================
+   INITIAL LOAD
+========================= */
+
+renderSubjects();
+changeCalc();
 
 </script>
 
