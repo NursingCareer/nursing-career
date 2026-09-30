@@ -6,6 +6,9 @@
 
 <title>Nursing Career | Nursing Education Platform</title>
 
+<meta name="description" content="Nursing Career - Nursing Notes, MCQ, Exam Preparation, Clinical Nursing and Drug Calculation">
+<meta name="theme-color" content="#087f8c">
+
 <style>
 *{
     margin:0;
@@ -13,325 +16,597 @@
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
-    font-family:Arial, sans-serif;
-    background:#f1f5f9;
-    color:#1e293b;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f5f8fa;
+    color:#24323d;
     line-height:1.6;
 }
 
-a{
-    text-decoration:none;
-    color:inherit;
-}
+/* ================= HEADER ================= */
 
-/* HEADER */
 header{
-    background:linear-gradient(135deg,#063970,#087f8c,#2563eb);
+    background:linear-gradient(135deg,#087f8c,#075985);
     color:white;
-    padding:25px 20px 45px;
-    border-radius:0 0 30px 30px;
+    position:sticky;
+    top:0;
+    z-index:999;
+    box-shadow:0 3px 15px rgba(0,0,0,.12);
 }
 
-.header-inner{
-    max-width:1200px;
+.navbar{
+    max-width:1150px;
     margin:auto;
+    padding:14px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
 }
 
 .logo{
-    font-size:28px;
-    font-weight:bold;
-    margin-bottom:25px;
+    font-size:22px;
+    font-weight:800;
+    white-space:nowrap;
 }
 
+.logo span{
+    color:#a7f3d0;
+}
+
+nav{
+    display:flex;
+    gap:20px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:600;
+}
+
+nav a:hover{
+    color:#a7f3d0;
+}
+
+/* ================= HERO ================= */
+
 .hero{
-    text-align:center;
-    padding:25px 10px;
+    background:linear-gradient(135deg,#e7fbfc,#eef7ff);
+    padding:55px 20px;
+}
+
+.hero-inner{
+    max-width:1150px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1.3fr .7fr;
+    gap:35px;
+    align-items:center;
 }
 
 .hero h1{
-    font-size:38px;
-    margin-bottom:10px;
+    font-size:42px;
+    line-height:1.15;
+    color:#075985;
+    margin-bottom:15px;
+}
+
+.hero h1 span{
+    color:#087f8c;
 }
 
 .hero p{
-    font-size:17px;
-    opacity:.95;
+    color:#52616b;
+    max-width:650px;
+    font-size:16px;
+    margin-bottom:25px;
 }
 
-/* SEARCH */
 .search-box{
-    max-width:650px;
-    margin:25px auto 0;
     display:flex;
+    max-width:600px;
     background:white;
-    border-radius:50px;
-    overflow:hidden;
+    border-radius:12px;
+    padding:6px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
 }
 
 .search-box input{
     flex:1;
     border:none;
     outline:none;
-    padding:15px 20px;
-    font-size:16px;
+    padding:13px;
+    font-size:15px;
 }
 
 .search-box button{
     border:none;
-    background:#0f766e;
+    background:#087f8c;
     color:white;
-    padding:0 25px;
+    padding:0 22px;
+    border-radius:9px;
     cursor:pointer;
     font-weight:bold;
 }
 
-/* CONTAINER */
+.hero-card{
+    background:white;
+    border-radius:20px;
+    padding:28px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    text-align:center;
+}
+
+.hero-icon{
+    font-size:60px;
+    margin-bottom:10px;
+}
+
+.hero-card h3{
+    color:#075985;
+    margin-bottom:7px;
+}
+
+.hero-card p{
+    font-size:14px;
+    margin:0;
+}
+
+/* ================= MAIN ================= */
+
 .container{
-    max-width:1200px;
-    margin:35px auto;
-    padding:0 20px;
+    max-width:1150px;
+    margin:auto;
+    padding:45px 20px;
+}
+
+section{
+    margin-bottom:50px;
 }
 
 .section-title{
     text-align:center;
-    margin:45px 0 20px;
+    margin-bottom:25px;
 }
 
 .section-title h2{
-    font-size:28px;
-    color:#063970;
+    color:#075985;
+    font-size:27px;
 }
 
 .section-title p{
-    color:#64748b;
+    color:#71808a;
+    font-size:14px;
+    margin-top:5px;
 }
 
-/* GRID */
-.grid{
+/* ================= QUICK ACCESS ================= */
+
+.quick-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    grid-template-columns:repeat(4,1fr);
     gap:18px;
 }
 
-.card{
+.quick-card{
     background:white;
-    padding:25px 20px;
-    border-radius:18px;
-    box-shadow:0 5px 18px rgba(15,23,42,.08);
+    border-radius:15px;
+    padding:23px 18px;
+    text-align:center;
+    border:1px solid #e5ecef;
     transition:.25s;
-    border:1px solid #e2e8f0;
 }
 
-.card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 12px 25px rgba(15,23,42,.14);
+.quick-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
 }
 
-.card .icon{
+.quick-icon{
     font-size:35px;
-    margin-bottom:12px;
+    margin-bottom:10px;
 }
 
-.card h3{
-    color:#063970;
+.quick-card h3{
+    color:#075985;
+    font-size:17px;
+    margin-bottom:6px;
+}
+
+.quick-card p{
+    color:#6b7881;
+    font-size:13px;
+}
+
+/* ================= VIDEO ================= */
+
+.video-section{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 8px 25px rgba(0,0,0,.07);
+}
+
+.video-box{
+    position:relative;
+    width:100%;
+    padding-bottom:56.25%;
+    background:#111;
+}
+
+.video-box iframe{
+    position:absolute;
+    width:100%;
+    height:100%;
+    border:0;
+    left:0;
+    top:0;
+}
+
+.video-info{
+    padding:22px;
+}
+
+.video-info h3{
+    color:#075985;
     margin-bottom:7px;
 }
 
-.card p{
-    color:#64748b;
+.video-info p{
+    color:#687780;
     font-size:14px;
 }
 
-/* QUICK ACCESS */
-.quick-card{
-    text-align:center;
-    color:white;
-    border:none;
+/* ================= RESOURCE GRID ================= */
+
+.resource-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
 }
 
-.quick-card:nth-child(1){
-    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+.resource-card{
+    background:white;
+    border-radius:15px;
+    padding:22px;
+    border-left:5px solid #087f8c;
+    box-shadow:0 5px 18px rgba(0,0,0,.05);
 }
 
-.quick-card:nth-child(2){
-    background:linear-gradient(135deg,#059669,#047857);
-}
-
-.quick-card:nth-child(3){
-    background:linear-gradient(135deg,#ea580c,#c2410c);
-}
-
-.quick-card:nth-child(4){
-    background:linear-gradient(135deg,#7c3aed,#5b21b6);
-}
-
-.quick-card h3,
-.quick-card p{
-    color:white;
-}
-
-/* DRUG CALCULATION */
-.drug-section{
-    margin-top:55px;
-    background:linear-gradient(135deg,#eff6ff,#ecfeff);
-    padding:30px 20px;
-    border-radius:25px;
-    border:1px solid #bae6fd;
-}
-
-.drug-title{
-    text-align:center;
-    margin-bottom:30px;
-}
-
-.drug-title h2{
+.resource-card h3{
     color:#075985;
-    font-size:30px;
+    margin-bottom:7px;
 }
 
-.drug-title p{
-    color:#475569;
+.resource-card p{
+    font-size:14px;
+    color:#697781;
+}
+
+.resource-card a{
+    display:inline-block;
+    margin-top:12px;
+    color:#087f8c;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+/* ================= DRUG CALCULATION ================= */
+
+.drug-section{
+    background:linear-gradient(135deg,#ecfeff,#f0f9ff);
+    border-radius:20px;
+    padding:30px;
+    border:1px solid #d7eef1;
+}
+
+.drug-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    margin-bottom:20px;
+}
+
+.drug-header h2{
+    color:#075985;
+}
+
+.drug-header p{
+    color:#65747d;
+    font-size:14px;
+}
+
+.open-btn{
+    border:none;
+    background:#087f8c;
+    color:white;
+    padding:12px 18px;
+    border-radius:9px;
+    cursor:pointer;
+    font-weight:bold;
+    white-space:nowrap;
+}
+
+.calculator{
+    display:none;
+    background:white;
+    padding:22px;
+    border-radius:15px;
+    margin-top:20px;
+}
+
+.calculator.show{
+    display:block;
 }
 
 .calc-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:20px;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
 }
 
 .calc-card{
-    background:white;
-    border-radius:20px;
-    padding:25px;
-    box-shadow:0 6px 20px rgba(0,0,0,.08);
-    border:1px solid #e2e8f0;
+    background:#f8fafb;
+    border:1px solid #e1e9ed;
+    border-radius:13px;
+    padding:18px;
 }
 
 .calc-card h3{
     color:#075985;
-    margin-bottom:15px;
+    font-size:17px;
+    margin-bottom:12px;
 }
 
-.calc-card input,
-.calc-card select{
+.calc-card input{
     width:100%;
-    padding:12px;
-    border:1px solid #cbd5e1;
-    border-radius:10px;
-    margin:6px 0;
-    font-size:15px;
+    padding:11px;
+    margin-bottom:9px;
+    border:1px solid #ccd8dd;
+    border-radius:7px;
     outline:none;
 }
 
-.calc-card input:focus,
-.calc-card select:focus{
-    border-color:#0284c7;
-}
-
-.calc-btn{
+.calc-card button{
     width:100%;
-    border:none;
-    padding:12px;
-    margin-top:10px;
-    background:linear-gradient(135deg,#0284c7,#0369a1);
+    padding:10px;
+    background:#087f8c;
     color:white;
-    border-radius:10px;
-    font-size:16px;
-    font-weight:bold;
+    border:none;
+    border-radius:7px;
     cursor:pointer;
-}
-
-.calc-btn:hover{
-    opacity:.9;
+    font-weight:bold;
 }
 
 .result{
-    margin-top:15px;
-    background:#ecfdf5;
-    border:1px solid #86efac;
-    color:#166534;
-    padding:12px;
-    border-radius:10px;
-    font-weight:bold;
-    min-height:25px;
-}
-
-.formula{
-    background:#f8fafc;
+    margin-top:12px;
     padding:10px;
-    border-radius:8px;
-    font-size:13px;
-    margin-top:10px;
-    color:#475569;
-}
-
-/* SAFETY */
-.safety{
-    margin-top:25px;
-    background:#fff7ed;
-    border:1px solid #fdba74;
-    padding:18px;
-    border-radius:15px;
-    color:#9a3412;
+    background:#e6fffa;
+    color:#075985;
+    border-radius:7px;
+    font-weight:bold;
     font-size:14px;
 }
 
-/* FOOTER */
-footer{
-    margin-top:60px;
-    background:#063970;
-    color:white;
+/* ================= EXAM ================= */
+
+.exam-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.exam-card{
+    background:white;
+    padding:22px;
+    border-radius:15px;
+    box-shadow:0 5px 18px rgba(0,0,0,.05);
+}
+
+.exam-card h3{
+    color:#075985;
+    margin-bottom:8px;
+}
+
+.exam-card ul{
+    padding-left:20px;
+    color:#63727c;
+    font-size:14px;
+}
+
+/* ================= CLINICAL ================= */
+
+.clinical-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.clinical-card{
+    background:white;
+    border-radius:13px;
+    padding:20px;
     text-align:center;
-    padding:30px 20px;
+    border:1px solid #e6ecef;
+}
+
+.clinical-card .icon{
+    font-size:30px;
+    margin-bottom:8px;
+}
+
+.clinical-card h3{
+    color:#075985;
+    font-size:16px;
+}
+
+.clinical-card p{
+    color:#75828a;
+    font-size:13px;
+}
+
+/* ================= CTA ================= */
+
+.cta{
+    background:linear-gradient(135deg,#075985,#087f8c);
+    color:white;
+    border-radius:20px;
+    padding:40px 25px;
+    text-align:center;
+}
+
+.cta h2{
+    font-size:28px;
+    margin-bottom:8px;
+}
+
+.cta p{
+    opacity:.9;
+    margin-bottom:20px;
+}
+
+.cta a{
+    display:inline-block;
+    background:white;
+    color:#075985;
+    padding:12px 22px;
+    border-radius:9px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#102a36;
+    color:#d5e0e5;
+    padding:35px 20px;
+    text-align:center;
+}
+
+.footer-logo{
+    font-size:21px;
+    font-weight:bold;
+    margin-bottom:8px;
 }
 
 footer p{
-    opacity:.9;
-    font-size:14px;
+    font-size:13px;
+    color:#aab8bf;
 }
 
-/* MOBILE */
-@media(max-width:600px){
+.footer-links{
+    margin:15px 0;
+}
 
-    header{
-        padding-bottom:30px;
+.footer-links a{
+    color:#d5e0e5;
+    text-decoration:none;
+    margin:0 8px;
+    font-size:13px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+    .hero-inner{
+        grid-template-columns:1fr;
     }
 
-    .logo{
-        font-size:23px;
+    .hero-card{
+        display:none;
     }
 
-    .hero h1{
-        font-size:28px;
+    .quick-grid{
+        grid-template-columns:repeat(2,1fr);
     }
 
-    .hero p{
-        font-size:15px;
+    .resource-grid,
+    .exam-grid{
+        grid-template-columns:1fr 1fr;
     }
 
-    .search-box{
-        margin-top:20px;
-    }
-
-    .container{
-        padding:0 12px;
-    }
-
-    .section-title h2{
-        font-size:24px;
+    .clinical-grid{
+        grid-template-columns:1fr 1fr;
     }
 
     .calc-grid{
         grid-template-columns:1fr;
     }
 
-    .drug-section{
-        padding:20px 12px;
+    nav{
+        display:none;
+    }
+}
+
+@media(max-width:600px){
+
+    .hero{
+        padding:38px 15px;
     }
 
-    .calc-card{
-        padding:18px;
+    .hero h1{
+        font-size:31px;
+    }
+
+    .container{
+        padding:35px 15px;
+    }
+
+    .quick-grid,
+    .resource-grid,
+    .exam-grid,
+    .clinical-grid{
+        grid-template-columns:1fr;
+    }
+
+    .drug-section{
+        padding:20px;
+    }
+
+    .drug-header{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .open-btn{
+        width:100%;
+    }
+
+    .section-title h2{
+        font-size:23px;
+    }
+
+    .navbar{
+        padding:13px 15px;
+    }
+
+    .logo{
+        font-size:19px;
+    }
+
+    .search-box{
+        flex-direction:column;
+        gap:5px;
+        background:transparent;
+        box-shadow:none;
+    }
+
+    .search-box input{
+        background:white;
+        border-radius:8px;
+    }
+
+    .search-box button{
+        padding:11px;
     }
 }
 </style>
@@ -339,285 +614,363 @@ footer p{
 
 <body>
 
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
+
 <header>
-<div class="header-inner">
+
+<div class="navbar">
 
 <div class="logo">
-🩺 NURSING CAREER
+🩺 Nursing <span>Career</span>
 </div>
 
-<div class="hero">
-<h1>Your Complete Nursing Education Platform</h1>
-<p>Learn • Practice • Prepare • Build Your Nursing Career</p>
+<nav>
+<a href="#home">Home</a>
+<a href="#videos">Videos</a>
+<a href="#resources">Resources</a>
+<a href="#drug">Drug Calculation</a>
+<a href="#exam">Exam</a>
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+<div class="hero-inner">
+
+<div>
+
+<h1>
+Learn Nursing.<br>
+<span>Build Your Career.</span>
+</h1>
+
+<p>
+Nursing Career is a nursing education platform for
+nursing students and registered nurses.
+Get notes, MCQs, clinical knowledge, exam preparation
+and useful nursing tools in one place.
+</p>
 
 <div class="search-box">
+
 <input
-id="searchInput"
 type="text"
-placeholder="Search nursing resources..."
+id="searchInput"
+placeholder="Search Nursing Career..."
 >
-<button onclick="searchSite()">Search</button>
+
+<button onclick="searchSite()">
+Search
+</button>
+
 </div>
 
 </div>
+
+
+<div class="hero-card">
+
+<div class="hero-icon">👩‍⚕️</div>
+
+<h3>Nursing Education</h3>
+
+<p>
+Study smarter with nursing notes,
+MCQs, clinical resources and practical tools.
+</p>
+
 </div>
-</header>
+
+</div>
+
+</section>
+
 
 
 <main class="container">
 
-<!-- QUICK ACCESS -->
+
+<!-- ================= QUICK ACCESS ================= -->
+
+<section>
+
 <div class="section-title">
+
 <h2>Quick Access</h2>
-<p>Everything you need in one place</p>
+
+<p>Everything you need for your nursing study</p>
+
 </div>
 
-<div class="grid">
 
-<a href="#courses" class="card quick-card">
-<div class="icon">📚</div>
-<h3>Courses</h3>
-<p>Nursing courses & study materials</p>
-</a>
+<div class="quick-grid">
 
-<a href="#exam" class="card quick-card">
-<div class="icon">📝</div>
+<div class="quick-card">
+
+<div class="quick-icon">📚</div>
+
+<h3>Courses & Notes</h3>
+
+<p>
+Subject-wise nursing notes and study materials.
+</p>
+
+</div>
+
+
+<div class="quick-card">
+
+<div class="quick-icon">📝</div>
+
 <h3>Exam Zone</h3>
-<p>MCQ, model tests & previous questions</p>
-</a>
 
-<a href="#clinical" class="card quick-card">
-<div class="icon">🩺</div>
-<h3>Clinical</h3>
-<p>Clinical skills & nursing procedures</p>
-</a>
-
-<a href="#drug-calculation" class="card quick-card">
-<div class="icon">🧮</div>
-<h3>Drug Calculation</h3>
-<p>Practice medication calculations</p>
-</a>
+<p>
+MCQ, license exam and government job preparation.
+</p>
 
 </div>
 
 
-<!-- COURSES -->
-<div class="section-title" id="courses">
-<h2>Nursing Courses</h2>
-<p>Choose your nursing program</p>
-</div>
+<div class="quick-card">
 
-<div class="grid">
+<div class="quick-icon">🏥</div>
 
-<a href="#" class="card">
-<div class="icon">🎓</div>
-<h3>B.Sc. Nursing</h3>
-<p>Complete B.Sc. Nursing study resources.</p>
-</a>
-
-<a href="#" class="card">
-<div class="icon">📖</div>
-<h3>Diploma Nursing</h3>
-<p>Diploma in Nursing Science & Midwifery.</p>
-</a>
-
-<a href="#" class="card">
-<div class="icon">👶</div>
-<h3>Diploma Midwifery</h3>
-<p>Midwifery study materials and preparation.</p>
-</a>
-
-</div>
-
-
-<!-- NURSING RESOURCES -->
-<div class="section-title">
-<h2>Nursing Resources</h2>
-<p>Essential study materials for nursing students</p>
-</div>
-
-<div class="grid">
-
-<a href="#" class="card">
-<div class="icon">📚</div>
-<h3>Nursing Notes</h3>
-<p>Subject-wise nursing notes.</p>
-</a>
-
-<a href="#" class="card">
-<div class="icon">🩺</div>
 <h3>Clinical Nursing</h3>
-<p>Clinical skills and procedures.</p>
-</a>
 
-<a href="#" class="card">
-<div class="icon">💊</div>
-<h3>Drugs & Pharmacology</h3>
-<p>Drug information and pharmacology.</p>
-</a>
+<p>
+Viva, procedures, emergency and ward knowledge.
+</p>
 
-<a href="#" class="card">
-<div class="icon">🧪</div>
-<h3>Lab Values</h3>
-<p>Important laboratory values.</p>
-</a>
+</div>
 
-<a href="#" class="card">
-<div class="icon">🦠</div>
-<h3>Diseases</h3>
-<p>Common diseases and nursing management.</p>
-</a>
 
-<a href="#" class="card">
-<div class="icon">📋</div>
-<h3>Care Plans</h3>
-<p>Nursing care plans and diagnoses.</p>
-</a>
+<div class="quick-card">
 
-<a href="#" class="card">
-<div class="icon">🤰</div>
-<h3>Midwifery</h3>
-<p>Maternal and newborn nursing.</p>
-</a>
+<div class="quick-icon">🧮</div>
 
-<a href="#" class="card">
-<div class="icon">👶</div>
-<h3>Pediatric Nursing</h3>
-<p>Pediatric nursing resources.</p>
-</a>
-
-<a href="#drug-calculation" class="card">
-<div class="icon">🧮</div>
 <h3>Drug Calculation</h3>
-<p>Dose, IV flow, mg/kg and medication calculations.</p>
-</a>
+
+<p>
+Quick nursing dose and IV calculation tools.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= VIDEO ================= -->
+
+<section id="videos">
+
+<div class="section-title">
+
+<h2>🎥 Nursing Career Videos</h2>
+
+<p>Latest nursing classes, tips and educational videos</p>
 
 </div>
 
 
-<!-- CLINICAL -->
-<div class="section-title" id="clinical">
-<h2>Clinical Nursing Hub</h2>
-<p>Essential clinical skills</p>
-</div>
+<div class="video-section">
 
-<div class="grid">
+<div class="video-box">
 
-<a href="#" class="card">
-<div class="icon">❤️</div>
-<h3>Vital Signs</h3>
-<p>BP, pulse, respiration, temperature and SpO₂.</p>
-</a>
+<!--
+IMPORTANT:
+Replace YOUR_YOUTUBE_UPLOADS_PLAYLIST_ID
+with your YouTube uploads playlist ID.
+-->
 
-<a href="#" class="card">
-<div class="icon">💉</div>
-<h3>IV Cannulation</h3>
-<p>IV cannulation procedure and precautions.</p>
-</a>
-
-<a href="#" class="card">
-<div class="icon">🫁</div>
-<h3>Oxygen Therapy</h3>
-<p>Oxygen devices and nursing care.</p>
-</a>
-
-<a href="#" class="card">
-<div class="icon">🩸</div>
-<h3>Blood Transfusion</h3>
-<p>Blood transfusion procedure and safety.</p>
-</a>
-
-<a href="#" class="card">
-<div class="icon">🧴</div>
-<h3>Catheterization</h3>
-<p>Urinary catheterization procedure.</p>
-</a>
-
-<a href="#" class="card">
-<div class="icon">〰️</div>
-<h3>NG Tube</h3>
-<p>Nasogastric tube insertion and care.</p>
-</a>
-
-<a href="#" class="card">
-<div class="icon">🫁</div>
-<h3>Suction</h3>
-<p>Airway suctioning procedure.</p>
-</a>
-
-<a href="#" class="card">
-<div class="icon">🚑</div>
-<h3>CPR</h3>
-<p>Basic Life Support and CPR.</p>
-</a>
+<iframe
+src="https://www.youtube.com/embed/videoseries?list=YOUR_YOUTUBE_UPLOADS_PLAYLIST_ID"
+title="Nursing Career Latest Videos"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen>
+</iframe>
 
 </div>
 
 
-<!-- EXAM -->
-<div class="section-title" id="exam">
-<h2>Exam Preparation</h2>
-<p>Prepare for your nursing examinations</p>
-</div>
+<div class="video-info">
 
-<div class="grid">
+<h3>Latest Nursing Career Videos</h3>
 
-<a href="#" class="card">
-<div class="icon">📜</div>
-<h3>Licensing Examination</h3>
-<p>Nursing licensing exam preparation.</p>
-</a>
-
-<a href="#" class="card">
-<div class="icon">🏛️</div>
-<h3>Government Nursing Exam</h3>
-<p>Government nurse recruitment preparation.</p>
-</a>
-
-<a href="#" class="card">
-<div class="icon">📝</div>
-<h3>Model Test</h3>
-<p>Practice MCQ and model tests.</p>
-</a>
-
-<a href="#" class="card">
-<div class="icon">📚</div>
-<h3>Previous Questions</h3>
-<p>Previous nursing examination questions.</p>
-</a>
+<p>
+নতুন Nursing Career ভিডিও YouTube channel-এ upload হলে
+এই section-এ automatically playlist থেকে দেখা যাবে।
+</p>
 
 </div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= RESOURCES ================= -->
+
+<section id="resources">
+
+<div class="section-title">
+
+<h2>📚 Nursing Resources</h2>
+
+<p>Useful learning materials for nursing students</p>
+
+</div>
+
+
+<div class="resource-grid">
+
+<div class="resource-card">
+
+<h3>📖 Nursing Notes</h3>
+
+<p>
+Fundamental, Anatomy, Physiology, Microbiology,
+Medical-Surgical and other nursing subjects.
+</p>
+
+<a href="#">Explore Notes →</a>
+
+</div>
+
+
+<div class="resource-card">
+
+<h3>📝 Nursing MCQ</h3>
+
+<p>
+Practice important nursing MCQs for license,
+government and academic examinations.
+</p>
+
+<a href="#">Practice MCQ →</a>
+
+</div>
+
+
+<div class="resource-card">
+
+<h3>🎓 License Exam</h3>
+
+<p>
+Important suggestions, MCQs and preparation
+materials for nursing licensing examination.
+</p>
+
+<a href="#">Prepare Now →</a>
+
+</div>
+
+
+<div class="resource-card">
+
+<h3>🇧🇩 Government Job</h3>
+
+<p>
+Nursing recruitment exam preparation,
+GK, English and technical nursing topics.
+</p>
+
+<a href="#">Exam Preparation →</a>
+
+</div>
+
+
+<div class="resource-card">
+
+<h3>🩺 Viva Preparation</h3>
+
+<p>
+Nursing viva questions and practical clinical
+interview preparation.
+</p>
+
+<a href="#">Viva Notes →</a>
+
+</div>
+
+
+<div class="resource-card">
+
+<h3>🏥 Clinical Skills</h3>
+
+<p>
+Learn important nursing procedures and
+clinical practice points.
+</p>
+
+<a href="#">Clinical Guide →</a>
+
+</div>
+
+</div>
+
+</section>
+
 
 
 <!-- ================= DRUG CALCULATION ================= -->
 
-<section class="drug-section" id="drug-calculation">
+<section id="drug">
 
-<div class="drug-title">
-<h2>🧮 Drug Calculation Hub</h2>
-<p>Practice essential nursing medication calculations</p>
+<div class="drug-section">
+
+<div class="drug-header">
+
+<div>
+
+<h2>🧮 Drug Calculation</h2>
+
+<p>
+Quick calculator for common nursing medication calculations.
+</p>
+
 </div>
+
+<button
+class="open-btn"
+onclick="toggleCalculator()"
+id="calculatorButton"
+>
+Open Calculator
+</button>
+
+</div>
+
+
+<div
+class="calculator"
+id="calculator"
+>
 
 
 <div class="calc-grid">
 
-<!-- DOSE CALCULATION -->
+
+<!-- DOSE -->
+
 <div class="calc-card">
 
 <h3>💊 Dose Calculation</h3>
 
 <input
 type="number"
-id="desiredDose"
-placeholder="Desired dose"
+id="orderedDose"
+placeholder="Ordered dose"
 >
-
-<select id="desiredUnit">
-<option value="mg">mg</option>
-<option value="mcg">mcg</option>
-<option value="g">g</option>
-</select>
 
 <input
 type="number"
@@ -625,72 +978,65 @@ id="availableDose"
 placeholder="Available dose"
 >
 
-<select id="availableUnit">
-<option value="mg">mg</option>
-<option value="mcg">mcg</option>
-<option value="g">g</option>
-</select>
-
 <input
 type="number"
 id="quantity"
-placeholder="Available quantity (mL/tablet)"
+placeholder="Quantity / mL"
 >
 
-<button class="calc-btn" onclick="calculateDose()">
-Calculate Dose
+<button onclick="doseCalculation()">
+Calculate
 </button>
 
-<div class="result" id="doseResult"></div>
-
-<div class="formula">
-Formula: (Desired Dose ÷ Available Dose) × Quantity
+<div
+class="result"
+id="doseResult"
+>
+Result will appear here
 </div>
 
 </div>
+
 
 
 <!-- IV FLOW -->
+
 <div class="calc-card">
 
-<h3>💧 IV Flow & Drip Rate</h3>
+<h3>💧 IV Flow Rate</h3>
 
 <input
 type="number"
-id="ivVolume"
+id="volume"
 placeholder="Volume (mL)"
 >
 
 <input
 type="number"
-id="ivHours"
+id="time"
 placeholder="Time (hours)"
 >
 
-<input
-type="number"
-id="dropFactor"
-placeholder="Drop factor (gtt/mL)"
->
-
-<button class="calc-btn" onclick="calculateIV()">
-Calculate IV Rate
+<button onclick="ivCalculation()">
+Calculate
 </button>
 
-<div class="result" id="ivResult"></div>
-
-<div class="formula">
-mL/hr = Volume ÷ Hours<br>
-gtt/min = Volume × Drop Factor ÷ Minutes
+<div
+class="result"
+id="ivResult"
+>
+Result will appear here
 </div>
 
 </div>
+
 
 
 <!-- MG/KG -->
+
 <div class="calc-card">
 
-<h3>⚖️ Weight-Based Dose</h3>
+<h3>⚖️ mg/kg Dose</h3>
 
 <input
 type="number"
@@ -700,517 +1046,418 @@ placeholder="Patient weight (kg)"
 
 <input
 type="number"
-id="mgKg"
-placeholder="Ordered dose (mg/kg/dose)"
+id="doseKg"
+placeholder="Dose (mg/kg)"
 >
 
-<input
-type="number"
-id="dosesPerDay"
-placeholder="Doses per day"
->
-
-<button class="calc-btn" onclick="calculateMgKg()">
+<button onclick="mgKgCalculation()">
 Calculate
 </button>
 
-<div class="result" id="mgKgResult"></div>
-
-<div class="formula">
-Dose = Weight × mg/kg/dose
-</div>
-
-</div>
-
-
-<!-- CONVERTER -->
-<div class="calc-card">
-
-<h3>🔄 Drug Unit Converter</h3>
-
-<input
-type="number"
-id="convertValue"
-placeholder="Enter value"
+<div
+class="result"
+id="mgKgResult"
 >
-
-<select id="convertFrom">
-<option value="mcg">mcg</option>
-<option value="mg">mg</option>
-<option value="g">g</option>
-</select>
-
-<select id="convertTo">
-<option value="mcg">mcg</option>
-<option value="mg">mg</option>
-<option value="g">g</option>
-</select>
-
-<button class="calc-btn" onclick="convertUnit()">
-Convert
-</button>
-
-<div class="result" id="convertResult"></div>
-
-<div class="formula">
-1 g = 1000 mg<br>
-1 mg = 1000 mcg
+Result will appear here
 </div>
 
 </div>
 
 
-<!-- RECONSTITUTION -->
-<div class="calc-card">
-
-<h3>💉 Vial Reconstitution</h3>
-
-<input
-type="number"
-id="vialDrug"
-placeholder="Drug amount in vial (mg)"
->
-
-<input
-type="number"
-id="finalVolume"
-placeholder="Final volume (mL)"
->
-
-<input
-type="number"
-id="requiredDose"
-placeholder="Required dose (mg)"
->
-
-<button class="calc-btn" onclick="calculateReconstitution()">
-Calculate Volume
-</button>
-
-<div class="result" id="reconstitutionResult"></div>
-
-<div class="formula">
-Concentration = Drug ÷ Volume<br>
-Required volume = Dose ÷ Concentration
 </div>
 
 </div>
 
-
-<!-- BSA -->
-<div class="calc-card">
-
-<h3>📐 BSA Dose Calculation</h3>
-
-<input
-type="number"
-id="bsaWeight"
-placeholder="Weight (kg)"
->
-
-<input
-type="number"
-id="bsaHeight"
-placeholder="Height (cm)"
->
-
-<input
-type="number"
-id="bsaDose"
-placeholder="Ordered dose (mg/m²)"
->
-
-<button class="calc-btn" onclick="calculateBSA()">
-Calculate BSA Dose
-</button>
-
-<div class="result" id="bsaResult"></div>
-
-<div class="formula">
-Mosteller BSA = √[(Height × Weight) ÷ 3600]
-</div>
-
-</div>
-
-</div>
-
-
-<div class="safety">
-<strong>⚠️ Nursing Safety Notice:</strong><br>
-This calculator is intended for nursing education and calculation practice.
-Always verify medication calculations independently and follow the prescription,
-medication label, patient-specific assessment, pharmacist review and institutional
-medication-safety protocols before administering any medication.
 </div>
 
 </section>
 
+
+
+<!-- ================= EXAM ================= -->
+
+<section id="exam">
+
+<div class="section-title">
+
+<h2>📝 Exam Preparation</h2>
+
+<p>Prepare for your next nursing examination</p>
+
+</div>
+
+
+<div class="exam-grid">
+
+<div class="exam-card">
+
+<h3>🎓 Nursing License</h3>
+
+<ul>
+
+<li>Important MCQs</li>
+<li>Subject-wise preparation</li>
+<li>Last-minute revision</li>
+<li>Practice questions</li>
+
+</ul>
+
+</div>
+
+
+<div class="exam-card">
+
+<h3>🏛️ Government Nursing Job</h3>
+
+<ul>
+
+<li>Previous questions</li>
+<li>Nursing technical</li>
+<li>English</li>
+<li>General Knowledge</li>
+
+</ul>
+
+</div>
+
+
+<div class="exam-card">
+
+<h3>📚 Academic Exam</h3>
+
+<ul>
+
+<li>Short notes</li>
+<li>Important questions</li>
+<li>Clinical topics</li>
+<li>Final examination preparation</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= CLINICAL ================= -->
+
+<section id="clinical">
+
+<div class="section-title">
+
+<h2>🏥 Clinical Nursing</h2>
+
+<p>Practical knowledge for real clinical situations</p>
+
+</div>
+
+
+<div class="clinical-grid">
+
+
+<div class="clinical-card">
+
+<div class="icon">🫀</div>
+
+<h3>Emergency</h3>
+
+<p>Emergency nursing basics</p>
+
+</div>
+
+
+<div class="clinical-card">
+
+<div class="icon">🧠</div>
+
+<h3>Neurology</h3>
+
+<p>Stroke, GCS and neuro care</p>
+
+</div>
+
+
+<div class="clinical-card">
+
+<div class="icon">👶</div>
+
+<h3>NICU</h3>
+
+<p>Newborn and neonatal care</p>
+
+</div>
+
+
+<div class="clinical-card">
+
+<div class="icon">❤️</div>
+
+<h3>ICU / CCU</h3>
+
+<p>Critical patient management</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ================= CTA ================= -->
+
+<section>
+
+<div class="cta">
+
+<h2>🚀 Keep Learning With Nursing Career</h2>
+
+<p>
+Learn nursing knowledge, prepare for exams and improve your clinical skills.
+</p>
+
+<a href="#videos">
+Watch Latest Videos
+</a>
+
+</div>
+
+</section>
+
+
 </main>
 
 
-<!-- FOOTER -->
+
+<!-- ================= FOOTER ================= -->
+
 <footer>
 
-<h3>🩺 NURSING CAREER</h3>
+<div class="footer-logo">
+🩺 Nursing Career
+</div>
 
 <p>
-Your Complete Nursing Education Platform
+Nursing Education • Exam Preparation • Clinical Knowledge
 </p>
 
-<p style="margin-top:10px;">
+
+<div class="footer-links">
+
+<a href="#home">Home</a>
+
+<a href="#videos">Videos</a>
+
+<a href="#resources">Resources</a>
+
+<a href="#drug">Drug Calculation</a>
+
+<a href="#exam">Exam</a>
+
+</div>
+
+
+<p>
 © 2026 Nursing Career. All Rights Reserved.
 </p>
 
 </footer>
 
 
+
+<!-- ================= JAVASCRIPT ================= -->
+
 <script>
 
-/* =========================
-   UNIT CONVERSION
-========================= */
-
-function toMg(value, unit){
-
-    if(unit === "g"){
-        return value * 1000;
-    }
-
-    if(unit === "mcg"){
-        return value / 1000;
-    }
-
-    return value;
-}
-
-
-/* =========================
-   DOSE CALCULATION
-========================= */
-
-function calculateDose(){
-
-    const desired =
-        parseFloat(document.getElementById("desiredDose").value);
-
-    const desiredUnit =
-        document.getElementById("desiredUnit").value;
-
-    const available =
-        parseFloat(document.getElementById("availableDose").value);
-
-    const availableUnit =
-        document.getElementById("availableUnit").value;
-
-    const quantity =
-        parseFloat(document.getElementById("quantity").value);
-
-    const result =
-        document.getElementById("doseResult");
-
-    if(
-        isNaN(desired) ||
-        isNaN(available) ||
-        isNaN(quantity) ||
-        available <= 0
-    ){
-        result.innerHTML = "⚠️ Please enter valid values.";
-        return;
-    }
-
-    const desiredMg = toMg(desired,desiredUnit);
-    const availableMg = toMg(available,availableUnit);
-
-    const answer =
-        (desiredMg / availableMg) * quantity;
-
-    result.innerHTML =
-        "Required amount = " + answer.toFixed(2) + " units";
-
-}
-
-
-/* =========================
-   IV FLOW
-========================= */
-
-function calculateIV(){
-
-    const volume =
-        parseFloat(document.getElementById("ivVolume").value);
-
-    const hours =
-        parseFloat(document.getElementById("ivHours").value);
-
-    const drop =
-        parseFloat(document.getElementById("dropFactor").value);
-
-    const result =
-        document.getElementById("ivResult");
-
-    if(
-        isNaN(volume) ||
-        isNaN(hours) ||
-        isNaN(drop) ||
-        hours <= 0
-    ){
-        result.innerHTML = "⚠️ Please enter valid values.";
-        return;
-    }
-
-    const mlHour =
-        volume / hours;
-
-    const minutes =
-        hours * 60;
-
-    const gtt =
-        (volume * drop) / minutes;
-
-    result.innerHTML =
-        "mL/hr = " + mlHour.toFixed(2) +
-        "<br>gtt/min ≈ " + Math.round(gtt);
-
-}
-
-
-/* =========================
-   MG/KG
-========================= */
-
-function calculateMgKg(){
-
-    const weight =
-        parseFloat(document.getElementById("weight").value);
-
-    const mgKg =
-        parseFloat(document.getElementById("mgKg").value);
-
-    const doses =
-        parseFloat(document.getElementById("dosesPerDay").value);
-
-    const result =
-        document.getElementById("mgKgResult");
-
-    if(
-        isNaN(weight) ||
-        isNaN(mgKg) ||
-        isNaN(doses) ||
-        weight <= 0 ||
-        mgKg <= 0 ||
-        doses <= 0
-    ){
-        result.innerHTML = "⚠️ Please enter valid values.";
-        return;
-    }
-
-    const dose =
-        weight * mgKg;
-
-    const daily =
-        dose * doses;
-
-    result.innerHTML =
-        "Dose per administration = " +
-        dose.toFixed(2) +
-        " mg<br>" +
-        "Total daily dose = " +
-        daily.toFixed(2) +
-        " mg/day";
-
-}
-
-
-/* =========================
-   UNIT CONVERTER
-========================= */
-
-function convertUnit(){
-
-    const value =
-        parseFloat(document.getElementById("convertValue").value);
-
-    const from =
-        document.getElementById("convertFrom").value;
-
-    const to =
-        document.getElementById("convertTo").value;
-
-    const result =
-        document.getElementById("convertResult");
-
-    if(isNaN(value)){
-        result.innerHTML = "⚠️ Enter a valid value.";
-        return;
-    }
-
-    const mg =
-        toMg(value,from);
-
-    let answer;
-
-    if(to === "g"){
-        answer = mg / 1000;
-    }
-    else if(to === "mcg"){
-        answer = mg * 1000;
-    }
-    else{
-        answer = mg;
-    }
-
-    result.innerHTML =
-        value + " " + from +
-        " = " +
-        answer + " " + to;
-
-}
-
-
-/* =========================
-   RECONSTITUTION
-========================= */
-
-function calculateReconstitution(){
-
-    const drug =
-        parseFloat(document.getElementById("vialDrug").value);
-
-    const volume =
-        parseFloat(document.getElementById("finalVolume").value);
-
-    const required =
-        parseFloat(document.getElementById("requiredDose").value);
-
-    const result =
-        document.getElementById("reconstitutionResult");
-
-    if(
-        isNaN(drug) ||
-        isNaN(volume) ||
-        isNaN(required) ||
-        drug <= 0 ||
-        volume <= 0
-    ){
-        result.innerHTML = "⚠️ Please enter valid values.";
-        return;
-    }
-
-    const concentration =
-        drug / volume;
-
-    const requiredVolume =
-        required / concentration;
-
-    result.innerHTML =
-        "Concentration = " +
-        concentration.toFixed(2) +
-        " mg/mL<br>" +
-        "Required volume = " +
-        requiredVolume.toFixed(2) +
-        " mL";
-
-}
-
-
-/* =========================
-   BSA
-========================= */
-
-function calculateBSA(){
-
-    const weight =
-        parseFloat(document.getElementById("bsaWeight").value);
-
-    const height =
-        parseFloat(document.getElementById("bsaHeight").value);
-
-    const dose =
-        parseFloat(document.getElementById("bsaDose").value);
-
-    const result =
-        document.getElementById("bsaResult");
-
-    if(
-        isNaN(weight) ||
-        isNaN(height) ||
-        isNaN(dose) ||
-        weight <= 0 ||
-        height <= 0
-    ){
-        result.innerHTML = "⚠️ Please enter valid values.";
-        return;
-    }
-
-    const bsa =
-        Math.sqrt((height * weight) / 3600);
-
-    const finalDose =
-        bsa * dose;
-
-    result.innerHTML =
-        "BSA = " +
-        bsa.toFixed(2) +
-        " m²<br>" +
-        "Calculated dose = " +
-        finalDose.toFixed(2) +
-        " mg";
-
-}
-
-
-/* =========================
-   SEARCH
-========================= */
+/* ================= SEARCH ================= */
 
 function searchSite(){
 
     const input =
-        document.getElementById("searchInput");
+    document.getElementById("searchInput").value
+    .toLowerCase()
+    .trim();
 
-    const query =
-        input.value.trim().toLowerCase();
-
-    if(!query){
-        alert("Please enter something to search.");
+    if(!input){
+        alert("Please type something to search.");
         return;
     }
 
-    if(
-        query.includes("drug") ||
-        query.includes("dose") ||
-        query.includes("calculation") ||
-        query.includes("iv") ||
-        query.includes("mg/kg")
-    ){
+    const sections =
+    document.querySelectorAll("section");
 
-        document
-        .getElementById("drug-calculation")
-        .scrollIntoView({
-            behavior:"smooth"
-        });
+    let found = false;
 
-        return;
+    sections.forEach(section => {
+
+        if(
+            section.innerText
+            .toLowerCase()
+            .includes(input)
+        ){
+
+            section.scrollIntoView({
+                behavior:"smooth"
+            });
+
+            found = true;
+        }
+
+    });
+
+    if(!found){
+
+        alert(
+            "No matching content found.\n\nTry: MCQ, Exam, Clinical, Drug Calculation, Videos"
+        );
+
     }
 
-    alert(
-        "Search feature is ready. Searching for: " +
-        input.value
-    );
 }
 
 
-/* ENTER KEY SEARCH */
+/* ================= CALCULATOR TOGGLE ================= */
 
-document
-.getElementById("searchInput")
-.addEventListener("keydown",function(event){
+function toggleCalculator(){
 
-    if(event.key === "Enter"){
-        searchSite();
+    const calculator =
+    document.getElementById("calculator");
+
+    const button =
+    document.getElementById("calculatorButton");
+
+    calculator.classList.toggle("show");
+
+    if(calculator.classList.contains("show")){
+
+        button.innerText =
+        "Close Calculator";
+
+    }else{
+
+        button.innerText =
+        "Open Calculator";
+
     }
 
-});
+}
+
+
+/* ================= DOSE CALCULATION ================= */
+
+function doseCalculation(){
+
+    const ordered =
+    parseFloat(
+        document.getElementById("orderedDose").value
+    );
+
+    const available =
+    parseFloat(
+        document.getElementById("availableDose").value
+    );
+
+    const quantity =
+    parseFloat(
+        document.getElementById("quantity").value
+    );
+
+    if(
+        isNaN(ordered) ||
+        isNaN(available) ||
+        isNaN(quantity) ||
+        available === 0
+    ){
+
+        document.getElementById("doseResult").innerText =
+        "Please enter valid values.";
+
+        return;
+
+    }
+
+    const result =
+    (ordered / available) * quantity;
+
+    document.getElementById("doseResult").innerText =
+    "Give: " + result.toFixed(2) + " mL";
+
+}
+
+
+/* ================= IV FLOW ================= */
+
+function ivCalculation(){
+
+    const volume =
+    parseFloat(
+        document.getElementById("volume").value
+    );
+
+    const time =
+    parseFloat(
+        document.getElementById("time").value
+    );
+
+    if(
+        isNaN(volume) ||
+        isNaN(time) ||
+        time === 0
+    ){
+
+        document.getElementById("ivResult").innerText =
+        "Please enter valid values.";
+
+        return;
+
+    }
+
+    const result =
+    volume / time;
+
+    document.getElementById("ivResult").innerText =
+    "Rate: " + result.toFixed(2) + " mL/hour";
+
+}
+
+
+/* ================= MG/KG ================= */
+
+function mgKgCalculation(){
+
+    const weight =
+    parseFloat(
+        document.getElementById("weight").value
+    );
+
+    const dose =
+    parseFloat(
+        document.getElementById("doseKg").value
+    );
+
+    if(
+        isNaN(weight) ||
+        isNaN(dose)
+    ){
+
+        document.getElementById("mgKgResult").innerText =
+        "Please enter valid values.";
+
+        return;
+
+    }
+
+    const result =
+    weight * dose;
+
+    document.getElementById("mgKgResult").innerText =
+    "Total dose: " + result.toFixed(2) + " mg";
+
+}
 
 </script>
 
