@@ -12,6 +12,26 @@
   margin:0;
   padding:0;
 }
+<script>
+let timeLeft = 600;
+
+const timer = setInterval(function() {
+  let minutes = Math.floor(timeLeft / 60);
+  let seconds = timeLeft % 60;
+
+  console.log(
+    "Time Left: " +
+    minutes + ":" + String(seconds).padStart(2, "0")
+  );
+
+  timeLeft--;
+
+  if (timeLeft < 0) {
+    clearInterval(timer);
+    alert("Time is up!");
+  }
+}, 1000);
+</script>
 
 body{
   font-family:Arial, sans-serif;
