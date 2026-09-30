@@ -1,228 +1,451 @@
-<script>
+<!DOCTYPE html>
 
-const answers = {
-  q1:"b",
-  q2:"c",
-  q3:"d",
-  q4:"b",
-  q5:"b",
-  q6:"a",
-  q7:"a",
-  q8:"c",
-  q9:"b",
-  q10:"c"
-};
+<html lang="en">
 
-const correctAnswers = {
-  q1:"B. 12–20 breaths/min",
-  q2:"C. Heart",
-  q3:"D. Vitamin D",
-  q4:"B. 37°C",
-  q5:"B. WBC",
-  q6:"A. Muscle",
-  q7:"A. Blood Pressure",
-  q8:"C. Sphygmomanometer",
-  q9:"B. Vitamin C",
-  q10:"C. Lungs"
-};
+<head>
 
-let timeLeft = 600;
-let submitted = false;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-const timer = setInterval(function(){
+<title>Nursing Career - Model Test</title>
 
-  if(submitted) return;
+<style>
 
-  let minutes = Math.floor(timeLeft / 60);
-  let seconds = timeLeft % 60;
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
 
-  document.getElementById("timer").textContent =
-    String(minutes).padStart(2,"0") + ":" +
-    String(seconds).padStart(2,"0");
-
-  if(timeLeft <= 0){
-    clearInterval(timer);
-    submitTest();
-    return;
-  }
-
-  timeLeft--;
-
-},1000);
-
-
-// Answer select highlight
-document.querySelectorAll(".option input").forEach(function(input){
-
-  input.addEventListener("change",function(){
-
-    const name = this.name;
-
-    document.querySelectorAll(
-      'input[name="' + name + '"]'
-    ).forEach(function(item){
-
-      item.parentElement.classList.remove("selected");
-
-    });
-
-    this.parentElement.classList.add("selected");
-
-    updateProgress();
-
-  });
-
-});
-
-
-// Progress
-function updateProgress(){
-
-  let answered = 0;
-
-  for(let i = 1; i <= 10; i++){
-
-    if(
-      document.querySelector(
-        'input[name="q' + i + '"]:checked'
-      )
-    ){
-      answered++;
-    }
-
-  }
-
-  let percent = Math.round((answered / 10) * 100);
-
-  document.getElementById("progressBar").style.width =
-    Math.max(percent,10) + "%";
-
-  document.getElementById("progressText").textContent =
-    "Answered " + answered + " of 10";
-
-  document.getElementById("progressPercent").textContent =
-    percent + "%";
-
+body{
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    color:#1f2937;
 }
 
 
-// Submit Exam
-function submitTest(){
+/* HEADER */
 
-  if(submitted) return;
+header{
+    background:linear-gradient(135deg,#0f766e,#0891b2);
+    color:white;
+    padding:18px 20px;
+    position:sticky;
+    top:0;
+    z-index:10;
+    box-shadow:0 3px 12px rgba(0,0,0,.15);
+}
 
-  submitted = true;
-  clearInterval(timer);
+.header-inner{
+    max-width:1000px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+}
 
-  let score = 0;
+.logo{
+    font-size:24px;
+    font-weight:bold;
+}
 
-  let reviewHTML = "";
+.home-btn{
+    color:white;
+    text-decoration:none;
+    background:rgba(255,255,255,.15);
+    padding:9px 15px;
+    border-radius:8px;
+}
 
-  for(let i = 1; i <= 10; i++){
 
-    const questionNumber = "q" + i;
+/* MAIN */
 
-    const selected = document.querySelector(
-      'input[name="' + questionNumber + '"]:checked'
-    );
+.container{
+    max-width:900px;
+    margin:30px auto;
+    padding:0 15px;
+}
 
-    const selectedText = selected
-      ? selected.parentElement.textContent.trim()
-      : "No answer selected";
 
-    const correctText = correctAnswers[questionNumber];
+/* TEST HEADER */
 
-    if(selected && selected.value === answers[questionNumber]){
+.test-header{
+    background:white;
+    padding:25px;
+    border-radius:16px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    margin-bottom:20px;
+}
 
-      score++;
+.test-header h1{
+    color:#0f766e;
+    margin-bottom:8px;
+}
 
-      reviewHTML += `
-        <div style="
-          text-align:left;
-          padding:14px;
-          margin:10px 0;
-          border-radius:10px;
-          background:#ecfdf5;
-          border:1px solid #a7f3d0;
-        ">
-          <strong>Question ${i} — Correct ✓</strong>
-          <br>
-          Your Answer: ${selectedText}
-        </div>
-      `;
+.test-info{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    margin-top:18px;
+    flex-wrap:wrap;
+}
 
-    }else{
+.info-box{
+    flex:1;
+    min-width:130px;
+    background:#f0fdfa;
+    padding:14px;
+    border-radius:10px;
+    text-align:center;
+}
 
-      reviewHTML += `
-        <div style="
-          text-align:left;
-          padding:14px;
-          margin:10px 0;
-          border-radius:10px;
-          background:#fef2f2;
-          border:1px solid #fecaca;
-        ">
-          <strong>Question ${i} — Incorrect ✗</strong>
-          <br>
-          Your Answer: ${selectedText}
-          <br>
-          <strong>Correct Answer: ${correctText}</strong>
-        </div>
-      `;
+.info-box strong{
+    display:block;
+    font-size:20px;
+    color:#0f766e;
+}
 
+
+/* PROGRESS */
+
+.progress-wrap{
+    margin-top:20px;
+}
+
+.progress-text{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:7px;
+    font-size:14px;
+}
+
+.progress{
+    height:9px;
+    background:#e5e7eb;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress-bar{
+    height:100%;
+    width:0%;
+    background:#0f766e;
+    transition:.3s;
+}
+
+
+/* QUESTIONS */
+
+.question-card{
+    background:white;
+    padding:25px;
+    border-radius:16px;
+    margin-bottom:18px;
+    box-shadow:0 4px 15px rgba(0,0,0,.07);
+}
+
+.question-number{
+    display:inline-block;
+    background:#ccfbf1;
+    color:#0f766e;
+    padding:6px 11px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+    margin-bottom:12px;
+}
+
+.question{
+    font-size:19px;
+    font-weight:bold;
+    line-height:1.5;
+    margin-bottom:18px;
+}
+
+.option{
+    display:block;
+    border:2px solid #e5e7eb;
+    padding:14px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.option:hover{
+    border-color:#0f766e;
+    background:#f0fdfa;
+}
+
+.option input{
+    margin-right:10px;
+}
+
+.option.selected{
+    border-color:#0f766e;
+    background:#ecfdf5;
+}
+
+
+/* BUTTON */
+
+.submit-btn,
+.retake-btn{
+    border:0;
+    width:100%;
+    padding:15px;
+    border-radius:10px;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    color:white;
+    background:#0f766e;
+    margin-top:10px;
+}
+
+.submit-btn:hover,
+.retake-btn:hover{
+    background:#115e59;
+}
+
+
+/* RESULT */
+
+.result{
+    display:none;
+    background:white;
+    padding:35px 25px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
+}
+
+.result h2{
+    color:#0f766e;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:48px;
+    font-weight:bold;
+    color:#0891b2;
+    margin:15px 0;
+}
+
+.result-message{
+    font-size:17px;
+    margin-bottom:20px;
+}
+
+
+/* ANSWER REVIEW */
+
+.answer-review{
+    margin-top:25px;
+    text-align:left;
+}
+
+.answer-review h3{
+    text-align:center;
+    color:#0f766e;
+    margin-bottom:15px;
+}
+
+.answer-item{
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    line-height:1.6;
+}
+
+.answer-item.correct{
+    background:#ecfdf5;
+    border:1px solid #a7f3d0;
+    color:#047857;
+}
+
+.answer-item.wrong{
+    background:#fef2f2;
+    border:1px solid #fecaca;
+    color:#b91c1c;
+}
+
+.correct-answer{
+    font-weight:bold;
+    color:#047857;
+}
+
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:25px;
+    color:#6b7280;
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    .header-inner{
+        flex-direction:column;
     }
 
-  }
+    .test-header,
+    .question-card{
+        padding:20px;
+    }
 
-  const percentage = score * 10;
+    .question{
+        font-size:17px;
+    }
 
-  document.getElementById("quizForm").style.display = "none";
-  document.querySelector(".test-header").style.display = "none";
+    .info-box{
+        min-width:100%;
+    }
 
-  document.getElementById("result").style.display = "block";
-
-  document.getElementById("score").textContent =
-    score + "/10";
-
-  if(percentage >= 80){
-
-    document.getElementById("resultMessage").textContent =
-      "Excellent! Great job. Keep practicing!";
-
-  }else if(percentage >= 50){
-
-    document.getElementById("resultMessage").textContent =
-      "Good effort! Practice more to improve your score.";
-
-  }else{
-
-    document.getElementById("resultMessage").textContent =
-      "Keep practicing. Review the topics and try again!";
-
-  }
-
-
-  // Show answer review
-  const reviewBox = document.createElement("div");
-
-  reviewBox.innerHTML = `
-    <h3 style="
-      color:#0f766e;
-      margin:25px 0 15px;
-    ">
-      Answer Review
-    </h3>
-
-    ${reviewHTML}
-  `;
-
-  document.getElementById("result").appendChild(reviewBox);
-
-  document.getElementById("result").scrollIntoView({
-    behavior:"smooth",
-    block:"start"
-  });
+    .logo{
+        font-size:21px;
+    }
 
 }
 
-</script>
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+```
+<div class="header-inner">
+
+    <div class="logo">
+        🩺 Nursing Career
+    </div>
+
+    <a
+        class="home-btn"
+        href="index.html"
+    >
+        🏠 Home
+    </a>
+
+</div>
+```
+
+</header>
+
+<!-- MAIN -->
+
+<div class="container">
+
+```
+<!-- TEST HEADER -->
+
+<div class="test-header">
+
+    <h1>
+        📝 Nursing Career Model Test
+    </h1>
+
+    <p>
+        Test your basic nursing knowledge and check your score.
+    </p>
+
+
+    <div class="test-info">
+
+        <div class="info-box">
+
+            <strong>
+                10
+            </strong>
+
+            Questions
+
+        </div>
+
+
+        <div class="info-box">
+
+            <strong id="timer">
+                10:00
+            </strong>
+
+            Time Left
+
+        </div>
+
+
+        <div class="info-box">
+
+            <strong>
+                100%
+            </strong>
+
+            Total
+
+        </div>
+
+    </div>
+
+
+    <!-- PROGRESS -->
+
+    <div class="progress-wrap">
+
+        <div class="progress-text">
+
+            <span id="progressText">
+                Answered 0 of 10
+            </span>
+
+            <span id="progressPercent">
+                0%
+            </span>
+
+        </div>
+
+
+        <div class="progress">
+
+            <div
+                class="progress-bar"
+                id="progressBar"
+            ></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- QUIZ FORM -->
+
+<form id="quizForm">
+
+
+    <!-- QUESTION 1 -->
+
+    <div class="question-card">
+
+        <span class="question-number">
+            Question 1
+        </span>
+
+        <div class="question">
+            What is the normal respiratory rate for an adult?
+        </div>
+
+
+        <label class="option">
+```
