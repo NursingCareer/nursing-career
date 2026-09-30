@@ -2,997 +2,1743 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Complete Anatomy | Nursing Career</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
 body{
-font-family:Arial,Helvetica,sans-serif;
-background:#f4f7fb;color:#182235;line-height:1.7
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f7fb;
+    color:#172033;
+    line-height:1.75;
 }
+
 header{
-position:sticky;top:0;z-index:999;
-background:linear-gradient(135deg,#071952,#088395,#35a29f);
-color:#fff;padding:13px 16px;
-box-shadow:0 4px 18px #0003
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:linear-gradient(135deg,#0b7285,#1261a0,#5338a4);
+    color:white;
+    padding:14px 5%;
+    box-shadow:0 4px 18px rgba(0,0,0,.18);
 }
-.head{
-max-width:1150px;margin:auto;
-display:flex;justify-content:space-between;
-align-items:center;gap:10px
+
+.nav{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
 }
-.logo{font-size:20px;font-weight:900}
-.logo small{display:block;font-size:9px;letter-spacing:2px}
-.back{
-color:#fff;text-decoration:none;
-border:1px solid #ffffff66;
-padding:7px 13px;border-radius:20px;font-size:13px
+
+.logo{
+    font-size:23px;
+    font-weight:900;
+    letter-spacing:1px;
 }
+
+.nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    background:rgba(255,255,255,.14);
+    padding:8px 14px;
+    border-radius:20px;
+}
+
 .hero{
-background:linear-gradient(135deg,#071952,#088395);
-color:#fff;text-align:center;padding:48px 18px 68px
+    background:linear-gradient(135deg,#083b66,#075985,#4c1d95);
+    color:white;
+    padding:55px 20px;
+    text-align:center;
 }
-.hero h1{font-size:40px;line-height:1.2}
-.hero p{max-width:800px;margin:10px auto}
-.container{max-width:1150px;margin:auto;padding:20px 14px 60px}
+
+.hero h1{
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    max-width:850px;
+    margin:auto;
+    font-size:17px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:25px 15px 60px;
+}
+
 .search{
-background:#fff;padding:15px;border-radius:18px;
-box-shadow:0 5px 22px #0001;
-margin-top:-38px;position:relative
+    margin:25px auto;
+    max-width:750px;
 }
+
 .search input{
-width:100%;padding:14px 16px;
-border:2px solid #e4e9ef;border-radius:12px;
-font-size:15px;outline:none
+    width:100%;
+    padding:16px 20px;
+    border:none;
+    border-radius:30px;
+    box-shadow:0 4px 18px rgba(0,0,0,.1);
+    font-size:16px;
+    outline:none;
 }
-.section-title{
-text-align:center;margin:35px 0 18px
+
+.notice{
+    background:white;
+    padding:20px;
+    border-left:6px solid #0ea5e9;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,.07);
+    margin-bottom:25px;
 }
-.section-title h2{font-size:28px;color:#071952}
-.section-title p{color:#667085}
-.chapters{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:15px
+
+.chapter-menu{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+    gap:12px;
+    margin:25px 0;
 }
-.chapter-btn{
-border:0;text-align:left;
-background:#fff;padding:19px;
-border-radius:18px;
-cursor:pointer;
-box-shadow:0 5px 18px #0000000d;
-border-left:5px solid #088395;
-transition:.2s
+
+.chapter-menu button{
+    border:none;
+    padding:15px;
+    border-radius:12px;
+    background:white;
+    box-shadow:0 4px 14px rgba(0,0,0,.08);
+    cursor:pointer;
+    font-weight:bold;
+    color:#16324f;
+    transition:.2s;
 }
-.chapter-btn:hover{
-transform:translateY(-3px);
-box-shadow:0 10px 25px #0002
+
+.chapter-menu button:hover{
+    transform:translateY(-3px);
+    background:#e0f2fe;
 }
-.chapter-btn .icon{font-size:30px}
-.chapter-btn h3{color:#071952;margin:5px 0}
-.chapter-btn p{font-size:13px;color:#667085}
+
 .book{
-display:none;background:#fff;
-margin-top:30px;border-radius:22px;
-overflow:hidden;box-shadow:0 6px 25px #0001
+    display:none;
+    background:white;
+    padding:25px;
+    border-radius:18px;
+    margin-top:25px;
+    box-shadow:0 6px 25px rgba(0,0,0,.08);
 }
-.book.active{display:block}
-.book-head{
-background:linear-gradient(135deg,#071952,#088395);
-color:#fff;padding:27px
+
+.book.active{
+    display:block;
 }
-.book-head h2{font-size:27px}
-.book-body{padding:25px}
-.topic{margin-bottom:30px}
-.topic h3{
-font-size:21px;color:#087f8c;
-border-left:5px solid #35a29f;
-padding-left:11px;margin-bottom:10px
+
+.chapter-title{
+    color:#075985;
+    border-bottom:3px solid #0ea5e9;
+    padding-bottom:10px;
+    margin-bottom:22px;
 }
-.topic h4{color:#071952;margin:15px 0 5px}
-ul{padding-left:22px}
-li{margin:4px 0}
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
-gap:12px;margin:14px 0
+
+.section{
+    margin:25px 0;
 }
-.card{
-background:#f1f8fa;padding:15px;
-border-left:4px solid #088395;
-border-radius:12px
+
+.section h3{
+    color:#164e63;
+    margin-bottom:10px;
 }
-.card strong{color:#071952}
-.note,.high,.clinical,.short{
-padding:19px;border-radius:15px;margin:20px 0
+
+.section h4{
+    color:#334155;
+    margin:15px 0 7px;
 }
-.note{background:#fff9df;border-left:6px solid #e0a400}
-.high{background:#eef3ff;border-left:6px solid #3659d6}
-.clinical{background:#edfaf2;border-left:6px solid #20a05a}
-.short{background:#f6f3ff;border-left:6px solid #7257c7}
-.note h3{color:#936900}
-.high h3{color:#2946aa}
-.clinical h3{color:#147440}
-.short h3{color:#5845a0}
-.q{font-weight:700;margin-top:12px}
-.a{color:#13734c}
+
+.box{
+    background:#f8fafc;
+    padding:16px;
+    border-radius:12px;
+    margin:12px 0;
+    border-left:5px solid #38bdf8;
+}
+
+.hand{
+    background:#fff7ed;
+    border-left:5px solid #f97316;
+}
+
+.high{
+    background:#ecfdf5;
+    border-left:5px solid #10b981;
+}
+
+.clinical{
+    background:#fef2f2;
+    border-left:5px solid #ef4444;
+}
+
+.nursing{
+    background:#f5f3ff;
+    border-left:5px solid #8b5cf6;
+}
+
+ul,ol{
+    padding-left:25px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin:15px 0;
+}
+
+th,td{
+    border:1px solid #dbe3ec;
+    padding:10px;
+    text-align:left;
+}
+
+th{
+    background:#e0f2fe;
+}
+
+.qa{
+    background:#f8fafc;
+    padding:14px;
+    margin:10px 0;
+    border-radius:10px;
+}
+
 .mcq{
-background:#fafbfd;
-border:1px solid #e1e6ec;
-padding:17px;border-radius:14px;margin:12px 0
+    background:#eef6ff;
+    padding:15px;
+    margin:12px 0;
+    border-radius:12px;
 }
-.opt{
-background:#fff;padding:5px 9px;
-margin:4px 0;border-radius:7px
+
+.answer{
+    color:#047857;
+    font-weight:bold;
+    margin-top:6px;
 }
-.ans{font-weight:bold;color:#087f5b;margin-top:7px}
-.revision{
-background:linear-gradient(135deg,#071952,#088395);
-color:#fff;padding:25px;border-radius:20px;margin-top:25px
+
+.tag{
+    display:inline-block;
+    background:#dbeafe;
+    color:#1e40af;
+    padding:5px 10px;
+    border-radius:15px;
+    margin:3px;
+    font-size:13px;
 }
-.close{
-margin-top:20px;padding:10px 18px;
-border:0;border-radius:20px;
-background:#071952;color:#fff;cursor:pointer
+
+.back{
+    display:inline-block;
+    margin-top:25px;
+    text-decoration:none;
+    background:#075985;
+    color:white;
+    padding:10px 18px;
+    border-radius:25px;
 }
+
 footer{
-background:#071952;color:#fff;
-text-align:center;padding:30px
+    background:#071a2d;
+    color:#dbeafe;
+    text-align:center;
+    padding:30px 15px;
 }
-@media(max-width:650px){
-.hero h1{font-size:30px}
-.book-body{padding:18px}
-.book-head h2{font-size:23px}
-.head{flex-direction:column}
+
+@media(max-width:600px){
+
+    .hero h1{
+        font-size:29px;
+    }
+
+    .book{
+        padding:17px;
+    }
+
+    .section{
+        margin:20px 0;
+    }
+
+    table{
+        font-size:13px;
+    }
+
+    .logo{
+        font-size:18px;
+    }
+
 }
+
 </style>
 </head>
 
 <body>
 
 <header>
-<div class="head">
-<div class="logo">
-NURSING CAREER
-<small>B.SC IN NURSING • ANATOMY</small>
-</div>
-<a class="back"
-href="https://nursingcareer.github.io/nursing-career/bsc-nursing.html">
+
+<div class="nav">
+
+<div class="logo">NURSING CAREER</div>
+
+<a href="https://nursingcareer.github.io/nursing-career/bsc-nursing.html">
 ← B.Sc Nursing
 </a>
+
 </div>
+
 </header>
 
+
 <section class="hero">
-<h1>🧠 COMPLETE ANATOMY</h1>
+
+<h1>📚 COMPLETE ANATOMY</h1>
+
 <p>
-System-wise Anatomy Study Book for B.Sc. in Nursing
+System-wise textbook-style Anatomy for B.Sc. Nursing students.
+Learn structure, location, parts, blood supply, nerve supply,
+clinical anatomy, nursing relevance and examination points.
 </p>
+
 </section>
+
 
 <div class="container">
 
 <div class="search">
-<input id="search"
-placeholder="🔍 Search chapter, topic, bone, organ..."
-onkeyup="searchChapters()">
-</div>
-
-<div class="section-title">
-<h2>📚 Anatomy Chapters</h2>
-<p>Choose a system to study in detail</p>
-</div>
-
-<div class="chapters">
-
-<button class="chapter-btn" onclick="openChapter('skeletal')">
-<div class="icon">🦴</div>
-<h3>1. Skeletal System</h3>
-<p>Bones, joints, cartilage & skeleton</p>
-</button>
-
-<button class="chapter-btn" onclick="openChapter('muscular')">
-<div class="icon">💪</div>
-<h3>2. Muscular System</h3>
-<p>Muscles, tendons & movement</p>
-</button>
-
-<button class="chapter-btn" onclick="openChapter('cardio')">
-<div class="icon">❤️</div>
-<h3>3. Cardiovascular System</h3>
-<p>Heart, vessels & circulation</p>
-</button>
-
-<button class="chapter-btn" onclick="openChapter('respiratory')">
-<div class="icon">🫁</div>
-<h3>4. Respiratory System</h3>
-<p>Airway, lungs & alveoli</p>
-</button>
-
-<button class="chapter-btn" onclick="openChapter('nervous')">
-<div class="icon">🧠</div>
-<h3>5. Nervous System</h3>
-<p>Brain, spinal cord & nerves</p>
-</button>
-
-<button class="chapter-btn" onclick="openChapter('digestive')">
-<div class="icon">🍽️</div>
-<h3>6. Digestive System</h3>
-<p>GI tract & accessory organs</p>
-</button>
-
-<button class="chapter-btn" onclick="openChapter('urinary')">
-<div class="icon">🚽</div>
-<h3>7. Urinary System</h3>
-<p>Kidney, nephron & urinary tract</p>
-</button>
-
-<button class="chapter-btn" onclick="openChapter('endocrine')">
-<div class="icon">🦋</div>
-<h3>8. Endocrine System</h3>
-<p>Glands & hormones</p>
-</button>
-
-<button class="chapter-btn" onclick="openChapter('female')">
-<div class="icon">👩</div>
-<h3>9. Female Reproductive</h3>
-<p>Female reproductive organs</p>
-</button>
-
-<button class="chapter-btn" onclick="openChapter('male')">
-<div class="icon">👨</div>
-<h3>10. Male Reproductive</h3>
-<p>Male reproductive organs</p>
-</button>
-
-<button class="chapter-btn" onclick="openChapter('lymph')">
-<div class="icon">🛡️</div>
-<h3>11. Lymphatic System</h3>
-<p>Lymph, nodes & spleen</p>
-</button>
-
-<button class="chapter-btn" onclick="openChapter('sense')">
-<div class="icon">👁️</div>
-<h3>12. Special Senses</h3>
-<p>Eye, ear, smell & taste</p>
-</button>
-
-<button class="chapter-btn" onclick="openChapter('skin')">
-<div class="icon">🧴</div>
-<h3>13. Integumentary System</h3>
-<p>Skin, hair, nails & glands</p>
-</button>
-
+<input
+type="text"
+id="searchBox"
+placeholder="🔎 Search Anatomy topic..."
+onkeyup="searchTopic()">
 </div>
 
 
-<!-- ================================================= -->
-<!-- SKELETAL -->
-<!-- ================================================= -->
+<div class="notice">
 
-<section id="skeletal" class="book">
+<strong>📖 How to use this Anatomy Book</strong>
 
-<div class="book-head">
-<h2>🦴 01. Skeletal System</h2>
-<p>Complete system-wise nursing anatomy</p>
-</div>
-
-<div class="book-body">
-
-<div class="topic">
-<h3>Definition</h3>
 <p>
-The skeletal system is the supporting framework of the human body.
-It consists of bones, cartilage, joints and associated connective tissues.
+প্রথমে System নির্বাচন করুন। তারপর Definition → Location →
+Parts → Structure → Blood Supply → Nerve Supply → Function →
+Clinical Anatomy → Nursing Point → Hand Note → High Yield →
+Short Question → MCQ পড়ুন।
 </p>
+
 </div>
 
-<div class="topic">
-<h3>Major Functions</h3>
-<div class="grid">
-<div class="card"><strong>Support</strong><p>Maintains body shape.</p></div>
-<div class="card"><strong>Protection</strong><p>Protects vital organs.</p></div>
-<div class="card"><strong>Movement</strong><p>Acts as levers for muscles.</p></div>
-<div class="card"><strong>Hematopoiesis</strong><p>Red marrow produces blood cells.</p></div>
-<div class="card"><strong>Mineral storage</strong><p>Stores calcium and phosphate.</p></div>
-<div class="card"><strong>Fat storage</strong><p>Yellow marrow stores fat.</p></div>
-</div>
+
+<div class="chapter-menu">
+
+<button onclick="openChapter('skeletal')">🦴 01 Skeletal</button>
+<button onclick="openChapter('muscular')">💪 02 Muscular</button>
+<button onclick="openChapter('cardio')">❤️ 03 Cardiovascular</button>
+<button onclick="openChapter('resp')">🫁 04 Respiratory</button>
+<button onclick="openChapter('nervous')">🧠 05 Nervous</button>
+<button onclick="openChapter('digestive')">🍽️ 06 Digestive</button>
+<button onclick="openChapter('urinary')">🚽 07 Urinary</button>
+<button onclick="openChapter('endocrine')">🧪 08 Endocrine</button>
+<button onclick="openChapter('female')">♀️ 09 Female Reproductive</button>
+<button onclick="openChapter('male')">♂️ 10 Male Reproductive</button>
+<button onclick="openChapter('lymph')">🛡️ 11 Lymphatic</button>
+<button onclick="openChapter('sense')">👁️ 12 Special Senses</button>
+<button onclick="openChapter('skin')">🧴 13 Integumentary</button>
+
 </div>
 
-<div class="topic">
-<h3>Major Divisions</h3>
-<h4>Axial Skeleton</h4>
-<p>Skull, vertebral column, ribs and sternum.</p>
-<h4>Appendicular Skeleton</h4>
-<p>Pectoral girdle, upper limbs, pelvic girdle and lower limbs.</p>
+
+<!-- =====================================================
+SKELETAL SYSTEM
+===================================================== -->
+
+<article class="book active" id="skeletal">
+
+<h2 class="chapter-title">
+🦴 Chapter 01 — Skeletal System
+</h2>
+
+<div class="section">
+
+<h3>1. Definition</h3>
+
+<p>
+The skeletal system is the framework of the human body formed mainly
+by bones and cartilage. It provides support, protection, movement,
+mineral storage and blood-cell formation.
+</p>
+
 </div>
 
-<div class="topic">
-<h3>Classification of Bones</h3>
+
+<div class="section">
+
+<h3>2. Major Functions of Bones</h3>
+
 <ul>
-<li>Long bones — femur, humerus</li>
-<li>Short bones — carpals, tarsals</li>
-<li>Flat bones — sternum, ribs, many skull bones</li>
-<li>Irregular bones — vertebrae</li>
-<li>Sesamoid bones — patella</li>
+<li>Support the body.</li>
+<li>Protect internal organs.</li>
+<li>Help movement by providing attachment for muscles.</li>
+<li>Store calcium and phosphate.</li>
+<li>Red bone marrow produces blood cells.</li>
+<li>Fat is stored in yellow bone marrow.</li>
 </ul>
+
 </div>
 
-<div class="topic">
-<h3>Important Bones</h3>
+
+<div class="section">
+
+<h3>3. Divisions of Skeleton</h3>
+
+<table>
+
+<tr>
+<th>Division</th>
+<th>Main Components</th>
+</tr>
+
+<tr>
+<td>Axial skeleton</td>
+<td>Skull, vertebral column, ribs, sternum</td>
+</tr>
+
+<tr>
+<td>Appendicular skeleton</td>
+<td>Shoulder girdle, upper limbs, pelvic girdle, lower limbs</td>
+</tr>
+
+</table>
+
+<p>
+An adult human skeleton normally contains <strong>206 bones</strong>.
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h3>4. Skull</h3>
+
+<p>
+The skull forms the bony framework of the head. It protects the brain
+and forms the cavities for special sense organs.
+</p>
+
+<h4>Cranial bones</h4>
+
 <ul>
-<li>Skull — frontal, parietal, temporal, occipital, sphenoid, ethmoid</li>
-<li>Face — maxilla, mandible, zygomatic, nasal, vomer</li>
-<li>Vertebral column — cervical, thoracic, lumbar, sacral, coccygeal</li>
-<li>Thorax — sternum and ribs</li>
-<li>Upper limb — clavicle, scapula, humerus, radius, ulna, carpals, metacarpals, phalanges</li>
-<li>Lower limb — pelvis, femur, patella, tibia, fibula, tarsals, metatarsals, phalanges</li>
+<li>Frontal</li>
+<li>Parietal — 2</li>
+<li>Temporal — 2</li>
+<li>Occipital</li>
+<li>Sphenoid</li>
+<li>Ethmoid</li>
 </ul>
-</div>
 
-<div class="topic">
-<h3>Vertebral Column</h3>
-<div class="grid">
-<div class="card"><strong>Cervical</strong><p>7</p></div>
-<div class="card"><strong>Thoracic</strong><p>12</p></div>
-<div class="card"><strong>Lumbar</strong><p>5</p></div>
-<div class="card"><strong>Sacral</strong><p>Fused</p></div>
-<div class="card"><strong>Coccygeal</strong><p>Usually fused</p></div>
-</div>
-<p><strong>C1 = Atlas.</strong> It supports the skull.</p>
-<p><strong>C2 = Axis.</strong> It has the dens and permits rotation.</p>
-</div>
+<h4>Facial bones</h4>
 
-<div class="topic">
-<h3>Thoracic Cage</h3>
 <ul>
-<li>12 pairs of ribs</li>
-<li>7 pairs true ribs</li>
-<li>3 pairs false ribs</li>
-<li>2 pairs floating ribs</li>
-<li>Sternum: manubrium, body, xiphoid process</li>
+<li>Maxillae</li>
+<li>Mandible</li>
+<li>Zygomatic bones</li>
+<li>Nasal bones</li>
+<li>Lacrimal bones</li>
+<li>Palatine bones</li>
+<li>Vomer</li>
+<li>Inferior nasal conchae</li>
 </ul>
+
+<div class="box hand">
+<strong>✍️ Hand Note:</strong>
+Mandible is the movable bone of the skull.
+The cranium protects the brain.
 </div>
 
-<div class="topic">
-<h3>Bone Structure</h3>
+</div>
+
+
+<div class="section">
+
+<h3>5. Vertebral Column</h3>
+
+<p>
+The vertebral column forms the central supporting axis of the body.
+It protects the spinal cord and provides attachment for ribs and muscles.
+</p>
+
+<table>
+
+<tr>
+<th>Region</th>
+<th>Number</th>
+</tr>
+
+<tr>
+<td>Cervical</td>
+<td>7</td>
+</tr>
+
+<tr>
+<td>Thoracic</td>
+<td>12</td>
+</tr>
+
+<tr>
+<td>Lumbar</td>
+<td>5</td>
+</tr>
+
+<tr>
+<td>Sacral</td>
+<td>5 fused</td>
+</tr>
+
+<tr>
+<td>Coccygeal</td>
+<td>Usually 4 fused</td>
+</tr>
+
+</table>
+
+<p>
+Total vertebrae are commonly described as 33 before fusion.
+The adult vertebral column has 26 bones because sacral and coccygeal
+vertebrae fuse.
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h3>6. Thoracic Cage</h3>
+
+<p>
+The thoracic cage protects the heart and lungs and assists respiration.
+It consists of sternum, thoracic vertebrae and ribs.
+</p>
+
+<h4>Ribs</h4>
+
 <ul>
-<li>Periosteum — outer covering</li>
-<li>Compact bone — dense bone</li>
-<li>Spongy bone — trabecular bone</li>
-<li>Medullary cavity — marrow-containing cavity</li>
-<li>Epiphysis — end of long bone</li>
+<li>True ribs: 1–7</li>
+<li>False ribs: 8–10</li>
+<li>Floating ribs: 11–12</li>
+</ul>
+
+</div>
+
+
+<div class="section">
+
+<h3>7. Upper Limb Bones</h3>
+
+<ul>
+<li>Clavicle</li>
+<li>Scapula</li>
+<li>Humerus</li>
+<li>Radius</li>
+<li>Ulna</li>
+<li>Carpal bones</li>
+<li>Metacarpals</li>
+<li>Phalanges</li>
+</ul>
+
+<p>
+The radius is located on the thumb side of the forearm.
+The ulna is on the little-finger side.
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h3>8. Lower Limb Bones</h3>
+
+<ul>
+<li>Hip bone</li>
+<li>Femur</li>
+<li>Patella</li>
+<li>Tibia</li>
+<li>Fibula</li>
+<li>Tarsals</li>
+<li>Metatarsals</li>
+<li>Phalanges</li>
+</ul>
+
+<div class="box high">
+<strong>🔥 High Yield:</strong>
+Femur is the longest and strongest bone of the human body.
+Patella is the largest sesamoid bone.
+</div>
+
+</div>
+
+
+<div class="section">
+
+<h3>9. Structure of a Long Bone</h3>
+
+<ul>
+<li>Epiphysis — ends of bone</li>
 <li>Diaphysis — shaft</li>
-<li>Metaphysis — region between shaft and end</li>
+<li>Metaphysis — region between shaft and epiphysis</li>
+<li>Periosteum — outer covering</li>
+<li>Endosteum — inner lining</li>
+<li>Compact bone</li>
+<li>Spongy/cancellous bone</li>
+<li>Medullary cavity</li>
 </ul>
+
 </div>
 
-<div class="topic">
-<h3>Bone Cells</h3>
-<ul>
-<li>Osteoblast — forms bone</li>
-<li>Osteocyte — mature bone cell</li>
-<li>Osteoclast — bone resorption</li>
-</ul>
+
+<div class="section">
+
+<h3>10. Bone Marrow</h3>
+
+<p>
+Red bone marrow is involved in hematopoiesis. Yellow bone marrow mainly
+contains adipose tissue and serves as fat storage.
+</p>
+
 </div>
 
-<div class="topic">
-<h3>Joints</h3>
+
+<div class="section">
+
+<h3>11. Joints</h3>
+
+<p>
+A joint is the site where two or more bones meet.
+</p>
+
+<h4>Major types</h4>
+
 <ul>
 <li>Fibrous joints</li>
 <li>Cartilaginous joints</li>
 <li>Synovial joints</li>
 </ul>
-<h4>Synovial joint examples</h4>
+
+<h4>Examples of synovial joints</h4>
+
 <ul>
-<li>Ball-and-socket — shoulder, hip</li>
-<li>Hinge — elbow, knee</li>
-<li>Pivot — atlantoaxial joint</li>
-<li>Saddle — thumb joint</li>
-<li>Plane — some intercarpal joints</li>
+<li>Shoulder — ball and socket</li>
+<li>Hip — ball and socket</li>
+<li>Elbow — hinge</li>
+<li>Knee — modified hinge</li>
+<li>Wrist — condyloid</li>
+<li>Atlanto-axial — pivot</li>
 </ul>
+
 </div>
 
-<div class="note">
-<h3>📝 HAND NOTE</h3>
+
+<div class="section clinical">
+
+<h3>🩺 Clinical Anatomy</h3>
+
 <ul>
-<li>Adult skeleton → 206 bones</li>
-<li>Longest bone → Femur</li>
-<li>Smallest bone → Stapes</li>
-<li>C1 → Atlas</li>
-<li>C2 → Axis</li>
-<li>Bone-forming → Osteoblast</li>
-<li>Bone-resorbing → Osteoclast</li>
-<li>Muscle to bone → Tendon</li>
-<li>Bone to bone → Ligament</li>
+<li>Fracture means break in bone continuity.</li>
+<li>Osteoporosis causes reduced bone density.</li>
+<li>Osteomyelitis is infection of bone.</li>
+<li>Dislocation means loss of normal joint relationship.</li>
+<li>Arthritis affects joints.</li>
 </ul>
+
 </div>
 
-<div class="high">
-<h3>🎯 HIGH-YIELD</h3>
+
+<div class="section nursing">
+
+<h3>👩‍⚕️ Nursing Relevance</h3>
+
 <ul>
-<li>Femur is the longest bone.</li>
-<li>Patella is a sesamoid bone.</li>
-<li>True ribs are 1–7.</li>
-<li>Floating ribs are 11–12.</li>
-<li>Tibia is the major weight-bearing bone of the leg.</li>
+<li>Positioning of fracture patients.</li>
+<li>Assessment of limb circulation.</li>
+<li>Checking distal pulse after injury.</li>
+<li>Monitoring swelling and pain.</li>
+<li>Preventing pressure injury in immobile patients.</li>
 </ul>
-</div>
-
-<div class="clinical">
-<h3>🩺 CLINICAL CONNECTION</h3>
-<ul>
-<li>Fracture → break in bone continuity.</li>
-<li>Dislocation → loss of normal joint relationship.</li>
-<li>Osteoporosis → decreased bone density.</li>
-<li>Osteomyelitis → infection of bone.</li>
-<li>Fracture assessment includes distal circulation and neurological status.</li>
-</ul>
-</div>
-
-<div class="short">
-<h3>✍️ SHORT QUESTIONS</h3>
-<div class="q">What is the adult bone count?</div><div class="a">206.</div>
-<div class="q">What is C1?</div><div class="a">Atlas.</div>
-<div class="q">What is C2?</div><div class="a">Axis.</div>
-<div class="q">What is the longest bone?</div><div class="a">Femur.</div>
-<div class="q">What is the bone-forming cell?</div><div class="a">Osteoblast.</div>
-</div>
-
-<div class="mcq">
-<strong>1. Number of bones in adult skeleton is:</strong>
-<div class="opt">A. 196</div><div class="opt">B. 206</div>
-<div class="opt">C. 216</div><div class="opt">D. 226</div>
-<div class="ans">✓ Answer: B</div>
-</div>
-
-<div class="mcq">
-<strong>2. C1 vertebra is called:</strong>
-<div class="opt">A. Axis</div><div class="opt">B. Atlas</div>
-<div class="opt">C. Sacrum</div><div class="opt">D. Coccyx</div>
-<div class="ans">✓ Answer: B</div>
-</div>
 
 </div>
-</section>
 
 
-<!-- ================================================= -->
-<!-- MUSCULAR -->
-<!-- ================================================= -->
+<div class="section hand">
 
-<section id="muscular" class="book">
+<h3>✍️ Hand Note</h3>
 
-<div class="book-head">
-<h2>💪 02. Muscular System</h2>
-</div>
-
-<div class="book-body">
-
-<div class="topic">
-<h3>Definition</h3>
 <p>
-The muscular system consists of specialized contractile tissues
-responsible for movement, posture, heat production and movement
-of substances within the body.
+206 bones → adult skeleton<br>
+7 cervical → 12 thoracic → 5 lumbar<br>
+True ribs 1–7<br>
+Floating ribs 11–12<br>
+Femur = longest bone<br>
+Patella = largest sesamoid bone<br>
+Red marrow = blood-cell formation
 </p>
+
 </div>
 
-<div class="topic">
-<h3>Types of Muscle</h3>
 
-<div class="grid">
-<div class="card">
-<strong>Skeletal Muscle</strong>
-<p>Striated, voluntary muscle attached mainly to bones.</p>
-</div>
-<div class="card">
-<strong>Cardiac Muscle</strong>
-<p>Striated, involuntary muscle of heart.</p>
-</div>
-<div class="card">
-<strong>Smooth Muscle</strong>
-<p>Non-striated, involuntary muscle in hollow organs.</p>
-</div>
-</div>
+<div class="section">
+
+<h3>❓ Short Questions</h3>
+
+<div class="qa"><strong>Q:</strong> How many bones are present in adult skeleton?<br>
+<strong>Ans:</strong> 206.</div>
+
+<div class="qa"><strong>Q:</strong> Which is the longest bone?<br>
+<strong>Ans:</strong> Femur.</div>
+
+<div class="qa"><strong>Q:</strong> Which bone protects the brain?<br>
+<strong>Ans:</strong> Skull.</div>
+
 </div>
 
-<div class="topic">
-<h3>Functions</h3>
-<ul>
-<li>Movement</li>
-<li>Maintenance of posture</li>
-<li>Joint stabilization</li>
-<li>Heat production</li>
-<li>Movement of food through GI tract</li>
-<li>Blood vessel diameter regulation</li>
-<li>Cardiac pumping</li>
-</ul>
-</div>
 
-<div class="topic">
-<h3>Major Muscles</h3>
-<ul>
-<li>Masseter — chewing</li>
-<li>Sternocleidomastoid — neck movement</li>
-<li>Trapezius — shoulder/neck movement</li>
-<li>Deltoid — arm abduction</li>
-<li>Biceps brachii — elbow flexion</li>
-<li>Triceps brachii — elbow extension</li>
-<li>Pectoralis major — chest/upper limb movement</li>
-<li>Rectus abdominis — trunk flexion</li>
-<li>Gluteus maximus — hip extension</li>
-<li>Quadriceps — knee extension</li>
-<li>Hamstrings — knee flexion</li>
-<li>Gastrocnemius — plantar flexion</li>
-</ul>
-</div>
+<div class="section">
 
-<div class="topic">
-<h3>Muscle Attachments</h3>
-<p>
-A tendon connects muscle to bone. Fascia surrounds and separates
-muscles and other structures.
-</p>
-</div>
+<h3>📝 Easy MCQ</h3>
 
-<div class="note">
-<h3>📝 HAND NOTE</h3>
-<ul>
-<li>Skeletal → voluntary</li>
-<li>Cardiac → heart</li>
-<li>Smooth → hollow organs</li>
-<li>Biceps → flexion</li>
-<li>Triceps → extension</li>
-<li>Quadriceps → knee extension</li>
-<li>Hamstrings → knee flexion</li>
-</ul>
-</div>
-
-<div class="high">
-<h3>🎯 HIGH-YIELD</h3>
-<ul>
-<li>Cardiac muscle is found in myocardium.</li>
-<li>Skeletal muscle is mainly voluntary.</li>
-<li>Smooth muscle is found in intestine and blood vessels.</li>
-<li>Muscle contraction produces movement and heat.</li>
-</ul>
-</div>
-
-<div class="clinical">
-<h3>🩺 CLINICAL</h3>
-<ul>
-<li>Muscle strain involves overstretching or tearing of muscle/tendon.</li>
-<li>Muscle weakness can affect mobility and activities of daily living.</li>
-<li>Prolonged immobility can cause muscle wasting.</li>
-</ul>
-</div>
-
-<div class="short">
-<h3>✍️ SHORT QUESTIONS</h3>
-<div class="q">Three types of muscle?</div><div class="a">Skeletal, cardiac and smooth.</div>
-<div class="q">Which muscle is voluntary?</div><div class="a">Skeletal muscle.</div>
-<div class="q">Which muscle is present in heart?</div><div class="a">Cardiac muscle.</div>
-<div class="q">What connects muscle to bone?</div><div class="a">Tendon.</div>
+<div class="mcq">
+<strong>1. Number of bones in adult human skeleton is:</strong><br>
+A. 201<br>
+B. 206<br>
+C. 212<br>
+D. 216
+<div class="answer">Answer: B. 206</div>
 </div>
 
 <div class="mcq">
-<strong>Which muscle is involuntary and striated?</strong>
-<div class="opt">A. Skeletal</div><div class="opt">B. Cardiac</div>
-<div class="opt">C. Smooth</div><div class="opt">D. Tendon</div>
-<div class="ans">✓ Answer: B</div>
+<strong>2. Longest bone of the body is:</strong><br>
+A. Tibia<br>
+B. Humerus<br>
+C. Femur<br>
+D. Radius
+<div class="answer">Answer: C. Femur</div>
 </div>
 
 </div>
-</section>
+
+</article>
 
 
-<!-- ================================================= -->
-<!-- CARDIO -->
-<!-- ================================================= -->
+<!-- =====================================================
+MUSCULAR SYSTEM
+===================================================== -->
 
-<section id="cardio" class="book">
+<article class="book" id="muscular">
 
-<div class="book-head">
-<h2>❤️ 03. Cardiovascular System</h2>
+<h2 class="chapter-title">💪 Chapter 02 — Muscular System</h2>
+
+<div class="section">
+
+<h3>1. Definition</h3>
+
+<p>
+The muscular system consists of specialized tissues capable of contraction.
+Muscles produce movement, maintain posture and generate heat.
+</p>
+
 </div>
 
-<div class="book-body">
+<div class="section">
 
-<div class="topic">
-<h3>Components</h3>
+<h3>2. Types of Muscle</h3>
+
+<table>
+
+<tr>
+<th>Type</th>
+<th>Location</th>
+<th>Control</th>
+</tr>
+
+<tr>
+<td>Skeletal</td>
+<td>Attached to bones</td>
+<td>Voluntary</td>
+</tr>
+
+<tr>
+<td>Smooth</td>
+<td>Viscera and blood vessels</td>
+<td>Involuntary</td>
+</tr>
+
+<tr>
+<td>Cardiac</td>
+<td>Heart</td>
+<td>Involuntary</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="section">
+
+<h3>3. Skeletal Muscle Structure</h3>
+
+<p>
+A skeletal muscle is made of muscle fibers. Fibers contain myofibrils,
+and myofibrils contain actin and myosin filaments.
+</p>
+
+<h4>Important terms</h4>
+
+<ul>
+<li>Muscle fiber</li>
+<li>Myofibril</li>
+<li>Actin</li>
+<li>Myosin</li>
+<li>Sarcomere</li>
+<li>Tendon</li>
+<li>Fascia</li>
+</ul>
+
+</div>
+
+
+<div class="section">
+
+<h3>4. Major Muscles of Head and Neck</h3>
+
+<ul>
+<li>Masseter — mastication</li>
+<li>Temporalis — mastication</li>
+<li>Sternocleidomastoid — movement of head and neck</li>
+<li>Trapezius — movement of neck and shoulder</li>
+</ul>
+
+</div>
+
+
+<div class="section">
+
+<h3>5. Thoracic Muscles</h3>
+
+<ul>
+<li>Intercostal muscles</li>
+<li>Pectoralis major</li>
+<li>Pectoralis minor</li>
+<li>Diaphragm</li>
+</ul>
+
+<p>
+The diaphragm is the principal muscle of inspiration.
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h3>6. Abdominal Muscles</h3>
+
+<ul>
+<li>Rectus abdominis</li>
+<li>External oblique</li>
+<li>Internal oblique</li>
+<li>Transversus abdominis</li>
+</ul>
+
+</div>
+
+
+<div class="section">
+
+<h3>7. Upper Limb Muscles</h3>
+
+<ul>
+<li>Deltoid</li>
+<li>Biceps brachii</li>
+<li>Triceps brachii</li>
+<li>Forearm flexors</li>
+<li>Forearm extensors</li>
+</ul>
+
+<p>
+Biceps mainly flexes the elbow, while triceps extends the elbow.
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h3>8. Lower Limb Muscles</h3>
+
+<ul>
+<li>Gluteus maximus</li>
+<li>Quadriceps femoris</li>
+<li>Hamstrings</li>
+<li>Gastrocnemius</li>
+<li>Soleus</li>
+</ul>
+
+</div>
+
+
+<div class="section clinical">
+
+<h3>🩺 Clinical Anatomy</h3>
+
+<ul>
+<li>Muscle strain may occur due to overstretching.</li>
+<li>Muscle atrophy occurs when muscle mass decreases.</li>
+<li>Paralysis causes loss of voluntary movement.</li>
+<li>Muscle spasm causes involuntary contraction.</li>
+</ul>
+
+</div>
+
+
+<div class="section nursing">
+
+<h3>👩‍⚕️ Nursing Relevance</h3>
+
+<ul>
+<li>Assess muscle strength.</li>
+<li>Observe mobility.</li>
+<li>Prevent contractures in immobile patients.</li>
+<li>Encourage appropriate range-of-motion exercises.</li>
+</ul>
+
+</div>
+
+
+<div class="section hand">
+
+<h3>✍️ Hand Note</h3>
+
+<p>
+Skeletal = voluntary<br>
+Smooth = involuntary<br>
+Cardiac = heart<br>
+Diaphragm = main muscle of inspiration<br>
+Biceps = flexion<br>
+Triceps = extension
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h3>❓ Short Questions</h3>
+
+<div class="qa">
+<strong>Q:</strong> What is the main muscle of inspiration?<br>
+<strong>Ans:</strong> Diaphragm.
+</div>
+
+<div class="qa">
+<strong>Q:</strong> Which muscle is found in the heart?<br>
+<strong>Ans:</strong> Cardiac muscle.
+</div>
+
+</div>
+
+
+<div class="section">
+
+<h3>📝 MCQ</h3>
+
+<div class="mcq">
+<strong>1. Which muscle is voluntary?</strong><br>
+A. Smooth<br>
+B. Cardiac<br>
+C. Skeletal<br>
+D. Visceral
+<div class="answer">Answer: C. Skeletal</div>
+</div>
+
+<div class="mcq">
+<strong>2. Main muscle of inspiration:</strong><br>
+A. Rectus<br>
+B. Diaphragm<br>
+C. Biceps<br>
+D. Trapezius
+<div class="answer">Answer: B. Diaphragm</div>
+</div>
+
+</div>
+
+</article>
+
+
+<!-- =====================================================
+CARDIOVASCULAR
+===================================================== -->
+
+<article class="book" id="cardio">
+
+<h2 class="chapter-title">❤️ Chapter 03 — Cardiovascular System</h2>
+
+<div class="section">
+
+<h3>1. Overview</h3>
+
 <p>
 The cardiovascular system consists of the heart, blood and blood vessels.
+Its major role is transportation of oxygen, nutrients, hormones and waste
+products.
 </p>
+
 </div>
 
-<div class="topic">
-<h3>Heart Location</h3>
+
+<div class="section">
+
+<h3>2. Location of Heart</h3>
+
 <p>
-The heart lies in the thoracic cavity within the mediastinum,
-between the lungs.
+The heart lies in the thoracic cavity within the mediastinum, between
+the two lungs. It is slightly left of the midline.
 </p>
+
 </div>
 
-<div class="topic">
-<h3>Heart Chambers</h3>
-<div class="grid">
-<div class="card"><strong>Right Atrium</strong><p>Receives systemic venous blood.</p></div>
-<div class="card"><strong>Right Ventricle</strong><p>Pumps blood toward lungs.</p></div>
-<div class="card"><strong>Left Atrium</strong><p>Receives oxygenated pulmonary blood.</p></div>
-<div class="card"><strong>Left Ventricle</strong><p>Pumps blood to systemic circulation.</p></div>
-</div>
+
+<div class="section">
+
+<h3>3. Coverings of Heart</h3>
+
+<ul>
+<li>Pericardium</li>
+<li>Fibrous pericardium</li>
+<li>Serous pericardium</li>
+</ul>
+
+<p>
+The pericardial cavity contains a small amount of lubricating fluid.
+</p>
+
 </div>
 
-<div class="topic">
-<h3>Heart Valves</h3>
+
+<div class="section">
+
+<h3>4. Chambers of Heart</h3>
+
+<table>
+
+<tr>
+<th>Chamber</th>
+<th>Main Role</th>
+</tr>
+
+<tr>
+<td>Right atrium</td>
+<td>Receives deoxygenated blood from body</td>
+</tr>
+
+<tr>
+<td>Right ventricle</td>
+<td>Pumps blood to lungs</td>
+</tr>
+
+<tr>
+<td>Left atrium</td>
+<td>Receives oxygenated blood from lungs</td>
+</tr>
+
+<tr>
+<td>Left ventricle</td>
+<td>Pumps blood to systemic circulation</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="section">
+
+<h3>5. Heart Valves</h3>
+
 <ul>
 <li>Tricuspid valve — right atrioventricular valve</li>
 <li>Mitral/bicuspid valve — left atrioventricular valve</li>
 <li>Pulmonary valve</li>
 <li>Aortic valve</li>
 </ul>
+
+<div class="box high">
+<strong>🔥 High Yield:</strong>
+Tricuspid = right side.
+Mitral = left side.
 </div>
 
-<div class="topic">
-<h3>Major Blood Vessels</h3>
+</div>
+
+
+<div class="section">
+
+<h3>6. Great Vessels</h3>
+
 <ul>
 <li>Superior vena cava</li>
 <li>Inferior vena cava</li>
-<li>Pulmonary trunk/arteries</li>
+<li>Pulmonary trunk</li>
 <li>Pulmonary veins</li>
 <li>Aorta</li>
 </ul>
+
 </div>
 
-<div class="topic">
-<h3>Circulation</h3>
+
+<div class="section">
+
+<h3>7. Coronary Circulation</h3>
+
+<p>
+The myocardium receives blood mainly from the right and left coronary
+arteries. Cardiac veins drain into the coronary sinus and then into the
+right atrium.
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h3>8. Blood Vessels</h3>
+
+<h4>Arteries</h4>
+<p>Carry blood away from the heart.</p>
+
+<h4>Veins</h4>
+<p>Carry blood toward the heart.</p>
+
+<h4>Capillaries</h4>
+<p>Small vessels where exchange of gases, nutrients and wastes occurs.</p>
+
+</div>
+
+
+<div class="section">
+
+<h3>9. Pulmonary and Systemic Circulation</h3>
+
+<p>
+<strong>Pulmonary circulation:</strong>
+Right ventricle → pulmonary arteries → lungs → pulmonary veins →
+left atrium.
+</p>
+
+<p>
+<strong>Systemic circulation:</strong>
+Left ventricle → aorta → body tissues → venae cavae → right atrium.
+</p>
+
+</div>
+
+
+<div class="section clinical">
+
+<h3>🩺 Clinical Anatomy</h3>
+
 <ul>
-<li>Pulmonary circulation — heart to lungs and back.</li>
-<li>Systemic circulation — heart to body and back.</li>
-<li>Coronary circulation — supplies the heart muscle.</li>
+<li>Myocardial infarction involves injury to heart muscle due to inadequate blood supply.</li>
+<li>Hypertension means persistently elevated arterial blood pressure.</li>
+<li>Heart failure occurs when the heart cannot adequately meet body demands.</li>
+<li>Arrhythmia refers to abnormal cardiac rhythm.</li>
 </ul>
+
 </div>
 
-<div class="topic">
-<h3>Blood Vessels</h3>
+
+<div class="section nursing">
+
+<h3>👩‍⚕️ Nursing Points</h3>
+
 <ul>
-<li>Arteries — carry blood away from heart.</li>
-<li>Veins — carry blood toward heart.</li>
-<li>Capillaries — exchange vessels between arterial and venous sides.</li>
+<li>Check pulse rate and rhythm.</li>
+<li>Monitor blood pressure.</li>
+<li>Observe chest pain and dyspnea.</li>
+<li>Assess peripheral perfusion.</li>
+<li>Monitor edema.</li>
 </ul>
+
 </div>
 
-<div class="note">
-<h3>📝 HAND NOTE</h3>
-<ul>
-<li>Right side → mainly deoxygenated blood</li>
-<li>Left side → mainly oxygenated blood</li>
-<li>Tricuspid → right AV valve</li>
-<li>Mitral → left AV valve</li>
-<li>Aorta → systemic arterial supply</li>
-<li>Pulmonary artery → carries blood from heart to lungs</li>
-<li>Pulmonary veins → return blood from lungs to left atrium</li>
-</ul>
+
+<div class="section hand">
+
+<h3>✍️ Hand Note</h3>
+
+<p>
+Heart = 4 chambers<br>
+Right heart → deoxygenated blood<br>
+Left heart → oxygenated blood<br>
+Tricuspid → right AV valve<br>
+Mitral → left AV valve<br>
+Aorta → largest artery<br>
+Pulmonary artery carries deoxygenated blood
+</p>
+
 </div>
 
-<div class="high">
-<h3>🎯 HIGH-YIELD</h3>
-<ul>
-<li>Heart has four chambers.</li>
-<li>Left ventricle pumps into aorta.</li>
-<li>Right ventricle pumps into pulmonary trunk.</li>
-<li>Coronary arteries supply myocardium.</li>
-</ul>
+
+<div class="section">
+
+<h3>❓ Short Questions</h3>
+
+<div class="qa">
+<strong>Q:</strong> How many chambers does the heart have?<br>
+<strong>Ans:</strong> Four.
 </div>
 
-<div class="clinical">
-<h3>🩺 CLINICAL</h3>
-<ul>
-<li>Myocardial infarction results from interruption of coronary blood supply.</li>
-<li>Heart failure can cause pulmonary and/or systemic congestion.</li>
-<li>Peripheral pulse assessment gives information about arterial circulation.</li>
-</ul>
+<div class="qa">
+<strong>Q:</strong> Which chamber pumps blood to systemic circulation?<br>
+<strong>Ans:</strong> Left ventricle.
 </div>
 
-<div class="short">
-<h3>✍️ SHORT QUESTIONS</h3>
-<div class="q">How many chambers?</div><div class="a">Four.</div>
-<div class="q">Largest artery?</div><div class="a">Aorta.</div>
-<div class="q">Right AV valve?</div><div class="a">Tricuspid.</div>
-<div class="q">Left AV valve?</div><div class="a">Mitral.</div>
+</div>
+
+
+<div class="section">
+
+<h3>📝 MCQ</h3>
+
+<div class="mcq">
+<strong>1. Largest artery is:</strong><br>
+A. Pulmonary artery<br>
+B. Aorta<br>
+C. Carotid artery<br>
+D. Femoral artery
+<div class="answer">Answer: B. Aorta</div>
 </div>
 
 <div class="mcq">
-<strong>The largest artery is:</strong>
-<div class="opt">A. Pulmonary artery</div>
-<div class="opt">B. Aorta</div>
-<div class="opt">C. Vena cava</div>
-<div class="opt">D. Carotid vein</div>
-<div class="ans">✓ Answer: B</div>
+<strong>2. Valve between right atrium and right ventricle:</strong><br>
+A. Mitral<br>
+B. Aortic<br>
+C. Tricuspid<br>
+D. Pulmonary
+<div class="answer">Answer: C. Tricuspid</div>
 </div>
 
 </div>
-</section>
+
+</article>
 
 
-<!-- ================================================= -->
-<!-- RESPIRATORY -->
-<!-- ================================================= -->
+<!-- =====================================================
+RESPIRATORY
+===================================================== -->
 
-<section id="respiratory" class="book">
+<article class="book" id="resp">
 
-<div class="book-head">
-<h2>🫁 04. Respiratory System</h2>
+<h2 class="chapter-title">🫁 Chapter 04 — Respiratory System</h2>
+
+<div class="section">
+
+<h3>1. Definition</h3>
+
+<p>
+The respiratory system is responsible for ventilation and exchange of
+oxygen and carbon dioxide between the atmosphere and blood.
+</p>
+
 </div>
 
-<div class="book-body">
 
-<div class="topic">
-<h3>Main Parts</h3>
-<ul>
-<li>Nose and nasal cavity</li>
+<div class="section">
+
+<h3>2. Respiratory Tract</h3>
+
+<ol>
+<li>Nose</li>
+<li>Nasal cavity</li>
 <li>Pharynx</li>
 <li>Larynx</li>
 <li>Trachea</li>
 <li>Bronchi</li>
 <li>Bronchioles</li>
-<li>Lungs</li>
 <li>Alveoli</li>
-</ul>
+<li>Lungs</li>
+</ol>
+
 </div>
 
-<div class="topic">
-<h3>Air Passage</h3>
+
+<div class="section">
+
+<h3>3. Nose and Nasal Cavity</h3>
+
 <p>
-Air normally passes through the nose → pharynx → larynx →
-trachea → bronchi → bronchioles → alveoli.
+The nose provides an entrance for air. Nasal structures help filter,
+warm and humidify inspired air.
 </p>
+
 </div>
 
-<div class="topic">
-<h3>Lungs</h3>
+
+<div class="section">
+
+<h3>4. Pharynx</h3>
+
 <p>
-The right lung normally has three lobes, while the left lung has
-two lobes and a cardiac impression.
+The pharynx is divided into:
 </p>
-</div>
 
-<div class="topic">
-<h3>Alveoli</h3>
-<p>
-Alveoli are microscopic air spaces where gas exchange occurs
-between air and pulmonary capillary blood.
-</p>
-</div>
-
-<div class="topic">
-<h3>Pleura</h3>
 <ul>
-<li>Visceral pleura covers lung surface.</li>
+<li>Nasopharynx</li>
+<li>Oropharynx</li>
+<li>Laryngopharynx</li>
+</ul>
+
+</div>
+
+
+<div class="section">
+
+<h3>5. Larynx</h3>
+
+<p>
+The larynx connects the pharynx with the trachea and contains the vocal
+cords. The epiglottis helps prevent food entering the airway during
+swallowing.
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h3>6. Trachea and Bronchi</h3>
+
+<p>
+The trachea divides into right and left main bronchi. These continue into
+smaller bronchi, bronchioles and finally respiratory passages.
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h3>7. Lungs</h3>
+
+<table>
+
+<tr>
+<th>Lung</th>
+<th>Lobes</th>
+</tr>
+
+<tr>
+<td>Right lung</td>
+<td>Superior, middle, inferior</td>
+</tr>
+
+<tr>
+<td>Left lung</td>
+<td>Superior, inferior</td>
+</tr>
+
+</table>
+
+<p>
+The left lung has a cardiac notch to accommodate the heart.
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h3>8. Pleura</h3>
+
+<ul>
+<li>Visceral pleura covers the lung.</li>
 <li>Parietal pleura lines the thoracic cavity.</li>
 <li>Pleural cavity lies between them.</li>
 </ul>
+
 </div>
 
-<div class="topic">
-<h3>Functions</h3>
+
+<div class="section">
+
+<h3>9. Alveoli</h3>
+
+<p>
+Alveoli are tiny air sacs where the major exchange of oxygen and carbon
+dioxide occurs between air and pulmonary capillary blood.
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h3>10. Respiratory Muscles</h3>
+
 <ul>
-<li>Oxygen intake</li>
-<li>Carbon dioxide removal</li>
-<li>Acid-base contribution</li>
-<li>Voice production through larynx</li>
-<li>Air conditioning and filtration</li>
+<li>Diaphragm</li>
+<li>External intercostal muscles</li>
+<li>Internal intercostal muscles</li>
+<li>Accessory muscles during increased respiratory effort</li>
 </ul>
+
 </div>
 
-<div class="note">
-<h3>📝 HAND NOTE</h3>
+
+<div class="section clinical">
+
+<h3>🩺 Clinical Anatomy</h3>
+
 <ul>
-<li>Gas exchange → alveoli</li>
-<li>Right lung → 3 lobes</li>
-<li>Left lung → 2 lobes</li>
-<li>Windpipe → trachea</li>
-<li>Voice box → larynx</li>
-<li>Airway branches → bronchi → bronchioles</li>
+<li>Pneumonia affects lung tissue.</li>
+<li>Asthma causes reversible airway narrowing and inflammation.</li>
+<li>Pneumothorax is air in the pleural space.</li>
+<li>Pleural effusion is excess fluid in pleural space.</li>
+<li>Respiratory failure can impair oxygenation and/or carbon dioxide removal.</li>
 </ul>
+
 </div>
 
-<div class="high">
-<h3>🎯 HIGH-YIELD</h3>
+
+<div class="section nursing">
+
+<h3>👩‍⚕️ Nursing Relevance</h3>
+
 <ul>
-<li>Alveoli are the principal gas-exchange units.</li>
-<li>Right lung has three lobes.</li>
-<li>Left lung has two lobes.</li>
-<li>Diaphragm is the major muscle of quiet inspiration.</li>
+<li>Assess respiratory rate.</li>
+<li>Observe chest movement.</li>
+<li>Check oxygen saturation.</li>
+<li>Assess breath sounds.</li>
+<li>Position patients appropriately to improve ventilation.</li>
 </ul>
+
 </div>
 
-<div class="clinical">
-<h3>🩺 CLINICAL</h3>
-<ul>
-<li>Pneumonia affects lung tissue and can impair gas exchange.</li>
-<li>Asthma causes variable airway obstruction.</li>
-<li>Pneumothorax involves air in the pleural space.</li>
-<li>Hypoxemia means low oxygen level in arterial blood.</li>
-</ul>
+
+<div class="section hand">
+
+<h3>✍️ Hand Note</h3>
+
+<p>
+Right lung = 3 lobes<br>
+Left lung = 2 lobes<br>
+Alveoli = gas exchange<br>
+Pleura = lung covering<br>
+Diaphragm = principal inspiratory muscle<br>
+Epiglottis = protects airway during swallowing
+</p>
+
 </div>
 
-<div class="short">
-<h3>✍️ SHORT QUESTIONS</h3>
-<div class="q">Main site of gas exchange?</div><div class="a">Alveoli.</div>
-<div class="q">How many lobes in right lung?</div><div class="a">Three.</div>
-<div class="q">How many lobes in left lung?</div><div class="a">Two.</div>
-<div class="q">Main muscle of inspiration?</div><div class="a">Diaphragm.</div>
+
+<div class="section">
+
+<h3>📝 MCQ</h3>
+
+<div class="mcq">
+<strong>1. Main site of gas exchange:</strong><br>
+A. Trachea<br>
+B. Bronchus<br>
+C. Alveoli<br>
+D. Larynx
+<div class="answer">Answer: C. Alveoli</div>
 </div>
 
 <div class="mcq">
-<strong>Gas exchange mainly occurs in:</strong>
-<div class="opt">A. Trachea</div>
-<div class="opt">B. Bronchus</div>
-<div class="opt">C. Alveoli</div>
-<div class="opt">D. Larynx</div>
-<div class="ans">✓ Answer: C</div>
+<strong>2. Right lung has:</strong><br>
+A. 1 lobe<br>
+B. 2 lobes<br>
+C. 3 lobes<br>
+D. 4 lobes
+<div class="answer">Answer: C. 3 lobes</div>
 </div>
 
 </div>
-</section>
+
+</article>
 
 
-<!-- ================================================= -->
-<!-- NERVOUS -->
-<!-- ================================================= -->
+<!-- =====================================================
+NERVOUS
+===================================================== -->
 
-<section id="nervous" class="book">
+<article class="book" id="nervous">
 
-<div class="book-head">
-<h2>🧠 05. Nervous System</h2>
+<h2 class="chapter-title">🧠 Chapter 05 — Nervous System</h2>
+
+<div class="section">
+
+<h3>1. Overview</h3>
+
+<p>
+The nervous system controls and coordinates body activities and enables
+the body to respond to internal and external stimuli.
+</p>
+
 </div>
 
-<div class="book-body">
 
-<div class="topic">
-<h3>Divisions</h3>
+<div class="section">
+
+<h3>2. Divisions</h3>
+
 <ul>
 <li>Central nervous system — brain and spinal cord</li>
-<li>Peripheral nervous system — nerves outside CNS</li>
+<li>Peripheral nervous system — cranial and spinal nerves</li>
 </ul>
+
+<p>
+The peripheral nervous system includes sensory and motor components.
+The autonomic nervous system regulates many involuntary functions.
+</p>
+
 </div>
 
-<div class="topic">
-<h3>Brain</h3>
+
+<div class="section">
+
+<h3>3. Brain</h3>
+
+<p>
+The brain is located within the cranial cavity and is protected by the
+skull, meninges and cerebrospinal fluid.
+</p>
+
+<h4>Major parts</h4>
+
 <ul>
 <li>Cerebrum</li>
 <li>Diencephalon</li>
 <li>Brainstem</li>
 <li>Cerebellum</li>
 </ul>
+
 </div>
 
-<div class="topic">
-<h3>Cerebrum</h3>
+
+<div class="section">
+
+<h3>4. Cerebrum</h3>
+
 <p>
-The cerebrum is the largest part of the brain and is involved in
-conscious perception, voluntary movement, memory, language and
-higher cognitive functions.
+The cerebrum is the largest part of the brain and is divided into right
+and left cerebral hemispheres.
 </p>
-</div>
 
-<div class="topic">
-<h3>Cerebellum</h3>
-<p>
-The cerebellum contributes to coordination, balance and fine control
-of movement.
-</p>
-</div>
+<h4>Major lobes</h4>
 
-<div class="topic">
-<h3>Brainstem</h3>
 <ul>
-<li>Midbrain</li>
-<li>Pons</li>
-<li>Medulla oblongata</li>
+<li>Frontal lobe</li>
+<li>Parietal lobe</li>
+<li>Temporal lobe</li>
+<li>Occipital lobe</li>
 </ul>
+
+<div class="box high">
+<strong>🔥 High Yield:</strong><br>
+Frontal → motor functions, planning and aspects of speech<br>
+Parietal → somatic sensory processing<br>
+Temporal → hearing and memory-related functions<br>
+Occipital → vision
 </div>
 
-<div class="topic">
-<h3>Spinal Cord</h3>
+</div>
+
+
+<div class="section">
+
+<h3>5. Cerebellum</h3>
+
 <p>
-The spinal cord lies within the vertebral canal and provides pathways
-between brain and body while participating in reflexes.
+The cerebellum contributes to coordination of movement, balance and
+maintenance of posture.
 </p>
+
 </div>
 
-<div class="topic">
-<h3>Meninges</h3>
-<ul>
+
+<div class="section">
+
+<h3>6. Brainstem</h3>
+
+<p>
+The brainstem consists of midbrain, pons and medulla oblongata.
+It contains important pathways and centers involved in vital functions.
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h3>7. Spinal Cord</h3>
+
+<p>
+The spinal cord extends from the brainstem through the vertebral canal.
+It carries nerve impulses between the brain and peripheral structures
+and participates in reflex activity.
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h3>8. Meninges</h3>
+
+<ol>
 <li>Dura mater</li>
 <li>Arachnoid mater</li>
 <li>Pia mater</li>
-</ul>
+</ol>
+
 </div>
 
-<div class="topic">
-<h3>Autonomic Nervous System</h3>
+
+<div class="section">
+
+<h3>9. Cerebrospinal Fluid</h3>
+
+<p>
+CSF surrounds the brain and spinal cord. It provides cushioning and
+helps maintain the environment of the central nervous system.
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h3>10. Autonomic Nervous System</h3>
+
 <ul>
 <li>Sympathetic division</li>
 <li>Parasympathetic division</li>
 </ul>
+
+<p>
+These systems regulate functions such as heart rate, digestion,
+pupil diameter and glandular activity.
+</p>
+
 </div>
 
-<div class="note">
-<h3>📝 HAND NOTE</h3>
+
+<div class="section clinical">
+
+<h3>🩺 Clinical Anatomy</h3>
+
 <ul>
-<li>CNS → brain + spinal cord</li>
-<li>PNS → peripheral nerves</li>
-<li>Cerebrum → higher functions</li>
-<li>Cerebellum → coordination and balance</li>
-<li>Medulla → important autonomic functions</li>
-<li>Meninges → dura, arachnoid, pia</li>
+<li>Stroke results from interruption or bleeding involving brain blood supply.</li>
+<li>Meningitis affects the meninges.</li>
+<li>Epilepsy involves recurrent abnormal electrical activity in the brain.</li>
+<li>Spinal cord injury can cause sensory and motor deficits.</li>
 </ul>
+
 </div>
 
-<div class="high">
-<h3>🎯 HIGH-YIELD</h3>
+
+<div class="section nursing">
+
+<h3>👩‍⚕️ Nursing Relevance</h3>
+
 <ul>
-<li>Largest brain part → cerebrum.</li>
-<li>Coordination → cerebellum.</li>
-<li>Brainstem includes midbrain, pons and medulla.</li>
-<li>Spinal cord is protected by vertebral column.</li>
+<li>Assess level of consciousness.</li>
+<li>Check pupil reaction.</li>
+<li>Assess motor and sensory function.</li>
+<li>Monitor vital signs.</li>
+<li>Observe signs of increased intracranial pressure.</li>
 </ul>
+
 </div>
 
-<div class="clinical">
-<h3>🩺 CLINICAL</h3>
-<ul>
-<li>Stroke can produce focal neurological deficits.</li>
-<li>Spinal cord injury can cause sensory and motor impairment.</li>
-<li>Meningitis involves inflammation of the meninges.</li>
-<li>Raised intracranial pressure requires urgent assessment.</li>
-</ul>
+
+<div class="section hand">
+
+<h3>✍️ Hand Note</h3>
+
+<p>
+CNS = Brain + spinal cord<br>
+PNS = cranial + spinal nerves<br>
+Cerebellum = coordination and balance<br>
+Occipital lobe = vision<br>
+Temporal lobe = hearing<br>
+Meninges = dura, arachnoid, pia
+</p>
+
 </div>
 
-<div class="short">
-<h3>✍️ SHORT QUESTIONS</h3>
-<div class="q">What forms CNS?</div><div class="a">Brain and spinal cord.</div>
-<div class="q">Main function of cerebellum?</div><div class="a">Coordination and balance.</div>
-<div class="q">Name the meninges.</div><div class="a">Dura, arachnoid and pia mater.</div>
+
+<div class="section">
+
+<h3>📝 MCQ</h3>
+
+<div class="mcq">
+<strong>1. CNS consists of:</strong><br>
+A. Brain and spinal cord<br>
+B. Brain and muscles<br>
+C. Spinal nerves only<br>
+D. Cranial nerves only
+<div class="answer">Answer: A. Brain and spinal cord</div>
 </div>
 
 <div class="mcq">
-<strong>CNS consists of:</strong>
-<div class="opt">A. Brain and spinal cord</div>
-<div class="opt">B. Heart and brain</div>
-<div class="opt">C. Nerves only</div>
-<div class="opt">D. Muscles and nerves</div>
-<div class="ans">✓ Answer: A</div>
+<strong>2. Cerebellum is mainly associated with:</strong><br>
+A. Vision<br>
+B. Balance and coordination<br>
+C. Hearing<br>
+D. Digestion
+<div class="answer">Answer: B. Balance and coordination</div>
 </div>
 
 </div>
-</section>
+
+</article>
 
 
-<!-- ================================================= -->
-<!-- DIGESTIVE -->
-<!-- ================================================= -->
+<!-- =====================================================
+DIGESTIVE
+===================================================== -->
 
-<section id="digestive" class="book">
+<article class="book" id="digestive">
 
-<div class="book-head">
-<h2>🍽️ 06. Digestive System</h2>
-</div>
+<h2 class="chapter-title">🍽️ Chapter 06 — Digestive System</h2>
 
-<div class="book-body">
+<div class="section">
 
-<div class="topic">
-<h3>Alimentary Canal</h3>
+<h3>1. Overview</h3>
+
 <p>
-The digestive tract is a continuous muscular tube extending from
-mouth to anus.
+The digestive system breaks food into smaller substances that can be
+absorbed and used by the body.
 </p>
-<ul>
+
+</div>
+
+
+<div class="section">
+
+<h3>2. Alimentary Canal</h3>
+
+<ol>
 <li>Mouth</li>
 <li>Pharynx</li>
 <li>Esophagus</li>
@@ -1001,153 +1747,306 @@ mouth to anus.
 <li>Large intestine</li>
 <li>Rectum</li>
 <li>Anal canal</li>
-</ul>
+</ol>
+
 </div>
 
-<div class="topic">
-<h3>Small Intestine</h3>
-<ul>
-<li>Duodenum</li>
-<li>Jejunum</li>
-<li>Ileum</li>
-</ul>
+
+<div class="section">
+
+<h3>3. Mouth</h3>
+
 <p>
-It is the major site of digestion and nutrient absorption.
+Digestion begins in the mouth. Teeth mechanically break food and saliva
+helps moisten food and begins digestion of carbohydrates.
 </p>
-</div>
 
-<div class="topic">
-<h3>Large Intestine</h3>
+<h4>Major salivary glands</h4>
+
 <ul>
-<li>Cecum</li>
-<li>Colon</li>
-<li>Rectum</li>
-<li>Anal canal</li>
+<li>Parotid</li>
+<li>Submandibular</li>
+<li>Sublingual</li>
 </ul>
-<p>
-It absorbs water and electrolytes and forms/stores feces.
-</p>
+
 </div>
 
-<div class="topic">
-<h3>Stomach</h3>
+
+<div class="section">
+
+<h3>4. Esophagus</h3>
+
+<p>
+The esophagus is a muscular tube carrying swallowed food from the
+pharynx to the stomach through coordinated peristaltic contractions.
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h3>5. Stomach</h3>
+
+<p>
+The stomach is a muscular hollow organ located mainly in the upper
+left part of the abdomen.
+</p>
+
+<h4>Parts</h4>
+
 <ul>
 <li>Cardia</li>
 <li>Fundus</li>
 <li>Body</li>
 <li>Pyloric part</li>
 </ul>
-</div>
 
-<div class="topic">
-<h3>Liver</h3>
 <p>
-The liver is a major metabolic organ and produces bile.
-It also participates in nutrient processing, detoxification,
-protein synthesis and storage.
+The stomach stores food, mixes it and begins important aspects of
+protein digestion.
 </p>
+
 </div>
 
-<div class="topic">
-<h3>Gallbladder</h3>
+
+<div class="section">
+
+<h3>6. Small Intestine</h3>
+
+<ul>
+<li>Duodenum</li>
+<li>Jejunum</li>
+<li>Ileum</li>
+</ul>
+
 <p>
-The gallbladder stores and concentrates bile.
+Most digestion and nutrient absorption occurs in the small intestine.
+Villi and microvilli increase absorptive surface area.
 </p>
+
 </div>
 
-<div class="topic">
-<h3>Pancreas</h3>
+
+<div class="section">
+
+<h3>7. Large Intestine</h3>
+
+<ul>
+<li>Cecum</li>
+<li>Appendix</li>
+<li>Ascending colon</li>
+<li>Transverse colon</li>
+<li>Descending colon</li>
+<li>Sigmoid colon</li>
+<li>Rectum</li>
+<li>Anal canal</li>
+</ul>
+
 <p>
-The pancreas has exocrine digestive functions and endocrine
-functions related to glucose regulation.
+The large intestine mainly absorbs water and electrolytes and forms
+feces.
 </p>
+
 </div>
 
-<div class="note">
-<h3>📝 HAND NOTE</h3>
+
+<div class="section">
+
+<h3>8. Liver</h3>
+
+<p>
+The liver is the largest internal gland and is located mainly in the
+right upper abdomen.
+</p>
+
+<h4>Major functions</h4>
+
 <ul>
-<li>Food pathway → mouth → pharynx → esophagus → stomach → small intestine → large intestine → rectum → anal canal</li>
-<li>Small intestine → duodenum + jejunum + ileum</li>
-<li>Liver → produces bile</li>
-<li>Gallbladder → stores bile</li>
-<li>Pancreas → digestive enzymes + endocrine hormones</li>
+<li>Produces bile.</li>
+<li>Processes nutrients.</li>
+<li>Stores glycogen and certain vitamins/minerals.</li>
+<li>Detoxification and metabolism of many substances.</li>
+<li>Synthesis of many plasma proteins.</li>
 </ul>
+
 </div>
 
-<div class="high">
-<h3>🎯 HIGH-YIELD</h3>
+
+<div class="section">
+
+<h3>9. Gallbladder</h3>
+
+<p>
+The gallbladder stores and concentrates bile produced by the liver.
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h3>10. Pancreas</h3>
+
+<p>
+The pancreas has both exocrine and endocrine functions.
+Its exocrine part produces digestive enzymes and bicarbonate.
+Its endocrine part produces hormones such as insulin and glucagon.
+</p>
+
+</div>
+
+
+<div class="section clinical">
+
+<h3>🩺 Clinical Anatomy</h3>
+
 <ul>
-<li>Major nutrient absorption → small intestine.</li>
-<li>Water absorption is an important function of large intestine.</li>
-<li>Bile is produced by liver.</li>
-<li>Bile is stored in gallbladder.</li>
+<li>Appendicitis affects the appendix.</li>
+<li>Gastritis involves inflammation of gastric mucosa.</li>
+<li>Peptic ulcer disease can affect stomach or duodenum.</li>
+<li>Hepatitis affects the liver.</li>
+<li>Gallstones can obstruct the biliary system.</li>
+<li>Pancreatitis involves inflammation of the pancreas.</li>
 </ul>
+
 </div>
 
-<div class="clinical">
-<h3>🩺 CLINICAL</h3>
+
+<div class="section nursing">
+
+<h3>👩‍⚕️ Nursing Relevance</h3>
+
 <ul>
-<li>Appendicitis involves inflammation of appendix.</li>
-<li>Peptic ulcer can affect stomach or duodenum.</li>
-<li>Hepatitis affects liver.</li>
-<li>Gallstones can obstruct biliary pathways.</li>
+<li>Assess abdominal pain.</li>
+<li>Monitor bowel pattern.</li>
+<li>Observe vomiting and dehydration.</li>
+<li>Monitor nutritional status.</li>
+<li>Assess stool characteristics when clinically indicated.</li>
 </ul>
+
 </div>
 
-<div class="short">
-<h3>✍️ SHORT QUESTIONS</h3>
-<div class="q">Three parts of small intestine?</div>
-<div class="a">Duodenum, jejunum and ileum.</div>
-<div class="q">Who produces bile?</div><div class="a">Liver.</div>
-<div class="q">Who stores bile?</div><div class="a">Gallbladder.</div>
+
+<div class="section hand">
+
+<h3>✍️ Hand Note</h3>
+
+<p>
+Small intestine = duodenum + jejunum + ileum<br>
+Liver = produces bile<br>
+Gallbladder = stores bile<br>
+Pancreas = digestive enzymes + hormones<br>
+Large intestine = water absorption
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h3>📝 MCQ</h3>
+
+<div class="mcq">
+<strong>1. Main site of nutrient absorption:</strong><br>
+A. Stomach<br>
+B. Small intestine<br>
+C. Large intestine<br>
+D. Esophagus
+<div class="answer">Answer: B. Small intestine</div>
 </div>
 
 <div class="mcq">
-<strong>The major site of nutrient absorption is:</strong>
-<div class="opt">A. Stomach</div>
-<div class="opt">B. Small intestine</div>
-<div class="opt">C. Large intestine</div>
-<div class="opt">D. Esophagus</div>
-<div class="ans">✓ Answer: B</div>
+<strong>2. Bile is produced by:</strong><br>
+A. Gallbladder<br>
+B. Pancreas<br>
+C. Liver<br>
+D. Stomach
+<div class="answer">Answer: C. Liver</div>
 </div>
 
 </div>
-</section>
+
+</article>
 
 
-<!-- ================================================= -->
-<!-- URINARY -->
-<!-- ================================================= -->
+<!-- =====================================================
+URINARY
+===================================================== -->
 
-<section id="urinary" class="book">
+<article class="book" id="urinary">
 
-<div class="book-head">
-<h2>🚽 07. Urinary System</h2>
-</div>
+<h2 class="chapter-title">🚽 Chapter 07 — Urinary System</h2>
 
-<div class="book-body">
+<div class="section">
 
-<div class="topic">
-<h3>Main Organs</h3>
+<h3>1. Components</h3>
+
 <ul>
 <li>Two kidneys</li>
 <li>Two ureters</li>
 <li>Urinary bladder</li>
 <li>Urethra</li>
 </ul>
+
 </div>
 
-<div class="topic">
-<h3>Kidney</h3>
+
+<div class="section">
+
+<h3>2. Kidney</h3>
+
 <p>
-Kidneys are paired organs located posteriorly in the abdomen.
-They regulate fluid, electrolyte and acid-base balance and remove
-metabolic waste through urine formation.
+The kidneys are paired organs located posteriorly in the abdomen.
+They regulate fluid and electrolyte balance and remove metabolic wastes
+through urine formation.
 </p>
+
 </div>
 
-<div class="topic">
-<h3>Nephron</h3>
+
+<div class="section">
+
+<h3>3. External Structure</h3>
+
+<ul>
+<li>Superior pole</li>
+<li>Inferior pole</li>
+<li>Anterior surface</li>
+<li>Posterior surface</li>
+<li>Medial border</li>
+<li>Lateral border</li>
+<li>Renal hilum</li>
+</ul>
+
+</div>
+
+
+<div class="section">
+
+<h3>4. Internal Structure</h3>
+
+<ul>
+<li>Renal cortex</li>
+<li>Renal medulla</li>
+<li>Renal pyramids</li>
+<li>Renal papillae</li>
+<li>Minor calyces</li>
+<li>Major calyces</li>
+<li>Renal pelvis</li>
+</ul>
+
+</div>
+
+
+<div class="section">
+
+<h3>5. Nephron</h3>
+
+<p>
+The nephron is the functional unit of the kidney.
+</p>
+
 <ul>
 <li>Renal corpuscle</li>
 <li>Glomerulus</li>
@@ -1157,190 +2056,337 @@ metabolic waste through urine formation.
 <li>Distal convoluted tubule</li>
 <li>Collecting duct</li>
 </ul>
+
 </div>
 
-<div class="topic">
-<h3>Functions of Kidney</h3>
+
+<div class="section">
+
+<h3>6. Functions of Kidney</h3>
+
 <ul>
-<li>Urine formation</li>
-<li>Waste excretion</li>
-<li>Fluid balance</li>
-<li>Electrolyte balance</li>
-<li>Acid-base regulation</li>
-<li>Blood pressure regulation</li>
-<li>Erythropoietin production</li>
-<li>Vitamin D activation</li>
+<li>Urine formation.</li>
+<li>Removal of metabolic waste.</li>
+<li>Regulation of water balance.</li>
+<li>Regulation of electrolytes.</li>
+<li>Contribution to acid-base balance.</li>
+<li>Renin production.</li>
+<li>Erythropoietin production.</li>
+<li>Activation of vitamin D.</li>
 </ul>
+
 </div>
 
-<div class="topic">
-<h3>Urine Pathway</h3>
+
+<div class="section">
+
+<h3>7. Ureter</h3>
+
 <p>
-Kidney → ureter → urinary bladder → urethra → outside.
+Each ureter carries urine from the renal pelvis to the urinary bladder.
+Peristaltic movement helps transport urine.
 </p>
+
 </div>
 
-<div class="note">
-<h3>📝 HAND NOTE</h3>
+
+<div class="section">
+
+<h3>8. Urinary Bladder</h3>
+
+<p>
+The urinary bladder is a muscular reservoir that temporarily stores urine.
+Its muscular wall contains the detrusor muscle.
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h3>9. Urethra</h3>
+
+<p>
+The urethra carries urine from the bladder to the outside of the body.
+Its length and anatomical relationships differ between males and females.
+</p>
+
+</div>
+
+
+<div class="section clinical">
+
+<h3>🩺 Clinical Anatomy</h3>
+
 <ul>
-<li>Functional unit → nephron</li>
-<li>Filtration begins at glomerulus</li>
-<li>Ureter carries urine to bladder</li>
-<li>Bladder stores urine</li>
-<li>Urethra carries urine outside</li>
+<li>Urinary tract infection can involve bladder, urethra, ureters or kidneys.</li>
+<li>Renal calculi are kidney stones.</li>
+<li>Acute kidney injury causes sudden reduction in kidney function.</li>
+<li>Chronic kidney disease causes progressive loss of kidney function.</li>
 </ul>
+
 </div>
 
-<div class="high">
-<h3>🎯 HIGH-YIELD</h3>
+
+<div class="section nursing">
+
+<h3>👩‍⚕️ Nursing Relevance</h3>
+
 <ul>
-<li>Kidney is the major organ of urine formation.</li>
-<li>Nephron is the functional unit.</li>
-<li>Glomerulus is a capillary network involved in filtration.</li>
-<li>Ureter is not the same as urethra.</li>
+<li>Monitor urine output.</li>
+<li>Observe urine color and characteristics.</li>
+<li>Maintain catheter care when indicated.</li>
+<li>Monitor fluid balance.</li>
+<li>Observe signs of urinary infection.</li>
 </ul>
+
 </div>
 
-<div class="clinical">
-<h3>🩺 CLINICAL</h3>
-<ul>
-<li>Urinary tract infection may affect bladder or other urinary structures.</li>
-<li>Kidney stones can obstruct urinary flow.</li>
-<li>Acute kidney injury may reduce urine production.</li>
-<li>Urine output is an important nursing assessment parameter.</li>
-</ul>
+
+<div class="section hand">
+
+<h3>✍️ Hand Note</h3>
+
+<p>
+Functional unit = nephron<br>
+Kidney → ureter → bladder → urethra<br>
+Glomerulus = filtration site<br>
+Bladder = urine storage
+</p>
+
 </div>
 
-<div class="short">
-<h3>✍️ SHORT QUESTIONS</h3>
-<div class="q">Functional unit of kidney?</div><div class="a">Nephron.</div>
-<div class="q">Urine travels from kidney to bladder through?</div><div class="a">Ureter.</div>
-<div class="q">Urine leaves body through?</div><div class="a">Urethra.</div>
+
+<div class="section">
+
+<h3>📝 MCQ</h3>
+
+<div class="mcq">
+<strong>1. Functional unit of kidney:</strong><br>
+A. Neuron<br>
+B. Nephron<br>
+C. Alveolus<br>
+D. Sarcomere
+<div class="answer">Answer: B. Nephron</div>
 </div>
 
 <div class="mcq">
-<strong>Functional unit of kidney is:</strong>
-<div class="opt">A. Neuron</div>
-<div class="opt">B. Nephron</div>
-<div class="opt">C. Alveolus</div>
-<div class="opt">D. Osteon</div>
-<div class="ans">✓ Answer: B</div>
+<strong>2. Urine is stored in:</strong><br>
+A. Kidney<br>
+B. Ureter<br>
+C. Bladder<br>
+D. Urethra
+<div class="answer">Answer: C. Bladder</div>
 </div>
 
 </div>
-</section>
+
+</article>
 
 
-<!-- ================================================= -->
-<!-- ENDOCRINE -->
-<!-- ================================================= -->
+<!-- =====================================================
+ENDOCRINE
+===================================================== -->
 
-<section id="endocrine" class="book">
+<article class="book" id="endocrine">
 
-<div class="book-head">
-<h2>🦋 08. Endocrine System</h2>
-</div>
+<h2 class="chapter-title">🧪 Chapter 08 — Endocrine System</h2>
 
-<div class="book-body">
+<div class="section">
 
-<div class="topic">
-<h3>Definition</h3>
+<h3>1. Definition</h3>
+
 <p>
-The endocrine system consists of glands that release hormones
-into the bloodstream to regulate body functions.
+The endocrine system consists of glands that release hormones into the
+bloodstream. Hormones regulate metabolism, growth, reproduction,
+stress responses and many other physiological functions.
 </p>
+
 </div>
 
-<div class="topic">
-<h3>Major Endocrine Glands</h3>
 
-<div class="grid">
-<div class="card"><strong>Pituitary</strong><p>Located at base of brain; regulates several endocrine functions.</p></div>
-<div class="card"><strong>Thyroid</strong><p>Neck; thyroid hormones regulate metabolism.</p></div>
-<div class="card"><strong>Parathyroids</strong><p>Regulate calcium homeostasis.</p></div>
-<div class="card"><strong>Adrenals</strong><p>Located above kidneys.</p></div>
-<div class="card"><strong>Pancreatic Islets</strong><p>Insulin and glucagon.</p></div>
-<div class="card"><strong>Pineal</strong><p>Associated with melatonin secretion.</p></div>
-</div>
-</div>
+<div class="section">
 
-<div class="topic">
-<h3>Important Hormones</h3>
+<h3>2. Major Endocrine Glands</h3>
+
 <ul>
-<li>Insulin — lowers blood glucose.</li>
-<li>Glucagon — raises blood glucose.</li>
-<li>Thyroid hormones — regulate metabolic activity.</li>
-<li>Parathyroid hormone — increases blood calcium.</li>
-<li>Adrenaline — participates in stress response.</li>
-<li>Cortisol — important in stress and metabolism.</li>
+<li>Hypothalamus</li>
+<li>Pituitary gland</li>
+<li>Thyroid gland</li>
+<li>Parathyroid glands</li>
+<li>Adrenal glands</li>
+<li>Pancreatic islets</li>
+<li>Pineal gland</li>
+<li>Thymus</li>
+<li>Ovaries</li>
+<li>Testes</li>
 </ul>
+
 </div>
 
-<div class="note">
-<h3>📝 HAND NOTE</h3>
+
+<div class="section">
+
+<h3>3. Pituitary Gland</h3>
+
+<p>
+The pituitary is located at the base of the brain in the sella turcica.
+It is closely connected with the hypothalamus.
+</p>
+
+<p>
+It has anterior and posterior components and participates in regulation
+of growth, thyroid function, adrenal function, reproduction and water
+balance.
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h3>4. Thyroid Gland</h3>
+
+<p>
+The thyroid lies in the anterior neck around the trachea.
+It produces thyroid hormones that influence metabolic activity.
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h3>5. Parathyroid Glands</h3>
+
+<p>
+Usually four small glands are located on the posterior surface of the
+thyroid. Parathyroid hormone plays a major role in calcium regulation.
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h3>6. Adrenal Glands</h3>
+
+<p>
+The adrenal glands sit superior to the kidneys.
+</p>
+
 <ul>
-<li>Thyroid → neck</li>
-<li>Parathyroid → posterior thyroid region</li>
-<li>Adrenal → superior to kidneys</li>
-<li>Insulin → beta cells of pancreatic islets</li>
-<li>Glucagon → alpha cells of pancreatic islets</li>
+<li>Cortex</li>
+<li>Medulla</li>
 </ul>
+
+<p>
+The cortex produces steroid hormones including glucocorticoids and
+mineralocorticoids. The medulla produces catecholamines.
+</p>
+
 </div>
 
-<div class="high">
-<h3>🎯 HIGH-YIELD</h3>
-<ul>
-<li>Pituitary is commonly called the master gland in basic textbooks.</li>
-<li>Thyroid is located in the neck.</li>
-<li>Parathyroid hormone regulates calcium.</li>
-<li>Insulin decreases blood glucose.</li>
-</ul>
+
+<div class="section">
+
+<h3>7. Pancreatic Islets</h3>
+
+<p>
+The endocrine pancreas contains islets of Langerhans.
+Insulin and glucagon are important hormones involved in blood glucose
+regulation.
+</p>
+
 </div>
 
-<div class="clinical">
-<h3>🩺 CLINICAL</h3>
+
+<div class="section">
+
+<h3>8. Pineal and Thymus</h3>
+
+<p>
+The pineal gland is involved in circadian rhythm regulation through
+melatonin secretion.
+</p>
+
+<p>
+The thymus is important in development of T lymphocytes and is most
+active during childhood.
+</p>
+
+</div>
+
+
+<div class="section clinical">
+
+<h3>🩺 Clinical Anatomy</h3>
+
 <ul>
 <li>Diabetes mellitus involves abnormal glucose regulation.</li>
-<li>Hypothyroidism is associated with reduced thyroid hormone effect.</li>
-<li>Hyperthyroidism is associated with increased thyroid hormone effect.</li>
-<li>Adrenal disorders can affect blood pressure and metabolism.</li>
+<li>Hypothyroidism results from insufficient thyroid hormone effect.</li>
+<li>Hyperthyroidism involves excessive thyroid hormone effect.</li>
+<li>Adrenal disorders can alter cortisol or aldosterone-related functions.</li>
 </ul>
+
 </div>
 
-<div class="short">
-<h3>✍️ SHORT QUESTIONS</h3>
-<div class="q">Which gland is in the neck?</div><div class="a">Thyroid gland.</div>
-<div class="q">Which hormone lowers glucose?</div><div class="a">Insulin.</div>
-<div class="q">Which hormone raises glucose?</div><div class="a">Glucagon.</div>
+
+<div class="section hand">
+
+<h3>✍️ Hand Note</h3>
+
+<p>
+Pituitary → major regulatory endocrine gland<br>
+Thyroid → metabolism<br>
+Parathyroid → calcium regulation<br>
+Adrenal → stress and fluid/electrolyte-related hormones<br>
+Pancreas → insulin + glucagon<br>
+Pineal → melatonin
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h3>📝 MCQ</h3>
+
+<div class="mcq">
+<strong>1. Hormone that lowers blood glucose:</strong><br>
+A. Glucagon<br>
+B. Insulin<br>
+C. Cortisol<br>
+D. Thyroxine
+<div class="answer">Answer: B. Insulin</div>
 </div>
 
 <div class="mcq">
-<strong>Insulin is produced by:</strong>
-<div class="opt">A. Thyroid</div>
-<div class="opt">B. Pancreatic beta cells</div>
-<div class="opt">C. Adrenal cortex</div>
-<div class="opt">D. Pituitary</div>
-<div class="ans">✓ Answer: B</div>
+<strong>2. Thyroid gland is located in:</strong><br>
+A. Chest<br>
+B. Abdomen<br>
+C. Neck<br>
+D. Pelvis
+<div class="answer">Answer: C. Neck</div>
 </div>
 
 </div>
-</section>
+
+</article>
 
 
-<!-- ================================================= -->
-<!-- FEMALE -->
-<!-- ================================================= -->
+<!-- =====================================================
+FEMALE REPRODUCTIVE
+===================================================== -->
 
-<section id="female" class="book">
+<article class="book" id="female">
 
-<div class="book-head">
-<h2>👩 09. Female Reproductive System</h2>
-</div>
+<h2 class="chapter-title">♀️ Chapter 09 — Female Reproductive System</h2>
 
-<div class="book-body">
+<div class="section">
 
-<div class="topic">
-<h3>Main Organs</h3>
+<h3>1. Main Components</h3>
+
 <ul>
 <li>Ovaries</li>
 <li>Uterine tubes</li>
@@ -1348,222 +2394,390 @@ into the bloodstream to regulate body functions.
 <li>Cervix</li>
 <li>Vagina</li>
 <li>External genitalia</li>
+<li>Mammary glands</li>
 </ul>
+
 </div>
 
-<div class="topic">
-<h3>Ovary</h3>
+
+<div class="section">
+
+<h3>2. Ovary</h3>
+
 <p>
-The ovaries are female gonads. They produce ova and reproductive
-hormones including estrogen and progesterone.
+The ovaries are paired female gonads located in the pelvis.
+They produce ova and secrete reproductive hormones including estrogen
+and progesterone.
 </p>
+
 </div>
 
-<div class="topic">
-<h3>Uterine Tube</h3>
+
+<div class="section">
+
+<h3>3. Uterine Tube</h3>
+
 <p>
-The uterine tube transports the oocyte toward the uterus.
-The ampulla is a common site of fertilization.
+The uterine tube extends from the uterus toward the ovary.
+It is divided into:
 </p>
+
+<ul>
+<li>Infundibulum</li>
+<li>Ampulla</li>
+<li>Isthmus</li>
+<li>Uterine part</li>
+</ul>
+
+<p>
+The ampulla is the usual site of fertilization.
+</p>
+
 </div>
 
-<div class="topic">
-<h3>Uterus</h3>
+
+<div class="section">
+
+<h3>4. Uterus</h3>
+
+<p>
+The uterus is a muscular hollow organ located in the pelvis.
+It provides the site for implantation and development of pregnancy.
+</p>
+
+<h4>Parts</h4>
+
 <ul>
 <li>Fundus</li>
 <li>Body</li>
+<li>Isthmus</li>
 <li>Cervix</li>
 </ul>
 
 <h4>Layers</h4>
+
 <ul>
 <li>Perimetrium</li>
 <li>Myometrium</li>
 <li>Endometrium</li>
 </ul>
+
 </div>
 
-<div class="topic">
-<h3>Vagina</h3>
+
+<div class="section">
+
+<h3>5. Cervix</h3>
+
+<p>
+The cervix is the lower narrow part of the uterus that projects into
+the upper vagina. It has important roles during menstruation,
+pregnancy and childbirth.
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h3>6. Vagina</h3>
+
 <p>
 The vagina is a muscular canal extending from the cervix to the
-external genital region and serves as the birth canal.
+external genital tract.
 </p>
+
 </div>
 
-<div class="note">
-<h3>📝 HAND NOTE</h3>
+
+<div class="section">
+
+<h3>7. External Genitalia</h3>
+
+<p>
+The external female genitalia are collectively called the vulva and
+include structures such as the labia and clitoris.
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h3>8. Mammary Glands</h3>
+
+<p>
+Mammary glands are specialized structures associated with lactation.
+They contain glandular tissue, ducts and supporting connective tissue.
+</p>
+
+</div>
+
+
+<div class="section clinical">
+
+<h3>🩺 Clinical Anatomy</h3>
+
 <ul>
-<li>Female gonad → ovary</li>
-<li>Common site of fertilization → ampulla of uterine tube</li>
-<li>Uterus layers → perimetrium, myometrium, endometrium</li>
-<li>Myometrium → smooth muscle layer</li>
-<li>Endometrium → inner mucosal layer</li>
-<li>Vagina → birth canal</li>
+<li>Ectopic pregnancy commonly involves implantation outside the uterine cavity, often in a uterine tube.</li>
+<li>Uterine fibroids are benign tumors of uterine smooth muscle.</li>
+<li>Endometriosis involves endometrial-like tissue outside the uterine cavity.</li>
+<li>Cervical disease may be detected through screening.</li>
 </ul>
+
 </div>
 
-<div class="high">
-<h3>🎯 HIGH-YIELD</h3>
+
+<div class="section nursing">
+
+<h3>👩‍⚕️ Nursing Relevance</h3>
+
 <ul>
-<li>Ovary produces ova and hormones.</li>
-<li>Fertilization commonly occurs in ampulla.</li>
-<li>Myometrium is important for uterine contraction.</li>
-<li>Endometrium undergoes cyclic changes.</li>
+<li>Understand pelvic anatomy for obstetric assessment.</li>
+<li>Know uterine layers for understanding contractions and postpartum changes.</li>
+<li>Understand reproductive anatomy for patient education.</li>
 </ul>
+
 </div>
 
-<div class="clinical">
-<h3>🩺 CLINICAL</h3>
-<ul>
-<li>Ectopic pregnancy can occur when implantation occurs outside the uterine cavity, commonly in a uterine tube.</li>
-<li>Fibroids are benign smooth-muscle tumors of the uterus.</li>
-<li>Cervical screening helps detect cervical abnormalities.</li>
-</ul>
+
+<div class="section hand">
+
+<h3>✍️ Hand Note</h3>
+
+<p>
+Ovary → ova + hormones<br>
+Uterine tube → transport of ovum<br>
+Ampulla → common site of fertilization<br>
+Uterus → implantation and pregnancy<br>
+Myometrium → uterine muscle<br>
+Endometrium → inner uterine lining
+</p>
+
 </div>
 
-<div class="short">
-<h3>✍️ SHORT QUESTIONS</h3>
-<div class="q">Female gonad?</div><div class="a">Ovary.</div>
-<div class="q">Common site of fertilization?</div><div class="a">Ampulla of uterine tube.</div>
-<div class="q">Muscular layer of uterus?</div><div class="a">Myometrium.</div>
+
+<div class="section">
+
+<h3>📝 MCQ</h3>
+
+<div class="mcq">
+<strong>1. Usual site of fertilization:</strong><br>
+A. Uterus<br>
+B. Cervix<br>
+C. Ampulla of uterine tube<br>
+D. Vagina
+<div class="answer">Answer: C. Ampulla of uterine tube</div>
 </div>
 
 <div class="mcq">
-<strong>Female gonad is:</strong>
-<div class="opt">A. Uterus</div>
-<div class="opt">B. Ovary</div>
-<div class="opt">C. Vagina</div>
-<div class="opt">D. Cervix</div>
-<div class="ans">✓ Answer: B</div>
+<strong>2. Main muscular layer of uterus:</strong><br>
+A. Endometrium<br>
+B. Myometrium<br>
+C. Perimetrium<br>
+D. Epithelium
+<div class="answer">Answer: B. Myometrium</div>
 </div>
 
 </div>
-</section>
+
+</article>
 
 
-<!-- ================================================= -->
-<!-- MALE -->
-<!-- ================================================= -->
+<!-- =====================================================
+MALE REPRODUCTIVE
+===================================================== -->
 
-<section id="male" class="book">
+<article class="book" id="male">
 
-<div class="book-head">
-<h2>👨 10. Male Reproductive System</h2>
-</div>
+<h2 class="chapter-title">♂️ Chapter 10 — Male Reproductive System</h2>
 
-<div class="book-body">
+<div class="section">
 
-<div class="topic">
-<h3>Main Organs</h3>
+<h3>1. Main Components</h3>
+
 <ul>
 <li>Testes</li>
 <li>Epididymis</li>
 <li>Vas deferens</li>
 <li>Seminal vesicles</li>
 <li>Prostate gland</li>
+<li>Bulbourethral glands</li>
 <li>Penis</li>
 <li>Scrotum</li>
 </ul>
+
 </div>
 
-<div class="topic">
-<h3>Testis</h3>
+
+<div class="section">
+
+<h3>2. Testes</h3>
+
 <p>
-The testes are male gonads. They produce sperm and testosterone.
-Sperm develop within seminiferous tubules.
+The testes are male gonads located in the scrotum. They produce sperm
+and testosterone.
 </p>
-</div>
 
-<div class="topic">
-<h3>Epididymis</h3>
 <p>
-The epididymis is a coiled duct associated with sperm maturation
-and storage.
+Inside the testes are seminiferous tubules where sperm production occurs.
 </p>
+
 </div>
 
-<div class="topic">
-<h3>Vas Deferens</h3>
+
+<div class="section">
+
+<h3>3. Epididymis</h3>
+
+<p>
+The epididymis is a coiled tube attached to the posterior aspect of
+the testis. Sperm mature and are stored here before transport.
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h3>4. Vas Deferens</h3>
+
 <p>
 The vas deferens transports sperm from the epididymis toward the
-ejaculatory duct.
+ejaculatory ducts.
 </p>
+
 </div>
 
-<div class="topic">
-<h3>Accessory Glands</h3>
+
+<div class="section">
+
+<h3>5. Seminal Vesicles</h3>
+
+<p>
+Seminal vesicles contribute fluid containing substances that support
+sperm function and form part of semen.
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h3>6. Prostate Gland</h3>
+
+<p>
+The prostate is located inferior to the urinary bladder and surrounds
+part of the urethra. It contributes fluid to semen.
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h3>7. Penis</h3>
+
+<p>
+The penis is the male copulatory organ and also provides a passage for
+urine through the urethra.
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h3>8. Scrotum</h3>
+
+<p>
+The scrotum contains the testes and helps maintain a temperature
+favorable for sperm production.
+</p>
+
+</div>
+
+
+<div class="section clinical">
+
+<h3>🩺 Clinical Anatomy</h3>
+
 <ul>
-<li>Seminal vesicles</li>
-<li>Prostate gland</li>
-<li>Bulbourethral glands</li>
+<li>Benign prostatic enlargement can affect urinary flow.</li>
+<li>Prostatitis is inflammation of the prostate.</li>
+<li>Testicular torsion can compromise testicular blood supply.</li>
+<li>Undescended testis is called cryptorchidism.</li>
 </ul>
+
 </div>
 
-<div class="note">
-<h3>📝 HAND NOTE</h3>
-<ul>
-<li>Male gonad → testis</li>
-<li>Sperm production → seminiferous tubules</li>
-<li>Sperm maturation/storage → epididymis</li>
-<li>Sperm transport → vas deferens</li>
-<li>Important accessory glands → seminal vesicles, prostate, bulbourethral glands</li>
-</ul>
+
+<div class="section hand">
+
+<h3>✍️ Hand Note</h3>
+
+<p>
+Testis → sperm + testosterone<br>
+Epididymis → sperm maturation<br>
+Vas deferens → sperm transport<br>
+Prostate → contributes to semen<br>
+Scrotum → temperature regulation
+</p>
+
 </div>
 
-<div class="high">
-<h3>🎯 HIGH-YIELD</h3>
-<ul>
-<li>Testosterone is produced mainly by Leydig cells.</li>
-<li>Sperm are produced in seminiferous tubules.</li>
-<li>Epididymis is important for sperm maturation.</li>
-<li>Prostate surrounds the proximal urethra.</li>
-</ul>
-</div>
 
-<div class="clinical">
-<h3>🩺 CLINICAL</h3>
-<ul>
-<li>Benign prostatic enlargement can obstruct urinary flow.</li>
-<li>Testicular torsion is a surgical emergency.</li>
-<li>Infections can affect epididymis and testes.</li>
-</ul>
-</div>
+<div class="section">
 
-<div class="short">
-<h3>✍️ SHORT QUESTIONS</h3>
-<div class="q">Male gonad?</div><div class="a">Testis.</div>
-<div class="q">Where are sperm produced?</div><div class="a">Seminiferous tubules.</div>
-<div class="q">Where do sperm mature?</div><div class="a">Epididymis.</div>
+<h3>📝 MCQ</h3>
+
+<div class="mcq">
+<strong>1. Sperm are produced mainly in:</strong><br>
+A. Prostate<br>
+B. Seminiferous tubules<br>
+C. Vas deferens<br>
+D. Seminal vesicle
+<div class="answer">Answer: B. Seminiferous tubules</div>
 </div>
 
 <div class="mcq">
-<strong>Male gonad is:</strong>
-<div class="opt">A. Prostate</div>
-<div class="opt">B. Testis</div>
-<div class="opt">C. Epididymis</div>
-<div class="opt">D. Penis</div>
-<div class="ans">✓ Answer: B</div>
+<strong>2. Male gonad is:</strong><br>
+A. Prostate<br>
+B. Testis<br>
+C. Penis<br>
+D. Epididymis
+<div class="answer">Answer: B. Testis</div>
 </div>
 
 </div>
-</section>
+
+</article>
 
 
-<!-- ================================================= -->
-<!-- LYMPH -->
-<!-- ================================================= -->
+<!-- =====================================================
+LYMPHATIC
+===================================================== -->
 
-<section id="lymph" class="book">
+<article class="book" id="lymph">
 
-<div class="book-head">
-<h2>🛡️ 11. Lymphatic System</h2>
+<h2 class="chapter-title">🛡️ Chapter 11 — Lymphatic System</h2>
+
+<div class="section">
+
+<h3>1. Overview</h3>
+
+<p>
+The lymphatic system participates in fluid balance, absorption of
+certain dietary fats and immune defense.
+</p>
+
 </div>
 
-<div class="book-body">
 
-<div class="topic">
-<h3>Components</h3>
+<div class="section">
+
+<h3>2. Major Components</h3>
+
 <ul>
 <li>Lymph</li>
 <li>Lymphatic vessels</li>
@@ -1572,104 +2786,156 @@ ejaculatory duct.
 <li>Thymus</li>
 <li>Tonsils</li>
 </ul>
+
 </div>
 
-<div class="topic">
-<h3>Functions</h3>
-<ul>
-<li>Returns excess tissue fluid to circulation.</li>
-<li>Participates in immune defense.</li>
-<li>Transports absorbed dietary fats through specialized lymphatic vessels.</li>
-</ul>
-</div>
 
-<div class="topic">
-<h3>Lymph Nodes</h3>
+<div class="section">
+
+<h3>3. Lymph</h3>
+
 <p>
-Lymph nodes are small immune organs located along lymphatic vessels.
-They filter lymph and provide sites for immune-cell activity.
+Lymph is fluid that enters lymphatic vessels from tissue spaces.
+It eventually returns to the venous circulation.
 </p>
+
 </div>
 
-<div class="topic">
-<h3>Spleen</h3>
+
+<div class="section">
+
+<h3>4. Lymph Nodes</h3>
+
 <p>
-The spleen is a major lymphoid organ. It participates in immune
-responses and blood filtration.
+Lymph nodes are small lymphoid organs distributed along lymphatic
+vessels. They filter lymph and provide sites for immune-cell activity.
 </p>
+
 </div>
 
-<div class="topic">
-<h3>Thymus</h3>
+
+<div class="section">
+
+<h3>5. Spleen</h3>
+
 <p>
-The thymus is important for T-lymphocyte maturation, especially
-during childhood.
+The spleen is located in the left upper abdomen. It filters blood,
+participates in immune responses and removes aged blood cells.
 </p>
+
 </div>
 
-<div class="note">
-<h3>📝 HAND NOTE</h3>
+
+<div class="section">
+
+<h3>6. Thymus</h3>
+
+<p>
+The thymus is located in the anterior mediastinum and is important
+for T-lymphocyte development.
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h3>7. Major Lymphatic Ducts</h3>
+
 <ul>
-<li>Lymph nodes → filter lymph</li>
-<li>Spleen → lymphoid organ and blood filtration</li>
-<li>Thymus → T-cell maturation</li>
-<li>Lymphatic system → immunity + fluid return</li>
+<li>Thoracic duct</li>
+<li>Right lymphatic duct</li>
 </ul>
+
+<p>
+The thoracic duct drains lymph from most of the body.
+The right lymphatic duct drains the right upper quadrant.
+</p>
+
 </div>
 
-<div class="high">
-<h3>🎯 HIGH-YIELD</h3>
+
+<div class="section clinical">
+
+<h3>🩺 Clinical Anatomy</h3>
+
 <ul>
-<li>Spleen is the largest lymphoid organ.</li>
-<li>Thymus is important for T-cell maturation.</li>
-<li>Lymph nodes filter lymph.</li>
-<li>Lymphatic vessels return tissue fluid to circulation.</li>
+<li>Lymphadenopathy means enlarged lymph nodes.</li>
+<li>Lymphedema occurs when lymph drainage is impaired.</li>
+<li>Lymphatic spread can be important in cancer staging.</li>
 </ul>
+
 </div>
 
-<div class="clinical">
-<h3>🩺 CLINICAL</h3>
+
+<div class="section nursing">
+
+<h3>👩‍⚕️ Nursing Relevance</h3>
+
 <ul>
-<li>Lymph node enlargement may occur during infection.</li>
-<li>Lymphedema results from impaired lymph drainage.</li>
-<li>Sentinel lymph node assessment is relevant in some cancers.</li>
+<li>Assess enlarged lymph nodes when indicated.</li>
+<li>Observe limb swelling.</li>
+<li>Understand lymphatic drainage after surgery.</li>
+<li>Provide appropriate care for lymphedema according to clinical guidance.</li>
 </ul>
+
 </div>
 
-<div class="short">
-<h3>✍️ SHORT QUESTIONS</h3>
-<div class="q">Largest lymphoid organ?</div><div class="a">Spleen.</div>
-<div class="q">What filters lymph?</div><div class="a">Lymph nodes.</div>
-<div class="q">Where do T cells mature?</div><div class="a">Thymus.</div>
+
+<div class="section hand">
+
+<h3>✍️ Hand Note</h3>
+
+<p>
+Lymphatic system → fluid balance + immunity<br>
+Spleen → filters blood<br>
+Thymus → T-cell development<br>
+Lymph nodes → filter lymph<br>
+Thoracic duct → drains most of body
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h3>📝 MCQ</h3>
+
+<div class="mcq">
+<strong>1. Which organ filters blood?</strong><br>
+A. Spleen<br>
+B. Thyroid<br>
+C. Pancreas<br>
+D. Kidney
+<div class="answer">Answer: A. Spleen</div>
 </div>
 
 <div class="mcq">
-<strong>Largest lymphoid organ is:</strong>
-<div class="opt">A. Thymus</div>
-<div class="opt">B. Spleen</div>
-<div class="opt">C. Tonsil</div>
-<div class="opt">D. Lymph node</div>
-<div class="ans">✓ Answer: B</div>
+<strong>2. Lymph nodes primarily:</strong><br>
+A. Produce bile<br>
+B. Filter lymph<br>
+C. Produce urine<br>
+D. Pump blood
+<div class="answer">Answer: B. Filter lymph</div>
 </div>
 
 </div>
-</section>
+
+</article>
 
 
-<!-- ================================================= -->
-<!-- SENSE -->
-<!-- ================================================= -->
+<!-- =====================================================
+SPECIAL SENSES
+===================================================== -->
 
-<section id="sense" class="book">
+<article class="book" id="sense">
 
-<div class="book-head">
-<h2>👁️ 12. Special Senses</h2>
-</div>
+<h2 class="chapter-title">👁️ Chapter 12 — Special Senses</h2>
 
-<div class="book-body">
+<div class="section">
 
-<div class="topic">
-<h3>Major Special Senses</h3>
+<h3>1. Special Senses</h3>
+
 <ul>
 <li>Vision</li>
 <li>Hearing</li>
@@ -1677,281 +2943,610 @@ during childhood.
 <li>Smell</li>
 <li>Taste</li>
 </ul>
+
 </div>
 
-<div class="topic">
-<h3>Eye</h3>
+
+<div class="section">
+
+<h3>2. Eye</h3>
+
+<p>
+The eye is the organ of vision and is located within the orbit.
+</p>
+
+<h4>Major structures</h4>
+
 <ul>
 <li>Cornea</li>
 <li>Sclera</li>
+<li>Choroid</li>
 <li>Iris</li>
 <li>Pupil</li>
 <li>Lens</li>
 <li>Retina</li>
 <li>Optic nerve</li>
 </ul>
+
 </div>
 
-<div class="topic">
-<h3>Retina</h3>
+
+<div class="section">
+
+<h3>3. Cornea</h3>
+
 <p>
-The retina contains photoreceptors and neural elements involved
-in vision. Rods are associated mainly with low-light vision and
-cones with color and high-acuity vision.
+The cornea is the transparent anterior part of the eye and contributes
+significantly to focusing light.
 </p>
+
 </div>
 
-<div class="topic">
-<h3>Ear</h3>
+
+<div class="section">
+
+<h3>4. Iris and Pupil</h3>
+
+<p>
+The iris controls the diameter of the pupil and therefore regulates
+the amount of light entering the eye.
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h3>5. Lens</h3>
+
+<p>
+The lens changes shape to help focus light on the retina.
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h3>6. Retina</h3>
+
+<p>
+The retina contains photoreceptor cells that convert light stimuli into
+neural signals.
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h3>7. Ear</h3>
+
+<h4>External ear</h4>
 <ul>
-<li>External ear</li>
-<li>Middle ear</li>
-<li>Inner ear</li>
+<li>Auricle</li>
+<li>External acoustic canal</li>
 </ul>
 
-<h4>Important Structures</h4>
+<h4>Middle ear</h4>
 <ul>
 <li>Tympanic membrane</li>
-<li>Auditory ossicles</li>
+<li>Malleus</li>
+<li>Incus</li>
+<li>Stapes</li>
+</ul>
+
+<h4>Inner ear</h4>
+<ul>
 <li>Cochlea</li>
+<li>Vestibule</li>
 <li>Semicircular canals</li>
-<li>Vestibular structures</li>
 </ul>
+
 </div>
 
-<div class="topic">
-<h3>Hearing & Balance</h3>
+
+<div class="section">
+
+<h3>8. Hearing and Balance</h3>
+
 <p>
-The cochlea is mainly concerned with hearing. The vestibular
-apparatus contributes to balance and spatial orientation.
+The cochlea is mainly associated with hearing.
+The vestibular apparatus contributes to balance and spatial orientation.
 </p>
+
 </div>
 
-<div class="note">
-<h3>📝 HAND NOTE</h3>
-<ul>
-<li>Vision → eye</li>
-<li>Photoreceptors → retina</li>
-<li>Hearing → cochlea</li>
-<li>Balance → vestibular apparatus</li>
-<li>Light enters through → pupil</li>
-<li>Focus → lens</li>
-</ul>
+
+<div class="section">
+
+<h3>9. Smell and Taste</h3>
+
+<p>
+Olfactory receptors detect smell.
+Taste receptors are located mainly within taste buds of the tongue.
+</p>
+
 </div>
 
-<div class="high">
-<h3>🎯 HIGH-YIELD</h3>
-<ul>
-<li>Retina contains rods and cones.</li>
-<li>Cochlea is important for hearing.</li>
-<li>Semicircular canals participate in balance.</li>
-<li>Optic nerve carries visual information from eye.</li>
-</ul>
-</div>
 
-<div class="clinical">
-<h3>🩺 CLINICAL</h3>
+<div class="section clinical">
+
+<h3>🩺 Clinical Anatomy</h3>
+
 <ul>
-<li>Cataract involves opacity of the lens.</li>
-<li>Glaucoma involves optic nerve damage associated with abnormal intraocular pressure.</li>
+<li>Cataract affects the lens and causes visual impairment.</li>
+<li>Glaucoma is associated with optic nerve damage and abnormal intraocular pressure in many cases.</li>
 <li>Otitis media affects the middle ear.</li>
-<li>Hearing loss can arise from conductive or sensorineural mechanisms.</li>
+<li>Hearing loss can result from problems in conductive or sensorineural pathways.</li>
 </ul>
+
 </div>
 
-<div class="short">
-<h3>✍️ SHORT QUESTIONS</h3>
-<div class="q">Main organ of vision?</div><div class="a">Eye.</div>
-<div class="q">Main organ for hearing?</div><div class="a">Cochlea of inner ear.</div>
-<div class="q">Where are rods and cones?</div><div class="a">Retina.</div>
+
+<div class="section hand">
+
+<h3>✍️ Hand Note</h3>
+
+<p>
+Cornea → major refractive surface<br>
+Iris → controls pupil<br>
+Lens → focusing<br>
+Retina → photoreceptors<br>
+Cochlea → hearing<br>
+Semicircular canals → balance
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h3>📝 MCQ</h3>
+
+<div class="mcq">
+<strong>1. Main organ for hearing:</strong><br>
+A. Cochlea<br>
+B. Retina<br>
+C. Cornea<br>
+D. Iris
+<div class="answer">Answer: A. Cochlea</div>
 </div>
 
 <div class="mcq">
-<strong>Photoreceptors are located in:</strong>
-<div class="opt">A. Cornea</div>
-<div class="opt">B. Retina</div>
-<div class="opt">C. Lens</div>
-<div class="opt">D. Sclera</div>
-<div class="ans">✓ Answer: B</div>
+<strong>2. Photoreceptors are located in:</strong><br>
+A. Cornea<br>
+B. Retina<br>
+C. Lens<br>
+D. Iris
+<div class="answer">Answer: B. Retina</div>
 </div>
 
 </div>
-</section>
+
+</article>
 
 
-<!-- ================================================= -->
-<!-- SKIN -->
-<!-- ================================================= -->
+<!-- =====================================================
+INTEGUMENTARY
+===================================================== -->
 
-<section id="skin" class="book">
+<article class="book" id="skin">
 
-<div class="book-head">
-<h2>🧴 13. Integumentary System</h2>
+<h2 class="chapter-title">🧴 Chapter 13 — Integumentary System</h2>
+
+<div class="section">
+
+<h3>1. Overview</h3>
+
+<p>
+The integumentary system includes skin and associated structures such
+as hair, nails and cutaneous glands. It provides protection and helps
+regulate body temperature and sensation.
+</p>
+
 </div>
 
-<div class="book-body">
 
-<div class="topic">
-<h3>Components</h3>
+<div class="section">
+
+<h3>2. Layers of Skin</h3>
+
 <ul>
-<li>Skin</li>
+<li>Epidermis</li>
+<li>Dermis</li>
+<li>Subcutaneous tissue</li>
+</ul>
+
+</div>
+
+
+<div class="section">
+
+<h3>3. Epidermis</h3>
+
+<p>
+The epidermis is the outer epithelial layer of skin. It provides a
+protective barrier and contains keratinocytes and other specialized
+cells.
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h3>4. Dermis</h3>
+
+<p>
+The dermis lies beneath the epidermis and contains connective tissue,
+blood vessels, nerves, hair follicles and glands.
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h3>5. Subcutaneous Tissue</h3>
+
+<p>
+Subcutaneous tissue lies below the dermis and contains connective and
+adipose tissue. It helps with insulation, energy storage and cushioning.
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h3>6. Skin Appendages</h3>
+
+<ul>
 <li>Hair</li>
 <li>Nails</li>
 <li>Sweat glands</li>
 <li>Sebaceous glands</li>
 </ul>
+
 </div>
 
-<div class="topic">
-<h3>Layers of Skin</h3>
 
-<h4>Epidermis</h4>
-<p>
-The outer epithelial layer of skin. It forms a protective barrier.
-</p>
+<div class="section">
 
-<h4>Dermis</h4>
-<p>
-The connective tissue layer beneath the epidermis containing
-blood vessels, nerves, glands and hair follicles.
-</p>
+<h3>7. Functions of Skin</h3>
 
-<h4>Subcutaneous Tissue</h4>
-<p>
-Located beneath the skin; contains variable amounts of adipose
-and connective tissue.
-</p>
-</div>
-
-<div class="topic">
-<h3>Functions of Skin</h3>
 <ul>
 <li>Protection</li>
 <li>Temperature regulation</li>
 <li>Sensation</li>
-<li>Prevention of excessive fluid loss</li>
-<li>Vitamin D-related metabolic function</li>
+<li>Prevention of excessive water loss</li>
 <li>Immune defense</li>
+<li>Vitamin D-related processes</li>
 </ul>
+
 </div>
 
-<div class="topic">
-<h3>Skin Appendages</h3>
-<ul>
-<li>Hair follicles</li>
-<li>Nails</li>
-<li>Sweat glands</li>
-<li>Sebaceous glands</li>
-</ul>
-</div>
 
-<div class="topic">
-<h3>Sweat & Sebaceous Glands</h3>
+<div class="section">
+
+<h3>8. Sweat Glands</h3>
+
 <p>
-Sweat glands participate in thermoregulation. Sebaceous glands
-produce sebum, which helps lubricate skin and hair.
+Sweat glands contribute to thermoregulation by producing sweat.
+Evaporation of sweat helps remove heat from the body.
 </p>
+
 </div>
 
-<div class="note">
-<h3>📝 HAND NOTE</h3>
+
+<div class="section">
+
+<h3>9. Sebaceous Glands</h3>
+
+<p>
+Sebaceous glands produce sebum, an oily secretion that helps lubricate
+skin and hair.
+</p>
+
+</div>
+
+
+<div class="section clinical">
+
+<h3>🩺 Clinical Anatomy</h3>
+
 <ul>
-<li>Outer layer → Epidermis</li>
-<li>Deeper connective layer → Dermis</li>
-<li>Below skin → Subcutaneous tissue</li>
-<li>Sweat → thermoregulation</li>
-<li>Sebaceous gland → sebum</li>
-<li>Skin → protection + sensation</li>
+<li>Burns damage skin and may affect deeper tissues.</li>
+<li>Pressure injuries develop when prolonged pressure compromises tissue perfusion.</li>
+<li>Dermatitis causes inflammation of skin.</li>
+<li>Wounds involve disruption of tissue integrity.</li>
 </ul>
+
 </div>
 
-<div class="high">
-<h3>🎯 HIGH-YIELD</h3>
+
+<div class="section nursing">
+
+<h3>👩‍⚕️ Nursing Relevance</h3>
+
 <ul>
-<li>Epidermis is the outer layer.</li>
-<li>Dermis contains vessels, nerves and glands.</li>
-<li>Sweating helps regulate body temperature.</li>
-<li>Sebaceous glands produce sebum.</li>
+<li>Inspect skin regularly.</li>
+<li>Assess pressure points in immobile patients.</li>
+<li>Maintain skin hygiene.</li>
+<li>Assess wounds and burns.</li>
+<li>Prevent pressure injuries through repositioning and appropriate support surfaces.</li>
 </ul>
+
 </div>
 
-<div class="clinical">
-<h3>🩺 CLINICAL</h3>
-<ul>
-<li>Pressure injuries commonly develop over bony prominences.</li>
-<li>Burns can damage different depths of skin and underlying tissue.</li>
-<li>Skin assessment is important in nursing care.</li>
-<li>Dehydration may cause dry skin and reduced skin turgor.</li>
-</ul>
+
+<div class="section hand">
+
+<h3>✍️ Hand Note</h3>
+
+<p>
+Skin layers → epidermis + dermis + subcutaneous tissue<br>
+Epidermis → outer layer<br>
+Dermis → vessels, nerves, glands, follicles<br>
+Sweat → temperature regulation<br>
+Sebum → lubrication
+</p>
+
 </div>
 
-<div class="short">
-<h3>✍️ SHORT QUESTIONS</h3>
-<div class="q">Outer layer of skin?</div><div class="a">Epidermis.</div>
-<div class="q">Layer containing vessels and glands?</div><div class="a">Dermis.</div>
-<div class="q">Gland producing sebum?</div><div class="a">Sebaceous gland.</div>
+
+<div class="section">
+
+<h3>📝 MCQ</h3>
+
+<div class="mcq">
+<strong>1. Outer layer of skin:</strong><br>
+A. Dermis<br>
+B. Epidermis<br>
+C. Muscle<br>
+D. Fascia
+<div class="answer">Answer: B. Epidermis</div>
 </div>
 
 <div class="mcq">
-<strong>Outer layer of skin is:</strong>
-<div class="opt">A. Dermis</div>
-<div class="opt">B. Epidermis</div>
-<div class="opt">C. Fascia</div>
-<div class="opt">D. Muscle</div>
-<div class="ans">✓ Answer: B</div>
+<strong>2. Sweat mainly helps in:</strong><br>
+A. Digestion<br>
+B. Temperature regulation<br>
+C. Urine formation<br>
+D. Hearing
+<div class="answer">Answer: B. Temperature regulation</div>
 </div>
 
 </div>
-</section>
+
+</article>
 
 
-<!-- ================================================= -->
-<!-- FINAL REVISION -->
-<!-- ================================================= -->
+<!-- =====================================================
+FINAL REVISION
+===================================================== -->
 
-<div class="revision">
+<div class="book active" id="finalRevision">
 
-<h2>⚡ ANATOMY LAST-MINUTE HIGH-YIELD</h2>
+<h2 class="chapter-title">
+🔥 Last-Minute Anatomy High-Yield Revision
+</h2>
 
-<ul>
-<li>Adult skeleton → 206 bones</li>
-<li>Longest bone → Femur</li>
-<li>C1 → Atlas</li>
-<li>C2 → Axis</li>
-<li>True ribs → 1–7</li>
-<li>Heart → 4 chambers</li>
-<li>Largest artery → Aorta</li>
-<li>Gas exchange → Alveoli</li>
-<li>Right lung → 3 lobes</li>
-<li>Left lung → 2 lobes</li>
-<li>CNS → Brain + spinal cord</li>
-<li>Coordination → Cerebellum</li>
-<li>Small intestine → Duodenum + jejunum + ileum</li>
-<li>Bile produced by → Liver</li>
-<li>Bile stored by → Gallbladder</li>
-<li>Kidney functional unit → Nephron</li>
-<li>Female gonad → Ovary</li>
-<li>Male gonad → Testis</li>
-<li>Largest lymphoid organ → Spleen</li>
-<li>Hearing → Cochlea</li>
-<li>Outer skin layer → Epidermis</li>
-<li>Bone-forming cell → Osteoblast</li>
-<li>Bone-resorbing cell → Osteoclast</li>
-<li>Muscle to bone → Tendon</li>
-<li>Bone to bone → Ligament</li>
-</ul>
+<div class="box high">
+
+<h3>🦴 Skeletal</h3>
+
+<p>
+206 bones → adult skeleton<br>
+Femur → longest bone<br>
+Patella → largest sesamoid bone<br>
+7 cervical → 12 thoracic → 5 lumbar<br>
+True ribs → 1–7<br>
+Floating ribs → 11–12
+</p>
+
+</div>
+
+
+<div class="box high">
+
+<h3>💪 Muscular</h3>
+
+<p>
+Skeletal → voluntary<br>
+Smooth → involuntary<br>
+Cardiac → heart<br>
+Diaphragm → principal muscle of inspiration
+</p>
+
+</div>
+
+
+<div class="box high">
+
+<h3>❤️ Cardiovascular</h3>
+
+<p>
+Heart → 4 chambers<br>
+Right side → pulmonary circulation<br>
+Left side → systemic circulation<br>
+Tricuspid → right AV valve<br>
+Mitral → left AV valve<br>
+Aorta → largest artery
+</p>
+
+</div>
+
+
+<div class="box high">
+
+<h3>🫁 Respiratory</h3>
+
+<p>
+Right lung → 3 lobes<br>
+Left lung → 2 lobes<br>
+Alveoli → gas exchange<br>
+Pleura → lung covering<br>
+Diaphragm → main inspiratory muscle
+</p>
+
+</div>
+
+
+<div class="box high">
+
+<h3>🧠 Nervous</h3>
+
+<p>
+CNS → brain + spinal cord<br>
+Cerebellum → coordination and balance<br>
+Occipital → vision<br>
+Temporal → hearing<br>
+Meninges → dura + arachnoid + pia
+</p>
+
+</div>
+
+
+<div class="box high">
+
+<h3>🍽️ Digestive</h3>
+
+<p>
+Small intestine → duodenum + jejunum + ileum<br>
+Most nutrient absorption → small intestine<br>
+Liver → bile production<br>
+Gallbladder → bile storage<br>
+Pancreas → digestive + endocrine functions
+</p>
+
+</div>
+
+
+<div class="box high">
+
+<h3>🚽 Urinary</h3>
+
+<p>
+Kidney → urine formation<br>
+Nephron → functional unit<br>
+Ureter → kidney to bladder<br>
+Bladder → urine storage<br>
+Urethra → urine to exterior
+</p>
+
+</div>
+
+
+<div class="box high">
+
+<h3>🧪 Endocrine</h3>
+
+<p>
+Pituitary → major endocrine regulator<br>
+Thyroid → metabolic regulation<br>
+Parathyroid → calcium regulation<br>
+Pancreas → insulin + glucagon<br>
+Adrenal → cortex + medulla
+</p>
+
+</div>
+
+
+<div class="box high">
+
+<h3>♀️ Female Reproductive</h3>
+
+<p>
+Ovary → ova + hormones<br>
+Ampulla → common site of fertilization<br>
+Uterus → implantation and pregnancy<br>
+Myometrium → muscular layer<br>
+Endometrium → inner uterine lining
+</p>
+
+</div>
+
+
+<div class="box high">
+
+<h3>♂️ Male Reproductive</h3>
+
+<p>
+Testis → sperm + testosterone<br>
+Seminiferous tubules → sperm production<br>
+Epididymis → sperm maturation<br>
+Vas deferens → sperm transport
+</p>
+
+</div>
+
+
+<div class="box high">
+
+<h3>🛡️ Lymphatic</h3>
+
+<p>
+Lymph nodes → filter lymph<br>
+Spleen → filters blood<br>
+Thymus → T-cell development<br>
+Thoracic duct → drains most of body
+</p>
+
+</div>
+
+
+<div class="box high">
+
+<h3>👁️ Special Senses</h3>
+
+<p>
+Retina → photoreceptors<br>
+Lens → focusing<br>
+Cochlea → hearing<br>
+Semicircular canals → balance
+</p>
+
+</div>
+
+
+<div class="box high">
+
+<h3>🧴 Integumentary</h3>
+
+<p>
+Epidermis → outer layer<br>
+Dermis → vessels, nerves, glands and follicles<br>
+Sweat → thermoregulation<br>
+Sebaceous gland → sebum
+</p>
 
 </div>
 
 </div>
-</section>
+
+
+<a class="back"
+href="https://nursingcareer.github.io/nursing-career/bsc-nursing.html">
+← Back to B.Sc. in Nursing
+</a>
 
 </div>
+
 
 <footer>
-<strong>NURSING CAREER</strong>
-<p>Complete Anatomy Study Hub</p>
-<p>B.Sc. in Nursing • Notes • High-Yield • Short Questions • MCQ</p>
+
+<h3>NURSING CAREER</h3>
+
+<p>
+B.Sc. Nursing • Anatomy • Nursing Education
+</p>
+
+<p>
+© Nursing Career | Licensing Examination 2026
+</p>
+
 </footer>
 
 
@@ -1959,41 +3554,49 @@ produce sebum, which helps lubricate skin and hair.
 
 function openChapter(id){
 
-document.querySelectorAll(".book")
-.forEach(function(book){
-book.classList.remove("active");
-});
+    document.querySelectorAll(".book").forEach(function(book){
+        book.classList.remove("active");
+    });
 
-const selected=document.getElementById(id);
+    const target=document.getElementById(id);
 
-if(selected){
-selected.classList.add("active");
-selected.scrollIntoView({
-behavior:"smooth",
-block:"start"
-});
+    if(target){
+        target.classList.add("active");
+        target.scrollIntoView({
+            behavior:"smooth",
+            block:"start"
+        });
+    }
+
 }
 
-}
 
-function searchChapters(){
+function searchTopic(){
 
-let value=document
-.getElementById("search")
-.value.toLowerCase();
+    let input=document.getElementById("searchBox").value.toLowerCase().trim();
 
-document.querySelectorAll(".chapter-btn")
-.forEach(function(btn){
+    const books=document.querySelectorAll(".book");
 
-let text=btn.innerText.toLowerCase();
+    if(input===""){
+        books.forEach(function(book){
+            if(book.id==="finalRevision"){
+                book.classList.add("active");
+            }
+        });
+        return;
+    }
 
-if(text.includes(value)){
-btn.style.display="";
-}else{
-btn.style.display="none";
-}
+    books.forEach(function(book){
 
-});
+        let text=book.innerText.toLowerCase();
+
+        if(text.includes(input)){
+            book.classList.add("active");
+        }else{
+            book.classList.remove("active");
+        }
+
+    });
 
 }
 
