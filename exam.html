@@ -13,6 +13,23 @@
   padding:0;
 }
 <script>
+  <script>
+document.querySelectorAll('input[type="radio"]').forEach(function(option) {
+  option.addEventListener('change', function() {
+
+    document.querySelectorAll(
+      'input[name="' + this.name + '"]'
+    ).forEach(function(item) {
+      item.parentElement.style.background = "";
+      item.parentElement.style.borderColor = "";
+    });
+
+    this.parentElement.style.background = "#ecfdf5";
+    this.parentElement.style.borderColor = "#0f766e";
+  });
+});
+</script>
+
 let timeLeft = 600;
 
 const timer = setInterval(function() {
