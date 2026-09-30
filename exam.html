@@ -223,6 +223,111 @@ header{
 }
 
 .submit-btn:hover,
+  function submitExam(){
+
+```
+const answers = {
+    q1:"b",
+    q2:"c",
+    q3:"d",
+    q4:"b",
+    q5:"b",
+    q6:"a",
+    q7:"a",
+    q8:"c",
+    q9:"b",
+    q10:"c"
+};
+
+let score = 0;
+
+for(let q in answers){
+
+    const selected =
+        document.querySelector(
+            'input[name="' + q + '"]:checked'
+        );
+
+    const question =
+        document.querySelector(
+            'input[name="' + q + '"]'
+        ).closest(".question");
+
+    const oldResult =
+        question.querySelector(".answer-result");
+
+    if(oldResult){
+        oldResult.remove();
+    }
+
+    const result = document.createElement("div");
+    result.className = "answer-result";
+    result.style.marginTop = "12px";
+    result.style.padding = "10px";
+    result.style.borderRadius = "10px";
+
+    if(selected && selected.value === answers[q]){
+
+        score++;
+
+        result.innerHTML =
+            "✅ Correct Answer";
+
+        result.style.background = "#ecfdf5";
+        result.style.color = "#047857";
+
+    }else{
+
+        let correctText =
+            question.querySelector(
+                'input[value="' + answers[q] + '"]'
+            ).parentElement.innerText;
+
+        let yourText =
+            selected
+            ? selected.parentElement.innerText
+            : "No answer selected";
+
+        result.innerHTML =
+            "❌ Your Answer: " + yourText +
+            "<br>✅ Correct Answer: " + correctText;
+
+        result.style.background = "#fef2f2";
+        result.style.color = "#b91c1c";
+    }
+
+    question.appendChild(result);
+}
+
+document.getElementById("result").style.display = "block";
+
+document.getElementById("score").innerText =
+    score + " / 10";
+
+if(score >= 8){
+
+    document.getElementById("message").innerText =
+        "Excellent! Keep preparing for the Licensing Examination.";
+
+}else if(score >= 5){
+
+    document.getElementById("message").innerText =
+        "Good attempt! Revise the important topics again.";
+
+}else{
+
+    document.getElementById("message").innerText =
+        "Keep practicing. You can improve with revision.";
+}
+
+document.getElementById("result").scrollIntoView({
+    behavior:"smooth",
+    block:"center"
+});
+```
+
+}
+
 .retake-btn:hover{
   background:#115e59;
 }
