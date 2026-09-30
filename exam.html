@@ -3,48 +3,80 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Nursing Career - Online Nursing MCQ Examination</title>
 
 <style>
+
 *{
   box-sizing:border-box;
 }
 
+:root{
+  --primary:#075985;
+  --secondary:#0284c7;
+  --bg:#f4f7fb;
+  --card:#ffffff;
+  --text:#172033;
+  --muted:#64748b;
+  --border:#dbe3ec;
+  --green:#16a34a;
+  --red:#dc2626;
+  --yellow:#f59e0b;
+}
+
+body.dark{
+  --bg:#0f172a;
+  --card:#1e293b;
+  --text:#f1f5f9;
+  --muted:#cbd5e1;
+  --border:#334155;
+}
+
 body{
   margin:0;
-  font-family:Arial,sans-serif;
-  background:#f4f7fb;
-  color:#172033;
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  transition:.2s;
 }
 
 header{
-  background:#075985;
+  background:linear-gradient(
+    135deg,
+    #075985,
+    #0284c7
+  );
   color:white;
   text-align:center;
-  padding:22px 10px;
+  padding:25px 12px;
 }
 
 header h1{
-  margin:0 0 6px;
+  margin:0;
+  font-size:28px;
 }
 
 header p{
-  margin:0;
+  margin:7px 0 0;
 }
 
 .homebar{
-  background:white;
-  text-align:center;
+  background:var(--card);
   padding:12px;
-  box-shadow:0 2px 6px #0001;
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  box-shadow:0 2px 7px #0002;
 }
 
 button{
-  background:#075985;
-  color:white;
   border:0;
-  padding:11px 18px;
   border-radius:8px;
+  padding:11px 17px;
+  background:var(--primary);
+  color:white;
   cursor:pointer;
   font-size:15px;
 }
@@ -53,221 +85,361 @@ button:hover{
   opacity:.9;
 }
 
-.homebtn{
-  background:#075985;
-}
-
 .container{
-  max-width:950px;
+  max-width:1050px;
   margin:20px auto;
   padding:0 12px;
 }
 
+.card,
+.section,
+.startBox,
+.result{
+  background:var(--card);
+  border-radius:14px;
+  box-shadow:0 3px 12px #0002;
+}
+
 .startBox{
-  background:white;
-  padding:20px;
-  border-radius:12px;
-  box-shadow:0 2px 8px #0001;
-  margin-bottom:20px;
+  padding:25px;
 }
 
 .startBox h2{
   margin-top:0;
 }
 
-.nameInput{
+.input,
+select{
   width:100%;
   padding:13px;
-  border:1px solid #ccc;
-  border-radius:8px;
+  border:1px solid var(--border);
+  background:var(--card);
+  color:var(--text);
+  border-radius:9px;
   font-size:16px;
-  margin:8px 0 12px;
+  margin:7px 0 12px;
 }
 
 .startBtn{
   width:100%;
+  padding:15px;
   font-size:18px;
-  padding:14px;
 }
 
-.topbar{
-  background:white;
-  padding:15px;
+.hidden{
+  display:none!important;
+}
+
+/* Dashboard */
+
+.dashboard{
+  display:grid;
+  grid-template-columns:
+    repeat(4,1fr);
+  gap:12px;
+  margin-bottom:20px;
+}
+
+.stat{
+  background:var(--card);
+  padding:18px;
+  border-radius:12px;
+  box-shadow:0 2px 8px #0002;
+  text-align:center;
+}
+
+.statIcon{
+  font-size:25px;
+}
+
+.statValue{
+  font-size:26px;
+  font-weight:bold;
+  margin:5px 0;
+}
+
+.statLabel{
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* Exam */
+
+.examTop{
+  background:var(--card);
+  padding:14px;
   border-radius:12px;
   display:flex;
   justify-content:space-between;
   align-items:center;
   gap:10px;
-  margin-bottom:15px;
-  box-shadow:0 2px 8px #0001;
   flex-wrap:wrap;
-}
-
-select{
-  border:1px solid #ddd;
-  background:white;
-  border-radius:8px;
-  padding:11px;
-  font-size:15px;
+  margin-bottom:15px;
+  box-shadow:0 2px 8px #0002;
 }
 
 .timer{
-  font-size:20px;
+  font-size:22px;
   font-weight:bold;
-  color:#dc2626;
+  color:var(--red);
 }
 
-.card{
-  background:white;
+.progressBox{
+  background:var(--card);
+  padding:12px;
+  border-radius:10px;
   margin-bottom:15px;
-  padding:18px;
-  border-radius:12px;
-  box-shadow:0 2px 8px #0001;
 }
 
-.q{
+.progressTrack{
+  height:10px;
+  background:#e2e8f0;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+.progressBar{
+  height:100%;
+  width:0%;
+  background:var(--secondary);
+  transition:.3s;
+}
+
+/* Question */
+
+.questionCard{
+  background:var(--card);
+  padding:20px;
+  margin-bottom:15px;
+  border-radius:13px;
+  box-shadow:0 2px 8px #0002;
+  position:relative;
+}
+
+.questionTitle{
   font-weight:bold;
-  margin-bottom:12px;
-  line-height:1.5;
+  line-height:1.6;
+  margin-bottom:15px;
+}
+
+.subjectBadge{
+  display:inline-block;
+  background:#e0f2fe;
+  color:#075985;
+  border-radius:20px;
+  padding:4px 9px;
+  font-size:11px;
+  margin-left:5px;
 }
 
 .option{
   display:block;
-  padding:11px;
-  margin:7px 0;
-  border:1px solid #ddd;
-  border-radius:8px;
+  padding:12px;
+  border:1px solid var(--border);
+  border-radius:9px;
+  margin:8px 0;
   cursor:pointer;
 }
 
 .option:hover{
-  background:#f0f9ff;
+  background:#eff6ff;
 }
 
 .option input{
   margin-right:8px;
 }
 
-.submit{
+.option.selected{
+  border-color:var(--secondary);
+  background:#e0f2fe;
+}
+
+.markBtn{
+  position:absolute;
+  right:15px;
+  top:15px;
+  padding:6px 10px;
+  font-size:12px;
+  background:#64748b;
+}
+
+.markBtn.marked{
+  background:#f59e0b;
+}
+
+.questionNav{
+  display:flex;
+  gap:6px;
+  flex-wrap:wrap;
+  margin-bottom:15px;
+}
+
+.navQ{
+  width:38px;
+  height:38px;
+  padding:0;
+  background:#64748b;
+}
+
+.navQ.answered{
+  background:var(--green);
+}
+
+.navQ.marked{
+  background:var(--yellow);
+}
+
+.submitBtn{
   width:100%;
+  padding:16px;
   font-size:18px;
-  padding:15px;
   margin:10px 0 25px;
 }
 
+/* Result */
+
 .result{
-  background:white;
   padding:25px;
-  border-radius:12px;
-  box-shadow:0 2px 8px #0001;
 }
 
 .score{
-  font-size:34px;
+  font-size:40px;
   font-weight:bold;
-  color:#075985;
+  color:var(--primary);
 }
 
-.review{
-  margin-top:25px;
+.resultGrid{
+  display:grid;
+  grid-template-columns:
+    repeat(4,1fr);
+  gap:10px;
+  margin:20px 0;
 }
+
+.resultStat{
+  background:var(--bg);
+  padding:15px;
+  border-radius:10px;
+  text-align:center;
+}
+
+/* Review */
 
 .reviewItem{
-  padding:16px;
-  border-radius:10px;
+  padding:17px;
   margin:12px 0;
-  background:#f8fafc;
-  border-left:5px solid #999;
+  border-radius:10px;
+  background:var(--bg);
+  border-left:5px solid #64748b;
 }
 
-.correct{
-  border-left-color:#16a34a;
+.reviewItem.correct{
+  border-left-color:var(--green);
 }
 
-.wrong{
-  border-left-color:#dc2626;
+.reviewItem.wrong{
+  border-left-color:var(--red);
 }
 
-.unanswered{
-  border-left-color:#f59e0b;
+.reviewItem.unanswered{
+  border-left-color:var(--yellow);
 }
 
 .explanation{
-  margin-top:12px;
-  padding:12px;
   background:#eff6ff;
+  padding:12px;
   border-radius:8px;
+  margin-top:12px;
   line-height:1.6;
 }
 
-.hidden{
-  display:none;
-}
+/* Sections */
 
 .section{
-  margin-top:20px;
-  background:white;
   padding:20px;
-  border-radius:12px;
-  box-shadow:0 2px 8px #0001;
+  margin-top:20px;
 }
 
 .section h2{
   margin-top:0;
 }
 
-.historyTable,
-.leaderTable{
-  width:100%;
-  border-collapse:collapse;
+.tableWrap{
+  overflow-x:auto;
 }
 
-.historyTable th,
-.historyTable td,
-.leaderTable th,
-.leaderTable td{
-  padding:10px 7px;
-  border-bottom:1px solid #ddd;
+table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:600px;
+}
+
+th,
+td{
+  padding:10px;
+  border-bottom:1px solid var(--border);
   text-align:center;
 }
 
-.rank{
-  font-size:20px;
-  font-weight:bold;
+th{
+  background:var(--bg);
 }
 
-.gold{
-  color:#d4a000;
+/* Subject performance */
+
+.subjectBox{
+  margin:12px 0;
 }
 
-.silver{
-  color:#777;
+.subjectName{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:5px;
 }
 
-.bronze{
-  color:#a0522d;
+.subjectTrack{
+  height:10px;
+  background:#e2e8f0;
+  border-radius:10px;
+  overflow:hidden;
 }
 
-.badge{
-  display:inline-block;
-  background:#e0f2fe;
-  color:#075985;
-  padding:4px 8px;
-  border-radius:15px;
-  font-size:11px;
-  margin-left:5px;
+.subjectFill{
+  height:100%;
+  background:var(--secondary);
 }
 
-.dangerBtn{
-  background:#dc2626;
-  margin-top:12px;
+/* Toast */
+
+.toast{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#0f172a;
+  color:white;
+  padding:13px 17px;
+  border-radius:9px;
+  display:none;
+  z-index:9999;
 }
 
-.retakeBtn{
-  margin-top:10px;
+/* Mobile */
+
+@media(max-width:800px){
+
+  .dashboard{
+    grid-template-columns:
+      repeat(2,1fr);
+  }
+
+  .resultGrid{
+    grid-template-columns:
+      repeat(2,1fr);
+  }
+
 }
 
-@media(max-width:600px){
+@media(max-width:550px){
 
   header h1{
     font-size:22px;
@@ -277,232 +449,424 @@ select{
     padding:0 8px;
   }
 
-  .topbar{
+  .dashboard{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .examTop{
     align-items:stretch;
   }
 
-  .topbar>*{
+  .examTop>*{
     width:100%;
-  }
-
-  .timer{
     text-align:center;
   }
 
-  .section{
-    overflow-x:auto;
+  .resultGrid{
+    grid-template-columns:1fr 1fr;
   }
 
-  .historyTable,
-  .leaderTable{
-    min-width:600px;
-  }
 }
+
 </style>
 </head>
 
 <body>
 
 <header>
-  <h1>🩺 Nursing Career</h1>
-  <p>Online Nursing MCQ Examination</p>
+
+<h1>🩺 Nursing Career</h1>
+
+<p>
+Online Nursing MCQ Examination
+</p>
+
 </header>
 
+
 <div class="homebar">
-  <button class="homebtn" onclick="goHome()">
-    🏠 Back to Home
-  </button>
+
+<button onclick="goHome()">
+🏠 Home
+</button>
+
+<button onclick="toggleDark()">
+🌙 Dark Mode
+</button>
+
+<button onclick="scrollDashboard()">
+📊 Dashboard
+</button>
+
 </div>
+
 
 <div class="container">
 
-  <!-- START BOX -->
 
-  <div id="startBox" class="startBox">
+<!-- =========================
+     DASHBOARD
+========================= -->
 
-    <h2>📝 Start Nursing Exam</h2>
+<div id="dashboardArea">
 
-    <p>
-      Enter your name and select a subject to begin.
-    </p>
+<div class="dashboard">
 
-    <input
-      type="text"
-      id="studentName"
-      class="nameInput"
-      placeholder="Enter your name"
-      maxlength="40"
-    >
+<div class="stat">
 
-    <select id="subjectSelect" class="nameInput">
+<div class="statIcon">📝</div>
 
-      <option value="All">
-        All Subjects
-      </option>
+<div
+class="statValue"
+id="totalExams">
+0
+</div>
 
-      <option value="Fundamentals">
-        Fundamentals of Nursing
-      </option>
+<div class="statLabel">
+Total Exams
+</div>
 
-      <option value="Anatomy">
-        Anatomy
-      </option>
-
-      <option value="Physiology">
-        Physiology
-      </option>
-
-      <option value="Pharmacology">
-        Pharmacology
-      </option>
-
-      <option value="Medical">
-        Medical-Surgical Nursing
-      </option>
-
-      <option value="Pediatric">
-        Pediatric Nursing
-      </option>
-
-      <option value="Community">
-        Community Health Nursing
-      </option>
-
-      <option value="Nutrition">
-        Nutrition
-      </option>
-
-    </select>
-
-    <button
-      class="startBtn"
-      onclick="startExam()"
-    >
-      🚀 Start Exam
-    </button>
-
-  </div>
+</div>
 
 
-  <!-- EXAM -->
+<div class="stat">
 
-  <div id="exam" class="hidden">
+<div class="statIcon">📈</div>
 
-    <div class="topbar">
+<div
+class="statValue"
+id="averageScore">
+0%
+</div>
 
-      <div>
-        👤 <b id="examStudent"></b>
-      </div>
+<div class="statLabel">
+Average Score
+</div>
 
-      <div>
-        Questions: <b>60</b>
-      </div>
-
-      <div
-        class="timer"
-        id="timer"
-      >
-        30:00
-      </div>
-
-    </div>
-
-    <form id="examForm">
-
-      <div id="questions"></div>
-
-      <button
-        type="submit"
-        class="submit"
-      >
-        ✅ Submit Exam
-      </button>
-
-    </form>
-
-  </div>
+</div>
 
 
-  <!-- RESULT -->
+<div class="stat">
 
-  <div
-    id="result"
-    class="result hidden"
-  ></div>
+<div class="statIcon">🏆</div>
 
+<div
+class="statValue"
+id="bestScore">
+0%
+</div>
 
-  <!-- HISTORY -->
+<div class="statLabel">
+Best Score
+</div>
 
-  <div class="section">
-
-    <h2>📊 Exam History</h2>
-
-    <div id="historyData"></div>
-
-    <button
-      class="dangerBtn"
-      onclick="clearHistory()"
-    >
-      🗑️ Clear History
-    </button>
-
-  </div>
+</div>
 
 
-  <!-- LEADERBOARD -->
+<div class="stat">
 
-  <div class="section">
+<div class="statIcon">🎯</div>
 
-    <h2>🏆 Leaderboard</h2>
+<div
+class="statValue"
+id="accuracy">
+0%
+</div>
 
-    <p>
-      Highest scores saved on this browser.
-    </p>
+<div class="statLabel">
+Accuracy
+</div>
 
-    <div id="leaderboardData"></div>
+</div>
 
-    <button
-      class="dangerBtn"
-      onclick="clearLeaderboard()"
-    >
-      🗑️ Clear Leaderboard
-    </button>
+</div>
 
-  </div>
+</div>
 
+
+<!-- =========================
+     START
+========================= -->
+
+<div
+id="startBox"
+class="startBox"
+>
+
+<h2>
+🚀 Start Your Nursing Exam
+</h2>
+
+<p>
+Enter your name and choose a subject.
+</p>
+
+
+<input
+id="studentName"
+class="input"
+type="text"
+maxlength="40"
+placeholder="Enter your name"
+>
+
+
+<select
+id="subjectSelect"
+class="input"
+>
+
+<option value="All">
+📚 All Subjects
+</option>
+
+<option value="Fundamentals">
+Fundamentals of Nursing
+</option>
+
+<option value="Anatomy">
+Anatomy
+</option>
+
+<option value="Physiology">
+Physiology
+</option>
+
+<option value="Pharmacology">
+Pharmacology
+</option>
+
+<option value="Medical">
+Medical-Surgical Nursing
+</option>
+
+<option value="Pediatric">
+Pediatric Nursing
+</option>
+
+<option value="Community">
+Community Health Nursing
+</option>
+
+<option value="Nutrition">
+Nutrition
+</option>
+
+</select>
+
+
+<button
+class="startBtn"
+onclick="startExam()"
+>
+🚀 Start Exam
+</button>
+
+</div>
+
+
+<!-- =========================
+     EXAM
+========================= -->
+
+<div
+id="exam"
+class="hidden"
+>
+
+
+<div class="examTop">
+
+<div>
+👤
+<b id="examStudent">
+</b>
+</div>
+
+
+<div>
+📚
+<b id="examSubject">
+</b>
+</div>
+
+
+<div class="timer"
+id="timer">
+30:00
+</div>
+
+</div>
+
+
+<div class="progressBox">
+
+<div>
+<b id="progressText">
+0 / 60 answered
+</b>
+</div>
+
+<div class="progressTrack">
+
+<div
+id="progressBar"
+class="progressBar">
+</div>
+
+</div>
+
+</div>
+
+
+<div
+id="questionNavigation"
+class="questionNav">
+</div>
+
+
+<form id="examForm">
+
+<div id="questions"></div>
+
+
+<button
+type="submit"
+class="submitBtn"
+>
+✅ Submit Exam
+</button>
+
+</form>
+
+</div>
+
+
+<!-- =========================
+     RESULT
+========================= -->
+
+<div
+id="result"
+class="result hidden">
+</div>
+
+
+<!-- =========================
+     SUBJECT PERFORMANCE
+========================= -->
+
+<div class="section">
+
+<h2>
+📚 Subject Performance
+</h2>
+
+<div id="subjectPerformance">
+<p>
+No performance data yet.
+</p>
+</div>
+
+</div>
+
+
+<!-- =========================
+     HISTORY
+========================= -->
+
+<div class="section">
+
+<h2>
+📊 Exam History
+</h2>
+
+<div
+class="tableWrap"
+id="historyData">
+</div>
+
+
+<button
+onclick="clearHistory()"
+style="background:#dc2626;margin-top:12px;"
+>
+🗑️ Clear History
+</button>
+
+</div>
+
+
+<!-- =========================
+     LEADERBOARD
+========================= -->
+
+<div class="section">
+
+<h2>
+🏆 Leaderboard
+</h2>
+
+<p>
+Top scores saved on this browser.
+</p>
+
+<div
+class="tableWrap"
+id="leaderboardData">
+</div>
+
+
+<button
+onclick="clearLeaderboard()"
+style="background:#dc2626;margin-top:12px;"
+>
+🗑️ Clear Leaderboard
+</button>
+
+</div>
+
+
+</div>
+
+
+<div
+id="toast"
+class="toast">
 </div>
 
 
 <script>
 
+
 /* =====================================================
-   BASE QUESTION BANK
+   QUESTION DATABASE
 ===================================================== */
 
-const baseQuestions = [
+const baseQuestions=[
 
 {
 subject:"Fundamentals",
 q:"What is the normal adult body temperature approximately?",
 o:["35°C","37°C","40°C","42°C"],
 a:1,
-e:"A normal adult body temperature is approximately 37°C, although normal values can vary somewhat between individuals and measurement methods."
+e:"A normal adult body temperature is approximately 37°C, although normal values can vary."
 },
 
 {
 subject:"Fundamentals",
-q:"Which position is commonly used to help a patient breathe more easily?",
+q:"Which position commonly helps a patient breathe more easily?",
 o:["High Fowler's","Supine","Prone","Lithotomy"],
 a:0,
-e:"High Fowler's position elevates the upper body and can help improve lung expansion and make breathing more comfortable."
+e:"High Fowler's position elevates the upper body and can help improve lung expansion."
 },
 
 {
 subject:"Fundamentals",
-q:"Which vital sign measures the pressure of blood against arterial walls?",
+q:"Which vital sign measures pressure of blood against arterial walls?",
 o:["Pulse","Temperature","Blood pressure","Respiration"],
 a:2,
-e:"Blood pressure measures the force exerted by circulating blood against the walls of the arteries."
+e:"Blood pressure measures the force of circulating blood against arterial walls."
 },
 
 {
@@ -510,7 +874,7 @@ subject:"Fundamentals",
 q:"What is the primary purpose of hand hygiene?",
 o:["Improve appetite","Prevent infection","Reduce pain","Increase blood pressure"],
 a:1,
-e:"Hand hygiene removes or reduces microorganisms on the hands and is one of the most important measures for preventing the spread of infection."
+e:"Hand hygiene reduces microorganisms and helps prevent the spread of infection."
 },
 
 {
@@ -518,15 +882,7 @@ subject:"Fundamentals",
 q:"Which instrument is used to listen to heart and lung sounds?",
 o:["Stethoscope","Thermometer","Glucometer","Scale"],
 a:0,
-e:"A stethoscope is used to auscultate sounds produced by the heart, lungs and other body systems."
-},
-
-{
-subject:"Fundamentals",
-q:"Which device is commonly used to measure blood pressure?",
-o:["Thermometer","Sphygmomanometer","Glucometer","Scale"],
-a:1,
-e:"A sphygmomanometer is a device used to measure arterial blood pressure."
+e:"A stethoscope is used for auscultation of heart, lung and other body sounds."
 },
 
 {
@@ -534,7 +890,7 @@ subject:"Anatomy",
 q:"Which organ pumps blood throughout the body?",
 o:["Liver","Heart","Kidney","Lung"],
 a:1,
-e:"The heart is a muscular organ that pumps blood through the pulmonary and systemic circulations."
+e:"The heart pumps blood through the pulmonary and systemic circulations."
 },
 
 {
@@ -542,7 +898,7 @@ subject:"Anatomy",
 q:"Which organ is primarily responsible for gas exchange?",
 o:["Heart","Liver","Lungs","Stomach"],
 a:2,
-e:"The lungs are the primary organs of respiration. Gas exchange occurs between the alveoli and surrounding blood vessels."
+e:"The lungs contain alveoli where oxygen and carbon dioxide are exchanged."
 },
 
 {
@@ -558,7 +914,7 @@ subject:"Anatomy",
 q:"Which organ filters blood and produces urine?",
 o:["Kidney","Heart","Pancreas","Spleen"],
 a:0,
-e:"The kidneys filter the blood, regulate fluid and electrolyte balance, and produce urine."
+e:"The kidneys filter blood and produce urine."
 },
 
 {
@@ -566,23 +922,7 @@ subject:"Anatomy",
 q:"What is the largest organ of the human body?",
 o:["Liver","Skin","Heart","Brain"],
 a:1,
-e:"The skin is the largest organ of the human body and provides protection, sensation and helps regulate body temperature."
-},
-
-{
-subject:"Anatomy",
-q:"Which organ is responsible for most nutrient absorption?",
-o:["Small intestine","Heart","Lung","Kidney"],
-a:0,
-e:"Most digestion and absorption of nutrients occur in the small intestine."
-},
-
-{
-subject:"Anatomy",
-q:"Which part of the brain is primarily associated with coordination?",
-o:["Cerebellum","Liver","Kidney","Pancreas"],
-a:0,
-e:"The cerebellum plays an important role in coordination, balance and the precision of voluntary movements."
+e:"The skin is the largest organ of the human body."
 },
 
 {
@@ -590,7 +930,7 @@ subject:"Physiology",
 q:"What is the main function of red blood cells?",
 o:["Fight infection","Carry oxygen","Produce hormones","Digest food"],
 a:1,
-e:"Red blood cells contain hemoglobin, which enables them to transport oxygen from the lungs to body tissues."
+e:"Red blood cells contain hemoglobin and transport oxygen."
 },
 
 {
@@ -598,7 +938,7 @@ subject:"Physiology",
 q:"Which blood cells are mainly involved in immunity?",
 o:["Red blood cells","White blood cells","Platelets","Plasma"],
 a:1,
-e:"White blood cells are major components of the immune system and help defend the body against infection and other foreign substances."
+e:"White blood cells are major components of the immune system."
 },
 
 {
@@ -606,7 +946,7 @@ subject:"Physiology",
 q:"What is the main function of platelets?",
 o:["Oxygen transport","Blood clotting","Digestion","Hormone production"],
 a:1,
-e:"Platelets help form blood clots and contribute to stopping bleeding after blood vessel injury."
+e:"Platelets participate in formation of blood clots."
 },
 
 {
@@ -614,31 +954,7 @@ subject:"Physiology",
 q:"Which system controls many body functions through hormones?",
 o:["Endocrine system","Skeletal system","Respiratory system","Digestive system"],
 a:0,
-e:"The endocrine system produces and releases hormones that regulate many processes including metabolism, growth and reproduction."
-},
-
-{
-subject:"Physiology",
-q:"Which gas is required for normal cellular respiration?",
-o:["Oxygen","Nitrogen","Helium","Hydrogen"],
-a:0,
-e:"Oxygen is required by aerobic cells for efficient energy production through cellular respiration."
-},
-
-{
-subject:"Physiology",
-q:"What is the main function of the respiratory system?",
-o:["Gas exchange","Blood clotting","Food storage","Bone formation"],
-a:0,
-e:"The respiratory system brings oxygen into the body and removes carbon dioxide, supporting gas exchange."
-},
-
-{
-subject:"Physiology",
-q:"What does the circulatory system transport?",
-o:["Blood and substances throughout the body","Only food","Only air","Only urine"],
-a:0,
-e:"The circulatory system transports blood, oxygen, nutrients, hormones and metabolic waste throughout the body."
+e:"The endocrine system produces hormones that regulate many physiological processes."
 },
 
 {
@@ -646,15 +962,15 @@ subject:"Pharmacology",
 q:"What is pharmacology primarily concerned with?",
 o:["Bones","Drugs and their effects","Muscles only","Nutrition only"],
 a:1,
-e:"Pharmacology is the scientific study of drugs, including their actions, effects, uses and interactions with living organisms."
+e:"Pharmacology studies drugs and their actions and effects."
 },
 
 {
 subject:"Pharmacology",
-q:"Which route involves placing medication under the tongue?",
+q:"Which route places medication under the tongue?",
 o:["Oral","Sublingual","Intramuscular","Topical"],
 a:1,
-e:"The sublingual route places medication beneath the tongue, where it can be absorbed through the oral mucosa."
+e:"Sublingual medication is placed under the tongue for absorption through oral mucosa."
 },
 
 {
@@ -662,7 +978,7 @@ subject:"Pharmacology",
 q:"Which route delivers medication directly into a vein?",
 o:["IV","IM","SC","Oral"],
 a:0,
-e:"The intravenous route delivers medication directly into a vein."
+e:"Intravenous administration delivers medication directly into a vein."
 },
 
 {
@@ -670,7 +986,7 @@ subject:"Medical",
 q:"Diabetes mellitus is primarily associated with problems involving which hormone?",
 o:["Insulin","Melatonin","Thyroxine","Adrenaline"],
 a:0,
-e:"Insulin is a hormone produced by the pancreas that plays a central role in regulating blood glucose."
+e:"Insulin is central to regulation of blood glucose."
 },
 
 {
@@ -678,31 +994,15 @@ subject:"Medical",
 q:"Hypertension refers to persistently elevated:",
 o:["Body temperature","Blood pressure","Pulse only","Blood sugar only"],
 a:1,
-e:"Hypertension is the medical term for persistently elevated blood pressure."
+e:"Hypertension means persistently elevated blood pressure."
 },
 
 {
 subject:"Medical",
-q:"Which symptom is commonly associated with dehydration?",
-o:["Excessive hydration","Dry mouth","Increased urine output","Weight gain"],
-a:1,
-e:"Dry mouth can occur when the body does not have enough fluid. Other possible signs include thirst and reduced urine output."
-},
-
-{
-subject:"Medical",
-q:"Asthma primarily affects which body system?",
-o:["Respiratory system","Skeletal system","Digestive system","Reproductive system"],
-a:0,
-e:"Asthma is a chronic condition affecting the airways of the respiratory system."
-},
-
-{
-subject:"Medical",
-q:"Which condition involves abnormally high blood glucose?",
+q:"Which condition is associated with high blood glucose?",
 o:["Diabetes mellitus","Anemia","Fracture","Asthma"],
 a:0,
-e:"Diabetes mellitus is characterized by elevated blood glucose resulting from problems with insulin production, insulin action, or both."
+e:"Diabetes mellitus involves elevated blood glucose due to problems with insulin production, action or both."
 },
 
 {
@@ -710,7 +1010,7 @@ subject:"Pediatric",
 q:"Why is age-appropriate communication important when caring for children?",
 o:["Developmental abilities differ","All children communicate identically","Communication is unnecessary","Only adults need explanations"],
 a:0,
-e:"Children's communication abilities vary with age and development, so nurses should use language and explanations appropriate to the child's developmental level."
+e:"Children's communication abilities differ according to developmental stage."
 },
 
 {
@@ -718,7 +1018,7 @@ subject:"Pediatric",
 q:"Growth and development monitoring is especially important during:",
 o:["Childhood","Only adulthood","Only old age","Never"],
 a:0,
-e:"Monitoring growth and development during childhood helps identify normal progress and possible developmental concerns."
+e:"Growth and development monitoring during childhood helps identify normal progress and possible concerns."
 },
 
 {
@@ -726,7 +1026,7 @@ subject:"Community",
 q:"What is an important goal of community health nursing?",
 o:["Disease prevention","Building roads","Selling products","Manufacturing cars"],
 a:0,
-e:"Community health nursing focuses strongly on health promotion, disease prevention and improving the health of populations."
+e:"Community health nursing focuses on health promotion and disease prevention."
 },
 
 {
@@ -734,15 +1034,7 @@ subject:"Community",
 q:"Immunization primarily helps protect against:",
 o:["Infectious diseases","Broken bones","Hair loss","Eye color changes"],
 a:0,
-e:"Vaccination stimulates the immune system to develop protection against specific infectious diseases."
-},
-
-{
-subject:"Community",
-q:"Health education is an important component of:",
-o:["Health promotion","Vehicle repair","Construction","Accounting"],
-a:0,
-e:"Health education provides people with knowledge and skills that can support healthier behaviors and disease prevention."
+e:"Vaccination stimulates immune protection against specific infectious diseases."
 },
 
 {
@@ -750,7 +1042,7 @@ subject:"Nutrition",
 q:"Which nutrient is an important source of energy?",
 o:["Carbohydrate","Water only","Mineral only","Vitamin only"],
 a:0,
-e:"Carbohydrates are an important source of energy for the body."
+e:"Carbohydrates are an important energy source."
 },
 
 {
@@ -758,7 +1050,7 @@ subject:"Nutrition",
 q:"Which nutrient is especially important for tissue growth and repair?",
 o:["Protein","Water","Salt","Fiber only"],
 a:0,
-e:"Protein supplies amino acids needed for tissue growth, maintenance and repair."
+e:"Protein provides amino acids required for tissue growth and repair."
 },
 
 {
@@ -766,83 +1058,86 @@ subject:"Nutrition",
 q:"Which vitamin is associated with normal vision?",
 o:["Vitamin A","Vitamin C","Vitamin K","Vitamin B12"],
 a:0,
-e:"Vitamin A is important for normal vision and also supports immune function and epithelial tissues."
+e:"Vitamin A is important for normal vision."
 },
 
 {
 subject:"Nutrition",
 q:"Which mineral is important for healthy bones and teeth?",
-o:["Calcium","Sodium only","Chloride only","Iodine only"],
+o:["Calcium","Sodium","Chloride","Iodine"],
 a:0,
-e:"Calcium is an important mineral for maintaining bones and teeth and also has roles in muscle and nerve function."
-},
-
-{
-subject:"Nutrition",
-q:"Why is adequate water intake important?",
-o:["It supports normal body functions","It replaces all nutrients","It eliminates the need for food","It stops all diseases"],
-a:0,
-e:"Water is essential for many physiological processes, including temperature regulation, circulation and cellular function."
+e:"Calcium is important for bones and teeth and also has roles in muscle and nerve function."
 }
 
 ];
 
 
-/* =====================================================
-   CREATE 5000 QUESTION RECORDS
-===================================================== */
+const variations=[
+
+"Which statement is correct?",
+
+"Which option is correct?",
+
+"What is the correct answer?",
+
+"Which of the following is correct?",
+
+"Select the correct answer.",
+
+"Which answer is most appropriate?",
+
+"Which statement is true?",
+
+"Choose the correct option.",
+
+"Which answer best describes this?",
+
+"What should the nurse identify?"
+
+];
+
 
 const questionDB=[];
 
-const variations=[
-"Which statement is correct?",
-"Which option is correct?",
-"What is the correct answer?",
-"Which of the following is correct?",
-"Select the correct answer.",
-"Which answer is most appropriate?",
-"Which statement is true?",
-"Choose the correct option.",
-"Which answer best describes this?",
-"What should the nurse identify?"
+
+for(
+let i=0;
+i<5000;
+i++
+){
+
+const base=
+baseQuestions[
+i%baseQuestions.length
 ];
 
-let counter=0;
+const variation=
+variations[
+Math.floor(
+i/baseQuestions.length
+)%variations.length
+];
 
-while(questionDB.length<5000){
 
-  const base=
-    baseQuestions[
-      counter % baseQuestions.length
-    ];
+questionDB.push({
 
-  const variation=
-    variations[
-      Math.floor(
-        counter/baseQuestions.length
-      ) % variations.length
-    ];
+subject:base.subject,
 
-  questionDB.push({
+q:
+(i+1)+
+". "+
+base.q+
+" "+
+variation,
 
-    subject:base.subject,
+o:[...base.o],
 
-    q:
-      (counter+1)+
-      ". "+
-      base.q+
-      " "+
-      variation,
+a:base.a,
 
-    o:[...base.o],
+e:base.e
 
-    a:base.a,
+});
 
-    e:base.e
-
-  });
-
-  counter++;
 }
 
 
@@ -854,9 +1149,11 @@ let currentQuestions=[];
 
 let currentStudent="";
 
+let markedQuestions=[];
+
 let submitted=false;
 
-let timeLeft=30*60;
+let timeLeft=1800;
 
 let timerInterval;
 
@@ -865,163 +1162,385 @@ let timerInterval;
    SHUFFLE
 ===================================================== */
 
-function shuffle(array){
+function shuffle(arr){
 
-  const arr=[...array];
+const a=[...arr];
 
-  for(let i=arr.length-1;i>0;i--){
+for(
+let i=a.length-1;
+i>0;
+i--
+){
 
-    const j=
-      Math.floor(
-        Math.random()*(i+1)
-      );
+const j=
+Math.floor(
+Math.random()*(i+1)
+);
 
-    [arr[i],arr[j]]=
-    [arr[j],arr[i]];
-  }
+[a[i],a[j]]=
+[a[j],a[i]];
 
-  return arr;
+}
+
+return a;
+
 }
 
 
 /* =====================================================
-   START EXAM
+   START
 ===================================================== */
 
 function startExam(){
 
-  const name=
-    document
-      .getElementById("studentName")
-      .value
-      .trim();
+const name=
+document
+.getElementById("studentName")
+.value
+.trim();
 
-  if(!name){
+if(!name){
 
-    alert("Please enter your name first.");
+showToast(
+"Please enter your name."
+);
 
-    document
-      .getElementById("studentName")
-      .focus();
+return;
 
-    return;
-  }
+}
 
-  currentStudent=name;
 
-  const subject=
-    document
-      .getElementById("subjectSelect")
-      .value;
+currentStudent=name;
 
-  let pool;
 
-  if(subject==="All"){
+const subject=
+document
+.getElementById("subjectSelect")
+.value;
 
-    pool=[...questionDB];
 
-  }else{
+let pool=
+subject==="All"
+?
+questionDB
+:
+questionDB.filter(
+q=>q.subject===subject
+);
 
-    pool=
-      questionDB.filter(
-        x=>x.subject===subject
-      );
-  }
 
-  currentQuestions=
-    shuffle(pool).slice(0,60);
+currentQuestions=
+shuffle(pool).slice(0,60);
 
-  submitted=false;
 
-  document
-    .getElementById("startBox")
-    .classList
-    .add("hidden");
+markedQuestions=[];
 
-  document
-    .getElementById("exam")
-    .classList
-    .remove("hidden");
+submitted=false;
 
-  document
-    .getElementById("result")
-    .classList
-    .add("hidden");
 
-  document
-    .getElementById("examStudent")
-    .textContent=currentStudent;
+document
+.getElementById("startBox")
+.classList
+.add("hidden");
 
-  renderQuestions();
 
-  startTimer();
+document
+.getElementById("exam")
+.classList
+.remove("hidden");
 
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
+
+document
+.getElementById("examStudent")
+.textContent=
+currentStudent;
+
+
+document
+.getElementById("examSubject")
+.textContent=
+subject;
+
+
+renderQuestions();
+
+renderNavigation();
+
+startTimer();
+
+updateProgress();
+
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
 }
 
 
 /* =====================================================
-   RENDER QUESTIONS
+   QUESTIONS
 ===================================================== */
 
 function renderQuestions(){
 
-  const box=
-    document.getElementById("questions");
+const box=
+document.getElementById(
+"questions"
+);
 
-  box.innerHTML="";
+box.innerHTML="";
 
-  currentQuestions.forEach(
-    (item,index)=>{
 
-      const card=
-        document.createElement("div");
+currentQuestions.forEach(
+(item,index)=>{
 
-      card.className="card";
+const card=
+document.createElement(
+"div"
+);
 
-      let html=`
+card.className=
+"questionCard";
 
-        <div class="q">
+card.id=
+"question-"+index;
 
-          ${index+1}. ${item.q}
 
-          <span class="badge">
-            ${item.subject}
-          </span>
+let html=`
 
-        </div>
+<button
+type="button"
+class="markBtn"
+id="mark-${index}"
+onclick="toggleMark(${index})"
+>
+🚩 Mark
+</button>
 
-      `;
+<div class="questionTitle">
 
-      item.o.forEach(
-        (option,optIndex)=>{
+${item.q}
 
-          html+=`
+<span class="subjectBadge">
+${item.subject}
+</span>
 
-            <label class="option">
+</div>
 
-              <input
-                type="radio"
-                name="q${index}"
-                value="${optIndex}"
-              >
+`;
 
-              ${option}
 
-            </label>
+item.o.forEach(
+(option,optIndex)=>{
 
-          `;
-        }
-      );
+html+=`
 
-      card.innerHTML=html;
+<label
+class="option"
+>
 
-      box.appendChild(card);
-    }
-  );
+<input
+type="radio"
+name="q${index}"
+value="${optIndex}"
+onchange="answerChanged(${index})"
+>
+
+${option}
+
+</label>
+
+`;
+
+});
+
+
+card.innerHTML=html;
+
+box.appendChild(card);
+
+});
+
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+function renderNavigation(){
+
+const nav=
+document.getElementById(
+"questionNavigation"
+);
+
+nav.innerHTML="";
+
+
+currentQuestions.forEach(
+(item,index)=>{
+
+const btn=
+document.createElement(
+"button"
+);
+
+btn.type="button";
+
+btn.className="navQ";
+
+btn.textContent=index+1;
+
+btn.id=
+"nav-"+index;
+
+btn.onclick=()=>{
+
+document
+.getElementById(
+"question-"+index
+)
+.scrollIntoView({
+behavior:"smooth"
+});
+
+};
+
+nav.appendChild(btn);
+
+});
+
+}
+
+
+function answerChanged(index){
+
+updateNavigation(index);
+
+updateProgress();
+
+}
+
+
+function updateNavigation(index){
+
+const selected=
+document.querySelector(
+`input[name="q${index}"]:checked`
+);
+
+
+const btn=
+document.getElementById(
+"nav-"+index
+);
+
+
+if(selected){
+
+btn.classList.add(
+"answered"
+);
+
+}else{
+
+btn.classList.remove(
+"answered"
+);
+
+}
+
+}
+
+
+/* =====================================================
+   MARK
+===================================================== */
+
+function toggleMark(index){
+
+const btn=
+document.getElementById(
+"mark-"+index
+);
+
+
+if(markedQuestions.includes(index)){
+
+markedQuestions=
+markedQuestions.filter(
+x=>x!==index
+);
+
+btn.classList.remove(
+"marked"
+);
+
+btn.textContent="🚩 Mark";
+
+}else{
+
+markedQuestions.push(index);
+
+btn.classList.add(
+"marked"
+);
+
+btn.textContent="🚩 Marked";
+
+}
+
+}
+
+
+/* =====================================================
+   PROGRESS
+===================================================== */
+
+function updateProgress(){
+
+let answered=0;
+
+
+currentQuestions.forEach(
+(item,index)=>{
+
+if(
+document.querySelector(
+`input[name="q${index}"]:checked`
+)
+){
+
+answered++;
+
+}
+
+});
+
+
+const percentage=
+(answered/60)*100;
+
+
+document
+.getElementById(
+"progressText"
+)
+.textContent=
+answered+
+" / 60 answered";
+
+
+document
+.getElementById(
+"progressBar"
+)
+.style.width=
+percentage+"%";
+
 }
 
 
@@ -1031,46 +1550,63 @@ function renderQuestions(){
 
 function startTimer(){
 
-  clearInterval(timerInterval);
+clearInterval(timerInterval);
 
-  timeLeft=30*60;
+timeLeft=1800;
 
-  updateTimer();
+updateTimer();
 
-  timerInterval=
-    setInterval(()=>{
 
-      timeLeft--;
+timerInterval=
+setInterval(
+()=>{
 
-      updateTimer();
+timeLeft--;
 
-      if(timeLeft<=0){
+updateTimer();
 
-        clearInterval(timerInterval);
 
-        submitExam(true);
-      }
+if(timeLeft<=0){
 
-    },1000);
+clearInterval(
+timerInterval
+);
+
+submitExam(true);
+
+}
+
+},
+1000
+);
+
 }
 
 
 function updateTimer(){
 
-  const minutes=
-    Math.floor(timeLeft/60);
+const min=
+Math.floor(
+timeLeft/60
+);
 
-  const seconds=
-    timeLeft%60;
+const sec=
+timeLeft%60;
 
-  document
-    .getElementById("timer")
-    .textContent=
-      String(minutes).padStart(2,"0")
-      +
-      ":"
-      +
-      String(seconds).padStart(2,"0");
+
+document
+.getElementById(
+"timer"
+)
+.textContent=
+String(min)
+.padStart(2,"0")
++
+":"
++
+String(sec)
+.padStart(2,"0");
+
 }
 
 
@@ -1079,315 +1615,519 @@ function updateTimer(){
 ===================================================== */
 
 document
-  .getElementById("examForm")
-  .addEventListener(
-    "submit",
-    function(e){
+.getElementById("examForm")
+.addEventListener(
+"submit",
+function(e){
 
-      e.preventDefault();
+e.preventDefault();
 
-      submitExam(false);
-    }
-  );
+submitExam(false);
+
+}
+);
 
 
-function submitExam(auto){
+function submitExam(auto=false){
 
-  if(submitted)return;
+if(submitted)return;
 
-  submitted=true;
 
-  clearInterval(timerInterval);
+const unanswered=
+currentQuestions.filter(
+(item,index)=>
+!document.querySelector(
+`input[name="q${index}"]:checked`
+)
+).length;
 
-  let correct=0;
 
-  let wrong=0;
+if(
+!auto &&
+unanswered>0
+){
 
-  let unanswered=0;
+const confirmSubmit=
+confirm(
+"You have "+
+unanswered+
+" unanswered question(s).\n\nSubmit anyway?"
+);
 
-  const review=[];
 
-  currentQuestions.forEach(
-    (item,index)=>{
+if(!confirmSubmit){
 
-      const selected=
-        document.querySelector(
-          `input[name="q${index}"]:checked`
-        );
+return;
 
-      if(!selected){
+}
 
-        unanswered++;
+}
 
-        review.push({
 
-          item:item,
+submitted=true;
 
-          index:index,
+clearInterval(
+timerInterval
+);
 
-          selected:null,
 
-          status:"unanswered"
-        });
+let correct=0;
 
-      }else{
+let wrong=0;
 
-        const answer=
-          Number(selected.value);
+let unansweredCount=0;
 
-        if(answer===item.a){
+let review=[];
 
-          correct++;
 
-          review.push({
+currentQuestions.forEach(
+(item,index)=>{
 
-            item:item,
+const selected=
+document.querySelector(
+`input[name="q${index}"]:checked`
+);
 
-            index:index,
 
-            selected:answer,
+if(!selected){
 
-            status:"correct"
-          });
+unansweredCount++;
 
-        }else{
+review.push({
 
-          wrong++;
+item,
 
-          review.push({
+index,
 
-            item:item,
+selected:null,
 
-            index:index,
+status:"unanswered"
 
-            selected:answer,
+});
 
-            status:"wrong"
-          });
-        }
-      }
-    }
-  );
+return;
 
-  const total=
-    currentQuestions.length;
+}
 
-  const percentage=
-    Math.round(
-      (correct/total)*100
-    );
 
-  const subject=
-    document
-      .getElementById("subjectSelect")
-      .value;
+const answer=
+Number(
+selected.value
+);
 
-  saveHistory(
-    currentStudent,
-    subject,
-    correct,
-    total,
-    percentage
-  );
 
-  saveLeaderboard(
-    currentStudent,
-    subject,
-    correct,
-    total,
-    percentage
-  );
+if(answer===item.a){
 
-  showResult(
-    correct,
-    wrong,
-    unanswered,
-    total,
-    percentage,
-    review,
-    auto
-  );
+correct++;
 
-  showHistory();
+review.push({
 
-  showLeaderboard();
+item,
+
+index,
+
+selected:answer,
+
+status:"correct"
+
+});
+
+}else{
+
+wrong++;
+
+review.push({
+
+item,
+
+index,
+
+selected:answer,
+
+status:"wrong"
+
+});
+
+}
+
+});
+
+
+const total=
+currentQuestions.length;
+
+
+const percentage=
+Math.round(
+(correct/total)*100
+);
+
+
+const subject=
+document
+.getElementById(
+"subjectSelect"
+)
+.value;
+
+
+saveHistory({
+
+name:currentStudent,
+
+subject,
+
+correct,
+
+wrong,
+
+unanswered:unansweredCount,
+
+total,
+
+percentage,
+
+date:
+new Date()
+.toLocaleString()
+
+});
+
+
+saveLeaderboard({
+
+name:currentStudent,
+
+subject,
+
+correct,
+
+total,
+
+percentage,
+
+date:
+new Date()
+.toLocaleString()
+
+});
+
+
+showResult(
+correct,
+wrong,
+unansweredCount,
+total,
+percentage,
+review,
+auto
+);
+
+
+updateDashboard();
+
+showHistory();
+
+showLeaderboard();
+
+showSubjectPerformance();
+
 }
 
 
 /* =====================================================
-   SHOW RESULT
+   RESULT
 ===================================================== */
 
 function showResult(
-  correct,
-  wrong,
-  unanswered,
-  total,
-  percentage,
-  review,
-  auto
+correct,
+wrong,
+unanswered,
+total,
+percentage,
+review,
+auto
 ){
 
-  document
-    .getElementById("exam")
-    .classList
-    .add("hidden");
+document
+.getElementById("exam")
+.classList
+.add("hidden");
 
-  const result=
-    document.getElementById("result");
 
-  result.classList.remove("hidden");
+const result=
+document.getElementById(
+"result"
+);
 
-  let html=`
+result.classList.remove(
+"hidden"
+);
 
-    <h2>🎉 Exam Result</h2>
 
-    <p>
-      👤 <b>Student:</b>
-      ${escapeHTML(currentStudent)}
-    </p>
+let html=`
 
-    ${
-      auto
-      ?
-      "<p><b>⏰ Time ended automatically.</b></p>"
-      :
-      ""
-    }
+<h2>
+🎉 Exam Completed
+</h2>
 
-    <div class="score">
-      ${correct} / ${total}
-    </div>
+<p>
+👤 <b>Student:</b>
+${escapeHTML(currentStudent)}
+</p>
 
-    <p>
-      <b>Percentage:</b>
-      ${percentage}%
-    </p>
+${
+auto
+?
+"<p>⏰ Time finished. Exam submitted automatically.</p>"
+:
+""
+}
 
-    <p>
-      ✅ Correct:
-      ${correct}
-    </p>
+<div class="score">
+${correct}/${total}
+</div>
 
-    <p>
-      ❌ Wrong:
-      ${wrong}
-    </p>
+<p>
+<b>Percentage:</b>
+${percentage}%
+</p>
 
-    <p>
-      ⚠️ Unanswered:
-      ${unanswered}
-    </p>
 
-    <button
-      class="retakeBtn"
-      onclick="showStartScreen()"
-    >
-      🔄 Take Another Exam
-    </button>
+<div class="resultGrid">
 
-    <div class="review">
+<div class="resultStat">
+<h3>✅</h3>
+<b>${correct}</b>
+<br>
+Correct
+</div>
 
-      <h2>
-        📝 Answer Review & Explanation
-      </h2>
+<div class="resultStat">
+<h3>❌</h3>
+<b>${wrong}</b>
+<br>
+Wrong
+</div>
 
-  `;
+<div class="resultStat">
+<h3>⚠️</h3>
+<b>${unanswered}</b>
+<br>
+Unanswered
+</div>
 
-  review.forEach(r=>{
+<div class="resultStat">
+<h3>🎯</h3>
+<b>${percentage}%</b>
+<br>
+Score
+</div>
 
-    const item=r.item;
+</div>
 
-    const selectedText=
-      r.selected===null
-      ?
-      "Not answered"
-      :
-      item.o[r.selected];
 
-    const statusText=
-      r.status==="correct"
-      ?
-      "✅ Correct"
-      :
-      r.status==="wrong"
-      ?
-      "❌ Wrong"
-      :
-      "⚠️ Unanswered";
+<button
+onclick="showStartScreen()"
+>
+🔄 Take Another Exam
+</button>
 
-    html+=`
+<button
+onclick="showOnlyWrong()"
+style="background:#dc2626;"
+>
+❌ Review Wrong Only
+</button>
 
-      <div class="reviewItem ${r.status}">
 
-        <b>
-          Q${r.index+1}.
-          ${item.q}
-        </b>
+<h2 style="margin-top:30px;">
+📝 Answer Review
+</h2>
 
-        <p>
-          <b>Your answer:</b>
-          ${selectedText}
-        </p>
+<div id="reviewArea">
 
-        <p>
-          <b>Correct answer:</b>
-          ${item.o[item.a]}
-        </p>
+`;
 
-        <strong>
-          ${statusText}
-        </strong>
 
-        <div class="explanation">
+review.forEach(
+r=>{
 
-          📖 <b>Explanation:</b><br>
+html+=createReviewHTML(r);
 
-          ${item.e}
+});
 
-        </div>
 
-      </div>
+html+=`
 
-    `;
-  });
+</div>
 
-  html+=`</div>`;
+`;
 
-  result.innerHTML=html;
 
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
+result.innerHTML=html;
+
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+
+window.currentReview=
+review;
+
 }
 
 
 /* =====================================================
-   SHOW START SCREEN
+   REVIEW HTML
+===================================================== */
+
+function createReviewHTML(r){
+
+const item=r.item;
+
+
+let yourAnswer=
+r.selected===null
+?
+"Not answered"
+:
+item.o[r.selected];
+
+
+let status=
+r.status==="correct"
+?
+"✅ Correct"
+:
+r.status==="wrong"
+?
+"❌ Wrong"
+:
+"⚠️ Unanswered";
+
+
+return`
+
+<div
+class="reviewItem ${r.status}"
+data-status="${r.status}"
+>
+
+<b>
+Q${r.index+1}.
+${item.q}
+</b>
+
+<p>
+<b>Your answer:</b>
+${yourAnswer}
+</p>
+
+<p>
+<b>Correct answer:</b>
+${item.o[item.a]}
+</p>
+
+<strong>
+${status}
+</strong>
+
+<div class="explanation">
+
+📖
+<b>Explanation:</b>
+
+<br>
+
+${item.e}
+
+</div>
+
+</div>
+
+`;
+
+}
+
+
+/* =====================================================
+   ONLY WRONG
+===================================================== */
+
+function showOnlyWrong(){
+
+const area=
+document.getElementById(
+"reviewArea"
+);
+
+const items=
+area.querySelectorAll(
+".reviewItem"
+);
+
+
+items.forEach(
+item=>{
+
+if(
+item.dataset.status!=="wrong"
+){
+
+item.classList.add(
+"hidden"
+);
+
+}else{
+
+item.classList.remove(
+"hidden"
+);
+
+}
+
+});
+
+
+showToast(
+"Showing wrong answers only."
+);
+
+}
+
+
+/* =====================================================
+   START AGAIN
 ===================================================== */
 
 function showStartScreen(){
 
-  document
-    .getElementById("result")
-    .classList
-    .add("hidden");
+document
+.getElementById("result")
+.classList
+.add("hidden");
 
-  document
-    .getElementById("exam")
-    .classList
-    .add("hidden");
 
-  document
-    .getElementById("startBox")
-    .classList
-    .remove("hidden");
+document
+.getElementById("exam")
+.classList
+.add("hidden");
 
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
+
+document
+.getElementById("startBox")
+.classList
+.remove("hidden");
+
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
 }
 
 
@@ -1395,147 +2135,155 @@ function showStartScreen(){
    HISTORY
 ===================================================== */
 
-function saveHistory(
-  name,
-  subject,
-  correct,
-  total,
-  percentage
-){
+function saveHistory(data){
 
-  let history=
-    JSON.parse(
-      localStorage.getItem(
-        "nursingExamHistory"
-      ) || "[]"
-    );
+let history=
+JSON.parse(
+localStorage.getItem(
+"nursingExamHistory"
+)||"[]"
+);
 
-  history.unshift({
 
-    name:name,
+history.unshift(data);
 
-    subject:subject,
 
-    correct:correct,
+history=
+history.slice(0,50);
 
-    total:total,
 
-    percentage:percentage,
+localStorage.setItem(
+"nursingExamHistory",
+JSON.stringify(history)
+);
 
-    date:
-      new Date()
-      .toLocaleString()
+}
 
-  });
 
-  history=
-    history.slice(0,50);
+function getHistory(){
 
-  localStorage.setItem(
-    "nursingExamHistory",
-    JSON.stringify(history)
-  );
+return JSON.parse(
+localStorage.getItem(
+"nursingExamHistory"
+)||"[]"
+);
+
 }
 
 
 function showHistory(){
 
-  const box=
-    document.getElementById(
-      "historyData"
-    );
+const box=
+document.getElementById(
+"historyData"
+);
 
-  const history=
-    JSON.parse(
-      localStorage.getItem(
-        "nursingExamHistory"
-      ) || "[]"
-    );
+const history=
+getHistory();
 
-  if(history.length===0){
 
-    box.innerHTML=
-      "<p>No exam history yet.</p>";
+if(history.length===0){
 
-    return;
-  }
+box.innerHTML=
+"<p>No exam history yet.</p>";
 
-  let html=`
+return;
 
-    <table class="historyTable">
+}
 
-      <tr>
 
-        <th>Name</th>
+let html=`
 
-        <th>Subject</th>
+<table>
 
-        <th>Score</th>
+<tr>
 
-        <th>%</th>
+<th>Name</th>
+<th>Subject</th>
+<th>Score</th>
+<th>Correct</th>
+<th>Wrong</th>
+<th>Date</th>
 
-        <th>Date</th>
+</tr>
 
-      </tr>
+`;
 
-  `;
 
-  history.forEach(h=>{
+history.forEach(
+h=>{
 
-    html+=`
+html+=`
 
-      <tr>
+<tr>
 
-        <td>
-          ${escapeHTML(h.name)}
-        </td>
+<td>
+${escapeHTML(h.name)}
+</td>
 
-        <td>
-          ${h.subject}
-        </td>
+<td>
+${h.subject}
+</td>
 
-        <td>
-          ${h.correct}/${h.total}
-        </td>
+<td>
+<b>${h.percentage}%</b>
+</td>
 
-        <td>
-          ${h.percentage}%
-        </td>
+<td>
+${h.correct}
+</td>
 
-        <td>
-          ${h.date}
-        </td>
+<td>
+${h.wrong}
+</td>
 
-      </tr>
+<td>
+${h.date}
+</td>
 
-    `;
-  });
+</tr>
 
-  html+=`
+`;
 
-    </table>
+});
 
-  `;
 
-  box.innerHTML=html;
+html+=`</table>`;
+
+
+box.innerHTML=html;
+
 }
 
 
 function clearHistory(){
 
-  if(
-    !confirm(
-      "Clear all exam history?"
-    )
-  ){
-    return;
-  }
+if(
+!confirm(
+"Clear all exam history?"
+)
+){
 
-  localStorage.removeItem(
-    "nursingExamHistory"
-  );
+return;
 
-  showHistory();
+}
+
+
+localStorage.removeItem(
+"nursingExamHistory"
+);
+
+
+updateDashboard();
+
+showHistory();
+
+showSubjectPerformance();
+
+showToast(
+"History cleared."
+);
+
 }
 
 
@@ -1543,194 +2291,462 @@ function clearHistory(){
    LEADERBOARD
 ===================================================== */
 
-function saveLeaderboard(
-  name,
-  subject,
-  correct,
-  total,
-  percentage
+function saveLeaderboard(data){
+
+let board=
+JSON.parse(
+localStorage.getItem(
+"nursingLeaderboard"
+)||"[]"
+);
+
+
+board.push(data);
+
+
+board.sort(
+(a,b)=>{
+
+if(
+b.percentage!==a.percentage
 ){
 
-  let board=
-    JSON.parse(
-      localStorage.getItem(
-        "nursingLeaderboard"
-      ) || "[]"
-    );
+return b.percentage-
+a.percentage;
 
-  board.push({
+}
 
-    name:name,
+return b.correct-a.correct;
 
-    subject:subject,
+}
+);
 
-    correct:correct,
 
-    total:total,
+board=
+board.slice(0,20);
 
-    percentage:percentage,
 
-    date:
-      new Date()
-      .toLocaleString()
+localStorage.setItem(
+"nursingLeaderboard",
+JSON.stringify(board)
+);
 
-  });
-
-  board.sort(
-    (a,b)=>{
-
-      if(
-        b.percentage !==
-        a.percentage
-      ){
-
-        return b.percentage -
-               a.percentage;
-      }
-
-      return b.correct-a.correct;
-    }
-  );
-
-  board=
-    board.slice(0,20);
-
-  localStorage.setItem(
-    "nursingLeaderboard",
-    JSON.stringify(board)
-  );
 }
 
 
 function showLeaderboard(){
 
-  const box=
-    document.getElementById(
-      "leaderboardData"
-    );
+const box=
+document.getElementById(
+"leaderboardData"
+);
 
-  const board=
-    JSON.parse(
-      localStorage.getItem(
-        "nursingLeaderboard"
-      ) || "[]"
-    );
 
-  if(board.length===0){
+const board=
+JSON.parse(
+localStorage.getItem(
+"nursingLeaderboard"
+)||"[]"
+);
 
-    box.innerHTML=
-      "<p>No leaderboard data yet.</p>";
 
-    return;
-  }
+if(board.length===0){
 
-  let html=`
+box.innerHTML=
+"<p>No leaderboard data yet.</p>";
 
-    <table class="leaderTable">
+return;
 
-      <tr>
+}
 
-        <th>Rank</th>
 
-        <th>Student</th>
+let html=`
 
-        <th>Subject</th>
+<table>
 
-        <th>Score</th>
+<tr>
 
-        <th>%</th>
+<th>Rank</th>
+<th>Student</th>
+<th>Subject</th>
+<th>Score</th>
+<th>Date</th>
 
-        <th>Date</th>
+</tr>
 
-      </tr>
+`;
 
-  `;
 
-  board.forEach(
-    (item,index)=>{
+board.forEach(
+(b,i)=>{
 
-      let rankClass="";
+html+=`
 
-      if(index===0){
-        rankClass="gold";
-      }else if(index===1){
-        rankClass="silver";
-      }else if(index===2){
-        rankClass="bronze";
-      }
+<tr>
 
-      html+=`
+<td>
 
-        <tr>
+${
+i===0
+?"🥇"
+:
+i===1
+?"🥈"
+:
+i===2
+?"🥉"
+:
+i+1
+}
 
-          <td class="rank ${rankClass}">
+</td>
 
-            ${
-              index===0
-              ?"🥇"
-              :
-              index===1
-              ?"🥈"
-              :
-              index===2
-              ?"🥉"
-              :
-              index+1
-            }
+<td>
+${escapeHTML(b.name)}
+</td>
 
-          </td>
+<td>
+${b.subject}
+</td>
 
-          <td>
-            ${escapeHTML(item.name)}
-          </td>
+<td>
+<b>${b.percentage}%</b>
+</td>
 
-          <td>
-            ${item.subject}
-          </td>
+<td>
+${b.date}
+</td>
 
-          <td>
-            ${item.correct}/${item.total}
-          </td>
+</tr>
 
-          <td>
-            <b>${item.percentage}%</b>
-          </td>
+`;
 
-          <td>
-            ${item.date}
-          </td>
+});
 
-        </tr>
 
-      `;
-    }
-  );
+html+=`</table>`;
 
-  html+=`
 
-    </table>
+box.innerHTML=html;
 
-  `;
-
-  box.innerHTML=html;
 }
 
 
 function clearLeaderboard(){
 
-  if(
-    !confirm(
-      "Clear leaderboard?"
-    )
-  ){
-    return;
-  }
+if(
+!confirm(
+"Clear leaderboard?"
+)
+){
 
-  localStorage.removeItem(
-    "nursingLeaderboard"
-  );
+return;
 
-  showLeaderboard();
+}
+
+
+localStorage.removeItem(
+"nursingLeaderboard"
+);
+
+
+showLeaderboard();
+
+showToast(
+"Leaderboard cleared."
+);
+
+}
+
+
+/* =====================================================
+   DASHBOARD
+===================================================== */
+
+function updateDashboard(){
+
+const history=
+getHistory();
+
+
+const total=
+history.length;
+
+
+document
+.getElementById(
+"totalExams"
+)
+.textContent=
+total;
+
+
+if(total===0){
+
+document
+.getElementById(
+"averageScore"
+)
+.textContent="0%";
+
+document
+.getElementById(
+"bestScore"
+)
+.textContent="0%";
+
+document
+.getElementById(
+"accuracy"
+)
+.textContent="0%";
+
+return;
+
+}
+
+
+const avg=
+Math.round(
+history.reduce(
+(sum,h)=>
+sum+
+Number(h.percentage),
+0
+)/total
+);
+
+
+const best=
+Math.max(
+...history.map(
+h=>Number(h.percentage)
+)
+);
+
+
+const totalCorrect=
+history.reduce(
+(sum,h)=>
+sum+
+Number(h.correct||0),
+0
+);
+
+
+const totalQuestions=
+history.reduce(
+(sum,h)=>
+sum+
+Number(h.total||0),
+0
+);
+
+
+const acc=
+totalQuestions
+?
+Math.round(
+(totalCorrect/
+totalQuestions)*100
+)
+:
+0;
+
+
+document
+.getElementById(
+"averageScore"
+)
+.textContent=
+avg+"%";
+
+
+document
+.getElementById(
+"bestScore"
+)
+.textContent=
+best+"%";
+
+
+document
+.getElementById(
+"accuracy"
+)
+.textContent=
+acc+"%";
+
+}
+
+
+/* =====================================================
+   SUBJECT PERFORMANCE
+===================================================== */
+
+function showSubjectPerformance(){
+
+const box=
+document.getElementById(
+"subjectPerformance"
+);
+
+
+const history=
+getHistory();
+
+
+if(history.length===0){
+
+box.innerHTML=
+"<p>No performance data yet.</p>";
+
+return;
+
+}
+
+
+const subjects={};
+
+
+history.forEach(
+h=>{
+
+if(!subjects[h.subject]){
+
+subjects[h.subject]=[];
+
+}
+
+subjects[h.subject]
+.push(
+Number(h.percentage)
+);
+
+});
+
+
+let html="";
+
+
+Object.keys(subjects)
+.forEach(
+subject=>{
+
+const values=
+subjects[subject];
+
+
+const avg=
+Math.round(
+values.reduce(
+(a,b)=>a+b,
+0
+)/values.length
+);
+
+
+html+=`
+
+<div class="subjectBox">
+
+<div class="subjectName">
+
+<b>
+${subject}
+</b>
+
+<span>
+${avg}%
+</span>
+
+</div>
+
+
+<div class="subjectTrack">
+
+<div
+class="subjectFill"
+style="width:${avg}%"
+></div>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+
+box.innerHTML=html;
+
+}
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+function toggleDark(){
+
+document
+.body
+.classList
+.toggle("dark");
+
+
+localStorage.setItem(
+"nursingDarkMode",
+document.body.classList.contains(
+"dark"
+)
+);
+
+
+showToast(
+document.body.classList.contains(
+"dark"
+)
+?
+"Dark mode ON"
+:
+"Dark mode OFF"
+);
+
+}
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+function showToast(message){
+
+const toast=
+document.getElementById(
+"toast"
+);
+
+
+toast.textContent=
+message;
+
+
+toast.style.display=
+"block";
+
+
+setTimeout(
+()=>{
+
+toast.style.display=
+"none";
+
+},
+2000
+);
+
 }
 
 
@@ -1740,34 +2756,74 @@ function clearLeaderboard(){
 
 function goHome(){
 
-  window.location.href=
-    "index.html";
+window.location.href=
+"index.html";
+
 }
 
 
 /* =====================================================
-   SECURITY HELPER
+   DASHBOARD SCROLL
+===================================================== */
+
+function scrollDashboard(){
+
+document
+.getElementById(
+"dashboardArea"
+)
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+
+/* =====================================================
+   ESCAPE HTML
 ===================================================== */
 
 function escapeHTML(text){
 
-  const div=
-    document.createElement("div");
+const div=
+document.createElement(
+"div"
+);
 
-  div.textContent=
-    String(text);
+div.textContent=
+String(text);
 
-  return div.innerHTML;
+return div.innerHTML;
+
 }
 
 
 /* =====================================================
-   INITIAL LOAD
+   LOAD
 ===================================================== */
+
+if(
+localStorage.getItem(
+"nursingDarkMode"
+)==="true"
+){
+
+document
+.body
+.classList
+.add("dark");
+
+}
+
+
+updateDashboard();
 
 showHistory();
 
 showLeaderboard();
+
+showSubjectPerformance();
+
 
 </script>
 
