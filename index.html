@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Nursing Career - Model Test</title>
+<title>Nursing Career - Home</title>
 
 <style>
 *{
@@ -14,414 +14,288 @@
 
 :root{
     --primary:#0b7a6f;
-    --primary-dark:#075e54;
+    --dark:#075e54;
     --secondary:#14b8a6;
     --bg:#f4f8fb;
-    --card:#ffffff;
     --text:#172b2a;
-    --muted:#6b7c7a;
-    --border:#e3eceb;
-    --success:#15803d;
-}
-
-html{
-    scroll-behavior:smooth;
+    --muted:#687b79;
+    --white:#ffffff;
 }
 
 body{
     margin:0;
-    font-family:
-        Inter,
-        "Segoe UI",
-        Roboto,
-        Arial,
-        sans-serif;
-    background:
-        radial-gradient(circle at top left, #e5f8f5 0, transparent 30%),
-        var(--bg);
+    font-family:"Segoe UI",Arial,sans-serif;
+    background:var(--bg);
     color:var(--text);
-    line-height:1.6;
 }
 
-/* ================= HEADER ================= */
-
-.header{
-    position:relative;
-    overflow:hidden;
-    background:
-        linear-gradient(135deg, #064e45 0%, #087f73 55%, #11a995 100%);
+/* HEADER */
+header{
+    background:linear-gradient(135deg,#064e45,#087f73,#11a995);
     color:white;
-    padding:38px 20px 44px;
-    text-align:center;
-    box-shadow:0 8px 25px rgba(7,94,84,.18);
-}
-
-.header::before{
-    content:"";
-    position:absolute;
-    width:220px;
-    height:220px;
-    border-radius:50%;
-    background:rgba(255,255,255,.07);
-    top:-100px;
-    left:-70px;
-}
-
-.header::after{
-    content:"";
-    position:absolute;
-    width:280px;
-    height:280px;
-    border-radius:50%;
-    background:rgba(255,255,255,.06);
-    right:-100px;
-    bottom:-170px;
-}
-
-.header-content{
-    position:relative;
-    z-index:2;
-    max-width:800px;
-    margin:auto;
-}
-
-.logo{
-    width:68px;
-    height:68px;
-    margin:0 auto 14px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:20px;
-    background:rgba(255,255,255,.15);
-    border:1px solid rgba(255,255,255,.25);
-    font-size:32px;
-    box-shadow:0 8px 25px rgba(0,0,0,.12);
-}
-
-.header h1{
-    margin:0;
-    font-size:clamp(28px,5vw,42px);
-    font-weight:800;
-    letter-spacing:.5px;
-}
-
-.header p{
-    margin:8px 0 0;
-    color:rgba(255,255,255,.88);
-    font-size:15px;
-}
-
-/* ================= MAIN ================= */
-
-.container{
-    width:min(760px, calc(100% - 28px));
-    margin:28px auto 45px;
-}
-
-/* ================= INFO BAR ================= */
-
-.exam-info{
+    padding:22px 7%;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    gap:15px;
-    background:white;
-    padding:15px 18px;
-    margin-bottom:18px;
-    border:1px solid var(--border);
-    border-radius:16px;
-    box-shadow:0 5px 18px rgba(20,70,65,.06);
 }
 
-.info-item{
+.logo{
     display:flex;
     align-items:center;
-    gap:9px;
-    font-size:14px;
-    color:var(--muted);
+    gap:10px;
+    font-size:21px;
+    font-weight:800;
 }
 
-.info-icon{
-    width:34px;
-    height:34px;
+.logo-icon{
+    width:42px;
+    height:42px;
     display:flex;
     align-items:center;
     justify-content:center;
-    background:#e8f7f4;
-    color:var(--primary-dark);
-    border-radius:10px;
-    font-size:16px;
-}
-
-.info-item strong{
-    display:block;
-    color:var(--text);
-    font-size:14px;
-}
-
-/* ================= QUESTION ================= */
-
-.question{
-    position:relative;
-    background:var(--card);
-    margin-bottom:18px;
-    padding:22px;
-    border:1px solid var(--border);
-    border-radius:18px;
-    box-shadow:0 5px 20px rgba(20,70,65,.06);
-    transition:
-        transform .2s ease,
-        box-shadow .2s ease,
-        border-color .2s ease;
-}
-
-.question:hover{
-    transform:translateY(-2px);
-    box-shadow:0 10px 28px rgba(20,70,65,.09);
-    border-color:#c7e4df;
-}
-
-.question h3{
-    margin:0 0 16px;
-    font-size:17px;
-    line-height:1.55;
-    font-weight:700;
-    color:#193332;
-}
-
-/* ================= OPTIONS ================= */
-
-.option{
-    position:relative;
-    display:flex;
-    align-items:center;
-    gap:11px;
-    background:#f8fbfb;
-    padding:13px 14px;
-    margin:9px 0;
+    background:rgba(255,255,255,.15);
     border-radius:12px;
-    border:1px solid #e2ebea;
-    cursor:pointer;
-    transition:
-        background .2s ease,
-        border-color .2s ease,
-        transform .15s ease;
+    font-size:23px;
 }
 
-.option:hover{
-    background:#edf9f7;
-    border-color:#a9dcd5;
-    transform:translateX(2px);
-}
-
-.option:has(input:checked){
-    background:#e7f7f4;
-    border-color:#0b9b8b;
-    box-shadow:0 0 0 2px rgba(11,155,139,.08);
-}
-
-.option input{
-    width:17px;
-    height:17px;
-    margin:0;
-    accent-color:var(--primary);
-    cursor:pointer;
-}
-
-.option span{
-    flex:1;
-}
-
-/* ================= SUBMIT ================= */
-
-.submit{
-    width:100%;
-    padding:16px 20px;
-    margin-top:5px;
-    border:none;
-    border-radius:14px;
-    background:
-        linear-gradient(135deg,var(--primary-dark),var(--secondary));
+nav a{
     color:white;
-    font-size:17px;
-    font-weight:800;
-    letter-spacing:.3px;
-    cursor:pointer;
-    box-shadow:0 8px 20px rgba(7,94,84,.20);
-    transition:
-        transform .2s ease,
-        box-shadow .2s ease;
+    text-decoration:none;
+    margin-left:25px;
+    font-weight:600;
 }
 
-.submit:hover{
-    transform:translateY(-2px);
-    box-shadow:0 12px 25px rgba(7,94,84,.28);
+/* HERO */
+.hero{
+    min-height:560px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:40px;
+    padding:70px 8%;
+    background:
+        radial-gradient(circle at top right,#d8f7f2,transparent 35%),
+        var(--bg);
 }
 
-.submit:active{
-    transform:translateY(0);
+.hero-content{
+    max-width:650px;
 }
 
-/* ================= RESULT ================= */
-
-#result{
-    display:none;
-    margin-top:24px;
-    padding:28px 20px;
-    background:white;
-    border:1px solid #cfe8e3;
-    border-radius:20px;
-    text-align:center;
-    box-shadow:0 10px 30px rgba(20,70,65,.09);
-}
-
-.result-title{
+.badge{
+    display:inline-block;
+    background:#e0f6f2;
+    color:var(--dark);
+    padding:8px 15px;
+    border-radius:30px;
     font-size:13px;
+    font-weight:700;
+    margin-bottom:18px;
+}
+
+.hero h1{
+    margin:0;
+    font-size:clamp(38px,6vw,64px);
+    line-height:1.08;
+}
+
+.hero h1 span{
+    color:var(--primary);
+}
+
+.hero p{
+    color:var(--muted);
+    font-size:18px;
+    line-height:1.7;
+    margin:22px 0 30px;
+}
+
+.buttons{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    padding:15px 24px;
+    border-radius:12px;
+    text-decoration:none;
     font-weight:800;
-    color:var(--muted);
-    letter-spacing:1.5px;
-    text-transform:uppercase;
+    transition:.2s;
 }
 
-.score{
-    margin:5px 0;
-    font-size:42px;
-    font-weight:900;
-    color:var(--primary-dark);
+.btn-primary{
+    background:linear-gradient(135deg,var(--dark),var(--secondary));
+    color:white;
+    box-shadow:0 8px 20px rgba(7,94,84,.2);
 }
 
-#message{
-    margin:5px 0 0;
-    color:var(--muted);
-    font-size:15px;
+.btn-secondary{
+    background:white;
+    color:var(--dark);
+    border:1px solid #b9dcd7;
 }
 
-/* ================= NAV BUTTONS ================= */
-
-.navigation{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:12px;
-    margin-top:24px;
+.btn:hover{
+    transform:translateY(-2px);
 }
 
-.nav-button{
+/* HERO CARD */
+.hero-card{
+    width:330px;
+    background:white;
+    padding:28px;
+    border-radius:24px;
+    box-shadow:0 15px 40px rgba(20,70,65,.12);
+}
+
+.hero-icon{
+    width:75px;
+    height:75px;
+    border-radius:20px;
+    background:#e5f8f5;
     display:flex;
     align-items:center;
     justify-content:center;
-    min-height:52px;
-    padding:13px 15px;
-    text-align:center;
-    text-decoration:none;
-    border-radius:13px;
-    font-size:15px;
-    font-weight:800;
-    transition:
-        transform .2s ease,
-        box-shadow .2s ease;
+    font-size:40px;
+    margin-bottom:20px;
 }
 
-.nav-button:hover{
-    transform:translateY(-2px);
+.hero-card h2{
+    margin:0 0 8px;
 }
 
-.start-button{
-    background:linear-gradient(135deg,#075e54,#0b9486);
-    color:white;
-    box-shadow:0 7px 18px rgba(7,94,84,.18);
+.hero-card p{
+    font-size:14px;
+    margin:0;
 }
 
-.home-button{
+/* FEATURES */
+.features{
+    padding:65px 8%;
     background:white;
-    color:var(--primary-dark);
-    border:1.5px solid #b9dcd7;
 }
 
-.home-button:hover{
-    background:#eef9f7;
-}
-
-/* ================= FOOTER ================= */
-
-.footer{
-    padding:30px 15px;
+.section-title{
     text-align:center;
-    color:#82908f;
+    margin-bottom:38px;
+}
+
+.section-title h2{
+    font-size:32px;
+    margin:0 0 8px;
+}
+
+.section-title p{
+    color:var(--muted);
+}
+
+.cards{
+    max-width:1050px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.card{
+    padding:28px;
+    border:1px solid #e1ecea;
+    border-radius:18px;
+    background:#fbfdfd;
+    transition:.2s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 30px rgba(20,70,65,.08);
+}
+
+.card-icon{
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    margin:0 0 8px;
+}
+
+.card p{
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.6;
+}
+
+/* CTA */
+.cta{
+    margin:55px 8%;
+    padding:50px 30px;
+    text-align:center;
+    color:white;
+    border-radius:25px;
+    background:linear-gradient(135deg,#064e45,#0b9486);
+}
+
+.cta h2{
+    margin:0 0 10px;
+    font-size:32px;
+}
+
+.cta p{
+    margin:0 0 25px;
+    color:rgba(255,255,255,.85);
+}
+
+.cta .btn{
+    background:white;
+    color:var(--dark);
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:28px 15px;
+    color:#7b8987;
     font-size:13px;
 }
 
-.footer strong{
-    color:#526563;
-}
+/* MOBILE */
+@media(max-width:750px){
 
-/* ================= MOBILE ================= */
-
-@media(max-width:600px){
-
-    .header{
-        padding:30px 16px 35px;
+    header{
+        padding:18px 5%;
     }
 
-    .logo{
-        width:58px;
-        height:58px;
-        border-radius:17px;
-        font-size:27px;
+    nav{
+        display:none;
     }
 
-    .header h1{
-        font-size:27px;
+    .hero{
+        padding:50px 6%;
+        flex-direction:column;
+        text-align:center;
     }
 
-    .header p{
-        font-size:13px;
+    .buttons{
+        justify-content:center;
     }
 
-    .container{
-        width:calc(100% - 20px);
-        margin-top:18px;
+    .hero-card{
+        width:100%;
+        max-width:360px;
     }
 
-    .exam-info{
-        padding:12px;
-        border-radius:14px;
-    }
-
-    .info-item{
-        font-size:12px;
-    }
-
-    .info-icon{
-        width:30px;
-        height:30px;
-        font-size:14px;
-    }
-
-    .info-item strong{
-        font-size:12px;
-    }
-
-    .question{
-        padding:17px;
-        border-radius:16px;
-    }
-
-    .question h3{
-        font-size:16px;
-    }
-
-    .option{
-        padding:13px 12px;
-        font-size:14px;
-    }
-
-    .navigation{
+    .cards{
         grid-template-columns:1fr;
     }
 
-    .score{
-        font-size:36px;
+    .features{
+        padding:50px 6%;
+    }
+
+    .cta{
+        margin:40px 5%;
     }
 }
 </style>
@@ -429,507 +303,154 @@ body{
 
 <body>
 
-<!-- ================= HEADER ================= -->
+<header>
 
-<header class="header">
-
-    <div class="header-content">
-
-        <div class="logo">
-            🩺
-        </div>
-
-        <h1>NURSING CAREER</h1>
-
-        <p>
-            Licensing Examination 2026 — Model Test
-        </p>
-
+    <div class="logo">
+        <div class="logo-icon">🩺</div>
+        NURSING CAREER
     </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="exam.html">Model Test</a>
+    </nav>
 
 </header>
 
 
-<!-- ================= MAIN ================= -->
+<section class="hero">
 
-<main class="container">
+    <div class="hero-content">
 
-    <!-- EXAM INFORMATION -->
-
-    <div class="exam-info">
-
-        <div class="info-item">
-
-            <div class="info-icon">📝</div>
-
-            <div>
-                <strong>10 Questions</strong>
-                Model Test
-            </div>
-
+        <div class="badge">
+            🩺 Nursing Examination Preparation
         </div>
 
+        <h1>
+            Build Your <span>Nursing Career</span>
+        </h1>
 
-        <div class="info-item">
+        <p>
+            Prepare yourself for the Nursing Licensing Examination
+            with practice questions, model tests and focused revision.
+        </p>
 
-            <div class="info-icon">🎯</div>
+        <div class="buttons">
 
-            <div>
-                <strong>Practice</strong>
-                Nursing Exam
-            </div>
+            <a href="exam.html" class="btn btn-primary">
+                ▶ Start Model Test
+            </a>
+
+            <a href="#features" class="btn btn-secondary">
+                Explore More
+            </a>
 
         </div>
 
     </div>
 
 
-    <!-- EXAM -->
+    <div class="hero-card">
 
-    <form id="examForm">
+        <div class="hero-icon">📚</div>
 
+        <h2>Model Test 2026</h2>
 
-        <!-- QUESTION 1 -->
+        <p>
+            Test your nursing knowledge with our practice examination.
+        </p>
 
-        <div class="question">
+        <br>
 
-            <h3>
-                1. What is the normal respiratory rate of an adult?
-            </h3>
+        <strong>10 Questions • Practice Test</strong>
 
-            <label class="option">
-                <input type="radio" name="q1" value="a">
-                <span>A. 5–10 breaths/min</span>
-            </label>
+    </div>
 
-            <label class="option">
-                <input type="radio" name="q1" value="b">
-                <span>B. 12–20 breaths/min</span>
-            </label>
+</section>
 
-            <label class="option">
-                <input type="radio" name="q1" value="c">
-                <span>C. 25–35 breaths/min</span>
-            </label>
 
-            <label class="option">
-                <input type="radio" name="q1" value="d">
-                <span>D. 40–50 breaths/min</span>
-            </label>
+<section class="features" id="features">
 
-        </div>
+    <div class="section-title">
 
+        <h2>Prepare Smarter</h2>
 
-        <!-- QUESTION 2 -->
-
-        <div class="question">
-
-            <h3>
-                2. Which organ pumps blood throughout the body?
-            </h3>
-
-            <label class="option">
-                <input type="radio" name="q2" value="a">
-                <span>A. Liver</span>
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q2" value="b">
-                <span>B. Kidney</span>
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q2" value="c">
-                <span>C. Heart</span>
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q2" value="d">
-                <span>D. Lung</span>
-            </label>
-
-        </div>
-
-
-        <!-- QUESTION 3 -->
-
-        <div class="question">
-
-            <h3>
-                3. Which vitamin is mainly produced in the skin by sunlight?
-            </h3>
-
-            <label class="option">
-                <input type="radio" name="q3" value="a">
-                <span>A. Vitamin A</span>
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q3" value="b">
-                <span>B. Vitamin B12</span>
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q3" value="c">
-                <span>C. Vitamin C</span>
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q3" value="d">
-                <span>D. Vitamin D</span>
-            </label>
-
-        </div>
-
-
-        <!-- QUESTION 4 -->
-
-        <div class="question">
-
-            <h3>
-                4. What is the normal body temperature approximately?
-            </h3>
-
-            <label class="option">
-                <input type="radio" name="q4" value="a">
-                <span>A. 30°C</span>
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q4" value="b">
-                <span>B. 37°C</span>
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q4" value="c">
-                <span>C. 42°C</span>
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q4" value="d">
-                <span>D. 45°C</span>
-            </label>
-
-        </div>
-
-
-        <!-- QUESTION 5 -->
-
-        <div class="question">
-
-            <h3>
-                5. Which blood cells help fight infection?
-            </h3>
-
-            <label class="option">
-                <input type="radio" name="q5" value="a">
-                <span>A. Red blood cells</span>
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q5" value="b">
-                <span>B. White blood cells</span>
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q5" value="c">
-                <span>C. Platelets</span>
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q5" value="d">
-                <span>D. Plasma</span>
-            </label>
-
-        </div>
-
-
-        <!-- QUESTION 6 -->
-
-        <div class="question">
-
-            <h3>
-                6. Which route is used for an intramuscular injection?
-            </h3>
-
-            <label class="option">
-                <input type="radio" name="q6" value="a">
-                <span>A. Muscle</span>
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q6" value="b">
-                <span>B. Vein</span>
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q6" value="c">
-                <span>C. Artery</span>
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q6" value="d">
-                <span>D. Oral cavity</span>
-            </label>
-
-        </div>
-
-
-        <!-- QUESTION 7 -->
-
-        <div class="question">
-
-            <h3>
-                7. What does BP stand for?
-            </h3>
-
-            <label class="option">
-                <input type="radio" name="q7" value="a">
-                <span>A. Blood Pressure</span>
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q7" value="b">
-                <span>B. Body Pulse</span>
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q7" value="c">
-                <span>C. Blood Platelet</span>
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q7" value="d">
-                <span>D. Body Pressure</span>
-            </label>
-
-        </div>
-
-
-        <!-- QUESTION 8 -->
-
-        <div class="question">
-
-            <h3>
-                8. Which instrument is used to measure blood pressure?
-            </h3>
-
-            <label class="option">
-                <input type="radio" name="q8" value="a">
-                <span>A. Thermometer</span>
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q8" value="b">
-                <span>B. Stethoscope only</span>
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q8" value="c">
-                <span>C. Sphygmomanometer</span>
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q8" value="d">
-                <span>D. Glucometer</span>
-            </label>
-
-        </div>
-
-
-        <!-- QUESTION 9 -->
-
-        <div class="question">
-
-            <h3>
-                9. Which vitamin deficiency causes scurvy?
-            </h3>
-
-            <label class="option">
-                <input type="radio" name="q9" value="a">
-                <span>A. Vitamin A</span>
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q9" value="b">
-                <span>B. Vitamin C</span>
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q9" value="c">
-                <span>C. Vitamin D</span>
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q9" value="d">
-                <span>D. Vitamin K</span>
-            </label>
-
-        </div>
-
-
-        <!-- QUESTION 10 -->
-
-        <div class="question">
-
-            <h3>
-                10. Which part of the body is primarily responsible for gas exchange?
-            </h3>
-
-            <label class="option">
-                <input type="radio" name="q10" value="a">
-                <span>A. Stomach</span>
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q10" value="b">
-                <span>B. Kidney</span>
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q10" value="c">
-                <span>C. Lungs</span>
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q10" value="d">
-                <span>D. Liver</span>
-            </label>
-
-        </div>
-
-
-        <!-- SUBMIT -->
-
-        <button
-            type="button"
-            class="submit"
-            onclick="submitExam()"
-        >
-            SUBMIT EXAM
-        </button>
-
-    </form>
-
-
-    <!-- RESULT -->
-
-    <div id="result">
-
-        <div class="result-title">
-            Your Result
-        </div>
-
-        <div class="score" id="score"></div>
-
-        <p id="message"></p>
+        <p>
+            Everything you need to practice and improve.
+        </p>
 
     </div>
 
 
-    <!-- NAVIGATION -->
+    <div class="cards">
 
-    <div class="navigation">
+        <div class="card">
 
-        <a
-            href="exam.html"
-            class="nav-button start-button"
-        >
-            ▶ START MODEL TEST
-        </a>
+            <div class="card-icon">📝</div>
 
-        <a
-            href="index.html"
-            class="nav-button home-button"
-        >
-            ← HOME
-        </a>
+            <h3>Model Tests</h3>
+
+            <p>
+                Practice nursing-related questions and check your score
+                instantly.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">🎯</div>
+
+            <h3>Focused Practice</h3>
+
+            <p>
+                Strengthen your knowledge through regular practice and
+                revision.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">📈</div>
+
+            <h3>Track Progress</h3>
+
+            <p>
+                Use your test results to identify topics that need more
+                revision.
+            </p>
+
+        </div>
 
     </div>
 
-</main>
+</section>
 
 
-<!-- ================= FOOTER ================= -->
+<section class="cta">
 
-<footer class="footer">
+    <h2>Ready to Test Yourself?</h2>
+
+    <p>
+        Start the Nursing Career Model Test now.
+    </p>
+
+    <a href="exam.html" class="btn">
+        Start Model Test →
+    </a>
+
+</section>
+
+
+<footer>
 
     © 2026 <strong>Nursing Career</strong>
-    — Licensing Examination
+    — Nursing Examination Preparation
 
 </footer>
-
-
-<!-- ================= JAVASCRIPT ================= -->
-
-<script>
-
-function submitExam(){
-
-    const answers = {
-        q1:"b",
-        q2:"c",
-        q3:"d",
-        q4:"b",
-        q5:"b",
-        q6:"a",
-        q7:"a",
-        q8:"c",
-        q9:"b",
-        q10:"c"
-    };
-
-    let score = 0;
-
-    for(let q in answers){
-
-        const selected =
-            document.querySelector(
-                'input[name="' + q + '"]:checked'
-            );
-
-        if(
-            selected &&
-            selected.value === answers[q]
-        ){
-            score++;
-        }
-    }
-
-    document.getElementById("result").style.display = "block";
-
-    document.getElementById("score").innerText =
-        score + " / 10";
-
-
-    if(score >= 8){
-
-        document.getElementById("message").innerText =
-            "Excellent! Keep preparing for the Licensing Examination.";
-
-    }
-    else if(score >= 5){
-
-        document.getElementById("message").innerText =
-            "Good attempt! Revise the important topics again.";
-
-    }
-    else{
-
-        document.getElementById("message").innerText =
-            "Keep practicing. You can improve with revision.";
-
-    }
-
-
-    document.getElementById("result").scrollIntoView({
-        behavior:"smooth",
-        block:"center"
-    });
-
-}
-
-</script>
 
 </body>
 </html>
