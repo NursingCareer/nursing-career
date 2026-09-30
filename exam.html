@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nursing Career Exam</title>
+
+<style>
+body{
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    margin:0;
+}
+header{
+    background:#007bff;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+.container{
+    max-width:800px;
+    margin:20px auto;
+    padding:15px;
+}
+.top{
+    background:white;
+    padding:15px;
+    border-radius:10px;
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:15px;
+}
+.timer{
+    background:#dc3545;
+    color:white;
+    padding:8px 15px;
+    border-radius:7px;
+    font-weight:bold;
+}
+.card{
+    background:white;
+    padding:18px;
+    margin:15px 0;
+    border-radius:10px;
+}
+.option{
+    display:block;
+    padding:10px;
+    margin:7px 0;
+    border:1px solid #ddd;
+    border-radius:7px;
+}
+button{
+    border:0;
+    padding:13px 25px;
+    border-radius:7px;
+    background:#007bff;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+.result{
+    display:none;
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Nursing Career</h1>
+<p>Online Nursing MCQ Examination</p>
+</header>
+
+<div class="container">
+
+<div id="exam">
+
+<div class="top">
+<b>Questions: <span id="total">60</span></b>
+<b class="timer" id="timer">30:00</b>
+</div>
+
+<form id="form">
+
+<div id="questions"></div>
+
+<button type="submit">Submit Exam</button>
+
+</form>
+
+</div>
+
+
+<div id="result" class="result">
+
+<h2>Exam Result</h2>
+
+<h1>
+<span id="score">0</span>/60
+</h1>
+
+<h3>
+Percentage: <span id="percent">0</span>%
+</h3>
+
+<p>
+Correct: <span id="correct">0</span>
+</p>
+
+<p>
+Wrong: <span id="wrong">0</span>
+</p>
+
+<p>
+Unanswered: <span id="unanswered">0</span>
+</p>
+
+<button onclick="location.reload()">
+Retake Exam
+</button>
+
+</div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   QUESTION DATABASE
+========================= */
+
+const database = [
+
+{
+q:"What is the normal adult body temperature?",
+o:["35°C","37°C","39°C","41°C"],
+a:1
+},
+
+{
+q:"Which organ pumps blood throughout the body?",
+o:["Liver","Heart","Kidney","Lung"],
+a:1
+},
+
+{
+q:"How many chambers does the human heart have?",
+o:["2","3","4","5"],
+a:2
+},
+
+{
+q:"Which organ is primarily responsible for breathing?",
+o:["Heart","Liver","Lungs","Kidney"],
+a:2
+},
+
+{
+q:"What is the largest organ of the human body?",
+o:["Liver","Skin","Heart","Brain"],
+a:1
+},
+
+{
+q:"Which blood cells help fight infection?",
+o:["Red blood cells","White blood cells","Platelets","Plasma"],
+a:1
+},
+
+{
+q:"Which blood cells carry oxygen?",
+o:["White blood cells","Red blood cells","Platelets","Plasma"],
+a:1
+},
+
+{
+q:"What is the main function of platelets?",
+o:["Carry oxygen","Fight infection","Help blood clot","Digest food"],
+a:2
+},
+
+{
+q:"Which organ filters waste from the blood?",
+o:["Heart","Kidney","Lung","Stomach"],
+a:1
+},
+
+{
+q:"Which part of the body controls most activities?",
+o:["Heart","Brain","Liver","Kidney"],
+a:1
+},
+
+{
+q:"What is the normal number of lungs in an adult?",
+o:["1","2","3","4"],
+a:1
+},
+
+{
+q:"Which vitamin is produced in the skin by sunlight?",
+o:["Vitamin A","Vitamin B","Vitamin C","Vitamin D"],
+a:3
+},
+
+{
+q:"Which mineral is important for strong bones?",
+o:["Iron","Calcium","Sodium","Potassium"],
+a:1
+},
+
+{
+q:"What is the basic unit of life?",
+o:["Tissue","Organ","Cell","Bone"],
+a:2
+},
+
+{
+q:"Which organ produces insulin?",
+o:["Liver","Pancreas","Kidney","Heart"],
+a:1
+},
+
+{
+q:"What is the main function of the stomach?",
+o:["Pump blood","Digest food","Filter blood","Produce urine"],
+a:1
+},
+
+{
+q:"Which system is responsible for transporting blood?",
+o:["Digestive system","Circulatory system","Nervous system","Skeletal system"],
+a:1
+},
+
+{
+q:"Which system controls body movement and coordination?",
+o:["Nervous system","Digestive system","Respiratory system","Urinary system"],
+a:0
+},
+
+{
+q:"Which organ stores urine?",
+o:["Kidney","Bladder","Liver","Stomach"],
+a:1
+},
+
+{
+q:"What is the medical term for high blood pressure?",
+o:["Hypotension","Hypertension","Hypoglycemia","Anemia"],
+a:1
+},
+
+{
+q:"What is the medical term for low blood pressure?",
+o:["Hypertension","Hypotension","Hyperthermia","Anemia"],
+a:1
+},
+
+{
+q:"Which instrument measures blood pressure?",
+o:["Thermometer","Stethoscope","Sphygmomanometer","Otoscope"],
+a:2
+},
+
+{
+q:"Which instrument measures body temperature?",
+o:["Thermometer","Stethoscope","Syringe","Otoscope"],
+a:0
+},
+
+{
+q:"Which instrument is commonly used to listen to heart sounds?",
+o:["Thermometer","Stethoscope","Syringe","Scale"],
+a:1
+},
+
+{
+q:"What does CPR stand for?",
+o:["Cardiac Pressure Response","Cardiopulmonary Resuscitation","Clinical Patient Recovery","Cardiac Patient Rescue"],
+a:1
+},
+
+{
+q:"Which nutrient is the body's main source of energy?",
+o:["Protein","Carbohydrate","Vitamin","Mineral"],
+a:1
+},
+
+{
+q:"Which nutrient is important for tissue growth and repair?",
+o:["Protein","Water","Salt","Vitamin C"],
+a:0
+},
+
+{
+q:"Which organ is mainly responsible for detoxification?",
+o:["Heart","Liver","Lung","Brain"],
+a:1
+},
+
+{
+q:"What is anemia commonly associated with?",
+o:["Low hemoglobin","High temperature","High blood pressure","High glucose"],
+a:0
+},
+
+{
+q:"Which disease is caused by Mycobacterium tuberculosis?",
+o:["Malaria","Tuberculosis","Influenza","Cholera"],
+a:1
+},
+
+{
+q:"Which disease is commonly transmitted by mosquitoes?",
+o:["Malaria","Diabetes","Hypertension","Asthma"],
+a:0
+},
+
+{
+q:"Which organ is part of the respiratory system?",
+o:["Lung","Kidney","Stomach","Pancreas"],
+a:0
+},
+
+{
+q:"Which organ is part of the digestive system?",
+o:["Stomach","Heart","Kidney","Lung"],
+a:0
+},
+
+{
+q:"Which body system includes bones?",
+o:["Skeletal system","Respiratory system","Digestive system","Endocrine system"],
+a:0
+},
+
+{
+q:"Which joint is found at the knee?",
+o:["Hinge joint","Ball-and-socket joint","Pivot joint","Fixed joint"],
+a:0
+},
+
+{
+q:"Which bone is commonly called the thigh bone?",
+o:["Tibia","Femur","Radius","Ulna"],
+a:1
+},
+
+{
+q:"Which bone is commonly called the upper arm bone?",
+o:["Femur","Humerus","Tibia","Fibula"],
+a:1
+},
+
+{
+q:"Which blood type is known as the universal red-cell donor?",
+o:["AB+","A+","O−","B+"],
+a:2
+},
+
+{
+q:"Which blood type is known as the universal plasma donor?",
+o:["AB","O","A","B"],
+a:0
+},
+
+{
+q:"Which part of the eye controls the amount of light entering?",
+o:["Retina","Iris","Cornea","Lens"],
+a:1
+},
+
+{
+q:"Which sense organ is responsible for hearing?",
+o:["Eye","Ear","Nose","Skin"],
+a:1
+},
+
+{
+q:"Which sense organ detects smell?",
+o:["Eye","Ear","Nose","Tongue"],
+a:2
+},
+
+{
+q:"Which organ is responsible for taste?",
+o:["Tongue","Ear","Eye","Skin"],
+a:0
+},
+
+{
+q:"What is the normal resting adult pulse generally around?",
+o:["10–20 bpm","60–100 bpm","150–200 bpm","200–250 bpm"],
+a:1
+},
+
+{
+q:"What does BMI stand for?",
+o:["Body Mass Index","Blood Measurement Index","Body Muscle Indicator","Blood Mass Indicator"],
+a:0
+},
+
+{
+q:"Which condition involves elevated blood glucose?",
+o:["Diabetes mellitus","Anemia","Asthma","Arthritis"],
+a:0
+},
+
+{
+q:"Which hormone lowers blood glucose?",
+o:["Insulin","Adrenaline","Thyroxine","Cortisol"],
+a:0
+},
+
+{
+q:"Which gland produces thyroid hormones?",
+o:["Thyroid gland","Pituitary gland","Pancreas","Adrenal gland"],
+a:0
+},
+
+{
+q:"Which organ produces bile?",
+o:["Stomach","Liver","Kidney","Pancreas"],
+a:1
+},
+
+{
+q:"Where is bile stored?",
+o:["Gallbladder","Stomach","Kidney","Pancreas"],
+a:0
+},
+
+{
+q:"Which part of the digestive system absorbs most nutrients?",
+o:["Small intestine","Large intestine","Stomach","Esophagus"],
+a:0
+},
+
+{
+q:"Which part mainly absorbs water from remaining food?",
+o:["Small intestine","Large intestine","Stomach","Esophagus"],
+a:1
+},
+
+{
+q:"What is dehydration?",
+o:["Excess body water","Insufficient body water","High blood pressure","Low oxygen"],
+a:1
+},
+
+{
+q:"Which electrolyte is important for nerve and muscle function?",
+o:["Sodium","Oxygen","Hemoglobin","Glucose"],
+a:0
+},
+
+{
+q:"Which electrolyte is especially important for normal cardiac rhythm?",
+o:["Potassium","Iron","Glucose","Protein"],
+a:0
+},
+
+{
+q:"What is infection control primarily intended to prevent?",
+o:["Disease transmission","Weight gain","Bone growth","Vision problems"],
+a:0
+},
+
+{
+q:"What is hand hygiene used for?",
+o:["Prevent infection","Increase blood pressure","Improve vision","Increase appetite"],
+a:0
+},
+
+{
+q:"Which type of microorganism can cause many infections?",
+o:["Bacteria","Oxygen","Water","Calcium"],
+a:0
+},
+
+{
+q:"Viruses require what to reproduce?",
+o:["Host cells","Bones","Water only","Red blood cells only"],
+a:0
+},
+
+{
+q:"What is inflammation commonly characterized by?",
+o:["Redness and swelling","Hair growth","Bone shortening","Low appetite only"],
+a:0
+},
+
+{
+q:"Which organ is responsible for urine formation?",
+o:["Kidney","Bladder","Liver","Lung"],
+a:0
+},
+
+{
+q:"What is the main function of red blood cells?",
+o:["Transport oxygen","Fight infection","Clot blood","Digest food"],
+a:0
+},
+
+{
+q:"What is the main function of white blood cells?",
+o:["Fight infection","Carry oxygen","Store bile","Digest fat"],
+a:0
+},
+
+{
+q:"What is the main function of hemoglobin?",
+o:["Carry oxygen","Digest food","Filter urine","Produce insulin"],
+a:0
+},
+
+{
+q:"Which body system is responsible for hormone regulation?",
+o:["Endocrine system","Skeletal system","Respiratory system","Digestive system"],
+a:0
+},
+
+{
+q:"Which gland is often called the master gland?",
+o:["Pituitary gland","Thyroid gland","Pancreas","Adrenal gland"],
+a:0
+},
+
+{
+q:"Which organ is located in the chest and protected by the ribs?",
+o:["Heart","Kidney","Bladder","Stomach"],
+a:0
+},
+
+{
+q:"Which organ is located mainly in the upper right abdomen?",
+o:["Liver","Heart","Bladder","Kidney"],
+a:0
+},
+
+{
+q:"What is the purpose of a sterile technique?",
+o:["Prevent contamination","Increase appetite","Lower height","Improve hearing"],
+a:0
+},
+
+{
+q:"Which position is commonly used for a patient lying flat on the back?",
+o:["Supine","Prone","Lateral","Sitting"],
+a:0
+},
+
+{
+q:"Which position means lying face down?",
+o:["Supine","Prone","Fowler's","Sitting"],
+a:1
+},
+
+{
+q:"Which position has the patient lying on the side?",
+o:["Lateral","Supine","Prone","Standing"],
+a:0
+},
+
+{
+q:"What does PPE stand for?",
+o:["Personal Protective Equipment","Patient Protection Examination","Primary Patient Equipment","Personal Prevention Exercise"],
+a:0
+},
+
+{
+q:"Which item is commonly considered PPE?",
+o:["Gloves","Notebook","Pillow","Cup"],
+a:0
+},
+
+{
+q:"What is the purpose of gloves in healthcare?",
+o:["Reduce contamination risk","Measure temperature","Measure weight","Improve hearing"],
+a:0
+},
+
+{
+q:"Which vital sign measures body temperature?",
+o:["Temperature","Pulse","Respiration","Blood pressure"],
+a:0
+},
+
+{
+q:"Which vital sign measures heart rate?",
+o:["Pulse","Temperature","Respiration","Blood pressure"],
+a:0
+},
+
+{
+q:"Which vital sign measures breathing rate?",
+o:["Respiration","Pulse","Temperature","Blood pressure"],
+a:0
+},
+
+{
+q:"Which vital sign measures pressure in arteries?",
+o:["Blood pressure","Temperature","Pulse","Respiration"],
+a:0
+},
+
+{
+q:"What is tachycardia?",
+o:["Abnormally fast heart rate","Abnormally slow heart rate","Low temperature","High blood sugar"],
+a:0
+},
+
+{
+q:"What is bradycardia?",
+o:["Abnormally slow heart rate","Abnormally fast heart rate","High temperature","High blood pressure"],
+a:0
+},
+
+{
+q:"What is fever?",
+o:["Elevated body temperature","Low blood pressure","Low glucose","Low pulse"],
+a:0
+},
+
+{
+q:"What is hypoglycemia?",
+o:["Low blood glucose","High blood glucose","Low oxygen","High temperature"],
+a:0
+},
+
+{
+q:"What is hyperglycemia?",
+o:["High blood glucose","Low blood glucose","Low temperature","Low blood pressure"],
+a:0
+},
+
+{
+q:"Which organ removes carbon dioxide from the blood?",
+o:["Lungs","Kidneys","Stomach","Liver"],
+a:0
+},
+
+{
+q:"Which gas is essential for cellular respiration?",
+o:["Oxygen","Nitrogen","Carbon dioxide","Hydrogen"],
+a:0
+},
+
+{
+q:"Which gas is mainly removed during exhalation?",
+o:["Carbon dioxide","Oxygen","Helium","Hydrogen"],
+a:0
+},
+
+{
+q:"What is the main function of the skeletal system?",
+o:["Support and protection","Digest food","Pump blood","Produce urine"],
+a:0
+},
+
+{
+q:"What is the main function of muscles?",
+o:["Produce movement","Filter blood","Digest food","Store urine"],
+a:0
+},
+
+{
+q:"Which muscle is responsible for breathing?",
+o:["Diaphragm","Biceps","Triceps","Quadriceps"],
+a:0
+},
+
+{
+q:"Which organ is responsible for thinking and memory?",
+o:["Brain","Heart","Liver","Kidney"],
+a:0
+},
+
+{
+q:"Which part of the nervous system includes the brain and spinal cord?",
+o:["Central nervous system","Digestive system","Endocrine system","Skeletal system"],
+a:0
+},
+
+{
+q:"Which structure connects the brain to the rest of the body?",
+o:["Spinal cord","Femur","Trachea","Esophagus"],
+a:0
+},
+
+{
+q:"What is the main function of the skin?",
+o:["Protection","Pumping blood","Producing urine","Digesting food"],
+a:0
+},
+
+{
+q:"Which layer is the outermost layer of skin?",
+o:["Epidermis","Dermis","Muscle","Bone"],
+a:0
+},
+
+{
+q:"Which blood component is mostly liquid?",
+o:["Plasma","Platelets","Red cells","White cells"],
+a:0
+},
+
+{
+q:"What is the main function of plasma?",
+o:["Transport substances","Pump blood","Produce insulin","Digest food"],
+a:0
+},
+
+{
+q:"Which organ produces most clotting factors?",
+o:["Liver","Heart","Lung","Kidney"],
+a:0
+},
+
+{
+q:"Which vitamin is important for normal blood clotting?",
+o:["Vitamin K","Vitamin C","Vitamin D","Vitamin B12"],
+a:0
+},
+
+{
+q:"Which vitamin is important for vision?",
+o:["Vitamin A","Vitamin C","Vitamin D","Vitamin K"],
+a:0
+},
+
+{
+q:"Which mineral is essential for hemoglobin production?",
+o:["Iron","Calcium","Sodium","Potassium"],
+a:0
+},
+
+{
+q:"Which disease is characterized by narrowing of airways?",
+o:["Asthma","Diabetes","Anemia","Arthritis"],
+a:0
+},
+
+{
+q:"Which organ is affected primarily by asthma?",
+o:["Lungs","Kidneys","Liver","Stomach"],
+a:0
+},
+
+{
+q:"What is pneumonia?",
+o:["Infection/inflammation of lung tissue","Bone disease","Kidney stone","Skin allergy"],
+a:0
+},
+
+{
+q:"What is a fracture?",
+o:["Break in a bone","Lung infection","High blood pressure","Low glucose"],
+a:0
+},
+
+{
+q:"What is a wound?",
+o:["Damage to body tissue","High blood sugar","Low temperature","Bone growth"],
+a:0
+},
+
+{
+q:"What is edema?",
+o:["Swelling caused by excess fluid","Low blood sugar","High temperature","Bone fracture"],
+a:0
+},
+
+{
+q:"Which organ is primarily responsible for maintaining fluid balance?",
+o:["Kidneys","Eyes","Ears","Skin"],
+a:0
+},
+
+{
+q:"What is the primary purpose of nursing assessment?",
+o:["Collect patient information","Give a final diagnosis","Perform surgery","Write prescriptions"],
+a:0
+}
+
+];
+
+
+/* =========================
+   RANDOM 60
+========================= */
+
+let questions =
+    [...database]
+    .sort(() => Math.random() - 0.5)
+    .slice(0,60);
+
+
+/* =========================
+   SHOW QUESTIONS
+========================= */
+
+const box =
+    document.getElementById("questions");
+
+questions.forEach((item,index)=>{
+
+    let html =
+    `<div class="card">
+    <b>${index+1}. ${item.q}</b>`;
+
+    item.o.forEach((option,i)=>{
+
+        html += `
+        <label class="option">
+        <input
+        type="radio"
+        name="q${index}"
+        value="${i}">
+        ${String.fromCharCode(65+i)}. ${option}
+        </label>
+        `;
+
+    });
+
+    html += `</div>`;
+
+    box.innerHTML += html;
+
+});
+
+
+/* =========================
+   TIMER
+========================= */
+
+let seconds = 30 * 60;
+
+const timer =
+    document.getElementById("timer");
+
+const countdown =
+setInterval(()=>{
+
+    let min =
+        Math.floor(seconds/60);
+
+    let sec =
+        seconds%60;
+
+    timer.textContent =
+        String(min).padStart(2,"0")
+        + ":" +
+        String(sec).padStart(2,"0");
+
+    if(seconds <= 0){
+
+        clearInterval(countdown);
+
+        submitExam();
+
+    }
+
+    seconds--;
+
+},1000);
+
+
+/* =========================
+   SUBMIT
+========================= */
+
+document
+.getElementById("form")
+.addEventListener("submit",(e)=>{
+
+    e.preventDefault();
+
+    submitExam();
+
+});
+
+
+function submitExam(){
+
+    clearInterval(countdown);
+
+    let score = 0;
+
+    let unanswered = 0;
+
+    questions.forEach((item,index)=>{
+
+        const selected =
+            document.querySelector(
+                `input[name="q${index}"]:checked`
+            );
+
+        if(!selected){
+
+            unanswered++;
+
+        }else if(
+            Number(selected.value)
+            === item.a
+        ){
+
+            score++;
+
+        }
+
+    });
+
+
+    let wrong =
+        60 - score - unanswered;
+
+    let percentage =
+        Math.round(
+            score / 60 * 100
+        );
+
+
+    document.getElementById("score")
+    .textContent = score;
+
+    document.getElementById("percent")
+    .textContent = percentage;
+
+    document.getElementById("correct")
+    .textContent = score;
+
+    document.getElementById("wrong")
+    .textContent = wrong;
+
+    document.getElementById("unanswered")
+    .textContent = unanswered;
+
+
+    document.getElementById("exam")
+    .style.display = "none";
+
+    document.getElementById("result")
+    .style.display = "block";
+
+    window.scrollTo(0,0);
+
+}
+
+</script>
+
+</body>
+</html>
