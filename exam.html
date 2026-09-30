@@ -1,251 +1,1141 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nursing Career - Model Test</title>
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,sans-serif;background:#f4f7fb;color:#1f2937}
-header{background:linear-gradient(135deg,#0f766e,#0891b2);color:white;padding:18px 20px;position:sticky;top:0;z-index:10}
-.header-inner{max-width:900px;margin:auto;display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:23px;font-weight:bold}
-.home-btn{color:white;text-decoration:none;background:rgba(255,255,255,.15);padding:9px 15px;border-radius:8px}
-.container{max-width:900px;margin:30px auto;padding:0 15px}
-.test-header,.question-card,.result{background:white;border-radius:16px;box-shadow:0 4px 15px rgba(0,0,0,.07)}
-.test-header{padding:25px;margin-bottom:20px}
-.test-header h1{color:#0f766e;margin-bottom:8px}
-.test-info{display:flex;gap:15px;margin-top:18px;flex-wrap:wrap}
-.info-box{flex:1;min-width:130px;background:#f0fdfa;padding:14px;border-radius:10px;text-align:center}
-.info-box strong{display:block;font-size:20px;color:#0f766e}
-.progress-wrap{margin-top:20px}
-.progress-text{display:flex;justify-content:space-between;font-size:14px;margin-bottom:7px}
-.progress{height:9px;background:#e5e7eb;border-radius:20px;overflow:hidden}
-.progress-bar{height:100%;width:0;background:#0f766e;transition:.3s}
-.question-card{padding:25px;margin-bottom:18px}
-.question-number{display:inline-block;background:#ccfbf1;color:#0f766e;padding:6px 11px;border-radius:20px;font-size:13px;font-weight:bold;margin-bottom:12px}
-.question{font-size:19px;font-weight:bold;line-height:1.5;margin-bottom:18px}
-.option{display:block;border:2px solid #e5e7eb;padding:14px;margin:10px 0;border-radius:10px;cursor:pointer}
-.option:hover,.option.selected{border-color:#0f766e;background:#ecfdf5}
-.option input{margin-right:10px}
-.submit-btn,.retake-btn{border:0;width:100%;padding:15px;border-radius:10px;font-size:17px;font-weight:bold;cursor:pointer;color:white;background:#0f766e;margin-top:10px}
-.result{display:none;padding:30px 25px;text-align:center}
-.result h2{color:#0f766e}
-.score{font-size:48px;font-weight:bold;color:#0891b2;margin:15px}
-.answer-review{margin-top:25px;text-align:left}
-.answer-item{padding:14px;margin:10px 0;border-radius:10px;line-height:1.6}
-.correct{background:#ecfdf5;color:#047857}
-.wrong{background:#fef2f2;color:#b91c1c}
-footer{text-align:center;padding:25px;color:#6b7280}
-@media(max-width:600px){.header-inner{flex-direction:column;gap:10px}.info-box{min-width:100%}.question{font-size:17px}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nursing Career - Online Exam</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #222;
+    }
+
+    .header {
+      background: #0d6efd;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .header h1 {
+      margin-bottom: 7px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 25px auto;
+      padding: 0 15px;
+    }
+
+    .top-bar {
+      background: white;
+      padding: 18px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      box-shadow: 0 3px 12px rgba(0,0,0,.08);
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .progress {
+      color: #0d6efd;
+      font-weight: bold;
+    }
+
+    .timer {
+      color: #dc3545;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .question-card {
+      background: white;
+      padding: 22px;
+      margin-bottom: 18px;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0,0,0,.08);
+    }
+
+    .question {
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+
+    .option {
+      display: block;
+      padding: 12px;
+      margin: 9px 0;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .option:hover {
+      background: #eef5ff;
+      border-color: #0d6efd;
+    }
+
+    .option input {
+      margin-right: 9px;
+    }
+
+    .submit-area {
+      text-align: center;
+      margin: 25px 0;
+    }
+
+    .btn {
+      border: none;
+      border-radius: 8px;
+      padding: 13px 24px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .submit-btn {
+      background: #198754;
+      color: white;
+    }
+
+    .submit-btn:hover {
+      background: #157347;
+    }
+
+    #result {
+      display: none;
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0,0,0,.08);
+    }
+
+    .score-box {
+      text-align: center;
+      background: #e9f7ef;
+      padding: 25px;
+      border-radius: 10px;
+      margin-bottom: 25px;
+    }
+
+    .score-box h2 {
+      color: #198754;
+      margin-bottom: 12px;
+    }
+
+    .score-number {
+      font-size: 30px;
+      font-weight: bold;
+      color: #0d6efd;
+    }
+
+    .review {
+      padding: 15px;
+      margin-bottom: 14px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+    }
+
+    .review.correct {
+      border-left: 5px solid #198754;
+      background: #f0fff5;
+    }
+
+    .review.wrong {
+      border-left: 5px solid #dc3545;
+      background: #fff5f5;
+    }
+
+    .review p {
+      margin: 7px 0;
+      line-height: 1.5;
+    }
+
+    .correct-text {
+      color: #198754;
+      font-weight: bold;
+    }
+
+    .wrong-text {
+      color: #dc3545;
+      font-weight: bold;
+    }
+
+    .not-answered {
+      color: #fd7e14;
+      font-weight: bold;
+    }
+
+    .result-buttons {
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    .retake-btn {
+      background: #0d6efd;
+      color: white;
+    }
+
+    .home-btn {
+      background: #6c757d;
+      color: white;
+      margin-left: 8px;
+    }
+
+    @media (max-width: 600px) {
+      .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .question {
+        font-size: 16px;
+      }
+
+      .btn {
+        width: 100%;
+        margin: 5px 0;
+      }
+
+      .home-btn {
+        margin-left: 0;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<header><div class="header-inner"><div class="logo">🩺 Nursing Career</div><a class="home-btn" href="index.html">🏠 Home</a></div></header>
 
-<div class="container">
-<div class="test-header">
-<h1>📝 Nursing Career Model Test</h1>
-<p>Test your basic nursing knowledge and check your score.</p>
-<div class="test-info">
-<div class="info-box"><strong>10</strong>Questions</div>
-<div class="info-box"><strong id="timer">10:00</strong>Time Left</div>
-<div class="info-box"><strong>10</strong>Total Marks</div>
-</div>
-<div class="progress-wrap">
-<div class="progress-text"><span id="progressText">Answered 0 of 10</span><span id="progressPercent">0%</span></div>
-<div class="progress"><div class="progress-bar" id="progressBar"></div></div>
-</div>
-</div>
+  <div class="header">
+    <h1>Nursing Career</h1>
+    <p>Online Nursing MCQ Examination</p>
+  </div>
 
-<form id="quizForm">
-<div class="question-card">
-<span class="question-number">Question 1</span>
-<div class="question">What is the normal respiratory rate for an adult?</div>
-<label class="option"><input type="radio" name="q1" value="a"> A. 5–10 breaths/min</label>
-<label class="option"><input type="radio" name="q1" value="b"> B. 12–20 breaths/min</label>
-<label class="option"><input type="radio" name="q1" value="c"> C. 25–35 breaths/min</label>
-<label class="option"><input type="radio" name="q1" value="d"> D. 40–50 breaths/min</label>
-</div>
-<div class="question-card">
-<span class="question-number">Question 2</span>
-<div class="question">Which organ pumps blood throughout the body?</div>
-<label class="option"><input type="radio" name="q2" value="a"> A. Liver</label>
-<label class="option"><input type="radio" name="q2" value="b"> B. Kidney</label>
-<label class="option"><input type="radio" name="q2" value="c"> C. Heart</label>
-<label class="option"><input type="radio" name="q2" value="d"> D. Lung</label>
-</div>
-<div class="question-card">
-<span class="question-number">Question 3</span>
-<div class="question">Which vitamin is produced in the skin by sunlight?</div>
-<label class="option"><input type="radio" name="q3" value="a"> A. Vitamin A</label>
-<label class="option"><input type="radio" name="q3" value="b"> B. Vitamin B</label>
-<label class="option"><input type="radio" name="q3" value="c"> C. Vitamin C</label>
-<label class="option"><input type="radio" name="q3" value="d"> D. Vitamin D</label>
-</div>
-<div class="question-card">
-<span class="question-number">Question 4</span>
-<div class="question">What is the approximate normal body temperature?</div>
-<label class="option"><input type="radio" name="q4" value="a"> A. 35°C</label>
-<label class="option"><input type="radio" name="q4" value="b"> B. 37°C</label>
-<label class="option"><input type="radio" name="q4" value="c"> C. 39°C</label>
-<label class="option"><input type="radio" name="q4" value="d"> D. 41°C</label>
-</div>
-<div class="question-card">
-<span class="question-number">Question 5</span>
-<div class="question">Which blood cells help fight infection?</div>
-<label class="option"><input type="radio" name="q5" value="a"> A. RBC</label>
-<label class="option"><input type="radio" name="q5" value="b"> B. WBC</label>
-<label class="option"><input type="radio" name="q5" value="c"> C. Platelets</label>
-<label class="option"><input type="radio" name="q5" value="d"> D. Plasma</label>
-</div>
-<div class="question-card">
-<span class="question-number">Question 6</span>
-<div class="question">An intramuscular injection is given into the:</div>
-<label class="option"><input type="radio" name="q6" value="a"> A. Muscle</label>
-<label class="option"><input type="radio" name="q6" value="b"> B. Vein</label>
-<label class="option"><input type="radio" name="q6" value="c"> C. Skin surface</label>
-<label class="option"><input type="radio" name="q6" value="d"> D. Artery</label>
-</div>
-<div class="question-card">
-<span class="question-number">Question 7</span>
-<div class="question">What does BP stand for?</div>
-<label class="option"><input type="radio" name="q7" value="a"> A. Blood Pressure</label>
-<label class="option"><input type="radio" name="q7" value="b"> B. Body Pulse</label>
-<label class="option"><input type="radio" name="q7" value="c"> C. Blood Pulse</label>
-<label class="option"><input type="radio" name="q7" value="d"> D. Body Pressure</label>
-</div>
-<div class="question-card">
-<span class="question-number">Question 8</span>
-<div class="question">Which instrument is used to measure blood pressure?</div>
-<label class="option"><input type="radio" name="q8" value="a"> A. Thermometer</label>
-<label class="option"><input type="radio" name="q8" value="b"> B. Stethoscope</label>
-<label class="option"><input type="radio" name="q8" value="c"> C. Sphygmomanometer</label>
-<label class="option"><input type="radio" name="q8" value="d"> D. Glucometer</label>
-</div>
-<div class="question-card">
-<span class="question-number">Question 9</span>
-<div class="question">Scurvy is caused by a deficiency of which vitamin?</div>
-<label class="option"><input type="radio" name="q9" value="a"> A. Vitamin A</label>
-<label class="option"><input type="radio" name="q9" value="b"> B. Vitamin C</label>
-<label class="option"><input type="radio" name="q9" value="c"> C. Vitamin D</label>
-<label class="option"><input type="radio" name="q9" value="d"> D. Vitamin K</label>
-</div>
-<div class="question-card">
-<span class="question-number">Question 10</span>
-<div class="question">Where does gas exchange mainly occur?</div>
-<label class="option"><input type="radio" name="q10" value="a"> A. Heart</label>
-<label class="option"><input type="radio" name="q10" value="b"> B. Kidney</label>
-<label class="option"><input type="radio" name="q10" value="c"> C. Lungs</label>
-<label class="option"><input type="radio" name="q10" value="d"> D. Liver</label>
-</div>
-<button type="button" class="submit-btn" onclick="submitTest()">SUBMIT TEST</button>
-</form>
+  <div class="container">
 
-<div class="result" id="result">
-<h2>🎉 Test Completed!</h2>
-<div class="score" id="score">0/10</div>
-<p id="resultMessage"></p>
-<div class="answer-review" id="answerReview"></div>
-<button class="retake-btn" onclick="location.reload()">🔄 Retake Test</button>
-<button class="retake-btn" onclick="location.href='index.html'">🏠 Back to Home</button>
-</div>
-</div>
+    <!-- EXAM -->
+    <div id="examSection">
 
-<footer>© 2026 Nursing Career | Nursing Exam Preparation</footer>
+      <div class="top-bar">
+        <div class="progress">
+          Total Questions:
+          <span id="totalQuestions">60</span>
+        </div>
+
+        <div class="timer">
+          Time Left:
+          <span id="timer">30:00</span>
+        </div>
+      </div>
+
+      <form id="examForm">
+
+        <div id="questionsContainer"></div>
+
+        <div class="submit-area">
+          <button type="submit" class="btn submit-btn">
+            Submit Exam
+          </button>
+        </div>
+
+      </form>
+    </div>
+
+
+    <!-- RESULT -->
+    <div id="result">
+
+      <div class="score-box">
+        <h2>Exam Result</h2>
+
+        <p>
+          Score:
+          <span class="score-number">
+            <span id="score">0</span>/60
+          </span>
+        </p>
+
+        <p style="margin-top:10px;">
+          Percentage:
+          <strong><span id="percentage">0</span>%</strong>
+        </p>
+      </div>
+
+      <h2 style="margin-bottom:15px;">
+        Answer Review
+      </h2>
+
+      <div id="review"></div>
+
+      <div class="result-buttons">
+
+        <button
+          class="btn retake-btn"
+          onclick="location.reload()">
+          Retake Exam
+        </button>
+
+        <button
+          class="btn home-btn"
+          onclick="goHome()">
+          Home
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
 
 <script>
-const answers = {
-    q1:"b",
-    q2:"c",
-    q3:"d",
-    q4:"b",
-    q5:"b",
-    q6:"a",
-    q7:"a",
-    q8:"c",
-    q9:"b",
-    q10:"c"
-};
 
-const correctText = {
-    q1:"B. 12–20 breaths/min",
-    q2:"C. Heart",
-    q3:"D. Vitamin D",
-    q4:"B. 37°C",
-    q5:"B. WBC",
-    q6:"A. Muscle",
-    q7:"A. Blood Pressure",
-    q8:"C. Sphygmomanometer",
-    q9:"B. Vitamin C",
-    q10:"C. Lungs"
-};
+/* =====================================================
+   NURSING QUESTION BANK
+   60 MCQs
+===================================================== */
 
-let timeLeft=600;
-let submitted=false;
+const questionBank = [
 
-const timer=setInterval(function(){
-    if(submitted)return;
-    let m=Math.floor(timeLeft/60);
-    let s=timeLeft%60;
-    document.getElementById("timer").textContent=String(m).padStart(2,"0")+":"+String(s).padStart(2,"0");
-    if(timeLeft<=0){clearInterval(timer);submitTest();return;}
-    timeLeft--;
-},1000);
+  {
+    q: "What is the normal approximate body temperature of an adult?",
+    options: ["35°C", "37°C", "39°C", "41°C"],
+    answer: 1
+  },
 
-document.querySelectorAll(".option input").forEach(function(input){
-    input.addEventListener("change",function(){
-        document.querySelectorAll('input[name="'+this.name+'"]').forEach(function(x){
-            x.parentElement.classList.remove("selected");
-        });
-        this.parentElement.classList.add("selected");
-        updateProgress();
+  {
+    q: "Which organ pumps blood throughout the body?",
+    options: ["Liver", "Kidney", "Heart", "Lung"],
+    answer: 2
+  },
+
+  {
+    q: "Which blood cells mainly fight infection?",
+    options: ["Red blood cells", "White blood cells", "Platelets", "Plasma"],
+    answer: 1
+  },
+
+  {
+    q: "What is the main function of red blood cells?",
+    options: ["Fight infection", "Clot blood", "Carry oxygen", "Produce hormones"],
+    answer: 2
+  },
+
+  {
+    q: "Which instrument is commonly used to measure blood pressure?",
+    options: ["Thermometer", "Sphygmomanometer", "Glucometer", "Otoscope"],
+    answer: 1
+  },
+
+  {
+    q: "Which vitamin is produced in the skin after sunlight exposure?",
+    options: ["Vitamin A", "Vitamin B12", "Vitamin C", "Vitamin D"],
+    answer: 3
+  },
+
+  {
+    q: "What is the largest organ of the human body?",
+    options: ["Liver", "Brain", "Skin", "Heart"],
+    answer: 2
+  },
+
+  {
+    q: "Where does most gas exchange occur in the lungs?",
+    options: ["Trachea", "Alveoli", "Larynx", "Pharynx"],
+    answer: 1
+  },
+
+  {
+    q: "Which blood component helps with clotting?",
+    options: ["Platelets", "Red blood cells", "White blood cells", "Plasma"],
+    answer: 0
+  },
+
+  {
+    q: "Which vital sign is measured in beats per minute?",
+    options: ["Temperature", "Blood pressure", "Pulse", "Respiration"],
+    answer: 2
+  },
+
+  {
+    q: "What is the normal resting respiratory rate for a healthy adult approximately?",
+    options: ["4–8/min", "12–20/min", "25–35/min", "40–50/min"],
+    answer: 1
+  },
+
+  {
+    q: "Which chamber of the heart pumps oxygenated blood to the body?",
+    options: ["Right atrium", "Right ventricle", "Left atrium", "Left ventricle"],
+    answer: 3
+  },
+
+  {
+    q: "Which organ is primarily responsible for filtering blood and producing urine?",
+    options: ["Liver", "Kidney", "Pancreas", "Spleen"],
+    answer: 1
+  },
+
+  {
+    q: "What is the basic functional unit of the kidney?",
+    options: ["Neuron", "Nephron", "Alveolus", "Osteon"],
+    answer: 1
+  },
+
+  {
+    q: "Which part of the brain coordinates balance and movement?",
+    options: ["Cerebrum", "Cerebellum", "Medulla", "Hypothalamus"],
+    answer: 1
+  },
+
+  {
+    q: "Which blood group is known as the universal red-cell donor?",
+    options: ["AB positive", "A positive", "O negative", "B negative"],
+    answer: 2
+  },
+
+  {
+    q: "Which blood group is known as the universal red-cell recipient?",
+    options: ["O negative", "AB positive", "A negative", "B positive"],
+    answer: 1
+  },
+
+  {
+    q: "Which hormone lowers blood glucose level?",
+    options: ["Insulin", "Adrenaline", "Thyroxine", "Cortisol"],
+    answer: 0
+  },
+
+  {
+    q: "Which organ produces insulin?",
+    options: ["Liver", "Kidney", "Pancreas", "Spleen"],
+    answer: 2
+  },
+
+  {
+    q: "Which disease is characterized by persistently elevated blood glucose?",
+    options: ["Hypertension", "Diabetes mellitus", "Asthma", "Anemia"],
+    answer: 1
+  },
+
+  {
+    q: "What is hypertension?",
+    options: [
+      "Low blood sugar",
+      "High blood pressure",
+      "Low body temperature",
+      "High respiratory rate"
+    ],
+    answer: 1
+  },
+
+  {
+    q: "Which device is commonly used to measure oxygen saturation?",
+    options: ["Pulse oximeter", "Thermometer", "Sphygmomanometer", "Spirometer"],
+    answer: 0
+  },
+
+  {
+    q: "A pulse oximeter commonly measures which value?",
+    options: [
+      "Blood glucose",
+      "Oxygen saturation",
+      "Blood pressure",
+      "Body temperature"
+    ],
+    answer: 1
+  },
+
+  {
+    q: "Which route of medication administration involves swallowing a medicine?",
+    options: ["Intravenous", "Intramuscular", "Oral", "Subcutaneous"],
+    answer: 2
+  },
+
+  {
+    q: "Which route delivers medication directly into a vein?",
+    options: ["Oral", "Intravenous", "Subcutaneous", "Topical"],
+    answer: 1
+  },
+
+  {
+    q: "Which route delivers medication into muscle tissue?",
+    options: ["Intramuscular", "Intravenous", "Oral", "Sublingual"],
+    answer: 0
+  },
+
+  {
+    q: "Which route delivers medication under the skin?",
+    options: ["Intramuscular", "Intravenous", "Subcutaneous", "Oral"],
+    answer: 2
+  },
+
+  {
+    q: "What is the first step of the nursing process?",
+    options: ["Planning", "Assessment", "Implementation", "Evaluation"],
+    answer: 1
+  },
+
+  {
+    q: "What is the final step of the nursing process?",
+    options: ["Assessment", "Planning", "Implementation", "Evaluation"],
+    answer: 3
+  },
+
+  {
+    q: "Which nursing process step involves setting goals and choosing interventions?",
+    options: ["Assessment", "Diagnosis", "Planning", "Evaluation"],
+    answer: 2
+  },
+
+  {
+    q: "What is aseptic technique intended to reduce?",
+    options: [
+      "Blood pressure",
+      "Risk of infection",
+      "Body temperature",
+      "Heart rate"
+    ],
+    answer: 1
+  },
+
+  {
+    q: "Hand hygiene is primarily performed to prevent what?",
+    options: [
+      "Infection transmission",
+      "Hypertension",
+      "Fractures",
+      "Dehydration"
+    ],
+    answer: 0
+  },
+
+  {
+    q: "Which microorganism causes tuberculosis?",
+    options: [
+      "Mycobacterium tuberculosis",
+      "Escherichia coli",
+      "Candida albicans",
+      "Plasmodium"
+    ],
+    answer: 0
+  },
+
+  {
+    q: "Malaria is caused by which type of organism?",
+    options: ["Virus", "Bacterium", "Plasmodium parasite", "Fungus"],
+    answer: 2
+  },
+
+  {
+    q: "Which mosquito transmits malaria?",
+    options: [
+      "Female Anopheles mosquito",
+      "Male Anopheles mosquito",
+      "Housefly",
+      "Tick"
+    ],
+    answer: 0
+  },
+
+  {
+    q: "Which disease is caused by a virus?",
+    options: ["Influenza", "Tuberculosis", "Tetanus", "Typhoid"],
+    answer: 0
+  },
+
+  {
+    q: "Which disease is caused by Salmonella Typhi?",
+    options: ["Malaria", "Typhoid fever", "Tuberculosis", "Influenza"],
+    answer: 1
+  },
+
+  {
+    q: "Which organ is primarily responsible for detoxification and metabolism of many substances?",
+    options: ["Heart", "Liver", "Lung", "Skin"],
+    answer: 1
+  },
+
+  {
+    q: "Which organ is mainly responsible for gas exchange?",
+    options: ["Kidney", "Lung", "Liver", "Pancreas"],
+    answer: 1
+  },
+
+  {
+    q: "Which structure prevents food from entering the trachea during swallowing?",
+    options: ["Epiglottis", "Uvula", "Tonsil", "Diaphragm"],
+    answer: 0
+  },
+
+  {
+    q: "Which muscle is the primary muscle of respiration?",
+    options: ["Biceps", "Diaphragm", "Triceps", "Deltoid"],
+    answer: 1
+  },
+
+  {
+    q: "Which bone is commonly called the thigh bone?",
+    options: ["Tibia", "Femur", "Fibula", "Humerus"],
+    answer: 1
+  },
+
+  {
+    q: "Which bone is commonly called the upper-arm bone?",
+    options: ["Femur", "Radius", "Humerus", "Tibia"],
+    answer: 2
+  },
+
+  {
+    q: "Which bone is commonly called the shin bone?",
+    options: ["Tibia", "Femur", "Humerus", "Ulna"],
+    answer: 0
+  },
+
+  {
+    q: "Which joint type allows movement in many directions, such as the shoulder joint?",
+    options: ["Hinge joint", "Ball-and-socket joint", "Pivot joint", "Fixed joint"],
+    answer: 1
+  },
+
+  {
+    q: "Which electrolyte is important for normal nerve and muscle function?",
+    options: ["Sodium", "Iron", "Iodine", "Fluoride"],
+    answer: 0
+  },
+
+  {
+    q: "Which mineral is essential for hemoglobin formation?",
+    options: ["Calcium", "Iron", "Sodium", "Potassium"],
+    answer: 1
+  },
+
+  {
+    q: "Iron deficiency commonly causes which condition?",
+    options: ["Anemia", "Asthma", "Diabetes", "Hypertension"],
+    answer: 0
+  },
+
+  {
+    q: "Which vitamin is important for normal blood clotting?",
+    options: ["Vitamin C", "Vitamin D", "Vitamin K", "Vitamin B1"],
+    answer: 2
+  },
+
+  {
+    q: "Which vitamin is important for collagen formation and wound healing?",
+    options: ["Vitamin C", "Vitamin D", "Vitamin K", "Vitamin B12"],
+    answer: 0
+  },
+
+  {
+    q: "Which vitamin deficiency can cause night blindness?",
+    options: ["Vitamin A", "Vitamin C", "Vitamin D", "Vitamin K"],
+    answer: 0
+  },
+
+  {
+    q: "Which vitamin is important for normal red blood cell formation and neurological function?",
+    options: ["Vitamin B12", "Vitamin C", "Vitamin D", "Vitamin K"],
+    answer: 0
+  },
+
+  {
+    q: "What is dehydration?",
+    options: [
+      "Excess body water",
+      "Loss of body fluids",
+      "Increase in blood cells",
+      "Increase in body temperature only"
+    ],
+    answer: 1
+  },
+
+  {
+    q: "Which finding may indicate dehydration?",
+    options: [
+      "Dry mouth",
+      "Excessive sweating only",
+      "Very clear urine always",
+      "Increased tears"
+    ],
+    answer: 0
+  },
+
+  {
+    q: "What is edema?",
+    options: [
+      "Abnormal accumulation of fluid in tissues",
+      "Low blood sugar",
+      "High fever",
+      "Bone infection"
+    ],
+    answer: 0
+  },
+
+  {
+    q: "What is cyanosis?",
+    options: [
+      "Yellow discoloration",
+      "Bluish discoloration of skin or mucous membranes",
+      "Red rash",
+      "White patches"
+    ],
+    answer: 1
+  },
+
+  {
+    q: "What is tachycardia?",
+    options: [
+      "Abnormally slow heart rate",
+      "Abnormally fast heart rate",
+      "Low blood pressure",
+      "Fast breathing"
+    ],
+    answer: 1
+  },
+
+  {
+    q: "What is bradycardia?",
+    options: [
+      "Abnormally slow heart rate",
+      "Abnormally fast heart rate",
+      "High fever",
+      "Low oxygen saturation"
+    ],
+    answer: 0
+  },
+
+  {
+    q: "What is tachypnea?",
+    options: [
+      "Slow breathing",
+      "Rapid breathing",
+      "Irregular heartbeat",
+      "Low blood pressure"
+    ],
+    answer: 1
+  },
+
+  {
+    q: "What is dyspnea?",
+    options: [
+      "Difficulty breathing",
+      "Difficulty swallowing",
+      "Chest infection",
+      "Loss of hearing"
+    ],
+    answer: 0
+  },
+
+  {
+    q: "Which position is commonly used to help a patient with breathing difficulty?",
+    options: [
+      "Flat supine position",
+      "Semi-Fowler's or Fowler's position",
+      "Prone position only",
+      "Trendelenburg position"
+    ],
+    answer: 1
+  },
+
+  {
+    q: "What is informed consent?",
+    options: [
+      "Permission given after receiving relevant information",
+      "A nurse's personal opinion",
+      "A medication prescription",
+      "A hospital bill"
+    ],
+    answer: 0
+  },
+
+  {
+    q: "Patient confidentiality means protecting what?",
+    options: [
+      "Hospital furniture",
+      "Patient's private health information",
+      "Nurse's schedule",
+      "Hospital building"
+    ],
+    answer: 1
+  },
+
+  {
+    q: "Which practice helps identify a patient correctly before care?",
+    options: [
+      "Guessing the patient's name",
+      "Using appropriate patient identifiers",
+      "Asking another patient",
+      "Checking the room color"
+    ],
+    answer: 1
+  },
+
+  {
+    q: "What is a pressure injury?",
+    options: [
+      "Skin and tissue damage associated with prolonged pressure",
+      "A type of fever",
+      "A blood disorder",
+      "A respiratory infection"
+    ],
+    answer: 0
+  },
+
+  {
+    q: "Which action helps prevent pressure injuries in an immobile patient?",
+    options: [
+      "Regular repositioning",
+      "Keeping the patient in one position",
+      "Avoiding skin assessment",
+      "Reducing all fluids"
+    ],
+    answer: 0
+  },
+
+  {
+    q: "Which device is commonly used to check blood glucose?",
+    options: [
+      "Glucometer",
+      "Stethoscope",
+      "Thermometer",
+      "Pulse oximeter"
+    ],
+    answer: 0
+  }
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let examSubmitted = false;
+let timeLeft = 30 * 60;
+
+
+/* =====================================================
+   DISPLAY TOTAL QUESTIONS
+===================================================== */
+
+document.getElementById("totalQuestions").textContent =
+  questionBank.length;
+
+
+/* =====================================================
+   UPDATE SCORE MAX
+===================================================== */
+
+document.getElementById("score").textContent = "0";
+
+
+/* =====================================================
+   RENDER QUESTIONS
+===================================================== */
+
+function renderQuestions() {
+
+  const container =
+    document.getElementById("questionsContainer");
+
+  let html = "";
+
+  questionBank.forEach(function(item, index) {
+
+    const questionNumber = index + 1;
+
+    html += `
+      <div class="question-card">
+
+        <div class="question">
+          ${questionNumber}. ${item.q}
+        </div>
+    `;
+
+    item.options.forEach(function(option, optionIndex) {
+
+      const letter =
+        String.fromCharCode(65 + optionIndex);
+
+      html += `
+        <label class="option">
+
+          <input
+            type="radio"
+            name="q${index}"
+            value="${optionIndex}"
+          >
+
+          ${letter}. ${option}
+
+        </label>
+      `;
+
     });
-});
 
-function updateProgress(){
-    let n=0;
-    for(let i=1;i<=10;i++){
-        if(document.querySelector('input[name="q'+i+'"]:checked'))n++;
-    }
-    document.getElementById("progressBar").style.width=(n*10)+"%";
-    document.getElementById("progressText").textContent="Answered "+n+" of 10";
-    document.getElementById("progressPercent").textContent=(n*10)+"%";
+    html += `
+      </div>
+    `;
+
+  });
+
+  container.innerHTML = html;
 }
 
-function submitTest(){
-    if(submitted)return;
-    submitted=true;
+renderQuestions();
+
+
+/* =====================================================
+   TIMER
+===================================================== */
+
+const timerElement =
+  document.getElementById("timer");
+
+const timer = setInterval(function() {
+
+  if (examSubmitted) {
     clearInterval(timer);
-    let score=0;
-    let review="";
+    return;
+  }
 
-    for(let i=1;i<=10;i++){
-        let key="q"+i;
-        let selected=document.querySelector('input[name="'+key+'"]:checked');
-        let your=selected ? selected.parentElement.textContent.trim() : "No answer selected";
+  const minutes =
+    Math.floor(timeLeft / 60);
 
-        if(selected && selected.value===answers[key]){
-            score++;
-            review+='<div class="answer-item correct"><b>Question '+i+' — Correct ✓</b><br>Your Answer: '+your+'</div>';
-        }else{
-            review+='<div class="answer-item wrong"><b>Question '+i+' — Incorrect ✗</b><br>Your Answer: '+your+'<br><b>Correct Answer: '+correctText[key]+'</b></div>';
-        }
+  const seconds =
+    timeLeft % 60;
+
+  timerElement.textContent =
+    String(minutes).padStart(2, "0") +
+    ":" +
+    String(seconds).padStart(2, "0");
+
+  if (timeLeft <= 0) {
+
+    clearInterval(timer);
+
+    alert(
+      "Time is up! Your exam will be submitted automatically."
+    );
+
+    submitExam();
+
+    return;
+  }
+
+  timeLeft--;
+
+}, 1000);
+
+
+/* =====================================================
+   FORM SUBMIT
+===================================================== */
+
+document
+  .getElementById("examForm")
+  .addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    if (examSubmitted) {
+      return;
     }
 
-    document.getElementById("quizForm").style.display="none";
-    document.querySelector(".test-header").style.display="none";
-    document.getElementById("result").style.display="block";
-    document.getElementById("score").textContent=score+"/10";
+    const confirmed = confirm(
+      "Are you sure you want to submit the exam?"
+    );
 
-    document.getElementById("resultMessage").textContent =
-        score>=8 ? "Excellent! Great job. Keep practicing!" :
-        score>=5 ? "Good effort! Practice more to improve your score." :
-        "Keep practicing. Review the topics and try again!";
+    if (!confirmed) {
+      return;
+    }
 
-    document.getElementById("answerReview").innerHTML="<h3>📋 Answer Review</h3>"+review;
-    document.getElementById("result").scrollIntoView({behavior:"smooth"});
+    submitExam();
+
+  });
+
+
+/* =====================================================
+   SUBMIT EXAM
+===================================================== */
+
+function submitExam() {
+
+  if (examSubmitted) {
+    return;
+  }
+
+  examSubmitted = true;
+
+  clearInterval(timer);
+
+  let score = 0;
+
+  let reviewHTML = "";
+
+  questionBank.forEach(function(item, index) {
+
+    const selected =
+      document.querySelector(
+        `input[name="q${index}"]:checked`
+      );
+
+    let userAnswer = null;
+
+    if (selected) {
+      userAnswer = Number(selected.value);
+    }
+
+    const correctAnswer =
+      item.answer;
+
+    const isCorrect =
+      userAnswer === correctAnswer;
+
+    if (isCorrect) {
+      score++;
+    }
+
+
+    /* User answer text */
+
+    let userAnswerText =
+      "Not answered";
+
+    if (userAnswer !== null) {
+
+      userAnswerText =
+        String.fromCharCode(65 + userAnswer) +
+        ". " +
+        item.options[userAnswer];
+
+    }
+
+
+    /* Correct answer text */
+
+    const correctAnswerText =
+      String.fromCharCode(65 + correctAnswer) +
+      ". " +
+      item.options[correctAnswer];
+
+
+    /* Review */
+
+    reviewHTML += `
+      <div class="review ${isCorrect ? "correct" : "wrong"}">
+
+        <p>
+          <strong>
+            ${index + 1}. ${item.q}
+          </strong>
+        </p>
+
+        <p>
+          Your Answer:
+          <span class="${
+            isCorrect
+              ? "correct-text"
+              : userAnswer === null
+                ? "not-answered"
+                : "wrong-text"
+          }">
+            ${userAnswerText}
+          </span>
+        </p>
+
+        <p>
+          Correct Answer:
+          <span class="correct-text">
+            ${correctAnswerText}
+          </span>
+        </p>
+
+        <p>
+          ${
+            isCorrect
+              ? "✓ Correct"
+              : "✗ Incorrect"
+          }
+        </p>
+
+      </div>
+    `;
+
+  });
+
+
+  /* Percentage */
+
+  const percentage =
+    Math.round(
+      (score / questionBank.length) * 100
+    );
+
+
+  /* Result */
+
+  document.getElementById("score").textContent =
+    score;
+
+  document.getElementById("percentage").textContent =
+    percentage;
+
+  document.getElementById("review").innerHTML =
+    reviewHTML;
+
+
+  /* Hide exam */
+
+  document.getElementById("examSection").style.display =
+    "none";
+
+
+  /* Show result */
+
+  document.getElementById("result").style.display =
+    "block";
+
+
+  /* Scroll top */
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+
 }
+
+
+/* =====================================================
+   HOME BUTTON
+===================================================== */
+
+function goHome() {
+
+  window.location.href = "index.html";
+
+}
+
 </script>
+
 </body>
 </html>
+```
