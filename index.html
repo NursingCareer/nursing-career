@@ -4,1272 +4,503 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Nursing Career | Online Nursing Examination</title>
-
-<meta name="description"
-content="Nursing Career Online Examination Platform for Diploma in Nursing Science, B.Sc. in Nursing and Diploma in Nursing students.">
+<title>Nursing Career | BSc in Nursing</title>
 
 <style>
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
 }
 
 body{
-  font-family:Inter,Segoe UI,Arial,sans-serif;
-  background:#f5f8fc;
-  color:#172033;
-  overflow-x:hidden;
-}
-
-/* ================= HEADER ================= */
-
-header{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:rgba(255,255,255,.88);
-  backdrop-filter:blur(18px);
-  border-bottom:1px solid #e6ebf2;
-}
-
-.navbar{
-  max-width:1200px;
-  margin:auto;
-  height:76px;
-  padding:0 22px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-
-.logo{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  text-decoration:none;
-  color:#162033;
-}
-
-.logoIcon{
-  width:46px;
-  height:46px;
-  border-radius:14px;
-  background:linear-gradient(135deg,#0ea5e9,#2563eb);
-  color:white;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:24px;
-  box-shadow:0 8px 20px rgba(37,99,235,.25);
-}
-
-.logoText strong{
-  display:block;
-  font-size:18px;
-}
-
-.logoText span{
-  font-size:11px;
-  color:#728096;
-}
-
-.navLinks{
-  display:flex;
-  gap:26px;
-  align-items:center;
-}
-
-.navLinks a{
-  color:#526075;
-  text-decoration:none;
-  font-size:14px;
-  font-weight:600;
-  transition:.2s;
-}
-
-.navLinks a:hover{
-  color:#2563eb;
-}
-
-.navBtn{
-  background:#172033;
-  color:white !important;
-  padding:11px 18px;
-  border-radius:11px;
-}
-
-/* ================= HERO ================= */
-
-.hero{
-  position:relative;
-  min-height:620px;
-  display:flex;
-  align-items:center;
-  overflow:hidden;
-  background:
-    radial-gradient(circle at 85% 20%,rgba(14,165,233,.18),transparent 30%),
-    radial-gradient(circle at 15% 80%,rgba(37,99,235,.13),transparent 30%),
-    linear-gradient(135deg,#f9fcff,#eef6ff);
-}
-
-.hero::before{
-  content:"";
-  position:absolute;
-  width:420px;
-  height:420px;
-  border-radius:50%;
-  background:rgba(59,130,246,.07);
-  right:-120px;
-  top:-120px;
-}
-
-.heroContainer{
-  width:1200px;
-  max-width:100%;
-  margin:auto;
-  padding:70px 22px;
-  display:grid;
-  grid-template-columns:1.05fr .95fr;
-  gap:50px;
-  align-items:center;
-}
-
-.badge{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:8px 14px;
-  border-radius:30px;
-  background:white;
-  border:1px solid #dce8f7;
-  color:#2563eb;
-  font-size:12px;
-  font-weight:700;
-  margin-bottom:20px;
-  box-shadow:0 5px 18px rgba(37,99,235,.07);
-}
-
-.hero h1{
-  font-size:56px;
-  line-height:1.08;
-  letter-spacing:-2px;
-  margin-bottom:20px;
-  color:#111a2d;
-}
-
-.hero h1 span{
-  background:linear-gradient(90deg,#2563eb,#06b6d4);
-  -webkit-background-clip:text;
-  color:transparent;
-}
-
-.hero p{
-  font-size:17px;
-  line-height:1.8;
-  color:#64748b;
-  max-width:600px;
-  margin-bottom:30px;
-}
-
-.heroButtons{
-  display:flex;
-  gap:13px;
-  flex-wrap:wrap;
-}
-
-.primaryBtn,
-.secondaryBtn{
-  border:none;
-  text-decoration:none;
-  cursor:pointer;
-  padding:14px 22px;
-  border-radius:12px;
-  font-weight:700;
-  font-size:14px;
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  transition:.25s;
-}
-
-.primaryBtn{
-  color:white;
-  background:linear-gradient(135deg,#2563eb,#0891b2);
-  box-shadow:0 10px 25px rgba(37,99,235,.25);
-}
-
-.primaryBtn:hover{
-  transform:translateY(-2px);
-  box-shadow:0 14px 30px rgba(37,99,235,.3);
-}
-
-.secondaryBtn{
-  color:#1e293b;
-  background:white;
-  border:1px solid #dce4ef;
-}
-
-.secondaryBtn:hover{
-  transform:translateY(-2px);
-}
-
-/* ================= HERO CARD ================= */
-
-.heroVisual{
-  position:relative;
-  min-height:410px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.doctorCard{
-  width:340px;
-  background:rgba(255,255,255,.85);
-  backdrop-filter:blur(15px);
-  border:1px solid rgba(255,255,255,.9);
-  border-radius:28px;
-  padding:30px;
-  box-shadow:0 25px 70px rgba(30,64,175,.15);
-  position:relative;
-  z-index:2;
-}
-
-.doctorIcon{
-  width:90px;
-  height:90px;
-  margin:auto;
-  border-radius:25px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:48px;
-  background:linear-gradient(135deg,#dbeafe,#cffafe);
-}
-
-.doctorCard h3{
-  text-align:center;
-  margin-top:18px;
-  font-size:21px;
-}
-
-.doctorCard p{
-  text-align:center;
-  margin:7px 0 20px;
-  font-size:13px;
-  color:#718096;
-}
-
-.progressBox{
-  background:#f1f5f9;
-  padding:15px;
-  border-radius:15px;
-}
-
-.progressTop{
-  display:flex;
-  justify-content:space-between;
-  font-size:12px;
-  font-weight:700;
-  margin-bottom:9px;
-}
-
-.progress{
-  height:8px;
-  background:#e2e8f0;
-  border-radius:20px;
-  overflow:hidden;
-}
-
-.progress div{
-  width:82%;
-  height:100%;
-  border-radius:20px;
-  background:linear-gradient(90deg,#2563eb,#06b6d4);
-}
-
-.floatCard{
-  position:absolute;
-  background:white;
-  padding:13px 17px;
-  border-radius:14px;
-  box-shadow:0 15px 35px rgba(15,23,42,.12);
-  font-size:12px;
-  font-weight:700;
-  z-index:3;
-}
-
-.float1{
-  top:30px;
-  left:10px;
-}
-
-.float2{
-  bottom:40px;
-  right:5px;
-}
-
-.float3{
-  top:150px;
-  right:-5px;
-}
-
-/* ================= STATS ================= */
-
-.stats{
-  max-width:1100px;
-  margin:-45px auto 0;
-  position:relative;
-  z-index:10;
-  padding:0 20px;
-}
-
-.statsGrid{
-  background:white;
-  border:1px solid #e7edf5;
-  border-radius:22px;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  box-shadow:0 18px 50px rgba(15,23,42,.08);
-  overflow:hidden;
-}
-
-.stat{
-  padding:25px 15px;
-  text-align:center;
-  border-right:1px solid #edf1f6;
-}
-
-.stat:last-child{
-  border-right:none;
-}
-
-.stat strong{
-  display:block;
-  font-size:27px;
-  color:#1d4ed8;
-}
-
-.stat span{
-  display:block;
-  margin-top:5px;
-  color:#718096;
-  font-size:12px;
-}
-
-/* ================= COURSES ================= */
-
-.section{
-  max-width:1200px;
-  margin:auto;
-  padding:95px 22px 30px;
-}
-
-.sectionHeader{
-  text-align:center;
-  max-width:700px;
-  margin:0 auto 45px;
-}
-
-.sectionHeader small{
-  color:#2563eb;
-  font-weight:800;
-  text-transform:uppercase;
-  letter-spacing:1.5px;
-}
-
-.sectionHeader h2{
-  font-size:36px;
-  margin:10px 0 12px;
-  color:#111827;
-}
-
-.sectionHeader p{
-  color:#718096;
-  line-height:1.7;
-  font-size:14px;
-}
-
-.courseGrid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:22px;
-}
-
-.courseCard{
-  background:white;
-  border:1px solid #e6ebf2;
-  border-radius:22px;
-  padding:27px;
-  position:relative;
-  overflow:hidden;
-  transition:.3s;
-  box-shadow:0 8px 25px rgba(15,23,42,.04);
-}
-
-.courseCard:hover{
-  transform:translateY(-7px);
-  box-shadow:0 20px 45px rgba(15,23,42,.10);
-  border-color:#cbdcf8;
-}
-
-.courseCard.featured{
-  border:2px solid #60a5fa;
-}
-
-.featuredTag{
-  position:absolute;
-  top:17px;
-  right:17px;
-  background:#eff6ff;
-  color:#2563eb;
-  padding:5px 9px;
-  border-radius:20px;
-  font-size:10px;
-  font-weight:800;
-}
-
-.courseIcon{
-  width:62px;
-  height:62px;
-  border-radius:17px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:31px;
-  margin-bottom:19px;
-  background:linear-gradient(135deg,#eff6ff,#ecfeff);
-}
-
-.courseCard h3{
-  font-size:21px;
-  margin-bottom:9px;
-}
-
-.courseCard p{
-  color:#718096;
-  line-height:1.65;
-  font-size:13px;
-  min-height:64px;
-}
-
-.courseMeta{
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
-  margin:18px 0;
-}
-
-.courseMeta span{
-  font-size:10px;
-  font-weight:700;
-  background:#f1f5f9;
-  padding:6px 9px;
-  border-radius:8px;
-  color:#526075;
-}
-
-.courseBtn{
-  width:100%;
-  border:none;
-  padding:12px;
-  border-radius:11px;
-  color:white;
-  font-weight:700;
-  cursor:pointer;
-  background:#172033;
-  transition:.2s;
-}
-
-.courseBtn:hover{
-  background:#2563eb;
-}
-
-/* ================= FEATURES ================= */
-
-.features{
-  background:white;
-  margin-top:75px;
-  padding:85px 0;
-  border-top:1px solid #e9eef5;
-  border-bottom:1px solid #e9eef5;
-}
-
-.featureGrid{
-  max-width:1100px;
-  margin:auto;
-  padding:0 22px;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
-}
-
-.feature{
-  padding:25px;
-  border-radius:18px;
-  background:#f8fafc;
-  border:1px solid #edf1f6;
-}
-
-.featureIcon{
-  font-size:27px;
-  margin-bottom:15px;
-}
-
-.feature h3{
-  font-size:16px;
-  margin-bottom:7px;
-}
-
-.feature p{
-  font-size:12px;
-  line-height:1.6;
-  color:#718096;
-}
-
-/* ================= CTA ================= */
-
-.cta{
-  max-width:1100px;
-  margin:75px auto;
-  padding:55px 35px;
-  border-radius:28px;
-  background:
-    radial-gradient(circle at 80% 20%,rgba(255,255,255,.16),transparent 25%),
-    linear-gradient(135deg,#172554,#1d4ed8,#0891b2);
-  color:white;
-  text-align:center;
-  position:relative;
-  overflow:hidden;
-}
-
-.cta h2{
-  font-size:34px;
-  margin-bottom:12px;
-}
-
-.cta p{
-  color:#dbeafe;
-  max-width:650px;
-  margin:auto auto 24px;
-  line-height:1.7;
-  font-size:14px;
-}
-
-.cta .primaryBtn{
-  background:white;
-  color:#1d4ed8;
-  box-shadow:none;
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-  background:#0f172a;
-  color:white;
-  padding:45px 22px 25px;
-}
-
-.footerInner{
-  max-width:1100px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:1.5fr 1fr 1fr;
-  gap:40px;
-}
-
-.footerBrand h3{
-  font-size:19px;
-  margin-bottom:10px;
-}
-
-.footerBrand p{
-  color:#94a3b8;
-  font-size:12px;
-  line-height:1.7;
-  max-width:350px;
-}
-
-.footerCol h4{
-  font-size:13px;
-  margin-bottom:15px;
-}
-
-.footerCol a{
-  display:block;
-  text-decoration:none;
-  color:#94a3b8;
-  font-size:12px;
-  margin:9px 0;
-}
-
-.footerCol a:hover{
-  color:white;
-}
-
-.copyright{
-  max-width:1100px;
-  margin:35px auto 0;
-  padding-top:20px;
-  border-top:1px solid #1e293b;
-  color:#64748b;
-  font-size:11px;
-  text-align:center;
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:900px){
-
-  .navLinks{
-    display:none;
-  }
-
-  .heroContainer{
-    grid-template-columns:1fr;
+    background:linear-gradient(135deg,#eef7ff,#f8f0ff);
+    color:#172033;
+}
+
+/* HEADER */
+.header{
+    background:linear-gradient(135deg,#075985,#2563eb,#7c3aed);
+    color:white;
+    padding:35px 18px;
     text-align:center;
-  }
-
-  .hero p{
-    margin-left:auto;
-    margin-right:auto;
-  }
-
-  .heroButtons{
-    justify-content:center;
-  }
-
-  .heroVisual{
-    min-height:360px;
-  }
-
-  .courseGrid{
-    grid-template-columns:1fr;
-  }
-
-  .featureGrid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .footerInner{
-    grid-template-columns:1fr 1fr;
-  }
+    border-radius:0 0 30px 30px;
+    box-shadow:0 8px 25px rgba(0,0,0,.18);
 }
 
+.header h1{
+    font-size:34px;
+    font-weight:800;
+    letter-spacing:1px;
+}
+
+.header h2{
+    margin-top:8px;
+    font-size:20px;
+}
+
+.header p{
+    margin-top:8px;
+    font-size:14px;
+    opacity:.95;
+}
+
+/* MAIN */
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:25px 15px 50px;
+}
+
+/* WELCOME */
+.welcome{
+    background:white;
+    border-radius:20px;
+    padding:22px;
+    text-align:center;
+    margin-bottom:25px;
+    box-shadow:0 6px 20px rgba(0,0,0,.08);
+}
+
+.welcome h2{
+    color:#1d4ed8;
+    margin-bottom:8px;
+}
+
+.welcome p{
+    color:#555;
+    line-height:1.6;
+}
+
+/* COURSE */
+.course{
+    margin-bottom:28px;
+}
+
+.course-title{
+    color:white;
+    padding:16px 20px;
+    border-radius:16px;
+    font-size:21px;
+    font-weight:bold;
+    margin-bottom:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.12);
+}
+
+.year1 .course-title{
+    background:linear-gradient(135deg,#0891b2,#2563eb);
+}
+
+.year2 .course-title{
+    background:linear-gradient(135deg,#059669,#0d9488);
+}
+
+.year3 .course-title{
+    background:linear-gradient(135deg,#7c3aed,#9333ea);
+}
+
+.year4 .course-title{
+    background:linear-gradient(135deg,#db2777,#e11d48);
+}
+
+/* SUBJECT GRID */
+.subject-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:15px;
+}
+
+/* SUBJECT CARD */
+.subject{
+    background:white;
+    text-decoration:none;
+    color:#172033;
+    padding:18px;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    gap:14px;
+    min-height:90px;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+    transition:.25s;
+    border:1px solid rgba(0,0,0,.05);
+}
+
+.subject:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.icon{
+    min-width:48px;
+    height:48px;
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+    background:#eff6ff;
+}
+
+.subject h3{
+    font-size:16px;
+    line-height:1.35;
+}
+
+.subject span{
+    display:block;
+    font-size:12px;
+    color:#777;
+    margin-top:5px;
+}
+
+/* FOOTER */
+.footer{
+    text-align:center;
+    padding:25px 15px;
+    background:#111827;
+    color:white;
+    margin-top:20px;
+}
+
+.footer strong{
+    color:#60a5fa;
+}
+
+/* MOBILE */
 @media(max-width:600px){
 
-  .navbar{
-    height:68px;
-  }
+    .header h1{
+        font-size:27px;
+    }
 
-  .logoText strong{
-    font-size:15px;
-  }
+    .header h2{
+        font-size:17px;
+    }
 
-  .hero{
-    min-height:auto;
-  }
+    .course-title{
+        font-size:18px;
+    }
 
-  .heroContainer{
-    padding-top:55px;
-    padding-bottom:65px;
-  }
+    .subject-grid{
+        grid-template-columns:1fr;
+    }
 
-  .hero h1{
-    font-size:39px;
-    letter-spacing:-1px;
-  }
-
-  .hero p{
-    font-size:14px;
-  }
-
-  .heroVisual{
-    transform:scale(.9);
-    min-height:330px;
-  }
-
-  .stats{
-    margin-top:-25px;
-  }
-
-  .statsGrid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .stat{
-    border-bottom:1px solid #edf1f6;
-  }
-
-  .stat:nth-child(2){
-    border-right:none;
-  }
-
-  .section{
-    padding-top:70px;
-  }
-
-  .sectionHeader h2{
-    font-size:29px;
-  }
-
-  .featureGrid{
-    grid-template-columns:1fr;
-  }
-
-  .cta{
-    margin:55px 18px;
-    padding:40px 22px;
-  }
-
-  .cta h2{
-    font-size:27px;
-  }
-
-  .footerInner{
-    grid-template-columns:1fr;
-  }
+    .subject{
+        min-height:80px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
+<!-- HEADER -->
+<header class="header">
 
-<header>
+    <h1>🩺 NURSING CAREER</h1>
 
-  <div class="navbar">
+    <h2>BSc in Nursing</h2>
 
-    <a href="index.html" class="logo">
-
-      <div class="logoIcon">🩺</div>
-
-      <div class="logoText">
-        <strong>Nursing Career</strong>
-        <span>Online Nursing Examination</span>
-      </div>
-
-    </a>
-
-    <nav class="navLinks">
-
-      <a href="#courses">Courses</a>
-      <a href="#features">Features</a>
-      <a href="#about">About</a>
-
-      <a href="exam.html" class="navBtn">
-        Start Exam
-      </a>
-
-    </nav>
-
-  </div>
+    <p>
+        Final Suggestion for Licensing Examination 2026
+    </p>
 
 </header>
 
 
-<!-- ================= HERO ================= -->
+<main class="container">
 
-<section class="hero">
+<!-- WELCOME -->
+<section class="welcome">
 
-  <div class="heroContainer">
+    <h2>📚 Course-wise MCQ Practice</h2>
 
-    <div>
+    <p>
+        আপনার Year নির্বাচন করুন এবং প্রয়োজনীয় Subject-এ ক্লিক করে
+        MCQ Practice শুরু করুন।
+    </p>
 
-      <div class="badge">
-        ✦ Smart Nursing Examination Platform
-      </div>
+</section>
 
-      <h1>
-        Build Your
-        <span>Nursing Career</span>
-        With Confidence.
-      </h1>
 
-      <p>
-        Practice nursing MCQs, prepare for examinations,
-        track your performance and improve your knowledge
-        with a modern online examination platform.
-      </p>
+<!-- ==================== 1ST YEAR ==================== -->
 
-      <div class="heroButtons">
+<section class="course year1">
 
-        <a href="#courses" class="primaryBtn">
-          🎓 Explore Courses
+    <div class="course-title">
+        🎓 1st Year — BSc in Nursing
+    </div>
+
+    <div class="subject-grid">
+
+        <a class="subject" href="b111-communicative-english.html">
+            <div class="icon">🗣️</div>
+            <div>
+                <h3>Communicative English</h3>
+                <span>B1111</span>
+            </div>
         </a>
 
-        <a href="exam.html" class="secondaryBtn">
-          📝 Quick Start Exam
+        <a class="subject" href="b112-nursing-informatics.html">
+            <div class="icon">💻</div>
+            <div>
+                <h3>Nursing Informatics</h3>
+                <span>B112</span>
+            </div>
         </a>
 
-      </div>
+        <a class="subject" href="b113-behavioral-science.html">
+            <div class="icon">🧠</div>
+            <div>
+                <h3>Behavioral Science and Nursing Humanities</h3>
+                <span>B113</span>
+            </div>
+        </a>
+
+        <a class="subject" href="b124-anatomy.html">
+            <div class="icon">🫀</div>
+            <div>
+                <h3>Anatomy</h3>
+                <span>B124</span>
+            </div>
+        </a>
+
+        <a class="subject" href="b125-physiology.html">
+            <div class="icon">❤️</div>
+            <div>
+                <h3>Physiology</h3>
+                <span>B125</span>
+            </div>
+        </a>
+
+        <a class="subject" href="b126-microbiology-pathology.html">
+            <div class="icon">🦠</div>
+            <div>
+                <h3>Microbiology and Pathology</h3>
+                <span>B126</span>
+            </div>
+        </a>
+
+        <a class="subject" href="b137-fundamentals-nursing-1.html">
+            <div class="icon">👩‍⚕️</div>
+            <div>
+                <h3>Fundamentals of Nursing-I</h3>
+                <span>B137</span>
+            </div>
+        </a>
 
     </div>
-
-
-    <div class="heroVisual">
-
-      <div class="floatCard float1">
-        🧠 5000+ Practice Questions
-      </div>
-
-      <div class="floatCard float2">
-        📊 Performance Tracking
-      </div>
-
-      <div class="floatCard float3">
-        🏆 Exam Preparation
-      </div>
-
-      <div class="doctorCard">
-
-        <div class="doctorIcon">
-          👩‍⚕️
-        </div>
-
-        <h3>
-          Nursing Examination
-        </h3>
-
-        <p>
-          Learn • Practice • Improve
-        </p>
-
-        <div class="progressBox">
-
-          <div class="progressTop">
-            <span>Practice Progress</span>
-            <span>82%</span>
-          </div>
-
-          <div class="progress">
-            <div></div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
 
 </section>
 
 
-<!-- ================= STATS ================= -->
+<!-- ==================== 2ND YEAR ==================== -->
 
-<section class="stats">
+<section class="course year2">
 
-  <div class="statsGrid">
-
-    <div class="stat">
-      <strong>5000+</strong>
-      <span>Practice Questions</span>
+    <div class="course-title">
+        🎓 2nd Year — BSc in Nursing
     </div>
 
-    <div class="stat">
-      <strong>3</strong>
-      <span>Nursing Courses</span>
-    </div>
+    <div class="subject-grid">
 
-    <div class="stat">
-      <strong>8+</strong>
-      <span>Major Subjects</span>
-    </div>
+        <a class="subject" href="b231-fundamentals-nursing-2.html">
+            <div class="icon">🩺</div>
+            <div>
+                <h3>Fundamentals of Nursing-II</h3>
+                <span>B231</span>
+            </div>
+        </a>
 
-    <div class="stat">
-      <strong>24/7</strong>
-      <span>Online Practice</span>
-    </div>
+        <a class="subject" href="b232-pediatric-nursing.html">
+            <div class="icon">👶</div>
+            <div>
+                <h3>Pediatric Nursing</h3>
+                <span>B232</span>
+            </div>
+        </a>
 
-  </div>
+        <a class="subject" href="b233-medical-surgical-1.html">
+            <div class="icon">🏥</div>
+            <div>
+                <h3>Medical and Surgical Nursing-I</h3>
+                <span>B233</span>
+            </div>
+        </a>
+
+        <a class="subject" href="b224-pharmacology.html">
+            <div class="icon">💊</div>
+            <div>
+                <h3>Pharmacology</h3>
+                <span>B224</span>
+            </div>
+        </a>
+
+        <a class="subject" href="b235-traumatology-orthopedic.html">
+            <div class="icon">🦴</div>
+            <div>
+                <h3>Traumatology and Orthopedic Nursing</h3>
+                <span>B235</span>
+            </div>
+        </a>
+
+        <a class="subject" href="b226-nutrition-biochemistry.html">
+            <div class="icon">🥗</div>
+            <div>
+                <h3>Nutrition and Biochemistry</h3>
+                <span>B226</span>
+            </div>
+        </a>
+
+        <a class="subject" href="b237-laws-ethics-forensic.html">
+            <div class="icon">⚖️</div>
+            <div>
+                <h3>Laws, Ethics and Forensic Nursing</h3>
+                <span>B237</span>
+            </div>
+        </a>
+
+    </div>
 
 </section>
 
 
-<!-- ================= COURSES ================= -->
+<!-- ==================== 3RD YEAR ==================== -->
 
-<section class="section" id="courses">
+<section class="course year3">
 
-  <div class="sectionHeader">
+    <div class="course-title">
+        🎓 3rd Year — BSc in Nursing
+    </div>
 
-    <small>Choose Your Course</small>
+    <div class="subject-grid">
 
-    <h2>
-      Nursing Courses
-    </h2>
+        <a class="subject" href="b331-geriatric-nursing.html">
+            <div class="icon">👵</div>
+            <div>
+                <h3>Geriatric Nursing</h3>
+                <span>B331</span>
+            </div>
+        </a>
+
+        <a class="subject" href="b332-mental-health-psychiatric.html">
+            <div class="icon">🧠</div>
+            <div>
+                <h3>Mental Health and Psychiatric Nursing</h3>
+                <span>B332</span>
+            </div>
+        </a>
+
+        <a class="subject" href="b333-emergency-critical-care.html">
+            <div class="icon">🚑</div>
+            <div>
+                <h3>Emergency and Critical Care Nursing</h3>
+                <span>B333</span>
+            </div>
+        </a>
+
+        <a class="subject" href="b334-medical-surgical-2.html">
+            <div class="icon">🏥</div>
+            <div>
+                <h3>Medical and Surgical Nursing-II</h3>
+                <span>B334</span>
+            </div>
+        </a>
+
+        <a class="subject" href="b335-community-health-epidemiology.html">
+            <div class="icon">🌍</div>
+            <div>
+                <h3>Community Health Nursing and Epidemiology</h3>
+                <span>B335</span>
+            </div>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ==================== 4TH YEAR ==================== -->
+
+<section class="course year4">
+
+    <div class="course-title">
+        🎓 4th Year — BSc in Nursing
+    </div>
+
+    <div class="subject-grid">
+
+        <a class="subject" href="b431-midwifery.html">
+            <div class="icon">🤰</div>
+            <div>
+                <h3>Midwifery</h3>
+                <span>B431</span>
+            </div>
+        </a>
+
+        <a class="subject" href="b432-obstetrical-gynecological.html">
+            <div class="icon">👩‍🍼</div>
+            <div>
+                <h3>Obstetrical and Gynecological Nursing</h3>
+                <span>B432</span>
+            </div>
+        </a>
+
+        <a class="subject" href="b433-nursing-administration.html">
+            <div class="icon">📋</div>
+            <div>
+                <h3>Nursing Administration and Management</h3>
+                <span>B433</span>
+            </div>
+        </a>
+
+        <a class="subject" href="b434-nursing-education.html">
+            <div class="icon">📚</div>
+            <div>
+                <h3>Nursing Education</h3>
+                <span>B434</span>
+            </div>
+        </a>
+
+        <a class="subject" href="b435-research-biostatistics.html">
+            <div class="icon">📊</div>
+            <div>
+                <h3>Research and Biostatistics</h3>
+                <span>B435</span>
+            </div>
+        </a>
+
+        <a class="subject" href="b416-advanced-communicative-english.html">
+            <div class="icon">🗣️</div>
+            <div>
+                <h3>Advanced Communicative English</h3>
+                <span>B416</span>
+            </div>
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
 
     <p>
-      Select your nursing course and start practicing
-      with course-focused MCQ examinations.
+        © 2026 <strong>Nursing Career</strong>
     </p>
 
-  </div>
-
-
-  <div class="courseGrid">
-
-
-    <!-- DIPLOMA IN NURSING SCIENCE -->
-
-    <div class="courseCard featured">
-
-      <div class="featuredTag">
-        POPULAR
-      </div>
-
-      <div class="courseIcon">
-        🩺
-      </div>
-
-      <h3>
-        Diploma in Nursing Science
-      </h3>
-
-      <p>
-        Practice important nursing science MCQs
-        designed for diploma-level nursing preparation.
-      </p>
-
-      <div class="courseMeta">
-
-        <span>Fundamentals</span>
-        <span>Anatomy</span>
-        <span>Physiology</span>
-        <span>Pharmacology</span>
-
-      </div>
-
-      <button
-        class="courseBtn"
-        onclick="startCourse('Diploma in Nursing Science')">
-
-        Start Course →
-
-      </button>
-
-    </div>
-
-
-    <!-- BSC -->
-
-    <div class="courseCard">
-
-      <div class="courseIcon">
-        🎓
-      </div>
-
-      <h3>
-        B.Sc. in Nursing
-      </h3>
-
-      <p>
-        Prepare for B.Sc. Nursing examinations with
-        structured subjects and nursing MCQ practice.
-      </p>
-
-      <div class="courseMeta">
-
-        <span>Medical</span>
-        <span>Pediatric</span>
-        <span>Community</span>
-        <span>Nutrition</span>
-
-      </div>
-
-      <button
-        class="courseBtn"
-        onclick="startCourse('B.Sc. in Nursing')">
-
-        Start Course →
-
-      </button>
-
-    </div>
-
-
-    <!-- DIPLOMA -->
-
-    <div class="courseCard">
-
-      <div class="courseIcon">
-        📘
-      </div>
-
-      <h3>
-        Diploma in Nursing
-      </h3>
-
-      <p>
-        Build strong nursing fundamentals and practice
-        essential MCQs for diploma-level examinations.
-      </p>
-
-      <div class="courseMeta">
-
-        <span>Basic Nursing</span>
-        <span>Anatomy</span>
-        <span>Health</span>
-        <span>Community</span>
-
-      </div>
-
-      <button
-        class="courseBtn"
-        onclick="startCourse('Diploma in Nursing')">
-
-        Start Course →
-
-      </button>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ================= FEATURES ================= -->
-
-<section class="features" id="features">
-
-  <div class="sectionHeader">
-
-    <small>Why Nursing Career</small>
-
-    <h2>
-      Everything You Need to Practice
-    </h2>
-
-    <p>
-      A simple and focused examination experience
-      for nursing students.
+    <p style="margin-top:6px;font-size:13px;">
+        BSc in Nursing • Licensing Examination 2026
     </p>
-
-  </div>
-
-
-  <div class="featureGrid">
-
-    <div class="feature">
-
-      <div class="featureIcon">
-        📚
-      </div>
-
-      <h3>
-        Large Question Bank
-      </h3>
-
-      <p>
-        Practice thousands of nursing MCQs
-        across multiple subjects.
-      </p>
-
-    </div>
-
-
-    <div class="feature">
-
-      <div class="featureIcon">
-        ⏱️
-      </div>
-
-      <h3>
-        Real Exam Practice
-      </h3>
-
-      <p>
-        Practice with a timed examination
-        environment.
-      </p>
-
-    </div>
-
-
-    <div class="feature">
-
-      <div class="featureIcon">
-        📊
-      </div>
-
-      <h3>
-        Performance Report
-      </h3>
-
-      <p>
-        Review scores, accuracy and subject-wise
-        performance.
-      </p>
-
-    </div>
-
-
-    <div class="feature">
-
-      <div class="featureIcon">
-        🏆
-      </div>
-
-      <h3>
-        Leaderboard
-      </h3>
-
-      <p>
-        Track your practice performance and
-        examination history.
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ================= ABOUT ================= -->
-
-<section class="section" id="about">
-
-  <div class="sectionHeader">
-
-    <small>About The Platform</small>
-
-    <h2>
-      Made for Future Nurses
-    </h2>
-
-    <p>
-      Nursing Career is an online practice platform
-      designed to make nursing examination preparation
-      simple, organized and accessible.
-    </p>
-
-  </div>
-
-</section>
-
-
-<!-- ================= CTA ================= -->
-
-<section class="cta">
-
-  <h2>
-    Ready to Start Your Nursing Practice?
-  </h2>
-
-  <p>
-    Choose your course and begin your online
-    nursing MCQ examination today.
-  </p>
-
-  <a href="#courses" class="primaryBtn">
-    🚀 Choose Your Course
-  </a>
-
-</section>
-
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-  <div class="footerInner">
-
-    <div class="footerBrand">
-
-      <h3>
-        🩺 Nursing Career
-      </h3>
-
-      <p>
-        Online nursing examination and MCQ
-        practice platform for nursing students.
-      </p>
-
-    </div>
-
-
-    <div class="footerCol">
-
-      <h4>
-        Courses
-      </h4>
-
-      <a href="#courses">
-        Diploma in Nursing Science
-      </a>
-
-      <a href="#courses">
-        B.Sc. in Nursing
-      </a>
-
-      <a href="#courses">
-        Diploma in Nursing
-      </a>
-
-    </div>
-
-
-    <div class="footerCol">
-
-      <h4>
-        Quick Links
-      </h4>
-
-      <a href="#courses">
-        Courses
-      </a>
-
-      <a href="#features">
-        Features
-      </a>
-
-      <a href="exam.html">
-        Start Exam
-      </a>
-
-    </div>
-
-  </div>
-
-
-  <div class="copyright">
-
-    © 2026 Nursing Career. All Rights Reserved.
-
-  </div>
 
 </footer>
 
-
-<script>
-
-function startCourse(course){
-
-  /*
-    Course name exam.html-এ পাঠানো হচ্ছে।
-    পরে exam.html-এ course অনুযায়ী
-    আলাদা question bank/filter করা যাবে।
-  */
-
-  const url =
-    "exam.html?course=" +
-    encodeURIComponent(course);
-
-  window.location.href = url;
-
-}
-
-</script>
 
 </body>
 </html>
