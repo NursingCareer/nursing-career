@@ -5,246 +5,396 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Nursing Career - Home</title>
+<title>Nursing Career | Nursing Examination Preparation</title>
 
 <style>
 *{
     box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
 :root{
-    --primary:#0b7a6f;
-    --dark:#075e54;
-    --secondary:#14b8a6;
-    --bg:#f4f8fb;
-    --text:#172b2a;
-    --muted:#687b79;
-    --white:#ffffff;
+    --primary:#087f73;
+    --dark:#064e45;
+    --accent:#14b8a6;
+    --light:#eef9f7;
+    --bg:#f6faf9;
+    --text:#173330;
+    --muted:#667a77;
+    --white:#fff;
+    --border:#dcebea;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-    margin:0;
     font-family:"Segoe UI",Arial,sans-serif;
     background:var(--bg);
     color:var(--text);
+    line-height:1.6;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
+
 header{
-    background:linear-gradient(135deg,#064e45,#087f73,#11a995);
-    color:white;
-    padding:22px 7%;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,255,255,.96);
+    border-bottom:1px solid var(--border);
+    backdrop-filter:blur(10px);
+}
+
+.navbar{
+    max-width:1150px;
+    margin:auto;
+    padding:15px 22px;
     display:flex;
-    justify-content:space-between;
     align-items:center;
+    justify-content:space-between;
 }
 
 .logo{
     display:flex;
     align-items:center;
     gap:10px;
-    font-size:21px;
-    font-weight:800;
+    color:var(--dark);
+    font-weight:900;
+    font-size:20px;
+    text-decoration:none;
 }
 
 .logo-icon{
-    width:42px;
-    height:42px;
+    width:43px;
+    height:43px;
     display:flex;
     align-items:center;
     justify-content:center;
-    background:rgba(255,255,255,.15);
-    border-radius:12px;
+    border-radius:13px;
+    background:linear-gradient(135deg,var(--dark),var(--accent));
+    color:white;
     font-size:23px;
 }
 
-nav a{
-    color:white;
-    text-decoration:none;
-    margin-left:25px;
-    font-weight:600;
-}
-
-/* HERO */
-.hero{
-    min-height:560px;
+nav{
     display:flex;
     align-items:center;
-    justify-content:space-between;
-    gap:40px;
-    padding:70px 8%;
-    background:
-        radial-gradient(circle at top right,#d8f7f2,transparent 35%),
-        var(--bg);
+    gap:25px;
 }
 
-.hero-content{
-    max-width:650px;
+nav a{
+    color:#455d59;
+    text-decoration:none;
+    font-weight:600;
+    font-size:14px;
+}
+
+nav a:hover{
+    color:var(--primary);
+}
+
+.nav-test{
+    padding:10px 17px;
+    border-radius:10px;
+    color:white !important;
+    background:var(--primary);
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    background:
+        radial-gradient(circle at 85% 20%,#d7f7f2 0,transparent 30%),
+        linear-gradient(180deg,#ffffff,#f2faf8);
+
+    padding:85px 22px;
+}
+
+.hero-inner{
+    max-width:1150px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    gap:60px;
+    align-items:center;
 }
 
 .badge{
     display:inline-block;
-    background:#e0f6f2;
-    color:var(--dark);
-    padding:8px 15px;
+    padding:8px 14px;
     border-radius:30px;
+    background:#dff6f2;
+    color:var(--dark);
     font-size:13px;
-    font-weight:700;
+    font-weight:800;
     margin-bottom:18px;
 }
 
 .hero h1{
-    margin:0;
-    font-size:clamp(38px,6vw,64px);
-    line-height:1.08;
+    font-size:clamp(40px,6vw,68px);
+    line-height:1.05;
+    letter-spacing:-1px;
+    margin-bottom:20px;
 }
 
 .hero h1 span{
     color:var(--primary);
 }
 
-.hero p{
+.hero-text{
     color:var(--muted);
     font-size:18px;
-    line-height:1.7;
-    margin:22px 0 30px;
+    max-width:650px;
+    margin-bottom:30px;
 }
 
 .buttons{
     display:flex;
-    gap:14px;
+    gap:13px;
     flex-wrap:wrap;
 }
 
 .btn{
     display:inline-block;
-    padding:15px 24px;
-    border-radius:12px;
     text-decoration:none;
+    padding:14px 22px;
+    border-radius:12px;
     font-weight:800;
     transition:.2s;
-}
-
-.btn-primary{
-    background:linear-gradient(135deg,var(--dark),var(--secondary));
-    color:white;
-    box-shadow:0 8px 20px rgba(7,94,84,.2);
-}
-
-.btn-secondary{
-    background:white;
-    color:var(--dark);
-    border:1px solid #b9dcd7;
 }
 
 .btn:hover{
     transform:translateY(-2px);
 }
 
-/* HERO CARD */
-.hero-card{
-    width:330px;
-    background:white;
-    padding:28px;
-    border-radius:24px;
-    box-shadow:0 15px 40px rgba(20,70,65,.12);
+.primary{
+    background:linear-gradient(135deg,var(--dark),var(--accent));
+    color:white;
+    box-shadow:0 8px 20px rgba(6,78,69,.18);
 }
 
-.hero-icon{
+.secondary{
+    background:white;
+    color:var(--dark);
+    border:1px solid #bddbd6;
+}
+
+/* HERO CARD */
+
+.hero-card{
+    background:white;
+    padding:32px;
+    border-radius:26px;
+    border:1px solid var(--border);
+    box-shadow:0 20px 50px rgba(20,70,65,.10);
+}
+
+.card-icon{
     width:75px;
     height:75px;
-    border-radius:20px;
-    background:#e5f8f5;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:40px;
+    border-radius:20px;
+    background:var(--light);
+    font-size:38px;
     margin-bottom:20px;
 }
 
 .hero-card h2{
-    margin:0 0 8px;
+    font-size:25px;
+    margin-bottom:8px;
 }
 
 .hero-card p{
-    font-size:14px;
-    margin:0;
+    color:var(--muted);
+    margin-bottom:20px;
 }
 
-/* FEATURES */
-.features{
-    padding:65px 8%;
-    background:white;
+.stats{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
 }
 
-.section-title{
+.stat{
+    background:#f7fbfa;
+    border:1px solid var(--border);
+    padding:15px;
+    border-radius:12px;
+}
+
+.stat strong{
+    display:block;
+    font-size:21px;
+    color:var(--primary);
+}
+
+.stat span{
+    color:var(--muted);
+    font-size:12px;
+}
+
+/* ================= SECTIONS ================= */
+
+section{
+    scroll-margin-top:80px;
+}
+
+.section{
+    max-width:1150px;
+    margin:auto;
+    padding:75px 22px;
+}
+
+.section-heading{
     text-align:center;
-    margin-bottom:38px;
+    max-width:650px;
+    margin:0 auto 42px;
 }
 
-.section-title h2{
-    font-size:32px;
-    margin:0 0 8px;
+.section-heading h2{
+    font-size:34px;
+    margin-bottom:8px;
 }
 
-.section-title p{
+.section-heading p{
     color:var(--muted);
 }
 
-.cards{
-    max-width:1050px;
-    margin:auto;
+/* ================= FEATURES ================= */
+
+.feature-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:20px;
 }
 
-.card{
+.feature{
+    background:white;
+    border:1px solid var(--border);
     padding:28px;
-    border:1px solid #e1ecea;
-    border-radius:18px;
-    background:#fbfdfd;
+    border-radius:20px;
     transition:.2s;
 }
 
-.card:hover{
+.feature:hover{
     transform:translateY(-5px);
-    box-shadow:0 12px 30px rgba(20,70,65,.08);
+    box-shadow:0 15px 35px rgba(20,70,65,.08);
 }
 
-.card-icon{
+.feature-icon{
     font-size:30px;
     margin-bottom:15px;
 }
 
-.card h3{
-    margin:0 0 8px;
+.feature h3{
+    margin-bottom:8px;
 }
 
-.card p{
+.feature p{
     color:var(--muted);
     font-size:14px;
-    line-height:1.6;
 }
 
-/* CTA */
+/* ================= ABOUT ================= */
+
+.about{
+    background:white;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:45px;
+    align-items:center;
+}
+
+.about-box{
+    background:var(--light);
+    padding:35px;
+    border-radius:22px;
+}
+
+.about-box h2{
+    font-size:32px;
+    margin-bottom:15px;
+}
+
+.about-box p{
+    color:var(--muted);
+}
+
+.check-list{
+    list-style:none;
+}
+
+.check-list li{
+    margin:13px 0;
+    font-weight:600;
+}
+
+.check-list li::before{
+    content:"✓";
+    display:inline-flex;
+    width:25px;
+    height:25px;
+    align-items:center;
+    justify-content:center;
+    margin-right:9px;
+    border-radius:50%;
+    background:#dff6f2;
+    color:var(--primary);
+    font-weight:900;
+}
+
+/* ================= RESOURCES ================= */
+
+.resources{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.resource{
+    background:white;
+    padding:25px;
+    border:1px solid var(--border);
+    border-radius:18px;
+}
+
+.resource h3{
+    margin:10px 0;
+}
+
+.resource p{
+    color:var(--muted);
+    font-size:14px;
+}
+
+/* ================= CTA ================= */
+
 .cta{
-    margin:55px 8%;
-    padding:50px 30px;
+    margin:20px auto 70px;
+    max-width:1100px;
+    padding:55px 25px;
+    border-radius:26px;
     text-align:center;
     color:white;
-    border-radius:25px;
     background:linear-gradient(135deg,#064e45,#0b9486);
 }
 
 .cta h2{
-    margin:0 0 10px;
-    font-size:32px;
+    font-size:34px;
+    margin-bottom:10px;
 }
 
 .cta p{
-    margin:0 0 25px;
     color:rgba(255,255,255,.85);
+    margin-bottom:25px;
 }
 
 .cta .btn{
@@ -252,50 +402,60 @@ nav a{
     color:var(--dark);
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
+
 footer{
+    background:#063f39;
+    color:rgba(255,255,255,.75);
     text-align:center;
-    padding:28px 15px;
-    color:#7b8987;
+    padding:35px 20px;
     font-size:13px;
 }
 
-/* MOBILE */
-@media(max-width:750px){
+footer strong{
+    color:white;
+}
 
-    header{
-        padding:18px 5%;
-    }
+/* ================= MOBILE ================= */
+
+@media(max-width:800px){
 
     nav{
+        gap:10px;
+    }
+
+    nav a:not(.nav-test){
         display:none;
     }
 
     .hero{
-        padding:50px 6%;
-        flex-direction:column;
-        text-align:center;
+        padding:60px 20px;
     }
 
-    .buttons{
-        justify-content:center;
+    .hero-inner{
+        grid-template-columns:1fr;
+        gap:35px;
     }
 
-    .hero-card{
-        width:100%;
-        max-width:360px;
+    .hero h1{
+        font-size:43px;
     }
 
-    .cards{
+    .feature-grid,
+    .resources{
         grid-template-columns:1fr;
     }
 
-    .features{
-        padding:50px 6%;
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .section{
+        padding:60px 20px;
     }
 
     .cta{
-        margin:40px 5%;
+        margin:10px 15px 50px;
     }
 }
 </style>
@@ -303,46 +463,70 @@ footer{
 
 <body>
 
+<!-- ================= HEADER ================= -->
+
 <header>
 
-    <div class="logo">
+<div class="navbar">
+
+    <a href="index.html" class="logo">
+
         <div class="logo-icon">🩺</div>
-        NURSING CAREER
-    </div>
+
+        Nursing Career
+
+    </a>
 
     <nav>
+
         <a href="index.html">Home</a>
-        <a href="exam.html">Model Test</a>
+
+        <a href="#about">About</a>
+
+        <a href="#resources">Resources</a>
+
+        <a href="exam.html" class="nav-test">
+            Model Test
+        </a>
+
     </nav>
+
+</div>
 
 </header>
 
 
+<!-- ================= HERO ================= -->
+
 <section class="hero">
 
-    <div class="hero-content">
+<div class="hero-inner">
+
+    <div>
 
         <div class="badge">
             🩺 Nursing Examination Preparation
         </div>
 
         <h1>
-            Build Your <span>Nursing Career</span>
+            Your Journey to a
+            <span>Nursing Career</span>
+            Starts Here.
         </h1>
 
-        <p>
-            Prepare yourself for the Nursing Licensing Examination
-            with practice questions, model tests and focused revision.
+        <p class="hero-text">
+            Practice nursing questions, take model tests and
+            prepare yourself for your licensing examination.
         </p>
 
         <div class="buttons">
 
-            <a href="exam.html" class="btn btn-primary">
+            <a href="exam.html" class="btn primary">
                 ▶ Start Model Test
             </a>
 
-            <a href="#features" class="btn btn-secondary">
-                Explore More
+            <a href="#resources" class="btn secondary">
+                Explore Resources
             </a>
 
         </div>
@@ -352,90 +536,218 @@ footer{
 
     <div class="hero-card">
 
-        <div class="hero-icon">📚</div>
+        <div class="card-icon">
+            📚
+        </div>
 
-        <h2>Model Test 2026</h2>
+        <h2>Licensing Examination 2026</h2>
 
         <p>
-            Test your nursing knowledge with our practice examination.
+            Start practicing with our nursing model test
+            and check your knowledge.
         </p>
 
-        <br>
+        <div class="stats">
 
-        <strong>10 Questions • Practice Test</strong>
+            <div class="stat">
+                <strong>10</strong>
+                <span>Questions</span>
+            </div>
+
+            <div class="stat">
+                <strong>2026</strong>
+                <span>Exam Preparation</span>
+            </div>
+
+        </div>
 
     </div>
+
+</div>
 
 </section>
 
 
-<section class="features" id="features">
+<!-- ================= FEATURES ================= -->
 
-    <div class="section-title">
+<section class="section">
 
-        <h2>Prepare Smarter</h2>
+<div class="section-heading">
+
+    <h2>Why Practice With Us?</h2>
+
+    <p>
+        Simple tools to help you prepare consistently.
+    </p>
+
+</div>
+
+
+<div class="feature-grid">
+
+    <div class="feature">
+
+        <div class="feature-icon">📝</div>
+
+        <h3>Model Tests</h3>
 
         <p>
-            Everything you need to practice and improve.
+            Practice nursing questions and receive your
+            score immediately after submission.
         </p>
 
     </div>
 
 
-    <div class="cards">
+    <div class="feature">
 
-        <div class="card">
+        <div class="feature-icon">🎯</div>
 
-            <div class="card-icon">📝</div>
+        <h3>Focused Preparation</h3>
 
-            <h3>Model Tests</h3>
-
-            <p>
-                Practice nursing-related questions and check your score
-                instantly.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">🎯</div>
-
-            <h3>Focused Practice</h3>
-
-            <p>
-                Strengthen your knowledge through regular practice and
-                revision.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">📈</div>
-
-            <h3>Track Progress</h3>
-
-            <p>
-                Use your test results to identify topics that need more
-                revision.
-            </p>
-
-        </div>
+        <p>
+            Review important nursing topics and improve
+            your exam preparation.
+        </p>
 
     </div>
 
+
+    <div class="feature">
+
+        <div class="feature-icon">📈</div>
+
+        <h3>Improve Your Score</h3>
+
+        <p>
+            Use your test results to identify areas that
+            need more practice.
+        </p>
+
+    </div>
+
+</div>
+
 </section>
 
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about" id="about">
+
+<div class="section">
+
+<div class="about-grid">
+
+    <div class="about-box">
+
+        <h2>About Nursing Career</h2>
+
+        <p>
+            Nursing Career is designed as a practice platform
+            for nursing examination preparation.
+        </p>
+
+    </div>
+
+
+    <div>
+
+        <ul class="check-list">
+
+            <li>Nursing model tests</li>
+
+            <li>Practice questions</li>
+
+            <li>Instant score calculation</li>
+
+            <li>Simple and mobile-friendly interface</li>
+
+            <li>Easy access from phone or computer</li>
+
+        </ul>
+
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= RESOURCES ================= -->
+
+<section class="section" id="resources">
+
+<div class="section-heading">
+
+    <h2>Nursing Resources</h2>
+
+    <p>
+        More learning sections can be added here as your
+        website grows.
+    </p>
+
+</div>
+
+
+<div class="resources">
+
+    <div class="resource">
+
+        <div>📖</div>
+
+        <h3>Study Materials</h3>
+
+        <p>
+            Add nursing notes, important topics and
+            revision materials here.
+        </p>
+
+    </div>
+
+
+    <div class="resource">
+
+        <div>📝</div>
+
+        <h3>Question Bank</h3>
+
+        <p>
+            Build a larger collection of nursing practice
+            questions.
+        </p>
+
+    </div>
+
+
+    <div class="resource">
+
+        <div>🎓</div>
+
+        <h3>Exam Preparation</h3>
+
+        <p>
+            Organize preparation resources for different
+            nursing examinations.
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
 
 <section class="cta">
 
-    <h2>Ready to Test Yourself?</h2>
+    <h2>Ready to Practice?</h2>
 
     <p>
-        Start the Nursing Career Model Test now.
+        Start your Nursing Career model test now.
     </p>
 
     <a href="exam.html" class="btn">
@@ -444,6 +756,8 @@ footer{
 
 </section>
 
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
