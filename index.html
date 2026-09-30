@@ -4,510 +4,798 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Nursing Career | Nursing MCQ Practice</title>
+<title>Nursing Career | Nursing Education Platform</title>
 
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:Arial,Helvetica,sans-serif;
 }
 
 body{
-    background:linear-gradient(135deg,#eef8ff,#f7f0ff);
+    background:#f4f8fc;
     color:#172033;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
 }
 
 /* ================= HEADER ================= */
 
 .header{
-    background:linear-gradient(135deg,#075985,#2563eb,#7c3aed);
+    background:linear-gradient(135deg,#063970,#087f8c,#2563eb);
     color:white;
-    text-align:center;
-    padding:38px 18px 32px;
-    border-radius:0 0 32px 32px;
-    box-shadow:0 8px 25px rgba(0,0,0,.18);
+    padding:20px 18px 35px;
+    border-radius:0 0 35px 35px;
+    box-shadow:0 8px 30px rgba(0,0,0,.18);
+}
+
+.nav{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
 
 .logo{
-    font-size:34px;
+    font-size:25px;
     font-weight:900;
-    letter-spacing:1px;
 }
 
-.subtitle{
-    font-size:20px;
-    margin-top:9px;
-    font-weight:700;
+.logo span{
+    color:#7dd3fc;
 }
 
-.tagline{
-    margin-top:9px;
+.menu{
+    font-size:25px;
+    cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+    max-width:1100px;
+    margin:35px auto 0;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:35px;
+    line-height:1.2;
+}
+
+.hero h1 span{
+    color:#7dd3fc;
+}
+
+.hero p{
+    margin:12px auto 22px;
+    max-width:650px;
+    line-height:1.6;
+    color:#e0f2fe;
+}
+
+/* SEARCH */
+
+.search{
+    max-width:650px;
+    margin:auto;
+    background:white;
+    border-radius:50px;
+    padding:6px;
+    display:flex;
+    box-shadow:0 8px 25px rgba(0,0,0,.2);
+}
+
+.search input{
+    flex:1;
+    border:0;
+    outline:0;
+    padding:13px 18px;
     font-size:14px;
-    opacity:.95;
+    border-radius:50px;
+}
+
+.search button{
+    border:0;
+    background:#2563eb;
+    color:white;
+    padding:0 22px;
+    border-radius:50px;
+    font-size:18px;
+    cursor:pointer;
 }
 
 /* ================= MAIN ================= */
 
 .container{
-    width:100%;
     max-width:1100px;
     margin:auto;
-    padding:25px 15px 55px;
+    padding:28px 15px 60px;
 }
 
-/* WELCOME */
+.section{
+    margin-bottom:35px;
+}
 
-.welcome{
+.section-title{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:16px;
+}
+
+.section-title h2{
+    font-size:22px;
+}
+
+.section-title span{
+    color:#2563eb;
+    font-size:13px;
+}
+
+/* ================= QUICK MENU ================= */
+
+.quick-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:13px;
+}
+
+.quick{
     background:white;
-    padding:24px 20px;
-    border-radius:22px;
+    padding:20px 10px;
     text-align:center;
-    margin-bottom:28px;
-    box-shadow:0 7px 22px rgba(0,0,0,.08);
+    border-radius:18px;
+    box-shadow:0 5px 18px rgba(0,0,0,.07);
+    transition:.25s;
 }
 
-.welcome h2{
-    color:#1d4ed8;
-    font-size:23px;
+.quick:hover{
+    transform:translateY(-5px);
 }
 
-.welcome p{
-    color:#666;
-    margin-top:9px;
-    line-height:1.6;
+.quick-icon{
+    font-size:30px;
+    margin-bottom:9px;
 }
 
-/* ================= COURSE CARD ================= */
+.quick h3{
+    font-size:14px;
+}
+
+.quick p{
+    font-size:11px;
+    color:#777;
+    margin-top:5px;
+}
+
+/* ================= COURSES ================= */
+
+.course-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
 
 .course{
-    margin-bottom:32px;
-}
-
-.course-header{
+    padding:23px;
+    border-radius:23px;
     color:white;
-    padding:20px;
-    border-radius:20px 20px 0 0;
-    box-shadow:0 5px 16px rgba(0,0,0,.12);
+    min-height:190px;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 8px 25px rgba(0,0,0,.13);
+    transition:.25s;
 }
 
-.course-header h2{
-    font-size:23px;
+.course:hover{
+    transform:translateY(-5px);
 }
 
-.course-header p{
-    margin-top:6px;
-    font-size:13px;
-    opacity:.95;
+.course:after{
+    content:"";
+    position:absolute;
+    width:130px;
+    height:130px;
+    border-radius:50%;
+    background:rgba(255,255,255,.12);
+    right:-35px;
+    bottom:-45px;
 }
 
-/* COURSE COLORS */
-
-.bsc .course-header{
-    background:linear-gradient(135deg,#0369a1,#2563eb);
+.course1{
+    background:linear-gradient(135deg,#075985,#2563eb);
 }
 
-.diploma-nursing .course-header{
+.course2{
     background:linear-gradient(135deg,#047857,#0d9488);
 }
 
-.diploma-midwifery .course-header{
+.course3{
     background:linear-gradient(135deg,#be185d,#db2777);
 }
 
-/* ================= YEAR ================= */
-
-.year{
-    background:white;
-    padding:18px;
-    border-left:5px solid #2563eb;
-    border-radius:0 0 18px 18px;
+.course-icon{
+    font-size:35px;
 }
 
-.diploma-nursing .year{
-    border-left-color:#059669;
-}
-
-.diploma-midwifery .year{
-    border-left-color:#db2777;
-}
-
-.year-title{
+.course h3{
+    margin-top:13px;
     font-size:19px;
-    font-weight:800;
-    margin-bottom:14px;
+    max-width:230px;
 }
 
-/* ================= SUBJECT GRID ================= */
-
-.subject-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(235px,1fr));
-    gap:13px;
+.course p{
+    margin-top:8px;
+    font-size:12px;
+    opacity:.9;
 }
 
-/* ================= SUBJECT ================= */
-
-.subject{
-    text-decoration:none;
-    color:#172033;
-    background:#f8fafc;
-    border:1px solid #e5e7eb;
-    border-radius:16px;
-    padding:16px;
-    display:flex;
-    align-items:center;
-    gap:13px;
-    min-height:82px;
-    transition:.25s ease;
-}
-
-.subject:hover{
-    transform:translateY(-4px);
+.course button{
+    margin-top:17px;
+    padding:9px 15px;
+    border:0;
+    border-radius:20px;
     background:white;
-    box-shadow:0 9px 22px rgba(0,0,0,.12);
+    color:#174ea6;
+    font-weight:bold;
+    cursor:pointer;
 }
 
-.icon{
-    min-width:46px;
-    width:46px;
-    height:46px;
-    border-radius:13px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:23px;
-    background:#e0f2fe;
+/* ================= RESOURCE GRID ================= */
+
+.resource-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
 }
 
-.subject h3{
+.resource{
+    background:white;
+    padding:20px 15px;
+    border-radius:18px;
+    border:1px solid #e5e7eb;
+    transition:.25s;
+}
+
+.resource:hover{
+    transform:translateY(-4px);
+    box-shadow:0 8px 20px rgba(0,0,0,.09);
+}
+
+.resource-icon{
+    font-size:28px;
+}
+
+.resource h3{
     font-size:15px;
-    line-height:1.35;
+    margin-top:10px;
 }
 
-.subject span{
-    display:block;
+.resource p{
     color:#777;
     font-size:11px;
-    margin-top:5px;
+    line-height:1.5;
+    margin-top:6px;
+}
+
+/* ================= FEATURE ================= */
+
+.feature{
+    background:linear-gradient(135deg,#0f172a,#1e3a8a);
+    color:white;
+    border-radius:24px;
+    padding:28px 22px;
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
+}
+
+.feature h2{
+    font-size:22px;
+}
+
+.feature p{
+    margin-top:8px;
+    color:#dbeafe;
+    line-height:1.6;
+    font-size:14px;
+}
+
+.feature-grid{
+    margin-top:20px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+}
+
+.feature-item{
+    background:rgba(255,255,255,.1);
+    padding:14px;
+    border-radius:14px;
+    font-size:13px;
+}
+
+/* ================= LATEST ================= */
+
+.latest{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 5px 18px rgba(0,0,0,.07);
+}
+
+.latest-item{
+    padding:17px;
+    border-bottom:1px solid #eee;
+    display:flex;
+    gap:13px;
+    align-items:center;
+}
+
+.latest-item:last-child{
+    border-bottom:0;
+}
+
+.latest-icon{
+    width:42px;
+    height:42px;
+    background:#eff6ff;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+}
+
+.latest h3{
+    font-size:14px;
+}
+
+.latest p{
+    color:#777;
+    font-size:11px;
+    margin-top:4px;
 }
 
 /* ================= FOOTER ================= */
 
 .footer{
-    background:#111827;
+    background:#0b1220;
     color:white;
+    padding:35px 15px;
     text-align:center;
-    padding:28px 15px;
 }
 
-.footer-title{
-    font-size:18px;
+.footer-logo{
+    font-size:23px;
     font-weight:bold;
 }
 
 .footer p{
-    margin-top:7px;
-    font-size:13px;
+    color:#94a3b8;
+    margin-top:8px;
+    font-size:12px;
+}
+
+.footer-links{
+    margin-top:18px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.footer-links a{
     color:#cbd5e1;
+    font-size:12px;
 }
 
 /* ================= MOBILE ================= */
 
-@media(max-width:600px){
+@media(max-width:800px){
 
-    .logo{
-        font-size:27px;
-    }
-
-    .subtitle{
-        font-size:17px;
-    }
-
-    .course-header h2{
-        font-size:20px;
-    }
-
-    .subject-grid{
+    .course-grid{
         grid-template-columns:1fr;
     }
 
-    .container{
-        padding:20px 12px 45px;
+    .quick-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .resource-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .feature-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:500px){
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .header{
+        padding-bottom:30px;
+    }
+
+    .resource-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .feature-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .course{
+        min-height:170px;
     }
 }
 </style>
 </head>
 
+
 <body>
+
 
 <!-- ================= HEADER ================= -->
 
 <header class="header">
 
-    <div class="logo">
-        🩺 NURSING CAREER
+    <div class="nav">
+
+        <div class="logo">
+            🩺 NURSING <span>CAREER</span>
+        </div>
+
+        <div class="menu">
+            ☰
+        </div>
+
     </div>
 
-    <div class="subtitle">
-        Nursing MCQ Practice Platform
-    </div>
 
-    <div class="tagline">
-        BSc Nursing • Diploma Nursing • Midwifery
+    <div class="hero">
+
+        <h1>
+            Your Complete
+            <span>Nursing Education</span>
+            Platform
+        </h1>
+
+        <p>
+            Learn nursing, practice clinical skills, prepare for exams,
+            build your career and grow as a professional nurse.
+        </p>
+
+
+        <div class="search">
+
+            <input
+                type="text"
+                id="searchBox"
+                placeholder="Search nursing topics, notes, MCQ..."
+            >
+
+            <button onclick="searchSite()">
+                🔍
+            </button>
+
+        </div>
+
     </div>
 
 </header>
 
 
+
 <main class="container">
 
 
-<!-- ================= WELCOME ================= -->
+<!-- ================= QUICK ACCESS ================= -->
 
-<section class="welcome">
+<section class="section">
 
-    <h2>📚 Choose Your Course</h2>
+    <div class="section-title">
+        <h2>⚡ Quick Access</h2>
+        <span>Explore</span>
+    </div>
 
-    <p>
-        আপনার Course নির্বাচন করুন। এরপর Year এবং Subject নির্বাচন করে
-        MCQ Practice শুরু করুন।
-    </p>
+
+    <div class="quick-grid">
+
+        <a class="quick" href="#courses">
+            <div class="quick-icon">🎓</div>
+            <h3>Courses</h3>
+            <p>BSc & Diploma</p>
+        </a>
+
+        <a class="quick" href="#exam">
+            <div class="quick-icon">📝</div>
+            <h3>Exam Zone</h3>
+            <p>MCQ & Model Test</p>
+        </a>
+
+        <a class="quick" href="#clinical">
+            <div class="quick-icon">🏥</div>
+            <h3>Clinical</h3>
+            <p>Nursing Procedures</p>
+        </a>
+
+        <a class="quick" href="#career">
+            <div class="quick-icon">💼</div>
+            <h3>Career</h3>
+            <p>Jobs & Guidance</p>
+        </a>
+
+    </div>
 
 </section>
 
 
-<!-- ================================================= -->
-<!--                  BSC IN NURSING                   -->
-<!-- ================================================= -->
 
-<section class="course bsc">
+<!-- ================= COURSES ================= -->
 
-    <div class="course-header">
+<section class="section" id="courses">
 
-        <h2>🎓 B.Sc. in Nursing</h2>
+    <div class="section-title">
+        <h2>🎓 Nursing Courses</h2>
+        <span>View Courses</span>
+    </div>
+
+
+    <div class="course-grid">
+
+
+        <a href="bsc-nursing.html" class="course course1">
+
+            <div class="course-icon">🎓</div>
+
+            <h3>
+                B.Sc. in Nursing
+            </h3>
+
+            <p>
+                Year-wise subjects, notes,
+                MCQ, PDF and learning resources.
+            </p>
+
+            <button>
+                Explore Course →
+            </button>
+
+        </a>
+
+
+
+        <a href="diploma-nursing.html" class="course course2">
+
+            <div class="course-icon">🩺</div>
+
+            <h3>
+                Diploma in Nursing Science & Midwifery
+            </h3>
+
+            <p>
+                Complete course resources
+                for diploma nursing students.
+            </p>
+
+            <button>
+                Explore Course →
+            </button>
+
+        </a>
+
+
+
+        <a href="diploma-midwifery.html" class="course course3">
+
+            <div class="course-icon">🤰</div>
+
+            <h3>
+                Diploma in Midwifery
+            </h3>
+
+            <p>
+                Midwifery study materials,
+                clinical learning and exam preparation.
+            </p>
+
+            <button>
+                Explore Course →
+            </button>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= NURSING RESOURCES ================= -->
+
+<section class="section">
+
+    <div class="section-title">
+        <h2>📚 Nursing Resources</h2>
+        <span>Learn More</span>
+    </div>
+
+
+    <div class="resource-grid">
+
+
+        <a href="nursing-notes.html" class="resource">
+
+            <div class="resource-icon">📖</div>
+
+            <h3>Nursing Notes</h3>
+
+            <p>
+                Easy and exam-friendly nursing notes.
+            </p>
+
+        </a>
+
+
+
+        <a href="clinical-nursing.html" class="resource">
+
+            <div class="resource-icon">🏥</div>
+
+            <h3>Clinical Nursing</h3>
+
+            <p>
+                Practical procedures and bedside skills.
+            </p>
+
+        </a>
+
+
+
+        <a href="pharmacology.html" class="resource">
+
+            <div class="resource-icon">💊</div>
+
+            <h3>Drugs & Pharmacology</h3>
+
+            <p>
+                Drug classes, uses, effects and nursing responsibilities.
+            </p>
+
+        </a>
+
+
+
+        <a href="lab-values.html" class="resource">
+
+            <div class="resource-icon">🧪</div>
+
+            <h3>Lab Values</h3>
+
+            <p>
+                Important normal laboratory values.
+            </p>
+
+        </a>
+
+
+
+        <a href="diseases.html" class="resource">
+
+            <div class="resource-icon">🩺</div>
+
+            <h3>Diseases</h3>
+
+            <p>
+                Disease overview and nursing management.
+            </p>
+
+        </a>
+
+
+
+        <a href="nursing-care-plan.html" class="resource">
+
+            <div class="resource-icon">📋</div>
+
+            <h3>Care Plans</h3>
+
+            <p>
+                Nursing diagnosis, goals and interventions.
+            </p>
+
+        </a>
+
+
+
+        <a href="midwifery.html" class="resource">
+
+            <div class="resource-icon">🤰</div>
+
+            <h3>Midwifery</h3>
+
+            <p>
+                Pregnancy, labour, newborn and maternity care.
+            </p>
+
+        </a>
+
+
+
+        <a href="pediatric-nursing.html" class="resource">
+
+            <div class="resource-icon">👶</div>
+
+            <h3>Pediatric Nursing</h3>
+
+            <p>
+                Child health and pediatric nursing resources.
+            </p>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= CLINICAL ================= -->
+
+<section class="section" id="clinical">
+
+    <div class="feature">
+
+        <h2>🏥 Clinical Nursing Hub</h2>
 
         <p>
-            4 Years • Course-wise MCQ Practice
+            Build real-world nursing knowledge through
+            practical procedures and clinical concepts.
         </p>
 
-    </div>
 
+        <div class="feature-grid">
 
-    <!-- 1ST YEAR -->
-
-    <div class="year">
-
-        <div class="year-title">
-            📘 1st Year
-        </div>
-
-        <div class="subject-grid">
-
-            <a class="subject" href="bsc-1st-communicative-english.html">
-                <div class="icon">🗣️</div>
-                <div>
-                    <h3>Communicative English</h3>
-                    <span>BSc • 1st Year</span>
-                </div>
+            <a class="feature-item" href="clinical/vital-signs.html">
+                ❤️ Vital Signs
             </a>
 
-            <a class="subject" href="bsc-1st-behavioral-science.html">
-                <div class="icon">🧠</div>
-                <div>
-                    <h3>Behavioral Science</h3>
-                    <span>BSc • 1st Year</span>
-                </div>
+            <a class="feature-item" href="clinical/iv-cannulation.html">
+                💉 IV Cannulation
             </a>
 
-            <a class="subject" href="bsc-1st-anatomy.html">
-                <div class="icon">🫀</div>
-                <div>
-                    <h3>Anatomy</h3>
-                    <span>BSc • 1st Year</span>
-                </div>
+            <a class="feature-item" href="clinical/oxygen-therapy.html">
+                🫁 Oxygen Therapy
             </a>
 
-            <a class="subject" href="bsc-1st-physiology.html">
-                <div class="icon">❤️</div>
-                <div>
-                    <h3>Physiology</h3>
-                    <span>BSc • 1st Year</span>
-                </div>
+            <a class="feature-item" href="clinical/blood-transfusion.html">
+                🩸 Blood Transfusion
             </a>
 
-            <a class="subject" href="bsc-1st-microbiology.html">
-                <div class="icon">🦠</div>
-                <div>
-                    <h3>Microbiology</h3>
-                    <span>BSc • 1st Year</span>
-                </div>
+            <a class="feature-item" href="clinical/catheterization.html">
+                🧴 Catheterization
             </a>
 
-            <a class="subject" href="bsc-1st-fundamentals-nursing.html">
-                <div class="icon">👩‍⚕️</div>
-                <div>
-                    <h3>Fundamentals of Nursing</h3>
-                    <span>BSc • 1st Year</span>
-                </div>
+            <a class="feature-item" href="clinical/ng-tube.html">
+                🥛 NG Tube
             </a>
 
-        </div>
-
-    </div>
-
-
-    <!-- 2ND YEAR -->
-
-    <div class="year">
-
-        <div class="year-title">
-            📗 2nd Year
-        </div>
-
-        <div class="subject-grid">
-
-            <a class="subject" href="bsc-2nd-medical-surgical.html">
-                <div class="icon">🏥</div>
-                <div>
-                    <h3>Medical & Surgical Nursing</h3>
-                    <span>BSc • 2nd Year</span>
-                </div>
+            <a class="feature-item" href="clinical/suction.html">
+                🌬️ Suction
             </a>
 
-            <a class="subject" href="bsc-2nd-pharmacology.html">
-                <div class="icon">💊</div>
-                <div>
-                    <h3>Pharmacology</h3>
-                    <span>BSc • 2nd Year</span>
-                </div>
-            </a>
-
-            <a class="subject" href="bsc-2nd-pediatric.html">
-                <div class="icon">👶</div>
-                <div>
-                    <h3>Pediatric Nursing</h3>
-                    <span>BSc • 2nd Year</span>
-                </div>
-            </a>
-
-            <a class="subject" href="bsc-2nd-nutrition.html">
-                <div class="icon">🥗</div>
-                <div>
-                    <h3>Nutrition</h3>
-                    <span>BSc • 2nd Year</span>
-                </div>
-            </a>
-
-            <a class="subject" href="bsc-2nd-pathology.html">
-                <div class="icon">🔬</div>
-                <div>
-                    <h3>Pathology</h3>
-                    <span>BSc • 2nd Year</span>
-                </div>
-            </a>
-
-        </div>
-
-    </div>
-
-
-    <!-- 3RD YEAR -->
-
-    <div class="year">
-
-        <div class="year-title">
-            📙 3rd Year
-        </div>
-
-        <div class="subject-grid">
-
-            <a class="subject" href="bsc-3rd-mental-health.html">
-                <div class="icon">🧠</div>
-                <div>
-                    <h3>Mental Health Nursing</h3>
-                    <span>BSc • 3rd Year</span>
-                </div>
-            </a>
-
-            <a class="subject" href="bsc-3rd-community-health.html">
-                <div class="icon">🌍</div>
-                <div>
-                    <h3>Community Health Nursing</h3>
-                    <span>BSc • 3rd Year</span>
-                </div>
-            </a>
-
-            <a class="subject" href="bsc-3rd-emergency.html">
-                <div class="icon">🚑</div>
-                <div>
-                    <h3>Emergency & Critical Care</h3>
-                    <span>BSc • 3rd Year</span>
-                </div>
-            </a>
-
-            <a class="subject" href="bsc-3rd-geriatric.html">
-                <div class="icon">👵</div>
-                <div>
-                    <h3>Geriatric Nursing</h3>
-                    <span>BSc • 3rd Year</span>
-                </div>
-            </a>
-
-        </div>
-
-    </div>
-
-
-    <!-- 4TH YEAR -->
-
-    <div class="year">
-
-        <div class="year-title">
-            📕 4th Year
-        </div>
-
-        <div class="subject-grid">
-
-            <a class="subject" href="bsc-4th-midwifery.html">
-                <div class="icon">🤰</div>
-                <div>
-                    <h3>Midwifery</h3>
-                    <span>BSc • 4th Year</span>
-                </div>
-            </a>
-
-            <a class="subject" href="bsc-4th-obstetrical.html">
-                <div class="icon">👩‍🍼</div>
-                <div>
-                    <h3>Obstetrical Nursing</h3>
-                    <span>BSc • 4th Year</span>
-                </div>
-            </a>
-
-            <a class="subject" href="bsc-4th-nursing-administration.html">
-                <div class="icon">📋</div>
-                <div>
-                    <h3>Nursing Administration</h3>
-                    <span>BSc • 4th Year</span>
-                </div>
-            </a>
-
-            <a class="subject" href="bsc-4th-nursing-education.html">
-                <div class="icon">📚</div>
-                <div>
-                    <h3>Nursing Education</h3>
-                    <span>BSc • 4th Year</span>
-                </div>
-            </a>
-
-            <a class="subject" href="bsc-4th-research.html">
-                <div class="icon">📊</div>
-                <div>
-                    <h3>Research & Biostatistics</h3>
-                    <span>BSc • 4th Year</span>
-                </div>
+            <a class="feature-item" href="clinical/cpr.html">
+                🚑 CPR
             </a>
 
         </div>
@@ -518,168 +806,72 @@ body{
 
 
 
-<!-- ================================================= -->
-<!--       DIPLOMA IN NURSING SCIENCE & MIDWIFERY     -->
-<!-- ================================================= -->
+<!-- ================= EXAM ZONE ================= -->
 
-<section class="course diploma-nursing">
+<section class="section" id="exam">
 
-    <div class="course-header">
-
-        <h2>🎓 Diploma in Nursing Science & Midwifery</h2>
-
-        <p>
-            3 Years • Course-wise MCQ Practice
-        </p>
-
+    <div class="section-title">
+        <h2>📝 Exam Preparation</h2>
+        <span>Practice</span>
     </div>
 
 
-    <!-- 1ST YEAR -->
-
-    <div class="year">
-
-        <div class="year-title">
-            📘 1st Year
-        </div>
-
-        <div class="subject-grid">
-
-            <a class="subject" href="dns-1st-behavioral-science.html">
-                <div class="icon">🧠</div>
-                <div>
-                    <h3>Behavioral Science</h3>
-                    <span>Diploma • 1st Year</span>
-                </div>
-            </a>
-
-            <a class="subject" href="dns-1st-basic-science.html">
-                <div class="icon">🔬</div>
-                <div>
-                    <h3>Basic Science</h3>
-                    <span>Diploma • 1st Year</span>
-                </div>
-            </a>
-
-            <a class="subject" href="dns-1st-anatomy.html">
-                <div class="icon">🫀</div>
-                <div>
-                    <h3>Anatomy & Physiology</h3>
-                    <span>Diploma • 1st Year</span>
-                </div>
-            </a>
-
-            <a class="subject" href="dns-1st-fundamentals.html">
-                <div class="icon">👩‍⚕️</div>
-                <div>
-                    <h3>Fundamentals of Nursing</h3>
-                    <span>Diploma • 1st Year</span>
-                </div>
-            </a>
-
-            <a class="subject" href="dns-1st-communicative-english.html">
-                <div class="icon">🗣️</div>
-                <div>
-                    <h3>Communicative English</h3>
-                    <span>Diploma • 1st Year</span>
-                </div>
-            </a>
-
-        </div>
-
-    </div>
+    <div class="resource-grid">
 
 
-    <!-- 2ND YEAR -->
+        <a href="licensing-exam.html" class="resource">
 
-    <div class="year">
+            <div class="resource-icon">🎯</div>
 
-        <div class="year-title">
-            📗 2nd Year
-        </div>
+            <h3>Licensing Examination</h3>
 
-        <div class="subject-grid">
+            <p>
+                Subject-wise MCQ and final revision.
+            </p>
 
-            <a class="subject" href="dns-2nd-medical-surgical.html">
-                <div class="icon">🏥</div>
-                <div>
-                    <h3>Medical & Surgical Nursing</h3>
-                    <span>Diploma • 2nd Year</span>
-                </div>
-            </a>
-
-            <a class="subject" href="dns-2nd-pharmacology.html">
-                <div class="icon">💊</div>
-                <div>
-                    <h3>Pharmacology</h3>
-                    <span>Diploma • 2nd Year</span>
-                </div>
-            </a>
-
-            <a class="subject" href="dns-2nd-community.html">
-                <div class="icon">🌍</div>
-                <div>
-                    <h3>Community Health Nursing</h3>
-                    <span>Diploma • 2nd Year</span>
-                </div>
-            </a>
-
-            <a class="subject" href="dns-2nd-pediatric.html">
-                <div class="icon">👶</div>
-                <div>
-                    <h3>Pediatric Nursing</h3>
-                    <span>Diploma • 2nd Year</span>
-                </div>
-            </a>
-
-        </div>
-
-    </div>
+        </a>
 
 
-    <!-- 3RD YEAR -->
 
-    <div class="year">
+        <a href="bpsc-nursing.html" class="resource">
 
-        <div class="year-title">
-            📙 3rd Year
-        </div>
+            <div class="resource-icon">🏛️</div>
 
-        <div class="subject-grid">
+            <h3>Government Nursing Exam</h3>
 
-            <a class="subject" href="dns-3rd-midwifery.html">
-                <div class="icon">🤰</div>
-                <div>
-                    <h3>Midwifery</h3>
-                    <span>Diploma • 3rd Year</span>
-                </div>
-            </a>
+            <p>
+                Nursing technical and general preparation.
+            </p>
 
-            <a class="subject" href="dns-3rd-community.html">
-                <div class="icon">🌍</div>
-                <div>
-                    <h3>Community Health Nursing</h3>
-                    <span>Diploma • 3rd Year</span>
-                </div>
-            </a>
+        </a>
 
-            <a class="subject" href="dns-3rd-medical-surgical.html">
-                <div class="icon">🏥</div>
-                <div>
-                    <h3>Medical & Surgical Nursing</h3>
-                    <span>Diploma • 3rd Year</span>
-                </div>
-            </a>
 
-            <a class="subject" href="dns-3rd-management.html">
-                <div class="icon">📋</div>
-                <div>
-                    <h3>Nursing Management</h3>
-                    <span>Diploma • 3rd Year</span>
-                </div>
-            </a>
 
-        </div>
+        <a href="model-test.html" class="resource">
+
+            <div class="resource-icon">📝</div>
+
+            <h3>Model Test</h3>
+
+            <p>
+                Practice full-length nursing tests.
+            </p>
+
+        </a>
+
+
+
+        <a href="previous-question.html" class="resource">
+
+            <div class="resource-icon">📚</div>
+
+            <h3>Previous Questions</h3>
+
+            <p>
+                Previous exam-based practice resources.
+            </p>
+
+        </a>
 
     </div>
 
@@ -687,193 +879,214 @@ body{
 
 
 
-<!-- ================================================= -->
-<!--              DIPLOMA IN MIDWIFERY                -->
-<!-- ================================================= -->
+<!-- ================= CAREER ================= -->
 
-<section class="course diploma-midwifery">
+<section class="section" id="career">
 
-    <div class="course-header">
-
-        <h2>🎓 Diploma in Midwifery</h2>
-
-        <p>
-            3 Years • Course-wise MCQ Practice
-        </p>
-
+    <div class="section-title">
+        <h2>💼 Nursing Career</h2>
+        <span>Build Your Future</span>
     </div>
 
 
-    <!-- 1ST YEAR -->
-
-    <div class="year">
-
-        <div class="year-title">
-            📘 1st Year
-        </div>
-
-        <div class="subject-grid">
-
-            <a class="subject" href="dm-1st-behavioral-science.html">
-                <div class="icon">🧠</div>
-                <div>
-                    <h3>Behavioral Science</h3>
-                    <span>Midwifery • 1st Year</span>
-                </div>
-            </a>
-
-            <a class="subject" href="dm-1st-basic-science.html">
-                <div class="icon">🔬</div>
-                <div>
-                    <h3>Basic Science</h3>
-                    <span>Midwifery • 1st Year</span>
-                </div>
-            </a>
-
-            <a class="subject" href="dm-1st-anatomy.html">
-                <div class="icon">🫀</div>
-                <div>
-                    <h3>Anatomy & Physiology</h3>
-                    <span>Midwifery • 1st Year</span>
-                </div>
-            </a>
-
-            <a class="subject" href="dm-1st-fundamentals.html">
-                <div class="icon">🤰</div>
-                <div>
-                    <h3>Fundamentals of Midwifery</h3>
-                    <span>Midwifery • 1st Year</span>
-                </div>
-            </a>
-
-            <a class="subject" href="dm-1st-english-ict.html">
-                <div class="icon">💻</div>
-                <div>
-                    <h3>Communicative English & ICT</h3>
-                    <span>Midwifery • 1st Year</span>
-                </div>
-            </a>
-
-        </div>
-
-    </div>
+    <div class="resource-grid">
 
 
-    <!-- 2ND YEAR -->
+        <a href="job-circular.html" class="resource">
 
-    <div class="year">
+            <div class="resource-icon">📢</div>
 
-        <div class="year-title">
-            📗 2nd Year
-        </div>
+            <h3>Nursing Job Circular</h3>
 
-        <div class="subject-grid">
+            <p>
+                Nursing job opportunities and updates.
+            </p>
 
-            <a class="subject" href="dm-2nd-midwifery-practice.html">
-                <div class="icon">👩‍🍼</div>
-                <div>
-                    <h3>Midwifery Practice</h3>
-                    <span>Midwifery • 2nd Year</span>
-                </div>
-            </a>
-
-            <a class="subject" href="dm-2nd-womens-health.html">
-                <div class="icon">❤️</div>
-                <div>
-                    <h3>Women's Health</h3>
-                    <span>Midwifery • 2nd Year</span>
-                </div>
-            </a>
-
-            <a class="subject" href="dm-2nd-complicated-maternity.html">
-                <div class="icon">🏥</div>
-                <div>
-                    <h3>Complicated Maternity</h3>
-                    <span>Midwifery • 2nd Year</span>
-                </div>
-            </a>
-
-            <a class="subject" href="dm-2nd-newborn.html">
-                <div class="icon">👶</div>
-                <div>
-                    <h3>Newborn Complications</h3>
-                    <span>Midwifery • 2nd Year</span>
-                </div>
-            </a>
-
-        </div>
-
-    </div>
+        </a>
 
 
-    <!-- 3RD YEAR -->
 
-    <div class="year">
+        <a href="cv-guide.html" class="resource">
 
-        <div class="year-title">
-            📙 3rd Year
-        </div>
+            <div class="resource-icon">📄</div>
 
-        <div class="subject-grid">
+            <h3>CV & Resume</h3>
 
-            <a class="subject" href="dm-3rd-complex-maternity.html">
-                <div class="icon">🤰</div>
-                <div>
-                    <h3>Complexities of Maternity Experience</h3>
-                    <span>Midwifery • 3rd Year</span>
-                </div>
-            </a>
+            <p>
+                Professional CV guidance for nurses.
+            </p>
 
-            <a class="subject" href="dm-3rd-research.html">
-                <div class="icon">📊</div>
-                <div>
-                    <h3>Research & Evidence Based Midwifery</h3>
-                    <span>Midwifery • 3rd Year</span>
-                </div>
-            </a>
+        </a>
 
-            <a class="subject" href="dm-3rd-transition-practice.html">
-                <div class="icon">👩‍⚕️</div>
-                <div>
-                    <h3>Transition to Registered Midwifery Practice</h3>
-                    <span>Midwifery • 3rd Year</span>
-                </div>
-            </a>
 
-            <a class="subject" href="dm-3rd-practicum.html">
-                <div class="icon">🏥</div>
-                <div>
-                    <h3>Midwifery Practicum</h3>
-                    <span>Midwifery • 3rd Year</span>
-                </div>
-            </a>
 
-        </div>
+        <a href="viva-interview.html" class="resource">
+
+            <div class="resource-icon">🎤</div>
+
+            <h3>Viva & Interview</h3>
+
+            <p>
+                Interview preparation and common questions.
+            </p>
+
+        </a>
+
+
+
+        <a href="higher-study.html" class="resource">
+
+            <div class="resource-icon">🎓</div>
+
+            <h3>Higher Study</h3>
+
+            <p>
+                Nursing education and career pathways.
+            </p>
+
+        </a>
 
     </div>
 
 </section>
+
+
+
+<!-- ================= LATEST ================= -->
+
+<section class="section">
+
+    <div class="section-title">
+        <h2>🔥 Latest Nursing Updates</h2>
+        <span>Latest</span>
+    </div>
+
+
+    <div class="latest">
+
+
+        <a href="#" class="latest-item">
+
+            <div class="latest-icon">
+                📢
+            </div>
+
+            <div>
+                <h3>Latest Nursing News & Updates</h3>
+
+                <p>
+                    Stay updated with important nursing information.
+                </p>
+            </div>
+
+        </a>
+
+
+
+        <a href="#" class="latest-item">
+
+            <div class="latest-icon">
+                📚
+            </div>
+
+            <div>
+                <h3>New Study Materials</h3>
+
+                <p>
+                    New notes, MCQ and educational resources.
+                </p>
+            </div>
+
+        </a>
+
+
+
+        <a href="#" class="latest-item">
+
+            <div class="latest-icon">
+                🎓
+            </div>
+
+            <div>
+                <h3>Admission & Academic Updates</h3>
+
+                <p>
+                    Important academic and admission information.
+                </p>
+            </div>
+
+        </a>
+
+    </div>
+
+</section>
+
 
 </main>
+
 
 
 <!-- ================= FOOTER ================= -->
 
 <footer class="footer">
 
-    <div class="footer-title">
+    <div class="footer-logo">
         🩺 NURSING CAREER
     </div>
 
     <p>
-        BSc Nursing • Diploma in Nursing Science & Midwifery • Diploma in Midwifery
+        Learn • Practice • Grow
     </p>
 
-    <p>
-        © 2026 Nursing Career
+    <div class="footer-links">
+
+        <a href="about.html">About</a>
+
+        <a href="contact.html">Contact</a>
+
+        <a href="privacy.html">Privacy</a>
+
+        <a href="disclaimer.html">Disclaimer</a>
+
+    </div>
+
+    <p style="margin-top:20px;">
+        © 2026 Nursing Career. All Rights Reserved.
     </p>
 
 </footer>
+
+
+
+<!-- ================= SEARCH SCRIPT ================= -->
+
+<script>
+
+function searchSite(){
+
+    let query =
+        document.getElementById("searchBox")
+        .value
+        .toLowerCase()
+        .trim();
+
+    if(query === ""){
+        alert("Please enter a nursing topic to search.");
+        return;
+    }
+
+    /*
+       Later we can connect this to a real
+       Nursing Career search system.
+    */
+
+    alert(
+        "Search feature is ready for: " + query
+    );
+}
+
+</script>
+
 
 </body>
 </html>
