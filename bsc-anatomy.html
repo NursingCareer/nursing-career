@@ -1,443 +1,2666 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Anatomy & Physiology | Nursing Career</title>
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Anatomy | B.Sc. Nursing | Nursing Career</title>
 
 <style>
+
+/* =========================
+   GLOBAL
+========================= */
+
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial,Helvetica,sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-  background:#f3f7fc;
-  color:#172033;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f7fb;
+    color:#172033;
+    line-height:1.6;
 }
 
 a{
-  text-decoration:none;
-  color:inherit;
+    text-decoration:none;
+    color:inherit;
 }
 
+button,
+input{
+    font-family:inherit;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
 .header{
-  background:linear-gradient(135deg,#0759a5,#246be8);
-  color:white;
-  padding:18px 20px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  position:sticky;
-  top:0;
-  z-index:10;
-  box-shadow:0 4px 15px rgba(0,0,0,.15);
+    position:sticky;
+    top:0;
+    z-index:999;
+
+    background:linear-gradient(
+        135deg,
+        #071f3d,
+        #087f8c
+    );
+
+    color:white;
+
+    box-shadow:
+    0 4px 20px rgba(0,0,0,.18);
+}
+
+.header-inner{
+    max-width:1150px;
+    margin:auto;
+
+    padding:15px 18px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:15px;
 }
 
 .logo{
-  font-size:21px;
-  font-weight:800;
+    font-size:21px;
+    font-weight:900;
+    letter-spacing:.5px;
 }
 
-.home{
-  background:white;
-  color:#0759a5;
-  padding:9px 16px;
-  border-radius:20px;
-  font-weight:bold;
+.logo span{
+    color:#58f1d1;
 }
+
+.header-buttons{
+    display:flex;
+    gap:8px;
+}
+
+.header-btn{
+    border:1px solid rgba(255,255,255,.25);
+
+    background:rgba(255,255,255,.12);
+
+    color:white;
+
+    padding:8px 13px;
+
+    border-radius:20px;
+
+    font-size:13px;
+    font-weight:bold;
+}
+
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
-  background:linear-gradient(135deg,#0759a5,#2374ed);
-  color:white;
-  text-align:center;
-  padding:45px 20px 55px;
-  border-radius:0 0 45px 45px;
+
+    background:
+    radial-gradient(
+        circle at 80% 20%,
+        rgba(73,230,207,.20),
+        transparent 30%
+    ),
+
+    linear-gradient(
+        135deg,
+        #061a34,
+        #087f8c
+    );
+
+    color:white;
+
+    padding:55px 18px 65px;
 }
 
-.hero .big-icon{
-  font-size:60px;
-  margin-bottom:12px;
+.hero-inner{
+    max-width:1150px;
+    margin:auto;
+}
+
+.hero-badge{
+
+    display:inline-block;
+
+    padding:7px 14px;
+
+    border-radius:30px;
+
+    background:
+    rgba(255,255,255,.13);
+
+    border:
+    1px solid rgba(255,255,255,.25);
+
+    font-size:12px;
+    font-weight:bold;
+
+    margin-bottom:18px;
 }
 
 .hero h1{
-  font-size:32px;
-  margin-bottom:10px;
+
+    font-size:
+    clamp(35px,8vw,65px);
+
+    line-height:1.05;
+
+    margin-bottom:14px;
+}
+
+.hero h1 span{
+    color:#57efd0;
 }
 
 .hero p{
-  max-width:650px;
-  margin:auto;
-  font-size:16px;
-  line-height:1.6;
+
+    max-width:720px;
+
+    font-size:16px;
+
+    color:
+    rgba(255,255,255,.88);
 }
+
+.hero-stats{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:12px;
+
+    max-width:700px;
+
+    margin-top:28px;
+}
+
+.hero-stat{
+
+    padding:15px;
+
+    border-radius:15px;
+
+    background:
+    rgba(255,255,255,.10);
+
+    border:
+    1px solid rgba(255,255,255,.15);
+}
+
+.hero-stat strong{
+
+    display:block;
+
+    font-size:21px;
+}
+
+.hero-stat span{
+
+    font-size:12px;
+
+    color:
+    rgba(255,255,255,.75);
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
 
 .container{
-  max-width:900px;
-  margin:-25px auto 40px;
-  padding:0 18px;
+
+    max-width:1150px;
+
+    margin:auto;
+
+    padding:
+    38px 16px;
 }
 
-.card{
-  background:white;
-  border-radius:28px;
-  padding:25px 20px;
-  margin-bottom:25px;
-  box-shadow:0 8px 30px rgba(0,0,0,.08);
+
+/* =========================
+   SECTION
+========================= */
+
+.section{
+    margin-bottom:45px;
 }
 
-.card h2{
-  color:#0759a5;
-  margin-bottom:10px;
-  font-size:25px;
+.section-title{
+
+    font-size:27px;
+
+    color:#071f3d;
+
+    margin-bottom:5px;
 }
 
-.card p{
-  color:#666;
-  line-height:1.6;
+.section-subtitle{
+
+    color:#707b8d;
+
+    font-size:14px;
+
+    margin-bottom:20px;
 }
 
-.topic{
-  display:flex;
-  align-items:center;
-  gap:18px;
-  background:#f9fbff;
-  border:1px solid #e1e7ef;
-  padding:18px;
-  border-radius:22px;
-  margin-bottom:15px;
-  transition:.25s;
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-box{
+
+    background:white;
+
+    padding:18px;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 7px 25px rgba(25,45,75,.08);
+
+    margin-bottom:35px;
 }
 
-.topic:hover{
-  transform:translateY(-3px);
-  box-shadow:0 8px 20px rgba(0,0,0,.1);
-  border-color:#2874e8;
+.search-box label{
+
+    display:block;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    margin-bottom:8px;
+
+    color:#334155;
 }
 
-.topic-icon{
-  width:65px;
-  height:65px;
-  min-width:65px;
-  border-radius:18px;
-  background:#e5f3ff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:34px;
+.search-input{
+
+    width:100%;
+
+    border:
+    1px solid #dfe5ed;
+
+    outline:none;
+
+    padding:14px 16px;
+
+    border-radius:13px;
+
+    font-size:15px;
+
+    background:#f8fafc;
 }
 
-.topic h3{
-  font-size:18px;
-  margin-bottom:5px;
+.search-input:focus{
+
+    border-color:#087f8c;
+
+    background:white;
+
+    box-shadow:
+    0 0 0 3px
+    rgba(8,127,140,.10);
 }
 
-.topic p{
-  color:#777;
-  font-size:14px;
+
+/* =========================
+   OVERVIEW CARDS
+========================= */
+
+.overview-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:16px;
 }
 
-.resource{
-  background:linear-gradient(135deg,#f5f9ff,#eaf4ff);
-  border-radius:20px;
-  padding:18px;
-  margin-bottom:14px;
+.overview-card{
+
+    background:white;
+
+    border:
+    1px solid #e5eaf1;
+
+    border-radius:19px;
+
+    padding:22px;
+
+    box-shadow:
+    0 5px 20px
+    rgba(25,45,75,.07);
+
+    transition:.2s;
 }
 
-.resource h3{
-  color:#0759a5;
-  margin-bottom:5px;
+.overview-card:hover{
+
+    transform:
+    translateY(-4px);
+
+    box-shadow:
+    0 10px 28px
+    rgba(25,45,75,.11);
 }
 
-.tip{
-  background:linear-gradient(135deg,#0759a5,#2869e8);
-  color:white;
-  border-radius:25px;
-  padding:25px;
-  line-height:1.6;
+.card-icon{
+
+    width:52px;
+    height:52px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:16px;
+
+    background:#e9fbf8;
+
+    font-size:26px;
+
+    margin-bottom:12px;
 }
 
-.tip h2{
-  margin-bottom:10px;
+.overview-card h3{
+
+    font-size:18px;
+
+    color:#102a43;
+
+    margin-bottom:5px;
 }
+
+.overview-card p{
+
+    color:#718096;
+
+    font-size:13px;
+}
+
+
+/* =========================
+   SYSTEM GRID
+========================= */
+
+.system-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:15px;
+}
+
+.system-card{
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    background:white;
+
+    padding:19px;
+
+    border:
+    1px solid #e4e9f0;
+
+    border-radius:18px;
+
+    box-shadow:
+    0 4px 16px
+    rgba(20,40,70,.05);
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.system-card:hover{
+
+    transform:
+    translateY(-3px);
+
+    border-color:#0a9699;
+
+    box-shadow:
+    0 9px 25px
+    rgba(20,40,70,.11);
+}
+
+.system-icon{
+
+    width:55px;
+    height:55px;
+
+    flex-shrink:0;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:16px;
+
+    background:#effaf9;
+
+    font-size:27px;
+}
+
+.system-info{
+
+    flex:1;
+}
+
+.system-info h3{
+
+    color:#102a43;
+
+    font-size:17px;
+
+    margin-bottom:3px;
+}
+
+.system-info p{
+
+    color:#768295;
+
+    font-size:13px;
+}
+
+.system-arrow{
+
+    font-size:22px;
+
+    color:#087f8c;
+}
+
+
+/* =========================
+   CONTENT BOX
+========================= */
+
+.content-box{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    border:
+    1px solid #e4e9f0;
+
+    box-shadow:
+    0 5px 20px
+    rgba(25,45,75,.06);
+
+    margin-top:20px;
+}
+
+.content-box h3{
+
+    color:#073b66;
+
+    margin-bottom:9px;
+}
+
+.content-box p{
+
+    color:#5f6c7e;
+
+    font-size:14px;
+
+    margin-bottom:12px;
+}
+
+.content-box ul{
+
+    padding-left:20px;
+
+    color:#5f6c7e;
+
+    font-size:14px;
+}
+
+.content-box li{
+
+    margin-bottom:6px;
+}
+
+
+/* =========================
+   QUICK REVISION
+========================= */
+
+.revision{
+
+    background:
+    linear-gradient(
+        135deg,
+        #071f3d,
+        #087f8c
+    );
+
+    color:white;
+
+    border-radius:23px;
+
+    padding:27px;
+
+    margin-bottom:45px;
+}
+
+.revision h2{
+
+    margin-bottom:7px;
+}
+
+.revision > p{
+
+    color:
+    rgba(255,255,255,.82);
+
+    font-size:14px;
+
+    margin-bottom:20px;
+}
+
+.revision-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:11px;
+}
+
+.revision-item{
+
+    background:
+    rgba(255,255,255,.10);
+
+    border:
+    1px solid
+    rgba(255,255,255,.15);
+
+    padding:14px;
+
+    border-radius:13px;
+
+    font-size:13px;
+}
+
+
+/* =========================
+   EXAM POINTS
+========================= */
+
+.exam-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:15px;
+}
+
+.exam-card{
+
+    background:white;
+
+    border-left:
+    5px solid #087f8c;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    box-shadow:
+    0 4px 16px
+    rgba(20,40,70,.06);
+}
+
+.exam-card h3{
+
+    color:#102a43;
+
+    font-size:16px;
+
+    margin-bottom:8px;
+}
+
+.exam-card p{
+
+    color:#687589;
+
+    font-size:13px;
+}
+
+
+/* =========================
+   MCQ
+========================= */
+
+.mcq-container{
+
+    display:grid;
+
+    gap:16px;
+}
+
+.mcq{
+
+    background:white;
+
+    border:
+    1px solid #e3e8ef;
+
+    border-radius:18px;
+
+    padding:20px;
+
+    box-shadow:
+    0 4px 16px
+    rgba(20,40,70,.05);
+}
+
+.mcq-number{
+
+    color:#087f8c;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    margin-bottom:5px;
+}
+
+.mcq-question{
+
+    font-weight:700;
+
+    color:#172033;
+
+    margin-bottom:13px;
+}
+
+.option{
+
+    padding:9px 12px;
+
+    border-radius:9px;
+
+    background:#f5f7fa;
+
+    margin-bottom:7px;
+
+    color:#596579;
+
+    font-size:13px;
+}
+
+.answer{
+
+    margin-top:10px;
+
+    padding:10px 12px;
+
+    border-radius:10px;
+
+    background:#e9fbf8;
+
+    color:#087f8c;
+
+    font-size:13px;
+
+    font-weight:bold;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+
+    text-align:center;
+
+    background:white;
+
+    border:
+    1px solid #e4e9f0;
+
+    border-radius:22px;
+
+    padding:30px 20px;
+
+    box-shadow:
+    0 5px 20px
+    rgba(25,45,75,.06);
+}
+
+.cta h2{
+
+    color:#071f3d;
+
+    margin-bottom:8px;
+}
+
+.cta p{
+
+    color:#718096;
+
+    font-size:14px;
+
+    margin-bottom:18px;
+}
+
+.cta-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+}
+
+.cta-btn{
+
+    display:inline-block;
+
+    background:#087f8c;
+
+    color:white;
+
+    padding:11px 18px;
+
+    border-radius:25px;
+
+    font-size:13px;
+
+    font-weight:bold;
+}
+
+.cta-btn.secondary{
+
+    background:#071f3d;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
 
 .footer{
-  background:#10233f;
-  color:white;
-  text-align:center;
-  padding:35px 20px;
+
+    background:#06172c;
+
+    color:white;
+
+    text-align:center;
+
+    padding:32px 16px;
+
+    margin-top:45px;
+}
+
+.footer-title{
+
+    font-size:21px;
+
+    font-weight:900;
+
+    margin-bottom:5px;
 }
 
 .footer p{
-  color:#cbd5e1;
-  margin-top:7px;
-  font-size:14px;
+
+    color:#aeb9c9;
+
+    font-size:13px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:850px){
+
+    .overview-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .system-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .exam-grid{
+
+        grid-template-columns:1fr;
+    }
+
 }
 
 @media(max-width:600px){
 
-  .hero h1{
-    font-size:27px;
-  }
+    .header-inner{
 
-  .hero .big-icon{
-    font-size:50px;
-  }
+        padding:13px 12px;
+    }
 
-  .topic{
-    padding:16px;
-  }
+    .logo{
 
-  .topic-icon{
-    width:58px;
-    height:58px;
-    min-width:58px;
-    font-size:29px;
-  }
+        font-size:18px;
+    }
 
-  .topic h3{
-    font-size:17px;
-  }
+    .header-btn{
+
+        padding:7px 10px;
+
+        font-size:11px;
+    }
+
+    .hero{
+
+        padding:
+        42px 16px 50px;
+    }
+
+    .hero-stats{
+
+        grid-template-columns:
+        repeat(3,1fr);
+    }
+
+    .hero-stat{
+
+        padding:11px 7px;
+    }
+
+    .hero-stat strong{
+
+        font-size:17px;
+    }
+
+    .hero-stat span{
+
+        font-size:10px;
+    }
+
+    .container{
+
+        padding:
+        28px 13px;
+    }
+
+    .section-title{
+
+        font-size:23px;
+    }
+
+    .content-box{
+
+        padding:20px;
+    }
+
+    .revision{
+
+        padding:22px 17px;
+    }
+
+    .revision-grid{
+
+        grid-template-columns:1fr;
+    }
+
 }
+
+
+/* =========================
+   SEARCH HIDE
+========================= */
+
+.hidden{
+    display:none !important;
+}
+
 </style>
+
 </head>
+
 
 <body>
 
+
+<!-- =========================
+     HEADER
+========================= -->
+
 <header class="header">
 
-  <div class="logo">
-    🩺 NURSING CAREER
-  </div>
+<div class="header-inner">
 
-  <a href="https://nursingcareer.github.io/nursing-career/" class="home">
-    🏠 Home
-  </a>
+<a href="https://nursingcareer.github.io/nursing-career/"
+class="logo">
+
+NURSING <span>CAREER</span>
+
+</a>
+
+
+<div class="header-buttons">
+
+<a href="https://nursingcareer.github.io/nursing-career/bsc-nursing.html"
+class="header-btn">
+
+← B.Sc Nursing
+
+</a>
+
+<a href="https://nursingcareer.github.io/nursing-career/"
+class="header-btn">
+
+Home
+
+</a>
+
+</div>
+
+</div>
 
 </header>
 
 
+
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero">
 
-  <div class="big-icon">🫀</div>
+<div class="hero-inner">
 
-  <h1>Anatomy & Physiology</h1>
+<div class="hero-badge">
 
-  <p>
-    Learn the structure and functions of the human body
-    with simple nursing-focused study resources.
-  </p>
+B.Sc. IN NURSING • 1ST YEAR
 
-</section>
+</div>
 
+<h1>
 
-<div class="container">
+ANATOMY
+<span>Hub</span>
 
+</h1>
 
-  <div class="card">
+<p>
 
-    <h2>📚 About This Subject</h2>
+Complete Anatomy learning resource for
+B.Sc. Nursing students — systems, structures,
+important concepts, clinical connections,
+exam points and quick revision.
 
-    <p>
-      Anatomy deals with the structure of the human body,
-      while Physiology explains how different organs and
-      body systems function normally.
-    </p>
+</p>
 
-  </div>
 
+<div class="hero-stats">
 
-  <div class="card">
+<div class="hero-stat">
 
-    <h2>🧠 Important Topics</h2>
+<strong>12+</strong>
 
-
-    <a href="#" class="topic">
-
-      <div class="topic-icon">🦴</div>
-
-      <div>
-        <h3>Skeletal System</h3>
-        <p>Bones, joints and supporting structures</p>
-      </div>
-
-    </a>
-
-
-    <a href="#" class="topic">
-
-      <div class="topic-icon">💪</div>
-
-      <div>
-        <h3>Muscular System</h3>
-        <p>Types of muscles and their functions</p>
-      </div>
-
-    </a>
-
-
-    <a href="#" class="topic">
-
-      <div class="topic-icon">❤️</div>
-
-      <div>
-        <h3>Cardiovascular System</h3>
-        <p>Heart, blood vessels and circulation</p>
-      </div>
-
-    </a>
-
-
-    <a href="#" class="topic">
-
-      <div class="topic-icon">🫁</div>
-
-      <div>
-        <h3>Respiratory System</h3>
-        <p>Airways, lungs and respiration</p>
-      </div>
-
-    </a>
-
-
-    <a href="#" class="topic">
-
-      <div class="topic-icon">🧠</div>
-
-      <div>
-        <h3>Nervous System</h3>
-        <p>Brain, spinal cord and nerves</p>
-      </div>
-
-    </a>
-
-
-    <a href="#" class="topic">
-
-      <div class="topic-icon">🍽️</div>
-
-      <div>
-        <h3>Digestive System</h3>
-        <p>Digestion and absorption of nutrients</p>
-      </div>
-
-    </a>
-
-
-    <a href="#" class="topic">
-
-      <div class="topic-icon">🧪</div>
-
-      <div>
-        <h3>Endocrine System</h3>
-        <p>Hormones and endocrine glands</p>
-      </div>
-
-    </a>
-
-
-    <a href="#" class="topic">
-
-      <div class="topic-icon">🫘</div>
-
-      <div>
-        <h3>Urinary System</h3>
-        <p>Kidneys, urine formation and fluid balance</p>
-      </div>
-
-    </a>
-
-  </div>
-
-
-  <div class="card">
-
-    <h2>📖 Nursing Resources</h2>
-
-
-    <div class="resource">
-
-      <h3>📝 Short Notes</h3>
-
-      <p>
-        Easy-to-revise anatomy and physiology notes
-        for nursing students.
-      </p>
-
-    </div>
-
-
-    <div class="resource">
-
-      <h3>❓ MCQ Practice</h3>
-
-      <p>
-        Practice important examination-focused questions.
-      </p>
-
-    </div>
-
-
-    <div class="resource">
-
-      <h3>⭐ Important Questions</h3>
-
-      <p>
-        High-yield topics for nursing examinations.
-      </p>
-
-    </div>
-
-
-    <div class="resource">
-
-      <h3>🏥 Clinical Connection</h3>
-
-      <p>
-        Understand how anatomy and physiology are
-        connected with clinical nursing practice.
-      </p>
-
-    </div>
-
-  </div>
-
-
-  <div class="tip">
-
-    <h2>💡 Nursing Tip</h2>
-
-    <p>
-      Anatomy tells you where a structure is,
-      while physiology tells you how that structure works.
-      Understanding both makes clinical nursing much easier.
-    </p>
-
-  </div>
+<span>Major Systems</span>
 
 </div>
 
 
+<div class="hero-stat">
+
+<strong>50+</strong>
+
+<span>Key Topics</span>
+
+</div>
+
+
+<div class="hero-stat">
+
+<strong>MCQ</strong>
+
+<span>Exam Practice</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<main class="container">
+
+
+<!-- =========================
+     SEARCH
+========================= -->
+
+<section class="search-box">
+
+<label for="topicSearch">
+
+🔎 Search Anatomy Topics
+
+</label>
+
+<input
+id="topicSearch"
+class="search-input"
+type="text"
+placeholder="Search skeletal, heart, brain, kidney..."
+onkeyup="searchTopics()">
+
+</section>
+
+
+
+<!-- =========================
+     OVERVIEW
+========================= -->
+
+<section class="section searchable">
+
+<h2 class="section-title">
+
+Anatomy — Quick Overview
+
+</h2>
+
+<p class="section-subtitle">
+
+মানবদেহের গঠন সম্পর্কে systematic ধারণা তৈরির
+জন্য Anatomy হলো Nursing-এর অন্যতম foundation subject।
+
+</p>
+
+
+<div class="overview-grid">
+
+
+<div class="overview-card">
+
+<div class="card-icon">
+🦴
+</div>
+
+<h3>Body Structure</h3>
+
+<p>
+
+মানবদেহের অঙ্গ, টিস্যু, অস্থি,
+পেশি ও বিভিন্ন anatomical structure সম্পর্কে ধারণা।
+
+</p>
+
+</div>
+
+
+<div class="overview-card">
+
+<div class="card-icon">
+🧩
+</div>
+
+<h3>Organ Systems</h3>
+
+<p>
+
+Body-এর বিভিন্ন organ system কীভাবে
+গঠিত এবং কোথায় অবস্থিত তা শেখা।
+
+</p>
+
+</div>
+
+
+<div class="overview-card">
+
+<div class="card-icon">
+🩺
+</div>
+
+<h3>Clinical Connection</h3>
+
+<p>
+
+Anatomical knowledge ব্যবহার করে
+clinical signs, procedures এবং patient care বোঝা সহজ হয়।
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     MAJOR SYSTEMS
+========================= -->
+
+<section class="section">
+
+<h2 class="section-title">
+
+Major Body Systems
+
+</h2>
+
+<p class="section-subtitle">
+
+নিচের systemগুলো Anatomy-এর গুরুত্বপূর্ণ অংশ।
+প্রতিটি system-এর basic structure ও nursing relevance পড়ুন।
+
+</p>
+
+
+<div class="system-grid">
+
+
+<div class="system-card searchable">
+
+<div class="system-icon">
+🦴
+</div>
+
+<div class="system-info">
+
+<h3>Skeletal System</h3>
+
+<p>
+Bones, joints, cartilage এবং skeleton
+</p>
+
+</div>
+
+<div class="system-arrow">
+›
+</div>
+
+</div>
+
+
+
+<div class="system-card searchable">
+
+<div class="system-icon">
+💪
+</div>
+
+<div class="system-info">
+
+<h3>Muscular System</h3>
+
+<p>
+Muscles, movement and body posture
+</p>
+
+</div>
+
+<div class="system-arrow">
+›
+</div>
+
+</div>
+
+
+
+<div class="system-card searchable">
+
+<div class="system-icon">
+❤️
+</div>
+
+<div class="system-info">
+
+<h3>Cardiovascular System</h3>
+
+<p>
+Heart, blood vessels and circulation
+</p>
+
+</div>
+
+<div class="system-arrow">
+›
+</div>
+
+</div>
+
+
+
+<div class="system-card searchable">
+
+<div class="system-icon">
+🫁
+</div>
+
+<div class="system-info">
+
+<h3>Respiratory System</h3>
+
+<p>
+Airways, lungs and breathing
+</p>
+
+</div>
+
+<div class="system-arrow">
+›
+</div>
+
+</div>
+
+
+
+<div class="system-card searchable">
+
+<div class="system-icon">
+🧠
+</div>
+
+<div class="system-info">
+
+<h3>Nervous System</h3>
+
+<p>
+Brain, spinal cord and nerves
+</p>
+
+</div>
+
+<div class="system-arrow">
+›
+</div>
+
+</div>
+
+
+
+<div class="system-card searchable">
+
+<div class="system-icon">
+🍽️
+</div>
+
+<div class="system-info">
+
+<h3>Digestive System</h3>
+
+<p>
+GI tract and digestive organs
+</p>
+
+</div>
+
+<div class="system-arrow">
+›
+</div>
+
+</div>
+
+
+
+<div class="system-card searchable">
+
+<div class="system-icon">
+💧
+</div>
+
+<div class="system-info">
+
+<h3>Urinary System</h3>
+
+<p>
+Kidneys, ureters, bladder and urethra
+</p>
+
+</div>
+
+<div class="system-arrow">
+›
+</div>
+
+</div>
+
+
+
+<div class="system-card searchable">
+
+<div class="system-icon">
+🧪
+</div>
+
+<div class="system-info">
+
+<h3>Endocrine System</h3>
+
+<p>
+Hormone-producing glands
+</p>
+
+</div>
+
+<div class="system-arrow">
+›
+</div>
+
+</div>
+
+
+
+<div class="system-card searchable">
+
+<div class="system-icon">
+♀️
+</div>
+
+<div class="system-info">
+
+<h3>Reproductive System</h3>
+
+<p>
+Male and female reproductive organs
+</p>
+
+</div>
+
+<div class="system-arrow">
+›
+</div>
+
+</div>
+
+
+
+<div class="system-card searchable">
+
+<div class="system-icon">
+🛡️
+</div>
+
+<div class="system-info">
+
+<h3>Lymphatic System</h3>
+
+<p>
+Lymph, lymph nodes and lymphatic organs
+</p>
+
+</div>
+
+<div class="system-arrow">
+›
+</div>
+
+</div>
+
+
+
+<div class="system-card searchable">
+
+<div class="system-icon">
+👁️
+</div>
+
+<div class="system-info">
+
+<h3>Special Senses</h3>
+
+<p>
+Eye, ear, smell, taste and sensation
+</p>
+
+</div>
+
+<div class="system-arrow">
+›
+</div>
+
+</div>
+
+
+
+<div class="system-card searchable">
+
+<div class="system-icon">
+🧬
+</div>
+
+<div class="system-info">
+
+<h3>Integumentary System</h3>
+
+<p>
+Skin, hair, nails and glands
+</p>
+
+</div>
+
+<div class="system-arrow">
+›
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     SKELETAL
+========================= -->
+
+<section class="section searchable">
+
+<h2 class="section-title">
+
+🦴 Skeletal System
+
+</h2>
+
+<p class="section-subtitle">
+
+Human skeleton-এর structure এবং major bones সম্পর্কে
+basic ধারণা।
+
+</p>
+
+
+<div class="content-box">
+
+<h3>Key Concepts</h3>
+
+<ul>
+
+<li>Adult human skeleton contains 206 bones.</li>
+
+<li>Skeleton provides support and protection.</li>
+
+<li>Bone marrow is important for blood cell formation.</li>
+
+<li>Joints allow movement between bones.</li>
+
+<li>Cartilage provides support and reduces friction.</li>
+
+<li>Axial skeleton includes skull, vertebral column and thoracic cage.</li>
+
+<li>Appendicular skeleton includes limbs and their girdles.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     MUSCULAR
+========================= -->
+
+<section class="section searchable">
+
+<h2 class="section-title">
+
+💪 Muscular System
+
+</h2>
+
+<p class="section-subtitle">
+
+Movement, posture এবং বিভিন্ন body function-এর সঙ্গে
+muscles-এর সম্পর্ক।
+
+</p>
+
+
+<div class="content-box">
+
+<h3>Three Major Types of Muscle</h3>
+
+<ul>
+
+<li><strong>Skeletal muscle</strong> — voluntary movement-এর সঙ্গে প্রধানত যুক্ত।</li>
+
+<li><strong>Smooth muscle</strong> — internal organs-এর wall-এ পাওয়া যায়।</li>
+
+<li><strong>Cardiac muscle</strong> — heart-এর muscular wall তৈরি করে।</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     CARDIOVASCULAR
+========================= -->
+
+<section class="section searchable">
+
+<h2 class="section-title">
+
+❤️ Cardiovascular System
+
+</h2>
+
+<p class="section-subtitle">
+
+Heart এবং blood vessels-এর structure।
+
+</p>
+
+
+<div class="content-box">
+
+<h3>Important Anatomy</h3>
+
+<ul>
+
+<li>Heart is located in the thoracic cavity between the lungs.</li>
+
+<li>Heart has four chambers: right atrium, right ventricle, left atrium and left ventricle.</li>
+
+<li>Major blood vessels include aorta, pulmonary arteries, pulmonary veins and venae cavae.</li>
+
+<li>Valves help maintain one-way flow of blood.</li>
+
+<li>Coronary circulation supplies blood to the cardiac muscle.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     RESPIRATORY
+========================= -->
+
+<section class="section searchable">
+
+<h2 class="section-title">
+
+🫁 Respiratory System
+
+</h2>
+
+<div class="content-box">
+
+<h3>Main Structures</h3>
+
+<ul>
+
+<li>Nose and nasal cavity</li>
+
+<li>Pharynx</li>
+
+<li>Larynx</li>
+
+<li>Trachea</li>
+
+<li>Bronchi</li>
+
+<li>Bronchioles</li>
+
+<li>Lungs</li>
+
+<li>Alveoli</li>
+
+</ul>
+
+<p>
+
+Alveoli are the major sites of gas exchange
+between air and blood.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     NERVOUS
+========================= -->
+
+<section class="section searchable">
+
+<h2 class="section-title">
+
+🧠 Nervous System
+
+</h2>
+
+<div class="content-box">
+
+<h3>Major Divisions</h3>
+
+<ul>
+
+<li>Central nervous system — brain and spinal cord.</li>
+
+<li>Peripheral nervous system — nerves outside the brain and spinal cord.</li>
+
+<li>Autonomic nervous system regulates many involuntary functions.</li>
+
+<li>Brain is protected by the skull and meninges.</li>
+
+<li>Spinal cord is protected by the vertebral column.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     DIGESTIVE
+========================= -->
+
+<section class="section searchable">
+
+<h2 class="section-title">
+
+🍽️ Digestive System
+
+</h2>
+
+<div class="content-box">
+
+<h3>Digestive Tract</h3>
+
+<ul>
+
+<li>Mouth</li>
+
+<li>Pharynx</li>
+
+<li>Esophagus</li>
+
+<li>Stomach</li>
+
+<li>Small intestine</li>
+
+<li>Large intestine</li>
+
+<li>Rectum</li>
+
+<li>Anal canal</li>
+
+</ul>
+
+<h3 style="margin-top:18px;">
+Accessory Organs
+</h3>
+
+<ul>
+
+<li>Liver</li>
+
+<li>Gallbladder</li>
+
+<li>Pancreas</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     URINARY
+========================= -->
+
+<section class="section searchable">
+
+<h2 class="section-title">
+
+💧 Urinary System
+
+</h2>
+
+<div class="content-box">
+
+<h3>Main Structures</h3>
+
+<ul>
+
+<li>Kidneys</li>
+
+<li>Ureters</li>
+
+<li>Urinary bladder</li>
+
+<li>Urethra</li>
+
+</ul>
+
+<p>
+
+Kidneys are important organs for urine formation,
+fluid balance and maintenance of internal environment.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     ENDOCRINE
+========================= -->
+
+<section class="section searchable">
+
+<h2 class="section-title">
+
+🧪 Endocrine System
+
+</h2>
+
+<div class="content-box">
+
+<h3>Important Endocrine Glands</h3>
+
+<ul>
+
+<li>Pituitary gland</li>
+
+<li>Thyroid gland</li>
+
+<li>Parathyroid glands</li>
+
+<li>Adrenal glands</li>
+
+<li>Pancreatic islets</li>
+
+<li>Pineal gland</li>
+
+<li>Ovaries and testes</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     REPRODUCTIVE
+========================= -->
+
+<section class="section searchable">
+
+<h2 class="section-title">
+
+♀️ Reproductive System
+
+</h2>
+
+<div class="content-box">
+
+<h3>Female Reproductive Organs</h3>
+
+<ul>
+
+<li>Ovaries</li>
+
+<li>Uterine tubes</li>
+
+<li>Uterus</li>
+
+<li>Vagina</li>
+
+</ul>
+
+<h3 style="margin-top:18px;">
+Male Reproductive Organs
+</h3>
+
+<ul>
+
+<li>Testes</li>
+
+<li>Epididymis</li>
+
+<li>Vas deferens</li>
+
+<li>Seminal vesicles</li>
+
+<li>Prostate gland</li>
+
+<li>Penis</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     LYMPHATIC
+========================= -->
+
+<section class="section searchable">
+
+<h2 class="section-title">
+
+🛡️ Lymphatic System
+
+</h2>
+
+<div class="content-box">
+
+<h3>Important Structures</h3>
+
+<ul>
+
+<li>Lymphatic vessels</li>
+
+<li>Lymph nodes</li>
+
+<li>Spleen</li>
+
+<li>Thymus</li>
+
+<li>Tonsils</li>
+
+</ul>
+
+<p>
+
+The lymphatic system contributes to fluid balance
+and immune defense.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     SPECIAL SENSES
+========================= -->
+
+<section class="section searchable">
+
+<h2 class="section-title">
+
+👁️ Special Senses
+
+</h2>
+
+<div class="content-box">
+
+<h3>Major Sense Organs</h3>
+
+<ul>
+
+<li>Eye — vision</li>
+
+<li>Ear — hearing and balance</li>
+
+<li>Nose — smell</li>
+
+<li>Tongue — taste</li>
+
+<li>Skin — touch, pressure, temperature and pain sensation</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     INTEGUMENTARY
+========================= -->
+
+<section class="section searchable">
+
+<h2 class="section-title">
+
+🧴 Integumentary System
+
+</h2>
+
+<div class="content-box">
+
+<h3>Components</h3>
+
+<ul>
+
+<li>Skin</li>
+
+<li>Hair</li>
+
+<li>Nails</li>
+
+<li>Sweat glands</li>
+
+<li>Sebaceous glands</li>
+
+</ul>
+
+<p>
+
+Skin provides protection and participates in
+temperature regulation and sensation.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     QUICK REVISION
+========================= -->
+
+<section class="revision">
+
+<h2>
+
+⚡ Anatomy Quick Revision
+
+</h2>
+
+<p>
+
+শেষ মুহূর্তে দ্রুত revision-এর জন্য গুরুত্বপূর্ণ
+high-yield points।
+
+</p>
+
+
+<div class="revision-grid">
+
+
+<div class="revision-item">
+
+🦴 Adult skeleton → <strong>206 bones</strong>
+
+</div>
+
+
+<div class="revision-item">
+
+❤️ Heart → <strong>4 chambers</strong>
+
+</div>
+
+
+<div class="revision-item">
+
+🫁 Main gas exchange → <strong>Alveoli</strong>
+
+</div>
+
+
+<div class="revision-item">
+
+🧠 CNS → <strong>Brain + spinal cord</strong>
+
+</div>
+
+
+<div class="revision-item">
+
+💧 Urinary system → <strong>Kidney, ureter, bladder, urethra</strong>
+
+</div>
+
+
+<div class="revision-item">
+
+🍽️ Small intestine → <strong>Duodenum, jejunum, ileum</strong>
+
+</div>
+
+
+<div class="revision-item">
+
+🧪 Major endocrine control gland → <strong>Pituitary</strong>
+
+</div>
+
+
+<div class="revision-item">
+
+🛡️ Lymphatic organ → <strong>Spleen</strong>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     EXAM POINTS
+========================= -->
+
+<section class="section">
+
+<h2 class="section-title">
+
+🎯 Anatomy Important Exam Points
+
+</h2>
+
+<p class="section-subtitle">
+
+B.Sc Nursing examination এবং nursing competitive
+exam-এর জন্য আগে এগুলো revise করুন।
+
+</p>
+
+
+<div class="exam-grid">
+
+
+<div class="exam-card">
+
+<h3>
+01. Bones
+</h3>
+
+<p>
+Axial and appendicular skeleton,
+major bones, joints and bone functions।
+</p>
+
+</div>
+
+
+<div class="exam-card">
+
+<h3>
+02. Heart
+</h3>
+
+<p>
+Chambers, valves, great vessels,
+coronary circulation and location।
+</p>
+
+</div>
+
+
+<div class="exam-card">
+
+<h3>
+03. Brain
+</h3>
+
+<p>
+Major brain parts, meninges,
+cranial nerves and spinal cord।
+</p>
+
+</div>
+
+
+<div class="exam-card">
+
+<h3>
+04. Respiratory Tract
+</h3>
+
+<p>
+Upper and lower respiratory tract,
+lungs and alveoli।
+</p>
+
+</div>
+
+
+<div class="exam-card">
+
+<h3>
+05. Digestive Tract
+</h3>
+
+<p>
+GI tract sequence and accessory
+digestive organs।
+</p>
+
+</div>
+
+
+<div class="exam-card">
+
+<h3>
+06. Urinary System
+</h3>
+
+<p>
+Kidney structure, ureters,
+bladder and urethra।
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     MCQ
+========================= -->
+
+<section class="section">
+
+<h2 class="section-title">
+
+📝 Anatomy MCQ Practice
+
+</h2>
+
+<p class="section-subtitle">
+
+প্রথম revision-এর জন্য basic Anatomy MCQ।
+
+</p>
+
+
+<div class="mcq-container">
+
+
+<div class="mcq">
+
+<div class="mcq-number">
+QUESTION 01
+</div>
+
+<div class="mcq-question">
+
+How many bones are present in the adult human skeleton?
+
+</div>
+
+<div class="option">
+A. 201
+</div>
+
+<div class="option">
+B. 206
+</div>
+
+<div class="option">
+C. 210
+</div>
+
+<div class="option">
+D. 216
+</div>
+
+<div class="answer">
+✓ Answer: B. 206
+</div>
+
+</div>
+
+
+
+<div class="mcq">
+
+<div class="mcq-number">
+QUESTION 02
+</div>
+
+<div class="mcq-question">
+
+How many chambers are present in the human heart?
+
+</div>
+
+<div class="option">
+A. 2
+</div>
+
+<div class="option">
+B. 3
+</div>
+
+<div class="option">
+C. 4
+</div>
+
+<div class="option">
+D. 5
+</div>
+
+<div class="answer">
+✓ Answer: C. 4
+</div>
+
+</div>
+
+
+
+<div class="mcq">
+
+<div class="mcq-number">
+QUESTION 03
+</div>
+
+<div class="mcq-question">
+
+The main site of gas exchange in the lungs is the—
+
+</div>
+
+<div class="option">
+A. Trachea
+</div>
+
+<div class="option">
+B. Bronchus
+</div>
+
+<div class="option">
+C. Alveoli
+</div>
+
+<div class="option">
+D. Larynx
+</div>
+
+<div class="answer">
+✓ Answer: C. Alveoli
+</div>
+
+</div>
+
+
+
+<div class="mcq">
+
+<div class="mcq-number">
+QUESTION 04
+</div>
+
+<div class="mcq-question">
+
+Which organs form the central nervous system?
+
+</div>
+
+<div class="option">
+A. Brain and spinal cord
+</div>
+
+<div class="option">
+B. Brain and muscles
+</div>
+
+<div class="option">
+C. Spinal cord and bones
+</div>
+
+<div class="option">
+D. Nerves and muscles
+</div>
+
+<div class="answer">
+✓ Answer: A. Brain and spinal cord
+</div>
+
+</div>
+
+
+
+<div class="mcq">
+
+<div class="mcq-number">
+QUESTION 05
+</div>
+
+<div class="mcq-question">
+
+Which organ is primarily responsible for urine formation?
+
+</div>
+
+<div class="option">
+A. Liver
+</div>
+
+<div class="option">
+B. Kidney
+</div>
+
+<div class="option">
+C. Bladder
+</div>
+
+<div class="option">
+D. Ureter
+</div>
+
+<div class="answer">
+✓ Answer: B. Kidney
+</div>
+
+</div>
+
+
+
+<div class="mcq">
+
+<div class="mcq-number">
+QUESTION 06
+</div>
+
+<div class="mcq-question">
+
+Which gland is commonly called the master gland?
+
+</div>
+
+<div class="option">
+A. Thyroid
+</div>
+
+<div class="option">
+B. Adrenal
+</div>
+
+<div class="option">
+C. Pituitary
+</div>
+
+<div class="option">
+D. Pineal
+</div>
+
+<div class="answer">
+✓ Answer: C. Pituitary
+</div>
+
+</div>
+
+
+
+<div class="mcq">
+
+<div class="mcq-number">
+QUESTION 07
+</div>
+
+<div class="mcq-question">
+
+Which organ is the main site of bile production?
+
+</div>
+
+<div class="option">
+A. Stomach
+</div>
+
+<div class="option">
+B. Pancreas
+</div>
+
+<div class="option">
+C. Liver
+</div>
+
+<div class="option">
+D. Gallbladder
+</div>
+
+<div class="answer">
+✓ Answer: C. Liver
+</div>
+
+</div>
+
+
+
+<div class="mcq">
+
+<div class="mcq-number">
+QUESTION 08
+</div>
+
+<div class="mcq-question">
+
+Which organ stores bile?
+
+</div>
+
+<div class="option">
+A. Liver
+</div>
+
+<div class="option">
+B. Gallbladder
+</div>
+
+<div class="option">
+C. Pancreas
+</div>
+
+<div class="option">
+D. Stomach
+</div>
+
+<div class="answer">
+✓ Answer: B. Gallbladder
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="cta">
+
+<h2>
+
+🚀 Continue Your Nursing Journey
+
+</h2>
+
+<p>
+
+Anatomy শেষ করে B.Sc Nursing-এর অন্যান্য
+subject-এ এগিয়ে যান।
+
+</p>
+
+
+<div class="cta-buttons">
+
+<a class="cta-btn"
+href="https://nursingcareer.github.io/nursing-career/bsc-nursing.html">
+
+← B.Sc Nursing Subjects
+
+</a>
+
+
+<a class="cta-btn secondary"
+href="https://nursingcareer.github.io/nursing-career/">
+
+🏠 Nursing Career Home
+
+</a>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer class="footer">
 
-  <h3>🩺 Nursing Career</h3>
+<div class="footer-title">
 
-  <p>
-    Complete Nursing Education Platform
-  </p>
+NURSING CAREER
 
-  <p>
-    B.Sc. Nursing • Diploma Nursing • Midwifery
-  </p>
+</div>
 
-  <p>
-    © 2026 Nursing Career. All Rights Reserved.
-  </p>
+<p>
+
+Your Complete Nursing Education Platform
+
+</p>
+
+<p style="margin-top:8px;">
+
+© 2026 Nursing Career. All Rights Reserved.
+
+</p>
 
 </footer>
 
+
+
+<script>
+
+/* =========================
+   TOPIC SEARCH
+========================= */
+
+function searchTopics(){
+
+    const input =
+    document
+    .getElementById("topicSearch")
+    .value
+    .toLowerCase()
+    .trim();
+
+    const items =
+    document
+    .querySelectorAll(".searchable");
+
+    items.forEach(function(item){
+
+        const text =
+        item.innerText.toLowerCase();
+
+        if(
+            input === "" ||
+            text.includes(input)
+        ){
+
+            item.classList.remove("hidden");
+
+        }else{
+
+            item.classList.add("hidden");
+
+        }
+
+    });
+
+}
+
+</script>
+
+
 </body>
+
 </html>
