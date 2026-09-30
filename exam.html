@@ -2,30 +2,65 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Nursing Career - Online Nursing MCQ Examination</title>
 
 <style>
-*{box-sizing:border-box}
+
+*{
+  box-sizing:border-box;
+}
+
 body{
   margin:0;
   font-family:Arial,sans-serif;
   background:#f4f7fb;
   color:#172033;
 }
+
 header{
   background:#075985;
   color:white;
   text-align:center;
   padding:20px 10px;
 }
-header h1{margin:0 0 6px}
-header p{margin:0}
+
+header h1{
+  margin:0 0 6px;
+}
+
+header p{
+  margin:0;
+}
+
+.homebar{
+  background:white;
+  text-align:center;
+  padding:12px;
+  box-shadow:0 2px 6px #0001;
+}
+
+.homebtn{
+  background:#075985;
+  color:white;
+  border:0;
+  padding:10px 20px;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:15px;
+}
+
+.homebtn:hover{
+  opacity:.9;
+}
+
 .container{
   max-width:900px;
   margin:20px auto;
   padding:0 12px;
 }
+
 .topbar{
   background:white;
   padding:15px;
@@ -38,24 +73,36 @@ header p{margin:0}
   box-shadow:0 2px 8px #0001;
   flex-wrap:wrap;
 }
-select,button{
+
+select,
+button{
   border:0;
   border-radius:8px;
   padding:11px 15px;
   font-size:15px;
   cursor:pointer;
 }
-select{border:1px solid #ddd;background:white}
+
+select{
+  border:1px solid #ddd;
+  background:white;
+}
+
 button{
   background:#075985;
   color:white;
 }
-button:hover{opacity:.9}
+
+button:hover{
+  opacity:.9;
+}
+
 .timer{
   font-size:20px;
   font-weight:bold;
   color:#dc2626;
 }
+
 .card{
   background:white;
   margin-bottom:15px;
@@ -63,11 +110,13 @@ button:hover{opacity:.9}
   border-radius:12px;
   box-shadow:0 2px 8px #0001;
 }
+
 .q{
   font-weight:bold;
   margin-bottom:12px;
   line-height:1.5;
 }
+
 .option{
   display:block;
   padding:11px;
@@ -76,28 +125,39 @@ button:hover{opacity:.9}
   border-radius:8px;
   cursor:pointer;
 }
-.option:hover{background:#f0f9ff}
-.option input{margin-right:8px}
+
+.option:hover{
+  background:#f0f9ff;
+}
+
+.option input{
+  margin-right:8px;
+}
+
 .submit{
   width:100%;
   font-size:18px;
   padding:15px;
   margin:10px 0 25px;
 }
+
 .result{
   background:white;
   padding:25px;
   border-radius:12px;
   box-shadow:0 2px 8px #0001;
 }
+
 .score{
   font-size:32px;
   font-weight:bold;
   color:#075985;
 }
+
 .review{
   margin-top:20px;
 }
+
 .reviewItem{
   padding:15px;
   border-radius:10px;
@@ -105,25 +165,42 @@ button:hover{opacity:.9}
   border-left:5px solid #999;
   background:#f8fafc;
 }
-.correct{border-left-color:#16a34a}
-.wrong{border-left-color:#dc2626}
-.unanswered{border-left-color:#f59e0b}
-.hidden{display:none}
+
+.correct{
+  border-left-color:#16a34a;
+}
+
+.wrong{
+  border-left-color:#dc2626;
+}
+
+.unanswered{
+  border-left-color:#f59e0b;
+}
+
+.hidden{
+  display:none;
+}
+
 .history{
   margin-top:20px;
   background:white;
   padding:20px;
   border-radius:12px;
 }
+
 .history table{
   width:100%;
   border-collapse:collapse;
 }
-.history th,.history td{
+
+.history th,
+.history td{
   padding:8px;
   border-bottom:1px solid #ddd;
   text-align:center;
 }
+
 .badge{
   display:inline-block;
   background:#e0f2fe;
@@ -132,67 +209,165 @@ button:hover{opacity:.9}
   border-radius:20px;
   font-size:12px;
 }
-@media(max-width:600px){
-  header h1{font-size:22px}
-  .container{padding:0 8px}
-  .topbar{align-items:stretch}
-  .topbar>*{width:100%}
-  .timer{text-align:center}
+
+.retake{
+  margin-top:10px;
 }
+
+@media(max-width:600px){
+
+  header h1{
+    font-size:22px;
+  }
+
+  .container{
+    padding:0 8px;
+  }
+
+  .topbar{
+    align-items:stretch;
+  }
+
+  .topbar>*{
+    width:100%;
+  }
+
+  .timer{
+    text-align:center;
+  }
+
+  .history{
+    overflow-x:auto;
+  }
+
+}
+
 </style>
 </head>
 
 <body>
 
 <header>
+
   <h1>🩺 Nursing Career</h1>
+
   <p>Online Nursing MCQ Examination</p>
+
 </header>
+
+
+<!-- BACK TO HOME -->
+
+<div class="homebar">
+
+  <button class="homebtn" onclick="goHome()">
+    🏠 Back to Home
+  </button>
+
+</div>
+
 
 <div class="container">
 
+
+  <!-- TOP BAR -->
+
   <div class="topbar">
+
     <select id="subject">
-      <option value="All">All Subjects</option>
-      <option value="Fundamentals">Fundamentals of Nursing</option>
-      <option value="Anatomy">Anatomy</option>
-      <option value="Physiology">Physiology</option>
-      <option value="Pharmacology">Pharmacology</option>
-      <option value="Medical">Medical-Surgical Nursing</option>
-      <option value="Pediatric">Pediatric Nursing</option>
-      <option value="Community">Community Health Nursing</option>
-      <option value="Nutrition">Nutrition</option>
+
+      <option value="All">
+        All Subjects
+      </option>
+
+      <option value="Fundamentals">
+        Fundamentals of Nursing
+      </option>
+
+      <option value="Anatomy">
+        Anatomy
+      </option>
+
+      <option value="Physiology">
+        Physiology
+      </option>
+
+      <option value="Pharmacology">
+        Pharmacology
+      </option>
+
+      <option value="Medical">
+        Medical-Surgical Nursing
+      </option>
+
+      <option value="Pediatric">
+        Pediatric Nursing
+      </option>
+
+      <option value="Community">
+        Community Health Nursing
+      </option>
+
+      <option value="Nutrition">
+        Nutrition
+      </option>
+
     </select>
+
 
     <div>
       Questions: <b>60</b>
     </div>
 
-    <div class="timer" id="timer">30:00</div>
+
+    <div class="timer" id="timer">
+      30:00
+    </div>
+
   </div>
 
+
+  <!-- EXAM -->
+
   <div id="exam">
+
     <form id="examForm">
+
       <div id="questions"></div>
-      <button type="submit" class="submit">✅ Submit Exam</button>
+
+      <button type="submit" class="submit">
+        ✅ Submit Exam
+      </button>
+
     </form>
+
   </div>
+
+
+  <!-- RESULT -->
 
   <div id="result" class="result hidden"></div>
 
+
+  <!-- HISTORY -->
+
   <div class="history">
+
     <h2>📊 Exam History</h2>
+
     <div id="historyData"></div>
+
   </div>
+
 
 </div>
 
+
 <script>
 
+
 /* =====================================================
-   NURSING QUESTION DATABASE
-   5000 QUESTION ENTRIES ARE GENERATED HERE
-   NO JSON FILE REQUIRED
+   BASE NURSING QUESTIONS
 ===================================================== */
 
 const baseQuestions = [
@@ -228,7 +403,7 @@ a:1
 {
 subject:"Fundamentals",
 q:"Which device is commonly used to measure blood pressure?",
-o:["Thermometer","Sphygmomanometer","Stethoscope only","Glucometer"],
+o:["Thermometer","Sphygmomanometer","Glucometer","Scale"],
 a:1
 },
 
@@ -346,7 +521,7 @@ a:1
 
 {
 subject:"Pediatric",
-q:"Which healthcare professional commonly provides routine nursing care to children?",
+q:"Which healthcare professional commonly provides nursing care to children?",
 o:["Nurse","Architect","Engineer","Pilot"],
 a:0
 },
@@ -481,52 +656,84 @@ a:0
 
 
 /* =====================================================
-   CREATE 5000 DATABASE ENTRIES
+   CREATE 5000 QUESTION ENTRIES
 ===================================================== */
 
-const questionDB = [];
+const questionDB=[];
 
-const variations = [
-  "Which statement is correct?",
-  "Which option is correct?",
-  "Which answer is most appropriate?",
-  "What is the correct answer?",
-  "Which of the following is correct?",
-  "Choose the correct option.",
-  "Which answer best describes this?",
-  "What should the nurse identify?",
-  "Which statement is true?",
-  "Select the correct answer."
+const variations=[
+
+"Which statement is correct?",
+
+"Which option is correct?",
+
+"Which answer is most appropriate?",
+
+"What is the correct answer?",
+
+"Which of the following is correct?",
+
+"Select the correct answer.",
+
+"Which answer best describes this?",
+
+"What should the nurse identify?",
+
+"Which statement is true?",
+
+"Choose the correct option."
+
 ];
 
-let counter = 0;
 
-while(questionDB.length < 5000){
+let counter=0;
 
-  const base = baseQuestions[counter % baseQuestions.length];
-  const variation = variations[
-    Math.floor(counter / baseQuestions.length) % variations.length
-  ];
 
-  const copy = {
+while(questionDB.length<5000){
+
+  const base=
+    baseQuestions[counter%baseQuestions.length];
+
+  const variation=
+    variations[
+      Math.floor(counter/baseQuestions.length)
+      % variations.length
+    ];
+
+
+  questionDB.push({
+
     subject:base.subject,
-    q:(counter + 1) + ". " + base.q + " " + variation,
-    o:[...base.o],
-    a:base.a
-  };
 
-  questionDB.push(copy);
+    q:
+      (counter+1)+
+      ". "+
+      base.q+
+      " "+
+      variation,
+
+    o:[...base.o],
+
+    a:base.a
+
+  });
+
+
   counter++;
+
 }
 
 
 /* =====================================================
-   EXAM VARIABLES
+   VARIABLES
 ===================================================== */
 
-let currentQuestions = [];
-let submitted = false;
-let timeLeft = 30 * 60;
+let currentQuestions=[];
+
+let submitted=false;
+
+let timeLeft=30*60;
+
 let timerInterval;
 
 
@@ -536,16 +743,34 @@ let timerInterval;
 
 function shuffle(array){
 
-  const arr = [...array];
+  const arr=[...array];
 
-  for(let i=arr.length-1;i>0;i--){
 
-    const j=Math.floor(Math.random()*(i+1));
+  for(
+    let i=arr.length-1;
+    i>0;
+    i--
+  ){
 
-    [arr[i],arr[j]]=[arr[j],arr[i]];
+    const j=
+      Math.floor(
+        Math.random()*(i+1)
+      );
+
+
+    [
+      arr[i],
+      arr[j]
+    ]=[
+      arr[j],
+      arr[i]
+    ];
+
   }
 
+
   return arr;
+
 }
 
 
@@ -557,24 +782,48 @@ function startExam(){
 
   submitted=false;
 
-  document.getElementById("exam").classList.remove("hidden");
-  document.getElementById("result").classList.add("hidden");
 
-  const subject=document.getElementById("subject").value;
+  document
+    .getElementById("exam")
+    .classList
+    .remove("hidden");
+
+
+  document
+    .getElementById("result")
+    .classList
+    .add("hidden");
+
+
+  const subject=
+    document.getElementById("subject").value;
+
 
   let pool;
 
+
   if(subject==="All"){
+
     pool=[...questionDB];
+
   }else{
-    pool=questionDB.filter(x=>x.subject===subject);
+
+    pool=
+      questionDB.filter(
+        x=>x.subject===subject
+      );
+
   }
 
-  currentQuestions=shuffle(pool).slice(0,60);
+
+  currentQuestions=
+    shuffle(pool).slice(0,60);
+
 
   renderQuestions();
 
   startTimer();
+
 }
 
 
@@ -584,43 +833,69 @@ function startExam(){
 
 function renderQuestions(){
 
-  const box=document.getElementById("questions");
+  const box=
+    document.getElementById("questions");
+
 
   box.innerHTML="";
 
-  currentQuestions.forEach((item,index)=>{
 
-    const card=document.createElement("div");
+  currentQuestions.forEach(
+    (item,index)=>{
 
-    card.className="card";
 
-    let html=`
-      <div class="q">
-        ${index+1}. ${item.q}
-        <span class="badge">${item.subject}</span>
-      </div>
-    `;
+      const card=
+        document.createElement("div");
 
-    item.o.forEach((option,optIndex)=>{
 
-      html+=`
-        <label class="option">
-          <input
-            type="radio"
-            name="q${index}"
-            value="${optIndex}"
-          >
-          ${option}
-        </label>
+      card.className="card";
+
+
+      let html=`
+
+        <div class="q">
+
+          ${index+1}. ${item.q}
+
+          <span class="badge">
+            ${item.subject}
+          </span>
+
+        </div>
+
       `;
 
-    });
 
-    card.innerHTML=html;
+      item.o.forEach(
+        (option,optIndex)=>{
 
-    box.appendChild(card);
 
-  });
+          html+=`
+
+            <label class="option">
+
+              <input
+                type="radio"
+                name="q${index}"
+                value="${optIndex}"
+              >
+
+              ${option}
+
+            </label>
+
+          `;
+
+        }
+      );
+
+
+      card.innerHTML=html;
+
+      box.appendChild(card);
+
+    }
+  );
 
 }
 
@@ -633,127 +908,202 @@ function startTimer(){
 
   clearInterval(timerInterval);
 
+
   timeLeft=30*60;
+
 
   updateTimer();
 
-  timerInterval=setInterval(()=>{
 
-    timeLeft--;
+  timerInterval=
+    setInterval(()=>{
 
-    updateTimer();
 
-    if(timeLeft<=0){
+      timeLeft--;
 
-      clearInterval(timerInterval);
 
-      submitExam(true);
+      updateTimer();
 
-    }
 
-  },1000);
+      if(timeLeft<=0){
+
+        clearInterval(timerInterval);
+
+        submitExam(true);
+
+      }
+
+
+    },1000);
 
 }
 
 
 function updateTimer(){
 
-  const minutes=Math.floor(timeLeft/60);
+  const minutes=
+    Math.floor(timeLeft/60);
 
-  const seconds=timeLeft%60;
 
-  document.getElementById("timer").textContent=
-    String(minutes).padStart(2,"0")+":"+
-    String(seconds).padStart(2,"0");
+  const seconds=
+    timeLeft%60;
+
+
+  document.getElementById("timer")
+    .textContent=
+
+      String(minutes)
+      .padStart(2,"0")
+
+      +
+
+      ":"
+
+      +
+
+      String(seconds)
+      .padStart(2,"0");
 
 }
 
 
 /* =====================================================
-   SUBMIT
+   SUBMIT BUTTON
 ===================================================== */
 
-document.getElementById("examForm").addEventListener(
-  "submit",
-  function(e){
+document
+  .getElementById("examForm")
+  .addEventListener(
+    "submit",
+    function(e){
 
-    e.preventDefault();
+      e.preventDefault();
 
-    submitExam(false);
+      submitExam(false);
 
-  }
-);
+    }
+  );
 
+
+/* =====================================================
+   SUBMIT EXAM
+===================================================== */
 
 function submitExam(auto){
 
   if(submitted)return;
 
+
   submitted=true;
+
 
   clearInterval(timerInterval);
 
+
   let correct=0;
+
   let wrong=0;
+
   let unanswered=0;
+
 
   const review=[];
 
-  currentQuestions.forEach((item,index)=>{
 
-    const selected=document.querySelector(
-      `input[name="q${index}"]:checked`
-    );
+  currentQuestions.forEach(
+    (item,index)=>{
 
-    if(!selected){
 
-      unanswered++;
+      const selected=
+        document.querySelector(
+          `input[name="q${index}"]:checked`
+        );
 
-      review.push({
-        item,
-        index,
-        selected:null,
-        status:"unanswered"
-      });
 
-    }else{
+      if(!selected){
 
-      const answer=Number(selected.value);
+        unanswered++;
 
-      if(answer===item.a){
-
-        correct++;
 
         review.push({
-          item,
-          index,
-          selected:answer,
-          status:"correct"
+
+          item:item,
+
+          index:index,
+
+          selected:null,
+
+          status:"unanswered"
+
         });
+
 
       }else{
 
-        wrong++;
 
-        review.push({
-          item,
-          index,
-          selected:answer,
-          status:"wrong"
-        });
+        const answer=
+          Number(selected.value);
+
+
+        if(answer===item.a){
+
+          correct++;
+
+
+          review.push({
+
+            item:item,
+
+            index:index,
+
+            selected:answer,
+
+            status:"correct"
+
+          });
+
+
+        }else{
+
+          wrong++;
+
+
+          review.push({
+
+            item:item,
+
+            index:index,
+
+            selected:answer,
+
+            status:"wrong"
+
+          });
+
+        }
 
       }
 
     }
+  );
 
-  });
+
+  const total=
+    currentQuestions.length;
 
 
-  const total=currentQuestions.length;
+  const percentage=
+    Math.round(
+      (correct/total)*100
+    );
 
-  const percentage=Math.round((correct/total)*100);
 
-  saveHistory(correct,total,percentage);
+  saveHistory(
+    correct,
+    total,
+    percentage
+  );
+
 
   showResult(
     correct,
@@ -769,7 +1119,7 @@ function submitExam(auto){
 
 
 /* =====================================================
-   SHOW RESULT
+   RESULT
 ===================================================== */
 
 function showResult(
@@ -782,73 +1132,146 @@ function showResult(
   auto
 ){
 
-  document.getElementById("exam").classList.add("hidden");
+  document
+    .getElementById("exam")
+    .classList
+    .add("hidden");
 
-  const result=document.getElementById("result");
+
+  const result=
+    document.getElementById("result");
+
 
   result.classList.remove("hidden");
+
 
   let html=`
 
     <h2>🎉 Exam Result</h2>
 
-    ${auto ? "<p><b>⏰ Time ended automatically.</b></p>" : ""}
+    ${
+      auto
+      ?
+      "<p><b>⏰ Time ended automatically.</b></p>"
+      :
+      ""
+    }
 
-    <div class="score">${correct} / ${total}</div>
+    <div class="score">
+      ${correct} / ${total}
+    </div>
 
-    <p><b>Percentage:</b> ${percentage}%</p>
+    <p>
+      <b>Percentage:</b>
+      ${percentage}%
+    </p>
 
-    <p>✅ Correct: ${correct}</p>
+    <p>
+      ✅ Correct:
+      ${correct}
+    </p>
 
-    <p>❌ Wrong: ${wrong}</p>
+    <p>
+      ❌ Wrong:
+      ${wrong}
+    </p>
 
-    <p>⚠️ Unanswered: ${unanswered}</p>
+    <p>
+      ⚠️ Unanswered:
+      ${unanswered}
+    </p>
 
-    <button onclick="startExam()">🔄 Retake Exam</button>
+    <button
+      class="retake"
+      onclick="startExam()"
+    >
+      🔄 Retake Exam
+    </button>
 
     <div class="review">
 
-      <h2>📝 Answer Review</h2>
+      <h2>
+        📝 Answer Review
+      </h2>
 
   `;
 
 
-  review.forEach((r)=>{
+  review.forEach(r=>{
+
 
     const item=r.item;
 
-    let className=r.status;
 
-    let selectedText=
+    const className=
+      r.status;
+
+
+    const selectedText=
       r.selected===null
-      ? "Not answered"
-      : item.o[r.selected];
+      ?
+      "Not answered"
+      :
+      item.o[r.selected];
 
-    let statusText=
+
+    const statusText=
+
       r.status==="correct"
-      ? "✅ Correct"
-      : r.status==="wrong"
-      ? "❌ Wrong"
-      : "⚠️ Unanswered";
+
+      ?
+
+      "✅ Correct"
+
+      :
+
+      r.status==="wrong"
+
+      ?
+
+      "❌ Wrong"
+
+      :
+
+      "⚠️ Unanswered";
 
 
     html+=`
 
-      <div class="reviewItem ${className}">
+      <div
+        class="reviewItem ${className}"
+      >
 
-        <b>Q${r.index+1}. ${item.q}</b>
+        <b>
+          Q${r.index+1}.
+          ${item.q}
+        </b>
 
         <p>
-          <b>Your answer:</b>
+
+          <b>
+            Your answer:
+          </b>
+
           ${selectedText}
+
         </p>
+
 
         <p>
-          <b>Correct answer:</b>
+
+          <b>
+            Correct answer:
+          </b>
+
           ${item.o[item.a]}
+
         </p>
 
-        <strong>${statusText}</strong>
+
+        <strong>
+          ${statusText}
+        </strong>
 
       </div>
 
@@ -857,13 +1280,22 @@ function showResult(
   });
 
 
-  html+="</div>";
+  html+=`
+
+    </div>
+
+  `;
+
 
   result.innerHTML=html;
 
+
   window.scrollTo({
+
     top:0,
+
     behavior:"smooth"
+
   });
 
 }
@@ -873,16 +1305,31 @@ function showResult(
    HISTORY
 ===================================================== */
 
-function saveHistory(correct,total,percentage){
+function saveHistory(
+  correct,
+  total,
+  percentage
+){
 
   let history=
-    JSON.parse(localStorage.getItem("nursingExamHistory")||"[]");
+    JSON.parse(
+      localStorage.getItem(
+        "nursingExamHistory"
+      ) || "[]"
+    );
 
-  const subject=document.getElementById("subject").value;
+
+  const subject=
+    document.getElementById(
+      "subject"
+    ).value;
+
 
   history.unshift({
 
-    date:new Date().toLocaleString(),
+    date:
+      new Date()
+      .toLocaleString(),
 
     subject:subject,
 
@@ -894,28 +1341,49 @@ function saveHistory(correct,total,percentage){
 
   });
 
-  history=history.slice(0,20);
+
+  history=
+    history.slice(0,20);
+
 
   localStorage.setItem(
+
     "nursingExamHistory",
+
     JSON.stringify(history)
+
   );
+
 
   showHistory();
 
 }
 
 
+/* =====================================================
+   SHOW HISTORY
+===================================================== */
+
 function showHistory(){
 
-  const box=document.getElementById("historyData");
+  const box=
+    document.getElementById(
+      "historyData"
+    );
+
 
   const history=
-    JSON.parse(localStorage.getItem("nursingExamHistory")||"[]");
+    JSON.parse(
+      localStorage.getItem(
+        "nursingExamHistory"
+      ) || "[]"
+    );
+
 
   if(history.length===0){
 
-    box.innerHTML="<p>No exam history yet.</p>";
+    box.innerHTML=
+      "<p>No exam history yet.</p>";
 
     return;
 
@@ -924,31 +1392,53 @@ function showHistory(){
 
   let html=`
 
-  <table>
+    <table>
 
-    <tr>
-      <th>Date</th>
-      <th>Subject</th>
-      <th>Score</th>
-      <th>%</th>
-    </tr>
+      <tr>
+
+        <th>
+          Date
+        </th>
+
+        <th>
+          Subject
+        </th>
+
+        <th>
+          Score
+        </th>
+
+        <th>
+          %
+        </th>
+
+      </tr>
 
   `;
 
 
   history.forEach(h=>{
 
+
     html+=`
 
       <tr>
 
-        <td>${h.date}</td>
+        <td>
+          ${h.date}
+        </td>
 
-        <td>${h.subject}</td>
+        <td>
+          ${h.subject}
+        </td>
 
-        <td>${h.correct}/${h.total}</td>
+        <td>
+          ${h.correct}/${h.total}
+        </td>
 
-        <td>${h.percentage}%</td>
+        <td>
+          ${h.percentage}%
+        </td>
 
       </tr>
 
@@ -957,7 +1447,12 @@ function showHistory(){
   });
 
 
-  html+="</table>";
+  html+=`
+
+    </table>
+
+  `;
+
 
   box.innerHTML=html;
 
@@ -965,7 +1460,18 @@ function showHistory(){
 
 
 /* =====================================================
-   START
+   BACK TO HOME
+===================================================== */
+
+function goHome(){
+
+  window.location.href="index.html";
+
+}
+
+
+/* =====================================================
+   INITIALIZE
 ===================================================== */
 
 showHistory();
