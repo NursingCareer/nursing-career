@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nursing License Prep</title>
+<style>
+:root{
+  --bg:#f4f7fb;--card:#fff;--text:#172033;--muted:#6b7485;
+  --primary:#1266d6;--primary2:#0d4fa9;--line:#e4e9f1;
+  --success:#168a57;--danger:#d83b4b;--dark:#0d1b2a;
+  --shadow:0 12px 35px rgba(18,38,63,.08);--radius:18px
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text)}
+button,input,select{font:inherit}
+button{cursor:pointer}
+.header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{max-width:1180px;margin:auto;height:70px;display:flex;align-items:center;justify-content:space-between;padding:0 20px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:19px}
+.logo{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,#1266d6,#18a9d9);display:grid;place-items:center;color:#fff;font-size:21px}
+.navlinks{display:flex;gap:6px}
+.navlinks button{border:0;background:transparent;padding:10px 13px;border-radius:10px;color:#526074;font-weight:650}
+.navlinks button:hover{background:#eef5ff;color:var(--primary)}
+.hero{max-width:1180px;margin:28px auto 0;padding:20px}
+.heroBox{background:linear-gradient(135deg,#0d1b2a 0%,#1057a9 65%,#1598c7 100%);border-radius:26px;padding:48px;color:#fff;display:grid;grid-template-columns:1.3fr .7fr;gap:30px;overflow:hidden;position:relative}
+.heroBox:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;right:-80px;top:-80px;background:rgba(255,255,255,.08)}
+.badge{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:7px 11px;border-radius:999px;font-size:12px;font-weight:800}
+.hero h1{font-size:42px;line-height:1.08;margin:17px 0 12px}
+.hero p{color:#dcecff;max-width:650px;line-height:1.7;margin:0 0 24px}
+.actions{display:flex;gap:10px;flex-wrap:wrap}
+.btn{border:0;border-radius:11px;padding:12px 17px;font-weight:750}
+.btn.primary{background:#fff;color:#1059ae}
+.btn.blue{background:var(--primary);color:#fff}
+.btn.dark{background:#102235;color:#fff}
+.btn.light{background:#edf4ff;color:#195da8}
+.heroStats{align-self:center;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.stat{background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.15);padding:18px;border-radius:15px}
+.stat b{font-size:27px;display:block}.stat span{font-size:12px;color:#d5e8ff}
+.container{max-width:1180px;margin:auto;padding:28px 20px}
+.sectionTitle{display:flex;align-items:end;justify-content:space-between;gap:15px;margin:8px 0 17px}
+.sectionTitle h2{margin:0;font-size:25px}.sectionTitle p{margin:5px 0 0;color:var(--muted);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+.subject{min-height:145px;transition:.2s}.subject:hover{transform:translateY(-3px);border-color:#b8d2f5}
+.subjectIcon{font-size:25px}.subject h3{margin:13px 0 6px;font-size:16px}.subject p{margin:0;color:var(--muted);font-size:13px;line-height:1.5}
+.examLayout{display:grid;grid-template-columns:260px 1fr;gap:18px}
+.sidebar{position:sticky;top:88px;height:max-content}
+.sidebar h3{margin-top:0}.sideBtn{width:100%;text-align:left;border:0;background:#f5f8fc;padding:12px;border-radius:10px;margin:4px 0;color:#445064;font-weight:650}
+.sideBtn.active,.sideBtn:hover{background:#eaf3ff;color:var(--primary)}
+.examTop{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:15px}
+.progress{height:8px;background:#e8edf4;border-radius:99px;overflow:hidden}.progress span{display:block;height:100%;background:linear-gradient(90deg,#1266d6,#18a9d9);width:0}
+.timer{font-weight:800;color:#b83243;background:#fff0f2;padding:9px 12px;border-radius:10px}
+.question{font-size:20px;line-height:1.5;font-weight:750;margin:22px 0}
+.option{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);padding:14px;border-radius:12px;margin:10px 0;background:#fff;text-align:left;width:100%;color:var(--text)}
+.option:hover{border-color:#9bc2ef;background:#f8fbff}
+.option.selected{border-color:var(--primary);background:#edf5ff}
+.option.correct{border-color:#74c69d;background:#effaf5}
+.option.wrong{border-color:#e89aa3;background:#fff2f3}
+.letter{width:28px;height:28px;border-radius:8px;background:#edf1f6;display:grid;place-items:center;font-weight:800;flex:none}
+.explanation{margin-top:15px;padding:15px;border-radius:12px;background:#f7f9fc;border-left:4px solid var(--primary);line-height:1.6;color:#465164}
+.examActions{display:flex;justify-content:space-between;gap:10px;margin-top:20px}
+.toolbar{display:flex;gap:9px;flex-wrap:wrap}
+input,select{border:1px solid var(--line);border-radius:10px;padding:11px 12px;background:#fff;outline:none}
+input:focus,select:focus{border-color:#7eafe8;box-shadow:0 0 0 3px #eaf3ff}
+.result{text-align:center;padding:35px}.scoreCircle{width:130px;height:130px;border-radius:50%;margin:10px auto 20px;background:#edf5ff;display:grid;place-items:center;font-size:30px;font-weight:900;color:var(--primary)}
+.hidden{display:none!important}
+.calcGrid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.calcResult{background:#edf7ff;border:1px solid #cde3fa;border-radius:14px;padding:20px;margin-top:14px}
+.calcResult strong{font-size:26px;color:var(--primary)}
+.notes{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.note h3{margin:0 0 8px}.note p{color:var(--muted);line-height:1.65;font-size:14px}
+.searchRow{display:flex;gap:9px;flex-wrap:wrap}
+.footer{background:#0d1b2a;color:#dce6f2;margin-top:30px;padding:30px 20px;text-align:center}
+.footer p{margin:6px;color:#9eb0c4;font-size:13px}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.heroBox{grid-template-columns:1fr}.examLayout{grid-template-columns:1fr}.sidebar{position:static}.notes{grid-template-columns:1fr 1fr}}
+@media(max-width:650px){.nav{height:auto;min-height:65px}.navlinks{display:none}.hero{padding:12px}.heroBox{padding:30px 22px;border-radius:20px}.hero h1{font-size:32px}.heroStats{grid-template-columns:1fr 1fr}.grid,.notes,.calcGrid{grid-template-columns:1fr}.container{padding:22px 14px}.sectionTitle{display:block}.question{font-size:18px}}
+</style>
+</head>
+<body>
+
+<header class="header">
+<nav class="nav">
+  <div class="brand"><div class="logo">🩺</div> Nursing License Prep</div>
+  <div class="navlinks">
+    <button onclick="go('home')">Home</button>
+    <button onclick="go('subjects')">Subjects</button>
+    <button onclick="go('exam')">MCQ Exam</button>
+    <button onclick="go('notes')">Notes</button>
+    <button onclick="go('calc')">Drug Calculation</button>
+  </div>
+</nav>
+</header>
+
+<section class="hero" id="home">
+<div class="heroBox">
+  <div>
+    <span class="badge">NURSING LICENSE EXAM PREPARATION</span>
+    <h1>Study. Practice. Test Yourself.</h1>
+    <p>A focused preparation platform for nursing license examination practice — with subject-wise MCQs, timed mock exams, explanations, high-yield notes and drug calculation practice.</p>
+    <div class="actions">
+      <button class="btn primary" onclick="startExam('all')">Start Mock Exam</button>
+      <button class="btn" style="background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.2)" onclick="go('subjects')">Choose Subject</button>
+    </div>
+  </div>
+  <div class="heroStats">
+    <div class="stat"><b id="qCount">20+</b><span>Practice Questions</span></div>
+    <div class="stat"><b>10</b><span>Core Subjects</span></div>
+    <div class="stat"><b>20 min</b><span>Mock Timer</span></div>
+    <div class="stat"><b>100%</b><span>Responsive</span></div>
+  </div>
+</div>
+</section>
+
+<section class="container" id="subjects">
+<div class="sectionTitle">
+  <div><h2>Choose Your Subject</h2><p>Start practice directly from a nursing subject.</p></div>
+</div>
+<div class="grid" id="subjectGrid"></div>
+</section>
+
+<section class="container" id="exam">
+<div class="sectionTitle">
+  <div><h2>License Exam MCQ</h2><p>Timed practice with instant answer review.</p></div>
+</div>
+<div class="examLayout">
+  <aside class="card sidebar">
+    <h3>Exam Mode</h3>
+    <button class="sideBtn active" onclick="startExam('all',this)">All Subjects</button>
+    <div id="sideSubjects"></div>
+    <hr style="border:0;border-top:1px solid var(--line);margin:15px 0">
+    <button class="btn blue" style="width:100%" onclick="startExam('all')">Restart Exam</button>
+  </aside>
+  <main class="card">
+    <div id="examArea">
+      <div class="examTop">
+        <div style="flex:1"><div id="examLabel" style="font-weight:800;margin-bottom:7px">Ready to start</div><div class="progress"><span id="progressBar"></span></div></div>
+        <div class="timer" id="timer">20:00</div>
+      </div>
+      <div id="startPanel" class="result">
+        <div style="font-size:50px">📝</div>
+        <h2>License Exam Practice</h2>
+        <p style="color:var(--muted)">Select a subject or start all-subject mock exam.</p>
+        <button class="btn blue" onclick="startExam('all')">Start Now</button>
+      </div>
+      <div id="questionPanel" class="hidden">
+        <div id="questionNo" style="color:var(--muted);font-size:13px"></div>
+        <div class="question" id="questionText"></div>
+        <div id="options"></div>
+        <div id="explanation" class="explanation hidden"></div>
+        <div class="examActions">
+          <button class="btn light" onclick="prevQuestion()">← Previous</button>
+          <div class="toolbar">
+            <button class="btn light" onclick="showAnswer()">Show Answer</button>
+            <button class="btn blue" onclick="nextQuestion()">Next →</button>
+          </div>
+        </div>
+      </div>
+      <div id="resultPanel" class="result hidden"></div>
+    </div>
+  </main>
+</div>
+</section>
+
+<section class="container" id="notes">
+<div class="sectionTitle"><div><h2>High-Yield Notes</h2><p>Quick revision points for exam preparation.</p></div></div>
+<div class="notes">
+  <article class="card note"><h3>🫀 Medical-Surgical</h3><p>Prioritize airway, breathing and circulation. Assess unstable patients first. Monitor vital signs, oxygenation, consciousness and acute changes.</p></article>
+  <article class="card note"><h3>💊 Pharmacology</h3><p>Before medication administration verify the patient, medication, dose, route, time and documentation. Always check allergies and relevant precautions.</p></article>
+  <article class="card note"><h3>👶 Pediatric</h3><p>Medication doses in children are commonly weight-based. Confirm weight, concentration and calculated dose before administration.</p></article>
+  <article class="card note"><h3>🤰 Midwifery</h3><p>Monitor maternal vital signs, fetal status, labor progress and warning signs. Escalate abnormal findings promptly.</p></article>
+  <article class="card note"><h3>🧠 Mental Health</h3><p>Use therapeutic communication, active listening and a non-judgmental approach. Maintain safety and professional boundaries.</p></article>
+  <article class="card note"><h3>🏥 Community Health</h3><p>Focus on prevention, health promotion, immunization, sanitation, education and community-level nursing interventions.</p></article>
+</div>
+</section>
+
+<section class="container" id="calc">
+<div class="sectionTitle"><div><h2>Drug Calculation Practice</h2><p>Calculate common nursing medication and IV problems.</p></div></div>
+<div class="card">
+  <div class="calcGrid">
+    <div><label>Ordered dose</label><input id="ordered" type="number" placeholder="e.g. 500"></div>
+    <div><label>Available dose</label><input id="available" type="number" placeholder="e.g. 250"></div>
+    <div><label>Available quantity</label><input id="quantity" type="number" placeholder="e.g. 1"></div>
+    <div><label>Unit</label><select id="unit"><option>tablet</option><option>mL</option><option>unit</option></select></div>
+  </div>
+  <button class="btn blue" style="margin-top:15px" onclick="calculateDose()">Calculate Dose</button>
+  <div id="calcResult" class="calcResult hidden"></div>
+</div>
+</section>
+
+<section class="container">
+<div class="card">
+  <div class="sectionTitle" style="margin:0 0 10px">
+    <div><h2>Find a Question</h2><p>Search the practice bank by keyword.</p></div>
+  </div>
+  <div class="searchRow">
+    <input id="searchInput" style="flex:1;min-width:200px" placeholder="Search: diabetes, medication, infection...">
+    <button class="btn blue" onclick="searchQuestions()">Search</button>
+  </div>
+  <div id="searchResults" style="margin-top:15px"></div>
+</div>
+</section>
+
+<footer class="footer">
+  <strong>🩺 Nursing License Prep</strong>
+  <p>Focused nursing examination practice platform.</p>
+  <p>Use your official curriculum, textbooks and current examination guidance alongside this practice tool.</p>
+</footer>
+
+<script>
+const questions=[
+{subject:"Fundamentals",q:"Which action is most appropriate when assessing a newly admitted patient?",o:["Review the patient’s favorite food","Perform an initial nursing assessment","Skip vital signs if the patient looks well","Document before assessing"],a:1,e:"The initial nursing assessment establishes baseline findings and helps identify immediate nursing priorities."},
+{subject:"Fundamentals",q:"Which finding should the nurse report immediately?",o:["Mild hunger before lunch","Sudden change in level of consciousness","Patient requesting water","Patient asking about visiting hours"],a:1,e:"A sudden change in consciousness may indicate an acute deterioration and requires prompt assessment and escalation."},
+{subject:"Medical-Surgical",q:"A patient with difficulty breathing should be assessed first for which priority?",o:["Airway and breathing","Dietary preference","Sleep pattern","Discharge teaching"],a:0,e:"Airway and breathing are immediate physiologic priorities."},
+{subject:"Medical-Surgical",q:"Which assessment is especially important for a patient receiving oxygen therapy?",o:["Hair texture","Oxygenation and respiratory status","Favorite activity","Vision history"],a:1,e:"Respiratory rate, work of breathing and oxygenation help evaluate response to oxygen therapy."},
+{subject:"Pharmacology",q:"Before administering a medication, which information is especially important to verify?",o:["Patient identity, medication, dose, route and time","Patient's favorite color","Room decoration","Visitor list"],a:0,e:"Medication safety requires verification of the patient and medication administration details, along with relevant precautions such as allergies."},
+{subject:"Pharmacology",q:"A patient reports a known medication allergy. What should the nurse do?",o:["Administer it anyway","Ignore the statement","Verify the allergy and withhold/escalate as appropriate","Ask another patient"],a:2,e:"A reported allergy must be taken seriously and verified before medication administration."},
+{subject:"Pediatric",q:"Which factor is commonly used when calculating a pediatric medication dose?",o:["Hair length","Body weight","Room number","Birthplace"],a:1,e:"Many pediatric medication calculations are weight-based."},
+{subject:"Pediatric",q:"What should be checked carefully before giving a calculated pediatric dose?",o:["Weight and medication concentration","Shoe size","Favorite toy","School name"],a:0,e:"Weight and concentration are critical inputs for safe pediatric medication calculations."},
+{subject:"Midwifery",q:"During labor, which assessment is important for evaluating fetal well-being?",o:["Fetal heart rate","Hair color","Food preference","Hand grip strength"],a:0,e:"Fetal heart rate monitoring is an important component of fetal assessment during labor."},
+{subject:"Midwifery",q:"Which finding in pregnancy should receive prompt clinical assessment?",o:["A sudden severe symptom or significant bleeding","Normal appetite","Mild tiredness after activity","Interest in childbirth education"],a:0,e:"Sudden severe symptoms or significant bleeding can indicate an urgent obstetric problem."},
+{subject:"Mental Health",q:"Which communication approach is therapeutic?",o:["Active listening and open-ended questions","Arguing with the patient","Judging the patient","Changing the topic immediately"],a:0,e:"Active listening and appropriate open-ended questions encourage communication and assessment."},
+{subject:"Mental Health",q:"What is an important nursing priority when a patient may be unsafe?",o:["Maintain safety and assess risk","Ignore the concern","Leave the patient alone without assessment","Avoid documentation"],a:0,e:"Safety assessment and appropriate escalation are priorities when there is a potential risk of harm."},
+{subject:"Community Health",q:"Which activity is an example of primary prevention?",o:["Health education and immunization","Rehabilitation after disability","Treatment of an established complication","Surgical management"],a:0,e:"Primary prevention aims to prevent disease or injury before it occurs."},
+{subject:"Community Health",q:"Which is a major community health nursing activity?",o:["Health promotion and disease prevention","Only hospital billing","Only operating room duties","Only laboratory testing"],a:0,e:"Community health nursing includes health promotion, prevention, education and population-focused care."},
+{subject:"Anatomy",q:"Which organ pumps blood through the systemic circulation?",o:["Heart","Liver","Kidney","Stomach"],a:0,e:"The heart pumps blood through pulmonary and systemic circulation."},
+{subject:"Anatomy",q:"Which organ is primarily responsible for gas exchange?",o:["Lungs","Kidneys","Pancreas","Spleen"],a:0,e:"Gas exchange occurs across the alveolar-capillary membrane in the lungs."},
+{subject:"Nutrition",q:"Which nutrient is a major source of energy for the body?",o:["Carbohydrate","Water only","Minerals only","Fiber only"],a:0,e:"Carbohydrates are a major energy source."},
+{subject:"Leadership",q:"Which action supports safe delegation?",o:["Delegate according to competence and scope","Delegate without checking competence","Delegate everything","Avoid communication"],a:0,e:"Safe delegation considers the person's competence, scope, patient condition and required supervision."},
+{subject:"Research",q:"What is an important feature of evidence-based nursing practice?",o:["Integrating best available evidence with clinical expertise and patient needs","Using rumors","Ignoring patient preferences","Avoiding current evidence"],a:0,e:"Evidence-based practice integrates research evidence with clinical expertise and patient values/preferences."}
+];
+
+let examQuestions=[],current=0,answers={},timerSeconds=1200,timerId=null,mode="all";
+
+const subjects=[...new Set(questions.map(x=>x.subject))];
+const icons={Fundamentals:"🩺","Medical-Surgical":"🏥",Pharmacology:"💊",Pediatric:"👶",Midwifery:"🤰","Mental Health":"🧠","Community Health":"🌍",Anatomy:"🫀",Nutrition:"🥗",Leadership:"👩‍⚕️",Research:"📚"};
+
+function go(id){document.getElementById(id)?.scrollIntoView({behavior:"smooth"});}
+
+function buildSubjects(){
+  const grid=document.getElementById("subjectGrid"), side=document.getElementById("sideSubjects");
+  subjects.forEach(s=>{
+    const count=questions.filter(q=>q.subject===s).length;
+    grid.innerHTML+=`<button class="card subject" onclick="startExam('${s}')"><div class="subjectIcon">${icons[s]||"📘"}</div><h3>${s}</h3><p>${count} practice question${count>1?"s":""}</p></button>`;
+    side.innerHTML+=`<button class="sideBtn" onclick="startExam('${s}',this)">${icons[s]||"📘"} ${s}</button>`;
+  });
+  document.getElementById("qCount").textContent=questions.length+"+";
+}
+function startExam(subject="all"){
+  mode=subject;
+  examQuestions=subject==="all"?[...questions]:questions.filter(q=>q.subject===subject);
+  examQuestions=examQuestions.sort(()=>Math.random()-.5);
+  current=0;answers={};timerSeconds=1200;
+  document.getElementById("startPanel").classList.add("hidden");
+  document.getElementById("resultPanel").classList.add("hidden");
+  document.getElementById("questionPanel").classList.remove("hidden");
+  clearInterval(timerId);timerId=setInterval(tick,1000);renderQuestion();go("exam");
+}
+function tick(){
+  timerSeconds--;
+  const m=Math.floor(timerSeconds/60),s=timerSeconds%60;
+  document.getElementById("timer").textContent=`${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}`;
+  if(timerSeconds<=0){clearInterval(timerId);finishExam();}
+}
+function renderQuestion(){
+  const q=examQuestions[current]; if(!q)return;
+  document.getElementById("examLabel").textContent=(mode==="all"?"All Subjects":mode)+" • License MCQ";
+  document.getElementById("questionNo").textContent=`Question ${current+1} of ${examQuestions.length} • ${q.subject}`;
+  document.getElementById("questionText").textContent=q.q;
+  document.getElementById("progressBar").style.width=((current+1)/examQuestions.length*100)+"%";
+  const opts=document.getElementById("options");opts.innerHTML="";
+  q.o.forEach((x,i)=>{
+    const b=document.createElement("button");b.className="option"+(answers[current]===i?" selected":"");
+    b.innerHTML=`<span class="letter">${String.fromCharCode(65+i)}</span><span>${x}</span>`;
+    b.onclick=()=>{answers[current]=i;renderQuestion()};
+    opts.appendChild(b);
+  });
+  const ex=document.getElementById("explanation");ex.classList.add("hidden");ex.innerHTML="";
+}
+function showAnswer(){
+  const q=examQuestions[current],ex=document.getElementById("explanation");
+  ex.innerHTML=`<strong>Correct answer: ${String.fromCharCode(65+q.a)}. ${q.o[q.a]}</strong><br>${q.e}`;
+  ex.classList.remove("hidden");
+}
+function nextQuestion(){if(current<examQuestions.length-1){current++;renderQuestion()}else finishExam()}
+function prevQuestion(){if(current>0){current--;renderQuestion()}}
+function finishExam(){
+  clearInterval(timerId);
+  let correct=0;examQuestions.forEach((q,i)=>{if(answers[i]===q.a)correct++});
+  const pct=Math.round(correct/examQuestions.length*100);
+  document.getElementById("questionPanel").classList.add("hidden");
+  const r=document.getElementById("resultPanel");r.classList.remove("hidden");
+  r.innerHTML=`<div class="scoreCircle">${pct}%</div><h2>Exam Complete</h2><p style="color:var(--muted)">You answered <b>${correct}</b> of <b>${examQuestions.length}</b> correctly.</p><div class="actions" style="justify-content:center;margin-top:20px"><button class="btn blue" onclick="reviewExam()">Review Answers</button><button class="btn light" onclick="startExam('${mode}')">Try Again</button></div>`;
+}
+function reviewExam(){current=0;document.getElementById("resultPanel").classList.add("hidden");document.getElementById("questionPanel").classList.remove("hidden");renderQuestion();showAnswer()}
+function calculateDose(){
+  const o=+document.getElementById("ordered").value,a=+document.getElementById("available").value,q=+document.getElementById("quantity").value;
+  const box=document.getElementById("calcResult");
+  if(!o||!a||!q){box.classList.remove("hidden");box.innerHTML="<b>Please enter all values.</b>";return}
+  const ans=(o/a)*q;
+  box.classList.remove("hidden");box.innerHTML=`<div>Formula: (Ordered ÷ Available) × Quantity</div><strong>${ans}</strong> ${document.getElementById("unit").value}<div style="margin-top:7px;color:#5e6b7d">Always verify the calculated dose against the prescription, medication label and applicable clinical policy.</div>`;
+}
+function searchQuestions(){
+  const term=document.getElementById("searchInput").value.trim().toLowerCase(),box=document.getElementById("searchResults");
+  if(!term){box.innerHTML="";return}
+  const found=questions.filter(q=>(q.q+" "+q.subject+" "+q.o.join(" ")).toLowerCase().includes(term));
+  box.innerHTML=found.length?found.map((q,i)=>`<div class="card" style="margin-top:9px"><b>${i+1}. ${q.q}</b><div style="color:var(--muted);font-size:13px;margin-top:5px">${q.subject}</div></div>`).join(""):"<p style='color:var(--muted)'>No matching question found.</p>";
+}
+buildSubjects();
+</script>
+</body>
+</html>
