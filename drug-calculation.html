@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Drug Calculation | Nursing Career</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f7fb;
+    color:#172033;
+    line-height:1.6;
+}
+
+header{
+    background:linear-gradient(135deg,#075985,#0f766e);
+    color:white;
+    padding:18px 6%;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 4px 15px rgba(0,0,0,.12);
+}
+
+.nav{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:800;
+}
+
+.logo span{
+    display:block;
+    font-size:12px;
+    font-weight:400;
+    opacity:.85;
+}
+
+.home-btn{
+    text-decoration:none;
+    color:#075985;
+    background:white;
+    padding:10px 18px;
+    border-radius:10px;
+    font-weight:700;
+}
+
+.hero{
+    background:linear-gradient(135deg,#0f766e,#075985);
+    color:white;
+    padding:65px 6%;
+    text-align:center;
+}
+
+.hero-content{
+    max-width:900px;
+    margin:auto;
+}
+
+.badge{
+    display:inline-block;
+    background:rgba(255,255,255,.15);
+    padding:8px 16px;
+    border-radius:30px;
+    margin-bottom:18px;
+    font-size:14px;
+}
+
+.hero h1{
+    font-size:clamp(32px,5vw,58px);
+    margin-bottom:15px;
+}
+
+.hero p{
+    max-width:700px;
+    margin:auto;
+    opacity:.92;
+    font-size:17px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:45px 6%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.section-title h2{
+    font-size:32px;
+    color:#075985;
+}
+
+.section-title p{
+    color:#64748b;
+    margin-top:7px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 8px 25px rgba(15,23,42,.08);
+    border:1px solid #e5e7eb;
+    transition:.25s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 14px 30px rgba(15,23,42,.12);
+}
+
+.icon{
+    font-size:35px;
+    margin-bottom:12px;
+}
+
+.card h3{
+    margin-bottom:8px;
+    color:#0f172a;
+}
+
+.card p{
+    color:#64748b;
+    font-size:14px;
+}
+
+.formula-section{
+    background:#ffffff;
+    border-radius:22px;
+    padding:30px;
+    margin-top:25px;
+    box-shadow:0 8px 25px rgba(15,23,42,.07);
+}
+
+.formula{
+    background:#f0fdfa;
+    border-left:5px solid #0f766e;
+    padding:18px;
+    margin:15px 0;
+    border-radius:8px;
+    font-size:17px;
+}
+
+.example{
+    background:#eff6ff;
+    border-left:5px solid #2563eb;
+    padding:18px;
+    margin:15px 0;
+    border-radius:8px;
+}
+
+.warning{
+    background:#fff7ed;
+    border-left:5px solid #f97316;
+    padding:18px;
+    margin-top:20px;
+    border-radius:8px;
+}
+
+.calculator{
+    background:linear-gradient(135deg,#ecfeff,#eff6ff);
+    padding:30px;
+    border-radius:22px;
+    margin-top:30px;
+}
+
+.calculator h2{
+    color:#075985;
+    margin-bottom:20px;
+}
+
+.input-group{
+    margin-bottom:15px;
+}
+
+.input-group label{
+    display:block;
+    font-weight:700;
+    margin-bottom:6px;
+}
+
+.input-group input,
+.input-group select{
+    width:100%;
+    padding:13px;
+    border:1px solid #cbd5e1;
+    border-radius:10px;
+    font-size:16px;
+    background:white;
+}
+
+.calc-btn{
+    width:100%;
+    border:none;
+    padding:14px;
+    background:#075985;
+    color:white;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:700;
+    cursor:pointer;
+    margin-top:5px;
+}
+
+.calc-btn:hover{
+    background:#0f766e;
+}
+
+.result{
+    display:none;
+    background:white;
+    padding:20px;
+    margin-top:20px;
+    border-radius:12px;
+    border:2px solid #0f766e;
+}
+
+.result strong{
+    color:#075985;
+    font-size:22px;
+}
+
+.quiz{
+    margin-top:35px;
+}
+
+.question{
+    background:white;
+    padding:25px;
+    border-radius:18px;
+    margin-bottom:18px;
+    box-shadow:0 6px 20px rgba(15,23,42,.06);
+}
+
+.question h3{
+    margin-bottom:15px;
+}
+
+.option{
+    display:block;
+    padding:11px;
+    margin:8px 0;
+    background:#f8fafc;
+    border:1px solid #e2e8f0;
+    border-radius:9px;
+    cursor:pointer;
+}
+
+.option:hover{
+    background:#f0fdfa;
+}
+
+.quiz-btn{
+    background:#0f766e;
+    color:white;
+    border:none;
+    padding:14px 25px;
+    border-radius:10px;
+    font-weight:700;
+    cursor:pointer;
+}
+
+.quiz-result{
+    margin-top:20px;
+    padding:20px;
+    background:#ecfdf5;
+    border-left:5px solid #16a34a;
+    display:none;
+    border-radius:8px;
+}
+
+footer{
+    margin-top:50px;
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:30px 20px;
+}
+
+footer p{
+    opacity:.75;
+    font-size:14px;
+    margin-top:5px;
+}
+
+@media(max-width:600px){
+    .nav{
+        flex-direction:column;
+    }
+
+    .hero{
+        padding:45px 5%;
+    }
+
+    .container{
+        padding:35px 5%;
+    }
+
+    .formula-section,
+    .calculator{
+        padding:20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="nav">
+        <div class="logo">
+            🩺 Nursing Career
+            <span>Drug Calculation Center</span>
+        </div>
+
+        <a href="index.html" class="home-btn">
+            🏠 Home
+        </a>
+    </div>
+</header>
+
+
+<section class="hero">
+    <div class="hero-content">
+
+        <div class="badge">
+            💊 Nursing Mathematics & Medication Calculation
+        </div>
+
+        <h1>Drug Calculation Center</h1>
+
+        <p>
+            Learn important nursing calculation formulas, understand
+            medication mathematics, practice examples and test your knowledge
+            with MCQs.
+        </p>
+
+    </div>
+</section>
+
+
+<div class="container">
+
+    <div class="section-title">
+        <h2>📚 Calculation Topics</h2>
+        <p>Important topics for nursing students and examination preparation</p>
+    </div>
+
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">💊</div>
+            <h3>Tablet Calculation</h3>
+            <p>
+                Learn the basic formula for calculating the required number
+                of tablets from an ordered and available dose.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🥄</div>
+            <h3>Liquid Medication</h3>
+            <p>
+                Understand dose-volume relationships used in liquid
+                medication calculation exercises.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">💉</div>
+            <h3>Injection Calculation</h3>
+            <p>
+                Practice concentration and volume calculation concepts.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">💧</div>
+            <h3>IV Flow Rate</h3>
+            <p>
+                Study the mathematical relationship between volume,
+                time and flow rate.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">⏱️</div>
+            <h3>Infusion Time</h3>
+            <p>
+                Learn how infusion time can be calculated from volume
+                and flow rate.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">⚖️</div>
+            <h3>Unit Conversion</h3>
+            <p>
+                Practice common nursing mathematics unit conversions.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="formula-section">
+
+        <div class="section-title">
+            <h2>🧮 Important Formulas</h2>
+            <p>Common educational formulas used in nursing calculation practice</p>
+        </div>
+
+        <div class="formula">
+            <strong>Basic Dose Formula</strong><br><br>
+            Required amount =
+            <b>(Desired dose ÷ Available dose) × Quantity</b>
+        </div>
+
+        <div class="formula">
+            <strong>IV Flow Rate</strong><br><br>
+            Flow rate =
+            <b>Total volume ÷ Time</b>
+        </div>
+
+        <div class="formula">
+            <strong>Infusion Time</strong><br><br>
+            Time =
+            <b>Total volume ÷ Flow rate</b>
+        </div>
+
+        <div class="example">
+
+            <strong>📌 Practice Example</strong>
+
+            <p style="margin-top:8px;">
+                Suppose an educational question states that a medication
+                order is 500 mg and the available preparation is 250 mg
+                per tablet.
+            </p>
+
+            <p style="margin-top:8px;">
+                Using the basic formula:
+            </p>
+
+            <p style="margin-top:8px;">
+                500 ÷ 250 = <b>2 tablets</b>
+            </p>
+
+        </div>
+
+        <div class="warning">
+            ⚠️ <strong>Important:</strong>
+            These examples are for educational practice only. Real medication
+            administration must always follow the prescription, institutional
+            protocol, medication label, and appropriate clinical verification.
+        </div>
+
+    </div>
+
+
+    <!-- CALCULATOR -->
+
+    <div class="calculator">
+
+        <h2>🧮 Practice Dose Calculator</h2>
+
+        <p style="margin-bottom:20px;color:#64748b;">
+            Enter educational practice values to calculate the mathematical
+            result using the basic dose formula.
+        </p>
+
+        <div class="input-group">
+            <label>Desired Dose</label>
+            <input type="number" id="desiredDose" placeholder="Example: 500">
+        </div>
+
+        <div class="input-group">
+            <label>Available Dose</label>
+            <input type="number" id="availableDose" placeholder="Example: 250">
+        </div>
+
+        <div class="input-group">
+            <label>Quantity</label>
+            <input type="number" id="quantity" value="1">
+        </div>
+
+        <button class="calc-btn" onclick="calculateDose()">
+            Calculate
+        </button>
+
+        <div class="result" id="doseResult"></div>
+
+    </div>
+
+
+    <!-- IV CALCULATOR -->
+
+    <div class="calculator">
+
+        <h2>💧 Practice IV Flow Calculator</h2>
+
+        <div class="input-group">
+            <label>Total Volume</label>
+            <input type="number" id="ivVolume" placeholder="Example: 1000">
+        </div>
+
+        <div class="input-group">
+            <label>Time in Hours</label>
+            <input type="number" id="ivTime" placeholder="Example: 8">
+        </div>
+
+        <button class="calc-btn" onclick="calculateIV()">
+            Calculate Flow Rate
+        </button>
+
+        <div class="result" id="ivResult"></div>
+
+    </div>
+
+
+    <!-- MCQ -->
+
+    <div class="quiz">
+
+        <div class="section-title">
+            <h2>📝 Drug Calculation MCQ Practice</h2>
+            <p>Test your basic calculation knowledge</p>
+        </div>
+
+
+        <div class="question">
+
+            <h3>1. Which formula is commonly used for basic dose calculation?</h3>
+
+            <label class="option">
+                <input type="radio" name="q1" value="a">
+                Desired ÷ Available × Quantity
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q1" value="b">
+                Available ÷ Desired × Quantity
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q1" value="c">
+                Desired + Available
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q1" value="d">
+                Quantity ÷ Desired
+            </label>
+
+        </div>
+
+
+        <div class="question">
+
+            <h3>2. If desired dose is 500 mg and available dose is 250 mg per tablet, the mathematical result is:</h3>
+
+            <label class="option">
+                <input type="radio" name="q2" value="a">
+                1 tablet
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q2" value="b">
+                2 tablets
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q2" value="c">
+                3 tablets
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q2" value="d">
+                4 tablets
+            </label>
+
+        </div>
+
+
+        <div class="question">
+
+            <h3>3. If total volume is 1000 mL and time is 10 hours, the simple volume-per-hour rate is:</h3>
+
+            <label class="option">
+                <input type="radio" name="q3" value="a">
+                50 mL/hour
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q3" value="b">
+                75 mL/hour
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q3" value="c">
+                100 mL/hour
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q3" value="d">
+                150 mL/hour
+            </label>
+
+        </div>
+
+
+        <button class="quiz-btn" onclick="checkQuiz()">
+            Submit MCQ
+        </button>
+
+        <div class="quiz-result" id="quizResult"></div>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    <h3>🩺 Nursing Career</h3>
+
+    <p>
+        Nursing Education • MCQ Exam • Drug Calculation • Clinical Learning
+    </p>
+
+    <p>
+        © 2026 Nursing Career. Educational Practice Platform.
+    </p>
+
+</footer>
+
+
+<script>
+
+function calculateDose(){
+
+    const desired =
+        parseFloat(document.getElementById("desiredDose").value);
+
+    const available =
+        parseFloat(document.getElementById("availableDose").value);
+
+    const quantity =
+        parseFloat(document.getElementById("quantity").value);
+
+    const result =
+        document.getElementById("doseResult");
+
+
+    if(
+        isNaN(desired) ||
+        isNaN(available) ||
+        isNaN(quantity) ||
+        available <= 0 ||
+        quantity <= 0
+    ){
+
+        result.style.display = "block";
+
+        result.innerHTML =
+        "⚠️ Please enter valid positive numbers.";
+
+        return;
+    }
+
+
+    const answer =
+        (desired / available) * quantity;
+
+
+    result.style.display = "block";
+
+    result.innerHTML =
+    `
+        <div>
+            <strong>${answer}</strong>
+            <br>
+            Educational calculation result
+        </div>
+    `;
+}
+
+
+
+function calculateIV(){
+
+    const volume =
+        parseFloat(document.getElementById("ivVolume").value);
+
+    const time =
+        parseFloat(document.getElementById("ivTime").value);
+
+    const result =
+        document.getElementById("ivResult");
+
+
+    if(
+        isNaN(volume) ||
+        isNaN(time) ||
+        volume <= 0 ||
+        time <= 0
+    ){
+
+        result.style.display = "block";
+
+        result.innerHTML =
+        "⚠️ Please enter valid positive numbers.";
+
+        return;
+    }
+
+
+    const rate = volume / time;
+
+
+    result.style.display = "block";
+
+    result.innerHTML =
+    `
+        <strong>${rate.toFixed(2)} mL/hour</strong>
+        <br>
+        Educational volume-per-hour calculation
+    `;
+}
+
+
+
+function checkQuiz(){
+
+    let score = 0;
+
+
+    const q1 =
+        document.querySelector('input[name="q1"]:checked');
+
+    const q2 =
+        document.querySelector('input[name="q2"]:checked');
+
+    const q3 =
+        document.querySelector('input[name="q3"]:checked');
+
+
+    if(q1 && q1.value === "a"){
+        score++;
+    }
+
+    if(q2 && q2.value === "b"){
+        score++;
+    }
+
+    if(q3 && q3.value === "c"){
+        score++;
+    }
+
+
+    const result =
+        document.getElementById("quizResult");
+
+    result.style.display = "block";
+
+
+    result.innerHTML =
+    `
+        <h3>🎯 Your Score: ${score}/3</h3>
+
+        <p style="margin-top:8px;">
+            ${
+                score === 3
+                ? "Excellent! All answers are correct."
+                : score === 2
+                ? "Good job! Review the remaining question."
+                : score === 1
+                ? "Keep practicing the formulas."
+                : "Review the formulas and try again."
+            }
+        </p>
+    `;
+}
+
+</script>
+
+</body>
+</html>
