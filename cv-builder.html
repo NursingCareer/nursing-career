@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nursing Career - CV Builder</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#eef3f8;
+    color:#172033;
+    line-height:1.5;
+}
+
+header{
+    background:linear-gradient(135deg,#075985,#0e7490);
+    color:white;
+    padding:22px 16px;
+    position:sticky;
+    top:0;
+    z-index:20;
+    box-shadow:0 4px 15px rgba(0,0,0,.15);
+}
+
+.header-inner{
+    max-width:1400px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:800;
+}
+
+.logo span{
+    display:block;
+    font-size:12px;
+    opacity:.85;
+    font-weight:400;
+}
+
+.container{
+    max-width:1400px;
+    margin:25px auto;
+    padding:0 16px;
+    display:grid;
+    grid-template-columns:480px 1fr;
+    gap:24px;
+}
+
+.panel{
+    background:white;
+    border-radius:18px;
+    padding:22px;
+    box-shadow:0 8px 30px rgba(15,23,42,.08);
+}
+
+.panel h2{
+    font-size:20px;
+    margin-bottom:18px;
+    color:#075985;
+}
+
+.section-title{
+    margin:25px 0 12px;
+    padding-bottom:8px;
+    border-bottom:2px solid #e2e8f0;
+    font-size:16px;
+    color:#0f172a;
+}
+
+.field{
+    margin-bottom:13px;
+}
+
+.field label{
+    display:block;
+    font-weight:700;
+    font-size:13px;
+    margin-bottom:6px;
+}
+
+input,
+textarea,
+select{
+    width:100%;
+    border:1px solid #cbd5e1;
+    border-radius:9px;
+    padding:11px 12px;
+    font-size:14px;
+    outline:none;
+    background:#fff;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+    border-color:#0891b2;
+    box-shadow:0 0 0 3px rgba(8,145,178,.1);
+}
+
+textarea{
+    resize:vertical;
+    min-height:90px;
+}
+
+.grid2{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+button{
+    border:0;
+    cursor:pointer;
+    border-radius:9px;
+    padding:11px 15px;
+    font-weight:700;
+    transition:.2s;
+}
+
+button:hover{
+    transform:translateY(-1px);
+}
+
+.btn{
+    background:#0e7490;
+    color:white;
+}
+
+.btn-danger{
+    background:#fee2e2;
+    color:#b91c1c;
+}
+
+.btn-secondary{
+    background:#e2e8f0;
+    color:#334155;
+}
+
+.btn-print{
+    background:#16a34a;
+    color:white;
+}
+
+.item{
+    border:1px solid #dbe3ec;
+    background:#f8fafc;
+    border-radius:12px;
+    padding:13px;
+    margin-bottom:12px;
+}
+
+.item-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:10px;
+}
+
+.item-head strong{
+    font-size:14px;
+}
+
+.actions{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+/* CV */
+.preview-wrap{
+    background:#dce4eb;
+    padding:20px;
+    border-radius:18px;
+    min-height:800px;
+}
+
+.cv{
+    width:100%;
+    max-width:850px;
+    min-height:1100px;
+    margin:auto;
+    background:#fff;
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
+    padding:42px;
+}
+
+.cv-header{
+    display:flex;
+    gap:22px;
+    border-bottom:3px solid #0e7490;
+    padding-bottom:20px;
+    margin-bottom:22px;
+}
+
+.photo{
+    width:125px;
+    height:145px;
+    border:2px solid #0e7490;
+    border-radius:8px;
+    object-fit:cover;
+    display:none;
+}
+
+.cv-name{
+    font-size:31px;
+    font-weight:800;
+    color:#0f172a;
+}
+
+.cv-title{
+    color:#0e7490;
+    font-size:16px;
+    font-weight:700;
+    margin:4px 0 10px;
+}
+
+.contact{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px 18px;
+    font-size:12px;
+    color:#475569;
+}
+
+.cv-section{
+    margin-bottom:22px;
+}
+
+.cv-section h3{
+    font-size:15px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:#0e7490;
+    border-bottom:1px solid #cbd5e1;
+    padding-bottom:5px;
+    margin-bottom:10px;
+}
+
+.profile-text{
+    font-size:13px;
+    color:#334155;
+    text-align:justify;
+}
+
+.cv-item{
+    margin-bottom:12px;
+}
+
+.cv-item-title{
+    font-size:14px;
+    font-weight:800;
+    color:#1e293b;
+}
+
+.cv-meta{
+    font-size:12px;
+    color:#64748b;
+    margin:2px 0;
+}
+
+.cv-description{
+    font-size:12px;
+    color:#475569;
+    white-space:pre-line;
+}
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+}
+
+.skill{
+    background:#e0f2fe;
+    color:#075985;
+    border-radius:20px;
+    padding:5px 10px;
+    font-size:11px;
+    font-weight:700;
+}
+
+.lang-list{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:7px;
+    font-size:12px;
+}
+
+.empty{
+    color:#94a3b8;
+    font-size:12px;
+    font-style:italic;
+}
+
+.footer-note{
+    text-align:center;
+    color:#94a3b8;
+    font-size:11px;
+    margin-top:30px;
+}
+
+/* Responsive */
+@media(max-width:1000px){
+    .container{
+        grid-template-columns:1fr;
+    }
+
+    .preview-wrap{
+        order:-1;
+    }
+}
+
+@media(max-width:600px){
+    header{
+        padding:16px 12px;
+    }
+
+    .logo{
+        font-size:20px;
+    }
+
+    .container{
+        margin:12px auto;
+        padding:0 9px;
+    }
+
+    .panel{
+        padding:15px;
+        border-radius:13px;
+    }
+
+    .grid2{
+        grid-template-columns:1fr;
+    }
+
+    .cv{
+        padding:24px;
+    }
+
+    .cv-header{
+        flex-direction:column;
+    }
+
+    .cv-name{
+        font-size:25px;
+    }
+
+    .preview-wrap{
+        padding:7px;
+    }
+}
+
+/* Print */
+@media print{
+    body{
+        background:white;
+    }
+
+    header,
+    .editor,
+    .preview-wrap{
+        background:white;
+    }
+
+    header,
+    .editor{
+        display:none !important;
+    }
+
+    .container{
+        display:block;
+        margin:0;
+        padding:0;
+    }
+
+    .preview-wrap{
+        padding:0;
+    }
+
+    .cv{
+        box-shadow:none;
+        max-width:none;
+        width:100%;
+        min-height:auto;
+        padding:35px;
+    }
+
+    @page{
+        size:A4;
+        margin:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-inner">
+        <div class="logo">
+            🩺 Nursing Career
+            <span>Professional CV Builder</span>
+        </div>
+
+        <button class="btn-print" onclick="window.print()">
+            🖨️ Print / Save PDF
+        </button>
+    </div>
+</header>
+
+<div class="container">
+
+<!-- ================= EDITOR ================= -->
+<div class="panel editor">
+
+<h2>📄 Create Your Professional CV</h2>
+
+<div class="section-title">👤 Personal Information</div>
+
+<div class="field">
+<label>Full Name</label>
+<input id="name" placeholder="e.g. Nusrat Jahan" oninput="updateCV()">
+</div>
+
+<div class="field">
+<label>Professional Title</label>
+<input id="title" placeholder="e.g. Registered Nurse / Midwife" oninput="updateCV()">
+</div>
+
+<div class="grid2">
+
+<div class="field">
+<label>Phone</label>
+<input id="phone" placeholder="+880 1XXXXXXXXX" oninput="updateCV()">
+</div>
+
+<div class="field">
+<label>Email</label>
+<input id="email" placeholder="example@email.com" oninput="updateCV()">
+</div>
+
+</div>
+
+<div class="field">
+<label>Address</label>
+<textarea id="address" placeholder="Dhaka, Bangladesh" oninput="updateCV()"></textarea>
+</div>
+
+<div class="field">
+<label>Profile Photo</label>
+<input type="file" id="photoInput" accept="image/*">
+</div>
+
+<div class="section-title">🎓 Course / Qualification</div>
+
+<div class="field">
+<label>Course</label>
+
+<select id="course" onchange="updateCV()">
+    <option value="">Select Course</option>
+
+    <!-- Nursing -->
+    <option>Diploma in Nursing Science & Midwifery</option>
+    <option>B.Sc in Nursing</option>
+    <option>Post Basic B.Sc in Nursing</option>
+    <option>M.Sc in Nursing</option>
+
+    <!-- Midwifery -->
+    <option>Diploma in Midwifery</option>
+    <option>B.Sc in Midwifery</option>
+
+    <!-- Other -->
+    <option>Certificate in Nursing</option>
+    <option>Other</option>
+</select>
+
+</div>
+
+<div class="grid2">
+
+<div class="field">
+<label>Institute</label>
+<input id="institute" placeholder="Institute / College" oninput="updateCV()">
+</div>
+
+<div class="field">
+<label>Passing Year</label>
+<input id="passingYear" placeholder="2026" oninput="updateCV()">
+</div>
+
+</div>
+
+<div class="field">
+<label>Result / GPA</label>
+<input id="result" placeholder="CGPA 3.80 / 4.00" oninput="updateCV()">
+</div>
+
+
+<!-- EXPERIENCE -->
+
+<div class="section-title">🏥 Professional Experience</div>
+
+<div id="experienceList"></div>
+
+<button class="btn" onclick="addExperience()">
++ Add Experience
+</button>
+
+
+<!-- EDUCATION -->
+
+<div class="section-title">📚 Additional Education</div>
+
+<div id="educationList"></div>
+
+<button class="btn" onclick="addEducation()">
++ Add Education
+</button>
+
+
+<!-- REGISTRATION -->
+
+<div class="section-title">🪪 Nursing / Midwifery Registration</div>
+
+<div class="grid2">
+
+<div class="field">
+<label>Registration No.</label>
+<input id="registration" placeholder="Registration number" oninput="updateCV()">
+</div>
+
+<div class="field">
+<label>Registration Authority</label>
+<input id="authority" placeholder="BNMC" oninput="updateCV()">
+</div>
+
+</div>
+
+
+<!-- SKILLS -->
+
+<div class="section-title">💉 Clinical Skills</div>
+
+<div class="field">
+<label>Skills — comma separated</label>
+
+<textarea
+id="skills"
+placeholder="Patient Care, IV Cannulation, Medication Administration, Vital Signs, Wound Care"
+oninput="updateCV()"></textarea>
+
+</div>
+
+
+<!-- TRAINING -->
+
+<div class="section-title">📜 Training & Certifications</div>
+
+<div class="field">
+<label>Training / Certifications</label>
+
+<textarea
+id="training"
+placeholder="Basic Life Support (BLS)
+Infection Prevention & Control
+First Aid"
+oninput="updateCV()"></textarea>
+
+</div>
+
+
+<!-- LANGUAGES -->
+
+<div class="section-title">🌐 Languages</div>
+
+<div class="field">
+<textarea
+id="languages"
+placeholder="Bangla — Native
+English — Good
+Hindi — Basic"
+oninput="updateCV()"></textarea>
+</div>
+
+
+<!-- REFERENCES -->
+
+<div class="section-title">👥 References</div>
+
+<div class="field">
+<textarea
+id="references"
+placeholder="Name — Designation — Organization — Contact"
+oninput="updateCV()"></textarea>
+</div>
+
+
+<div class="actions">
+
+<button class="btn" onclick="saveCV()">
+💾 Save CV
+</button>
+
+<button class="btn-secondary" onclick="clearCV()">
+♻️ Reset
+</button>
+
+<button class="btn-print" onclick="window.print()">
+📄 Save PDF
+</button>
+
+</div>
+
+</div>
+
+
+<!-- ================= PREVIEW ================= -->
+
+<div class="preview-wrap">
+
+<div class="cv" id="cvPreview">
+
+<div class="cv-header">
+
+<img id="cvPhoto" class="photo">
+
+<div style="flex:1">
+
+<div class="cv-name" id="cvName">
+Your Name
+</div>
+
+<div class="cv-title" id="cvTitle">
+Nursing Professional
+</div>
+
+<div class="contact">
+
+<span id="cvPhone">📞 Phone</span>
+<span id="cvEmail">✉ Email</span>
+<span id="cvAddress">📍 Address</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="cv-section">
+
+<h3>Professional Profile</h3>
+
+<p class="profile-text" id="profileText">
+Dedicated nursing professional seeking an opportunity to contribute
+clinical knowledge, patient-care skills and professional commitment
+to a healthcare organization.
+</p>
+
+</div>
+
+
+<div class="cv-section">
+
+<h3>Education & Qualification</h3>
+
+<div class="cv-item">
+
+<div class="cv-item-title" id="cvCourse">
+Course Name
+</div>
+
+<div class="cv-meta" id="cvInstitute">
+Institute
+</div>
+
+<div class="cv-meta">
+
+<span id="cvYear">Passing Year</span>
+&nbsp; | &nbsp;
+<span id="cvResult">Result</span>
+
+</div>
+
+</div>
+
+<div id="cvAdditionalEducation"></div>
+
+</div>
+
+
+<div class="cv-section">
+
+<h3>Professional Experience</h3>
+
+<div id="cvExperience">
+
+<div class="empty">
+Professional experience will appear here.
+</div>
+
+</div>
+
+</div>
+
+
+<div class="cv-section">
+
+<h3>Professional Registration</h3>
+
+<div class="cv-item">
+
+<div class="cv-item-title" id="cvRegistration">
+Registration Number
+</div>
+
+<div class="cv-meta" id="cvAuthority">
+Registration Authority
+</div>
+
+</div>
+
+</div>
+
+
+<div class="cv-section">
+
+<h3>Clinical Skills</h3>
+
+<div class="skills" id="cvSkills">
+
+<span class="skill">Patient Care</span>
+<span class="skill">Medication Administration</span>
+<span class="skill">Vital Signs</span>
+
+</div>
+
+</div>
+
+
+<div class="cv-section">
+
+<h3>Training & Certifications</h3>
+
+<div class="cv-description" id="cvTraining">
+Training and certifications will appear here.
+</div>
+
+</div>
+
+
+<div class="cv-section">
+
+<h3>Languages</h3>
+
+<div class="lang-list" id="cvLanguages">
+<span>Bangla — Native</span>
+<span>English — Good</span>
+</div>
+
+</div>
+
+
+<div class="cv-section">
+
+<h3>References</h3>
+
+<div class="cv-description" id="cvReferences">
+References available upon request.
+</div>
+
+</div>
+
+
+<div class="footer-note">
+Created with Nursing Career CV Builder
+</div>
+
+</div>
+</div>
+</div>
+
+
+<script>
+
+let experienceCount = 0;
+let educationCount = 0;
+
+
+/* ================= EXPERIENCE ================= */
+
+function addExperience(){
+
+    experienceCount++;
+
+    const box = document.createElement("div");
+
+    box.className = "item";
+
+    box.id = "experience-" + experienceCount;
+
+    box.innerHTML = `
+
+        <div class="item-head">
+
+            <strong>Experience ${experienceCount}</strong>
+
+            <button
+                class="btn-danger"
+                onclick="removeExperience(${experienceCount})">
+                Remove
+            </button>
+
+        </div>
+
+        <div class="field">
+            <label>Hospital / Organization</label>
+            <input
+                class="exp-org"
+                placeholder="Hospital / Clinic"
+                oninput="updateCV()">
+        </div>
+
+        <div class="grid2">
+
+            <div class="field">
+                <label>Position</label>
+                <input
+                    class="exp-position"
+                    placeholder="Staff Nurse / Midwife"
+                    oninput="updateCV()">
+            </div>
+
+            <div class="field">
+                <label>Duration</label>
+                <input
+                    class="exp-duration"
+                    placeholder="2024 - 2026"
+                    oninput="updateCV()">
+            </div>
+
+        </div>
+
+        <div class="field">
+            <label>Responsibilities</label>
+
+            <textarea
+                class="exp-description"
+                placeholder="Patient care, medication administration, documentation..."
+                oninput="updateCV()"></textarea>
+        </div>
+    `;
+
+    document
+        .getElementById("experienceList")
+        .appendChild(box);
+
+    updateCV();
+}
+
+
+function removeExperience(id){
+
+    const el = document.getElementById("experience-" + id);
+
+    if(el){
+        el.remove();
+    }
+
+    updateCV();
+}
+
+
+/* ================= EDUCATION ================= */
+
+function addEducation(){
+
+    educationCount++;
+
+    const box = document.createElement("div");
+
+    box.className = "item";
+
+    box.id = "education-" + educationCount;
+
+    box.innerHTML = `
+
+        <div class="item-head">
+
+            <strong>Education ${educationCount}</strong>
+
+            <button
+                class="btn-danger"
+                onclick="removeEducation(${educationCount})">
+                Remove
+            </button>
+
+        </div>
+
+        <div class="field">
+            <label>Degree / Course</label>
+
+            <input
+                class="edu-degree"
+                placeholder="Course / Degree"
+                oninput="updateCV()">
+
+        </div>
+
+        <div class="grid2">
+
+            <div class="field">
+
+                <label>Institute</label>
+
+                <input
+                    class="edu-institute"
+                    placeholder="Institute"
+                    oninput="updateCV()">
+
+            </div>
+
+            <div class="field">
+
+                <label>Year</label>
+
+                <input
+                    class="edu-year"
+                    placeholder="2025"
+                    oninput="updateCV()">
+
+            </div>
+
+        </div>
+    `;
+
+    document
+        .getElementById("educationList")
+        .appendChild(box);
+
+    updateCV();
+}
+
+
+function removeEducation(id){
+
+    const el = document.getElementById("education-" + id);
+
+    if(el){
+        el.remove();
+    }
+
+    updateCV();
+}
+
+
+/* ================= UPDATE CV ================= */
+
+function value(id){
+
+    return document.getElementById(id)?.value.trim() || "";
+}
+
+
+function updateCV(){
+
+    document.getElementById("cvName").textContent =
+        value("name") || "Your Name";
+
+    document.getElementById("cvTitle").textContent =
+        value("title") || "Nursing Professional";
+
+    document.getElementById("cvPhone").textContent =
+        value("phone") ? "📞 " + value("phone") : "📞 Phone";
+
+    document.getElementById("cvEmail").textContent =
+        value("email") ? "✉ " + value("email") : "✉ Email";
+
+    document.getElementById("cvAddress").textContent =
+        value("address") ? "📍 " + value("address") : "📍 Address";
+
+
+    document.getElementById("cvCourse").textContent =
+        value("course") || "Course Name";
+
+    document.getElementById("cvInstitute").textContent =
+        value("institute") || "Institute";
+
+    document.getElementById("cvYear").textContent =
+        value("passingYear") || "Passing Year";
+
+    document.getElementById("cvResult").textContent =
+        value("result") || "Result";
+
+
+    document.getElementById("cvRegistration").textContent =
+        value("registration") || "Registration Number";
+
+    document.getElementById("cvAuthority").textContent =
+        value("authority") || "Registration Authority";
+
+
+    /* Skills */
+
+    const skills = value("skills")
+        .split(",")
+        .map(x => x.trim())
+        .filter(Boolean);
+
+    const skillBox = document.getElementById("cvSkills");
+
+    skillBox.innerHTML = "";
+
+    if(skills.length){
+
+        skills.forEach(skill => {
+
+            const span = document.createElement("span");
+
+            span.className = "skill";
+
+            span.textContent = skill;
+
+            skillBox.appendChild(span);
+
+        });
+
+    }else{
+
+        skillBox.innerHTML =
+            '<span class="skill">Patient Care</span>';
+
+    }
+
+
+    /* Training */
+
+    document.getElementById("cvTraining").textContent =
+        value("training") ||
+        "Training and certifications will appear here.";
+
+
+    /* Languages */
+
+    const langs = value("languages")
+        .split("\n")
+        .map(x => x.trim())
+        .filter(Boolean);
+
+    const langBox =
+        document.getElementById("cvLanguages");
+
+    langBox.innerHTML = "";
+
+    if(langs.length){
+
+        langs.forEach(lang => {
+
+            const span =
+                document.createElement("span");
+
+            span.textContent = lang;
+
+            langBox.appendChild(span);
+
+        });
+
+    }else{
+
+        langBox.innerHTML = `
+            <span>Bangla — Native</span>
+            <span>English — Good</span>
+        `;
+
+    }
+
+
+    /* References */
+
+    document.getElementById("cvReferences").textContent =
+        value("references") ||
+        "References available upon request.";
+
+
+    /* Experience */
+
+    const experiencePreview =
+        document.getElementById("cvExperience");
+
+    experiencePreview.innerHTML = "";
+
+    const experiences =
+        document.querySelectorAll("#experienceList .item");
+
+    if(!experiences.length){
+
+        experiencePreview.innerHTML =
+            '<div class="empty">Professional experience will appear here.</div>';
+
+    }else{
+
+        experiences.forEach(item => {
+
+            const org =
+                item.querySelector(".exp-org")?.value.trim() || "";
+
+            const position =
+                item.querySelector(".exp-position")?.value.trim() || "";
+
+            const duration =
+                item.querySelector(".exp-duration")?.value.trim() || "";
+
+            const description =
+                item.querySelector(".exp-description")?.value.trim() || "";
+
+            const div =
+                document.createElement("div");
+
+            div.className = "cv-item";
+
+            div.innerHTML = `
+
+                <div class="cv-item-title">
+                    ${escapeHTML(position || "Position")}
+                </div>
+
+                <div class="cv-meta">
+                    ${escapeHTML(org || "Organization")}
+                    ${duration ? " • " + escapeHTML(duration) : ""}
+                </div>
+
+                ${
+                    description
+                    ?
+                    `<div class="cv-description">
+                        ${escapeHTML(description)}
+                    </div>`
+                    :
+                    ""
+                }
+
+            `;
+
+            experiencePreview.appendChild(div);
+
+        });
+
+    }
+
+
+    /* Additional Education */
+
+    const eduPreview =
+        document.getElementById("cvAdditionalEducation");
+
+    eduPreview.innerHTML = "";
+
+    const educations =
+        document.querySelectorAll("#educationList .item");
+
+    educations.forEach(item => {
+
+        const degree =
+            item.querySelector(".edu-degree")?.value.trim() || "";
+
+        const institute =
+            item.querySelector(".edu-institute")?.value.trim() || "";
+
+        const year =
+            item.querySelector(".edu-year")?.value.trim() || "";
+
+        const div =
+            document.createElement("div");
+
+        div.className = "cv-item";
+
+        div.innerHTML = `
+
+            <div class="cv-item-title">
+                ${escapeHTML(degree || "Degree / Course")}
+            </div>
+
+            <div class="cv-meta">
+                ${escapeHTML(institute)}
+                ${year ? " • " + escapeHTML(year) : ""}
+            </div>
+
+        `;
+
+        eduPreview.appendChild(div);
+
+    });
+
+}
+
+
+/* ================= SECURITY ================= */
+
+function escapeHTML(str){
+
+    return str
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+
+}
+
+
+/* ================= PHOTO ================= */
+
+document
+.getElementById("photoInput")
+.addEventListener("change", function(e){
+
+    const file = e.target.files[0];
+
+    if(!file) return;
+
+    const reader = new FileReader();
+
+    reader.onload = function(event){
+
+        const img =
+            document.getElementById("cvPhoto");
+
+        img.src = event.target.result;
+
+        img.style.display = "block";
+
+    };
+
+    reader.readAsDataURL(file);
+
+});
+
+
+/* ================= SAVE ================= */
+
+function saveCV(){
+
+    const data = {};
+
+    document
+    .querySelectorAll("input, textarea, select")
+    .forEach(el => {
+
+        if(el.id){
+            data[el.id] = el.value;
+        }
+
+    });
+
+    localStorage.setItem(
+        "nursingCareerCV",
+        JSON.stringify(data)
+    );
+
+    alert("CV saved successfully!");
+}
+
+
+/* ================= LOAD ================= */
+
+function loadCV(){
+
+    const saved =
+        localStorage.getItem("nursingCareerCV");
+
+    if(!saved) return;
+
+    try{
+
+        const data = JSON.parse(saved);
+
+        Object.keys(data).forEach(id => {
+
+            const el =
+                document.getElementById(id);
+
+            if(el){
+                el.value = data[id];
+            }
+
+        });
+
+        updateCV();
+
+    }catch(e){
+
+        console.error("CV loading error:",e);
+
+    }
+
+}
+
+
+/* ================= CLEAR ================= */
+
+function clearCV(){
+
+    if(!confirm("Are you sure you want to reset the CV?")){
+        return;
+    }
+
+    localStorage.removeItem("nursingCareerCV");
+
+    location.reload();
+}
+
+
+/* ================= START ================= */
+
+loadCV();
+
+addExperience();
+
+</script>
+
+</body>
+</html>
