@@ -3,17 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#07111f">
 
 <title>Nursing Career | Premium Nursing Education Platform</title>
 
-<meta name="description"
-content="Nursing Career - Premium nursing education platform for MCQ practice, academic study, clinical learning and examination preparation.">
+<meta name="description" content="Nursing Career - Topic-wise nursing notes, high-yield topics, picture learning, drug calculation, MCQ examination, clinical nursing, viva preparation and academic resources.">
 
 <style>
-
-/* =========================================================
-   RESET
-========================================================= */
+:root{
+    --bg:#f5f8fc;
+    --card:#ffffff;
+    --text:#0f172a;
+    --muted:#64748b;
+    --primary:#0b63f6;
+    --primary2:#06b6d4;
+    --navy:#07111f;
+    --navy2:#0d1b2e;
+    --border:#e5eaf2;
+    --success:#10b981;
+    --warning:#f59e0b;
+    --danger:#ef4444;
+    --shadow:0 18px 50px rgba(15,23,42,.08);
+    --radius:22px;
+}
 
 *{
     margin:0;
@@ -26,28 +38,10 @@ html{
 }
 
 body{
-    font-family:
-        Inter,
-        ui-sans-serif,
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        sans-serif;
-
-    background:#f7fafc;
-    color:#102033;
+    font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
     line-height:1.6;
-}
-
-button,
-input,
-select{
-    font:inherit;
-}
-
-button{
-    cursor:pointer;
 }
 
 a{
@@ -55,1409 +49,1239 @@ a{
     color:inherit;
 }
 
-
-/* =========================================================
-   VARIABLES
-========================================================= */
-
-:root{
-
-    --primary:#0f766e;
-    --primary2:#0d9488;
-    --blue:#0369a1;
-    --cyan:#0891b2;
-
-    --dark:#082f49;
-    --text:#102033;
-    --muted:#64748b;
-
-    --white:#ffffff;
-    --bg:#f7fafc;
-    --card:#ffffff;
-    --border:#e2e8f0;
-
-    --shadow:
-        0 15px 45px rgba(15,23,42,.08);
-
-    --shadow2:
-        0 25px 70px rgba(15,23,42,.12);
-
+button{
+    font-family:inherit;
 }
 
+.container{
+    width:min(1180px,92%);
+    margin:auto;
+}
 
-/* =========================================================
+/* =========================
    NAVBAR
-========================================================= */
+========================= */
 
 .navbar{
-
     position:sticky;
     top:0;
     z-index:1000;
-
-    background:rgba(255,255,255,.88);
-
-    backdrop-filter:
-        blur(18px);
-
-    border-bottom:
-        1px solid rgba(226,232,240,.8);
-
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(226,232,240,.8);
 }
 
 .nav-inner{
-
-    max-width:1250px;
-    margin:auto;
-
-    min-height:74px;
-
-    padding:
-        0 22px;
-
+    min-height:76px;
     display:flex;
     align-items:center;
     justify-content:space-between;
-
-    gap:20px;
-
+    gap:25px;
 }
 
 .logo{
-
     display:flex;
     align-items:center;
     gap:12px;
-
     font-weight:900;
-    font-size:20px;
-
-    color:var(--dark);
-
+    font-size:21px;
+    white-space:nowrap;
 }
 
 .logo-icon{
-
-    width:45px;
-    height:45px;
-
+    width:43px;
+    height:43px;
     border-radius:14px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    background:
-        linear-gradient(
-            135deg,
-            #0f766e,
-            #06b6d4
-        );
-
+    display:grid;
+    place-items:center;
     color:white;
+    font-size:22px;
+    background:linear-gradient(135deg,#075cf5,#06b6d4);
+    box-shadow:0 10px 25px rgba(11,99,246,.25);
+}
 
-    box-shadow:
-        0 10px 25px rgba(13,148,136,.25);
-
+.logo span{
+    color:var(--primary);
 }
 
 .nav-links{
-
     display:flex;
     align-items:center;
     gap:5px;
-
 }
 
 .nav-links a{
-
-    padding:
-        9px 13px;
-
-    border-radius:10px;
-
+    padding:10px 12px;
+    color:#475569;
     font-size:14px;
     font-weight:700;
-
-    color:#475569;
-
+    border-radius:10px;
     transition:.2s;
-
 }
 
 .nav-links a:hover{
-
-    background:#ecfeff;
+    background:#eef5ff;
     color:var(--primary);
-
 }
 
-.nav-cta{
-
-    padding:
-        11px 17px !important;
-
-    color:white !important;
-
-    background:
-        linear-gradient(
-            135deg,
-            #0f766e,
-            #0284c7
-        );
-
-    box-shadow:
-        0 8px 20px rgba(2,132,199,.18);
-
-}
-
-.mobile-menu{
-
-    display:none;
-
-    border:0;
-
-    width:44px;
-    height:44px;
-
-    border-radius:12px;
-
-    background:#ecfeff;
-    color:var(--primary);
-
-    font-size:22px;
-
-}
-
-
-/* =========================================================
-   HERO
-========================================================= */
-
-.hero{
-
-    position:relative;
-
-    overflow:hidden;
-
-    padding:
-        90px 20px 80px;
-
-    background:
-
-        radial-gradient(
-            circle at 10% 20%,
-            rgba(20,184,166,.18),
-            transparent 32%
-        ),
-
-        radial-gradient(
-            circle at 90% 10%,
-            rgba(14,165,233,.18),
-            transparent 35%
-        ),
-
-        linear-gradient(
-            180deg,
-            #f0fdfa,
-            #f7fafc
-        );
-
-}
-
-.hero-container{
-
-    max-width:1250px;
-    margin:auto;
-
-    display:grid;
-
-    grid-template-columns:
-        1.1fr .9fr;
-
-    gap:60px;
-
-    align-items:center;
-
-}
-
-.eyebrow{
-
-    display:inline-flex;
-
+.nav-actions{
+    display:flex;
     align-items:center;
     gap:8px;
+}
 
-    padding:
-        8px 13px;
+.menu-btn{
+    display:none;
+    border:0;
+    background:#eef5ff;
+    width:42px;
+    height:42px;
+    border-radius:12px;
+    font-size:20px;
+    cursor:pointer;
+}
 
+/* =========================
+   BUTTONS
+========================= */
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    border:0;
+    cursor:pointer;
+    border-radius:12px;
+    padding:12px 18px;
+    font-weight:800;
+    font-size:14px;
+    transition:.25s;
+}
+
+.btn-primary{
+    background:linear-gradient(135deg,#075cf5,#087efb);
+    color:white;
+    box-shadow:0 10px 25px rgba(7,92,245,.22);
+}
+
+.btn-primary:hover{
+    transform:translateY(-2px);
+    box-shadow:0 15px 30px rgba(7,92,245,.3);
+}
+
+.btn-outline{
+    background:white;
+    color:var(--primary);
+    border:1px solid #cfe0ff;
+}
+
+.btn-outline:hover{
+    background:#eef5ff;
+}
+
+.btn-dark{
+    background:#0f172a;
+    color:white;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    padding:70px 0 45px;
+    background:
+        radial-gradient(circle at 10% 20%,rgba(37,99,235,.13),transparent 30%),
+        radial-gradient(circle at 90% 10%,rgba(6,182,212,.13),transparent 28%),
+        linear-gradient(180deg,#ffffff,#f5f9ff);
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.12fr .88fr;
+    gap:55px;
+    align-items:center;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 13px;
+    background:#edf5ff;
+    color:#075cf5;
+    border:1px solid #d7e6ff;
     border-radius:999px;
-
-    background:#ccfbf1;
-    color:#0f766e;
-
     font-size:13px;
     font-weight:800;
-
     margin-bottom:20px;
-
 }
 
 .hero h1{
-
-    font-size:
-        clamp(42px,6vw,72px);
-
-    line-height:1.02;
-
+    font-size:clamp(42px,5vw,67px);
+    line-height:1.05;
     letter-spacing:-2.5px;
-
-    color:#082f49;
-
     margin-bottom:22px;
-
 }
 
 .hero h1 span{
-
-    background:
-        linear-gradient(
-            90deg,
-            #0f766e,
-            #0284c7
-        );
-
+    background:linear-gradient(135deg,#075cf5,#06a6d4);
     -webkit-background-clip:text;
-    background-clip:text;
-
     color:transparent;
-
 }
 
-.hero-text{
-
+.hero p{
+    font-size:17px;
+    color:var(--muted);
     max-width:650px;
-
-    font-size:18px;
-
-    color:#64748b;
-
-    margin-bottom:30px;
-
+    margin-bottom:28px;
 }
 
-.hero-actions{
-
+.hero-buttons{
     display:flex;
-
     flex-wrap:wrap;
-
     gap:12px;
-
 }
 
-.primary-btn{
-
-    border:0;
-
-    padding:
-        14px 22px;
-
-    border-radius:12px;
-
-    color:white;
-
-    font-weight:800;
-
-    background:
-        linear-gradient(
-            135deg,
-            #0f766e,
-            #0284c7
-        );
-
-    box-shadow:
-        0 12px 28px rgba(2,132,199,.20);
-
-    transition:.2s;
-
-}
-
-.primary-btn:hover{
-
-    transform:
-        translateY(-2px);
-
-}
-
-.secondary-btn{
-
-    border:1px solid var(--border);
-
-    padding:
-        14px 22px;
-
-    border-radius:12px;
-
+.hero-search{
+    margin-top:28px;
+    display:flex;
+    max-width:650px;
     background:white;
-
-    color:#334155;
-
-    font-weight:800;
-
+    border:1px solid var(--border);
+    padding:7px;
+    border-radius:16px;
+    box-shadow:var(--shadow);
 }
 
-.secondary-btn:hover{
-
-    border-color:#99f6e4;
-    background:#f0fdfa;
-
+.hero-search input{
+    flex:1;
+    min-width:0;
+    border:0;
+    outline:0;
+    padding:12px 14px;
+    font-size:14px;
 }
 
-
-/* =========================================================
-   HERO DASHBOARD
-========================================================= */
-
-.hero-panel{
-
-    position:relative;
-
-    background:
-        linear-gradient(
-            145deg,
-            #082f49,
-            #0f766e
-        );
-
-    border-radius:28px;
-
-    padding:25px;
-
+.hero-search button{
+    border:0;
+    background:#0f172a;
     color:white;
-
-    box-shadow:
-        0 30px 80px rgba(8,47,73,.20);
-
-    overflow:hidden;
-
-}
-
-.hero-panel::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:220px;
-    height:220px;
-
-    border-radius:50%;
-
-    background:
-        rgba(255,255,255,.08);
-
-    right:-70px;
-    top:-70px;
-
-}
-
-.hero-panel-header{
-
-    display:flex;
-
-    justify-content:space-between;
-    align-items:center;
-
-    margin-bottom:22px;
-
-}
-
-.live{
-
-    display:flex;
-    align-items:center;
-    gap:7px;
-
-    font-size:12px;
+    border-radius:11px;
+    padding:0 18px;
+    cursor:pointer;
     font-weight:800;
-
-    background:#ffffff18;
-
-    padding:
-        7px 10px;
-
-    border-radius:999px;
-
 }
 
-.live-dot{
+/* Hero dashboard */
 
-    width:8px;
-    height:8px;
-
-    border-radius:50%;
-
-    background:#5eead4;
-
-}
-
-.exam-card{
-
+.hero-dashboard{
+    background:#07111f;
+    border-radius:30px;
+    padding:22px;
+    box-shadow:0 30px 70px rgba(7,17,31,.22);
     position:relative;
-    z-index:2;
-
-    background:
-        rgba(255,255,255,.10);
-
-    border:
-        1px solid rgba(255,255,255,.15);
-
-    border-radius:20px;
-
-    padding:20px;
-
-    margin-bottom:15px;
-
-}
-
-.exam-card-top{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    margin-bottom:15px;
-
-}
-
-.exam-progress{
-
-    height:8px;
-
-    background:#ffffff22;
-
-    border-radius:99px;
-
     overflow:hidden;
-
-    margin:15px 0;
-
 }
 
-.exam-progress span{
+.hero-dashboard:before{
+    content:"";
+    position:absolute;
+    width:230px;
+    height:230px;
+    border-radius:50%;
+    background:#0b63f6;
+    filter:blur(80px);
+    opacity:.25;
+    top:-90px;
+    right:-70px;
+}
 
-    display:block;
+.dash-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    color:white;
+    margin-bottom:20px;
+}
 
-    width:72%;
+.dash-top small{
+    color:#8da0b8;
+}
+
+.dash-live{
+    background:rgba(16,185,129,.12);
+    color:#6ee7b7;
+    border:1px solid rgba(16,185,129,.2);
+    padding:6px 9px;
+    border-radius:999px;
+    font-size:11px;
+    font-weight:800;
+}
+
+.progress-card{
+    background:linear-gradient(135deg,#11233b,#0c1b2d);
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:20px;
+    padding:20px;
+    color:white;
+    margin-bottom:14px;
+}
+
+.progress-row{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:13px;
+}
+
+.progress-row span:last-child{
+    color:#55d6ff;
+    font-weight:900;
+}
+
+.progress{
+    height:8px;
+    background:#1e344e;
+    border-radius:99px;
+    overflow:hidden;
+}
+
+.progress div{
     height:100%;
-
-    background:#5eead4;
-
+    width:76%;
+    background:linear-gradient(90deg,#0b63f6,#06d4c4);
+    border-radius:99px;
 }
 
-.mini-grid{
-
+.dash-grid{
     display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:10px;
-
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
 }
 
-.mini-stat{
-
-    background:#ffffff0d;
-
-    border-radius:14px;
-
-    padding:14px;
-
+.dash-stat{
+    padding:17px;
+    border-radius:18px;
+    background:rgba(255,255,255,.055);
+    border:1px solid rgba(255,255,255,.07);
+    color:white;
 }
 
-.mini-stat strong{
+.dash-stat .icon{
+    font-size:21px;
+    margin-bottom:8px;
+}
 
+.dash-stat strong{
     display:block;
     font-size:21px;
-
 }
 
-.mini-stat small{
-
-    color:#cbd5e1;
-
+.dash-stat small{
+    color:#8da0b8;
 }
 
+/* =========================
+   STATS
+========================= */
 
-/* =========================================================
-   TRUST BAR
-========================================================= */
-
-.trust{
-
-    max-width:1150px;
-
-    margin:
-        -28px auto 0;
-
-    position:relative;
-    z-index:5;
-
-    padding:
-        0 20px;
-
+.stats{
+    padding:20px 0;
+    margin-top:5px;
 }
 
-.trust-inner{
-
+.stats-box{
     background:white;
-
-    border:
-        1px solid var(--border);
-
-    border-radius:18px;
-
-    box-shadow:
-        var(--shadow);
-
-    padding:
-        20px 25px;
-
+    border:1px solid var(--border);
+    box-shadow:var(--shadow);
+    border-radius:20px;
     display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
-    gap:20px;
-
+    grid-template-columns:repeat(4,1fr);
+    overflow:hidden;
 }
 
-.trust-item{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:12px;
-
+.stat{
+    padding:22px;
+    text-align:center;
+    border-right:1px solid var(--border);
 }
 
-.trust-icon{
-
-    width:42px;
-    height:42px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    border-radius:12px;
-
-    background:#ecfeff;
-
-    font-size:20px;
-
+.stat:last-child{
+    border-right:0;
 }
 
-.trust-item strong{
-
+.stat strong{
     display:block;
-    font-size:16px;
-
+    font-size:25px;
+    color:#0f172a;
 }
 
-.trust-item span{
-
+.stat span{
     color:var(--muted);
-    font-size:12px;
-
+    font-size:13px;
 }
 
-
-/* =========================================================
+/* =========================
    GENERAL SECTION
-========================================================= */
+========================= */
 
 .section{
-
-    max-width:1250px;
-
-    margin:auto;
-
-    padding:
-        90px 20px;
-
+    padding:82px 0;
 }
 
 .section-head{
-
-    display:flex;
-
-    justify-content:space-between;
-    align-items:end;
-
-    gap:25px;
-
+    max-width:730px;
     margin-bottom:35px;
-
 }
 
-.section-title{
-
-    font-size:
-        clamp(28px,4vw,42px);
-
-    line-height:1.1;
-
-    color:#082f49;
-
+.section-head.center{
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
 }
 
-.section-subtitle{
-
-    max-width:650px;
-
-    color:var(--muted);
-
-    margin-top:10px;
-
-}
-
-.section-link{
-
+.eyebrow{
+    display:inline-block;
     color:var(--primary);
-
-    font-weight:800;
-
+    font-size:12px;
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:1.4px;
+    margin-bottom:8px;
 }
 
+.section h2{
+    font-size:clamp(30px,4vw,43px);
+    line-height:1.15;
+    letter-spacing:-1px;
+    margin-bottom:12px;
+}
 
-/* =========================================================
-   COURSE CARDS
-========================================================= */
+.section-head p{
+    color:var(--muted);
+}
+
+/* =========================
+   COURSES
+========================= */
 
 .course-grid{
-
     display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:22px;
-
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
 }
 
 .course-card{
-
-    position:relative;
-
-    overflow:hidden;
-
     background:white;
-
-    border:
-        1px solid var(--border);
-
-    border-radius:22px;
-
-    padding:26px;
-
-    box-shadow:
-        var(--shadow);
-
+    border:1px solid var(--border);
+    border-radius:24px;
+    padding:25px;
+    box-shadow:0 10px 35px rgba(15,23,42,.05);
     transition:.25s;
-
+    position:relative;
+    overflow:hidden;
 }
 
 .course-card:hover{
-
-    transform:
-        translateY(-7px);
-
-    box-shadow:
-        var(--shadow2);
-
+    transform:translateY(-6px);
+    box-shadow:var(--shadow);
 }
 
-.course-number{
-
-    position:absolute;
-
-    right:18px;
-    top:15px;
-
-    font-size:50px;
-
-    font-weight:900;
-
-    color:#f1f5f9;
-
+.course-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    margin-bottom:20px;
 }
 
 .course-icon{
-
-    width:55px;
-    height:55px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    border-radius:16px;
-
+    width:54px;
+    height:54px;
+    border-radius:17px;
+    display:grid;
+    place-items:center;
     font-size:25px;
+    background:#edf5ff;
+}
 
-    background:#ecfeff;
-
-    margin-bottom:20px;
-
+.course-label{
+    font-size:11px;
+    font-weight:900;
+    color:#0b63f6;
+    background:#edf5ff;
+    padding:6px 9px;
+    border-radius:999px;
 }
 
 .course-card h3{
-
-    font-size:22px;
-
-    margin-bottom:9px;
-
-    color:#0f172a;
-
+    font-size:21px;
+    margin-bottom:8px;
 }
 
 .course-card p{
-
     color:var(--muted);
-
     font-size:14px;
-
-    min-height:68px;
-
     margin-bottom:20px;
-
 }
 
-.course-tags{
+.course-meta{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:9px;
+    margin-bottom:20px;
+}
 
+.course-meta div{
+    background:#f7f9fc;
+    padding:10px;
+    border-radius:11px;
+}
+
+.course-meta small{
+    display:block;
+    color:#94a3b8;
+    font-size:10px;
+}
+
+.course-meta strong{
+    font-size:13px;
+}
+
+.full-btn{
+    width:100%;
+}
+
+/* =========================
+   LEARNING CATEGORIES
+========================= */
+
+.category-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.category{
+    background:white;
+    border:1px solid var(--border);
+    padding:20px;
+    border-radius:19px;
+    transition:.2s;
+    cursor:pointer;
+}
+
+.category:hover{
+    border-color:#bcd5ff;
+    transform:translateY(-3px);
+    box-shadow:0 12px 30px rgba(15,23,42,.07);
+}
+
+.category-icon{
+    font-size:27px;
+    margin-bottom:12px;
+}
+
+.category h3{
+    font-size:16px;
+    margin-bottom:4px;
+}
+
+.category p{
+    color:var(--muted);
+    font-size:12px;
+}
+
+/* =========================
+   NOTES
+========================= */
+
+.notes-section{
+    background:#ffffff;
+}
+
+.notes-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.note-card{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:21px;
+    transition:.25s;
+}
+
+.note-card:hover{
+    box-shadow:var(--shadow);
+    transform:translateY(-4px);
+}
+
+.note-tag{
+    display:inline-block;
+    padding:5px 8px;
+    border-radius:7px;
+    background:#eef5ff;
+    color:#075cf5;
+    font-size:10px;
+    font-weight:900;
+    margin-bottom:13px;
+}
+
+.note-card h3{
+    font-size:18px;
+    margin-bottom:7px;
+}
+
+.note-card p{
+    color:var(--muted);
+    font-size:13px;
+    margin-bottom:14px;
+}
+
+.note-points{
     display:flex;
     flex-wrap:wrap;
-
-    gap:7px;
-
-    margin-bottom:22px;
-
+    gap:6px;
+    margin-bottom:17px;
 }
 
-.course-tags span{
-
-    padding:
-        6px 9px;
-
-    border-radius:999px;
-
-    background:#f1f5f9;
-
+.note-points span{
+    background:#f7f9fc;
+    border:1px solid #edf0f5;
+    padding:5px 8px;
+    border-radius:7px;
+    font-size:10px;
     color:#475569;
-
-    font-size:11px;
-
-    font-weight:700;
-
 }
 
-.course-btn{
+/* =========================
+   HIGH YIELD
+========================= */
 
-    width:100%;
-
-    border:0;
-
-    padding:13px;
-
-    border-radius:11px;
-
+.high-yield{
+    background:#07111f;
     color:white;
-
-    font-weight:800;
-
-    background:
-        linear-gradient(
-            135deg,
-            #0f766e,
-            #0284c7
-        );
-
 }
 
+.high-yield .section-head p{
+    color:#91a2b8;
+}
 
-/* =========================================================
-   FEATURE GRID
-========================================================= */
-
-.feature-grid{
-
+.hy-grid{
     display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
-    gap:18px;
-
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
 }
 
-.feature{
-
-    padding:23px;
-
-    background:white;
-
-    border:
-        1px solid var(--border);
-
-    border-radius:18px;
-
+.hy-card{
+    background:linear-gradient(145deg,#102038,#0b1829);
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:20px;
+    padding:21px;
     transition:.2s;
-
 }
 
-.feature:hover{
-
-    transform:
-        translateY(-4px);
-
-    border-color:#99f6e4;
-
+.hy-card:hover{
+    border-color:rgba(96,165,250,.4);
+    transform:translateY(-4px);
 }
 
-.feature-icon{
-
-    font-size:28px;
-
-    margin-bottom:14px;
-
+.hy-icon{
+    font-size:25px;
+    margin-bottom:13px;
 }
 
-.feature h3{
-
-    font-size:17px;
-
-    margin-bottom:7px;
-
+.hy-card h3{
+    font-size:16px;
+    margin-bottom:5px;
 }
 
-.feature p{
-
-    color:var(--muted);
-
-    font-size:13px;
-
+.hy-card p{
+    color:#91a2b8;
+    font-size:12px;
 }
 
+/* =========================
+   PICTURE LEARNING
+========================= */
 
-/* =========================================================
-   STUDY FLOW
-========================================================= */
-
-.flow-section{
-
-    background:#082f49;
-
-    color:white;
-
-}
-
-.flow-section .section-title{
-
-    color:white;
-
-}
-
-.flow-section .section-subtitle{
-
-    color:#cbd5e1;
-
-}
-
-.flow-grid{
-
+.picture-grid{
     display:grid;
-
-    grid-template-columns:
-        repeat(5,1fr);
-
-    gap:12px;
-
+    grid-template-columns:repeat(4,1fr);
+    gap:17px;
 }
 
-.flow-item{
-
-    text-align:center;
-
-    padding:25px 15px;
-
-    background:#ffffff0a;
-
-    border:
-        1px solid #ffffff15;
-
-    border-radius:18px;
-
+.picture-card{
+    min-height:190px;
+    border-radius:21px;
+    overflow:hidden;
+    position:relative;
+    background:linear-gradient(135deg,#dbeafe,#eff6ff);
+    border:1px solid var(--border);
+    cursor:pointer;
 }
 
-.flow-number{
+.picture-visual{
+    height:130px;
+    display:grid;
+    place-items:center;
+    font-size:65px;
+    background:
+        radial-gradient(circle at center,rgba(255,255,255,.8),transparent 55%),
+        linear-gradient(135deg,#eaf4ff,#f7fbff);
+}
 
-    width:40px;
-    height:40px;
+.picture-info{
+    background:white;
+    padding:12px 15px;
+}
 
-    margin:
-        0 auto 12px;
+.picture-info h3{
+    font-size:14px;
+}
 
-    border-radius:50%;
+.picture-info p{
+    font-size:11px;
+    color:var(--muted);
+}
 
+/* =========================
+   DRUG CALCULATION
+========================= */
+
+.drug-section{
+    background:linear-gradient(135deg,#eef8ff,#f8fbff);
+}
+
+.drug-layout{
+    display:grid;
+    grid-template-columns:.85fr 1.15fr;
+    gap:30px;
+    align-items:center;
+}
+
+.drug-main{
+    background:#07111f;
+    color:white;
+    border-radius:28px;
+    padding:32px;
+    position:relative;
+    overflow:hidden;
+}
+
+.drug-main:after{
+    content:"💊";
+    position:absolute;
+    right:15px;
+    bottom:-35px;
+    font-size:150px;
+    opacity:.07;
+}
+
+.drug-main h2{
+    font-size:38px;
+    margin-bottom:13px;
+}
+
+.drug-main p{
+    color:#9dafc4;
+    margin-bottom:24px;
+}
+
+.formula-box{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:16px;
+    padding:17px;
+    margin-bottom:18px;
+}
+
+.formula-box small{
+    color:#8da0b8;
+    display:block;
+    margin-bottom:5px;
+}
+
+.formula-box strong{
+    font-size:17px;
+    color:#67e8f9;
+}
+
+.drug-topics{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:13px;
+}
+
+.drug-topic{
+    background:white;
+    border:1px solid var(--border);
+    padding:19px;
+    border-radius:17px;
+    transition:.2s;
+}
+
+.drug-topic:hover{
+    box-shadow:var(--shadow);
+    transform:translateY(-3px);
+}
+
+.drug-topic .icon{
+    font-size:23px;
+    margin-bottom:8px;
+}
+
+.drug-topic h3{
+    font-size:15px;
+}
+
+.drug-topic p{
+    font-size:11px;
+    color:var(--muted);
+}
+
+/* =========================
+   EXAM CENTER
+========================= */
+
+.exam-section{
+    background:#f8fafc;
+}
+
+.exam-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.exam-card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:21px;
+    padding:23px;
+}
+
+.exam-number{
+    font-size:31px;
+    font-weight:900;
+    color:#dbeafe;
+    margin-bottom:5px;
+}
+
+.exam-card h3{
+    font-size:18px;
+    margin-bottom:7px;
+}
+
+.exam-card p{
+    color:var(--muted);
+    font-size:13px;
+    margin-bottom:17px;
+}
+
+.exam-list{
+    list-style:none;
+    margin-bottom:20px;
+}
+
+.exam-list li{
+    font-size:12px;
+    color:#475569;
+    margin:7px 0;
+}
+
+.exam-list li:before{
+    content:"✓";
+    color:#10b981;
+    font-weight:900;
+    margin-right:7px;
+}
+
+/* =========================
+   ACADEMIC
+========================= */
+
+.year-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.year-card{
+    padding:25px;
+    border-radius:20px;
+    color:white;
+    background:linear-gradient(145deg,#0d1b2e,#142c47);
+    transition:.2s;
+}
+
+.year-card:hover{
+    transform:translateY(-4px);
+}
+
+.year-card span{
+    color:#7dd3fc;
+    font-size:12px;
+    font-weight:900;
+}
+
+.year-card h3{
+    font-size:23px;
+    margin:7px 0;
+}
+
+.year-card p{
+    color:#9dafc4;
+    font-size:12px;
+}
+
+/* =========================
+   CLINICAL / VIVA
+========================= */
+
+.two-column{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px;
+}
+
+.feature-panel{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:24px;
+    padding:27px;
+    box-shadow:0 10px 30px rgba(15,23,42,.04);
+}
+
+.feature-panel h3{
+    font-size:22px;
+    margin-bottom:7px;
+}
+
+.feature-panel > p{
+    color:var(--muted);
+    font-size:13px;
+    margin-bottom:20px;
+}
+
+.feature-list{
+    display:grid;
+    gap:10px;
+}
+
+.feature-item{
     display:flex;
     align-items:center;
-    justify-content:center;
-
-    background:#14b8a6;
-
-    font-weight:900;
-
+    gap:12px;
+    padding:12px;
+    border-radius:13px;
+    background:#f7f9fc;
 }
 
-.flow-item h3{
-
-    font-size:15px;
-    margin-bottom:6px;
-
-}
-
-.flow-item p{
-
-    color:#cbd5e1;
-    font-size:12px;
-
-}
-
-
-/* =========================================================
-   QUICK ACCESS
-========================================================= */
-
-.quick-grid{
-
+.feature-item-icon{
+    width:36px;
+    height:36px;
     display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
-    gap:18px;
-
+    place-items:center;
+    background:white;
+    border-radius:10px;
+    border:1px solid var(--border);
 }
 
-.quick-card{
-
-    min-height:180px;
-
-    padding:24px;
-
-    border-radius:20px;
-
-    color:white;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:space-between;
-
-    box-shadow:
-        var(--shadow);
-
-}
-
-.quick-card:nth-child(1){
-
-    background:
-        linear-gradient(
-            135deg,
-            #075985,
-            #0284c7
-        );
-
-}
-
-.quick-card:nth-child(2){
-
-    background:
-        linear-gradient(
-            135deg,
-            #0f766e,
-            #14b8a6
-        );
-
-}
-
-.quick-card:nth-child(3){
-
-    background:
-        linear-gradient(
-            135deg,
-            #7c3aed,
-            #a855f7
-        );
-
-}
-
-.quick-card:nth-child(4){
-
-    background:
-        linear-gradient(
-            135deg,
-            #be123c,
-            #e11d48
-        );
-
-}
-
-.quick-card .icon{
-
-    font-size:30px;
-
-}
-
-.quick-card h3{
-
-    margin-top:15px;
-
-}
-
-.quick-card p{
-
-    color:#ffffffcc;
-
+.feature-item strong{
+    display:block;
     font-size:13px;
-
 }
 
-.quick-card button{
+.feature-item span{
+    font-size:10px;
+    color:var(--muted);
+}
 
-    align-self:flex-start;
+/* =========================
+   PROGRESS
+========================= */
 
-    margin-top:18px;
-
-    border:
-        1px solid #ffffff55;
-
-    background:#ffffff18;
-
+.progress-section{
+    background:#07111f;
     color:white;
-
-    padding:
-        9px 13px;
-
-    border-radius:9px;
-
-    font-weight:800;
-
 }
 
+.progress-layout{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+    align-items:center;
+}
 
-/* =========================================================
+.progress-section p{
+    color:#91a2b8;
+}
+
+.progress-demo{
+    background:#0e1c2f;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:22px;
+    padding:23px;
+}
+
+.metric{
+    margin-bottom:17px;
+}
+
+.metric-top{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:7px;
+    font-size:12px;
+}
+
+.metric-bar{
+    height:8px;
+    background:#20334a;
+    border-radius:99px;
+    overflow:hidden;
+}
+
+.metric-bar div{
+    height:100%;
+    border-radius:99px;
+    background:linear-gradient(90deg,#0b63f6,#06d4c4);
+}
+
+/* =========================
+   RESULT
+========================= */
+
+.result-box{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:25px;
+    padding:30px;
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:25px;
+    align-items:center;
+    box-shadow:var(--shadow);
+}
+
+.result-box h2{
+    font-size:30px;
+    margin-bottom:8px;
+}
+
+.result-box p{
+    color:var(--muted);
+}
+
+/* =========================
    CTA
-========================================================= */
+========================= */
 
 .cta{
-
-    max-width:1200px;
-
-    margin:
-        20px auto 80px;
-
-    padding:
-        0 20px;
-
+    padding:70px 0;
 }
 
-.cta-inner{
-
-    position:relative;
-
-    overflow:hidden;
-
-    border-radius:28px;
-
-    padding:
-        55px;
-
+.cta-box{
     background:
-
-        radial-gradient(
-            circle at 90% 20%,
-            rgba(20,184,166,.35),
-            transparent 30%
-        ),
-
-        linear-gradient(
-            135deg,
-            #082f49,
-            #0f766e
-        );
-
+        radial-gradient(circle at 85% 20%,rgba(6,182,212,.3),transparent 25%),
+        linear-gradient(135deg,#075cf5,#0b4fc6);
     color:white;
-
+    border-radius:30px;
+    padding:55px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
 }
 
-.cta-inner h2{
-
-    font-size:
-        clamp(28px,4vw,45px);
-
-    line-height:1.1;
-
-    max-width:700px;
-
-    margin-bottom:15px;
-
+.cta-box h2{
+    font-size:clamp(30px,4vw,46px);
+    margin-bottom:12px;
 }
 
-.cta-inner p{
-
+.cta-box p{
     color:#dbeafe;
-
     max-width:650px;
-
-    margin-bottom:25px;
-
+    margin:0 auto 25px;
 }
 
-.cta-btn{
-
-    border:0;
-
-    padding:
-        14px 22px;
-
-    border-radius:11px;
-
+.cta-box .btn{
     background:white;
-
-    color:#075985;
-
-    font-weight:900;
-
+    color:#075cf5;
 }
 
-
-/* =========================================================
+/* =========================
    FOOTER
-========================================================= */
+========================= */
 
 footer{
-
-    background:#061d2d;
-
+    background:#050d18;
     color:white;
-
-    padding:
-        60px 20px 25px;
-
+    padding:60px 0 25px;
 }
 
 .footer-grid{
-
-    max-width:1200px;
-
-    margin:auto;
-
     display:grid;
-
-    grid-template-columns:
-        1.5fr 1fr 1fr 1fr;
-
+    grid-template-columns:1.5fr 1fr 1fr 1fr;
     gap:35px;
-
+    padding-bottom:35px;
 }
 
 .footer-brand p{
-
-    color:#94a3b8;
-
-    max-width:360px;
-
-    margin-top:12px;
-
+    color:#8292a7;
     font-size:13px;
-
+    max-width:350px;
+    margin-top:13px;
 }
 
-.footer h4{
-
-    margin-bottom:14px;
-
+footer h4{
+    margin-bottom:13px;
+    font-size:14px;
 }
 
-.footer a{
-
-    display:block;
-
-    color:#94a3b8;
-
-    font-size:13px;
-
-    margin:
-        8px 0;
-
+footer ul{
+    list-style:none;
 }
 
-.footer a:hover{
+footer li{
+    margin:8px 0;
+}
 
+footer li a{
+    color:#8292a7;
+    font-size:12px;
+}
+
+footer li a:hover{
     color:white;
-
 }
 
 .footer-bottom{
-
-    max-width:1200px;
-
-    margin:
-        35px auto 0;
-
+    border-top:1px solid rgba(255,255,255,.08);
     padding-top:20px;
-
-    border-top:
-        1px solid #ffffff12;
-
+    color:#68788e;
+    font-size:11px;
     display:flex;
-
     justify-content:space-between;
-
     gap:15px;
-
-    color:#64748b;
-
-    font-size:12px;
-
 }
 
-
-/* =========================================================
+/* =========================
    MOBILE
-========================================================= */
+========================= */
 
-@media(max-width:1000px){
+@media(max-width:1050px){
 
     .nav-links{
         display:none;
+        position:absolute;
+        top:76px;
+        left:0;
+        right:0;
+        background:white;
+        padding:15px 4%;
+        border-bottom:1px solid var(--border);
+        box-shadow:0 15px 30px rgba(15,23,42,.08);
     }
 
-    .mobile-menu{
+    .nav-links.active{
+        display:grid;
+    }
+
+    .nav-actions{
+        display:none;
+    }
+
+    .menu-btn{
         display:block;
     }
 
-    .hero-container{
+    .hero-grid,
+    .drug-layout,
+    .progress-layout{
         grid-template-columns:1fr;
     }
 
-    .feature-grid{
-        grid-template-columns:
-            repeat(2,1fr);
+    .course-grid,
+    .notes-grid,
+    .exam-grid{
+        grid-template-columns:repeat(2,1fr);
     }
 
-    .quick-grid{
-        grid-template-columns:
-            repeat(2,1fr);
-    }
-
-    .flow-grid{
-        grid-template-columns:
-            repeat(3,1fr);
+    .category-grid,
+    .hy-grid,
+    .picture-grid,
+    .year-grid{
+        grid-template-columns:repeat(2,1fr);
     }
 
     .footer-grid{
-        grid-template-columns:
-            repeat(2,1fr);
+        grid-template-columns:1fr 1fr;
     }
-
 }
 
-
-@media(max-width:700px){
+@media(max-width:680px){
 
     .hero{
-        padding:
-            65px 18px;
+        padding:45px 0 30px;
     }
 
     .hero h1{
-        letter-spacing:-1.5px;
+        font-size:42px;
+        letter-spacing:-1.8px;
     }
 
-    .course-grid{
-        grid-template-columns:1fr;
+    .hero p{
+        font-size:15px;
     }
 
-    .trust-inner{
-        grid-template-columns:
-            repeat(2,1fr);
+    .hero-search{
+        flex-direction:column;
+        gap:7px;
     }
 
-    .feature-grid{
-        grid-template-columns:1fr;
+    .hero-search button{
+        height:43px;
     }
 
-    .flow-grid{
-        grid-template-columns:
-            repeat(2,1fr);
+    .stats-box{
+        grid-template-columns:1fr 1fr;
     }
 
-    .quick-grid{
-        grid-template-columns:1fr;
+    .stat{
+        border-bottom:1px solid var(--border);
+    }
+
+    .stat:nth-child(2){
+        border-right:0;
     }
 
     .section{
-        padding:
-            65px 18px;
+        padding:58px 0;
     }
 
-    .section-head{
-        display:block;
-    }
-
-    .section-link{
-        display:inline-block;
-        margin-top:12px;
-    }
-
-    .cta-inner{
-        padding:35px 25px;
-    }
-
-}
-
-
-@media(max-width:480px){
-
-    .logo span{
-        font-size:17px;
-    }
-
-    .trust-inner{
+    .course-grid,
+    .notes-grid,
+    .exam-grid,
+    .category-grid,
+    .hy-grid,
+    .picture-grid,
+    .year-grid,
+    .drug-topics,
+    .two-column{
         grid-template-columns:1fr;
     }
 
-    .flow-grid{
+    .result-box{
         grid-template-columns:1fr;
+        text-align:center;
     }
 
-    .mini-grid{
-        grid-template-columns:1fr;
-    }
-
-    .hero-actions{
-        flex-direction:column;
-    }
-
-    .hero-actions button{
-        width:100%;
+    .cta-box{
+        padding:38px 22px;
     }
 
     .footer-grid{
@@ -1467,1304 +1291,1486 @@ footer{
     .footer-bottom{
         flex-direction:column;
     }
-
 }
-
 </style>
 </head>
 
-
 <body>
 
-
-<!-- =======================================================
+<!-- =========================
      NAVBAR
-======================================================= -->
+========================= -->
 
 <nav class="navbar">
+<div class="container nav-inner">
 
-<div class="nav-inner">
+    <a href="index.html" class="logo">
+        <div class="logo-icon">🩺</div>
+        Nursing <span>Career</span>
+    </a>
 
-<a href="index.html" class="logo">
-
-    <div class="logo-icon">
-        🩺
+    <div class="nav-links" id="navLinks">
+        <a href="#courses">Courses</a>
+        <a href="#notes">Hand Notes</a>
+        <a href="#highyield">High-Yield</a>
+        <a href="#pictures">Pictures</a>
+        <a href="#drug">Drug Calculation</a>
+        <a href="#exam">MCQ Exam</a>
+        <a href="#clinical">Clinical</a>
+        <a href="#viva">Viva</a>
     </div>
 
-    <span>Nursing Career</span>
+    <div class="nav-actions">
+        <a href="exam.html" class="btn btn-primary">Start Exam</a>
+    </div>
 
-</a>
-
-
-<div class="nav-links">
-
-<a href="#courses">Courses</a>
-
-<a href="#features">Features</a>
-
-<a href="#study">Study Hub</a>
-
-<a href="exam.html">
-    Exam
-</a>
-
-<a href="#academic">
-    Academic
-</a>
-
-<a href="#clinical">
-    Clinical
-</a>
-
-<a href="exam.html" class="nav-cta">
-    Start Exam →
-</a>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
 </div>
-
-
-<button
-    class="mobile-menu"
-    onclick="toggleMobileMenu()"
->
-    ☰
-</button>
-
-</div>
-
 </nav>
 
 
-
-<!-- =======================================================
+<!-- =========================
      HERO
-======================================================= -->
+========================= -->
 
 <section class="hero">
 
-<div class="hero-container">
-
+<div class="container hero-grid">
 
 <div>
 
-<div class="eyebrow">
-    ✨ Premium Nursing Learning Platform
-</div>
+    <div class="badge">
+        🩺 Complete Nursing Learning Platform
+    </div>
 
+    <h1>
+        Learn Nursing.<br>
+        <span>Practice Better.</span><br>
+        Perform Confidently.
+    </h1>
 
-<h1>
+    <p>
+        Topic-wise hand notes, high-yield nursing topics,
+        picture-based learning, drug calculation, MCQ examination,
+        clinical skills and viva preparation — organized in one platform.
+    </p>
 
-    Learn Nursing.
-    <br>
+    <div class="hero-buttons">
+        <a href="exam.html" class="btn btn-primary">
+            📝 Start MCQ Exam
+        </a>
 
-    <span>Practice Smarter.</span>
+        <a href="#notes" class="btn btn-outline">
+            📚 Explore Hand Notes
+        </a>
+    </div>
 
-</h1>
-
-
-<p class="hero-text">
-
-    A focused digital learning platform for nursing students —
-    study subjects, practice MCQs, prepare for exams and
-    strengthen your clinical knowledge in one place.
-
-</p>
-
-
-<div class="hero-actions">
-
-<button
-    class="primary-btn"
-    onclick="document.getElementById('courses').scrollIntoView()"
->
-    🎓 Explore Courses
-</button>
-
-
-<button
-    class="secondary-btn"
-    onclick="location.href='exam.html'"
->
-    📝 Start Practice Exam
-</button>
-
-</div>
+    <div class="hero-search">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search nursing topic, subject, drug calculation..."
+            onkeydown="searchTopic(event)"
+        >
+        <button onclick="searchTopic()">Search</button>
+    </div>
 
 </div>
 
 
+<div class="hero-dashboard">
 
-<!-- HERO DASHBOARD -->
+    <div class="dash-top">
+        <div>
+            <strong>Student Learning Dashboard</strong>
+            <small> Nursing Career</small>
+        </div>
 
-<div class="hero-panel">
+        <div class="dash-live">
+            ● ACTIVE
+        </div>
+    </div>
 
-<div class="hero-panel-header">
+    <div class="progress-card">
 
-<strong>
-    🩺 Nursing Exam Dashboard
-</strong>
+        <div class="progress-row">
+            <span>Overall Learning Progress</span>
+            <span>76%</span>
+        </div>
 
-<div class="live">
+        <div class="progress">
+            <div></div>
+        </div>
 
-<span class="live-dot"></span>
+    </div>
 
-Practice Mode
+    <div class="dash-grid">
 
-</div>
+        <div class="dash-stat">
+            <div class="icon">📚</div>
+            <strong>Notes</strong>
+            <small>Topic-wise learning</small>
+        </div>
 
-</div>
+        <div class="dash-stat">
+            <div class="icon">📝</div>
+            <strong>MCQ</strong>
+            <small>Practice examination</small>
+        </div>
 
+        <div class="dash-stat">
+            <div class="icon">💊</div>
+            <strong>Drug</strong>
+            <small>Calculation practice</small>
+        </div>
 
-<div class="exam-card">
+        <div class="dash-stat">
+            <div class="icon">🏥</div>
+            <strong>Clinical</strong>
+            <small>Practical knowledge</small>
+        </div>
 
-<div class="exam-card-top">
-
-<strong>
-    Medical & Surgical Nursing
-</strong>
-
-<span>
-    72%
-</span>
-
-</div>
-
-
-<div class="exam-progress">
-    <span></span>
-</div>
-
-
-<div style="
-display:flex;
-justify-content:space-between;
-font-size:12px;
-color:#cbd5e1;
-">
-
-<span>
-    MCQ Practice
-</span>
-
-<span>
-    Ready
-</span>
+    </div>
 
 </div>
 
 </div>
-
-
-<div class="mini-grid">
-
-<div class="mini-stat">
-
-<strong>
-    60
-</strong>
-
-<small>
-    Questions
-</small>
-
-</div>
-
-
-<div class="mini-stat">
-
-<strong>
-    30m
-</strong>
-
-<small>
-    Exam Time
-</small>
-
-</div>
-
-
-<div class="mini-stat">
-
-<strong>
-    MCQ
-</strong>
-
-<small>
-    Practice
-</small>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
 </section>
 
 
+<!-- =========================
+     STATS
+========================= -->
 
-<!-- =======================================================
-     TRUST / STATS
-======================================================= -->
+<section class="stats">
+<div class="container">
 
-<div class="trust">
+<div class="stats-box">
 
-<div class="trust-inner">
+    <div class="stat">
+        <strong>03</strong>
+        <span>Nursing Courses</span>
+    </div>
 
-<div class="trust-item">
+    <div class="stat">
+        <strong>17+</strong>
+        <span>Core Learning Areas</span>
+    </div>
 
-<div class="trust-icon">
-    📚
-</div>
+    <div class="stat">
+        <strong>08+</strong>
+        <span>Learning Centers</span>
+    </div>
 
-<div>
-<strong>
-    Nursing Subjects
-</strong>
-
-<span>
-    Structured learning
-</span>
-</div>
-
-</div>
-
-
-<div class="trust-item">
-
-<div class="trust-icon">
-    📝
-</div>
-
-<div>
-<strong>
-    MCQ Practice
-</strong>
-
-<span>
-    Exam-focused practice
-</span>
-</div>
-
-</div>
-
-
-<div class="trust-item">
-
-<div class="trust-icon">
-    🏥
-</div>
-
-<div>
-<strong>
-    Clinical Learning
-</strong>
-
-<span>
-    Practical knowledge
-</span>
-</div>
-
-</div>
-
-
-<div class="trust-item">
-
-<div class="trust-icon">
-    🎓
-</div>
-
-<div>
-<strong>
-    Career Preparation
-</strong>
-
-<span>
-    Build confidence
-</span>
-</div>
+    <div class="stat">
+        <strong>24/7</strong>
+        <span>Self Study Access</span>
+    </div>
 
 </div>
 
 </div>
-
-</div>
-
+</section>
 
 
-<!-- =======================================================
+<!-- =========================
      COURSES
-======================================================= -->
+========================= -->
 
-<section
-    class="section"
-    id="courses"
->
+<section class="section" id="courses">
 
-<div class="section-head">
+<div class="container">
 
-<div>
-
-<h2 class="section-title">
-    Choose Your Nursing Course
-</h2>
-
-<p class="section-subtitle">
-    Select your program to access course-focused
-    MCQ practice and examination preparation.
-</p>
-
+<div class="section-head center">
+    <span class="eyebrow">Academic Programs</span>
+    <h2>Choose Your Nursing Course</h2>
+    <p>
+        Select your course and continue to course-specific
+        nursing subjects and MCQ examination.
+    </p>
 </div>
-
-<a
-    href="exam.html"
-    class="section-link"
->
-    View Exam →
-</a>
-
-</div>
-
 
 
 <div class="course-grid">
 
+    <div class="course-card">
 
-<!-- COURSE 1 -->
+        <div class="course-top">
+            <div class="course-icon">🎓</div>
+            <div class="course-label">DIPLOMA</div>
+        </div>
 
-<div class="course-card">
+        <h3>Diploma in Nursing Science</h3>
 
-<div class="course-number">
-    01
-</div>
+        <p>
+            Structured learning resources for diploma-level
+            nursing students.
+        </p>
 
-<div class="course-icon">
-    🩺
-</div>
+        <div class="course-meta">
+            <div>
+                <small>Subjects</small>
+                <strong>17+</strong>
+            </div>
 
-<h3>
-    Diploma in Nursing Science
-</h3>
+            <div>
+                <small>Learning</small>
+                <strong>Topic-wise</strong>
+            </div>
+        </div>
 
-<p>
-    Core nursing education, professional subjects,
-    clinical foundations and structured MCQ practice.
-</p>
+        <button
+            class="btn btn-primary full-btn"
+            onclick="startCourse('Diploma in Nursing Science')">
+            Explore Course →
+        </button>
 
-<div class="course-tags">
-
-<span>
-    Fundamentals
-</span>
-
-<span>
-    Medical-Surgical
-</span>
-
-<span>
-    Midwifery
-</span>
-
-<span>
-    Community
-</span>
-
-</div>
-
-<button
-    class="course-btn"
-    onclick="startCourse('Diploma in Nursing Science')"
->
-    Start Course →
-</button>
-
-</div>
+    </div>
 
 
+    <div class="course-card">
 
-<!-- COURSE 2 -->
+        <div class="course-top">
+            <div class="course-icon">🎓</div>
+            <div class="course-label">B.SC.</div>
+        </div>
 
-<div class="course-card">
+        <h3>B.Sc. in Nursing</h3>
 
-<div class="course-number">
-    02
-</div>
+        <p>
+            Comprehensive resources for B.Sc. nursing
+            academic and examination preparation.
+        </p>
 
-<div class="course-icon">
-    🎓
-</div>
+        <div class="course-meta">
+            <div>
+                <small>Subjects</small>
+                <strong>25+</strong>
+            </div>
 
-<h3>
-    B.Sc. in Nursing
-</h3>
+            <div>
+                <small>Learning</small>
+                <strong>Advanced</strong>
+            </div>
+        </div>
 
-<p>
-    Comprehensive nursing study with advanced clinical,
-    research, management and professional subjects.
-</p>
+        <button
+            class="btn btn-primary full-btn"
+            onclick="startCourse('B.Sc. in Nursing')">
+            Explore Course →
+        </button>
 
-<div class="course-tags">
-
-<span>
-    Medical-Surgical
-</span>
-
-<span>
-    Pediatric
-</span>
-
-<span>
-    Mental Health
-</span>
-
-<span>
-    Research
-</span>
-
-</div>
-
-<button
-    class="course-btn"
-    onclick="startCourse('B.Sc. in Nursing')"
->
-    Start Course →
-</button>
-
-</div>
+    </div>
 
 
+    <div class="course-card">
 
-<!-- COURSE 3 -->
+        <div class="course-top">
+            <div class="course-icon">📘</div>
+            <div class="course-label">NURSING</div>
+        </div>
 
-<div class="course-card">
+        <h3>Diploma in Nursing</h3>
 
-<div class="course-number">
-    03
-</div>
+        <p>
+            Core nursing subjects, examination preparation
+            and practical learning resources.
+        </p>
 
-<div class="course-icon">
-    📘
-</div>
+        <div class="course-meta">
+            <div>
+                <small>Subjects</small>
+                <strong>17+</strong>
+            </div>
 
-<h3>
-    Diploma in Nursing
-</h3>
+            <div>
+                <small>Practice</small>
+                <strong>MCQ</strong>
+            </div>
+        </div>
 
-<p>
-    Core nursing subjects with practical learning,
-    professional preparation and MCQ examination practice.
-</p>
+        <button
+            class="btn btn-primary full-btn"
+            onclick="startCourse('Diploma in Nursing')">
+            Explore Course →
+        </button>
 
-<div class="course-tags">
-
-<span>
-    Fundamentals
-</span>
-
-<span>
-    Pharmacology
-</span>
-
-<span>
-    Pediatric
-</span>
-
-<span>
-    Midwifery
-</span>
+    </div>
 
 </div>
 
-<button
-    class="course-btn"
-    onclick="startCourse('Diploma in Nursing')"
->
-    Start Course →
-</button>
-
 </div>
-
-
-</div>
-
 </section>
 
 
+<!-- =========================
+     SUBJECT CATEGORIES
+========================= -->
 
-<!-- =======================================================
-     FEATURES
-======================================================= -->
+<section class="section" id="subjects">
 
-<section
-    class="section"
-    id="features"
-    style="padding-top:20px;"
->
+<div class="container">
 
 <div class="section-head">
+    <span class="eyebrow">Nursing Subjects</span>
+    <h2>Explore Nursing Knowledge by Category</h2>
+    <p>
+        Find the most important nursing subjects and organize
+        your preparation according to your academic needs.
+    </p>
+</div>
 
-<div>
 
-<h2 class="section-title">
-    Everything You Need to Study Better
-</h2>
+<div class="category-grid">
 
-<p class="section-subtitle">
-    A clean study workflow designed around the
-    everyday needs of nursing students.
-</p>
+    <div class="category">
+        <div class="category-icon">🫀</div>
+        <h3>Anatomy & Physiology</h3>
+        <p>Structure, function and body systems</p>
+    </div>
+
+    <div class="category">
+        <div class="category-icon">🩺</div>
+        <h3>Fundamentals of Nursing</h3>
+        <p>Core nursing principles and procedures</p>
+    </div>
+
+    <div class="category">
+        <div class="category-icon">🏥</div>
+        <h3>Medical-Surgical</h3>
+        <p>Diseases, assessment and nursing care</p>
+    </div>
+
+    <div class="category">
+        <div class="category-icon">💊</div>
+        <h3>Pharmacology</h3>
+        <p>Drugs, classes, actions and precautions</p>
+    </div>
+
+    <div class="category">
+        <div class="category-icon">🤰</div>
+        <h3>Midwifery</h3>
+        <p>Maternal and newborn nursing</p>
+    </div>
+
+    <div class="category">
+        <div class="category-icon">👶</div>
+        <h3>Pediatric Nursing</h3>
+        <p>Child health and pediatric care</p>
+    </div>
+
+    <div class="category">
+        <div class="category-icon">🧠</div>
+        <h3>Psychiatric Nursing</h3>
+        <p>Mental health and therapeutic care</p>
+    </div>
+
+    <div class="category">
+        <div class="category-icon">🌍</div>
+        <h3>Community Health</h3>
+        <p>Public health and community nursing</p>
+    </div>
 
 </div>
 
 </div>
-
-
-<div class="feature-grid">
-
-
-<div class="feature">
-
-<div class="feature-icon">
-    📚
-</div>
-
-<h3>
-    Subject Learning
-</h3>
-
-<p>
-    Organize nursing topics from subject to chapter
-    and topic for focused study.
-</p>
-
-</div>
-
-
-<div class="feature">
-
-<div class="feature-icon">
-    📝
-</div>
-
-<h3>
-    Smart MCQ Practice
-</h3>
-
-<p>
-    Practice questions, track scores and review
-    answers after your examination.
-</p>
-
-</div>
-
-
-<div class="feature">
-
-<div class="feature-icon">
-    ⏱️
-</div>
-
-<h3>
-    Timed Examination
-</h3>
-
-<p>
-    Simulate an examination environment with
-    a structured countdown timer.
-</p>
-
-</div>
-
-
-<div class="feature">
-
-<div class="feature-icon">
-    📊
-</div>
-
-<h3>
-    Performance Tracking
-</h3>
-
-<p>
-    Review scores, accuracy, history and
-    subject performance.
-</p>
-
-</div>
-
-
-<div class="feature">
-
-<div class="feature-icon">
-    🏥
-</div>
-
-<h3>
-    Clinical Skills
-</h3>
-
-<p>
-    Build practical knowledge alongside
-    academic nursing preparation.
-</p>
-
-</div>
-
-
-<div class="feature">
-
-<div class="feature-icon">
-    🎤
-</div>
-
-<h3>
-    Viva Preparation
-</h3>
-
-<p>
-    Prepare for common nursing viva questions
-    and professional discussions.
-</p>
-
-</div>
-
-
-<div class="feature">
-
-<div class="feature-icon">
-    🎓
-</div>
-
-<h3>
-    Academic Hub
-</h3>
-
-<p>
-    Navigate nursing academic content by
-    year and professional subject.
-</p>
-
-</div>
-
-
-<div class="feature">
-
-<div class="feature-icon">
-    📱
-</div>
-
-<h3>
-    Mobile Friendly
-</h3>
-
-<p>
-    Study comfortably from desktop, tablet
-    or mobile devices.
-</p>
-
-</div>
-
-
-</div>
-
 </section>
 
 
+<!-- =========================
+     HAND NOTES
+========================= -->
 
-<!-- =======================================================
-     STUDY FLOW
-======================================================= -->
+<section class="section notes-section" id="notes">
 
-<section
-    class="flow-section"
-    id="study"
->
-
-<div class="section">
+<div class="container">
 
 <div class="section-head">
+    <span class="eyebrow">Study Resources</span>
+    <h2>📚 Topic-wise Nursing Hand Notes</h2>
+    <p>
+        Study important concepts in short, organized and
+        examination-focused hand-note format.
+    </p>
+</div>
 
-<div>
 
-<h2 class="section-title">
-    Your Nursing Study Workflow
-</h2>
+<div class="notes-grid">
 
-<p class="section-subtitle">
-    Move from learning to practice to examination
-    with a simple structured workflow.
-</p>
+    <div class="note-card">
+        <span class="note-tag">FUNDAMENTAL</span>
+        <h3>Vital Signs</h3>
+        <p>
+            Important concepts related to temperature,
+            pulse, respiration and blood pressure.
+        </p>
+
+        <div class="note-points">
+            <span>Normal Values</span>
+            <span>Assessment</span>
+            <span>Abnormal Findings</span>
+        </div>
+
+        <button class="btn btn-outline" onclick="openTopic('Vital Signs')">
+            Study Topic →
+        </button>
+    </div>
+
+
+    <div class="note-card">
+        <span class="note-tag">MEDICAL</span>
+        <h3>Hypertension</h3>
+        <p>
+            High-yield overview of hypertension,
+            risk factors, signs and nursing management.
+        </p>
+
+        <div class="note-points">
+            <span>Definition</span>
+            <span>Symptoms</span>
+            <span>Nursing Care</span>
+        </div>
+
+        <button class="btn btn-outline" onclick="openTopic('Hypertension')">
+            Study Topic →
+        </button>
+    </div>
+
+
+    <div class="note-card">
+        <span class="note-tag">PHARMACOLOGY</span>
+        <h3>Drug Classification</h3>
+        <p>
+            Important drug groups, actions and
+            key nursing considerations.
+        </p>
+
+        <div class="note-points">
+            <span>Drug Classes</span>
+            <span>Actions</span>
+            <span>Precautions</span>
+        </div>
+
+        <button class="btn btn-outline" onclick="openTopic('Drug Classification')">
+            Study Topic →
+        </button>
+    </div>
+
+
+    <div class="note-card">
+        <span class="note-tag">MIDWIFERY</span>
+        <h3>Stages of Labour</h3>
+        <p>
+            Structured overview of the stages and
+            important maternal observations.
+        </p>
+
+        <div class="note-points">
+            <span>Stages</span>
+            <span>Assessment</span>
+            <span>Care</span>
+        </div>
+
+        <button class="btn btn-outline" onclick="openTopic('Stages of Labour')">
+            Study Topic →
+        </button>
+    </div>
+
+
+    <div class="note-card">
+        <span class="note-tag">PEDIATRIC</span>
+        <h3>Growth & Development</h3>
+        <p>
+            Important developmental concepts and
+            pediatric assessment points.
+        </p>
+
+        <div class="note-points">
+            <span>Milestones</span>
+            <span>Assessment</span>
+            <span>Important Facts</span>
+        </div>
+
+        <button class="btn btn-outline" onclick="openTopic('Growth and Development')">
+            Study Topic →
+        </button>
+    </div>
+
+
+    <div class="note-card">
+        <span class="note-tag">COMMUNITY</span>
+        <h3>Primary Health Care</h3>
+        <p>
+            Key concepts of community health and
+            primary healthcare principles.
+        </p>
+
+        <div class="note-points">
+            <span>Principles</span>
+            <span>Services</span>
+            <span>Prevention</span>
+        </div>
+
+        <button class="btn btn-outline" onclick="openTopic('Primary Health Care')">
+            Study Topic →
+        </button>
+    </div>
 
 </div>
 
 </div>
-
-
-<div class="flow-grid">
-
-
-<div class="flow-item">
-
-<div class="flow-number">
-    1
-</div>
-
-<h3>
-    Choose Course
-</h3>
-
-<p>
-    Select your nursing program.
-</p>
-
-</div>
-
-
-<div class="flow-item">
-
-<div class="flow-number">
-    2
-</div>
-
-<h3>
-    Study Subject
-</h3>
-
-<p>
-    Learn the core concepts.
-</p>
-
-</div>
-
-
-<div class="flow-item">
-
-<div class="flow-number">
-    3
-</div>
-
-<h3>
-    Practice MCQ
-</h3>
-
-<p>
-    Test your knowledge.
-</p>
-
-</div>
-
-
-<div class="flow-item">
-
-<div class="flow-number">
-    4
-</div>
-
-<h3>
-    Take Exam
-</h3>
-
-<p>
-    Practice under time pressure.
-</p>
-
-</div>
-
-
-<div class="flow-item">
-
-<div class="flow-number">
-    5
-</div>
-
-<h3>
-    Review Result
-</h3>
-
-<p>
-    Identify areas to improve.
-</p>
-
-</div>
-
-
-</div>
-
-</div>
-
 </section>
 
 
+<!-- =========================
+     HIGH YIELD
+========================= -->
 
-<!-- =======================================================
-     QUICK ACCESS
-======================================================= -->
+<section class="section high-yield" id="highyield">
 
-<section
-    class="section"
-    id="academic"
->
+<div class="container">
 
 <div class="section-head">
+    <span class="eyebrow">Exam Focus</span>
+    <h2>⭐ High-Yield Nursing Topics</h2>
+    <p>
+        Focus your revision on important concepts,
+        definitions, values, classifications and clinical points.
+    </p>
+</div>
 
-<div>
 
-<h2 class="section-title">
-    Nursing Study Hub
-</h2>
+<div class="hy-grid">
 
-<p class="section-subtitle">
-    Quickly access the areas you use most.
-</p>
+    <div class="hy-card">
+        <div class="hy-icon">📌</div>
+        <h3>Important Definitions</h3>
+        <p>Short definitions commonly needed for examination revision.</p>
+    </div>
+
+    <div class="hy-card">
+        <div class="hy-icon">📊</div>
+        <h3>Normal Values</h3>
+        <p>Important clinical and laboratory reference values.</p>
+    </div>
+
+    <div class="hy-card">
+        <div class="hy-icon">💊</div>
+        <h3>Drug Classes</h3>
+        <p>High-yield pharmacology classifications and key points.</p>
+    </div>
+
+    <div class="hy-card">
+        <div class="hy-icon">🩺</div>
+        <h3>Nursing Interventions</h3>
+        <p>Important nursing actions and patient-care principles.</p>
+    </div>
+
+    <div class="hy-card">
+        <div class="hy-icon">🚨</div>
+        <h3>Emergency Topics</h3>
+        <p>Important concepts for emergency and critical care study.</p>
+    </div>
+
+    <div class="hy-card">
+        <div class="hy-icon">🧪</div>
+        <h3>Laboratory Values</h3>
+        <p>Important lab concepts for nursing examination preparation.</p>
+    </div>
+
+    <div class="hy-card">
+        <div class="hy-icon">🤰</div>
+        <h3>Maternal & Child</h3>
+        <p>High-yield topics from midwifery and pediatric nursing.</p>
+    </div>
+
+    <div class="hy-card">
+        <div class="hy-icon">❓</div>
+        <h3>Frequently Tested Concepts</h3>
+        <p>Topics selected for focused practice and revision.</p>
+    </div>
 
 </div>
 
 </div>
-
-
-<div class="quick-grid">
-
-
-<div class="quick-card">
-
-<div>
-
-<div class="icon">
-    📚
-</div>
-
-<h3>
-    Nursing Subjects
-</h3>
-
-<p>
-    Explore nursing subjects and academic topics.
-</p>
-
-</div>
-
-<button
-    onclick="showMessage('Subject section is ready to connect.')"
->
-    Open Subjects →
-</button>
-
-</div>
-
-
-
-<div class="quick-card">
-
-<div>
-
-<div class="icon">
-    📝
-</div>
-
-<h3>
-    Practice Exam
-</h3>
-
-<p>
-    Start a timed nursing MCQ examination.
-</p>
-
-</div>
-
-<button
-    onclick="location.href='exam.html'"
->
-    Start Exam →
-</button>
-
-</div>
-
-
-
-<div class="quick-card">
-
-<div>
-
-<div class="icon">
-    🏥
-</div>
-
-<h3>
-    Clinical Nursing
-</h3>
-
-<p>
-    Strengthen practical nursing knowledge.
-</p>
-
-</div>
-
-<button
-    onclick="showMessage('Clinical Nursing section is ready to connect.')"
->
-    Explore →
-</button>
-
-</div>
-
-
-
-<div class="quick-card">
-
-<div>
-
-<div class="icon">
-    🎤
-</div>
-
-<h3>
-    Nursing Viva
-</h3>
-
-<p>
-    Prepare common nursing viva questions.
-</p>
-
-</div>
-
-<button
-    onclick="showMessage('Nursing Viva section is ready to connect.')"
->
-    Practice →
-</button>
-
-</div>
-
-
-</div>
-
 </section>
 
 
+<!-- =========================
+     PICTURE LEARNING
+========================= -->
 
-<!-- =======================================================
-     CLINICAL
-======================================================= -->
+<section class="section" id="pictures">
 
-<section
-    class="section"
-    id="clinical"
-    style="padding-top:10px;"
->
+<div class="container">
 
-<div class="course-card"
-     style="
-        background:
-        linear-gradient(
-            135deg,
-            #ecfeff,
-            #f0fdfa
-        );
-     "
->
-
-<div class="course-icon">
-    🏥
+<div class="section-head center">
+    <span class="eyebrow">Visual Learning</span>
+    <h2>🖼️ Nursing Picture Learning</h2>
+    <p>
+        Learn anatomy, instruments, clinical concepts and
+        important nursing visuals through picture-based study.
+    </p>
 </div>
 
-<h2 style="
-font-size:30px;
-color:#082f49;
-margin-bottom:10px;
-">
 
-    Build Academic + Clinical Confidence
+<div class="picture-grid">
 
-</h2>
+    <div class="picture-card" onclick="pictureMessage('Heart Anatomy')">
+        <div class="picture-visual">❤️</div>
+        <div class="picture-info">
+            <h3>Heart Anatomy</h3>
+            <p>Chambers, valves and circulation</p>
+        </div>
+    </div>
 
-<p style="
-max-width:760px;
-margin-bottom:20px;
-color:#64748b;
-">
+    <div class="picture-card" onclick="pictureMessage('Respiratory System')">
+        <div class="picture-visual">🫁</div>
+        <div class="picture-info">
+            <h3>Respiratory System</h3>
+            <p>Lungs and airway structures</p>
+        </div>
+    </div>
 
-    Nursing education is more than memorizing MCQs.
-    Combine academic knowledge with clinical concepts,
-    professional communication and examination practice.
+    <div class="picture-card" onclick="pictureMessage('Brain Anatomy')">
+        <div class="picture-visual">🧠</div>
+        <div class="picture-info">
+            <h3>Brain Anatomy</h3>
+            <p>Major brain regions and functions</p>
+        </div>
+    </div>
 
-</p>
+    <div class="picture-card" onclick="pictureMessage('Injection Sites')">
+        <div class="picture-visual">💉</div>
+        <div class="picture-info">
+            <h3>Injection Sites</h3>
+            <p>Important clinical identification</p>
+        </div>
+    </div>
 
-<div class="course-tags">
+    <div class="picture-card" onclick="pictureMessage('Medical Instruments')">
+        <div class="picture-visual">🩺</div>
+        <div class="picture-info">
+            <h3>Medical Instruments</h3>
+            <p>Instrument identification practice</p>
+        </div>
+    </div>
 
-<span>
-    Clinical Knowledge
-</span>
+    <div class="picture-card" onclick="pictureMessage('Bones')">
+        <div class="picture-visual">🦴</div>
+        <div class="picture-info">
+            <h3>Human Bones</h3>
+            <p>Major bones and anatomy review</p>
+        </div>
+    </div>
 
-<span>
-    Patient Care
-</span>
+    <div class="picture-card" onclick="pictureMessage('ECG Basics')">
+        <div class="picture-visual">📈</div>
+        <div class="picture-info">
+            <h3>ECG Basics</h3>
+            <p>Basic ECG visual concepts</p>
+        </div>
+    </div>
 
-<span>
-    Professional Practice
-</span>
-
-<span>
-    Viva Preparation
-</span>
-
-<span>
-    Exam Preparation
-</span>
+    <div class="picture-card" onclick="pictureMessage('Fetal Positions')">
+        <div class="picture-visual">👶</div>
+        <div class="picture-info">
+            <h3>Fetal Positions</h3>
+            <p>Important midwifery visual learning</p>
+        </div>
+    </div>
 
 </div>
 
-<button
-    class="primary-btn"
-    onclick="location.href='exam.html'"
->
-    Begin Nursing Practice →
-</button>
-
 </div>
-
 </section>
 
 
+<!-- =========================
+     DRUG CALCULATION
+========================= -->
 
-<!-- =======================================================
+<section class="section drug-section" id="drug">
+
+<div class="container drug-layout">
+
+<div class="drug-main">
+
+    <span class="eyebrow" style="color:#67e8f9;">
+        Medication Mathematics
+    </span>
+
+    <h2>💊 Drug Calculation Center</h2>
+
+    <p>
+        Learn medication calculation concepts through
+        formulas, worked examples and practice questions.
+    </p>
+
+    <div class="formula-box">
+        <small>Basic Dosage Formula</small>
+        <strong>Desired Dose ÷ Available Dose × Quantity</strong>
+    </div>
+
+    <button
+        class="btn btn-primary"
+        onclick="openDrugCalculation()">
+        Open Drug Calculation →
+    </button>
+
+</div>
+
+
+<div>
+
+<div class="section-head">
+    <span class="eyebrow">Calculation Topics</span>
+    <h2>Master the Important Calculations</h2>
+    <p>
+        Build confidence with structured calculation topics.
+    </p>
+</div>
+
+<div class="drug-topics">
+
+    <div class="drug-topic">
+        <div class="icon">🔢</div>
+        <h3>Unit Conversion</h3>
+        <p>mg, g, mcg, mL and L conversion concepts.</p>
+    </div>
+
+    <div class="drug-topic">
+        <div class="icon">💊</div>
+        <h3>Tablet Calculation</h3>
+        <p>Practice basic tablet dosage calculations.</p>
+    </div>
+
+    <div class="drug-topic">
+        <div class="icon">🧴</div>
+        <h3>Liquid Medication</h3>
+        <p>Understand concentration and volume calculations.</p>
+    </div>
+
+    <div class="drug-topic">
+        <div class="icon">💉</div>
+        <h3>Injection Calculation</h3>
+        <p>Study medication-volume calculation concepts.</p>
+    </div>
+
+    <div class="drug-topic">
+        <div class="icon">💧</div>
+        <h3>IV Flow Rate</h3>
+        <p>Learn the basic principles of IV flow calculations.</p>
+    </div>
+
+    <div class="drug-topic">
+        <div class="icon">⏱️</div>
+        <h3>Infusion Time</h3>
+        <p>Practice time and volume relationships.</p>
+    </div>
+
+    <div class="drug-topic">
+        <div class="icon">🧮</div>
+        <h3>Practice Calculator</h3>
+        <p>Interactive calculation practice.</p>
+    </div>
+
+    <div class="drug-topic">
+        <div class="icon">📝</div>
+        <h3>Calculation MCQ</h3>
+        <p>Test your understanding with practice questions.</p>
+    </div>
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- =========================
+     EXAM CENTER
+========================= -->
+
+<section class="section exam-section" id="exam">
+
+<div class="container">
+
+<div class="section-head center">
+    <span class="eyebrow">Examination Center</span>
+    <h2>📝 Practice. Test. Improve.</h2>
+    <p>
+        Use the Nursing Career examination system to practice
+        course-wise and subject-wise MCQs.
+    </p>
+</div>
+
+
+<div class="exam-grid">
+
+    <div class="exam-card">
+        <div class="exam-number">01</div>
+        <h3>Practice MCQ</h3>
+        <p>
+            Practice nursing questions and strengthen
+            your subject knowledge.
+        </p>
+
+        <ul class="exam-list">
+            <li>Course selection</li>
+            <li>Subject selection</li>
+            <li>Random questions</li>
+            <li>Answer review</li>
+        </ul>
+
+        <a href="exam.html" class="btn btn-primary full-btn">
+            Practice Now →
+        </a>
+    </div>
+
+
+    <div class="exam-card">
+        <div class="exam-number">02</div>
+        <h3>Timed Examination</h3>
+        <p>
+            Simulate a structured nursing examination
+            with a countdown timer.
+        </p>
+
+        <ul class="exam-list">
+            <li>Timed examination</li>
+            <li>Question navigation</li>
+            <li>Mark for review</li>
+            <li>Auto submission</li>
+        </ul>
+
+        <a href="exam.html" class="btn btn-primary full-btn">
+            Start Examination →
+        </a>
+    </div>
+
+
+    <div class="exam-card">
+        <div class="exam-number">03</div>
+        <h3>Performance Review</h3>
+        <p>
+            Review your answers and identify topics
+            that need more preparation.
+        </p>
+
+        <ul class="exam-list">
+            <li>Score summary</li>
+            <li>Wrong answer review</li>
+            <li>Explanations</li>
+            <li>Subject performance</li>
+        </ul>
+
+        <a href="exam.html" class="btn btn-primary full-btn">
+            View Exam System →
+        </a>
+    </div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- =========================
+     ACADEMIC YEAR
+========================= -->
+
+<section class="section" id="academic">
+
+<div class="container">
+
+<div class="section-head center">
+    <span class="eyebrow">Academic Hub</span>
+    <h2>📚 Study According to Your Academic Year</h2>
+    <p>
+        Organize your preparation by academic year and
+        focus on the subjects relevant to your course.
+    </p>
+</div>
+
+
+<div class="year-grid">
+
+    <div class="year-card">
+        <span>ACADEMIC</span>
+        <h3>1st Year</h3>
+        <p>Basic science, anatomy, fundamentals and introductory nursing concepts.</p>
+    </div>
+
+    <div class="year-card">
+        <span>ACADEMIC</span>
+        <h3>2nd Year</h3>
+        <p>Medical-surgical, pharmacology, pediatric and community nursing concepts.</p>
+    </div>
+
+    <div class="year-card">
+        <span>ACADEMIC</span>
+        <h3>3rd Year</h3>
+        <p>Advanced nursing subjects, midwifery and clinical preparation.</p>
+    </div>
+
+    <div class="year-card">
+        <span>ACADEMIC</span>
+        <h3>4th Year</h3>
+        <p>Advanced nursing, management, education and research-focused study.</p>
+    </div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- =========================
+     CLINICAL + VIVA
+========================= -->
+
+<section class="section" id="clinical">
+
+<div class="container two-column">
+
+<div class="feature-panel">
+
+    <span class="eyebrow">Practical Nursing</span>
+    <h3>🏥 Clinical Nursing Hub</h3>
+
+    <p>
+        Strengthen your clinical knowledge with structured
+        practical topics and nursing-care concepts.
+    </p>
+
+    <div class="feature-list">
+
+        <div class="feature-item">
+            <div class="feature-item-icon">🩺</div>
+            <div>
+                <strong>Clinical Assessment</strong>
+                <span>Patient assessment fundamentals</span>
+            </div>
+        </div>
+
+        <div class="feature-item">
+            <div class="feature-item-icon">💉</div>
+            <div>
+                <strong>Nursing Procedures</strong>
+                <span>Procedure-focused learning</span>
+            </div>
+        </div>
+
+        <div class="feature-item">
+            <div class="feature-item-icon">🚨</div>
+            <div>
+                <strong>Emergency Nursing</strong>
+                <span>Important emergency concepts</span>
+            </div>
+        </div>
+
+        <div class="feature-item">
+            <div class="feature-item-icon">🏥</div>
+            <div>
+                <strong>Ward Knowledge</strong>
+                <span>Clinical environment preparation</span>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="feature-panel" id="viva">
+
+    <span class="eyebrow">Oral Examination</span>
+    <h3>🎤 Nursing Viva Preparation</h3>
+
+    <p>
+        Prepare for nursing viva with concise questions,
+        definitions and topic-focused revision.
+    </p>
+
+    <div class="feature-list">
+
+        <div class="feature-item">
+            <div class="feature-item-icon">📘</div>
+            <div>
+                <strong>Fundamentals Viva</strong>
+                <span>Core nursing questions</span>
+            </div>
+        </div>
+
+        <div class="feature-item">
+            <div class="feature-item-icon">🏥</div>
+            <div>
+                <strong>Medical-Surgical Viva</strong>
+                <span>Clinical question preparation</span>
+            </div>
+        </div>
+
+        <div class="feature-item">
+            <div class="feature-item-icon">🤰</div>
+            <div>
+                <strong>Midwifery Viva</strong>
+                <span>Maternal and newborn topics</span>
+            </div>
+        </div>
+
+        <div class="feature-item">
+            <div class="feature-item-icon">💊</div>
+            <div>
+                <strong>Pharmacology Viva</strong>
+                <span>Drug-related oral questions</span>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- =========================
+     STUDENT PROGRESS
+========================= -->
+
+<section class="section progress-section">
+
+<div class="container progress-layout">
+
+<div>
+
+    <span class="eyebrow" style="color:#67e8f9;">
+        Personal Learning
+    </span>
+
+    <h2>📊 Understand Your Study Progress</h2>
+
+    <p>
+        Track your preparation across nursing subjects,
+        MCQ practice, drug calculation and clinical learning.
+    </p>
+
+    <br>
+
+    <a href="exam.html" class="btn btn-primary">
+        Open Examination Dashboard →
+    </a>
+
+</div>
+
+
+<div class="progress-demo">
+
+    <div class="metric">
+        <div class="metric-top">
+            <span>Fundamentals of Nursing</span>
+            <strong>82%</strong>
+        </div>
+
+        <div class="metric-bar">
+            <div style="width:82%"></div>
+        </div>
+    </div>
+
+
+    <div class="metric">
+        <div class="metric-top">
+            <span>Medical-Surgical Nursing</span>
+            <strong>68%</strong>
+        </div>
+
+        <div class="metric-bar">
+            <div style="width:68%"></div>
+        </div>
+    </div>
+
+
+    <div class="metric">
+        <div class="metric-top">
+            <span>Pharmacology</span>
+            <strong>74%</strong>
+        </div>
+
+        <div class="metric-bar">
+            <div style="width:74%"></div>
+        </div>
+    </div>
+
+
+    <div class="metric">
+        <div class="metric-top">
+            <span>Drug Calculation</span>
+            <strong>61%</strong>
+        </div>
+
+        <div class="metric-bar">
+            <div style="width:61%"></div>
+        </div>
+    </div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- =========================
+     RESULT CENTER
+========================= -->
+
+<section class="section" id="result">
+
+<div class="container">
+
+<div class="result-box">
+
+<div>
+    <span class="eyebrow">Result Center</span>
+    <h2>📄 Nursing Result & Academic Resources</h2>
+    <p>
+        Access official result resources and keep your
+        academic information organized.
+    </p>
+</div>
+
+<div style="display:flex;gap:10px;flex-wrap:wrap;">
+
+    <a
+        href="https://bnmc.gov.bd/"
+        target="_blank"
+        rel="noopener"
+        class="btn btn-primary">
+        BNMC Website
+    </a>
+
+    <a
+        href="https://dgnm.gov.bd/"
+        target="_blank"
+        rel="noopener"
+        class="btn btn-outline">
+        DGNM Website
+    </a>
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- =========================
      CTA
-======================================================= -->
+========================= -->
 
-<div class="cta">
+<section class="cta">
 
-<div class="cta-inner">
+<div class="container">
 
-<h2>
-    Ready to start your nursing preparation?
-</h2>
+<div class="cta-box">
 
-<p>
-    Choose your course, practice nursing MCQs,
-    take a timed exam and review your performance.
-</p>
+    <h2>Build Strong Nursing Knowledge</h2>
 
-<button
-    class="cta-btn"
-    onclick="location.href='exam.html'"
->
-    📝 Start Nursing Exam →
-</button>
+    <p>
+        Study topic-wise. Practice high-yield concepts.
+        Improve your MCQ performance and strengthen your
+        clinical confidence.
+    </p>
+
+    <a href="exam.html" class="btn">
+        📝 Start Your Nursing Exam
+    </a>
 
 </div>
 
 </div>
+</section>
 
 
-
-<!-- =======================================================
+<!-- =========================
      FOOTER
-======================================================= -->
+========================= -->
 
 <footer>
 
+<div class="container">
+
 <div class="footer-grid">
 
+    <div class="footer-brand">
 
-<div class="footer-brand">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">🩺</div>
+            Nursing <span>Career</span>
+        </a>
 
-<a href="index.html" class="logo">
+        <p>
+            A structured nursing education platform for
+            notes, high-yield learning, picture-based study,
+            drug calculation, MCQ examination, clinical
+            preparation and viva.
+        </p>
 
-<div class="logo-icon">
-    🩺
-</div>
-
-<span style="color:white;">
-    Nursing Career
-</span>
-
-</a>
-
-<p>
-
-Nursing education platform for academic learning,
-MCQ practice, clinical knowledge and examination
-preparation.
-
-</p>
-
-</div>
+    </div>
 
 
-
-<div>
-
-<h4>
-    Platform
-</h4>
-
-<a href="#courses">
-    Courses
-</a>
-
-<a href="#features">
-    Features
-</a>
-
-<a href="exam.html">
-    Practice Exam
-</a>
-
-<a href="#academic">
-    Academic
-</a>
-
-</div>
+    <div>
+        <h4>Learning</h4>
+        <ul>
+            <li><a href="#notes">Hand Notes</a></li>
+            <li><a href="#highyield">High-Yield</a></li>
+            <li><a href="#pictures">Picture Learning</a></li>
+            <li><a href="#academic">Academic Hub</a></li>
+        </ul>
+    </div>
 
 
-
-<div>
-
-<h4>
-    Nursing
-</h4>
-
-<a href="#clinical">
-    Clinical Learning
-</a>
-
-<a href="#study">
-    Study Hub
-</a>
-
-<a href="#">
-    Subjects
-</a>
-
-<a href="#">
-    Viva
-</a>
-
-</div>
+    <div>
+        <h4>Practice</h4>
+        <ul>
+            <li><a href="#drug">Drug Calculation</a></li>
+            <li><a href="exam.html">MCQ Exam</a></li>
+            <li><a href="#clinical">Clinical Nursing</a></li>
+            <li><a href="#viva">Viva Preparation</a></li>
+        </ul>
+    </div>
 
 
+    <div>
+        <h4>Courses</h4>
+        <ul>
+            <li>
+                <a href="javascript:startCourse('Diploma in Nursing Science')">
+                    Diploma in Nursing Science
+                </a>
+            </li>
 
-<div>
+            <li>
+                <a href="javascript:startCourse('B.Sc. in Nursing')">
+                    B.Sc. in Nursing
+                </a>
+            </li>
 
-<h4>
-    Courses
-</h4>
+            <li>
+                <a href="javascript:startCourse('Diploma in Nursing')">
+                    Diploma in Nursing
+                </a>
+            </li>
 
-<a href="exam.html?course=Diploma%20in%20Nursing%20Science">
-    Diploma in Nursing Science
-</a>
-
-<a href="exam.html?course=B.Sc.%20in%20Nursing">
-    B.Sc. in Nursing
-</a>
-
-<a href="exam.html?course=Diploma%20in%20Nursing">
-    Diploma in Nursing
-</a>
-
-</div>
-
+            <li><a href="#result">Result Center</a></li>
+        </ul>
+    </div>
 
 </div>
 
 
 <div class="footer-bottom">
 
-<span>
-    © 2026 Nursing Career. Educational platform.
-</span>
+    <span>
+        © 2026 Nursing Career. All rights reserved.
+    </span>
 
-<span>
-    Built for nursing students 🩺
-</span>
+    <span>
+        Nursing Education • MCQ • Clinical • Viva
+    </span>
 
 </div>
 
+</div>
 </footer>
 
 
-
-<!-- =======================================================
+<!-- =========================
      JAVASCRIPT
-======================================================= -->
+========================= -->
 
 <script>
 
+function toggleMenu(){
 
-/* =========================================================
-   COURSE START
-========================================================= */
+    const nav = document.getElementById("navLinks");
 
-function startCourse(course){
-
-    const encoded =
-        encodeURIComponent(course);
-
-    window.location.href =
-        "exam.html?course="+encoded;
+    nav.classList.toggle("active");
 
 }
 
 
-/* =========================================================
-   MOBILE MENU
-========================================================= */
+function startCourse(course){
 
-function toggleMobileMenu(){
+    const url =
+        "exam.html?course=" +
+        encodeURIComponent(course);
 
-    const nav =
-        document.querySelector(".nav-links");
+    window.location.href = url;
 
-    if(!nav) return;
+}
 
 
-    if(nav.style.display==="flex"){
+function searchTopic(event){
 
-        nav.style.display="none";
+    if(event && event.key && event.key !== "Enter"){
+        return;
+    }
+
+    const input =
+        document.getElementById("searchInput");
+
+    const query =
+        input.value.trim().toLowerCase();
+
+    if(!query){
+
+        alert(
+            "Please enter a nursing topic, subject or learning area."
+        );
+
+        return;
+    }
+
+    const topics = {
+
+        "drug":
+            "#drug",
+
+        "drug calculation":
+            "#drug",
+
+        "calculation":
+            "#drug",
+
+        "notes":
+            "#notes",
+
+        "hand note":
+            "#notes",
+
+        "high yield":
+            "#highyield",
+
+        "picture":
+            "#pictures",
+
+        "anatomy":
+            "#subjects",
+
+        "pharmacology":
+            "#subjects",
+
+        "medical surgical":
+            "#subjects",
+
+        "midwifery":
+            "#subjects",
+
+        "pediatric":
+            "#subjects",
+
+        "clinical":
+            "#clinical",
+
+        "viva":
+            "#viva",
+
+        "exam":
+            "#exam",
+
+        "mcq":
+            "#exam"
+
+    };
+
+    let destination = null;
+
+    for(const key in topics){
+
+        if(query.includes(key)){
+
+            destination = topics[key];
+
+            break;
+
+        }
+
+    }
+
+    if(destination){
+
+        window.location.hash = destination;
 
     }else{
 
-        nav.style.display="flex";
-
-        nav.style.position="absolute";
-
-        nav.style.top="74px";
-
-        nav.style.left="0";
-
-        nav.style.right="0";
-
-        nav.style.padding="15px";
-
-        nav.style.background="white";
-
-        nav.style.flexDirection="column";
-
-        nav.style.alignItems="stretch";
-
-        nav.style.boxShadow=
-            "0 15px 30px rgba(15,23,42,.10)";
+        alert(
+            "Topic found for study: " +
+            input.value +
+            "\\n\\nYou can explore Hand Notes, High-Yield, Subjects and MCQ Exam sections."
+        );
 
     }
 
 }
 
 
-/* =========================================================
-   MESSAGE
-========================================================= */
+function openTopic(topic){
 
-function showMessage(message){
-
-    alert(message);
+    alert(
+        topic +
+        "\\n\\nTopic-wise hand note section is ready for this topic.\\n\\nYou can connect the detailed note page here later."
+    );
 
 }
 
 
-</script>
+function pictureMessage(topic){
 
+    alert(
+        topic +
+        "\\n\\nPicture-based learning module is ready for this topic.\\n\\nYou can connect the actual image/diagram page here."
+    );
+
+}
+
+
+function openDrugCalculation(){
+
+    const possiblePages = [
+        "drug-calculation.html",
+        "drugcalculation.html",
+        "drug-calculation/index.html"
+    ];
+
+    /*
+       If one of these pages exists in your GitHub repository,
+       change the line below to the exact filename.
+    */
+
+    window.location.href = "drug-calculation.html";
+
+}
+
+
+/* Close mobile menu after clicking a link */
+
+document.querySelectorAll(".nav-links a").forEach(function(link){
+
+    link.addEventListener("click",function(){
+
+        document
+            .getElementById("navLinks")
+            .classList.remove("active");
+
+    });
+
+});
+
+</script>
 
 </body>
 </html>
