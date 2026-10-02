@@ -1,504 +1,372 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Nursing Career | Nursing Learning Platform</title>
+<title>Ashik Mess Manager</title>
 
 <style>
 *{
+  box-sizing:border-box;
   margin:0;
   padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
 }
 
 body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:#f6f9fc;
-  color:#18324a;
-  line-height:1.6;
+  font-family:Arial,"Noto Sans Bengali",sans-serif;
+  background:#f1f5f9;
+  color:#172033;
 }
-
-a{
-  text-decoration:none;
-  color:inherit;
-}
-
-.container{
-  width:min(1100px,92%);
-  margin:auto;
-}
-
-/* ================= HEADER ================= */
 
 header{
-  background:#ffffff;
-  border-bottom:1px solid #e5edf3;
+  background:linear-gradient(135deg,#0f766e,#164e63);
+  color:white;
+  padding:20px 15px;
   position:sticky;
   top:0;
-  z-index:1000;
+  z-index:20;
+  box-shadow:0 4px 15px rgba(0,0,0,.15);
 }
 
-.nav{
-  min-height:65px;
+.header-inner{
+  max-width:1100px;
+  margin:auto;
   display:flex;
-  align-items:center;
   justify-content:space-between;
-  gap:20px;
+  align-items:center;
+  gap:10px;
 }
 
 .logo{
   font-size:22px;
   font-weight:800;
-  color:#1266a8;
-  white-space:nowrap;
 }
 
-.nav-links{
+.subtitle{
+  font-size:12px;
+  opacity:.85;
+  margin-top:4px;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:15px;
+}
+
+.nav{
   display:flex;
-  align-items:center;
-  gap:18px;
-  flex-wrap:wrap;
-}
-
-.nav-links a{
-  font-size:14px;
-  font-weight:600;
-}
-
-.nav-links a:hover{
-  color:#1266a8;
-}
-
-/* ================= BUTTON ================= */
-
-.btn{
-  display:inline-block;
-  border:none;
-  background:#1266a8;
-  color:white;
-  padding:11px 18px;
-  border-radius:8px;
-  cursor:pointer;
-  font-weight:700;
-  font-size:14px;
-}
-
-.btn:hover{
-  background:#0e548b;
-}
-
-.btn-light{
-  background:#eaf4fb;
-  color:#1266a8;
-}
-
-.btn-light:hover{
-  background:#dceef9;
-}
-
-/* ================= HERO ================= */
-
-.hero{
-  background:#edf7fc;
-  padding:80px 0;
-  text-align:center;
-}
-
-.hero h1{
-  font-size:46px;
+  gap:7px;
+  overflow-x:auto;
+  padding:10px 0;
   margin-bottom:10px;
-  color:#123b59;
 }
 
-.hero p{
-  max-width:650px;
-  margin:0 auto 25px;
-  color:#627688;
+.nav button{
+  border:0;
+  background:white;
+  color:#334155;
+  padding:10px 14px;
+  border-radius:10px;
+  white-space:nowrap;
+  font-weight:700;
+  box-shadow:0 2px 7px rgba(0,0,0,.08);
+  cursor:pointer;
 }
 
-.hero-buttons{
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  flex-wrap:wrap;
+.nav button.active{
+  background:#0f766e;
+  color:white;
 }
 
-/* ================= SECTION ================= */
-
-section{
-  padding:60px 0;
+.page{
+  display:none;
 }
 
-.section-title{
-  text-align:center;
-  margin-bottom:32px;
+.page.active{
+  display:block;
 }
 
-.section-title h2{
-  font-size:30px;
-  margin-bottom:6px;
-}
-
-.section-title p{
-  color:#718391;
-}
-
-/* ================= CARDS ================= */
-
-.grid{
+.cards{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  margin-bottom:15px;
 }
 
 .card{
   background:white;
-  border:1px solid #e1e9ef;
-  border-radius:12px;
-  padding:24px;
-  box-shadow:0 4px 15px rgba(20,50,70,.05);
-}
-
-.card-icon{
-  font-size:32px;
-  margin-bottom:8px;
+  border-radius:15px;
+  padding:17px;
+  box-shadow:0 3px 12px rgba(0,0,0,.07);
 }
 
 .card h3{
+  font-size:13px;
+  color:#64748b;
   margin-bottom:7px;
 }
 
-.card p{
-  color:#697c8b;
-  font-size:14px;
-  margin-bottom:15px;
+.big{
+  font-size:24px;
+  font-weight:800;
 }
 
-/* ================= NOTES ================= */
+.green{color:#059669}
+.red{color:#dc2626}
+.blue{color:#2563eb}
+.orange{color:#ea580c}
 
-.notes-grid{
+.section{
+  background:white;
+  border-radius:15px;
+  padding:17px;
+  margin-bottom:15px;
+  box-shadow:0 3px 12px rgba(0,0,0,.06);
+}
+
+.section-title{
+  font-size:18px;
+  font-weight:800;
+  margin-bottom:14px;
+}
+
+.form-grid{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:14px;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
 }
 
-.note{
-  background:white;
-  border:1px solid #e1e9ef;
-  border-radius:10px;
-  padding:18px;
-  font-weight:700;
-  cursor:pointer;
-  transition:.2s;
-}
-
-.note:hover{
-  border-color:#1266a8;
-  color:#1266a8;
-  transform:translateY(-2px);
-}
-
-/* ================= CONTENT BOX ================= */
-
-.content-box{
-  background:white;
-  border:1px solid #e1e9ef;
-  border-radius:12px;
-  padding:25px;
-  margin-bottom:15px;
-}
-
-.content-box h3{
-  color:#1266a8;
-  margin-bottom:8px;
-}
-
-/* ================= MCQ ================= */
-
-.quiz-question{
-  background:white;
-  border:1px solid #e1e9ef;
-  border-radius:12px;
-  padding:22px;
-  margin-bottom:16px;
-}
-
-.quiz-question h3{
-  margin-bottom:15px;
-}
-
-.option{
-  display:block;
-  border:1px solid #dce5eb;
-  border-radius:8px;
-  padding:11px;
-  margin:8px 0;
-  cursor:pointer;
-}
-
-.option:hover{
-  background:#edf7fc;
-}
-
-.question-result{
-  margin-top:10px;
-  font-weight:700;
-}
-
-.correct{
-  color:#18834d;
-}
-
-.wrong{
-  color:#c0392b;
-}
-
-.result-box{
-  background:#edf7fc;
-  border-radius:12px;
-  padding:22px;
-  margin:20px 0;
-  font-size:20px;
-  font-weight:700;
-  text-align:center;
-}
-
-/* ================= CALCULATOR ================= */
-
-.form-box{
-  max-width:700px;
-  margin:auto;
-  background:white;
-  border:1px solid #e1e9ef;
-  border-radius:12px;
-  padding:25px;
-}
-
-label{
-  display:block;
-  font-size:14px;
-  font-weight:700;
-  margin-bottom:5px;
-}
-
-input,
-textarea,
-select{
+input,select{
   width:100%;
   padding:11px;
-  border:1px solid #ccd8e1;
-  border-radius:7px;
-  font-family:inherit;
+  border:1px solid #cbd5e1;
+  border-radius:9px;
   font-size:14px;
-  margin-bottom:15px;
-}
-
-textarea{
-  min-height:90px;
-  resize:vertical;
-}
-
-.answer{
-  margin-top:15px;
-  padding:15px;
-  background:#edf7fc;
-  border-radius:8px;
-  font-weight:700;
-}
-
-/* ================= CV ================= */
-
-.cv-layout{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
-}
-
-.cv-panel,
-.cv-preview{
   background:white;
-  border:1px solid #e1e9ef;
-  border-radius:12px;
-  padding:25px;
 }
 
-.cv-panel h3{
-  color:#1266a8;
-  margin:20px 0 10px;
+button{
+  font-family:inherit;
 }
 
-.cv-preview h1{
-  color:#1266a8;
-  font-size:30px;
-}
-
-.cv-job{
+.btn{
+  border:0;
+  padding:11px 15px;
+  border-radius:9px;
+  cursor:pointer;
   font-weight:700;
 }
 
-.cv-contact{
-  color:#687c8b;
-  margin:8px 0 20px;
+.btn-primary{
+  background:#0f766e;
+  color:white;
 }
 
-.cv-section{
-  border-top:1px solid #ddd;
-  padding-top:13px;
-  margin-top:18px;
+.btn-blue{
+  background:#2563eb;
+  color:white;
 }
 
-.cv-section h3{
-  color:#1266a8;
-  margin-bottom:5px;
+.btn-danger{
+  background:#dc2626;
+  color:white;
 }
 
-.cv-section p{
-  white-space:pre-line;
-  color:#5e7180;
+.btn-gray{
+  background:#e2e8f0;
+  color:#334155;
 }
 
-.two-input{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
+.btn-orange{
+  background:#ea580c;
+  color:white;
 }
 
-.cv-buttons{
+.form-actions{
+  margin-top:12px;
   display:flex;
-  gap:7px;
+  gap:8px;
   flex-wrap:wrap;
 }
 
-/* ================= CTA ================= */
-
-.cta{
-  background:#1266a8;
-  color:white;
-  text-align:center;
+.table-wrap{
+  overflow-x:auto;
 }
 
-.cta p{
-  margin:8px 0 20px;
-  opacity:.9;
+table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:650px;
 }
 
-.cta .btn{
-  background:white;
-  color:#1266a8;
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-  background:#102b40;
-  color:#ccd8df;
-  text-align:center;
-  padding:28px 0;
+th,td{
+  padding:11px 9px;
+  border-bottom:1px solid #e2e8f0;
+  text-align:left;
   font-size:14px;
 }
 
-/* ================= MOBILE ================= */
+th{
+  background:#f8fafc;
+  color:#475569;
+}
+
+.badge{
+  display:inline-block;
+  padding:5px 9px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:700;
+}
+
+.badge-green{
+  background:#dcfce7;
+  color:#166534;
+}
+
+.badge-red{
+  background:#fee2e2;
+  color:#991b1b;
+}
+
+.badge-blue{
+  background:#dbeafe;
+  color:#1e40af;
+}
+
+.login-box{
+  max-width:430px;
+  margin:35px auto;
+}
+
+.login-box input{
+  margin-bottom:10px;
+}
+
+.notice{
+  background:#ecfeff;
+  border-left:4px solid #0891b2;
+  padding:12px;
+  border-radius:8px;
+  margin-bottom:12px;
+  font-size:14px;
+}
+
+.warning{
+  background:#fff7ed;
+  border-left:4px solid #f97316;
+  padding:12px;
+  border-radius:8px;
+  margin-bottom:12px;
+  font-size:14px;
+}
+
+.empty{
+  text-align:center;
+  color:#64748b;
+  padding:25px;
+}
+
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.55);
+  z-index:100;
+  align-items:center;
+  justify-content:center;
+  padding:15px;
+}
+
+.modal.show{
+  display:flex;
+}
+
+.modal-box{
+  background:white;
+  width:100%;
+  max-width:500px;
+  max-height:90vh;
+  overflow:auto;
+  border-radius:16px;
+  padding:20px;
+}
+
+.modal-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:15px;
+}
+
+.close{
+  border:0;
+  background:#fee2e2;
+  color:#991b1b;
+  width:35px;
+  height:35px;
+  border-radius:50%;
+  cursor:pointer;
+  font-size:18px;
+}
+
+.user-status{
+  font-size:12px;
+  text-align:right;
+  margin-top:5px;
+}
+
+footer{
+  text-align:center;
+  color:#64748b;
+  font-size:12px;
+  padding:25px;
+}
 
 @media(max-width:800px){
-
-  .nav{
-    flex-direction:column;
-    padding:13px 0;
+  .cards{
+    grid-template-columns:repeat(2,1fr);
   }
 
-  .nav-links{
-    justify-content:center;
-    gap:12px;
-  }
-
-  .hero h1{
-    font-size:36px;
-  }
-
-  .grid{
+  .form-grid{
     grid-template-columns:1fr 1fr;
-  }
-
-  .notes-grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .cv-layout{
-    grid-template-columns:1fr;
   }
 }
 
 @media(max-width:520px){
-
-  .hero{
-    padding:55px 0;
+  header{
+    padding:15px 12px;
   }
 
-  .hero h1{
-    font-size:30px;
+  .logo{
+    font-size:18px;
   }
 
-  section{
-    padding:45px 0;
+  .container{
+    padding:10px;
   }
 
-  .grid,
-  .notes-grid{
+  .cards{
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+  }
+
+  .card{
+    padding:13px;
+  }
+
+  .big{
+    font-size:20px;
+  }
+
+  .form-grid{
     grid-template-columns:1fr;
   }
 
-  .two-input{
-    grid-template-columns:1fr;
-  }
-
-  .nav-links{
-    gap:9px;
-  }
-
-  .nav-links a{
-    font-size:13px;
-  }
-}
-
-/* ================= PRINT CV ================= */
-
-@media print{
-
-  body{
-    background:white;
-  }
-
-  header,
-  .hero,
-  #courses,
-  #notes,
-  #mcq,
-  #drug,
-  .cv-panel,
-  footer,
-  .cta,
-  .section-title{
-    display:none !important;
-  }
-
-  #cv{
-    display:block;
-    padding:0;
-  }
-
-  .cv-layout{
-    display:block;
-  }
-
-  .cv-preview{
-    border:none;
-    box-shadow:none;
+  .section{
+    padding:13px;
   }
 }
 </style>
@@ -506,1326 +374,1783 @@ footer{
 
 <body>
 
-<!-- ================= HEADER ================= -->
-
 <header>
-  <div class="container nav">
+  <div class="header-inner">
+    <div>
+      <div class="logo">🏠 Ashik Mess Manager</div>
+      <div class="subtitle">Shared Mess Management System</div>
+    </div>
 
-    <a href="#home" class="logo">
-      🩺 Nursing Career
-    </a>
+    <div>
+      <button id="loginBtn" class="btn btn-gray" onclick="openLogin()">
+        🔐 Manager Login
+      </button>
+      <button id="logoutBtn" class="btn btn-danger" onclick="logout()" style="display:none">
+        Logout
+      </button>
+    </div>
+  </div>
 
-    <nav class="nav-links">
-      <a href="#courses">Courses</a>
-      <a href="#notes">Notes</a>
-      <a href="#mcq">MCQ</a>
-      <a href="#drug">Drug Calculation</a>
-      <a href="#cv">CV Builder</a>
-    </nav>
-
+  <div class="user-status" id="userStatus">
+    👀 View Mode
   </div>
 </header>
 
+<div class="container">
 
-<!-- ================= HOME ================= -->
-
-<section class="hero" id="home">
-
-  <div class="container">
-
-    <h1>Nursing Career</h1>
-
-    <p>
-      A simple nursing learning platform for
-      Nursing and Midwifery students.
-    </p>
-
-    <div class="hero-buttons">
-
-      <a href="#mcq" class="btn">
-        📝 Start MCQ
-      </a>
-
-      <a href="#notes" class="btn btn-light">
-        📚 Study Notes
-      </a>
-
-    </div>
-
+  <div class="nav">
+    <button class="active" onclick="showPage('dashboard',this)">📊 Dashboard</button>
+    <button onclick="showPage('meals',this)">🍚 Meals</button>
+    <button onclick="showPage('market',this)">🛒 Market</button>
+    <button onclick="showPage('payments',this)">💰 Payments</button>
+    <button onclick="showPage('members',this)">👥 Members</button>
+    <button onclick="showPage('report',this)">🧾 Report</button>
   </div>
 
-</section>
 
+  <!-- DASHBOARD -->
+  <section id="dashboard" class="page active">
 
-<!-- ================= COURSES ================= -->
-
-<section id="courses">
-
-  <div class="container">
-
-    <div class="section-title">
-
-      <h2>Courses</h2>
-
-      <p>
-        Nursing and Midwifery learning resources
-      </p>
-
-    </div>
-
-
-    <div class="grid">
+    <div class="cards">
 
       <div class="card">
-
-        <div class="card-icon">👩‍⚕️</div>
-
-        <h3>Diploma in Nursing</h3>
-
-        <p>
-          Core nursing subjects, clinical learning
-          and examination practice.
-        </p>
-
-        <a href="#mcq" class="btn btn-light">
-          Practice MCQ
-        </a>
-
+        <h3>👥 Members</h3>
+        <div class="big blue" id="totalMembers">0</div>
       </div>
-
 
       <div class="card">
-
-        <div class="card-icon">🎓</div>
-
-        <h3>B.Sc in Nursing</h3>
-
-        <p>
-          Study support and practice resources
-          for undergraduate nursing students.
-        </p>
-
-        <a href="#mcq" class="btn btn-light">
-          Practice MCQ
-        </a>
-
+        <h3>🍚 Total Meals</h3>
+        <div class="big green" id="totalMeals">0</div>
       </div>
-
 
       <div class="card">
+        <h3>🛒 Total Market</h3>
+        <div class="big orange">৳<span id="totalMarket">0</span></div>
+      </div>
 
-        <div class="card-icon">🤰</div>
-
-        <h3>Midwifery</h3>
-
-        <p>
-          Maternal, newborn and midwifery-focused
-          learning resources.
-        </p>
-
-        <a href="#mcq" class="btn btn-light">
-          Practice MCQ
-        </a>
-
+      <div class="card">
+        <h3>🍽️ Meal Rate</h3>
+        <div class="big green">৳<span id="mealRate">0.00</span></div>
       </div>
 
     </div>
 
-  </div>
+    <div class="cards">
 
-</section>
-
-
-<!-- ================= NOTES ================= -->
-
-<section id="notes">
-
-  <div class="container">
-
-    <div class="section-title">
-
-      <h2>📚 Study Notes</h2>
-
-      <p>
-        Important nursing topics
-      </p>
-
-    </div>
-
-
-    <div class="notes-grid">
-
-      <div class="note"
-           onclick="showNote('Anatomy')">
-        🫀 Anatomy
+      <div class="card">
+        <h3>💰 Total Paid</h3>
+        <div class="big blue">৳<span id="totalPaid">0</span></div>
       </div>
 
-      <div class="note"
-           onclick="showNote('Fundamentals of Nursing')">
-        📘 Fundamentals
+      <div class="card">
+        <h3>📅 Current Month</h3>
+        <div class="big" id="currentMonth"></div>
       </div>
 
-      <div class="note"
-           onclick="showNote('Medical Surgical Nursing')">
-        🏥 Medical-Surgical
+      <div class="card">
+        <h3>👤 Manager</h3>
+        <div class="big">আশিক</div>
       </div>
 
-      <div class="note"
-           onclick="showNote('Pharmacology')">
-        💊 Pharmacology
-      </div>
-
-      <div class="note"
-           onclick="showNote('Midwifery')">
-        🤰 Midwifery
-      </div>
-
-      <div class="note"
-           onclick="showNote('Pediatric Nursing')">
-        👶 Pediatric
-      </div>
-
-      <div class="note"
-           onclick="showNote('Community Health Nursing')">
-        🌍 Community Health
-      </div>
-
-      <div class="note"
-           onclick="showNote('Nutrition')">
-        🥗 Nutrition
+      <div class="card">
+        <h3>☁️ Database</h3>
+        <div class="big green">LIVE</div>
       </div>
 
     </div>
 
+    <div class="section">
+      <div class="section-title">📌 Member Summary</div>
 
-    <div id="noteDisplay"
-         class="content-box"
-         style="display:none;margin-top:25px;">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Member</th>
+              <th>Meals</th>
+              <th>Bill</th>
+              <th>Paid</th>
+              <th>Balance</th>
+            </tr>
+          </thead>
 
-      <h3 id="noteTitle"></h3>
-
-      <p id="noteText"></p>
-
+          <tbody id="dashboardMembers"></tbody>
+        </table>
+      </div>
     </div>
 
-  </div>
-
-</section>
+  </section>
 
 
-<!-- ================= MCQ ================= -->
+  <!-- MEALS -->
+  <section id="meals" class="page">
 
-<section id="mcq">
+    <div class="section">
 
-  <div class="container">
+      <div class="section-title">🍚 Daily Meal Entry</div>
 
-    <div class="section-title">
-
-      <h2>📝 Nursing MCQ</h2>
-
-      <p>
-        Answer all questions and submit your exam.
-      </p>
-
-    </div>
-
-
-    <div id="quiz"></div>
-
-
-    <button class="btn"
-            onclick="submitQuiz()">
-      Submit Exam
-    </button>
-
-
-    <div id="quizResult"></div>
-
-  </div>
-
-</section>
-
-
-<!-- ================= DRUG CALCULATION ================= -->
-
-<section id="drug">
-
-  <div class="container">
-
-    <div class="section-title">
-
-      <h2>🧮 Drug Calculation</h2>
-
-      <p>
-        Required Dose = (Dose Ordered ÷ Dose Available) × Quantity
-      </p>
-
-    </div>
-
-
-    <div class="form-box">
-
-      <label>
-        Dose Ordered
-      </label>
-
-      <input
-        id="ordered"
-        type="number"
-        step="any"
-        placeholder="Example: 500">
-
-
-      <label>
-        Dose Available
-      </label>
-
-      <input
-        id="available"
-        type="number"
-        step="any"
-        placeholder="Example: 250">
-
-
-      <label>
-        Quantity Available
-      </label>
-
-      <input
-        id="quantity"
-        type="number"
-        step="any"
-        placeholder="Example: 1">
-
-
-      <button class="btn"
-              onclick="calculateDose()">
-        Calculate
-      </button>
-
-
-      <div id="doseAnswer"
-           class="answer"
-           style="display:none;">
+      <div id="managerMealNotice" class="warning">
+        🔒 Meal entry করার জন্য Ashik Manager Login করতে হবে।
       </div>
 
-    </div>
+      <div class="form-grid">
 
-  </div>
+        <input type="date" id="mealDate">
 
-</section>
+        <select id="mealMember"></select>
 
-
-<!-- ================= CV BUILDER ================= -->
-
-<section id="cv">
-
-  <div class="container">
-
-    <div class="section-title">
-
-      <h2>📄 Nursing CV Builder</h2>
-
-      <p>
-        Enter your information and create a simple professional CV.
-      </p>
-
-    </div>
-
-
-    <div class="cv-layout">
-
-
-      <!-- CV FORM -->
-
-      <div class="cv-panel">
-
-        <h2>Your Information</h2>
-
-
-        <div class="two-input">
-
-          <div>
-
-            <label>
-              Full Name
-            </label>
-
-            <input
-              id="cvName"
-              placeholder="Your Name"
-              oninput="updateCV()">
-
-          </div>
-
-
-          <div>
-
-            <label>
-              Professional Title
-            </label>
-
-            <input
-              id="cvTitle"
-              placeholder="Nursing Student / Staff Nurse"
-              oninput="updateCV()">
-
-          </div>
-
-        </div>
-
-
-        <div class="two-input">
-
-          <div>
-
-            <label>
-              Phone
-            </label>
-
-            <input
-              id="cvPhone"
-              placeholder="01XXXXXXXXX"
-              oninput="updateCV()">
-
-          </div>
-
-
-          <div>
-
-            <label>
-              Email
-            </label>
-
-            <input
-              id="cvEmail"
-              placeholder="your@email.com"
-              oninput="updateCV()">
-
-          </div>
-
-        </div>
-
-
-        <label>
-          Address
-        </label>
-
-        <input
-          id="cvAddress"
-          placeholder="Your address"
-          oninput="updateCV()">
-
-
-        <label>
-          Course
-        </label>
-
-        <select
-          id="cvCourse"
-          onchange="updateCV()">
-
-          <option>
-            Diploma in Nursing Science & Midwifery
-          </option>
-
-          <option>
-            B.Sc in Nursing
-          </option>
-
-          <option>
-            Post Basic B.Sc in Nursing
-          </option>
-
-          <option>
-            Diploma in Midwifery
-          </option>
-
-          <option>
-            B.Sc in Midwifery
-          </option>
-
-          <option>
-            Other
-          </option>
-
+        <select id="mealType">
+          <option value="breakfast">🌅 Breakfast</option>
+          <option value="lunch">☀️ Lunch</option>
+          <option value="dinner">🌙 Dinner</option>
         </select>
 
-
-        <label>
-          Professional Summary
-        </label>
-
-        <textarea
-          id="cvSummary"
-          placeholder="Write a short professional summary..."
-          oninput="updateCV()"></textarea>
-
-
-        <label>
-          Education
-        </label>
-
-        <textarea
-          id="cvEducation"
-          placeholder="Institution, degree, passing year..."
-          oninput="updateCV()"></textarea>
-
-
-        <label>
-          Work Experience
-        </label>
-
-        <textarea
-          id="cvExperience"
-          placeholder="Hospital, position, responsibilities..."
-          oninput="updateCV()"></textarea>
-
-
-        <label>
-          BNMC / Registration
-        </label>
-
-        <input
-          id="cvReg"
-          placeholder="Registration information"
-          oninput="updateCV()">
-
-
-        <label>
-          Clinical Skills
-        </label>
-
-        <textarea
-          id="cvSkills"
-          placeholder="Patient assessment, IV therapy, wound care..."
-          oninput="updateCV()"></textarea>
-
-
-        <label>
-          Training & Certifications
-        </label>
-
-        <textarea
-          id="cvTraining"
-          placeholder="Training / certifications"
-          oninput="updateCV()"></textarea>
-
-
-        <label>
-          Languages
-        </label>
-
-        <input
-          id="cvLanguages"
-          placeholder="Bangla, English"
-          oninput="updateCV()">
-
-
-        <div class="cv-buttons">
-
-          <button class="btn"
-                  onclick="saveCV()">
-            💾 Save
-          </button>
-
-          <button class="btn btn-light"
-                  onclick="loadCV()">
-            📂 Load
-          </button>
-
-          <button class="btn btn-light"
-                  onclick="clearCV()">
-            🗑 Clear
-          </button>
-
-          <button class="btn"
-                  onclick="window.print()">
-            🖨 Print / PDF
-          </button>
-
-        </div>
+        <input type="number" id="mealQty" value="1" min="0" step="0.5"
+          placeholder="Meal quantity">
 
       </div>
 
+      <div class="form-actions">
+        <button class="btn btn-primary" onclick="addMeal()">
+          ➕ Add Meal
+        </button>
+      </div>
 
-      <!-- CV PREVIEW -->
+    </div>
 
-      <div class="cv-preview">
+    <div class="section">
 
-        <h1 id="previewName">
-          Your Name
-        </h1>
+      <div class="section-title">📋 Meal Records</div>
 
-        <div class="cv-job"
-             id="previewTitle">
-          Professional Title
-        </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Member</th>
+              <th>Meal</th>
+              <th>Qty</th>
+              <th>Action</th>
+            </tr>
+          </thead>
 
+          <tbody id="mealTable"></tbody>
+        </table>
+      </div>
 
-        <div class="cv-contact"
-             id="previewContact">
-          Phone · Email · Address
-        </div>
+    </div>
 
-
-        <div class="cv-section">
-
-          <h3>
-            Profile
-          </h3>
-
-          <p id="previewSummary">
-            Your professional summary will appear here.
-          </p>
-
-        </div>
-
-
-        <div class="cv-section">
-
-          <h3>
-            Education
-          </h3>
-
-          <p>
-            <b id="previewCourse"></b>
-          </p>
-
-          <p id="previewEducation"></p>
-
-        </div>
+  </section>
 
 
-        <div class="cv-section">
+  <!-- MARKET -->
+  <section id="market" class="page">
 
-          <h3>
-            Experience
-          </h3>
+    <div class="section">
 
-          <p id="previewExperience"></p>
+      <div class="section-title">🛒 Market / Expense</div>
 
-        </div>
+      <div class="form-grid">
 
+        <input type="date" id="marketDate">
 
-        <div class="cv-section">
+        <input type="text" id="marketItem"
+          placeholder="যেমন: চাল, মাছ, সবজি">
 
-          <h3>
-            Registration
-          </h3>
+        <input type="number" id="marketAmount"
+          placeholder="Amount ৳">
 
-          <p id="previewReg"></p>
+      </div>
 
-        </div>
+      <div class="form-actions">
 
-
-        <div class="cv-section">
-
-          <h3>
-            Clinical Skills
-          </h3>
-
-          <p id="previewSkills"></p>
-
-        </div>
-
-
-        <div class="cv-section">
-
-          <h3>
-            Training & Certifications
-          </h3>
-
-          <p id="previewTraining"></p>
-
-        </div>
-
-
-        <div class="cv-section">
-
-          <h3>
-            Languages
-          </h3>
-
-          <p id="previewLanguages"></p>
-
-        </div>
+        <button class="btn btn-primary" onclick="addMarket()">
+          ➕ Add Market
+        </button>
 
       </div>
 
     </div>
 
-  </div>
 
-</section>
+    <div class="section">
+
+      <div class="section-title">📋 Market Records</div>
+
+      <div class="table-wrap">
+
+        <table>
+
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Item</th>
+              <th>Amount</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+
+          <tbody id="marketTable"></tbody>
+
+        </table>
+
+      </div>
+
+    </div>
+
+  </section>
 
 
-<!-- ================= CTA ================= -->
+  <!-- PAYMENTS -->
+  <section id="payments" class="page">
 
-<section class="cta">
+    <div class="section">
 
-  <div class="container">
+      <div class="section-title">💰 Member Payment</div>
 
-    <h2>
-      Start Your Nursing Journey
-    </h2>
+      <div class="form-grid">
 
-    <p>
-      Learn nursing topics, practice MCQs and build your CV.
-    </p>
+        <input type="date" id="paymentDate">
 
-    <a href="#mcq"
-       class="btn">
-      Start MCQ
-    </a>
+        <select id="paymentMember"></select>
 
-  </div>
+        <input type="number" id="paymentAmount"
+          placeholder="Amount ৳">
 
-</section>
+      </div>
+
+      <div class="form-actions">
+
+        <button class="btn btn-primary" onclick="addPayment()">
+          ➕ Add Payment
+        </button>
+
+      </div>
+
+    </div>
 
 
-<!-- ================= FOOTER ================= -->
+    <div class="section">
+
+      <div class="section-title">📋 Payment Records</div>
+
+      <div class="table-wrap">
+
+        <table>
+
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Member</th>
+              <th>Amount</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+
+          <tbody id="paymentTable"></tbody>
+
+        </table>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- MEMBERS -->
+  <section id="members" class="page">
+
+    <div class="section">
+
+      <div class="section-title">👥 Mess Members</div>
+
+      <div class="notice">
+        মোট ৭ জন member রাখা হয়েছে। Manager: <b>আশিক</b>
+      </div>
+
+      <div id="managerMemberNotice" class="warning">
+        🔒 Member add/delete করতে Manager Login প্রয়োজন।
+      </div>
+
+      <div class="form-grid">
+
+        <input type="text" id="newMemberName"
+          placeholder="নতুন সদস্যের নাম">
+
+      </div>
+
+      <div class="form-actions">
+
+        <button class="btn btn-primary" onclick="addMember()">
+          ➕ Add Member
+        </button>
+
+        <button class="btn btn-blue" onclick="seedMembers()">
+          🔄 Default 7 Members Setup
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div class="section">
+
+      <div class="table-wrap">
+
+        <table>
+
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Role</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+
+          <tbody id="memberTable"></tbody>
+
+        </table>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- REPORT -->
+  <section id="report" class="page">
+
+    <div class="section">
+
+      <div class="section-title">🧾 Monthly Report</div>
+
+      <div class="form-grid">
+
+        <input type="month" id="reportMonth">
+
+      </div>
+
+      <div class="form-actions">
+
+        <button class="btn btn-primary" onclick="generateReport()">
+          📊 Generate Report
+        </button>
+
+        <button class="btn btn-gray" onclick="window.print()">
+          🖨️ Print
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div class="section">
+
+      <div class="cards">
+
+        <div class="card">
+          <h3>Total Market</h3>
+          <div class="big orange">৳<span id="reportMarket">0</span></div>
+        </div>
+
+        <div class="card">
+          <h3>Total Meals</h3>
+          <div class="big green" id="reportMeals">0</div>
+        </div>
+
+        <div class="card">
+          <h3>Meal Rate</h3>
+          <div class="big blue">৳<span id="reportRate">0</span></div>
+        </div>
+
+        <div class="card">
+          <h3>Total Paid</h3>
+          <div class="big">৳<span id="reportPaid">0</span></div>
+        </div>
+
+      </div>
+
+
+      <div class="table-wrap">
+
+        <table>
+
+          <thead>
+
+            <tr>
+              <th>Member</th>
+              <th>Meals</th>
+              <th>Bill</th>
+              <th>Paid</th>
+              <th>Balance</th>
+            </tr>
+
+          </thead>
+
+          <tbody id="reportTable"></tbody>
+
+        </table>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</div>
+
 
 <footer>
-
-  <div class="container">
-
-    © 2026 Nursing Career
-    <br>
-    Nursing & Midwifery Learning Platform
-
-  </div>
-
+  © 2026 Ashik Mess Manager • Firebase Cloud Database
 </footer>
 
 
-<script>
+<!-- LOGIN MODAL -->
 
-/* =========================================================
-   STUDY NOTES
-========================================================= */
+<div class="modal" id="loginModal">
 
-const notes = {
+  <div class="modal-box">
 
-  "Anatomy":
-  "Study the major body systems, organs, tissues and basic anatomical terminology.",
+    <div class="modal-head">
 
-  "Fundamentals of Nursing":
-  "Review vital signs, patient safety, hygiene, basic nursing procedures and fundamental nursing principles.",
+      <h2>🔐 Manager Login</h2>
 
-  "Medical Surgical Nursing":
-  "Review common medical and surgical conditions, patient assessment and nursing management.",
+      <button class="close" onclick="closeLogin()">×</button>
 
-  "Pharmacology":
-  "Study medication classes, routes of administration, medication safety and basic pharmacology concepts.",
+    </div>
 
-  "Midwifery":
-  "Study antenatal care, labour, delivery, postnatal care and essential newborn care.",
+    <div class="notice">
+      Manager: <b>আশিক</b><br>
+      Manager Email: <b>ashik@mess.local</b>
+    </div>
 
-  "Pediatric Nursing":
-  "Review child growth and development, common pediatric conditions and nursing care.",
+    <input
+      type="email"
+      id="loginEmail"
+      value="ashik@mess.local"
+      placeholder="Manager Email">
 
-  "Community Health Nursing":
-  "Study primary health care, health education, disease prevention and community nursing.",
+    <input
+      type="password"
+      id="loginPassword"
+      placeholder="Password">
 
-  "Nutrition":
-  "Review nutrients, balanced diet, deficiency conditions and therapeutic nutrition basics."
+    <div class="form-actions">
+
+      <button class="btn btn-primary" onclick="managerLogin()">
+        🔐 Login
+      </button>
+
+      <button class="btn btn-blue" onclick="createManager()">
+        🆕 Create Manager Account
+      </button>
+
+    </div>
+
+    <div id="loginMessage" style="margin-top:12px"></div>
+
+  </div>
+
+</div>
+
+
+<script type="module">
+
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut
+}
+from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  setDoc,
+  doc,
+  deleteDoc,
+  onSnapshot,
+  query,
+  orderBy
+}
+from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+
+/* ================================
+   FIREBASE CONFIG
+================================ */
+
+const firebaseConfig = {
+
+  apiKey: "AIzaSyCKipiytnhm-mYW_Y3AE6pDj42Mzk85OR4",
+
+  authDomain: "mess-manager-68bef.firebaseapp.com",
+
+  projectId: "mess-manager-68bef",
+
+  storageBucket: "mess-manager-68bef.firebasestorage.app",
+
+  messagingSenderId: "124495457994",
+
+  appId: "1:124495457994:web:2ab3687e52a975ba354e33",
+
+  measurementId: "G-NW9ZJGVZMP"
 
 };
 
 
-function showNote(topic){
+const app = initializeApp(firebaseConfig);
 
-  document.getElementById("noteDisplay").style.display="block";
+const auth = getAuth(app);
 
-  document.getElementById("noteTitle").textContent=topic;
-
-  document.getElementById("noteText").textContent=notes[topic];
-
-  document.getElementById("noteDisplay").scrollIntoView({
-    behavior:"smooth",
-    block:"center"
-  });
-
-}
+const db = getFirestore(app);
 
 
-/* =========================================================
-   MCQ
-========================================================= */
+/* ================================
+   SETTINGS
+================================ */
 
-const questions = [
+const MANAGER_EMAIL = "ashik@mess.local";
 
-  {
-    question:"Which organ pumps blood throughout the body?",
-    options:[
-      "Liver",
-      "Heart",
-      "Kidney",
-      "Lung"
-    ],
-    answer:1
-  },
-
-  {
-    question:"Normal adult body temperature is approximately:",
-    options:[
-      "30°C",
-      "37°C",
-      "42°C",
-      "25°C"
-    ],
-    answer:1
-  },
-
-  {
-    question:"Which vitamin is important for blood clotting?",
-    options:[
-      "Vitamin A",
-      "Vitamin C",
-      "Vitamin K",
-      "Vitamin D"
-    ],
-    answer:2
-  },
-
-  {
-    question:"The basic functional unit of the kidney is:",
-    options:[
-      "Neuron",
-      "Nephron",
-      "Alveolus",
-      "Osteon"
-    ],
-    answer:1
-  },
-
-  {
-    question:"Which route is commonly used for an intramuscular injection?",
-    options:[
-      "IM",
-      "IV",
-      "Oral",
-      "Inhalation"
-    ],
-    answer:0
-  },
-
-  {
-    question:"The normal adult pulse rate is commonly:",
-    options:[
-      "20–30/min",
-      "60–100/min",
-      "120–160/min",
-      "180–200/min"
-    ],
-    answer:1
-  },
-
-  {
-    question:"Which chamber pumps oxygenated blood into systemic circulation?",
-    options:[
-      "Right atrium",
-      "Right ventricle",
-      "Left atrium",
-      "Left ventricle"
-    ],
-    answer:3
-  },
-
-  {
-    question:"A medication placed under the tongue is given by which route?",
-    options:[
-      "Sublingual",
-      "Intramuscular",
-      "Intravenous",
-      "Rectal"
-    ],
-    answer:0
-  },
-
-  {
-    question:"Which blood cells are primarily responsible for immunity?",
-    options:[
-      "Red blood cells",
-      "White blood cells",
-      "Platelets",
-      "Plasma"
-    ],
-    answer:1
-  },
-
-  {
-    question:"Which instrument is commonly used to measure blood pressure?",
-    options:[
-      "Thermometer",
-      "Sphygmomanometer",
-      "Glucometer",
-      "Pulse oximeter"
-    ],
-    answer:1
-  }
-
+const defaultMembers = [
+  "আশিক",
+  "রনি",
+  "সাব্বির",
+  "একরামুল",
+  "সজিব",
+  "নাহিদ",
+  "মিলন"
 ];
 
 
-function loadQuiz(){
+let currentUser = null;
 
-  const quiz =
-    document.getElementById("quiz");
+let members = [];
+let meals = [];
+let markets = [];
+let payments = [];
 
-  quiz.innerHTML="";
 
-  questions.forEach((item,index)=>{
+/* ================================
+   DATE
+================================ */
 
-    let html=`
+const today = new Date();
 
-      <div class="quiz-question">
+function localDate(){
 
-        <h3>
-          ${index+1}. ${item.question}
-        </h3>
+  const d = new Date();
 
-    `;
+  const month = String(d.getMonth()+1).padStart(2,"0");
 
-    item.options.forEach((option,optionIndex)=>{
+  const day = String(d.getDate()).padStart(2,"0");
 
-      html+=`
+  return `${d.getFullYear()}-${month}-${day}`;
+}
 
-        <label class="option">
 
-          <input
-            type="radio"
-            name="question${index}"
-            value="${optionIndex}">
+document.getElementById("mealDate").value = localDate();
 
-          ${option}
+document.getElementById("marketDate").value = localDate();
 
-        </label>
+document.getElementById("paymentDate").value = localDate();
 
-      `;
+document.getElementById("reportMonth").value =
+  today.getFullYear()+"-"+String(today.getMonth()+1).padStart(2,"0");
+
+
+document.getElementById("currentMonth").innerText =
+  today.toLocaleString("en-US",{month:"long",year:"numeric"});
+
+
+/* ================================
+   AUTH
+================================ */
+
+window.openLogin = function(){
+
+  document.getElementById("loginModal").classList.add("show");
+
+};
+
+
+window.closeLogin = function(){
+
+  document.getElementById("loginModal").classList.remove("show");
+
+};
+
+
+window.createManager = async function(){
+
+  const email = document.getElementById("loginEmail").value.trim();
+
+  const password = document.getElementById("loginPassword").value;
+
+  const msg = document.getElementById("loginMessage");
+
+  if(email !== MANAGER_EMAIL){
+
+    msg.innerHTML =
+      `<div class="warning">Manager email অবশ্যই ${MANAGER_EMAIL}</div>`;
+
+    return;
+
+  }
+
+  if(password.length < 6){
+
+    msg.innerHTML =
+      `<div class="warning">Password কমপক্ষে ৬ অক্ষরের হতে হবে।</div>`;
+
+    return;
+
+  }
+
+  try{
+
+    await createUserWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
+
+    msg.innerHTML =
+      `<div class="notice">✅ Manager account তৈরি হয়েছে।</div>`;
+
+  }catch(error){
+
+    msg.innerHTML =
+      `<div class="warning">${friendlyError(error)}</div>`;
+
+  }
+
+};
+
+
+window.managerLogin = async function(){
+
+  const email = document.getElementById("loginEmail").value.trim();
+
+  const password = document.getElementById("loginPassword").value;
+
+  const msg = document.getElementById("loginMessage");
+
+  if(email !== MANAGER_EMAIL){
+
+    msg.innerHTML =
+      `<div class="warning">শুধু Ashik Manager login করতে পারবেন।</div>`;
+
+    return;
+
+  }
+
+  try{
+
+    await signInWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
+
+    closeLogin();
+
+  }catch(error){
+
+    msg.innerHTML =
+      `<div class="warning">${friendlyError(error)}</div>`;
+
+  }
+
+};
+
+
+window.logout = async function(){
+
+  await signOut(auth);
+
+};
+
+
+function friendlyError(error){
+
+  if(error.code === "auth/email-already-in-use")
+    return "এই Manager account আগে থেকেই আছে। Login করুন।";
+
+  if(error.code === "auth/invalid-credential")
+    return "Email অথবা password ভুল।";
+
+  if(error.code === "auth/weak-password")
+    return "Password আরও শক্তিশালী দিন।";
+
+  if(error.code === "auth/operation-not-allowed")
+    return "Firebase Authentication-এ Email/Password এখনো Enable করা হয়নি।";
+
+  return error.message;
+
+}
+
+
+onAuthStateChanged(auth,user=>{
+
+  currentUser = user;
+
+  const isManager =
+    user &&
+    user.email === MANAGER_EMAIL;
+
+  document.getElementById("loginBtn").style.display =
+    isManager ? "none" : "inline-block";
+
+  document.getElementById("logoutBtn").style.display =
+    isManager ? "inline-block" : "none";
+
+  document.getElementById("userStatus").innerHTML =
+    isManager
+      ? "🔐 Ashik — Manager Mode"
+      : "👀 View Mode";
+
+  updatePermissions();
+
+});
+
+
+function isManager(){
+
+  return currentUser &&
+         currentUser.email === MANAGER_EMAIL;
+
+}
+
+
+function updatePermissions(){
+
+  const manager = isManager();
+
+  document.getElementById("managerMealNotice").style.display =
+    manager ? "none" : "block";
+
+  document.getElementById("managerMemberNotice").style.display =
+    manager ? "none" : "block";
+
+}
+
+
+/* ================================
+   NAVIGATION
+================================ */
+
+window.showPage = function(page,button){
+
+  document.querySelectorAll(".page")
+    .forEach(p=>p.classList.remove("active"));
+
+  document.getElementById(page)
+    .classList.add("active");
+
+  document.querySelectorAll(".nav button")
+    .forEach(b=>b.classList.remove("active"));
+
+  button.classList.add("active");
+
+};
+
+
+/* ================================
+   FIRESTORE LISTENERS
+================================ */
+
+const membersQuery =
+  query(collection(db,"members"),orderBy("name"));
+
+onSnapshot(membersQuery,snapshot=>{
+
+  members = snapshot.docs.map(d=>({
+    id:d.id,
+    ...d.data()
+  }));
+
+  renderMembers();
+
+  populateMemberSelects();
+
+  updateDashboard();
+
+  generateReport();
+
+},error=>{
+
+  console.error(error);
+
+});
+
+
+onSnapshot(
+  collection(db,"meals"),
+  snapshot=>{
+
+    meals = snapshot.docs.map(d=>({
+      id:d.id,
+      ...d.data()
+    }));
+
+    renderMeals();
+
+    updateDashboard();
+
+    generateReport();
+
+  }
+);
+
+
+onSnapshot(
+  collection(db,"market"),
+  snapshot=>{
+
+    markets = snapshot.docs.map(d=>({
+      id:d.id,
+      ...d.data()
+    }));
+
+    renderMarket();
+
+    updateDashboard();
+
+    generateReport();
+
+  }
+);
+
+
+onSnapshot(
+  collection(db,"payments"),
+  snapshot=>{
+
+    payments = snapshot.docs.map(d=>({
+      id:d.id,
+      ...d.data()
+    }));
+
+    renderPayments();
+
+    updateDashboard();
+
+    generateReport();
+
+  }
+);
+
+
+/* ================================
+   SEED MEMBERS
+================================ */
+
+window.seedMembers = async function(){
+
+  if(!isManager()){
+
+    alert("🔒 প্রথমে Manager Login করুন।");
+
+    return;
+
+  }
+
+  for(const name of defaultMembers){
+
+    const exists =
+      members.some(m=>m.name === name);
+
+    if(!exists){
+
+      await addDoc(
+        collection(db,"members"),
+        {
+          name:name,
+          role:name==="আশিক" ? "Manager" : "Member",
+          createdAt:Date.now()
+        }
+      );
+
+    }
+
+  }
+
+  alert("✅ ৭ জন member setup complete.");
+
+};
+
+
+/* ================================
+   ADD MEMBER
+================================ */
+
+window.addMember = async function(){
+
+  if(!isManager()){
+
+    alert("🔒 শুধু Manager member add করতে পারবেন।");
+
+    return;
+
+  }
+
+  const name =
+    document.getElementById("newMemberName")
+    .value.trim();
+
+  if(!name){
+
+    alert("Member name দিন।");
+
+    return;
+
+  }
+
+  await addDoc(
+    collection(db,"members"),
+    {
+      name:name,
+      role:"Member",
+      createdAt:Date.now()
+    }
+  );
+
+  document.getElementById("newMemberName").value="";
+
+};
+
+
+window.deleteMember = async function(id){
+
+  if(!isManager()){
+
+    alert("🔒 শুধু Manager delete করতে পারবেন।");
+
+    return;
+
+  }
+
+  if(!confirm("এই member delete করবেন?")) return;
+
+  await deleteDoc(doc(db,"members",id));
+
+};
+
+
+/* ================================
+   MEMBER SELECT
+================================ */
+
+function populateMemberSelects(){
+
+  const selects = [
+    document.getElementById("mealMember"),
+    document.getElementById("paymentMember")
+  ];
+
+  selects.forEach(select=>{
+
+    if(!select) return;
+
+    select.innerHTML =
+      `<option value="">Select Member</option>`;
+
+    members.forEach(member=>{
+
+      const option =
+        document.createElement("option");
+
+      option.value = member.name;
+
+      option.textContent = member.name;
+
+      select.appendChild(option);
 
     });
 
-    html+=`
+  });
 
-        <div
-          id="questionResult${index}"
-          class="question-result">
-        </div>
+}
 
-      </div>
+
+/* ================================
+   ADD MEAL
+================================ */
+
+window.addMeal = async function(){
+
+  if(!isManager()){
+
+    alert("🔒 শুধু Ashik Manager meal entry করতে পারবেন।");
+
+    return;
+
+  }
+
+  const date =
+    document.getElementById("mealDate").value;
+
+  const member =
+    document.getElementById("mealMember").value;
+
+  const type =
+    document.getElementById("mealType").value;
+
+  const qty =
+    Number(document.getElementById("mealQty").value);
+
+  if(!date || !member || !qty){
+
+    alert("সব তথ্য পূরণ করুন।");
+
+    return;
+
+  }
+
+  await addDoc(
+    collection(db,"meals"),
+    {
+      date:date,
+      member:member,
+      type:type,
+      qty:qty,
+      createdAt:Date.now()
+    }
+  );
+
+};
+
+
+/* ================================
+   DELETE MEAL
+================================ */
+
+window.deleteMeal = async function(id){
+
+  if(!isManager()){
+
+    alert("🔒 Manager only.");
+
+    return;
+
+  }
+
+  if(!confirm("Meal record delete করবেন?")) return;
+
+  await deleteDoc(
+    doc(db,"meals",id)
+  );
+
+};
+
+
+/* ================================
+   ADD MARKET
+================================ */
+
+window.addMarket = async function(){
+
+  if(!isManager()){
+
+    alert("🔒 শুধু Manager market entry করতে পারবেন।");
+
+    return;
+
+  }
+
+  const date =
+    document.getElementById("marketDate").value;
+
+  const item =
+    document.getElementById("marketItem").value.trim();
+
+  const amount =
+    Number(document.getElementById("marketAmount").value);
+
+  if(!date || !item || !amount){
+
+    alert("সব তথ্য পূরণ করুন।");
+
+    return;
+
+  }
+
+  await addDoc(
+    collection(db,"market"),
+    {
+      date:date,
+      item:item,
+      amount:amount,
+      createdAt:Date.now()
+    }
+  );
+
+  document.getElementById("marketItem").value="";
+  document.getElementById("marketAmount").value="";
+
+};
+
+
+/* ================================
+   DELETE MARKET
+================================ */
+
+window.deleteMarket = async function(id){
+
+  if(!isManager()){
+
+    alert("🔒 Manager only.");
+
+    return;
+
+  }
+
+  if(!confirm("Market record delete করবেন?")) return;
+
+  await deleteDoc(
+    doc(db,"market",id)
+  );
+
+};
+
+
+/* ================================
+   ADD PAYMENT
+================================ */
+
+window.addPayment = async function(){
+
+  if(!isManager()){
+
+    alert("🔒 শুধু Manager payment entry করতে পারবেন।");
+
+    return;
+
+  }
+
+  const date =
+    document.getElementById("paymentDate").value;
+
+  const member =
+    document.getElementById("paymentMember").value;
+
+  const amount =
+    Number(document.getElementById("paymentAmount").value);
+
+  if(!date || !member || !amount){
+
+    alert("সব তথ্য পূরণ করুন।");
+
+    return;
+
+  }
+
+  await addDoc(
+    collection(db,"payments"),
+    {
+      date:date,
+      member:member,
+      amount:amount,
+      createdAt:Date.now()
+    }
+  );
+
+  document.getElementById("paymentAmount").value="";
+
+};
+
+
+/* ================================
+   DELETE PAYMENT
+================================ */
+
+window.deletePayment = async function(id){
+
+  if(!isManager()){
+
+    alert("🔒 Manager only.");
+
+    return;
+
+  }
+
+  if(!confirm("Payment record delete করবেন?")) return;
+
+  await deleteDoc(
+    doc(db,"payments",id)
+  );
+
+};
+
+
+/* ================================
+   RENDER MEMBERS
+================================ */
+
+function renderMembers(){
+
+  const tbody =
+    document.getElementById("memberTable");
+
+  tbody.innerHTML="";
+
+  if(!members.length){
+
+    tbody.innerHTML =
+      `<tr><td colspan="4" class="empty">
+      এখনো member setup হয়নি।
+      </td></tr>`;
+
+    return;
+
+  }
+
+  members.forEach((member,index)=>{
+
+    const tr =
+      document.createElement("tr");
+
+    tr.innerHTML = `
+
+      <td>${index+1}</td>
+
+      <td><b>${escapeHtml(member.name)}</b></td>
+
+      <td>
+        ${
+          member.role==="Manager"
+          ? '<span class="badge badge-blue">Manager</span>'
+          : '<span class="badge badge-green">Member</span>'
+        }
+      </td>
+
+      <td>
+        ${
+          isManager()
+          ? `<button class="btn btn-danger"
+              onclick="deleteMember('${member.id}')">
+              Delete
+             </button>`
+          : "—"
+        }
+      </td>
 
     `;
 
-    quiz.innerHTML+=html;
+    tbody.appendChild(tr);
 
   });
 
 }
 
 
-function submitQuiz(){
+/* ================================
+   RENDER MEALS
+================================ */
 
-  let score=0;
+function renderMeals(){
 
-  questions.forEach((item,index)=>{
+  const tbody =
+    document.getElementById("mealTable");
 
-    const selected =
-      document.querySelector(
-        `input[name="question${index}"]:checked`
-      );
+  tbody.innerHTML="";
 
-    const result =
-      document.getElementById(
-        "questionResult"+index
-      );
-
-    if(
-      selected &&
-      Number(selected.value)===item.answer
-    ){
-
-      score++;
-
-      result.textContent="✓ Correct";
-
-      result.className=
-        "question-result correct";
-
-    }
-
-    else{
-
-      result.textContent=
-        "✗ Correct Answer: "+
-        item.options[item.answer];
-
-      result.className=
-        "question-result wrong";
-
-    }
-
-  });
-
-
-  const percentage =
-    Math.round(
-      (score/questions.length)*100
+  const sorted =
+    [...meals].sort((a,b)=>
+      String(b.date).localeCompare(String(a.date))
     );
 
+  if(!sorted.length){
 
-  document.getElementById(
-    "quizResult"
-  ).innerHTML=`
-
-    <div class="result-box">
-
-      Your Score:
-      ${score} / ${questions.length}
-
-      <br>
-
-      ${percentage}%
-
-    </div>
-
-  `;
-
-
-  document.getElementById(
-    "quizResult"
-  ).scrollIntoView({
-    behavior:"smooth",
-    block:"center"
-  });
-
-}
-
-
-/* =========================================================
-   DRUG CALCULATION
-========================================================= */
-
-function calculateDose(){
-
-  const ordered =
-    Number(
-      document.getElementById("ordered").value
-    );
-
-  const available =
-    Number(
-      document.getElementById("available").value
-    );
-
-  const quantity =
-    Number(
-      document.getElementById("quantity").value
-    );
-
-
-  const answer =
-    document.getElementById("doseAnswer");
-
-
-  if(
-    ordered<=0 ||
-    available<=0 ||
-    quantity<=0
-  ){
-
-    answer.style.display="block";
-
-    answer.textContent=
-      "Please enter all values correctly.";
+    tbody.innerHTML =
+      `<tr><td colspan="5" class="empty">
+      কোনো meal record নেই।
+      </td></tr>`;
 
     return;
 
   }
 
+  sorted.forEach(m=>{
 
-  const result =
-    (ordered/available)*quantity;
+    const tr =
+      document.createElement("tr");
 
+    const mealName =
+      m.type==="breakfast"
+      ? "🌅 Breakfast"
+      : m.type==="lunch"
+      ? "☀️ Lunch"
+      : "🌙 Dinner";
 
-  answer.style.display="block";
+    tr.innerHTML=`
 
-  answer.innerHTML=
-    "Required Amount: <strong>"+
-    result.toFixed(2)+
-    " units</strong>";
+      <td>${m.date || ""}</td>
 
-}
+      <td>${escapeHtml(m.member || "")}</td>
 
+      <td>${mealName}</td>
 
-/* =========================================================
-   CV BUILDER
-========================================================= */
+      <td>${m.qty || 0}</td>
 
-function updateCV(){
+      <td>
+        ${
+          isManager()
+          ? `<button class="btn btn-danger"
+              onclick="deleteMeal('${m.id}')">
+              Delete
+             </button>`
+          : "—"
+        }
+      </td>
 
-  const name =
-    document.getElementById("cvName").value;
+    `;
 
-  const title =
-    document.getElementById("cvTitle").value;
-
-  const phone =
-    document.getElementById("cvPhone").value;
-
-  const email =
-    document.getElementById("cvEmail").value;
-
-  const address =
-    document.getElementById("cvAddress").value;
-
-  const course =
-    document.getElementById("cvCourse").value;
-
-  const summary =
-    document.getElementById("cvSummary").value;
-
-  const education =
-    document.getElementById("cvEducation").value;
-
-  const experience =
-    document.getElementById("cvExperience").value;
-
-  const reg =
-    document.getElementById("cvReg").value;
-
-  const skills =
-    document.getElementById("cvSkills").value;
-
-  const training =
-    document.getElementById("cvTraining").value;
-
-  const languages =
-    document.getElementById("cvLanguages").value;
-
-
-  document.getElementById(
-    "previewName"
-  ).textContent =
-    name || "Your Name";
-
-
-  document.getElementById(
-    "previewTitle"
-  ).textContent =
-    title || "Professional Title";
-
-
-  document.getElementById(
-    "previewContact"
-  ).textContent =
-    [
-      phone,
-      email,
-      address
-    ].filter(Boolean).join(" · ")
-    || "Phone · Email · Address";
-
-
-  document.getElementById(
-    "previewCourse"
-  ).textContent=course;
-
-
-  document.getElementById(
-    "previewSummary"
-  ).textContent=
-    summary ||
-    "Your professional summary will appear here.";
-
-
-  document.getElementById(
-    "previewEducation"
-  ).textContent=education;
-
-
-  document.getElementById(
-    "previewExperience"
-  ).textContent=experience;
-
-
-  document.getElementById(
-    "previewReg"
-  ).textContent=reg;
-
-
-  document.getElementById(
-    "previewSkills"
-  ).textContent=skills;
-
-
-  document.getElementById(
-    "previewTraining"
-  ).textContent=training;
-
-
-  document.getElementById(
-    "previewLanguages"
-  ).textContent=languages;
-
-}
-
-
-/* =========================================================
-   SAVE CV
-========================================================= */
-
-function saveCV(){
-
-  const ids=[
-
-    "cvName",
-    "cvTitle",
-    "cvPhone",
-    "cvEmail",
-    "cvAddress",
-    "cvCourse",
-    "cvSummary",
-    "cvEducation",
-    "cvExperience",
-    "cvReg",
-    "cvSkills",
-    "cvTraining",
-    "cvLanguages"
-
-  ];
-
-
-  const data={};
-
-
-  ids.forEach(id=>{
-
-    data[id]=
-      document.getElementById(id).value;
+    tbody.appendChild(tr);
 
   });
 
-
-  localStorage.setItem(
-    "nursingCareerCV",
-    JSON.stringify(data)
-  );
-
-
-  alert(
-    "Your CV has been saved on this device."
-  );
-
 }
 
 
-/* =========================================================
-   LOAD CV
-========================================================= */
+/* ================================
+   RENDER MARKET
+================================ */
 
-function loadCV(){
+function renderMarket(){
 
-  const saved =
-    localStorage.getItem(
-      "nursingCareerCV"
+  const tbody =
+    document.getElementById("marketTable");
+
+  tbody.innerHTML="";
+
+  const sorted =
+    [...markets].sort((a,b)=>
+      String(b.date).localeCompare(String(a.date))
     );
 
+  if(!sorted.length){
 
-  if(!saved){
-
-    alert(
-      "No saved CV found."
-    );
+    tbody.innerHTML =
+      `<tr><td colspan="4" class="empty">
+      কোনো market record নেই।
+      </td></tr>`;
 
     return;
 
   }
 
+  sorted.forEach(m=>{
 
-  const data =
-    JSON.parse(saved);
+    const tr =
+      document.createElement("tr");
 
+    tr.innerHTML=`
 
-  Object.keys(data).forEach(id=>{
+      <td>${m.date || ""}</td>
 
-    const element =
-      document.getElementById(id);
+      <td>${escapeHtml(m.item || "")}</td>
 
-    if(element){
+      <td><b>৳${Number(m.amount||0).toFixed(2)}</b></td>
 
-      element.value=data[id];
+      <td>
+        ${
+          isManager()
+          ? `<button class="btn btn-danger"
+              onclick="deleteMarket('${m.id}')">
+              Delete
+             </button>`
+          : "—"
+        }
+      </td>
 
-    }
+    `;
+
+    tbody.appendChild(tr);
 
   });
-
-
-  updateCV();
-
-
-  alert(
-    "Saved CV loaded."
-  );
 
 }
 
 
-/* =========================================================
-   CLEAR CV
-========================================================= */
+/* ================================
+   RENDER PAYMENTS
+================================ */
 
-function clearCV(){
+function renderPayments(){
 
-  if(
-    !confirm(
-      "Are you sure you want to clear the CV?"
-    )
-  ){
+  const tbody =
+    document.getElementById("paymentTable");
+
+  tbody.innerHTML="";
+
+  const sorted =
+    [...payments].sort((a,b)=>
+      String(b.date).localeCompare(String(a.date))
+    );
+
+  if(!sorted.length){
+
+    tbody.innerHTML =
+      `<tr><td colspan="4" class="empty">
+      কোনো payment record নেই।
+      </td></tr>`;
 
     return;
 
   }
 
+  sorted.forEach(p=>{
 
-  const ids=[
+    const tr =
+      document.createElement("tr");
 
-    "cvName",
-    "cvTitle",
-    "cvPhone",
-    "cvEmail",
-    "cvAddress",
-    "cvSummary",
-    "cvEducation",
-    "cvExperience",
-    "cvReg",
-    "cvSkills",
-    "cvTraining",
-    "cvLanguages"
+    tr.innerHTML=`
 
-  ];
+      <td>${p.date || ""}</td>
 
+      <td>${escapeHtml(p.member || "")}</td>
 
-  ids.forEach(id=>{
+      <td><b>৳${Number(p.amount||0).toFixed(2)}</b></td>
 
-    document.getElementById(id).value="";
+      <td>
+        ${
+          isManager()
+          ? `<button class="btn btn-danger"
+              onclick="deletePayment('${p.id}')">
+              Delete
+             </button>`
+          : "—"
+        }
+      </td>
+
+    `;
+
+    tbody.appendChild(tr);
 
   });
-
-
-  updateCV();
 
 }
 
 
-/* =========================================================
-   START
-========================================================= */
+/* ================================
+   CALCULATIONS
+================================ */
 
-loadQuiz();
+function totalMealCount(){
 
-updateCV();
+  return meals.reduce(
+    (sum,m)=>sum+Number(m.qty||0),
+    0
+  );
+
+}
+
+
+function totalMarketAmount(){
+
+  return markets.reduce(
+    (sum,m)=>sum+Number(m.amount||0),
+    0
+  );
+
+}
+
+
+function totalPaymentAmount(){
+
+  return payments.reduce(
+    (sum,p)=>sum+Number(p.amount||0),
+    0
+  );
+
+}
+
+
+function memberMeals(name){
+
+  return meals
+    .filter(m=>m.member===name)
+    .reduce(
+      (sum,m)=>sum+Number(m.qty||0),
+      0
+    );
+
+}
+
+
+function memberPaid(name){
+
+  return payments
+    .filter(p=>p.member===name)
+    .reduce(
+      (sum,p)=>sum+Number(p.amount||0),
+      0
+    );
+
+}
+
+
+/* ================================
+   DASHBOARD
+================================ */
+
+function updateDashboard(){
+
+  const totalMeals =
+    totalMealCount();
+
+  const totalMarket =
+    totalMarketAmount();
+
+  const rate =
+    totalMeals > 0
+    ? totalMarket/totalMeals
+    : 0;
+
+  document.getElementById("totalMembers")
+    .innerText = members.length;
+
+  document.getElementById("totalMeals")
+    .innerText = totalMeals;
+
+  document.getElementById("totalMarket")
+    .innerText = totalMarket.toFixed(2);
+
+  document.getElementById("mealRate")
+    .innerText = rate.toFixed(2);
+
+  document.getElementById("totalPaid")
+    .innerText = totalPaymentAmount().toFixed(2);
+
+
+  const tbody =
+    document.getElementById("dashboardMembers");
+
+  tbody.innerHTML="";
+
+
+  members.forEach(member=>{
+
+    const mealsCount =
+      memberMeals(member.name);
+
+    const bill =
+      mealsCount * rate;
+
+    const paid =
+      memberPaid(member.name);
+
+    const balance =
+      paid-bill;
+
+    const tr =
+      document.createElement("tr");
+
+    tr.innerHTML=`
+
+      <td><b>${escapeHtml(member.name)}</b></td>
+
+      <td>${mealsCount}</td>
+
+      <td>৳${bill.toFixed(2)}</td>
+
+      <td>৳${paid.toFixed(2)}</td>
+
+      <td>
+        ${
+          balance>=0
+          ? `<span class="badge badge-green">
+              +৳${balance.toFixed(2)}
+             </span>`
+          : `<span class="badge badge-red">
+              -৳${Math.abs(balance).toFixed(2)}
+             </span>`
+        }
+      </td>
+
+    `;
+
+    tbody.appendChild(tr);
+
+  });
+
+}
+
+
+/* ================================
+   REPORT
+================================ */
+
+window.generateReport = function(){
+
+  const selected =
+    document.getElementById("reportMonth").value;
+
+  if(!selected) return;
+
+
+  const monthMeals =
+    meals.filter(m=>
+      String(m.date || "").startsWith(selected)
+    );
+
+
+  const monthMarket =
+    markets.filter(m=>
+      String(m.date || "").startsWith(selected)
+    );
+
+
+  const monthPayments =
+    payments.filter(p=>
+      String(p.date || "").startsWith(selected)
+    );
+
+
+  const mealTotal =
+    monthMeals.reduce(
+      (s,m)=>s+Number(m.qty||0),
+      0
+    );
+
+
+  const marketTotal =
+    monthMarket.reduce(
+      (s,m)=>s+Number(m.amount||0),
+      0
+    );
+
+
+  const paidTotal =
+    monthPayments.reduce(
+      (s,p)=>s+Number(p.amount||0),
+      0
+    );
+
+
+  const rate =
+    mealTotal > 0
+    ? marketTotal/mealTotal
+    : 0;
+
+
+  document.getElementById("reportMarket")
+    .innerText = marketTotal.toFixed(2);
+
+  document.getElementById("reportMeals")
+    .innerText = mealTotal;
+
+  document.getElementById("reportRate")
+    .innerText = rate.toFixed(2);
+
+  document.getElementById("reportPaid")
+    .innerText = paidTotal.toFixed(2);
+
+
+  const tbody =
+    document.getElementById("reportTable");
+
+  tbody.innerHTML="";
+
+
+  members.forEach(member=>{
+
+    const count =
+      monthMeals
+        .filter(m=>m.member===member.name)
+        .reduce(
+          (s,m)=>s+Number(m.qty||0),
+          0
+        );
+
+
+    const bill =
+      count*rate;
+
+
+    const paid =
+      monthPayments
+        .filter(p=>p.member===member.name)
+        .reduce(
+          (s,p)=>s+Number(p.amount||0),
+          0
+        );
+
+
+    const balance =
+      paid-bill;
+
+
+    const tr =
+      document.createElement("tr");
+
+
+    tr.innerHTML=`
+
+      <td><b>${escapeHtml(member.name)}</b></td>
+
+      <td>${count}</td>
+
+      <td>৳${bill.toFixed(2)}</td>
+
+      <td>৳${paid.toFixed(2)}</td>
+
+      <td>
+        ${
+          balance>=0
+          ? `<span class="badge badge-green">
+              পাবে ৳${balance.toFixed(2)}
+             </span>`
+          : `<span class="badge badge-red">
+              দেবে ৳${Math.abs(balance).toFixed(2)}
+             </span>`
+        }
+      </td>
+
+    `;
+
+
+    tbody.appendChild(tr);
+
+  });
+
+};
+
+
+/* ================================
+   SECURITY / HTML
+================================ */
+
+function escapeHtml(text){
+
+  return String(text)
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+
+}
+
+
+/* ================================
+   INITIAL
+================================ */
+
+updatePermissions();
 
 </script>
 
