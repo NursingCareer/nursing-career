@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nursing Career - Learn Nursing. Build Your Career.</title>
-    <!-- Tailwind CSS CDN -->
+    <!-- Tailwind CSS CDN for Modern Styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        medical: {
+                        nursing: {
                             50: '#f0fdf4',
                             100: '#dcfce7',
                             500: '#10b981',
@@ -19,633 +19,293 @@
                             700: '#047857',
                             800: '#065f46',
                             900: '#064e3b',
-                            navy: '#0f172a',
-                            slate: '#334155',
-                            teal: '#0d9488'
                         }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif']
                     }
                 }
             }
         }
     </script>
-    <!-- Google Fonts Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
+    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
         .glass-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(226, 232, 240, 0.8);
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(16, 185, 129, 0.2);
         }
-        .hero-gradient {
-            background: linear-gradient(135deg, #064e3b 0%, #047857 50%, #0d9488 100%);
-        }
-        /* Custom scrollbar for smooth feel */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f5f9; }
-        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
     </style>
 </head>
-<body class="bg-slate-50 text-medical-slate min-h-screen flex flex-col antialiased selection:bg-emerald-500 selection:text-white">
+<body class="bg-gray-50 text-gray-800 antialiased">
 
-    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <!-- Brand / Logo -->
-                <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('home')">
-                    <div class="w-12 h-12 rounded-xl overflow-hidden shadow-md border-2 border-emerald-500 flex items-center justify-center bg-white flex-shrink-0">
-                        <img src="logo.jpg" alt="Nursing Career Logo" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/100x100/047857/ffffff?text=NC';">
-                    </div>
-                    <div>
-                        <span class="text-xl font-bold tracking-tight text-medical-navy block leading-tight">Nursing Career</span>
-                        <span class="text-xs font-medium text-emerald-600 block">Learn Nursing. Build Your Career.</span>
-                    </div>
+    <!-- Sticky Header -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo & Brand -->
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="showSection('home')">
+                <img src="logo.jpg" alt="Nursing Career Logo" class="w-12 h-12 rounded-xl object-cover shadow-md border-2 border-nursing-500" onerror="this.src='https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?w=100&h=100&fit=crop'">
+                <div>
+                    <h1 class="text-xl font-extrabold text-nursing-900 tracking-tight">NURSING CAREER</h1>
+                    <p class="text-xs font-medium text-nursing-600">Learn Nursing. Build Your Career.</p>
                 </div>
+            </div>
 
-                <!-- Desktop Navigation Links -->
-                <nav class="hidden lg:flex items-center space-x-1">
-                    <button onclick="switchTab('home')" class="nav-btn px-3 py-2 rounded-lg text-sm font-semibold text-emerald-700 bg-emerald-50 transition-colors" data-target="home">Home</button>
-                    <button onclick="switchTab('subjects')" class="nav-btn px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-slate-100 transition-colors" data-target="subjects">Subjects</button>
-                    <button onclick="switchTab('mcq')" class="nav-btn px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-slate-100 transition-colors" data-target="mcq">MCQ Practice</button>
-                    <button onclick="switchTab('modeltest')" class="nav-btn px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-slate-100 transition-colors" data-target="modeltest">Model Test</button>
-                    <button onclick="switchTab('result')" class="nav-btn px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-slate-100 transition-colors" data-target="result">Result</button>
-                    <button onclick="switchTab('drugcalc')" class="nav-btn px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-slate-100 transition-colors" data-target="drugcalc">Drug Calculation</button>
-                    <button onclick="switchTab('notice')" class="nav-btn px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-slate-100 transition-colors" data-target="notice">Notice Board</button>
-                    <button onclick="switchTab('contact')" class="nav-btn px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-slate-100 transition-colors" data-target="contact">Contact</button>
-                </nav>
+            <!-- Navigation Links (Desktop) -->
+            <nav class="hidden lg:flex items-center space-x-1 font-semibold text-sm">
+                <button onclick="showSection('home')" class="nav-btn px-4 py-2 rounded-xl text-nursing-700 bg-nursing-50 transition" id="btn-home">HOME</button>
+                <button onclick="showSection('subjects')" class="nav-btn px-4 py-2 rounded-xl text-gray-600 hover:text-nursing-700 hover:bg-nursing-50 transition" id="btn-subjects">SUBJECTS</button>
+                <button onclick="showSection('mcq')" class="nav-btn px-4 py-2 rounded-xl text-gray-600 hover:text-nursing-700 hover:bg-nursing-50 transition" id="btn-mcq">MCQ PRACTICE</button>
+                <button onclick="showSection('modeltest')" class="nav-btn px-4 py-2 rounded-xl text-gray-600 hover:text-nursing-700 hover:bg-nursing-50 transition" id="btn-modeltest">MODEL TEST</button>
+                <button onclick="showSection('drugcalc')" class="nav-btn px-4 py-2 rounded-xl text-gray-600 hover:text-nursing-700 hover:bg-nursing-50 transition" id="btn-drugcalc">DRUG CALCULATION</button>
+                <button onclick="showSection('notice')" class="nav-btn px-4 py-2 rounded-xl text-gray-600 hover:text-nursing-700 hover:bg-nursing-50 transition" id="btn-notice">NOTICE</button>
+            </nav>
 
-                <!-- Right Quick Action / Mobile Toggle -->
-                <div class="flex items-center space-x-3">
-                    <button onclick="switchTab('modeltest')" class="hidden sm:inline-flex items-center px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold rounded-xl shadow-md transition-all transform hover:scale-105">
-                        <i class="fa-solid fa-graduation-cap mr-2"></i> Take Exam
-                    </button>
-                    <!-- Mobile Hamburger Button -->
-                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-xl text-slate-600 hover:text-emerald-700 hover:bg-slate-100 focus:outline-none">
-                        <i class="fa-solid fa-bars text-xl"></i>
-                    </button>
-                </div>
+            <!-- Mobile Menu Toggle Button -->
+            <div class="lg:hidden flex items-center">
+                <button onclick="toggleMobileMenu()" class="text-gray-700 focus:outline-none p-2 rounded-lg hover:bg-gray-100">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
             </div>
         </div>
 
-        <!-- Mobile Drawer Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white px-4 pt-2 pb-4 space-y-1 shadow-lg">
-            <button onclick="switchTab('home'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-emerald-50 hover:text-emerald-700">Home</button>
-            <button onclick="switchTab('subjects'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-emerald-50 hover:text-emerald-700">Subjects</button>
-            <button onclick="switchTab('mcq'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-emerald-50 hover:text-emerald-700">MCQ Practice</button>
-            <button onclick="switchTab('modeltest'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-emerald-50 hover:text-emerald-700">Model Test</button>
-            <button onclick="switchTab('result'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-emerald-50 hover:text-emerald-700">Result</button>
-            <button onclick="switchTab('drugcalc'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-emerald-50 hover:text-emerald-700">Drug Calculation</button>
-            <button onclick="switchTab('notice'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-emerald-50 hover:text-emerald-700">Notice Board</button>
-            <button onclick="switchTab('contact'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-emerald-50 hover:text-emerald-700">Contact</button>
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-gray-100 px-4 pt-2 pb-4 space-y-1 shadow-lg">
+            <button onclick="showSection('home'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg font-medium text-nursing-700 bg-nursing-50">HOME</button>
+            <button onclick="showSection('subjects'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg font-medium text-gray-700 hover:bg-gray-100">SUBJECTS</button>
+            <button onclick="showSection('mcq'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg font-medium text-gray-700 hover:bg-gray-100">MCQ PRACTICE</button>
+            <button onclick="showSection('modeltest'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg font-medium text-gray-700 hover:bg-gray-100">MODEL TEST</button>
+            <button onclick="showSection('drugcalc'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg font-medium text-gray-700 hover:bg-gray-100">DRUG CALCULATION</button>
+            <button onclick="showSection('notice'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg font-medium text-gray-700 hover:bg-gray-100">NOTICE</button>
         </div>
     </header>
 
-    <main class="flex-grow">
+    <!-- Main Content Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
-        <!-- ==================== HOME TAB ==================== -->
-        <section id="tab-home" class="tab-content block">
-            <!-- Hero Section -->
-            <div class="hero-gradient text-white relative overflow-hidden py-20 lg:py-28">
-                <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-800/80 text-emerald-100 border border-emerald-500/30">
-                                <i class="fa-solid fa-award mr-1.5 text-yellow-400"></i> #1 Premier Nursing Portal & Exam Prep
-                            </span>
-                            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
-                                Learn Nursing. <br><span class="text-emerald-300">Build Your Career.</span>
-                            </h1>
-                            <p class="text-lg sm:text-xl text-emerald-100 max-w-2xl mx-auto lg:mx-0 font-light">
-                                Master nursing fundamentals, pharmacology, medical-surgical care, and ace your licensure examinations with comprehensive study notes, interactive MCQs, and timed model tests.
-                            </p>
-                            <div class="flex flex-wrap justify-center lg:justify-start gap-4 pt-4">
-                                <button onclick="switchTab('subjects')" class="px-8 py-4 bg-white text-emerald-900 font-bold rounded-xl shadow-lg hover:bg-emerald-50 transition-all transform hover:-translate-y-0.5">
-                                    Explore Subjects <i class="fa-solid fa-arrow-right ml-2"></i>
-                                </button>
-                                <button onclick="switchTab('mcq')" class="px-8 py-4 bg-emerald-700/80 hover:bg-emerald-700 text-white border border-emerald-400/40 font-bold rounded-xl shadow-lg transition-all transform hover:-translate-y-0.5">
-                                    Start MCQ Practice
-                                </button>
-                            </div>
-                        </div>
-                        <div class="lg:col-span-5 flex justify-center">
-                            <div class="relative w-full max-w-md">
-                                <div class="absolute -inset-1 bg-gradient-to-r from-emerald-400 to-teal-300 rounded-2xl blur-lg opacity-30 animate-pulse"></div>
-                                <div class="glass-card relative rounded-2xl p-6 text-slate-800 shadow-2xl border border-white/40">
-                                    <div class="flex items-center space-x-4 mb-6">
-                                        <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600 font-bold text-xl">
-                                            <i class="fa-solid fa-user-nurse"></i>
-                                        </div>
-                                        <div>
-                                            <h4 class="font-bold text-slate-900">Nursing Student Portal</h4>
-                                            <p class="text-xs text-slate-500">Active Student Dashboard</p>
-                                        </div>
-                                    </div>
-                                    <div class="space-y-3">
-                                        <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 flex justify-between items-center">
-                                            <span class="text-sm font-medium text-slate-700">Daily MCQ Goal</span>
-                                            <span class="text-xs bg-emerald-100 text-emerald-800 font-bold px-2.5 py-1 rounded-full">30 / 50 Done</span>
-                                        </div>
-                                        <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 flex justify-between items-center">
-                                            <span class="text-sm font-medium text-slate-700">Model Test Readiness</span>
-                                            <span class="text-xs bg-teal-100 text-teal-800 font-bold px-2.5 py-1 rounded-full">88% Ready</span>
-                                        </div>
-                                        <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-200 text-center">
-                                            <p class="text-xs text-emerald-800 font-semibold mb-1">Next Live Model Test</p>
-                                            <p class="text-sm font-bold text-emerald-900">Medical-Surgical Nursing Board Exam</p>
-                                            <button onclick="switchTab('modeltest')" class="mt-3 w-full py-2 bg-emerald-600 text-white rounded-lg text-xs font-bold hover:bg-emerald-700 transition-colors">Join Examination Now</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+        <!-- ================= HOME / DASHBOARD SECTION ================= -->
+        <section id="section-home" class="space-y-10">
+            <!-- Hero Banner -->
+            <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-nursing-900 via-nursing-800 to-nursing-700 text-white p-8 md:p-14 shadow-2xl">
+                <div class="absolute -right-10 -bottom-10 opacity-10">
+                    <i class="fa-solid fa-user-nurse text-[250px]"></i>
+                </div>
+                <div class="relative z-10 max-w-2xl space-y-4">
+                    <span class="inline-block bg-nursing-600/60 text-nursing-100 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-nursing-500">Premium Nursing Hub</span>
+                    <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight">Master Your Nursing Knowledge & Exams</h2>
+                    <p class="text-nursing-100 text-base md:text-lg">Access comprehensive subjects, clinical drug calculations, model tests, and expert nursing preparation materials all in one place.</p>
+                    <div class="pt-4 flex flex-wrap gap-4">
+                        <button onclick="showSection('mcq')" class="bg-white text-nursing-900 font-bold px-6 py-3 rounded-xl shadow-lg hover:bg-nursing-50 transition transform hover:-translate-y-0.5">Start MCQ Practice</button>
+                        <button onclick="showSection('drugcalc')" class="bg-nursing-600 text-white font-bold px-6 py-3 rounded-xl shadow-lg hover:bg-nursing-500 transition border border-nursing-400">Drug Calculator</button>
                     </div>
                 </div>
             </div>
 
-            <!-- Stats Bar -->
-            <div class="bg-white border-b border-slate-200 shadow-sm py-8">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                        <div class="p-4 border-r last:border-r-0 border-slate-100">
-                            <div class="text-3xl font-extrabold text-emerald-600">25,000+</div>
-                            <div class="text-sm font-medium text-slate-600 mt-1">Active Nursing Students</div>
-                        </div>
-                        <div class="p-4 border-r last:border-r-0 border-slate-100">
-                            <div class="text-3xl font-extrabold text-emerald-600">12+</div>
-                            <div class="text-sm font-medium text-slate-600 mt-1">Core Nursing Subjects</div>
-                        </div>
-                        <div class="p-4 border-r last:border-r-0 border-slate-100">
-                            <div class="text-3xl font-extrabold text-emerald-600">10,000+</div>
-                            <div class="text-sm font-medium text-slate-600 mt-1">MCQ Practice Bank</div>
-                        </div>
-                        <div class="p-4">
-                            <div class="text-3xl font-extrabold text-emerald-600">96.4%</div>
-                            <div class="text-sm font-medium text-slate-600 mt-1">Licensure Success Rate</div>
-                        </div>
-                    </div>
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="glass-card p-6 rounded-2xl shadow-sm text-center">
+                    <div class="w-12 h-12 mx-auto bg-nursing-100 text-nursing-600 rounded-xl flex items-center justify-center text-xl font-bold mb-3"><i class="fa-solid fa-book-medical"></i></div>
+                    <h3 class="text-2xl font-black text-nursing-900">12+</h3>
+                    <p class="text-sm font-medium text-gray-500">Core Subjects</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl shadow-sm text-center">
+                    <div class="w-12 h-12 mx-auto bg-nursing-100 text-nursing-600 rounded-xl flex items-center justify-center text-xl font-bold mb-3"><i class="fa-solid fa-clipboard-question"></i></div>
+                    <h3 class="text-2xl font-black text-nursing-900">5,000+</h3>
+                    <p class="text-sm font-medium text-gray-500">Practice MCQs</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl shadow-sm text-center">
+                    <div class="w-12 h-12 mx-auto bg-nursing-100 text-nursing-600 rounded-xl flex items-center justify-center text-xl font-bold mb-3"><i class="fa-solid fa-calculator"></i></div>
+                    <h3 class="text-2xl font-black text-nursing-900">3+</h3>
+                    <p class="text-sm font-medium text-gray-500">Clinical Calculators</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl shadow-sm text-center">
+                    <div class="w-12 h-12 mx-auto bg-nursing-100 text-nursing-600 rounded-xl flex items-center justify-center text-xl font-bold mb-3"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <h3 class="text-2xl font-black text-nursing-900">100%</h3>
+                    <p class="text-sm font-medium text-gray-500">Exam Focused</p>
                 </div>
             </div>
 
-            <!-- Featured Subjects Section -->
-            <div class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-12">
-                    <h2 class="text-3xl font-bold text-slate-900 mb-3">Core Nursing Subjects</h2>
-                    <p class="text-slate-600">Explore professionally curated study modules designed for nursing diploma and BSc students.</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="home-subjects-grid">
-                    <!-- Populated via JS -->
-                </div>
-                <div class="text-center mt-10">
-                    <button onclick="switchTab('subjects')" class="inline-flex items-center px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl shadow-md transition-all">
-                        View All Subjects & Notes <i class="fa-solid fa-arrow-right ml-2"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Why Choose Us -->
-            <div class="bg-emerald-900 text-white py-16">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="text-center max-w-3xl mx-auto mb-12">
-                        <span class="text-emerald-400 font-semibold text-sm uppercase tracking-wider">Excellence in Nursing Education</span>
-                        <h2 class="text-3xl font-bold mt-2">Why Nursing Career Platform?</h2>
+            <!-- Quick Access Features -->
+            <div>
+                <h3 class="text-2xl font-bold text-nursing-900 mb-6">Explore Key Modules</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div onclick="showSection('subjects')" class="glass-card p-6 rounded-2xl shadow-sm hover:shadow-md transition cursor-pointer border-l-4 border-l-nursing-500">
+                        <div class="text-nursing-600 text-2xl mb-3"><i class="fa-solid fa-book-open"></i></div>
+                        <h4 class="text-lg font-bold text-nursing-900 mb-1">Nursing Subjects</h4>
+                        <p class="text-sm text-gray-600">Access comprehensive notes on Anatomy, Physiology, Fundamentals, Midwifery, and more.</p>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div class="bg-emerald-800/50 p-8 rounded-2xl border border-emerald-700">
-                            <div class="w-14 h-14 bg-emerald-600 rounded-xl flex items-center justify-center text-white text-2xl mb-6 shadow-md">
-                                <i class="fa-solid fa-book-medical"></i>
-                            </div>
-                            <h3 class="text-xl font-bold mb-3">Curated Study Notes</h3>
-                            <p class="text-emerald-100 text-sm leading-relaxed">Comprehensive, easy-to-understand reading notes covering anatomy, pathology, clinical procedures, and pharmacology.</p>
-                        </div>
-                        <div class="bg-emerald-800/50 p-8 rounded-2xl border border-emerald-700">
-                            <div class="w-14 h-14 bg-emerald-600 rounded-xl flex items-center justify-center text-white text-2xl mb-6 shadow-md">
-                                <i class="fa-solid fa-clock-rotate-left"></i>
-                            </div>
-                            <h3 class="text-xl font-bold mb-3">Timed Mock Exams</h3>
-                            <p class="text-emerald-100 text-sm leading-relaxed">Simulate real board and recruitment examinations with countdown timers, question palettes, and instant score analysis.</p>
-                        </div>
-                        <div class="bg-emerald-800/50 p-8 rounded-2xl border border-emerald-700">
-                            <div class="w-14 h-14 bg-emerald-600 rounded-xl flex items-center justify-center text-white text-2xl mb-6 shadow-md">
-                                <i class="fa-solid fa-calculator"></i>
-                            </div>
-                            <h3 class="text-xl font-bold mb-3">Clinical Calculators</h3>
-                            <p class="text-emerald-100 text-sm leading-relaxed">Built-in clinical tools for safe medication administration including oral dosage calculation and IV drip rates.</p>
-                        </div>
+                    <div onclick="showSection('drugcalc')" class="glass-card p-6 rounded-2xl shadow-sm hover:shadow-md transition cursor-pointer border-l-4 border-l-nursing-500">
+                        <div class="text-nursing-600 text-2xl mb-3"><i class="fa-solid fa-pills"></i></div>
+                        <h4 class="text-lg font-bold text-nursing-900 mb-1">Drug Calculation</h4>
+                        <p class="text-sm text-gray-600">Accurately calculate oral dosages, injection volumes, and IV drip flow rates instantly.</p>
+                    </div>
+                    <div onclick="showSection('modeltest')" class="glass-card p-6 rounded-2xl shadow-sm hover:shadow-md transition cursor-pointer border-l-4 border-l-nursing-500">
+                        <div class="text-nursing-600 text-2xl mb-3"><i class="fa-solid fa-stopwatch"></i></div>
+                        <h4 class="text-lg font-bold text-nursing-900 mb-1">Model Test</h4>
+                        <p class="text-sm text-gray-600">Test your preparedness with timed mock exams designed for board & recruitment tests.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ==================== SUBJECTS TAB ==================== -->
-        <section id="tab-subjects" class="tab-content hidden py-12">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 pb-6 border-b border-slate-200">
+        <!-- ================= SUBJECTS SECTION ================= -->
+        <section id="section-subjects" class="hidden space-y-6">
+            <div class="border-b border-gray-200 pb-4">
+                <h2 class="text-2xl font-extrabold text-nursing-900">Nursing Curriculum & Subjects</h2>
+                <p class="text-sm text-gray-600">Select a subject to view core topics and study resources.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <span class="text-xs font-bold text-nursing-600 bg-nursing-50 px-2.5 py-1 rounded-md">Core</span>
+                    <h3 class="text-lg font-bold text-nursing-900 mt-2">Fundamentals of Nursing</h3>
+                    <p class="text-sm text-gray-600 mt-1">Patient care standards, vital signs, hygiene, and clinical safety.</p>
+                    <button onclick="alert('Opening Fundamentals Notes...')" class="mt-4 w-full bg-nursing-50 text-nursing-700 font-bold py-2 rounded-xl text-sm hover:bg-nursing-100 transition">Read Notes</button>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <span class="text-xs font-bold text-nursing-600 bg-nursing-50 px-2.5 py-1 rounded-md">Medical Science</span>
+                    <h3 class="text-lg font-bold text-nursing-900 mt-2">Anatomy & Physiology</h3>
+                    <p class="text-sm text-gray-600 mt-1">Human body systems, organ functions, and anatomical structures.</p>
+                    <button onclick="alert('Opening Anatomy Notes...')" class="mt-4 w-full bg-nursing-50 text-nursing-700 font-bold py-2 rounded-xl text-sm hover:bg-nursing-100 transition">Read Notes</button>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <span class="text-xs font-bold text-nursing-600 bg-nursing-50 px-2.5 py-1 rounded-md">Specialized</span>
+                    <h3 class="text-lg font-bold text-nursing-900 mt-2">Medical-Surgical Nursing</h3>
+                    <p class="text-sm text-gray-600 mt-1">Adult health conditions, pre/post-op care, and disease management.</p>
+                    <button onclick="alert('Opening Med-Surg Notes...')" class="mt-4 w-full bg-nursing-50 text-nursing-700 font-bold py-2 rounded-xl text-sm hover:bg-nursing-100 transition">Read Notes</button>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <span class="text-xs font-bold text-nursing-600 bg-nursing-50 px-2.5 py-1 rounded-md">Maternal</span>
+                    <h3 class="text-lg font-bold text-nursing-900 mt-2">Midwifery & OBG Nursing</h3>
+                    <p class="text-sm text-gray-600 mt-1">Prenatal, labor, postnatal care, and neonatal wellbeing.</p>
+                    <button onclick="alert('Opening Midwifery Notes...')" class="mt-4 w-full bg-nursing-50 text-nursing-700 font-bold py-2 rounded-xl text-sm hover:bg-nursing-100 transition">Read Notes</button>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <span class="text-xs font-bold text-nursing-600 bg-nursing-50 px-2.5 py-1 rounded-md">Community</span>
+                    <h3 class="text-lg font-bold text-nursing-900 mt-2">Community Health Nursing</h3>
+                    <p class="text-sm text-gray-600 mt-1">Public health, epidemiology, immunization, and family health.</p>
+                    <button onclick="alert('Opening Community Health Notes...')" class="mt-4 w-full bg-nursing-50 text-nursing-700 font-bold py-2 rounded-xl text-sm hover:bg-nursing-100 transition">Read Notes</button>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <span class="text-xs font-bold text-nursing-600 bg-nursing-50 px-2.5 py-1 rounded-md">Pharmacology</span>
+                    <h3 class="text-lg font-bold text-nursing-900 mt-2">Nursing Pharmacology</h3>
+                    <p class="text-sm text-gray-600 mt-1">Drug classifications, mechanisms of action, and safe administration.</p>
+                    <button onclick="alert('Opening Pharmacology Notes...')" class="mt-4 w-full bg-nursing-50 text-nursing-700 font-bold py-2 rounded-xl text-sm hover:bg-nursing-100 transition">Read Notes</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= MCQ PRACTICE SECTION ================= -->
+        <section id="section-mcq" class="hidden space-y-6">
+            <div class="border-b border-gray-200 pb-4">
+                <h2 class="text-2xl font-extrabold text-nursing-900">Interactive MCQ Practice</h2>
+                <p class="text-sm text-gray-600">Test your knowledge with instant feedback on professional nursing MCQs.</p>
+            </div>
+            <div id="mcq-container" class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 max-w-3xl mx-auto space-y-6">
+                <!-- Dynamically loaded via JS -->
+            </div>
+        </section>
+
+        <!-- ================= MODEL TEST SECTION ================= -->
+        <section id="section-modeltest" class="hidden space-y-6">
+            <div class="border-b border-gray-200 pb-4">
+                <h2 class="text-2xl font-extrabold text-nursing-900">Timed Model Test</h2>
+                <p class="text-sm text-gray-600">Simulate actual licensure and recruitment examinations.</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 max-w-xl mx-auto text-center space-y-4">
+                <div class="w-16 h-16 bg-nursing-100 text-nursing-600 rounded-2xl mx-auto flex items-center justify-center text-2xl font-bold">
+                    <i class="fa-solid fa-file-lines"></i>
+                </div>
+                <h3 class="text-xl font-bold text-nursing-900">Senior Staff Nurse Recruitment Mock Test</h3>
+                <p class="text-sm text-gray-600">Total Questions: 20 | Duration: 20 Minutes | Negative Marking: 0.25</p>
+                <button onclick="startModelTest()" class="w-full bg-nursing-600 text-white font-bold py-3 rounded-xl shadow-md hover:bg-nursing-700 transition">Start Model Test Now</button>
+            </div>
+        </section>
+
+        <!-- ================= DRUG CALCULATION SECTION ================= -->
+        <section id="section-drugcalc" class="hidden space-y-6">
+            <div class="border-b border-gray-200 pb-4">
+                <h2 class="text-2xl font-extrabold text-nursing-900">Clinical Drug Dose Calculator</h2>
+                <p class="text-sm text-gray-600">Quickly and accurately calculate correct medication dosages and IV flow rates.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Formula: Tablet / Oral Dose -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-4">
+                    <h3 class="text-lg font-bold text-nursing-900 flex items-center gap-2"><i class="fa-solid fa-pills text-nursing-600"></i> Oral / Injection Dosage Calculator</h3>
+                    <p class="text-xs text-gray-500">Formula: (Desired Dose / Stock Strength) × Stock Quantity</p>
+                    <div class="space-y-3">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-700 mb-1">Desired Dose (D)</label>
+                            <input type="number" id="calc-d" class="w-full border border-gray-300 rounded-xl px-4 py-2 text-sm focus:ring-2 focus:ring-nursing-500 focus:outline-none" placeholder="e.g. 500">
+                        </div>
+                        <div>
+                        <label class="block text-xs font-semibold text-gray-700 mb-1">Stock Strength on Hand (H)</label>
+                            <input type="number" id="calc-h" class="w-full border border-gray-300 rounded-xl px-4 py-2 text-sm focus:ring-2 focus:ring-nursing-500 focus:outline-none" placeholder="e.g. 250">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-700 mb-1">Stock Quantity / Volume (V)</label>
+                            <input type="number" id="calc-v" class="w-full border border-gray-300 rounded-xl px-4 py-2 text-sm focus:ring-2 focus:ring-nursing-500 focus:outline-none" placeholder="e.g. 1 (tablet or ml)">
+                        </div>
+                        <button onclick="calculateOralDose()" class="w-full bg-nursing-600 text-white font-bold py-2.5 rounded-xl text-sm hover:bg-nursing-700 transition">Calculate Dose</button>
+                        <div id="result-oral" class="hidden p-3 bg-nursing-50 text-nursing-900 font-bold rounded-xl text-center text-sm"></div>
+                    </div>
+                </div>
+
+                <!-- Formula: IV Drip Rate -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-4">
+                    <h3 class="text-lg font-bold text-nursing-900 flex items-center gap-2"><i class="fa-solid fa-droplet text-nursing-600"></i> IV Drip Flow Rate Calculator</h3>
+                    <p class="text-xs text-gray-500">Formula: (Volume in ml × Drop Factor) / Time in minutes</p>
+                    <div class="space-y-3">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-700 mb-1">Total Volume (ml)</label>
+                            <input type="number" id="iv-vol" class="w-full border border-gray-300 rounded-xl px-4 py-2 text-sm focus:ring-2 focus:ring-nursing-500 focus:outline-none" placeholder="e.g. 1000">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-700 mb-1">Drop Factor (gtt/ml)</label>
+                            <select id="iv-df" class="w-full border border-gray-300 rounded-xl px-4 py-2 text-sm focus:ring-2 focus:ring-nursing-500 focus:outline-none bg-white">
+                                <option value="15">Standard Set (15 gtt/ml)</option>
+                                <option value="20">Micro/Standard Set (20 gtt/ml)</option>
+                                <option value="60">Micro-drip Set (60 gtt/ml)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-700 mb-1">Total Time (Hours)</label>
+                            <input type="number" id="iv-time" class="w-full border border-gray-300 rounded-xl px-4 py-2 text-sm focus:ring-2 focus:ring-nursing-500 focus:outline-none" placeholder="e.g. 8">
+                        </div>
+                        <button onclick="calculateIVRate()" class="w-full bg-nursing-600 text-white font-bold py-2.5 rounded-xl text-sm hover:bg-nursing-700 transition">Calculate Flow Rate</button>
+                        <div id="result-iv" class="hidden p-3 bg-nursing-50 text-nursing-900 font-bold rounded-xl text-center text-sm"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= NOTICE BOARD SECTION ================= -->
+        <section id="section-notice" class="hidden space-y-6">
+            <div class="border-b border-gray-200 pb-4">
+                <h2 class="text-2xl font-extrabold text-nursing-900">Notice Board</h2>
+                <p class="text-sm text-gray-600">Latest updates, exam schedules, and announcements.</p>
+            </div>
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-start space-x-4">
+                    <div class="bg-nursing-100 text-nursing-700 p-3 rounded-xl font-bold text-center min-w-[70px]">
+                        <span class="block text-xs uppercase">Oct</span>
+                        <span class="text-xl">04</span>
+                    </div>
                     <div>
-                        <h1 class="text-3xl font-bold text-slate-900">Nursing Subjects & Study Notes</h1>
-                        <p class="text-slate-600 mt-1">Select a subject to view comprehensive chapters, reading materials, and downloadable guides.</p>
-                    </div>
-                    <div class="mt-4 md:mt-0">
-                        <input type="text" id="subject-search" placeholder="Search topics or subjects..." onkeyup="filterSubjects()" class="px-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 w-full md:w-72 text-sm bg-white shadow-sm">
+                        <span class="text-xs font-bold text-nursing-600 bg-nursing-50 px-2 py-0.5 rounded">Announcement</span>
+                        <h3 class="text-lg font-bold text-nursing-900 mt-1">Senior Staff Nurse Recruitment Batch Launch</h3>
+                        <p class="text-sm text-gray-600 mt-1">New online live classes and model test series for upcoming nursing recruitment examinations are starting soon. Enroll now to secure your preparation.</p>
                     </div>
                 </div>
-
-                <!-- Subject Grid -->
-                <div id="full-subjects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Rendered via JS -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Subject Detail Modal / View -->
-        <div id="subject-detail-modal" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
-            <div class="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl p-6 sm:p-8 relative">
-                <button onclick="closeSubjectModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-700 text-xl font-bold">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-                <div id="modal-subject-content">
-                    <!-- Dynamic subject content -->
-                </div>
-            </div>
-        </div>
-
-        <!-- ==================== MCQ PRACTICE TAB ==================== -->
-        <section id="tab-mcq" class="tab-content hidden py-12">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-8">
-                    <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">Interactive Quiz Engine</span>
-                    <h1 class="text-3xl font-bold text-slate-900 mt-2">MCQ Practice Portal</h1>
-                    <p class="text-slate-600 mt-1">Test your clinical knowledge with instant answer feedback and explanations.</p>
-                </div>
-
-                <!-- MCQ Controls / Subject Selector -->
-                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 mb-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-start space-x-4">
+                    <div class="bg-nursing-100 text-nursing-700 p-3 rounded-xl font-bold text-center min-w-[70px]">
+                        <span class="block text-xs uppercase">Sep</span>
+                        <span class="text-xl">28</span>
+                    </div>
                     <div>
-                        <label class="block text-sm font-semibold text-slate-700 mb-1">Select Practice Subject:</label>
-                        <select id="mcq-subject-select" onchange="initMCQPractice()" class="px-4 py-2 rounded-xl border border-slate-300 focus:ring-2 focus:ring-emerald-500 bg-slate-50 text-sm font-medium">
-                            <option value="fundamentals">Fundamentals of Nursing</option>
-                            <option value="medsurv">Medical-Surgical Nursing</option>
-                            <option value="pharma">Pharmacology for Nurses</option>
-                            <option value="pediatrics">Pediatric Nursing</option>
-                            <option value="community">Community Health Nursing</option>
-                        </select>
-                    </div>
-                    <div class="flex items-center space-x-3">
-                        <div class="bg-emerald-50 border border-emerald-200 px-4 py-2 rounded-xl text-center">
-                            <span class="text-xs text-emerald-700 block font-medium">Score</span>
-                            <span id="mcq-score" class="text-lg font-bold text-emerald-900">0 / 0</span>
-                        </div>
-                        <button onclick="initMCQPractice()" class="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-xl text-sm transition-colors">
-                            <i class="fa-solid fa-rotate-right mr-1.5"></i> Reset
-                        </button>
-                    </div>
-                </div>
-
-                <!-- MCQ Question Card -->
-                <div id="mcq-container" class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200">
-                    <!-- Dynamic Question Loaded Here -->
-                </div>
-            </div>
-        </section>
-
-        <!-- ==================== MODEL TEST TAB ==================== -->
-        <section id="tab-modeltest" class="tab-content hidden py-12">
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                <!-- Exam Setup Screen -->
-                <div id="exam-setup" class="bg-white rounded-2xl p-8 shadow-sm border border-slate-200 text-center max-w-2xl mx-auto">
-                    <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-6 shadow-inner">
-                        <i class="fa-solid fa-file-lines"></i>
-                    </div>
-                    <h1 class="text-3xl font-bold text-slate-900 mb-2">Nursing Board Model Test</h1>
-                    <p class="text-slate-600 mb-6">Simulate a real nursing licensure examination. This test includes 10 questions with a live countdown timer and question status tracker.</p>
-                    
-                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 text-left mb-6 space-y-2 text-sm text-slate-700">
-                        <div class="flex justify-between"><span>Total Questions:</span> <span class="font-bold">10 MCQs</span></div>
-                        <div class="flex justify-between"><span>Duration:</span> <span class="font-bold">10 Minutes</span></div>
-                        <div class="flex justify-between"><span>Passing Score:</span> <span class="font-bold">70% (7/10)</span></div>
-                        <div class="flex justify-between"><span>Negative Marking:</span> <span class="font-bold">None</span></div>
-                    </div>
-
-                    <button onclick="startModelTest()" class="w-full py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl shadow-lg transition-all text-lg">
-                        Start Examination Now <i class="fa-solid fa-arrow-right ml-2"></i>
-                    </button>
-                </div>
-
-                <!-- Live Exam Interface -->
-                <div id="exam-live" class="hidden">
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                        <!-- Question Area -->
-                        <div class="lg:col-span-8">
-                            <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200 mb-4 flex justify-between items-center">
-                                <div>
-                                    <span id="exam-q-number" class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">Question 1 of 10</span>
-                                    <h3 id="exam-subject-title" class="text-sm font-semibold text-slate-500 mt-2">Medical-Surgical Nursing</h3>
-                                </div>
-                                <div class="bg-amber-50 border border-amber-200 px-4 py-2 rounded-xl flex items-center space-x-2 text-amber-800 font-mono font-bold text-lg">
-                                    <i class="fa-solid fa-clock"></i>
-                                    <span id="exam-timer">10:00</span>
-                                </div>
-                            </div>
-
-                            <div id="exam-question-card" class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200 mb-6 min-h-[250px]">
-                                <!-- Question content loaded dynamically -->
-                            </div>
-
-                            <!-- Navigation Buttons -->
-                            <div class="flex justify-between items-center">
-                                <button onclick="prevExamQuestion()" id="prev-btn" class="px-6 py-2.5 bg-slate-200 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-sm transition-colors disabled:opacity-50">
-                                    <i class="fa-solid fa-arrow-left mr-1.5"></i> Previous
-                                </button>
-                                <div class="space-x-3">
-                                    <button onclick="markExamQuestion()" class="px-4 py-2.5 bg-amber-100 hover:bg-amber-200 text-amber-800 font-semibold rounded-xl text-sm transition-colors">
-                                        <i class="fa-solid fa-bookmark mr-1"></i> Mark / Review
-                                    </button>
-                                    <button onclick="nextExamQuestion()" id="next-btn" class="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl text-sm transition-colors">
-                                        Next <i class="fa-solid fa-arrow-right ml-1.5"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Question Palette Sidebar -->
-                        <div class="lg:col-span-4">
-                            <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 sticky top-28">
-                                <h4 class="font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100">Question Palette</h4>
-                                <div id="question-palette" class="grid grid-cols-5 gap-2.5 mb-6">
-                                    <!-- Rendered via JS -->
-                                </div>
-                                <div class="space-y-2 text-xs text-slate-600 mb-6 pt-2 border-t border-slate-100">
-                                    <div class="flex items-center space-x-2"><span class="w-3 h-3 bg-emerald-600 rounded-full inline-block"></span><span>Answered</span></div>
-                                    <div class="flex items-center space-x-2"><span class="w-3 h-3 bg-amber-400 rounded-full inline-block"></span><span>Marked for Review</span></div>
-                                    <div class="flex items-center space-x-2"><span class="w-3 h-3 bg-slate-200 rounded-full inline-block"></span><span>Not Answered</span></div>
-                                </div>
-                                <button onclick="confirmSubmitExam()" class="w-full py-3 bg-red-600 hover:bg-red-700 text-white font-bold rounded-xl shadow-md transition-all text-sm">
-                                    Submit Examination
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Exam Result Summary Modal / View -->
-                <div id="exam-result-view" class="hidden bg-white rounded-2xl p-8 shadow-sm border border-slate-200 max-w-2xl mx-auto text-center">
-                    <div id="exam-result-icon" class="w-20 h-20 rounded-full flex items-center justify-center text-4xl mx-auto mb-6 shadow-inner">
-                        <!-- Dynamic icon -->
-                    </div>
-                    <h2 class="text-3xl font-bold text-slate-900 mb-2">Examination Completed</h2>
-                    <p id="exam-result-subtitle" class="text-slate-600 mb-6">Here is your detailed performance summary for the nursing board model test.</p>
-                    
-                    <div class="grid grid-cols-3 gap-4 mb-8">
-                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
-                            <span class="text-xs text-slate-500 block">Total Marks</span>
-                            <span id="res-total" class="text-2xl font-bold text-slate-800">10</span>
-                        </div>
-                        <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-200">
-                            <span class="text-xs text-emerald-700 block">Correct</span>
-                            <span id="res-correct" class="text-2xl font-bold text-emerald-700">0</span>
-                        </div>
-                        <div class="bg-red-50 p-4 rounded-xl border border-red-200">
-                            <span class="text-xs text-red-700 block">Incorrect</span>
-                            <span id="res-incorrect" class="text-2xl font-bold text-red-700">0</span>
-                        </div>
-                    </div>
-
-                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 mb-8 flex justify-between items-center">
-                        <span class="font-semibold text-slate-700">Percentage Score:</span>
-                        <span id="res-percentage" class="text-xl font-bold text-emerald-600">0%</span>
-                    </div>
-
-                    <div class="flex space-x-4">
-                        <button onclick="resetExam()" class="flex-1 py-3 bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold rounded-xl transition-colors">
-                            Retake Exam
-                        </button>
-                        <button onclick="switchTab('result')" class="flex-1 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl transition-colors shadow-md">
-                            View Saved Results
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==================== RESULT TAB ==================== -->
-        <section id="tab-result" class="tab-content hidden py-12">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-8">
-                    <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">Academic Records</span>
-                    <h1 class="text-3xl font-bold text-slate-900 mt-2">Performance History</h1>
-                    <p class="text-slate-600 mt-1">Review your past model test scores and analytical progress reports.</p>
-                </div>
-
-                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-                    <div class="p-6 border-b border-slate-200 flex justify-between items-center bg-slate-50">
-                        <h3 class="font-bold text-slate-800">Recent Model Test Submissions</h3>
-                        <span class="text-xs bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full font-semibold">Verified Records</span>
-                    </div>
-                    <div id="results-table-container" class="divide-y divide-slate-100">
-                        <!-- Populated via JS -->
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==================== DRUG CALCULATION TOOL TAB ==================== -->
-        <section id="tab-drugcalc" class="tab-content hidden py-12">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-8">
-                    <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">Clinical Safety Tool</span>
-                    <h1 class="text-3xl font-bold text-slate-900 mt-2">Nurse Drug Dosage Calculator</h1>
-                    <p class="text-slate-600 mt-1">Accurate, instant medication dosage and IV drip rate calculations for clinical practice.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                    <button onclick="switchCalcMode('dosage')" id="calc-tab-dosage" class="calc-tab-btn p-4 rounded-xl border-2 border-emerald-600 bg-emerald-50 text-emerald-900 font-bold text-center shadow-sm transition-all">
-                        <i class="fa-solid fa-pills mb-2 text-xl block"></i> Oral / Injection Dosage
-                    </button>
-                    <button onclick="switchCalcMode('iv')" id="calc-tab-iv" class="calc-tab-btn p-4 rounded-xl border-2 border-slate-200 bg-white text-slate-700 font-semibold text-center shadow-sm transition-all hover:border-slate-300">
-                        <i class="fa-solid fa-droplet mb-2 text-xl block"></i> IV Flow Rate (gtt/min)
-                    </button>
-                    <button onclick="switchCalcMode('bsa')" id="calc-tab-bsa" class="calc-tab-btn p-4 rounded-xl border-2 border-slate-200 bg-white text-slate-700 font-semibold text-center shadow-sm transition-all hover:border-slate-300">
-                        <i class="fa-solid fa-weight-scale mb-2 text-xl block"></i> Body Surface Area (BSA)
-                    </button>
-                </div>
-
-                <!-- Calculator Form 1: Dosage -->
-                <div id="calculator-dosage" class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200">
-                    <h3 class="text-xl font-bold text-slate-900 mb-4">Formula: (D / H) × Q = Amount to Administer</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-6">
-                        <div>
-                            <label class="block text-sm font-semibold text-slate-700 mb-1">Desired Dose (D):</label>
-                            <input type="number" id="calc-d" placeholder="e.g. 500" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-emerald-500 bg-slate-50 text-sm">
-                        </div>
-                        <div>
-                        <label class="block text-sm font-semibold text-slate-700 mb-1">Have on Hand (H):</label>
-                            <input type="number" id="calc-h" placeholder="e.g. 250" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-emerald-500 bg-slate-50 text-sm">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold text-slate-700 mb-1">Quantity / Stock Unit (Q):</label>
-                            <input type="number" id="calc-q" placeholder="e.g. 1 (tablet/mL)" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-emerald-500 bg-slate-50 text-sm" value="1">
-                        </div>
-                    </div>
-                    <button onclick="calculateDosage()" class="w-full py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl shadow-md transition-all">
-                        Calculate Dosage
-                    </button>
-                    <div id="dosage-result" class="hidden mt-6 p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-center">
-                        <!-- Result output -->
-                    </div>
-                </div>
-
-                <!-- Calculator Form 2: IV Flow Rate -->
-                <div id="calculator-iv" class="hidden bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200">
-                    <h3 class="text-xl font-bold text-slate-900 mb-4">Formula: (Total Volume × Drop Factor) / Time in Minutes</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-6">
-                        <div>
-                            <label class="block text-sm font-semibold text-slate-700 mb-1">Total Volume (mL):</label>
-                            <input type="number" id="iv-vol" placeholder="e.g. 1000" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-emerald-500 bg-slate-50 text-sm">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold text-slate-700 mb-1">Drop Factor (gtt/mL):</label>
-                            <input type="number" id="iv-drop" placeholder="e.g. 15 or 20" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-emerald-500 bg-slate-50 text-sm" value="15">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold text-slate-700 mb-1">Time (Hours):</label>
-                            <input type="number" id="iv-time" placeholder="e.g. 8" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-emerald-500 bg-slate-50 text-sm">
-                        </div>
-                    </div>
-                    <button onclick="calculateIV()" class="w-full py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl shadow-md transition-all">
-                        Calculate Flow Rate (gtt/min)
-                    </button>
-                    <div id="iv-result" class="hidden mt-6 p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-center">
-                        <!-- Result output -->
-                    </div>
-                </div>
-
-                <!-- Calculator Form 3: BSA -->
-                <div id="calculator-bsa" class="hidden bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200">
-                    <h3 class="text-xl font-bold text-slate-900 mb-4">Mosteller Formula: √([Height(cm) × Weight(kg)] / 3600)</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
-                        <div>
-                            <label class="block text-sm font-semibold text-slate-700 mb-1">Weight (kg):</label>
-                            <input type="number" id="bsa-wt" placeholder="e.g. 70" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-emerald-500 bg-slate-50 text-sm">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold text-slate-700 mb-1">Height (cm):</label>
-                            <input type="number" id="bsa-ht" placeholder="e.g. 170" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-emerald-500 bg-slate-50 text-sm">
-                        </div>
-                    </div>
-                    <button onclick="calculateBSA()" class="w-full py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl shadow-md transition-all">
-                        Calculate Body Surface Area (m²)
-                    </button>
-                    <div id="bsa-result" class="hidden mt-6 p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-center">
-                        <!-- Result output -->
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==================== NOTICE BOARD TAB ==================== -->
-        <section id="tab-notice" class="tab-content hidden py-12">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-8">
-                    <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">Announcements</span>
-                    <h1 class="text-3xl font-bold text-slate-900 mt-2">Official Notice Board</h1>
-                    <p class="text-slate-600 mt-1">Stay updated with examination schedules, syllabus changes, and nursing admission notices.</p>
-                </div>
-
-                <div class="space-y-4" id="notices-container">
-                    <!-- Populated via JS -->
-                </div>
-            </div>
-        </section>
-
-        <!-- ==================== CONTACT / SUPPORT TAB ==================== -->
-        <section id="tab-contact" class="tab-content hidden py-12">
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">Get in Touch</span>
-                    <h1 class="text-3xl font-bold text-slate-900 mt-2">Contact & Support</h1>
-                    <p class="text-slate-600 mt-1">Have questions regarding nursing modules or exam registration? Reach out to our academic team.</p>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-                    <!-- Inquiry Form -->
-                    <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-200">
-                        <h3 class="text-xl font-bold text-slate-900 mb-6">Send an Inquiry</h3>
-                        <form onsubmit="handleContactSubmit(event)" class="space-y-4">
-                            <div>
-                                <label class="block text-sm font-semibold text-slate-700 mb-1">Full Name</label>
-                                <input type="text" required placeholder="e.g. Nusrat Jahan" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-emerald-500 bg-slate-50 text-sm">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-semibold text-slate-700 mb-1">Email Address</label>
-                                <input type="email" required placeholder="e.g. nusrat@gmail.com" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-emerald-500 bg-slate-50 text-sm">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-semibold text-slate-700 mb-1">Subject / Query Type</label>
-                                <select class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-emerald-500 bg-slate-50 text-sm">
-                                    <option>Nursing Course Inquiry</option>
-                                    <option>Model Test Issue</option>
-                                    <option>Technical Support</option>
-                                    <option>Partnership</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-semibold text-slate-700 mb-1">Message</label>
-                                <textarea rows="4" required placeholder="Write your message here..." class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-emerald-500 bg-slate-50 text-sm"></textarea>
-                            </div>
-                            <button type="submit" class="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl shadow-md transition-all">
-                                Send Message
-                            </button>
-                        </form>
-                    </div>
-
-                    <!-- Contact Info & FAQs -->
-                    <div class="space-y-6">
-                        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
-                            <h4 class="font-bold text-slate-900 mb-4">Support Channels</h4>
-                            <div class="space-y-4 text-sm text-slate-600">
-                                <div class="flex items-center space-x-3">
-                                    <div class="w-10 h-10 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center font-bold">
-                                        <i class="fa-solid fa-envelope"></i>
-                                    </div>
-                                    <div>
-                                        <span class="block text-xs text-slate-400 font-medium">Email Support</span>
-                                        <span class="font-semibold text-slate-800">support@nursingcareer.edu</span>
-                                    </div>
-                                </div>
-                                <div class="flex items-center space-x-3">
-                                    <div class="w-10 h-10 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center font-bold">
-                                        <i class="fa-solid fa-phone"></i>
-                                    </div>
-                                    <div>
-                                        <span class="block text-xs text-slate-400 font-medium">Helpline</span>
-                                        <span class="font-semibold text-slate-800">+880 1700-123456</span>
-                                    </div>
-                                </div>
-                                <div class="flex items-center space-x-3">
-                                    <div class="w-10 h-10 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center font-bold">
-                                        <i class="fa-solid fa-location-dot"></i>
-                                    </div>
-                                    <div>
-                                        <span class="block text-xs text-slate-400 font-medium">Office Location</span>
-                                        <span class="font-semibold text-slate-800">Medical Education Tower, Dhaka, Bangladesh</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bg-emerald-900 text-white rounded-2xl p-6">
-                            <h4 class="font-bold text-lg mb-2">Join Our Nursing Community</h4>
-                            <p class="text-emerald-100 text-xs mb-4 leading-relaxed">Connect with thousands of fellow nursing students, share notes, and receive daily MCQ updates on our official portal.</p>
-                            <button onclick="alert('Successfully joined the Nursing Career community newsletter!')" class="px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-xs transition-colors">
-                                Subscribe Newsletter
-                            </button>
-                        </div>
+                        <span class="text-xs font-bold text-nursing-600 bg-nursing-50 px-2 py-0.5 rounded">Exam Update</span>
+                        <h3 class="text-lg font-bold text-nursing-900 mt-1">BPSC Nursing Viva & MCQ Syllabus Guidance</h3>
+                        <p class="text-sm text-gray-600 mt-1">Updated topic checklists and previous year solved question papers have been uploaded to the student portal.</p>
                     </div>
                 </div>
             </div>
@@ -653,638 +313,203 @@
 
     </main>
 
-    <footer class="bg-medical-navy text-slate-300 py-12 border-t border-slate-800 mt-auto">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
-                <div class="space-y-4">
-                    <div class="flex items-center space-x-3">
-                        <div class="w-10 h-10 rounded-xl overflow-hidden border border-emerald-500 bg-white flex items-center justify-center flex-shrink-0">
-                            <img src="logo.jpg" alt="Logo" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/100x100/047857/ffffff?text=NC';">
-                        </div>
-                        <span class="text-lg font-bold text-white">Nursing Career</span>
-                    </div>
-                    <p class="text-xs text-slate-400 leading-relaxed">Learn Nursing. Build Your Career. The premier destination for nursing students and healthcare professionals.</p>
-                </div>
+    <!-- Footer -->
+    <footer class="bg-nursing-900 text-white mt-16 py-10 border-t border-nursing-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div class="flex items-center space-x-3">
+                <img src="logo.jpg" alt="Logo" class="w-10 h-10 rounded-xl object-cover border border-nursing-600" onerror="this.src='https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?w=100&h=100&fit=crop'">
                 <div>
-                    <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Quick Links</h4>
-                    <ul class="space-y-2 text-xs">
-                        <li><button onclick="switchTab('home')" class="hover:text-emerald-400 transition-colors">Home</button></li>
-                        <li><button onclick="switchTab('subjects')" class="hover:text-emerald-400 transition-colors">Subjects & Notes</button></li>
-                        <li><button onclick="switchTab('mcq')" class="hover:text-emerald-400 transition-colors">MCQ Practice</button></li>
-                        <li><button onclick="switchTab('modeltest')" class="hover:text-emerald-400 transition-colors">Model Test</button></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Clinical Tools</h4>
-                    <ul class="space-y-2 text-xs">
-                        <li><button onclick="switchTab('drugcalc')" class="hover:text-emerald-400 transition-colors">Dosage Calculator</button></li>
-                        <li><button onclick="switchTab('drugcalc')" class="hover:text-emerald-400 transition-colors">IV Flow Rate Calculator</button></li>
-                        <li><button onclick="switchTab('drugcalc')" class="hover:text-emerald-400 transition-colors">Body Surface Area (BSA)</button></li>
-                        <li><button onclick="switchTab('notice')" class="hover:text-emerald-400 transition-colors">Notice Board</button></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Newsletter</h4>
-                    <p class="text-xs text-slate-400 mb-3">Get latest updates on nursing exams and notes.</p>
-                    <div class="flex">
-                        <input type="email" placeholder="Your email..." class="bg-slate-800 border border-slate-700 px-3 py-2 rounded-l-xl text-xs text-white focus:outline-none w-full">
-                        <button onclick="alert('Subscribed successfully!')" class="bg-emerald-600 hover:bg-emerald-700 px-4 py-2 rounded-r-xl text-xs font-bold text-white transition-colors">Join</button>
-                    </div>
+                    <span class="font-extrabold tracking-wider text-lg">NURSING CAREER</span>
+                    <p class="text-xs text-nursing-300">Learn Nursing. Build Your Career.</p>
                 </div>
             </div>
-            <div class="border-t border-slate-800 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500">
-                <p>&copy; 2026 Nursing Career Education Platform. All rights reserved.</p>
-                <div class="flex space-x-6 mt-4 sm:mt-0">
-                    <a href="#" class="hover:text-emerald-400 transition-colors">Privacy Policy</a>
-                    <a href="#" class="hover:text-emerald-400 transition-colors">Terms of Service</a>
-                    <a href="#" class="hover:text-emerald-400 transition-colors">Disclaimer</a>
-                </div>
+            <p class="text-xs text-nursing-300">&copy; 2026 Nursing Career. All rights reserved.</p>
+            <div class="flex space-x-4 text-nursing-200">
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-facebook text-xl"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-youtube text-xl"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-telegram text-xl"></i></a>
             </div>
         </div>
     </footer>
 
+    <!-- JavaScript Application Logic -->
     <script>
-        // --- Mock Data Store ---
-        const subjectsData = [
-            { id: 'fundamentals', name: 'Fundamentals of Nursing', icon: 'fa-user-nurse', color: 'bg-emerald-50 text-emerald-600', chapters: 12, desc: 'Basic nursing principles, vital signs, patient hygiene, and clinical documentation.', notes: ['Chapter 1: History of Nursing & Professional Ethics', 'Chapter 2: Vital Signs Assessment (BP, Pulse, Temp, Respiration)', 'Chapter 3: Infection Control & Hand Hygiene Protocols', 'Chapter 4: Patient Admission, Transfer & Discharge'] },
-            { id: 'medsurv', name: 'Medical-Surgical Nursing', icon: 'fa-heart-pulse', color: 'bg-teal-50 text-teal-600', chapters: 18, desc: 'Adult health nursing, perioperative care, cardiovascular, and respiratory disorders.', notes: ['Chapter 1: Perioperative Nursing & Pre-op Care', 'Chapter 2: Cardiovascular Disorders & ECG Monitoring', 'Chapter 3: Respiratory Diseases & Oxygen Therapy', 'Chapter 4: Gastrointestinal and Endocrine Pathologies'] },
-            { id: 'pharma', name: 'Pharmacology for Nurses', icon: 'fa-pills', color: 'bg-green-50 text-green-600', chapters: 15, desc: 'Drug classifications, mechanism of action, side effects, and safe administration.', notes: ['Chapter 1: Principles of Drug Administration & 6 Rights', 'Chapter 2: Antibiotics & Antimicrobial Agents', 'Chapter 3: Cardiovascular & Antihypertensive Medications', 'Chapter 4: Emergency Crash Cart Drugs & Dosages'] },
-            { id: 'pediatrics', name: 'Pediatric Nursing', icon: 'fa-child', color: 'bg-emerald-50 text-emerald-600', chapters: 10, desc: 'Child health, growth and developmental milestones, immunizations, and childhood illnesses.', notes: ['Chapter 1: Growth and Development Milestones (Infant to Adolescent)', 'Chapter 2: Childhood Immunization Schedule', 'Chapter 3: Common Respiratory Infections in Children', 'Chapter 4: Pediatric Dosage Calculations'] },
-            { id: 'community', name: 'Community Health Nursing', icon: 'fa-house-medical', color: 'bg-teal-50 text-teal-600', chapters: 14, desc: 'Epidemiology, maternal and child health, communicable diseases, and public health.', notes: ['Chapter 1: Concepts of Primary Health Care (PHC)', 'Chapter 2: Maternal and Child Health (MCH) Services', 'Chapter 3: Communicable Disease Control & Prevention', 'Chapter 4: Environmental Health & Sanitation'] },
-            { id: 'anatomy', name: 'Anatomy & Physiology', icon: 'fa-brain', color: 'bg-green-50 text-green-600', chapters: 16, desc: 'Human body systems, skeletal, muscular, nervous, circulatory, and excretory anatomy.', notes: ['Chapter 1: Structural Organization of the Human Body', 'Chapter 2: The Nervous System & Brain Anatomy', 'Chapter 3: The Circulatory System & Blood Circulation', 'Chapter 4: Renal System & Urine Formation'] }
-        ];
-
-        const mcqBank = {
-            fundamentals: [
-                { q: "What is the normal resting heart rate for a healthy adult?", options: ["60-100 beats per minute", "40-60 beats per minute", "100-120 beats per minute", "90-140 beats per minute"], answer: 0, explanation: "Normal resting heart rate for healthy adults ranges between 60 to 100 bpm." },
-                { q: "Which of the following is considered the single most effective way to prevent the spread of infection?", options: ["Wearing gloves", "Proper hand hygiene", "Wearing a mask", "Using sterile gowns"], answer: 1, explanation: "Hand hygiene (washing hands with soap and water or alcohol rub) is recognized universally as the primary method to prevent nosocomial infections." },
-                { q: "When taking a blood pressure reading, the first tapping sound heard represents which pressure?", options: ["Diastolic pressure", "Mean arterial pressure", "Systolic pressure", "Venous pressure"], answer: 2, explanation: "The first Korotkoff sound corresponds to the systolic blood pressure." }
-            ],
-            medsurv: [
-                { q: "Which ECG wave represents ventricular depolarization?", options: ["P wave", "QRS complex", "T wave", "U wave"], answer: 1, explanation: "The QRS complex corresponds to ventricular depolarization prior to ventricular contraction." },
-                { q: "What is the primary positioning for a patient experiencing acute dyspnea?", options: ["Supine", "Trendelenburg", "High Fowler's", "Prone"], answer: 2, explanation: "High Fowler's position maximizes chest expansion and eases respiratory distress." }
-            ],
-            pharma: [
-                { q: "How many rights of medication administration are standard in nursing practice?", options: ["3 Rights", "5 Rights", "6 to 10 Rights", "12 Rights"], answer: 2, explanation: "While traditionally 5 rights, modern clinical practice emphasizes 6 to 10 rights to ensure medication safety." },
-                { q: "Which medication is commonly kept in emergency crashes for severe allergic anaphylaxis?", options: ["Aspirin", "Epinephrine", "Digoxin", "Warfarin"], answer: 1, explanation: "Epinephrine is the primary life-saving drug for anaphylactic shock." }
-            ],
-            pediatrics: [
-                { q: "At what age does an infant typically double their birth weight?", options: ["3 months", "6 months", "12 months", "18 months"], answer: 1, explanation: "Infants generally double their birth weight by 5 to 6 months of age." }
-            ],
-            community: [
-                { q: "Which level of prevention includes screening programs like blood pressure checks?", options: ["Primary prevention", "Secondary prevention", "Tertiary prevention", "Quaternary prevention"], answer: 1, explanation: "Secondary prevention focuses on early detection and screening of diseases." }
-            ]
-        };
-
-        const noticesData = [
-            { date: "October 02, 2026", title: "BSc & Diploma in Nursing Final Examination Schedule 2026", tag: "Exam Notice", desc: "The final semester examinations for diploma and BSc nursing programs will commence from November 15, 2026. Admit cards will be available in student portals." },
-            { date: "September 28, 2026", title: "Online Model Test Registration for Board Licensure Prep", tag: "Announcement", desc: "All registered students can now access free model tests on the Nursing Career portal to evaluate their preparation for upcoming board examinations." },
-            { date: "September 15, 2026", title: "Updated Clinical Pharmacology Guidelines & Dosage Chart", tag: "Study Notes", desc: "Revised pediatric and adult drug calculation guidelines have been uploaded to the Subjects section. Students are advised to review them." }
-        ];
-
-        // --- Application State ---
-        let currentMCQIndex = 0;
-        let currentMCQCategory = 'fundamentals';
-        let mcqScoreCount = 0;
-
-        let examQuestions = [];
-        let currentExamIndex = 0;
-        let examAnswers = {};
-        let examMarks = {};
-        let examTimerInterval = null;
-        let examTimeRemaining = 600; // 10 minutes in seconds
-        let examSubmittedRecords = [];
-
-        // --- Navigation Controller ---
-        function switchTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(el => {
-                el.classList.add('hidden');
-                el.classList.remove('block');
-            });
-            const target = document.getElementById('tab-' + tabId);
-            if (target) {
-                target.classList.remove('hidden');
-                target.classList.add('block');
-            }
-
-            // Update Header Navigation Active State
-            document.querySelectorAll('.nav-btn').forEach(btn => {
-                btn.classList.remove('text-emerald-700', 'bg-emerald-50', 'font-semibold');
-                btn.classList.add('text-slate-600', 'font-medium');
-                if (btn.getAttribute('data-target') === tabId) {
-                    btn.classList.add('text-emerald-700', 'bg-emerald-50', 'font-semibold');
-                    btn.classList.remove('text-slate-600');
+        // Section Navigation Switcher
+        function showSection(sectionId) {
+            const sections = ['home', 'subjects', 'mcq', 'modeltest', 'drugcalc', 'notice'];
+            sections.forEach(sec => {
+                const el = document.getElementById(`section-${sec}`);
+                if (el) el.classList.add('hidden');
+                const btn = document.getElementById(`btn-${sec}`);
+                if (btn) {
+                    btn.classList.remove('text-nursing-700', 'bg-nursing-50');
+                    btn.classList.add('text-gray-600');
                 }
             });
 
+            const activeSec = document.getElementById(`section-${sectionId}`);
+            if (activeSec) activeSec.classList.remove('hidden');
+
+            const activeBtn = document.getElementById(`btn-${sectionId}`);
+            if (activeBtn) {
+                activeBtn.classList.remove('text-gray-600');
+                activeBtn.classList.add('text-nursing-700', 'bg-nursing-50');
+            }
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
+        // Mobile Menu Toggle
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
+            if (menu) menu.classList.toggle('hidden');
         }
 
-        // --- Initialization on Load ---
-        window.onload = function() {
-            renderHomeSubjects();
-            renderFullSubjects(subjectsData);
-            initMCQPractice();
-            renderNotices();
-            renderResultsTable();
-        };
-
-        // --- Render Home Subjects ---
-        function renderHomeSubjects() {
-            const grid = document.getElementById('home-subjects-grid');
-            if (!grid) return;
-            grid.innerHTML = subjectsData.slice(0, 3).map(sub => `
-                <div class="glass-card rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition-all flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 ${sub.color} rounded-xl flex items-center justify-center text-xl mb-4 font-bold shadow-sm">
-                            <i class="fa-solid ${sub.icon}"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-slate-900 mb-2">${sub.name}</h3>
-                        <p class="text-slate-600 text-sm mb-4 leading-relaxed">${sub.desc}</p>
-                    </div>
-                    <button onclick="openSubjectDetail('${sub.id}')" class="w-full py-2.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-bold rounded-xl text-xs transition-colors">
-                        View Chapters & Notes (${sub.chapters})
-                    </button>
-                </div>
-            `).join('');
-        }
-
-        // --- Render Full Subjects ---
-        function renderFullSubjects(data) {
-            const grid = document.getElementById('full-subjects-grid');
-            if (!grid) return;
-            if (data.length === 0) {
-                grid.innerHTML = `<div class="col-span-3 text-center py-12 text-slate-500">No subjects found matching your search.</div>`;
-                return;
+        // MCQ Practice Database & Engine
+        const mcqList = [
+            {
+                q: "Normal adult resting heart rate range is:",
+                options: ["40 - 60 beats/min", "60 - 100 beats/min", "100 - 120 beats/min", "120 - 140 beats/min"],
+                answer: 1,
+                explanation: "Normal adult resting pulse rate is typically between 60 and 100 beats per minute."
+            },
+            {
+                q: "Which cranial nerve is responsible for vision?",
+                options: ["Cranial Nerve I", "Cranial Nerve II", "Cranial Nerve III", "Cranial Nerve V"],
+                answer: 1,
+                explanation: "Cranial Nerve II is the Optic Nerve, which transmits visual information from the retina to the brain."
+            },
+            {
+                q: "The standard anatomical site for measuring adult core body temperature most accurately is:",
+                options: ["Axillary", "Oral", "Tympanic / Rectal", "Skin"],
+                answer: 2,
+                explanation: "Rectal and tympanic measurements closely reflect core body temperature."
             }
-            grid.innerHTML = data.map(sub => `
-                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition-all flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 ${sub.color} rounded-xl flex items-center justify-center text-xl mb-4 font-bold shadow-sm">
-                            <i class="fa-solid ${sub.icon}"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-slate-900 mb-2">${sub.name}</h3>
-                        <p class="text-slate-600 text-sm mb-4 leading-relaxed">${sub.desc}</p>
-                    </div>
-                    <button onclick="openSubjectDetail('${sub.id}')" class="w-full py-2.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-bold rounded-xl text-xs transition-colors">
-                        View Chapters & Notes (${sub.chapters})
-                    </button>
-                </div>
-            `).join('');
-        }
+        ];
 
-        function filterSubjects() {
-            const query = document.getElementById('subject-search').value.toLowerCase();
-            const filtered = subjectsData.filter(s => s.name.toLowerCase().includes(query) || s.desc.toLowerCase().includes(query));
-            renderFullSubjects(filtered);
-        }
+        let currentMcqIndex = 0;
+        let score = 0;
 
-        function openSubjectDetail(subId) {
-            const sub = subjectsData.find(s => s.id === subId);
-            if (!sub) return;
-            const modalContent = document.getElementById('modal-subject-content');
-            modalContent.innerHTML = `
-                <div class="flex items-center space-x-4 mb-6">
-                    <div class="w-14 h-14 ${sub.color} rounded-2xl flex items-center justify-center text-2xl font-bold">
-                        <i class="fa-solid ${sub.icon}"></i>
-                    </div>
-                    <div>
-                        <h2 class="text-2xl font-bold text-slate-900">${sub.name}</h2>
-                        <p class="text-sm text-slate-500">${sub.chapters} Comprehensive Modules & Study Notes</p>
-                    </div>
-                </div>
-                <p class="text-slate-700 text-sm mb-6 leading-relaxed">${sub.desc}</p>
-                <h4 class="font-bold text-slate-900 mb-3 pb-2 border-b border-slate-100">Reading Notes Preview</h4>
-                <div class="space-y-3 mb-8">
-                    ${sub.notes.map((note, idx) => `
-                        <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 flex justify-between items-center text-sm">
-                            <span class="font-medium text-slate-800"><i class="fa-solid fa-file-pdf text-red-500 mr-2"></i> ${note}</span>
-                            <button onclick="alert('Downloading simulation PDF for: ${note}')" class="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-bold transition-colors">Download PDF</button>
-                        </div>
-                    `).join('')}
-                </div>
-                <button onclick="closeSubjectModal()" class="w-full py-3 bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold rounded-xl text-sm transition-colors">
-                    Close Window
-                </button>
-            `;
-            document.getElementById('subject-detail-modal').classList.remove('hidden');
-        }
-
-        function closeSubjectModal() {
-            document.getElementById('subject-detail-modal').classList.add('hidden');
-        }
-
-        // --- MCQ Practice Logic ---
-        function initMCQPractice() {
-            currentMCQCategory = document.getElementById('mcq-subject-select').value;
-            currentMCQIndex = 0;
-            mcqScoreCount = 0;
-            updateMCQScoreDisplay();
-            renderMCQQuestion();
-        }
-
-        function renderMCQQuestion() {
+        function loadMCQ() {
             const container = document.getElementById('mcq-container');
-            const questions = mcqBank[currentMCQCategory];
-            if (!questions || questions.length === 0) {
-                container.innerHTML = `<p class="text-center text-slate-500">No questions available for this subject.</p>`;
-                return;
-            }
-            if (currentMCQIndex >= questions.length) {
+            if (!container) return;
+
+            if (currentMcqIndex >= mcqList.length) {
                 container.innerHTML = `
-                    <div class="text-center py-8">
-                        <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-2xl mx-auto mb-4">
-                            <i class="fa-solid fa-trophy"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Practice Session Completed!</h3>
-                        <p class="text-slate-600 mb-6">You scored ${mcqScoreCount} out of ${questions.length} correct.</p>
-                        <button onclick="initMCQPractice()" class="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl transition-colors">
-                            Restart Practice
-                        </button>
+                    <div class="text-center space-y-4 py-8">
+                        <div class="w-16 h-16 bg-nursing-100 text-nursing-600 rounded-full mx-auto flex items-center justify-center text-3xl font-bold"><i class="fa-solid fa-award"></i></div>
+                        <h3 class="text-2xl font-bold text-nursing-900">Practice Completed!</h3>
+                        <p class="text-gray-600">Your Score: <span class="font-bold text-nursing-700">${score}</span> out of ${mcqList.length}</p>
+                        <button onclick="resetMCQ()" class="bg-nursing-600 text-white font-bold px-6 py-2.5 rounded-xl hover:bg-nursing-700 transition">Practice Again</button>
                     </div>
                 `;
                 return;
             }
 
-            const qObj = questions[currentMCQIndex];
+            const item = mcqList[currentMcqIndex];
+            let optionsHTML = '';
+            item.options.forEach((opt, idx) => {
+                optionsHTML += `<button onclick="checkAnswer(${idx})" class="w-full text-left p-4 rounded-xl border border-gray-200 hover:border-nursing-500 hover:bg-nursing-50 transition font-medium text-sm text-gray-700 option-btn">${opt}</button>`;
+            });
+
             container.innerHTML = `
-                <div class="mb-4 flex justify-between items-center text-xs text-slate-500 font-semibold uppercase tracking-wider">
-                    <span>Question ${currentMCQIndex + 1} of ${questions.length}</span>
-                    <span class="bg-emerald-50 text-emerald-700 px-2.5 py-1 rounded-md border border-emerald-200">Practice Mode</span>
+                <div class="flex justify-between items-center text-xs font-bold text-nursing-600 bg-nursing-50 px-3 py-1.5 rounded-lg">
+                    <span>Question ${currentMcqIndex + 1} of ${mcqList.length}</span>
+                    <span>Score: ${score}</span>
                 </div>
-                <h3 class="text-lg font-bold text-slate-900 mb-6">${qObj.q}</h3>
-                <div class="space-y-3 mb-6" id="mcq-options-list">
-                    ${qObj.options.map((opt, idx) => `
-                        <button onclick="checkMCQAnswer(${idx}, ${qObj.answer})" class="mcq-opt-btn w-full text-left p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-emerald-50 hover:border-emerald-300 font-medium text-sm text-slate-800 transition-all flex justify-between items-center">
-                            <span>${String.fromCharCode(65 + idx)}. ${opt}</span>
-                        </button>
-                    `).join('')}
-                </div>
-                <div id="mcq-feedback" class="hidden p-4 rounded-xl mb-6 text-sm"></div>
-                <div class="flex justify-end">
-                    <button id="next-mcq-btn" onclick="nextMCQQuestion()" class="hidden px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-sm transition-colors">
-                        Next Question <i class="fa-solid fa-arrow-right ml-1"></i>
-                    </button>
-                </div>
+                <h3 class="text-lg font-bold text-nursing-900 mt-2">${item.q}</h3>
+                <div class="space-y-3 mt-4">${optionsHTML}</div>
+                <div id="mcq-feedback" class="hidden mt-4 p-4 rounded-xl text-sm"></div>
+                <button id="next-btn" onclick="nextMCQ()" class="hidden mt-4 w-full bg-nursing-600 text-white font-bold py-2.5 rounded-xl hover:bg-nursing-700 transition">Next Question</button>
             `;
         }
 
-        function checkMCQAnswer(selectedIdx, correctIdx) {
-            const buttons = document.querySelectorAll('.mcq-opt-btn');
-            buttons.forEach((btn, idx) => {
+        function checkAnswer(selectedIndex) {
+            const item = mcqList[currentMcqIndex];
+            const feedbackEl = document.getElementById('mcq-feedback');
+            const nextBtn = document.getElementById('next-btn');
+            const optionBtns = document.querySelectorAll('.option-btn');
+
+            optionBtns.forEach((btn, idx) => {
                 btn.disabled = true;
-                if (idx === correctIdx) {
-                    btn.classList.remove('bg-slate-50', 'border-slate-200');
-                    btn.classList.add('bg-emerald-100', 'border-emerald-500', 'text-emerald-900', 'font-bold');
-                } else if (idx === selectedIdx) {
-                    btn.classList.remove('bg-slate-50', 'border-slate-200');
-                    btn.classList.add('bg-red-100', 'border-red-400', 'text-red-900');
+                if (idx === item.answer) {
+                    btn.classList.add('bg-green-100', 'border-green-500', 'text-green-900');
+                } else if (idx === selectedIndex) {
+                    btn.classList.add('bg-red-100', 'border-red-500', 'text-red-900');
                 }
             });
 
-            const feedback = document.getElementById('mcq-feedback');
-            feedback.classList.remove('hidden');
-            const questions = mcqBank[currentMCQCategory];
-            const qObj = questions[currentMCQIndex];
-
-            if (selectedIdx === correctIdx) {
-                mcqScoreCount++;
-                feedback.className = "p-4 rounded-xl mb-6 text-sm bg-emerald-50 border border-emerald-200 text-emerald-900 font-medium";
-                feedback.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i> <strong>Correct!</strong> ${qObj.explanation}`;
+            if (selectedIndex === item.answer) {
+                score++;
+                feedbackEl.className = "mt-4 p-4 rounded-xl text-sm bg-green-50 text-green-900 border border-green-200 font-medium";
+                feedbackEl.innerHTML = `<i class="fa-solid fa-circle-check text-green-600 mr-2"></i><strong>Correct!</strong> ${item.explanation}`;
             } else {
-                feedback.className = "p-4 rounded-xl mb-6 text-sm bg-red-50 border border-red-200 text-red-900 font-medium";
-                feedback.innerHTML = `<i class="fa-solid fa-circle-xmark text-red-600 mr-2"></i> <strong>Incorrect.</strong> ${qObj.explanation}`;
+                feedbackEl.className = "mt-4 p-4 rounded-xl text-sm bg-red-50 text-red-900 border border-red-200 font-medium";
+                feedbackEl.innerHTML = `<i class="fa-solid fa-circle-xmark text-red-600 mr-2"></i><strong>Incorrect.</strong> ${item.explanation}`;
             }
 
-            updateMCQScoreDisplay();
-            document.getElementById('next-mcq-btn').classList.remove('hidden');
+            feedbackEl.classList.remove('hidden');
+            nextBtn.classList.remove('hidden');
         }
 
-        function nextMCQQuestion() {
-            currentMCQIndex++;
-            renderMCQQuestion();
+        function nextMCQ() {
+            currentMcqIndex++;
+            loadMCQ();
         }
 
-        function updateMCQScoreDisplay() {
-            const questions = mcqBank[currentMCQCategory];
-            document.getElementById('mcq-score').innerText = `${mcqScoreCount} / ${questions ? questions.length : 0}`;
+        function resetMCQ() {
+            currentMcqIndex = 0;
+            score = 0;
+            loadMCQ();
         }
 
-        // --- Model Test Exam Engine ---
-        const modelTestQuestions = [
-            { id: 1, subject: "Fundamentals", q: "Which nursing intervention is most appropriate to prevent pressure ulcers in a bedridden patient?", options: ["Massage bony prominences vigorously", "Reposition every 2 hours", "Keep head of bed elevated at 90 degrees continuously", "Apply heating pads daily"], answer: 1, explanation: "Repositioning every 2 hours relieves prolonged pressure on bony areas." },
-            { id: 2, subject: "Pharmacology", q: "A patient is prescribed Warfarin. Which laboratory test is essential to monitor therapeutic effectiveness?", options: ["Complete Blood Count (CBC)", "PT / INR", "Serum Creatinine", "Liver Function Test (LFT)"], answer: 1, explanation: "Prothrombin Time (PT) and International Normalized Ratio (INR) monitor Warfarin therapy." },
-            { id: 3, subject: "Medical-Surgical", q: "What is the primary manifestation of left-sided heart failure?", options: ["Peripheral ankle edema", "Pulmonary congestion and dyspnea", "Jugular venous distention", "Ascites"], answer: 1, explanation: "Left-sided heart failure backs blood up into the pulmonary circulation causing dyspnea and crackles." },
-            { id: 4, subject: "Pediatrics", q: "When assessing dehydration in an infant, which sign is most critical?", options: ["Sunken fontanelle", "Active crying", "Warm skin", "Increased appetite"], answer: 0, explanation: "A sunken anterior fontanelle is a classic sign of dehydration in infants." },
-            { id: 5, subject: "Community Health", q: "Directly Observed Therapy (DOT) is primarily utilized for the management of which disease?", options: ["Diabetes Mellitus", "Hypertension", "Tuberculosis (TB)", "Asthma"], answer: 2, explanation: "DOT ensures patient adherence and compliance with multi-drug tuberculosis treatment regimens." },
-            { id: 6, subject: "Anatomy", q: "Which chamber of the heart receives oxygenated blood from the pulmonary veins?", options: ["Right atrium", "Right ventricle", "Left atrium", "Left ventricle"], answer: 2, explanation: "The left atrium receives oxygenated blood from the lungs via the pulmonary veins." },
-            { id: 7, subject: "Fundamentals", q: "Before administering enteral feeding through a nasogastric tube, what is the nurse's priority action?", options: ["Warm the formula", "Check tube placement and residual volume", "Flush with 500 mL sterile water", "Place patient in flat supine position"], answer: 1, explanation: "Verifying placement and residual volume prevents aspiration and ensures correct positioning." },
-            { id: 8, subject: "Pharmacology", q: "Insulin Regular is classified as which type of insulin onset?", options: ["Rapid-acting", "Short-acting", "Intermediate-acting", "Long-acting"], answer: 1, explanation: "Regular insulin is a short-acting insulin administered subcutaneously or intravenously." },
-            { id: 9, subject: "Medical-Surgical", q: "Which electrolyte imbalance is most commonly associated with cardiac arrhythmias?", options: ["Hyponatremia", "Hypokalemia", "Hypercalcemia", "Hypomagnesemia"], answer: 1, explanation: "Potassium plays a vital role in cardiac electrophysiology; hypokalemia triggers dangerous arrhythmias." },
-            { id: 10, subject: "Pediatrics", q: "At what age is the measles, mumps, and rubella (MMR) vaccine typically first administered?", options: ["Birth", "2 months", "12 to 15 months", "4 years"], answer: 2, explanation: "The first dose of MMR vaccine is recommended at 12 to 15 months of age." }
-        ];
-
-        function startModelTest() {
-            examQuestions = modelTestQuestions;
-            currentExamIndex = 0;
-            examAnswers = {};
-            examMarks = {};
-            examTimeRemaining = 600;
-
-            document.getElementById('exam-setup').classList.add('hidden');
-            document.getElementById('exam-result-view').classList.add('hidden');
-            document.getElementById('exam-live').classList.remove('hidden');
-
-            renderExamQuestion();
-            renderQuestionPalette();
-            startExamTimer();
-        }
-
-        function startExamTimer() {
-            if (examTimerInterval) clearInterval(examTimerInterval);
-            examTimerInterval = setInterval(() => {
-                examTimeRemaining--;
-                let mins = Math.floor(examTimeRemaining / 60);
-                let secs = examTimeRemaining % 60;
-                document.getElementById('exam-timer').innerText = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
-                if (examTimeRemaining <= 0) {
-                    clearInterval(examTimerInterval);
-                    submitExam();
-                }
-            }, 1000);
-        }
-
-        function renderExamQuestion() {
-            const qObj = examQuestions[currentExamIndex];
-            document.getElementById('exam-q-number').innerText = `Question ${currentExamIndex + 1} of ${examQuestions.length}`;
-            document.getElementById('exam-subject-title').innerText = `Subject: ${qObj.subject} Nursing`;
-
-            const card = document.getElementById('exam-question-card');
-            const currentSelected = examAnswers[currentExamIndex];
-
-            card.innerHTML = `
-                <h3 class="text-lg font-bold text-slate-900 mb-6">${qObj.q}</h3>
-                <div class="space-y-3">
-                    ${qObj.options.map((opt, idx) => `
-                        <label class="flex items-center p-4 rounded-xl border ${currentSelected === idx ? 'bg-emerald-50 border-emerald-500 text-emerald-900 font-semibold' : 'border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-800'} cursor-pointer transition-all">
-                            <input type="radio" name="exam_opt" value="${idx}" ${currentSelected === idx ? 'checked' : ''} onchange="selectExamOption(${idx})" class="mr-3 text-emerald-600 focus:ring-emerald-500">
-                            <span class="text-sm">${String.fromCharCode(65 + idx)}. ${opt}</span>
-                        </label>
-                    `).join('')}
-                </div>
-            `;
-
-            document.getElementById('prev-btn').disabled = currentExamIndex === 0;
-            document.getElementById('next-btn').innerText = currentExamIndex === examQuestions.length - 1 ? "Finish" : "Next";
-        }
-
-        function selectExamOption(idx) {
-            examAnswers[currentExamIndex] = idx;
-            renderQuestionPalette();
-        }
-
-        function nextExamQuestion() {
-            if (currentExamIndex < examQuestions.length - 1) {
-                currentExamIndex++;
-                renderExamQuestion();
-            } else {
-                confirmSubmitExam();
-            }
-        }
-
-        function prevExamQuestion() {
-            if (currentExamIndex > 0) {
-                currentExamIndex--;
-                renderExamQuestion();
-            }
-        }
-
-        function markExamQuestion() {
-            examMarks[currentExamIndex] = !examMarks[currentExamIndex];
-            renderQuestionPalette();
-            alert(examMarks[currentExamIndex] ? `Question ${currentExamIndex + 1} marked for review.` : `Question ${currentExamIndex + 1} unmarked.`);
-        }
-
-        function renderQuestionPalette() {
-            const palette = document.getElementById('question-palette');
-            if (!palette) return;
-            palette.innerHTML = examQuestions.map((q, idx) => {
-                let bgClass = "bg-slate-100 text-slate-700 border-slate-200";
-                if (examAnswers[idx] !== undefined) {
-                    bgClass = "bg-emerald-600 text-white border-emerald-600 font-bold";
-                }
-                if (examMarks[idx]) {
-                    bgClass = "bg-amber-400 text-slate-900 border-amber-500 font-bold";
-                }
-                if (currentExamIndex === idx) {
-                    bgClass += " ring-2 ring-emerald-500 ring-offset-2";
-                }
-                return `<button onclick="jumpToExamQuestion(${idx})" class="w-10 h-10 rounded-xl border ${bgClass} text-xs flex items-center justify-center transition-all">${idx + 1}</button>`;
-            }).join('');
-        }
-
-        function jumpToExamQuestion(idx) {
-            currentExamIndex = idx;
-            renderExamQuestion();
-            renderQuestionPalette();
-        }
-
-        function confirmSubmitExam() {
-            if (confirm("Are you sure you want to submit your model test?")) {
-                submitExam();
-            }
-        }
-
-        function submitExam() {
-            if (examTimerInterval) clearInterval(examTimerInterval);
-            let correctCount = 0;
-            examQuestions.forEach((q, idx) => {
-                if (examAnswers[idx] === q.answer) {
-                    correctCount++;
-                }
-            });
-            let incorrectCount = examQuestions.length - correctCount;
-            let percentage = Math.round((correctCount / examQuestions.length) * 100);
-
-            // Save record
-            const record = {
-                date: new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}),
-                title: "Nursing Board Licensure Model Test",
-                correct: correctCount,
-                total: examQuestions.length,
-                percentage: percentage,
-                passed: percentage >= 70
-            };
-            examSubmittedRecords.unshift(record);
-            renderResultsTable();
-
-            // Display results
-            document.getElementById('exam-live').classList.add('hidden');
-            const resView = document.getElementById('exam-result-view');
-            resView.classList.remove('hidden');
-
-            const iconDiv = document.getElementById('exam-result-icon');
-            if (percentage >= 70) {
-                iconDiv.className = "w-20 h-20 rounded-full flex items-center justify-center text-4xl mx-auto mb-6 shadow-inner bg-emerald-100 text-emerald-600";
-                iconDiv.innerHTML = `<i class="fa-solid fa-award"></i>`;
-                document.getElementById('exam-result-subtitle').innerText = "Congratulations! You successfully passed the nursing model test.";
-            } else {
-                iconDiv.className = "w-20 h-20 rounded-full flex items-center justify-center text-4xl mx-auto mb-6 shadow-inner bg-red-100 text-red-600";
-                iconDiv.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i>`;
-                document.getElementById('exam-result-subtitle').innerText = "Keep practicing. Review your study notes to improve your score.";
-            }
-
-            document.getElementById('res-total').innerText = examQuestions.length;
-            document.getElementById('res-correct').innerText = correctCount;
-            document.getElementById('res-incorrect').innerText = incorrectCount;
-            document.getElementById('res-percentage').innerText = percentage + "%";
-        }
-
-        function resetExam() {
-            document.getElementById('exam-result-view').classList.add('hidden');
-            document.getElementById('exam-setup').classList.remove('hidden');
-        }
-
-        // --- Results Table ---
-        function renderResultsTable() {
-            const container = document.getElementById('results-table-container');
-            if (!container) return;
-            if (examSubmittedRecords.length === 0) {
-                container.innerHTML = `<div class="p-8 text-center text-slate-500 text-sm">No exam records found yet. Take a model test to view your performance history.</div>`;
-                return;
-            }
-            container.innerHTML = examSubmittedRecords.map(rec => `
-                <div class="p-4 sm:p-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                    <div>
-                        <h4 class="font-bold text-slate-900">${rec.title}</h4>
-                        <span class="text-xs text-slate-500"><i class="fa-solid fa-calendar mr-1"></i> ${rec.date}</span>
-                    </div>
-                    <div class="flex items-center space-x-4">
-                        <div class="text-right">
-                            <span class="text-sm font-bold text-slate-800">${rec.correct} / ${rec.total} Correct</span>
-                            <span class="block text-xs font-semibold ${rec.passed ? 'text-emerald-600' : 'text-red-600'}">${rec.percentage}% (${rec.passed ? 'Passed' : 'Needs Improvement'})</span>
-                        </div>
-                        <span class="px-3 py-1 rounded-full text-xs font-bold ${rec.passed ? 'bg-emerald-100 text-emerald-800' : 'bg-red-100 text-red-800'}">
-                            ${rec.passed ? 'Passed' : 'Failed'}
-                        </span>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        // --- Drug Calculation Tool Logic ---
-        function switchCalcMode(mode) {
-            document.querySelectorAll('.calc-tab-btn').forEach(btn => {
-                btn.className = "calc-tab-btn p-4 rounded-xl border-2 border-slate-200 bg-white text-slate-700 font-semibold text-center shadow-sm transition-all hover:border-slate-300";
-            });
-            document.getElementById('calculator-dosage').classList.add('hidden');
-            document.getElementById('calculator-iv').classList.add('hidden');
-            document.getElementById('calculator-bsa').classList.add('hidden');
-
-            if (mode === 'dosage') {
-                document.getElementById('calc-tab-dosage').className = "calc-tab-btn p-4 rounded-xl border-2 border-emerald-600 bg-emerald-50 text-emerald-900 font-bold text-center shadow-sm transition-all";
-                document.getElementById('calculator-dosage').classList.remove('hidden');
-            } else if (mode === 'iv') {
-                document.getElementById('calc-tab-iv').className = "calc-tab-btn p-4 rounded-xl border-2 border-emerald-600 bg-emerald-50 text-emerald-900 font-bold text-center shadow-sm transition-all";
-                document.getElementById('calculator-iv').classList.remove('hidden');
-            } else if (mode === 'bsa') {
-                document.getElementById('calc-tab-bsa').className = "calc-tab-btn p-4 rounded-xl border-2 border-emerald-600 bg-emerald-50 text-emerald-900 font-bold text-center shadow-sm transition-all";
-                document.getElementById('calculator-bsa').classList.remove('hidden');
-            }
-        }
-
-        function calculateDosage() {
+        // Drug Calculations
+        function calculateOralDose() {
             const d = parseFloat(document.getElementById('calc-d').value);
             const h = parseFloat(document.getElementById('calc-h').value);
-            const q = parseFloat(document.getElementById('calc-q').value);
-            const resDiv = document.getElementById('dosage-result');
+            const v = parseFloat(document.getElementById('calc-v').value);
+            const resEl = document.getElementById('result-oral');
 
-            if (isNaN(d) || isNaN(h) || isNaN(q) || h === 0) {
-                alert("Please enter valid numbers for dosage calculation.");
+            if (isNaN(d) || isNaN(h) || isNaN(v) || h === 0) {
+                resEl.className = "p-3 bg-red-50 text-red-700 font-bold rounded-xl text-center text-sm";
+                resEl.innerText = "Please enter valid numbers.";
+                resEl.classList.remove('hidden');
                 return;
             }
 
-            const ans = (d / h) * q;
-            resDiv.classList.remove('hidden');
-            resDiv.innerHTML = `
-                <span class="text-xs text-emerald-700 font-semibold uppercase tracking-wider block mb-1">Calculated Result</span>
-                <span class="text-2xl font-extrabold text-emerald-900">${ans.toFixed(2)} units / mL</span>
-                <p class="text-xs text-emerald-800 mt-1">Formula Applied: (${d} / ${h}) × ${q} = ${ans.toFixed(2)}</p>
-            `;
+            const ans = (d / h) * v;
+            resEl.className = "p-3 bg-nursing-50 text-nursing-900 font-bold rounded-xl text-center text-sm";
+            resEl.innerText = `Required Dosage: ${ans.toFixed(2)}`;
+            resEl.classList.remove('hidden');
         }
 
-        function calculateIV() {
+        function calculateIVRate() {
             const vol = parseFloat(document.getElementById('iv-vol').value);
-            const drop = parseFloat(document.getElementById('iv-drop').value);
-            const timeHrs = parseFloat(document.getElementById('iv-time').value);
-            const resDiv = document.getElementById('iv-result');
+            const df = parseFloat(document.getElementById('iv-df').value);
+            const hours = parseFloat(document.getElementById('iv-time').value);
+            const resEl = document.getElementById('result-iv');
 
-            if (isNaN(vol) || isNaN(drop) || isNaN(timeHrs) || timeHrs === 0) {
-                alert("Please enter valid numbers for IV flow rate calculation.");
+            if (isNaN(vol) || isNaN(hours) || hours === 0) {
+                resEl.className = "p-3 bg-red-50 text-red-700 font-bold rounded-xl text-center text-sm";
+                resEl.innerText = "Please enter valid numbers.";
+                resEl.classList.remove('hidden');
                 return;
             }
 
-            const totalMins = timeHrs * 60;
-            const ans = (vol * drop) / totalMins;
-            resDiv.classList.remove('hidden');
-            resDiv.innerHTML = `
-                <span class="text-xs text-emerald-700 font-semibold uppercase tracking-wider block mb-1">Calculated IV Flow Rate</span>
-                <span class="text-2xl font-extrabold text-emerald-900">${Math.round(ans)} gtt/min</span>
-                <p class="text-xs text-emerald-800 mt-1">Formula Applied: (${vol} mL × ${drop} gtt/mL) / ${totalMins} mins = ${ans.toFixed(1)} drops/min</p>
-            `;
+            const totalMinutes = hours * 60;
+            const rate = (vol * df) / totalMinutes;
+            resEl.className = "p-3 bg-nursing-50 text-nursing-900 font-bold rounded-xl text-center text-sm";
+            resEl.innerText = `Flow Rate: ${Math.round(rate)} gtt/min (drops per minute)`;
+            resEl.classList.remove('hidden');
         }
 
-        function calculateBSA() {
-            const wt = parseFloat(document.getElementById('bsa-wt').value);
-            const ht = parseFloat(document.getElementById('bsa-ht').value);
-            const resDiv = document.getElementById('bsa-result');
-
-            if (isNaN(wt) || isNaN(ht) || wt === 0 || ht === 0) {
-                alert("Please enter valid weight and height.");
-                return;
-            }
-
-            const bsa = Math.sqrt((ht * wt) / 3600);
-            resDiv.classList.remove('hidden');
-            resDiv.innerHTML = `
-                <span class="text-xs text-emerald-700 font-semibold uppercase tracking-wider block mb-1">Calculated Body Surface Area</span>
-                <span class="text-2xl font-extrabold text-emerald-900">${bsa.toFixed(2)} m²</span>
-                <p class="text-xs text-emerald-800 mt-1">Mosteller Formula: √(${ht} cm × ${wt} kg / 3600)</p>
-            `;
+        function startModelTest() {
+            alert("Starting Model Test timer. (Demo Model Test simulation active)");
         }
 
-        // --- Notice Board Renderer ---
-        function renderNotices() {
-            const container = document.getElementById('notices-container');
-            if (!container) return;
-            container.innerHTML = noticesData.map(n => `
-                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                    <div>
-                        <div class="flex items-center space-x-2 mb-2">
-                            <span class="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">${n.tag}</span>
-                            <span class="text-xs text-slate-400"><i class="fa-solid fa-calendar mr-1"></i> ${n.date}</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-slate-900 mb-1">${n.title}</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">${n.desc}</p>
-                    </div>
-                    <button onclick="alert('Downloading official notice document...')" class="px-4 py-2 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-bold rounded-xl text-xs transition-colors whitespace-nowrap">
-                        <i class="fa-solid fa-download mr-1.5"></i> Download PDF
-                    </button>
-                </div>
-            `).join('');
-        }
-
-        // --- Contact Form Handler ---
-        function handleContactSubmit(event) {
-            event.preventDefault();
-            alert("Thank you for your inquiry! Our nursing academic support team will respond within 24 hours.");
-            event.target.reset();
-        }
+        // Initialize MCQ on load
+        window.onload = function() {
+            loadMCQ();
+        };
     </script>
 </body>
 </html>
