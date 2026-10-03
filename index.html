@@ -2,195 +2,195 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Nursing Career — Learn better, prepare smarter, build your nursing career.">
-<title>Nursing Career | Learn • Prepare • Succeed</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nursing Career — Learning Platform</title>
+<meta name="description" content="Nursing Career learning platform with notes, MCQs, dashboard and admin tools.">
 <style>
-:root{
-  --bg:#f7fbfc;--surface:#fff;--text:#102a2e;--muted:#64777a;
-  --primary:#0d9488;--primary2:#14b8a6;--accent:#f59e0b;
-  --line:#e4eeee;--shadow:0 20px 60px rgba(16,42,46,.10);
-  --radius:24px;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
-a{text-decoration:none;color:inherit}
-.container{width:min(1160px,92%);margin:auto}
-.nav{position:sticky;top:0;z-index:20;background:rgba(247,251,252,.82);backdrop-filter:blur(18px);border-bottom:1px solid rgba(228,238,238,.8)}
-.nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between}
-.logo{display:flex;align-items:center;gap:11px;font-weight:900;font-size:20px;letter-spacing:-.5px}
-.logo-mark{width:40px;height:40px;border-radius:13px;background:linear-gradient(135deg,var(--primary),#0f766e);display:grid;place-items:center;color:#fff;box-shadow:0 8px 20px rgba(13,148,136,.25)}
-.logo-mark span{font-size:21px}
-.nav-links{display:flex;gap:28px;color:#506467;font-size:14px;font-weight:700}
-.nav-links a:hover{color:var(--primary)}
-.nav-btn{padding:11px 18px;border-radius:13px;background:var(--text);color:#fff;font-weight:800;font-size:14px}
-.hero{padding:82px 0 74px;position:relative;overflow:hidden}
-.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;filter:blur(4px);z-index:-1}
-.hero:before{width:420px;height:420px;background:rgba(20,184,166,.10);right:-160px;top:-120px}
-.hero:after{width:300px;height:300px;background:rgba(245,158,11,.08);left:-180px;bottom:-150px}
-.hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:65px;align-items:center}
-.badge{display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border:1px solid #cfe8e5;background:#effaf8;color:#087f75;border-radius:999px;font-size:12px;font-weight:900;margin-bottom:20px}
-.badge i{width:7px;height:7px;background:#10b981;border-radius:50%;box-shadow:0 0 0 5px rgba(16,185,129,.10)}
-h1{font-size:clamp(44px,6vw,74px);line-height:1.02;letter-spacing:-3.5px;max-width:720px}
-.gradient{background:linear-gradient(90deg,#0f766e,#14b8a6);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p{margin:24px 0 30px;max-width:610px;color:var(--muted);font-size:18px}
-.actions{display:flex;gap:12px;flex-wrap:wrap}
-.btn{padding:14px 20px;border-radius:14px;font-weight:850;display:inline-flex;align-items:center;gap:9px;transition:.2s}
-.btn-primary{background:var(--primary);color:#fff;box-shadow:0 12px 25px rgba(13,148,136,.20)}
-.btn-primary:hover{transform:translateY(-2px);background:#0f766e}
-.btn-light{background:#fff;border:1px solid var(--line)}
-.btn-light:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
-.hero-card{position:relative}
-.nurse-card{background:linear-gradient(145deg,#0f766e,#14b8a6);min-height:430px;border-radius:34px;padding:28px;color:white;box-shadow:0 30px 70px rgba(13,148,136,.25);overflow:hidden}
-.nurse-card:before{content:"";position:absolute;width:280px;height:280px;border:1px solid rgba(255,255,255,.2);border-radius:50%;right:-100px;top:-80px}
-.nurse-icon{font-size:92px;margin-top:45px;filter:drop-shadow(0 15px 20px rgba(0,0,0,.15))}
-.nurse-card h3{font-size:30px;letter-spacing:-1px;margin-top:20px}
-.nurse-card p{color:rgba(255,255,255,.78);margin-top:5px}
-.floating{position:absolute;background:#fff;color:var(--text);border:1px solid var(--line);border-radius:18px;padding:13px 15px;box-shadow:var(--shadow);font-size:13px;font-weight:850}
-.float1{top:34px;left:-34px}.float2{right:-25px;bottom:42px}
-.stats{padding:0 0 80px}
-.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.stat{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px}
-.stat strong{font-size:28px;display:block}.stat span{color:var(--muted);font-size:13px}
-.section{padding:90px 0}
-.section-head{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:32px}
-.kicker{font-size:12px;font-weight:900;color:var(--primary);text-transform:uppercase;letter-spacing:1.5px}
-h2{font-size:clamp(30px,4vw,46px);line-height:1.1;letter-spacing:-1.8px;margin-top:8px}
-.section-head p{max-width:460px;color:var(--muted)}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:25px;transition:.25s}
-.card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:#c9e3e0}
-.card-icon{width:52px;height:52px;border-radius:16px;background:#ecfdf9;display:grid;place-items:center;font-size:25px;margin-bottom:20px}
-.card h3{font-size:19px;margin-bottom:7px}.card p{font-size:14px;color:var(--muted)}
-.card-link{display:inline-block;margin-top:18px;color:var(--primary);font-size:13px;font-weight:900}
-.feature{background:#102a2e;color:#fff;border-radius:34px;padding:48px;display:grid;grid-template-columns:1fr .8fr;gap:45px;align-items:center;overflow:hidden;position:relative}
-.feature:after{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:rgba(20,184,166,.13);right:-100px;bottom:-150px}
-.feature p{color:#aec0c2;margin:15px 0 24px;max-width:570px}
-.checks{display:grid;gap:10px}.check{font-size:14px;color:#dce9ea}.check b{color:#43e3cf;margin-right:8px}
-.dashboard{background:#f7fbfc;border-radius:24px;padding:18px;color:var(--text);position:relative;z-index:1}
-.dash-top{display:flex;justify-content:space-between;align-items:center;padding:5px 3px 18px;font-weight:900}
-.progress{height:10px;background:#e1ecec;border-radius:99px;overflow:hidden}.progress i{display:block;width:72%;height:100%;background:var(--primary);border-radius:99px}
-.mini-list{display:grid;gap:9px;margin-top:16px}.mini{background:#fff;border:1px solid var(--line);padding:12px;border-radius:13px;font-size:13px;font-weight:800;display:flex;justify-content:space-between}
-.mini span{color:var(--primary);font-size:11px}
-.cta{padding:88px 0;text-align:center}.cta-box{background:linear-gradient(135deg,#e8fbf7,#fff);border:1px solid #cde9e5;border-radius:32px;padding:58px 25px}.cta p{color:var(--muted);max-width:620px;margin:15px auto 25px}
-.footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-size:13px}
-.footer-inner{display:flex;justify-content:space-between;gap:20px}.social{display:flex;gap:15px;font-weight:800}
-@media(max-width:850px){
- .nav-links{display:none}.hero{padding-top:55px}.hero-grid,.feature{grid-template-columns:1fr}.hero-card{max-width:560px;margin:auto}
- .stat-grid{grid-template-columns:repeat(2,1fr)}.cards{grid-template-columns:1fr 1fr}.section{padding:65px 0}
- .section-head{display:block}.section-head p{margin-top:14px}.feature{padding:30px}
-}
-@media(max-width:560px){
- h1{letter-spacing:-2.5px}.hero p{font-size:16px}.float1{left:-5px}.float2{right:-5px}
- .stat-grid,.cards{grid-template-columns:1fr}.stat{padding:18px}.footer-inner{flex-direction:column}
-}
+:root{--bg:#f5faf9;--surface:#fff;--ink:#102b2d;--muted:#718385;--line:#e2ecea;--primary:#0d9488;--primary2:#14b8a6;--dark:#102b2d;--shadow:0 18px 55px rgba(16,43,45,.09);--radius:20px}*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink)}button,input,select{font:inherit}button{cursor:pointer}a{text-decoration:none;color:inherit}.hidden{display:none!important}.muted{color:var(--muted)}.eyebrow{font-size:11px;letter-spacing:1.5px;font-weight:900;color:var(--primary);margin:0 0 8px}.brand{font-weight:900;letter-spacing:-.5px;display:flex;align-items:center;gap:10px;font-size:19px}.brand span{display:grid;place-items:center;width:38px;height:38px;background:linear-gradient(135deg,var(--primary),var(--primary2));color:#fff;border-radius:12px}.auth-screen{min-height:100vh;display:grid;grid-template-columns:1.1fr .9fr;background:var(--dark)}.auth-art{padding:7vw;color:#fff;display:flex;flex-direction:column;justify-content:space-between;background:radial-gradient(circle at 70% 30%,rgba(20,184,166,.2),transparent 35%)}.auth-art h1{font-size:clamp(45px,6vw,76px);line-height:1.02;letter-spacing:-3px;margin:20px 0}.auth-art h1 b{color:#5eead4}.auth-art .muted{max-width:540px;color:#b7c9ca;font-size:17px}.auth-points{display:flex;gap:18px;flex-wrap:wrap;margin-top:28px;color:#d7e5e5;font-size:13px;font-weight:800}.auth-box{margin:auto;width:min(430px,88%);background:#fff;padding:35px;border-radius:28px;box-shadow:0 25px 80px rgba(0,0,0,.22)}.auth-tabs{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line);margin-bottom:25px}.auth-tabs button{border:0;background:none;padding:13px;color:var(--muted);font-weight:800}.auth-tabs button.active{color:var(--primary);border-bottom:2px solid var(--primary)}form{display:grid;gap:15px}label{font-size:13px;font-weight:800}input,select{width:100%;margin-top:7px;border:1px solid var(--line);background:#fbfdfd;padding:13px 14px;border-radius:12px;outline:0;color:var(--ink)}input:focus,select:focus{border-color:#8bd5cd;box-shadow:0 0 0 3px rgba(20,184,166,.09)}.btn{border:0;border-radius:13px;padding:12px 17px;font-weight:900;display:inline-flex;align-items:center;justify-content:center;gap:7px}.primary{background:var(--primary);color:#fff;box-shadow:0 10px 24px rgba(13,148,136,.18)}.primary:hover{background:#0f766e}.light{background:#f1f7f6;color:var(--ink)}.wide{width:100%;padding:14px}.demo{font-size:11px;color:var(--muted);text-align:center}.topbar{height:72px;position:sticky;top:0;z-index:10;background:rgba(255,255,255,.9);backdrop-filter:blur(15px);border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 25px;gap:30px}.search-wrap{max-width:500px;flex:1;margin:auto;position:relative}.search-wrap span{position:absolute;left:14px;top:9px;font-size:22px;color:var(--muted)}.search-wrap input{margin:0;padding-left:42px;border-radius:99px}.top-actions{display:flex;align-items:center;gap:10px}.top-actions button{border:0;background:none}.avatar{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:#dff8f4;color:#087f75;font-weight:900}.ghost{color:var(--muted);font-size:12px}.layout{display:grid;grid-template-columns:235px 1fr;min-height:calc(100vh - 72px)}.sidebar{border-right:1px solid var(--line);background:#fff;padding:25px 15px;display:flex;flex-direction:column;justify-content:space-between}.nav-item{width:100%;border:0;background:none;padding:13px 15px;border-radius:12px;text-align:left;color:#738486;font-weight:800;display:flex;gap:12px;align-items:center;margin-bottom:4px}.nav-item.active,.nav-item:hover{background:#eaf9f6;color:var(--primary)}.side-card{background:var(--dark);color:#fff;padding:18px;border-radius:18px;margin-top:30px}.side-card small{font-size:9px;color:#77dace;font-weight:900}.side-card strong{display:block;margin:7px 0;font-size:16px}.side-card p{font-size:11px;color:#a9bbbb;margin:9px 0 0}.bar{height:8px;border-radius:99px;background:#dce8e7;overflow:hidden}.bar i{display:block;height:100%;width:0;background:var(--primary2);border-radius:99px}.side-card .bar{background:#2c4749}.content{padding:36px;max-width:1400px;width:100%;margin:auto}.page{display:none}.page.active{display:block}.welcome{display:flex;align-items:center;justify-content:space-between;gap:20px;background:linear-gradient(135deg,#e9fbf8,#fff);border:1px solid #d3ebe7;border-radius:25px;padding:30px;margin-bottom:20px}.welcome h2,.page-head h2{font-size:34px;letter-spacing:-1.5px;margin:0 0 5px}.welcome p:not(.eyebrow),.page-head p:not(.eyebrow){color:var(--muted);margin:0}.metric-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:20px}.metric,.panel{background:#fff;border:1px solid var(--line);border-radius:20px}.metric{padding:20px}.metric span,.metric small{display:block;color:var(--muted);font-size:12px}.metric b{font-size:30px;display:block;margin:6px 0}.two-col{display:grid;grid-template-columns:1.15fr .85fr;gap:20px}.panel{padding:24px}.panel-head{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:20px}.panel-head h3{margin:0}.text-btn{border:0;background:none;color:var(--primary);font-weight:900}.resource-list{display:grid;gap:10px}.resource-row{display:flex;align-items:center;gap:13px;padding:12px;border:1px solid var(--line);border-radius:14px}.resource-row .icon{width:42px;height:42px;background:#effaf8;border-radius:12px;display:grid;place-items:center}.resource-row .meta{flex:1}.resource-row strong{display:block;font-size:14px}.resource-row small{color:var(--muted)}.challenge{text-align:center;padding:10px}.challenge-icon{font-size:50px}.challenge p{color:var(--muted);font-size:13px;margin:5px 0 18px}.page-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:25px}.filter-row{display:flex;gap:12px;margin-bottom:20px}.filter-row input{max-width:500px;margin:0}.filter-row select{max-width:240px;margin:0}.resource-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.note-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:19px;transition:.2s}.note-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}.note-card .pdf{font-size:28px}.note-card h3{font-size:16px;margin:13px 0 5px}.note-card p{font-size:12px;color:var(--muted);min-height:36px}.tag{display:inline-block;padding:5px 9px;background:#ecf9f6;color:#087f75;border-radius:99px;font-size:10px;font-weight:900}.note-actions{display:flex;gap:8px;margin-top:14px}.note-actions button{flex:1}.setup{padding:20px}.topic-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.topic{border:1px solid var(--line);background:#fff;border-radius:15px;padding:18px;text-align:left}.topic:hover{border-color:#8bd5cd;background:#f1fbf9}.topic b{display:block}.topic small{color:var(--muted)}.quiz-box{max-width:780px;margin:auto}.quiz-top{display:flex;justify-content:space-between;color:var(--muted);font-size:12px;margin-bottom:12px}.question{font-size:24px;line-height:1.25;margin:20px 0}.option{width:100%;text-align:left;border:1px solid var(--line);background:#fff;padding:15px;border-radius:13px;margin:8px 0;font-weight:700}.option:hover{border-color:#7ccfc6;background:#f2fbfa}.option.correct{border-color:#34d399;background:#ecfdf5}.option.wrong{border-color:#fb7185;background:#fff1f2}.quiz-footer{display:flex;justify-content:space-between;align-items:center;margin-top:20px}.subject-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.subject-card{background:#fff;border:1px solid var(--line);padding:24px;border-radius:20px}.subject-card .sicon{font-size:35px}.subject-card h3{margin:12px 0 5px}.subject-card p{color:var(--muted);font-size:13px}.progress-panel{display:flex;align-items:center;gap:35px;margin-bottom:20px}.progress-ring{width:150px;height:150px;border-radius:50%;background:conic-gradient(var(--primary) 0deg,#e8f0ef 0deg);display:grid;place-items:center;align-content:center;flex:none}.progress-ring b{font-size:31px}.progress-ring span{font-size:11px;color:var(--muted)}.progress-copy{flex:1}.progress-copy p{color:var(--muted)}.large{height:11px}.activity-list{display:grid;gap:8px}.activity{padding:12px;border-bottom:1px solid var(--line);font-size:13px}.activity:last-child{border:0}.admin-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px}.admin-stat{display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px solid var(--line)}.admin-stat b{color:var(--primary)}.admin-actions{display:flex;gap:10px;margin:18px 0;flex-wrap:wrap}.warning{font-size:11px;color:#946b10;background:#fff9e8;padding:12px;border-radius:10px}.admin-note-row{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding:13px 0}.admin-note-row:last-child{border:0}.admin-note-row small{color:var(--muted)}#toast{position:fixed;right:22px;bottom:22px;z-index:99;background:#102b2d;color:#fff;padding:12px 16px;border-radius:12px;box-shadow:var(--shadow);opacity:0;transform:translateY(10px);transition:.25s;font-size:13px}#toast.show{opacity:1;transform:translateY(0)}
+@media(max-width:1000px){.layout{grid-template-columns:75px 1fr}.sidebar{padding:18px 10px}.nav-item span,.side-card{display:none}.nav-item{justify-content:center}.metric-grid{grid-template-columns:repeat(2,1fr)}.resource-grid{grid-template-columns:repeat(2,1fr)}.topic-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){.auth-screen{grid-template-columns:1fr}.auth-art{display:none}.topbar{padding:0 12px;gap:10px}.topbar>.brand{font-size:0}.topbar>.brand span{font-size:19px}.search-wrap{max-width:none}.top-actions .ghost{display:none}.content{padding:20px 13px}.welcome,.page-head{display:block}.welcome .btn{margin-top:18px}.two-col,.admin-grid{grid-template-columns:1fr}.resource-grid,.subject-grid{grid-template-columns:1fr}.filter-row{flex-direction:column}.filter-row input,.filter-row select{max-width:none}.progress-panel{align-items:flex-start;flex-direction:column}.topic-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:430px){.metric-grid{grid-template-columns:1fr 1fr}.metric b{font-size:24px}.layout{grid-template-columns:62px 1fr}.nav-item{padding:13px 8px}.auth-box{padding:25px}}
+
 </style>
 </head>
 <body>
-<header class="nav">
-  <div class="container nav-inner">
-    <a class="logo" href="#"><div class="logo-mark"><span>✚</span></div>Nursing Career</a>
-    <nav class="nav-links">
-      <a href="#resources">Resources</a><a href="#subjects">Subjects</a><a href="#practice">Practice</a><a href="#career">Career</a>
-    </nav>
-    <a class="nav-btn" href="#resources">Start Learning →</a>
+<div id="toast"></div>
+
+<!-- AUTH -->
+<section id="authScreen" class="auth-screen">
+  <div class="auth-art">
+    <div class="brand"><span>✚</span> Nursing Career</div>
+    <div>
+      <p class="eyebrow">NURSING EDUCATION PLATFORM</p>
+      <h1>Learn. Practice.<br><b>Become confident.</b></h1>
+      <p class="muted">Your organized home for nursing notes, exam-focused MCQs and career preparation.</p>
+      <div class="auth-points"><span>✓ Premium notes</span><span>✓ Topic-wise MCQs</span><span>✓ Progress tracking</span></div>
+    </div>
   </div>
+  <div class="auth-box">
+    <div class="auth-tabs"><button class="active" data-auth="login">Login</button><button data-auth="signup">Create account</button></div>
+    <form id="loginForm">
+      <label>Email<input id="loginEmail" type="email" required placeholder="you@example.com"></label>
+      <label>Password<input id="loginPassword" type="password" required placeholder="••••••••"></label>
+      <button class="btn primary wide">Login →</button>
+      <p class="demo">Demo: <b>student@nursingcareer.com</b> / <b>123456</b></p>
+    </form>
+    <form id="signupForm" class="hidden">
+      <label>Full name<input id="signupName" required placeholder="Your name"></label>
+      <label>Email<input id="signupEmail" type="email" required placeholder="you@example.com"></label>
+      <label>Password<input id="signupPassword" type="password" minlength="6" required placeholder="Minimum 6 characters"></label>
+      <button class="btn primary wide">Create account →</button>
+    </form>
+  </div>
+</section>
+
+<!-- APP -->
+<div id="app" class="hidden">
+<header class="topbar">
+  <div class="brand"><span>✚</span> Nursing Career</div>
+  <div class="search-wrap"><span>⌕</span><input id="globalSearch" placeholder="Search notes, subjects, MCQs..."></div>
+  <div class="top-actions"><button id="themeBtn" title="Theme">◐</button><div class="avatar" id="avatar">NC</div><button id="logoutBtn" class="ghost">Logout</button></div>
 </header>
+<div class="layout">
+<aside class="sidebar">
+  <nav>
+    <button class="nav-item active" data-page="home">⌂ <span>Dashboard</span></button>
+    <button class="nav-item" data-page="notes">▤ <span>PDF Notes</span></button>
+    <button class="nav-item" data-page="mcq">☑ <span>MCQ Practice</span></button>
+    <button class="nav-item" data-page="subjects">◈ <span>Subjects</span></button>
+    <button class="nav-item" data-page="progress">◒ <span>My Progress</span></button>
+    <button class="nav-item admin-only hidden" data-page="admin">⚙ <span>Admin Panel</span></button>
+  </nav>
+  <div class="side-card"><small>YOUR DAILY GOAL</small><strong id="goalText">0 / 20 MCQs</strong><div class="bar"><i id="goalBar"></i></div><p>Keep your streak alive.</p></div>
+</aside>
 
-<main>
-<section class="hero">
-<div class="container hero-grid">
-<div>
-  <div class="badge"><i></i> Built for ambitious nursing students</div>
-  <h1>Learn better.<br><span class="gradient">Prepare smarter.</span></h1>
-  <p>A focused learning platform for nursing students—premium notes, exam-focused practice, lectures and career resources, all in one place.</p>
-  <div class="actions">
-    <a class="btn btn-primary" href="#resources">Explore Resources →</a>
-    <a class="btn btn-light" href="#subjects">Browse Subjects</a>
-  </div>
-</div>
-<div class="hero-card">
-  <div class="floating float1">🩺 Exam Focused</div>
-  <div class="floating float2">✓ Learn at your pace</div>
-  <div class="nurse-card">
-    <div class="nurse-icon">👩‍⚕️</div>
-    <h3>Your nursing journey, organized.</h3>
-    <p>Study • Practice • Grow • Succeed</p>
-  </div>
-</div>
-</div>
-</section>
+<main class="content">
+  <!-- HOME -->
+  <section class="page active" id="page-home">
+    <div class="welcome"><div><p class="eyebrow">GOOD TO SEE YOU</p><h2>Hi, <span id="userName">Student</span> 👋</h2><p>Ready for today's nursing study session?</p></div><button class="btn primary" data-page-jump="mcq">Start practice →</button></div>
+    <div class="metric-grid">
+      <div class="metric"><span>MCQs completed</span><b id="mMcq">0</b><small>Keep practicing</small></div>
+      <div class="metric"><span>Correct answers</span><b id="mCorrect">0</b><small id="accuracy">0% accuracy</small></div>
+      <div class="metric"><span>Notes viewed</span><b id="mNotes">0</b><small>Knowledge library</small></div>
+      <div class="metric"><span>Study streak</span><b id="mStreak">1</b><small>days</small></div>
+    </div>
+    <div class="two-col">
+      <div class="panel"><div class="panel-head"><div><p class="eyebrow">CONTINUE LEARNING</p><h3>Recommended for you</h3></div><button class="text-btn" data-page-jump="notes">View all →</button></div><div id="recommended" class="resource-list"></div></div>
+      <div class="panel"><div class="panel-head"><div><p class="eyebrow">QUICK PRACTICE</p><h3>Today's challenge</h3></div></div><div class="challenge"><div class="challenge-icon">🧠</div><h3>Test your fundamentals</h3><p>10 carefully selected questions from core nursing topics.</p><button class="btn primary" data-page-jump="mcq">Take challenge →</button></div></div>
+    </div>
+  </section>
 
-<section class="stats">
-<div class="container stat-grid">
- <div class="stat"><strong>24/7</strong><span>Learn anytime</span></div>
- <div class="stat"><strong>100%</strong><span>Student focused</span></div>
- <div class="stat"><strong>∞</strong><span>Practice potential</span></div>
- <div class="stat"><strong>1</strong><span>Career destination</span></div>
-</div>
-</section>
+  <!-- NOTES -->
+  <section class="page" id="page-notes">
+    <div class="page-head"><div><p class="eyebrow">KNOWLEDGE LIBRARY</p><h2>PDF Notes</h2><p>Search and open your study resources.</p></div><button class="btn primary admin-only hidden" id="addNoteBtn">＋ Add note</button></div>
+    <div class="filter-row"><input id="noteSearch" placeholder="Search notes..."><select id="noteSubject"><option value="">All subjects</option></select></div>
+    <div id="notesGrid" class="resource-grid"></div>
+  </section>
 
-<section class="section" id="resources">
-<div class="container">
-<div class="section-head">
-<div><div class="kicker">Everything you need</div><h2>Study without the clutter.</h2></div>
-<p>Organized resources designed to help you spend less time searching and more time learning.</p>
-</div>
-<div class="cards">
- <article class="card"><div class="card-icon">📚</div><h3>Premium Notes</h3><p>Clear, structured notes for core nursing subjects with exam-relevant points.</p><a class="card-link" href="#">View notes →</a></article>
- <article class="card"><div class="card-icon">🎯</div><h3>Exam Preparation</h3><p>Focused revision materials, important topics and smart preparation strategies.</p><a class="card-link" href="#">Prepare now →</a></article>
- <article class="card"><div class="card-icon">🧠</div><h3>MCQ & Practice</h3><p>Test your understanding with topic-wise questions and quick practice sessions.</p><a class="card-link" href="#">Practice MCQs →</a></article>
- <article class="card" id="subjects"><div class="card-icon">🩺</div><h3>Nursing Subjects</h3><p>Explore subjects in a clean, organized learning path built around your syllabus.</p><a class="card-link" href="#">Explore subjects →</a></article>
- <article class="card"><div class="card-icon">🎥</div><h3>Lecture Sheets</h3><p>Class-ready resources that make difficult nursing concepts easier to revise.</p><a class="card-link" href="#">Open lectures →</a></article>
- <article class="card" id="career"><div class="card-icon">🚀</div><h3>Career Guidance</h3><p>Practical resources for building confidence and planning your nursing career.</p><a class="card-link" href="#">Explore career →</a></article>
-</div>
-</div>
-</section>
+  <!-- MCQ -->
+  <section class="page" id="page-mcq">
+    <div class="page-head"><div><p class="eyebrow">EXAM PRACTICE</p><h2>MCQ Practice</h2><p>Choose a topic and test your knowledge.</p></div></div>
+    <div id="mcqSetup" class="panel setup"><div class="topic-grid" id="topicGrid"></div></div>
+    <div id="quizBox" class="quiz-box hidden"></div>
+  </section>
 
-<section class="section" id="practice">
-<div class="container">
-<div class="feature">
-<div>
- <div class="kicker" style="color:#5eead4">Smart revision</div>
- <h2>Turn study time into progress.</h2>
- <p>Keep your learning journey simple: choose a topic, study the essentials, practice what you learned, and track your progress.</p>
- <div class="checks">
-  <div class="check"><b>✓</b> Topic-focused learning</div>
-  <div class="check"><b>✓</b> Exam-oriented revision</div>
-  <div class="check"><b>✓</b> Practice-first approach</div>
- </div>
-</div>
-<div class="dashboard">
- <div class="dash-top"><span>My Learning</span><span>72%</span></div>
- <div class="progress"><i></i></div>
- <div class="mini-list">
-  <div class="mini">Fundamentals of Nursing <span>Done</span></div>
-  <div class="mini">Community Health Nursing <span>Continue</span></div>
-  <div class="mini">Medical-Surgical Nursing <span>Start</span></div>
- </div>
-</div>
-</div>
-</div>
-</section>
+  <!-- SUBJECTS -->
+  <section class="page" id="page-subjects">
+    <div class="page-head"><div><p class="eyebrow">CURRICULUM</p><h2>Nursing Subjects</h2><p>Explore your core study areas.</p></div></div>
+    <div id="subjectGrid" class="subject-grid"></div>
+  </section>
 
-<section class="cta">
-<div class="container">
-<div class="cta-box">
- <div class="kicker">Your next chapter starts here</div>
- <h2>Build your nursing career with confidence.</h2>
- <p>Make your study routine more organized, focused and consistent—one topic at a time.</p>
- <a class="btn btn-primary" href="#resources">Start Learning →</a>
-</div>
-</div>
-</section>
+  <!-- PROGRESS -->
+  <section class="page" id="page-progress">
+    <div class="page-head"><div><p class="eyebrow">YOUR JOURNEY</p><h2>My Progress</h2><p>See how your practice is improving.</p></div></div>
+    <div class="progress-panel panel"><div class="progress-ring"><b id="ringValue">0%</b><span>accuracy</span></div><div class="progress-copy"><h3>Consistency beats intensity.</h3><p>Practice regularly and use the notes to review questions you missed.</p><div class="bar large"><i id="progressBar"></i></div></div></div>
+    <div class="panel"><div class="panel-head"><h3>Recent activity</h3></div><div id="activityList" class="activity-list"></div></div>
+  </section>
+
+  <!-- ADMIN -->
+  <section class="page" id="page-admin">
+    <div class="page-head"><div><p class="eyebrow">ADMINISTRATION</p><h2>Admin Panel</h2><p>Manage demo content and platform data.</p></div></div>
+    <div class="admin-grid">
+      <div class="panel"><h3>Content overview</h3><div class="admin-stat"><span>Notes</span><b id="adminNotes">0</b></div><div class="admin-stat"><span>MCQs</span><b id="adminMcq">0</b></div><div class="admin-stat"><span>Subjects</span><b id="adminSubjects">0</b></div></div>
+      <div class="panel"><h3>Quick actions</h3><div class="admin-actions"><button class="btn primary" id="adminAddNote">＋ Add demo note</button><button class="btn light" id="resetData">Reset demo data</button></div><p class="warning">This browser-only admin is a prototype. For production, connect it to a secure backend and role-based authentication.</p></div>
+    </div>
+    <div class="panel"><div class="panel-head"><h3>Notes manager</h3></div><div id="adminNotesList"></div></div>
+  </section>
 </main>
-
-<footer class="footer">
-<div class="container footer-inner">
- <div>© 2026 Nursing Career. Learn • Prepare • Succeed.</div>
- <div class="social"><a href="#">Facebook</a><a href="#">YouTube</a><a href="#">GitHub</a></div>
 </div>
-</footer>
+</div>
+<script>
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const seed={
+ users:[{name:"Demo Student",email:"student@nursingcareer.com",password:"123456",role:"student"},{name:"Admin",email:"admin@nursingcareer.com",password:"admin123",role:"admin"}],
+ notes:[
+ {id:1,title:"Fundamentals of Nursing — Master Notes",subject:"Fundamentals",desc:"Core concepts, nursing process, vital signs and safety.",file:"#"},
+ {id:2,title:"Medical-Surgical Nursing — Revision",subject:"Medical-Surgical",desc:"High-yield revision points for medical-surgical nursing.",file:"#"},
+ {id:3,title:"Community Health Nursing",subject:"Community Health",desc:"Important concepts for community and public health nursing.",file:"#"},
+ {id:4,title:"Pharmacology — Exam Essentials",subject:"Pharmacology",desc:"Drug classifications, calculations and key precautions.",file:"#"},
+ {id:5,title:"Midwifery — Lecture Sheet",subject:"Midwifery",desc:"Pregnancy, labour, delivery and postpartum essentials.",file:"#"},
+ {id:6,title:"Anatomy & Physiology Quick Review",subject:"Anatomy",desc:"Fast revision of systems and essential structures.",file:"#"}],
+ subjects:[
+ ["🩺","Fundamentals","Nursing process, safety, vital signs and basic care."],
+ ["🏥","Medical-Surgical","Adult health, conditions and nursing management."],
+ ["👶","Midwifery","Maternal health, labour, delivery and newborn care."],
+ ["🧠","Mental Health","Psychiatric nursing concepts and communication."],
+ ["🌍","Community Health","Public health, epidemiology and prevention."],
+ ["💊","Pharmacology","Medication safety, drug classes and calculations."],
+ ["🫀","Anatomy","Body systems, structures and functions."],
+ ["🥗","Nutrition","Therapeutic nutrition and dietary principles."],
+ ["👨‍👩‍👧","Child Health","Pediatric nursing and growth & development."]
+ ],
+ mcqs:[
+ {id:1,topic:"Fundamentals",q:"Which step of the nursing process involves collecting patient information?",a:["Assessment","Diagnosis","Planning","Evaluation"],correct:0},
+ {id:2,topic:"Fundamentals",q:"Which vital sign is commonly measured in beats per minute?",a:["Temperature","Pulse","Respiration","Blood pressure"],correct:1},
+ {id:3,topic:"Fundamentals",q:"The primary purpose of hand hygiene is to:",a:["Improve skin comfort","Prevent infection transmission","Reduce fatigue","Measure circulation"],correct:1},
+ {id:4,topic:"Medical-Surgical",q:"Which organ primarily pumps blood through the body?",a:["Liver","Kidney","Heart","Lung"],correct:2},
+ {id:5,topic:"Medical-Surgical",q:"A common sign of hypoglycemia is:",a:["Sweating and tremor","Dry skin only","Bradycardia only","Jaundice"],correct:0},
+ {id:6,topic:"Community Health",q:"Immunization primarily helps to:",a:["Treat fractures","Prevent infectious diseases","Increase blood pressure","Replace nutrition"],correct:1},
+ {id:7,topic:"Midwifery",q:"The first stage of labour is generally associated with:",a:["Cervical dilation","Placental delivery","Breastfeeding","Neonatal bathing"],correct:0},
+ {id:8,topic:"Pharmacology",q:"The safest general principle before administering medication is to:",a:["Skip identification","Verify the medication and patient","Guess the dose","Ignore allergies"],correct:1},
+ {id:9,topic:"Anatomy",q:"Which system is primarily responsible for gas exchange?",a:["Digestive","Respiratory","Endocrine","Skeletal"],correct:1},
+ {id:10,topic:"Mental Health",q:"Therapeutic communication is intended to:",a:["Promote patient expression and trust","Argue with patients","End conversations quickly","Avoid listening"],correct:0},
+ {id:11,topic:"Child Health",q:"Growth and development assessment helps nurses to:",a:["Identify developmental patterns and concerns","Diagnose every illness","Replace vaccination","Avoid family education"],correct:0},
+ {id:12,topic:"Nutrition",q:"A balanced diet should generally provide:",a:["Only carbohydrates","A variety of essential nutrients","Only protein","Only fluids"],correct:1}
+ ]};
+function loadData(){if(!localStorage.ncData)localStorage.ncData=JSON.stringify(seed);return JSON.parse(localStorage.ncData)}
+function saveData(){localStorage.ncData=JSON.stringify(data)}
+let data=loadData(), current=JSON.parse(localStorage.ncUser||"null"), stats=JSON.parse(localStorage.ncStats||'{"done":0,"correct":0,"notes":0,"streak":1,"activity":[]}'), quiz=null;
+function toast(m){let t=$("#toast");t.textContent=m;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2200)}
+function initials(n){return n.split(" ").map(x=>x[0]).slice(0,2).join("").toUpperCase()}
+function showApp(){if(!current)return;$("#authScreen").classList.add("hidden");$("#app").classList.remove("hidden");$("#userName").textContent=current.name.split(" ")[0];$("#avatar").textContent=initials(current.name);$$(".admin-only").forEach(x=>x.classList.toggle("hidden",current.role!=="admin"));renderAll()}
+function login(e){e.preventDefault();let email=$("#loginEmail").value.trim().toLowerCase(),pass=$("#loginPassword").value;let u=data.users.find(x=>x.email===email&&x.password===pass);if(!u)return toast("Invalid email or password");current=u;localStorage.ncUser=JSON.stringify(u);toast("Welcome back!");showApp()}
+$("#loginForm").addEventListener("submit",login);
+$("#signupForm").addEventListener("submit",e=>{e.preventDefault();let name=$("#signupName").value.trim(),email=$("#signupEmail").value.trim().toLowerCase(),password=$("#signupPassword").value;if(data.users.some(u=>u.email===email))return toast("Email already exists");let u={name,email,password,role:"student"};data.users.push(u);saveData();current=u;localStorage.ncUser=JSON.stringify(u);toast("Account created!");showApp()});
+$$(".auth-tabs button").forEach(b=>b.onclick=()=>{$$(".auth-tabs button").forEach(x=>x.classList.remove("active"));b.classList.add("active");$("#loginForm").classList.toggle("hidden",b.dataset.auth!=="login");$("#signupForm").classList.toggle("hidden",b.dataset.auth!=="signup")});
+$("#logoutBtn").onclick=()=>{localStorage.removeItem("ncUser");location.reload()};
+function nav(page){$$(".page").forEach(x=>x.classList.remove("active"));$("#page-"+page).classList.add("active");$$(".nav-item").forEach(x=>x.classList.toggle("active",x.dataset.page===page));if(page==="notes")renderNotes();if(page==="admin")renderAdmin()}
+$$(".nav-item").forEach(b=>b.onclick=()=>nav(b.dataset.page));$$("[data-page-jump]").forEach(b=>b.onclick=()=>nav(b.dataset.pageJump));
+function renderAll(){renderNotes();renderSubjects();renderTopics();renderHome();renderProgress();renderAdmin();$("#noteSubject").innerHTML='<option value="">All subjects</option>'+[...new Set(data.notes.map(n=>n.subject))].map(s=>`<option>${s}</option>`).join("")}
+function renderHome(){let s=stats;$("#mMcq").textContent=s.done;$("#mCorrect").textContent=s.correct;$("#accuracy").textContent=(s.done?Math.round(s.correct/s.done*100):0)+"% accuracy";$("#mNotes").textContent=s.notes;$("#mStreak").textContent=s.streak;$("#goalText").textContent=`${Math.min(s.done,20)} / 20 MCQs`;$("#goalBar").style.width=Math.min(s.done/20*100,100)+"%";$("#recommended").innerHTML=data.notes.slice(0,4).map(n=>`<div class="resource-row"><div class="icon">📄</div><div class="meta"><strong>${n.title}</strong><small>${n.subject}</small></div><button class="text-btn" onclick="openNote(${n.id})">Open</button></div>`).join("")}
+function openNote(id){let n=data.notes.find(x=>x.id===id);stats.notes++;saveStats();toast("Opening "+n.title);window.open(n.file==="#"?"about:blank":n.file,"_blank")}
+function renderNotes(){let q=($("#noteSearch")?.value||"").toLowerCase(),sub=$("#noteSubject")?.value||"";let arr=data.notes.filter(n=>(!q||(n.title+n.subject+n.desc).toLowerCase().includes(q))&&(!sub||n.subject===sub));$("#notesGrid").innerHTML=arr.map(n=>`<article class="note-card"><div class="pdf">📄</div><span class="tag">${n.subject}</span><h3>${n.title}</h3><p>${n.desc}</p><div class="note-actions"><button class="btn light" onclick="openNote(${n.id})">Open PDF</button></div></article>`).join("")||"<div class='panel'>No notes found.</div>"}
+$("#noteSearch").addEventListener("input",renderNotes);$("#noteSubject").addEventListener("change",renderNotes);
+function renderSubjects(){$("#subjectGrid").innerHTML=data.subjects.map(s=>`<article class="subject-card"><div class="sicon">${s[0]}</div><h3>${s[1]}</h3><p>${s[2]}</p><button class="text-btn" onclick="startTopic('${s[1]}')">Practice →</button></article>`).join("")}
+function renderTopics(){let topics=[...new Set(data.mcqs.map(x=>x.topic))];$("#topicGrid").innerHTML=topics.map(t=>`<button class="topic" onclick="startTopic('${t}')"><b>${t}</b><small>${data.mcqs.filter(x=>x.topic===t).length} questions</small></button>`).join("")}
+function startTopic(topic){let qs=data.mcqs.filter(x=>x.topic===topic);if(!qs.length)return;quiz={topic,qs,idx:0,correct:0,answered:false};$("#mcqSetup").classList.add("hidden");$("#quizBox").classList.remove("hidden");renderQuestion()}
+function renderQuestion(){let q=quiz.qs[quiz.idx],pct=Math.round((quiz.idx/quiz.qs.length)*100);$("#quizBox").innerHTML=`<div class="panel"><div class="quiz-top"><span>${quiz.topic} · Question ${quiz.idx+1}/${quiz.qs.length}</span><span>${pct}%</span></div><div class="bar"><i style="width:${pct}%"></i></div><h3 class="question">${q.q}</h3><div>${q.a.map((a,i)=>`<button class="option" onclick="answer(${i})">${String.fromCharCode(65+i)}. ${a}</button>`).join("")}</div><div class="quiz-footer"><small>${quiz.answered?"Choose Next to continue.":"Select one answer."}</small><button class="btn primary" id="nextBtn" disabled onclick="nextQuestion()">Next →</button></div></div>`}
+function answer(i){if(quiz.answered)return;quiz.answered=true;let q=quiz.qs[quiz.idx],opts=$$(".option");opts.forEach((o,x)=>{if(x===q.correct)o.classList.add("correct");if(x===i&&i!==q.correct)o.classList.add("wrong")});if(i===q.correct){quiz.correct++;stats.correct++;toast("Correct! 🎉")}else toast("Review this concept.");stats.done++;stats.activity.unshift(`${q.topic}: ${i===q.correct?"Correct":"Needs review"}`);stats.activity=stats.activity.slice(0,8);saveStats();$("#nextBtn").disabled=false;renderHome()}
+function nextQuestion(){quiz.idx++;if(quiz.idx>=quiz.qs.length)return finishQuiz();renderQuestion()}
+function finishQuiz(){let score=Math.round(quiz.correct/quiz.qs.length*100);$("#quizBox").innerHTML=`<div class="panel" style="text-align:center;padding:45px"><div style="font-size:60px">🎉</div><p class="eyebrow">QUIZ COMPLETE</p><h2>${score}%</h2><p>You answered ${quiz.correct} of ${quiz.qs.length} correctly.</p><button class="btn primary" onclick="nav('mcq');$('#mcqSetup').classList.remove('hidden');$('#quizBox').classList.add('hidden')">Practice another →</button></div>`;renderProgress()}
+function startTopicFromSearch(topic){nav("mcq");startTopic(topic)}
+function renderProgress(){let acc=stats.done?Math.round(stats.correct/stats.done*100):0;$("#ringValue").textContent=acc+"%";$(".progress-ring").style.background=`conic-gradient(var(--primary) ${acc*3.6}deg,#e8f0ef 0deg)`;$("#progressBar").style.width=acc+"%";$("#activityList").innerHTML=stats.activity.length?stats.activity.map(x=>`<div class="activity">${x}</div>`).join(""):"<div class='activity muted'>No activity yet. Start an MCQ session.</div>"}
+function saveStats(){localStorage.ncStats=JSON.stringify(stats);renderProgress()}
+function renderAdmin(){if(current?.role!=="admin")return;$("#adminNotes").textContent=data.notes.length;$("#adminMcq").textContent=data.mcqs.length;$("#adminSubjects").textContent=data.subjects.length;$("#adminNotesList").innerHTML=data.notes.map(n=>`<div class="admin-note-row"><div><b>${n.title}</b><br><small>${n.subject}</small></div><button class="text-btn" onclick="deleteNote(${n.id})">Delete</button></div>`).join("")}
+function deleteNote(id){data.notes=data.notes.filter(n=>n.id!==id);saveData();renderAll();toast("Note deleted")}
+function addDemoNote(){let id=Date.now();data.notes.push({id,title:"New Nursing Revision Sheet",subject:"New Resource",desc:"Demo note added from the admin panel.",file:"#"});saveData();renderAll();toast("Demo note added")}
+$("#adminAddNote").onclick=addDemoNote;$("#addNoteBtn").onclick=addDemoNote;$("#resetData").onclick=()=>{if(confirm("Reset all demo content?")){data=JSON.parse(JSON.stringify(seed));saveData();stats={done:0,correct:0,notes:0,streak:1,activity:[]};saveStats();renderAll();toast("Demo data reset")}};
+$("#globalSearch").addEventListener("input",e=>{let q=e.target.value.trim().toLowerCase();if(!q)return;let n=data.notes.find(x=>(x.title+x.subject+x.desc).toLowerCase().includes(q));let s=data.subjects.find(x=>x.join(" ").toLowerCase().includes(q));let m=data.mcqs.find(x=>(x.q+x.topic+x.a.join(" ")).toLowerCase().includes(q));if(n){nav("notes");$("#noteSearch").value=q;renderNotes()}else if(s){nav("subjects")}else if(m){nav("mcq");startTopic(m.topic)}});
+$("#themeBtn").onclick=()=>{document.body.classList.toggle("dark");document.body.style.setProperty("--bg",document.body.classList.contains("dark")?"#0b1c1d":"#f5faf9");document.body.style.setProperty("--surface",document.body.classList.contains("dark")?"#122627":"#fff");document.body.style.setProperty("--ink",document.body.classList.contains("dark")?"#edfafa":"#102b2d")};
+if(current)showApp();
+
+</script>
 </body>
 </html>
