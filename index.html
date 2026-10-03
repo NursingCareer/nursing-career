@@ -95,15 +95,17 @@ const LOGO="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gIoSUNDX1BST0ZJT
 const SUBJECTS=["Fundamentals of Nursing", "Anatomy & Physiology", "Medical-Surgical Nursing", "Pharmacology", "Maternal & Child Health", "Pediatric Nursing", "Community Health Nursing", "Mental Health Nursing", "Nutrition", "Emergency & Critical Care"];
 const Q=[];
 async function loadMCQData(){
-  const r=await fetch('./mcqs.json');
+  const r=await fetch('./mcqs.json?v=2');
   if(!r.ok) throw new Error('MCQ data missing');
   const d=await r.json();
   Q.push(...d);
 }
 ;
 
-const UNIQUE_QUESTION_COUNT = new Set(Q.map(x=>x.q)).size;
-if (UNIQUE_QUESTION_COUNT !== 5000) console.warn("Question uniqueness check:", UNIQUE_QUESTION_COUNT);
+function checkQuestionDatabase(){
+  const uniqueCount = new Set(Q.map(x=>x.q)).size;
+  console.log("Nursing Career MCQ database:", Q.length, "questions,", uniqueCount, "unique");
+}
 const NOTES=[
 ["Fundamentals of Nursing","Fundamentals Quick Revision","Nursing process, vital signs, asepsis, documentation, safety and basic procedures."],
 ["Anatomy & Physiology","A&P High-Yield Review","Major organs, systems, circulation, respiration, renal function and endocrine basics."],
@@ -138,6 +140,17 @@ function answer(i){if(answered)return;answered=true;let x=quiz[qi],ops=document.
 function nextQ(){qi++;answered=false;renderQuiz()}
 function renderSubjects(){document.getElementById("subjectsGrid").innerHTML=SUBJECTS.map((s,i)=>`<div class="card subject" onclick="startQuiz('${s.replace(/'/g,"\\'")}')"><div class="sicon">${["🩺","🫀","🏥","💊","👶","🧒","🌍","🧠","🥗","🚑"][i]}</div><b>${s}</b><span>500 MCQs • 10-question quiz →</span></div>`).join("")}
 function renderNotes(){document.getElementById("notesGrid").innerHTML=NOTES.map(n=>`<div class="card note"><span class="pill">${n[0]}</span><h3>${n[1]}</h3><p>${n[2]}</p><button class="secondary" onclick="startQuiz('${n[0].replace(/'/g,"\\'")}')">Practice this subject →</button></div>`).join("")}
-(function(){let s=localStorage.getItem("nc_session");if(s){try{enter(JSON.parse(s))}catch(e){}}})();
+(async function(){
+  try{
+    await loadMCQData();
+    checkQuestionDatabase();
+    let s=localStorage.getItem("nc_session");
+    if(s){try{enter(JSON.parse(s))}catch(e){localStorage.removeItem("nc_session")}}
+  }catch(e){
+    console.error("MCQ database load failed:",e);
+    document.body.insertAdjacentHTML("beforeend",
+      '<div style="position:fixed;inset:auto 12px 12px 12px;background:#8b1e2d;color:#fff;padding:14px 16px;border-radius:14px;z-index:9999;font-weight:700">MCQ database failed to load. Make sure <b>mcqs.json</b> is in the same GitHub folder as <b>index.html</b>.</div>');
+  }
+})();
 </script>
 </body></html>
