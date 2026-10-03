@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nursing Career - Learn Nursing. Build Your Career.</title>
-    <!-- Tailwind CSS CDN for Modern Styling -->
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -31,37 +31,31 @@
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
         .glass-card {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(16, 185, 129, 0.2);
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 antialiased">
+<body class="bg-gray-50 text-gray-800 antialiased flex flex-col min-h-screen">
 
     <!-- Sticky Header -->
     <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Logo & Brand -->
-            <div class="flex items-center space-x-3 cursor-pointer" onclick="showSection('home')">
-                <img src="logo.jpg" alt="Nursing Career Logo" class="w-12 h-12 rounded-xl object-cover shadow-md border-2 border-nursing-500" onerror="this.src='https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?w=100&h=100&fit=crop'">
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="switchSection('home')">
+                <div class="w-12 h-12 bg-nursing-600 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-md border-2 border-nursing-500">NC</div>
                 <div>
                     <h1 class="text-xl font-extrabold text-nursing-900 tracking-tight">NURSING CAREER</h1>
                     <p class="text-xs font-medium text-nursing-600">Learn Nursing. Build Your Career.</p>
                 </div>
             </div>
 
-            <!-- Navigation Links (Desktop) -->
             <nav class="hidden lg:flex items-center space-x-1 font-semibold text-sm">
-                <button onclick="showSection('home')" class="nav-btn px-4 py-2 rounded-xl text-nursing-700 bg-nursing-50 transition" id="btn-home">HOME</button>
-                <button onclick="showSection('subjects')" class="nav-btn px-4 py-2 rounded-xl text-gray-600 hover:text-nursing-700 hover:bg-nursing-50 transition" id="btn-subjects">SUBJECTS</button>
-                <button onclick="showSection('mcq')" class="nav-btn px-4 py-2 rounded-xl text-gray-600 hover:text-nursing-700 hover:bg-nursing-50 transition" id="btn-mcq">MCQ PRACTICE</button>
-                <button onclick="showSection('modeltest')" class="nav-btn px-4 py-2 rounded-xl text-gray-600 hover:text-nursing-700 hover:bg-nursing-50 transition" id="btn-modeltest">MODEL TEST</button>
-                <button onclick="showSection('drugcalc')" class="nav-btn px-4 py-2 rounded-xl text-gray-600 hover:text-nursing-700 hover:bg-nursing-50 transition" id="btn-drugcalc">DRUG CALCULATION</button>
-                <button onclick="showSection('notice')" class="nav-btn px-4 py-2 rounded-xl text-gray-600 hover:text-nursing-700 hover:bg-nursing-50 transition" id="btn-notice">NOTICE</button>
+                <button onclick="switchSection('home')" class="nav-btn px-4 py-2 rounded-xl text-nursing-700 bg-nursing-50 transition" id="btn-home">HOME</button>
+                <button onclick="switchSection('mcq')" class="nav-btn px-4 py-2 rounded-xl text-gray-600 hover:text-nursing-700 hover:bg-nursing-50 transition" id="btn-mcq">MCQ PRACTICE</button>
+                <button onclick="switchSection('drugcalc')" class="nav-btn px-4 py-2 rounded-xl text-gray-600 hover:text-nursing-700 hover:bg-nursing-50 transition" id="btn-drugcalc">DRUG CALCULATION</button>
             </nav>
 
-            <!-- Mobile Menu Toggle Button -->
             <div class="lg:hidden flex items-center">
                 <button onclick="toggleMobileMenu()" class="text-gray-700 focus:outline-none p-2 rounded-lg hover:bg-gray-100">
                     <i class="fa-solid fa-bars text-2xl"></i>
@@ -69,244 +63,64 @@
             </div>
         </div>
 
-        <!-- Mobile Dropdown Menu -->
         <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-gray-100 px-4 pt-2 pb-4 space-y-1 shadow-lg">
-            <button onclick="showSection('home'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg font-medium text-nursing-700 bg-nursing-50">HOME</button>
-            <button onclick="showSection('subjects'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg font-medium text-gray-700 hover:bg-gray-100">SUBJECTS</button>
-            <button onclick="showSection('mcq'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg font-medium text-gray-700 hover:bg-gray-100">MCQ PRACTICE</button>
-            <button onclick="showSection('modeltest'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg font-medium text-gray-700 hover:bg-gray-100">MODEL TEST</button>
-            <button onclick="showSection('drugcalc'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg font-medium text-gray-700 hover:bg-gray-100">DRUG CALCULATION</button>
-            <button onclick="showSection('notice'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg font-medium text-gray-700 hover:bg-gray-100">NOTICE</button>
+            <button onclick="switchSection('home'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg font-medium text-nursing-700 bg-nursing-50">HOME</button>
+            <button onclick="switchSection('mcq'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg font-medium text-gray-700 hover:bg-gray-100">MCQ PRACTICE</button>
+            <button onclick="switchSection('drugcalc'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg font-medium text-gray-700 hover:bg-gray-100">DRUG CALCULATION</button>
         </div>
     </header>
 
     <!-- Main Content Container -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
 
-        <!-- ================= HOME / DASHBOARD SECTION ================= -->
-        <section id="section-home" class="space-y-10">
-            <!-- Hero Banner -->
+        <!-- HOME SECTION -->
+        <section id="section-home" class="page-section space-y-10">
             <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-nursing-900 via-nursing-800 to-nursing-700 text-white p-8 md:p-14 shadow-2xl">
-                <div class="absolute -right-10 -bottom-10 opacity-10">
-                    <i class="fa-solid fa-user-nurse text-[250px]"></i>
-                </div>
                 <div class="relative z-10 max-w-2xl space-y-4">
                     <span class="inline-block bg-nursing-600/60 text-nursing-100 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-nursing-500">Premium Nursing Hub</span>
                     <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight">Master Your Nursing Knowledge & Exams</h2>
-                    <p class="text-nursing-100 text-base md:text-lg">Access comprehensive subjects, clinical drug calculations, model tests, and expert nursing preparation materials all in one place.</p>
+                    <p class="text-nursing-100 text-base md:text-lg">Access comprehensive subjects, clinical drug calculations, and expert nursing preparation materials all in one place.</p>
                     <div class="pt-4 flex flex-wrap gap-4">
-                        <button onclick="showSection('mcq')" class="bg-white text-nursing-900 font-bold px-6 py-3 rounded-xl shadow-lg hover:bg-nursing-50 transition transform hover:-translate-y-0.5">Start MCQ Practice</button>
-                        <button onclick="showSection('drugcalc')" class="bg-nursing-600 text-white font-bold px-6 py-3 rounded-xl shadow-lg hover:bg-nursing-500 transition border border-nursing-400">Drug Calculator</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Stats Grid -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="glass-card p-6 rounded-2xl shadow-sm text-center">
-                    <div class="w-12 h-12 mx-auto bg-nursing-100 text-nursing-600 rounded-xl flex items-center justify-center text-xl font-bold mb-3"><i class="fa-solid fa-book-medical"></i></div>
-                    <h3 class="text-2xl font-black text-nursing-900">12+</h3>
-                    <p class="text-sm font-medium text-gray-500">Core Subjects</p>
-                </div>
-                <div class="glass-card p-6 rounded-2xl shadow-sm text-center">
-                    <div class="w-12 h-12 mx-auto bg-nursing-100 text-nursing-600 rounded-xl flex items-center justify-center text-xl font-bold mb-3"><i class="fa-solid fa-clipboard-question"></i></div>
-                    <h3 class="text-2xl font-black text-nursing-900">5,000+</h3>
-                    <p class="text-sm font-medium text-gray-500">Practice MCQs</p>
-                </div>
-                <div class="glass-card p-6 rounded-2xl shadow-sm text-center">
-                    <div class="w-12 h-12 mx-auto bg-nursing-100 text-nursing-600 rounded-xl flex items-center justify-center text-xl font-bold mb-3"><i class="fa-solid fa-calculator"></i></div>
-                    <h3 class="text-2xl font-black text-nursing-900">3+</h3>
-                    <p class="text-sm font-medium text-gray-500">Clinical Calculators</p>
-                </div>
-                <div class="glass-card p-6 rounded-2xl shadow-sm text-center">
-                    <div class="w-12 h-12 mx-auto bg-nursing-100 text-nursing-600 rounded-xl flex items-center justify-center text-xl font-bold mb-3"><i class="fa-solid fa-graduation-cap"></i></div>
-                    <h3 class="text-2xl font-black text-nursing-900">100%</h3>
-                    <p class="text-sm font-medium text-gray-500">Exam Focused</p>
-                </div>
-            </div>
-
-            <!-- Quick Access Features -->
-            <div>
-                <h3 class="text-2xl font-bold text-nursing-900 mb-6">Explore Key Modules</h3>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div onclick="showSection('subjects')" class="glass-card p-6 rounded-2xl shadow-sm hover:shadow-md transition cursor-pointer border-l-4 border-l-nursing-500">
-                        <div class="text-nursing-600 text-2xl mb-3"><i class="fa-solid fa-book-open"></i></div>
-                        <h4 class="text-lg font-bold text-nursing-900 mb-1">Nursing Subjects</h4>
-                        <p class="text-sm text-gray-600">Access comprehensive notes on Anatomy, Physiology, Fundamentals, Midwifery, and more.</p>
-                    </div>
-                    <div onclick="showSection('drugcalc')" class="glass-card p-6 rounded-2xl shadow-sm hover:shadow-md transition cursor-pointer border-l-4 border-l-nursing-500">
-                        <div class="text-nursing-600 text-2xl mb-3"><i class="fa-solid fa-pills"></i></div>
-                        <h4 class="text-lg font-bold text-nursing-900 mb-1">Drug Calculation</h4>
-                        <p class="text-sm text-gray-600">Accurately calculate oral dosages, injection volumes, and IV drip flow rates instantly.</p>
-                    </div>
-                    <div onclick="showSection('modeltest')" class="glass-card p-6 rounded-2xl shadow-sm hover:shadow-md transition cursor-pointer border-l-4 border-l-nursing-500">
-                        <div class="text-nursing-600 text-2xl mb-3"><i class="fa-solid fa-stopwatch"></i></div>
-                        <h4 class="text-lg font-bold text-nursing-900 mb-1">Model Test</h4>
-                        <p class="text-sm text-gray-600">Test your preparedness with timed mock exams designed for board & recruitment tests.</p>
+                        <button onclick="switchSection('mcq')" class="bg-white text-nursing-900 font-bold px-6 py-3 rounded-xl shadow-lg hover:bg-nursing-50 transition transform hover:-translate-y-0.5">Start MCQ Practice</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ================= SUBJECTS SECTION ================= -->
-        <section id="section-subjects" class="hidden space-y-6">
+        <!-- MCQ PRACTICE SECTION -->
+        <section id="section-mcq" class="page-section hidden space-y-6">
             <div class="border-b border-gray-200 pb-4">
-                <h2 class="text-2xl font-extrabold text-nursing-900">Nursing Curriculum & Subjects</h2>
-                <p class="text-sm text-gray-600">Select a subject to view core topics and study resources.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                    <span class="text-xs font-bold text-nursing-600 bg-nursing-50 px-2.5 py-1 rounded-md">Core</span>
-                    <h3 class="text-lg font-bold text-nursing-900 mt-2">Fundamentals of Nursing</h3>
-                    <p class="text-sm text-gray-600 mt-1">Patient care standards, vital signs, hygiene, and clinical safety.</p>
-                    <button onclick="alert('Opening Fundamentals Notes...')" class="mt-4 w-full bg-nursing-50 text-nursing-700 font-bold py-2 rounded-xl text-sm hover:bg-nursing-100 transition">Read Notes</button>
-                </div>
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                    <span class="text-xs font-bold text-nursing-600 bg-nursing-50 px-2.5 py-1 rounded-md">Medical Science</span>
-                    <h3 class="text-lg font-bold text-nursing-900 mt-2">Anatomy & Physiology</h3>
-                    <p class="text-sm text-gray-600 mt-1">Human body systems, organ functions, and anatomical structures.</p>
-                    <button onclick="alert('Opening Anatomy Notes...')" class="mt-4 w-full bg-nursing-50 text-nursing-700 font-bold py-2 rounded-xl text-sm hover:bg-nursing-100 transition">Read Notes</button>
-                </div>
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                    <span class="text-xs font-bold text-nursing-600 bg-nursing-50 px-2.5 py-1 rounded-md">Specialized</span>
-                    <h3 class="text-lg font-bold text-nursing-900 mt-2">Medical-Surgical Nursing</h3>
-                    <p class="text-sm text-gray-600 mt-1">Adult health conditions, pre/post-op care, and disease management.</p>
-                    <button onclick="alert('Opening Med-Surg Notes...')" class="mt-4 w-full bg-nursing-50 text-nursing-700 font-bold py-2 rounded-xl text-sm hover:bg-nursing-100 transition">Read Notes</button>
-                </div>
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                    <span class="text-xs font-bold text-nursing-600 bg-nursing-50 px-2.5 py-1 rounded-md">Maternal</span>
-                    <h3 class="text-lg font-bold text-nursing-900 mt-2">Midwifery & OBG Nursing</h3>
-                    <p class="text-sm text-gray-600 mt-1">Prenatal, labor, postnatal care, and neonatal wellbeing.</p>
-                    <button onclick="alert('Opening Midwifery Notes...')" class="mt-4 w-full bg-nursing-50 text-nursing-700 font-bold py-2 rounded-xl text-sm hover:bg-nursing-100 transition">Read Notes</button>
-                </div>
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                    <span class="text-xs font-bold text-nursing-600 bg-nursing-50 px-2.5 py-1 rounded-md">Community</span>
-                    <h3 class="text-lg font-bold text-nursing-900 mt-2">Community Health Nursing</h3>
-                    <p class="text-sm text-gray-600 mt-1">Public health, epidemiology, immunization, and family health.</p>
-                    <button onclick="alert('Opening Community Health Notes...')" class="mt-4 w-full bg-nursing-50 text-nursing-700 font-bold py-2 rounded-xl text-sm hover:bg-nursing-100 transition">Read Notes</button>
-                </div>
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                    <span class="text-xs font-bold text-nursing-600 bg-nursing-50 px-2.5 py-1 rounded-md">Pharmacology</span>
-                    <h3 class="text-lg font-bold text-nursing-900 mt-2">Nursing Pharmacology</h3>
-                    <p class="text-sm text-gray-600 mt-1">Drug classifications, mechanisms of action, and safe administration.</p>
-                    <button onclick="alert('Opening Pharmacology Notes...')" class="mt-4 w-full bg-nursing-50 text-nursing-700 font-bold py-2 rounded-xl text-sm hover:bg-nursing-100 transition">Read Notes</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- ================= MCQ PRACTICE SECTION ================= -->
-        <section id="section-mcq" class="hidden space-y-6">
-            <div class="border-b border-gray-200 pb-4">
-                <h2 class="text-2xl font-extrabold text-nursing-900">Interactive MCQ Practice</h2>
-                <p class="text-sm text-gray-600">Test your knowledge with instant feedback on professional nursing MCQs.</p>
+                <h2 class="text-2xl font-extrabold text-nursing-900">Interactive MCQ Practice Bank</h2>
+                <p class="text-sm text-gray-600">High-yield nursing recruitment and board exam questions with instant rationales.</p>
             </div>
             <div id="mcq-container" class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 max-w-3xl mx-auto space-y-6">
-                <!-- Dynamically loaded via JS -->
+                <!-- Loaded dynamically -->
             </div>
         </section>
 
-        <!-- ================= MODEL TEST SECTION ================= -->
-        <section id="section-modeltest" class="hidden space-y-6">
-            <div class="border-b border-gray-200 pb-4">
-                <h2 class="text-2xl font-extrabold text-nursing-900">Timed Model Test</h2>
-                <p class="text-sm text-gray-600">Simulate actual licensure and recruitment examinations.</p>
-            </div>
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 max-w-xl mx-auto text-center space-y-4">
-                <div class="w-16 h-16 bg-nursing-100 text-nursing-600 rounded-2xl mx-auto flex items-center justify-center text-2xl font-bold">
-                    <i class="fa-solid fa-file-lines"></i>
-                </div>
-                <h3 class="text-xl font-bold text-nursing-900">Senior Staff Nurse Recruitment Mock Test</h3>
-                <p class="text-sm text-gray-600">Total Questions: 20 | Duration: 20 Minutes | Negative Marking: 0.25</p>
-                <button onclick="startModelTest()" class="w-full bg-nursing-600 text-white font-bold py-3 rounded-xl shadow-md hover:bg-nursing-700 transition">Start Model Test Now</button>
-            </div>
-        </section>
-
-        <!-- ================= DRUG CALCULATION SECTION ================= -->
-        <section id="section-drugcalc" class="hidden space-y-6">
+        <!-- DRUG CALCULATION SECTION -->
+        <section id="section-drugcalc" class="page-section hidden space-y-6">
             <div class="border-b border-gray-200 pb-4">
                 <h2 class="text-2xl font-extrabold text-nursing-900">Clinical Drug Dose Calculator</h2>
-                <p class="text-sm text-gray-600">Quickly and accurately calculate correct medication dosages and IV flow rates.</p>
+                <p class="text-sm text-gray-600">Quickly and accurately calculate correct medication dosages.</p>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <!-- Formula: Tablet / Oral Dose -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-4">
-                    <h3 class="text-lg font-bold text-nursing-900 flex items-center gap-2"><i class="fa-solid fa-pills text-nursing-600"></i> Oral / Injection Dosage Calculator</h3>
-                    <p class="text-xs text-gray-500">Formula: (Desired Dose / Stock Strength) × Stock Quantity</p>
-                    <div class="space-y-3">
-                        <div>
-                            <label class="block text-xs font-semibold text-gray-700 mb-1">Desired Dose (D)</label>
-                            <input type="number" id="calc-d" class="w-full border border-gray-300 rounded-xl px-4 py-2 text-sm focus:ring-2 focus:ring-nursing-500 focus:outline-none" placeholder="e.g. 500">
-                        </div>
-                        <div>
-                        <label class="block text-xs font-semibold text-gray-700 mb-1">Stock Strength on Hand (H)</label>
-                            <input type="number" id="calc-h" class="w-full border border-gray-300 rounded-xl px-4 py-2 text-sm focus:ring-2 focus:ring-nursing-500 focus:outline-none" placeholder="e.g. 250">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-gray-700 mb-1">Stock Quantity / Volume (V)</label>
-                            <input type="number" id="calc-v" class="w-full border border-gray-300 rounded-xl px-4 py-2 text-sm focus:ring-2 focus:ring-nursing-500 focus:outline-none" placeholder="e.g. 1 (tablet or ml)">
-                        </div>
-                        <button onclick="calculateOralDose()" class="w-full bg-nursing-600 text-white font-bold py-2.5 rounded-xl text-sm hover:bg-nursing-700 transition">Calculate Dose</button>
-                        <div id="result-oral" class="hidden p-3 bg-nursing-50 text-nursing-900 font-bold rounded-xl text-center text-sm"></div>
-                    </div>
-                </div>
-
-                <!-- Formula: IV Drip Rate -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-4">
-                    <h3 class="text-lg font-bold text-nursing-900 flex items-center gap-2"><i class="fa-solid fa-droplet text-nursing-600"></i> IV Drip Flow Rate Calculator</h3>
-                    <p class="text-xs text-gray-500">Formula: (Volume in ml × Drop Factor) / Time in minutes</p>
-                    <div class="space-y-3">
-                        <div>
-                            <label class="block text-xs font-semibold text-gray-700 mb-1">Total Volume (ml)</label>
-                            <input type="number" id="iv-vol" class="w-full border border-gray-300 rounded-xl px-4 py-2 text-sm focus:ring-2 focus:ring-nursing-500 focus:outline-none" placeholder="e.g. 1000">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-gray-700 mb-1">Drop Factor (gtt/ml)</label>
-                            <select id="iv-df" class="w-full border border-gray-300 rounded-xl px-4 py-2 text-sm focus:ring-2 focus:ring-nursing-500 focus:outline-none bg-white">
-                                <option value="15">Standard Set (15 gtt/ml)</option>
-                                <option value="20">Micro/Standard Set (20 gtt/ml)</option>
-                                <option value="60">Micro-drip Set (60 gtt/ml)</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-gray-700 mb-1">Total Time (Hours)</label>
-                            <input type="number" id="iv-time" class="w-full border border-gray-300 rounded-xl px-4 py-2 text-sm focus:ring-2 focus:ring-nursing-500 focus:outline-none" placeholder="e.g. 8">
-                        </div>
-                        <button onclick="calculateIVRate()" class="w-full bg-nursing-600 text-white font-bold py-2.5 rounded-xl text-sm hover:bg-nursing-700 transition">Calculate Flow Rate</button>
-                        <div id="result-iv" class="hidden p-3 bg-nursing-50 text-nursing-900 font-bold rounded-xl text-center text-sm"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ================= NOTICE BOARD SECTION ================= -->
-        <section id="section-notice" class="hidden space-y-6">
-            <div class="border-b border-gray-200 pb-4">
-                <h2 class="text-2xl font-extrabold text-nursing-900">Notice Board</h2>
-                <p class="text-sm text-gray-600">Latest updates, exam schedules, and announcements.</p>
-            </div>
-            <div class="max-w-3xl mx-auto space-y-4">
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-start space-x-4">
-                    <div class="bg-nursing-100 text-nursing-700 p-3 rounded-xl font-bold text-center min-w-[70px]">
-                        <span class="block text-xs uppercase">Oct</span>
-                        <span class="text-xl">04</span>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 max-w-lg mx-auto space-y-4">
+                <h3 class="text-lg font-bold text-nursing-900 flex items-center gap-2"><i class="fa-solid fa-pills text-nursing-600"></i> Oral / Injection Dosage</h3>
+                <div class="space-y-3">
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-700 mb-1">Desired Dose (D)</label>
+                        <input type="number" id="calc-d" class="w-full border border-gray-300 rounded-xl px-4 py-2 text-sm focus:ring-2 focus:ring-nursing-500 focus:outline-none" placeholder="e.g. 500">
                     </div>
                     <div>
-                        <span class="text-xs font-bold text-nursing-600 bg-nursing-50 px-2 py-0.5 rounded">Announcement</span>
-                        <h3 class="text-lg font-bold text-nursing-900 mt-1">Senior Staff Nurse Recruitment Batch Launch</h3>
-                        <p class="text-sm text-gray-600 mt-1">New online live classes and model test series for upcoming nursing recruitment examinations are starting soon. Enroll now to secure your preparation.</p>
-                    </div>
-                </div>
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-start space-x-4">
-                    <div class="bg-nursing-100 text-nursing-700 p-3 rounded-xl font-bold text-center min-w-[70px]">
-                        <span class="block text-xs uppercase">Sep</span>
-                        <span class="text-xl">28</span>
+                        <label class="block text-xs font-semibold text-gray-700 mb-1">Stock Strength (H)</label>
+                        <input type="number" id="calc-h" class="w-full border border-gray-300 rounded-xl px-4 py-2 text-sm focus:ring-2 focus:ring-nursing-500 focus:outline-none" placeholder="e.g. 250">
                     </div>
                     <div>
-                        <span class="text-xs font-bold text-nursing-600 bg-nursing-50 px-2 py-0.5 rounded">Exam Update</span>
-                        <h3 class="text-lg font-bold text-nursing-900 mt-1">BPSC Nursing Viva & MCQ Syllabus Guidance</h3>
-                        <p class="text-sm text-gray-600 mt-1">Updated topic checklists and previous year solved question papers have been uploaded to the student portal.</p>
+                        <label class="block text-xs font-semibold text-gray-700 mb-1">Stock Quantity (V)</label>
+                        <input type="number" id="calc-v" class="w-full border border-gray-300 rounded-xl px-4 py-2 text-sm focus:ring-2 focus:ring-nursing-500 focus:outline-none" placeholder="e.g. 1">
                     </div>
+                    <button onclick="calculateOralDose()" class="w-full bg-nursing-600 text-white font-bold py-2.5 rounded-xl text-sm hover:bg-nursing-700 transition">Calculate Dose</button>
+                    <div id="result-oral" class="hidden p-3 bg-nursing-50 text-nursing-900 font-bold rounded-xl text-center text-sm"></div>
                 </div>
             </div>
         </section>
@@ -314,57 +128,33 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-nursing-900 text-white mt-16 py-10 border-t border-nursing-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-            <div class="flex items-center space-x-3">
-                <img src="logo.jpg" alt="Logo" class="w-10 h-10 rounded-xl object-cover border border-nursing-600" onerror="this.src='https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?w=100&h=100&fit=crop'">
-                <div>
-                    <span class="font-extrabold tracking-wider text-lg">NURSING CAREER</span>
-                    <p class="text-xs text-nursing-300">Learn Nursing. Build Your Career.</p>
-                </div>
-            </div>
-            <p class="text-xs text-nursing-300">&copy; 2026 Nursing Career. All rights reserved.</p>
-            <div class="flex space-x-4 text-nursing-200">
-                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-facebook text-xl"></i></a>
-                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-youtube text-xl"></i></a>
-                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-telegram text-xl"></i></a>
-            </div>
-        </div>
+    <footer class="bg-nursing-900 text-white mt-16 py-6 text-center text-xs">
+        <p>&copy; 2026 Nursing Career. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript Application Logic -->
+    <!-- JavaScript -->
     <script>
-        // Section Navigation Switcher
-        function showSection(sectionId) {
-            const sections = ['home', 'subjects', 'mcq', 'modeltest', 'drugcalc', 'notice'];
-            sections.forEach(sec => {
-                const el = document.getElementById(`section-${sec}`);
-                if (el) el.classList.add('hidden');
-                const btn = document.getElementById(`btn-${sec}`);
-                if (btn) {
-                    btn.classList.remove('text-nursing-700', 'bg-nursing-50');
-                    btn.classList.add('text-gray-600');
-                }
+        function switchSection(sectionId) {
+            document.querySelectorAll('.page-section').forEach(sec => sec.classList.add('hidden'));
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('text-nursing-700', 'bg-nursing-50');
+                btn.classList.add('text-gray-600');
             });
-
-            const activeSec = document.getElementById(`section-${sectionId}`);
-            if (activeSec) activeSec.classList.remove('hidden');
-
-            const activeBtn = document.getElementById(`btn-${sectionId}`);
-            if (activeBtn) {
-                activeBtn.classList.remove('text-gray-600');
-                activeBtn.classList.add('text-nursing-700', 'bg-nursing-50');
+            const targetSec = document.getElementById(`section-${sectionId}`);
+            if (targetSec) targetSec.classList.remove('hidden');
+            const targetBtn = document.getElementById(`btn-${sectionId}`);
+            if (targetBtn) {
+                targetBtn.classList.remove('text-gray-600');
+                targetBtn.classList.add('text-nursing-700', 'bg-nursing-50');
             }
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Mobile Menu Toggle
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             if (menu) menu.classList.toggle('hidden');
         }
 
-        // MCQ Practice Database & Engine
         const mcqList = [
             {
                 q: "Normal adult resting heart rate range is:",
@@ -376,13 +166,13 @@
                 q: "Which cranial nerve is responsible for vision?",
                 options: ["Cranial Nerve I", "Cranial Nerve II", "Cranial Nerve III", "Cranial Nerve V"],
                 answer: 1,
-                explanation: "Cranial Nerve II is the Optic Nerve, which transmits visual information from the retina to the brain."
+                explanation: "Cranial Nerve II is the Optic Nerve, which transmits visual information from the retina."
             },
             {
-                q: "The standard anatomical site for measuring adult core body temperature most accurately is:",
-                options: ["Axillary", "Oral", "Tympanic / Rectal", "Skin"],
-                answer: 2,
-                explanation: "Rectal and tympanic measurements closely reflect core body temperature."
+                q: "What is the primary function of red blood cells (Erythrocytes)?",
+                options: ["Fight infection", "Transport oxygen to body tissues", "Blood clotting", "Produce antibodies"],
+                answer: 1,
+                explanation: "Red blood cells contain hemoglobin, which binds oxygen and transports it throughout the body."
             }
         ];
 
@@ -462,7 +252,6 @@
             loadMCQ();
         }
 
-        // Drug Calculations
         function calculateOralDose() {
             const d = parseFloat(document.getElementById('calc-d').value);
             const h = parseFloat(document.getElementById('calc-h').value);
@@ -482,31 +271,6 @@
             resEl.classList.remove('hidden');
         }
 
-        function calculateIVRate() {
-            const vol = parseFloat(document.getElementById('iv-vol').value);
-            const df = parseFloat(document.getElementById('iv-df').value);
-            const hours = parseFloat(document.getElementById('iv-time').value);
-            const resEl = document.getElementById('result-iv');
-
-            if (isNaN(vol) || isNaN(hours) || hours === 0) {
-                resEl.className = "p-3 bg-red-50 text-red-700 font-bold rounded-xl text-center text-sm";
-                resEl.innerText = "Please enter valid numbers.";
-                resEl.classList.remove('hidden');
-                return;
-            }
-
-            const totalMinutes = hours * 60;
-            const rate = (vol * df) / totalMinutes;
-            resEl.className = "p-3 bg-nursing-50 text-nursing-900 font-bold rounded-xl text-center text-sm";
-            resEl.innerText = `Flow Rate: ${Math.round(rate)} gtt/min (drops per minute)`;
-            resEl.classList.remove('hidden');
-        }
-
-        function startModelTest() {
-            alert("Starting Model Test timer. (Demo Model Test simulation active)");
-        }
-
-        // Initialize MCQ on load
         window.onload = function() {
             loadMCQ();
         };
