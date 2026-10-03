@@ -1,1 +1,567 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Nursing Career | Premium Nursing Exam</title>
+
+<style>
+:root {
+    --green: #063b2d;
+    --green2: #0b5a43;
+    --gold: #f5c85b;
+    --white: #ffffff;
+    --light: #f4f8f5;
+    --text: #18342a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--light);
+    color: var(--text);
+}
+
+.container {
+    width: 92%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* HEADER */
+
+header {
+    background: var(--green);
+    color: white;
+    padding: 15px 0;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.logo h2 {
+    font-size: 21px;
+}
+
+.logo p {
+    font-size: 11px;
+    color: #d5e8df;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+.btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-gold {
+    background: var(--gold);
+    color: var(--green);
+}
+
+.btn-outline {
+    border: 1px solid white;
+    color: white;
+    background: transparent;
+}
+
+/* HERO */
+
+.hero {
+    background: linear-gradient(120deg, #052c22, #0b6548);
+    color: white;
+    padding: 85px 0;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    line-height: 1.15;
+    margin: 20px 0;
+}
+
+.hero h1 span {
+    color: var(--gold);
+}
+
+.hero p {
+    line-height: 1.8;
+    color: #d9e8e0;
+    margin-bottom: 25px;
+}
+
+.hero-logo {
+    width: 270px;
+    height: 270px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 7px solid var(--gold);
+    display: block;
+    margin: auto;
+    box-shadow: 0 20px 60px #001b15;
+}
+
+/* FEATURES */
+
+section {
+    padding: 70px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    color: var(--green);
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.feature-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px #00000008;
+    transition: .3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card h3 {
+    margin: 15px 0;
+    color: var(--green);
+}
+
+.feature-card p {
+    color: #687a73;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* COURSES */
+
+.courses {
+    background: #eaf4ed;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.course-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 20px #00000008;
+}
+
+.course-card h3 {
+    color: var(--green);
+    margin-bottom: 12px;
+}
+
+.course-card p {
+    color: #687a73;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+.course-card button {
+    margin-top: 20px;
+}
+
+/* EXAM */
+
+.exam-box {
+    background: var(--green);
+    color: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.exam-box h2 {
+    margin-bottom: 15px;
+}
+
+.exam-box p {
+    margin-bottom: 25px;
+    color: #d9e8e0;
+}
+
+/* FOOTER */
+
+footer {
+    background: #04291f;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+
+footer p {
+    color: #c2d5ca;
+    margin-top: 12px;
+}
+
+/* MOBILE */
+
+@media(max-width: 768px) {
+
+    nav {
+        display: none;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero-logo {
+        width: 210px;
+        height: 210px;
+    }
+
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .course-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 420px) {
+    .features {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container navbar">
+
+<div class="logo">
+<img src="YOUR_LOGO_URL" alt="Nursing Career Logo">
+
+<div>
+<h2>NURSING CAREER</h2>
+<p>Premium Nursing Exam Platform</p>
+</div>
+</div>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#features">Features</a>
+<a href="#courses">Courses</a>
+<a href="#exam">MCQ Test</a>
+</nav>
+
+<button class="btn btn-gold"
+onclick="alert('Registration coming soon!')">
+Register
+</button>
+
+</div>
+</header>
+
+<section class="hero" id="home">
+<div class="container hero-content">
+
+<div>
+<p>LEARN • PRACTICE • SUCCEED</p>
+
+<h1>
+Your Nursing<br>
+<span>Career Starts Here.</span>
+</h1>
+
+<p>
+নার্সিং চাকরি ও একাডেমিক পরীক্ষার প্রস্তুতি হোক আরও সহজ।
+বিষয়ভিত্তিক MCQ, Model Test, Previous Questions এবং
+Premium Study Materials এক জায়গায়।
+</p>
+
+<button class="btn btn-gold"
+onclick="document.getElementById('courses').scrollIntoView()">
+Start Learning →
+</button>
+</div>
+
+<div>
+<img src="YOUR_LOGO_URL"
+class="hero-logo"
+alt="Nursing Career">
+</div>
+
+</div>
+</section>
+
+<section id="features">
+<div class="container">
+
+<div class="section-title">
+<h2>Our Premium Features</h2>
+<p>আপনার নার্সিং প্রস্তুতির সম্পূর্ণ সমাধান</p>
+</div>
+
+<div class="features">
+
+<div class="feature-card">
+<h3>📚 MCQ Question Bank</h3>
+<p>বিষয়ভিত্তিক হাজারো MCQ অনুশীলন।</p>
+</div>
+
+<div class="feature-card">
+<h3>⏱️ Online Model Test</h3>
+<p>সময় নির্ধারিত পরীক্ষার মাধ্যমে প্রস্তুতি যাচাই।</p>
+</div>
+
+<div class="feature-card">
+<h3>👑 Premium Membership</h3>
+<p>বিশেষ নোট, পরীক্ষা ও প্রিমিয়াম কনটেন্ট।</p>
+</div>
+
+<div class="feature-card">
+<h3>📊 Result Analysis</h3>
+<p>পরীক্ষার ফলাফল ও নিজের অগ্রগতি দেখুন।</p>
+</div>
+
+<div class="feature-card">
+<h3>📄 Previous Questions</h3>
+<p>বিগত বছরের প্রশ্ন সমাধান করুন।</p>
+</div>
+
+<div class="feature-card">
+<h3>🩺 Nursing Job Preparation</h3>
+<p>Senior Staff Nurse ও Midwife নিয়োগ প্রস্তুতি।</p>
+</div>
+
+<div class="feature-card">
+<h3>📱 Mobile Friendly</h3>
+<p>মোবাইল ও কম্পিউটারে ব্যবহারযোগ্য।</p>
+</div>
+
+<div class="feature-card">
+<h3>🔐 Student Dashboard</h3>
+<p>নিজের পরীক্ষা ও অগ্রগতি পরিচালনা করুন।</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="courses" id="courses">
+<div class="container">
+
+<div class="section-title">
+<h2>Popular Nursing Subjects</h2>
+</div>
+
+<div class="course-grid">
+
+<div class="course-card">
+<h3>Fundamentals of Nursing</h3>
+<p>Nursing process, vital signs, infection control.</p>
+<button class="btn btn-gold" onclick="demo('Fundamentals of Nursing')">
+Explore Course
+</button>
+</div>
+
+<div class="course-card">
+<h3>Anatomy & Physiology</h3>
+<p>Human body systems and physiological functions.</p>
+<button class="btn btn-gold" onclick="demo('Anatomy & Physiology')">
+Explore Course
+</button>
+</div>
+
+<div class="course-card">
+<h3>Pharmacology</h3>
+<p>Drug classification, dosage, adverse effects.</p>
+<button class="btn btn-gold" onclick="demo('Pharmacology')">
+Explore Course
+</button>
+</div>
+
+<div class="course-card">
+<h3>Medical-Surgical Nursing</h3>
+<p>Clinical assessment and nursing management.</p>
+<button class="btn btn-gold" onclick="demo('Medical-Surgical Nursing')">
+Explore Course
+</button>
+</div>
+
+<div class="course-card">
+<h3>Midwifery</h3>
+<p>Maternal health, newborn care and complications.</p>
+<button class="btn btn-gold" onclick="demo('Midwifery')">
+Explore Course
+</button>
+</div>
+
+<div class="course-card">
+<h3>Government Nursing Job</h3>
+<p>Bangla, English, GK and Nursing Technical.</p>
+<button class="btn btn-gold" onclick="demo('Government Nursing Job')">
+Explore Course
+</button>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="exam">
+<div class="container">
+
+<div class="exam-box">
+<h2>Start Your Nursing MCQ Practice</h2>
+<p>নিজের প্রস্তুতি যাচাই করতে Demo Quiz শুরু করুন।</p>
+
+<button class="btn btn-gold" onclick="startQuiz()">
+Start Demo Exam →
+</button>
+
+<div id="quiz" style="margin-top:25px"></div>
+</div>
+
+</div>
+</section>
+
+<footer>
+<div class="container">
+<h2>NURSING CAREER</h2>
+<p>Learn Today • Lead Tomorrow</p>
+<p>© 2026 Nursing Career. All Rights Reserved.</p>
+</div>
+</footer>
+
+<script>
+function demo(subject) {
+    alert(subject + " course will be available soon!");
+}
+
+const questions = [
+{
+q: "Normal adult resting pulse rate is?",
+options: ["20–40/min", "60–100/min", "110–140/min", "150–180/min"],
+answer: 1
+},
+{
+q: "Which is the most important purpose of hand hygiene?",
+options: ["Save time", "Prevent infection transmission", "Remove smell", "Avoid documentation"],
+answer: 1
+},
+{
+q: "Medical term for difficulty in breathing is?",
+options: ["Dysuria", "Dyspnea", "Dysphagia", "Diplopia"],
+answer: 1
+}
+];
+
+let current = 0;
+let score = 0;
+
+function startQuiz() {
+    current = 0;
+    score = 0;
+    showQuestion();
+}
+
+function showQuestion() {
+    const box = document.getElementById("quiz");
+
+    if (current >= questions.length) {
+        box.innerHTML =
+        `<h3>Exam Completed!</h3>
+        <p>Your Score: ${score}/${questions.length}</p>
+        <button class="btn btn-gold" onclick="startQuiz()">Try Again</button>`;
+        return;
+    }
+
+    const q = questions[current];
+
+    box.innerHTML = `
+        <h3>Question ${current + 1}: ${q.q}</h3>
+        <br>
+        ${q.options.map((option, index) =>
+            `<button class="btn btn-gold"
+            style="display:block;width:100%;margin:8px 0"
+            onclick="checkAnswer(${index})">
+            ${String.fromCharCode(65 + index)}. ${option}
+            </button>`
+        ).join("")}
+    `;
+}
+
+function checkAnswer(selected) {
+    if (selected === questions[current].answer) {
+        score++;
+        alert("Correct Answer!");
+    } else {
+        alert("Incorrect Answer!");
+    }
+
+    current++;
+    showQuestion();
+}
+</script>
+
+</body>
+</html>
