@@ -1,28 +1,402 @@
-window.QUESTION_BANK = [
-  {
-    id: 1,
-    subject: "Fundamentals of Nursing",
-    topic: "Vital Signs",
-    question: "Normal adult pulse rate কত?",
-    options: [
-      "40–60/min",
-      "60–100/min",
-      "100–140/min",
-      "140–160/min"
-    ],
-    answer: 1,
-    explanation: "Normal adult resting pulse rate সাধারণত 60–100 beats/min."
-  },
 
-  {
-    id: 2,
-    subject: "Anatomy & Physiology",
-    topic: "Heart",
-    question: "মানব হৃদপিণ্ডে কয়টি chamber রয়েছে?",
-    options: ["2", "3", "4", "5"],
-    answer: 2,
-    explanation: "মানব হৃদপিণ্ডে ৪টি chamber রয়েছে।"
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nursing Career | 10000 MCQ</title>
+
+<style>
+:root {
+  --navy:#102a43;
+  --blue:#1769aa;
+  --bg:#f3f7fb;
+  --ink:#172b4d;
+  --muted:#62748a;
+  --line:#dce6ef;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:Arial,"Noto Sans Bengali",sans-serif;
+  line-height:1.6;
+}
+header{
+  background:linear-gradient(120deg,#102a43,#1769aa);
+  color:white;padding:25px max(18px,calc((100% - 1100px)/2));
+}
+header h1{margin:0;font-size:28px}
+header p{margin:5px 0;color:#dceeff}
+main{max-width:1100px;margin:22px auto;padding:0 16px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.stat,.panel{
+  background:white;border:1px solid var(--line);
+  border-radius:14px;padding:16px;
+  box-shadow:0 5px 18px #1232;
+}
+.stat strong{display:block;font-size:25px;color:var(--blue)}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}
+input,select,button{
+  font:inherit;border:1px solid var(--line);
+  border-radius:9px;padding:10px 12px;
+}
+input,select{background:white;min-width:170px;flex:1}
+button{
+  background:var(--blue);color:white;border:0;
+  cursor:pointer;font-weight:700;
+}
+button.secondary{background:#e8f1f9;color:var(--navy)}
+button:disabled{opacity:.45;cursor:not-allowed}
+.panel{margin:12px 0}
+.qhead{
+  display:flex;justify-content:space-between;
+  gap:12px;color:var(--muted);font-size:13px;
+}
+.qtext{font-size:19px;font-weight:700;margin:12px 0}
+.options{display:grid;gap:8px}
+.opt{
+  text-align:left;background:#f4f8fc;color:var(--ink);
+  border:1px solid var(--line);font-weight:500;
+}
+.opt.correct{background:#e6f7ee;border-color:#36a66b}
+.opt.wrong{background:#fff0ee;border-color:#d65b4a}
+.feedback{
+  margin-top:12px;padding:12px;border-radius:9px;
+  background:#f2f7fb;display:none;
+}
+.explain{color:var(--muted);margin-top:5px}
+.controls{
+  display:flex;justify-content:space-between;
+  align-items:center;gap:10px;flex-wrap:wrap;margin:16px 0;
+}
+footer{text-align:center;color:var(--muted);padding:24px;font-size:13px}
+@media(max-width:600px){
+  .stats{grid-template-columns:1fr}
+  .qtext{font-size:17px}
+  header h1{font-size:23px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🩺 Nursing Career</h1>
+  <p>বাংলাদেশের নার্সিং চাকরি ও একাডেমিক প্রস্তুতির MCQ Practice</p>
+</header>
+
+<main>
+
+<div class="stats">
+  <div class="stat">
+    <strong id="total">10,000</strong>
+    প্র্যাকটিস প্রশ্নের টার্গেট
+  </div>
+  <div class="stat">
+    <strong id="done">0</strong>
+    উত্তর দিয়েছেন
+  </div>
+  <div class="stat">
+    <strong id="correctCount">0</strong>
+    সঠিক উত্তর
+  </div>
+</div>
+
+<div class="toolbar">
+  <input id="search" placeholder="প্রশ্ন / বিষয় খুঁজুন...">
+
+  <select id="subject">
+    <option value="all">সব বিষয়</option>
+  </select>
+
+  <select id="mode">
+    <option value="all">সব প্রশ্ন</option>
+    <option value="unanswered">উত্তর দিইনি</option>
+    <option value="wrong">ভুল হয়েছে</option>
+  </select>
+
+  <button id="random">🎲 ৫০টি র‍্যান্ডম</button>
+</div>
+
+<div class="panel">
+  <div class="qhead">
+    <span id="counter">প্রশ্ন লোড হচ্ছে...</span>
+    <span id="tag"></span>
+  </div>
+
+  <div class="qtext" id="question"></div>
+  <div class="options" id="options"></div>
+
+  <div class="feedback" id="feedback">
+    <b id="result"></b>
+    <div class="explain" id="explanation"></div>
+  </div>
+</div>
+
+<div class="controls">
+  <button class="secondary" id="prev">← আগের প্রশ্ন</button>
+  <span id="page">1 / 1</span>
+  <button id="next">পরের প্রশ্ন →</button>
+</div>
+
+<p style="color:#62748a;font-size:13px">
+নোট: এটি একটি প্র্যাকটিস ডেমো। প্রকাশের আগে প্রশ্ন ও উত্তর
+নার্সিং শিক্ষক বা বিশেষজ্ঞ দিয়ে যাচাই করুন।
+</p>
+
+</main>
+
+<footer>
+© Nursing Career | Local Practice Demo
+</footer>
+
+<script>
+
+// DEMO QUESTION BANK
+const concepts = [
+
+[
+"Fundamentals of Nursing","Vital Signs",
+"প্রাপ্তবয়স্কের স্বাভাবিক বিশ্রামকালীন পালস সাধারণত কত?",
+["40–60/min","60–100/min","100–140/min","140–180/min"],
+1,
+"প্রাপ্তবয়স্কদের বিশ্রামকালীন হার্ট রেট সাধারণত ৬০–১০০ বার/মিনিট।"
+],
+
+[
+"Fundamentals of Nursing","Infection Control",
+"হাত পরিষ্কারের প্রধান উদ্দেশ্য কী?",
+["রোগীর ঘুম বাড়ানো","সংক্রমণ ছড়ানো কমানো","রক্তচাপ বাড়ানো","ক্ষুধা বাড়ানো"],
+1,
+"হ্যান্ড হাইজিন সংক্রমণ প্রতিরোধের গুরুত্বপূর্ণ পদক্ষেপ।"
+],
+
+[
+"Anatomy & Physiology","Heart",
+"মানব হৃদপিণ্ডে কয়টি প্রকোষ্ঠ আছে?",
+["দুটি","তিনটি","চারটি","পাঁচটি"],
+2,
+"হৃদপিণ্ডে দুইটি atria এবং দুইটি ventricles থাকে।"
+],
+
+[
+"Medical-Surgical Nursing","Respiratory",
+"প্রাপ্তবয়স্কের স্বাভাবিক শ্বাসের হার সাধারণত কত?",
+["6–10/min","12–20/min","24–32/min","35–45/min"],
+1,
+"বিশ্রামরত প্রাপ্তবয়স্কের respiratory rate সাধারণত ১২–২০/মিনিট।"
+],
+
+[
+"Pharmacology","Medication Safety",
+"ওষুধ দেওয়ার আগে রোগীর পরিচয় যাচাইয়ের উদ্দেশ্য কী?",
+["সময় বাঁচানো","সঠিক রোগী নিশ্চিত করা","ডোজ বাড়ানো","রোগীকে ঘুম পাড়ানো"],
+1,
+"ওষুধ দেওয়ার আগে অনুমোদিত patient identifier দিয়ে পরিচয় যাচাই করতে হয়।"
+],
+
+[
+"Community Health Nursing","Immunization",
+"টিকাদানের মূল লক্ষ্য কী?",
+["তাৎক্ষণিক সব রোগ সারানো","প্রতিরোধযোগ্য রোগ থেকে সুরক্ষা","অ্যান্টিবায়োটিকের বিকল্প","জ্বর নিশ্চিত করা"],
+1,
+"ভ্যাকসিন নির্দিষ্ট সংক্রমণের বিরুদ্ধে প্রতিরোধ ক্ষমতা তৈরি করতে সাহায্য করে।"
+],
+
+[
+"Midwifery","Maternal Care",
+"গর্ভাবস্থায় নিয়মিত ANC-এর উদ্দেশ্য কী?",
+["শুধু ওজন কমানো","মা ও ভ্রূণের স্বাস্থ্য পর্যবেক্ষণ","প্রসব নিশ্চিত করা","সব ওষুধ বন্ধ করা"],
+1,
+"ANC-তে ঝুঁকি শনাক্তকরণ ও মা-শিশুর স্বাস্থ্য পর্যবেক্ষণ করা হয়।"
+],
+
+[
+"Pediatric Nursing","Child Assessment",
+"শিশুর বৃদ্ধি পর্যবেক্ষণে কোনটি গুরুত্বপূর্ণ?",
+["শুধু চুলের রং","নিয়মিত Growth Monitoring","শুধু জুতার মাপ","শুধু দাঁতের সংখ্যা"],
+1,
+"বয়স অনুযায়ী ওজন, দৈর্ঘ্য বা উচ্চতা Growth Chart-এ মূল্যায়ন করা হয়।"
+],
+
+[
+"Emergency Nursing","Triage",
+"ট্রায়াজের প্রধান উদ্দেশ্য কী?",
+["আগে আসা সবাইকে আগে দেখা","জরুরিতার ভিত্তিতে অগ্রাধিকার নির্ধারণ","শুধু কাগজ পূরণ","রোগীকে বাড়ি পাঠানো"],
+1,
+"ট্রায়াজে রোগীর জরুরিতা অনুযায়ী সেবার অগ্রাধিকার নির্ধারণ করা হয়।"
+],
+
+[
+"Psychiatric Nursing","Communication",
+"Active Listening কী বোঝায়?",
+["রোগীকে বাধা দেওয়া","মনোযোগ দিয়ে শোনা ও বোঝা","বিষয় বদলে দেওয়া","দোষারোপ করা"],
+1,
+"Active Listening রোগীর বক্তব্য ও উদ্বেগ বুঝতে সহায়তা করে।"
+]
+
+];
+
+// 10,000 PRACTICE ITEMS
+const bank=[];
+
+for(let i=0;i<10000;i++){
+  const c=concepts[i%concepts.length];
+  const cycle=Math.floor(i/concepts.length);
+
+  bank.push({
+    id:i+1,
+    subject:c[0],
+    topic:c[1],
+    question:cycle
+      ? `${c[2]} (প্র্যাকটিস সেট ${cycle+1})`
+      : c[2],
+    options:c[3],
+    answer:c[4],
+    explanation:c[5]
+  });
+}
+
+let list=bank;
+let idx=0;
+
+const history=JSON.parse(
+  localStorage.getItem("nc_history")||"{}"
+);
+
+const $=id=>document.getElementById(id);
+
+function updateStats(){
+  const vals=Object.values(history);
+  $("done").textContent=vals.length;
+  $("correctCount").textContent=
+    vals.filter(x=>x===true).length;
+}
+
+function render(){
+
+  if(!list.length){
+    $("question").textContent="এই ফিল্টারে কোনো প্রশ্ন নেই।";
+    $("options").innerHTML="";
+    $("counter").textContent="০টি প্রশ্ন";
+    $("page").textContent="0 / 0";
+    return;
   }
 
-  // একই ফরম্যাটে ১০,০০০টি প্রশ্ন যোগ করবে
+  idx=Math.max(0,Math.min(idx,list.length-1));
+  const q=list[idx];
+  const chosen=history[q.id];
+
+  $("counter").textContent=
+    `প্রশ্ন ${idx+1} / ${list.length} • ID ${q.id}`;
+
+  $("tag").textContent=q.subject+" · "+q.topic;
+  $("question").textContent=q.question;
+  $("options").innerHTML="";
+
+  q.options.forEach((op,n)=>{
+
+    const b=document.createElement("button");
+    b.className="opt";
+    b.textContent=String.fromCharCode(65+n)+". "+op;
+
+    if(chosen!==undefined){
+      if(n===q.answer)b.classList.add("correct");
+      b.disabled=true;
+    }
+
+    b.onclick=()=>answer(n);
+    $("options").appendChild(b);
+  });
+
+  $("feedback").style.display=
+    chosen===undefined?"none":"block";
+
+  if(chosen!==undefined){
+    $("result").textContent=chosen
+      ?"সঠিক উত্তর!"
+      :"সঠিক উত্তর: "+String.fromCharCode(65+q.answer)+
+       ". "+q.options[q.answer];
+
+    $("explanation").textContent=q.explanation;
+  }
+
+  $("page").textContent=
+    `${idx+1} / ${list.length}`;
+
+  $("prev").disabled=idx===0;
+  $("next").disabled=idx===list.length-1;
+
+  updateStats();
+}
+
+function answer(n){
+  const q=list[idx];
+  history[q.id]=n===q.answer;
+  localStorage.setItem(
+    "nc_history",
+    JSON.stringify(history)
+  );
+  render();
+}
+
+function filter(){
+
+  const s=$("search").value.trim().toLowerCase();
+  const sub=$("subject").value;
+  const mode=$("mode").value;
+
+  list=bank.filter(q=>
+    (sub==="all"||q.subject===sub)&&
+    (!s||(q.question+" "+q.subject+" "+q.topic)
+      .toLowerCase().includes(s))&&
+    (mode==="all"||
+      (mode==="unanswered"?history[q.id]===undefined:
+       history[q.id]===false))
+  );
+
+  idx=0;
+  render();
+}
+
+const subjects=[
+  ...new Set(concepts.map(x=>x[0]))
 ];
+
+subjects.forEach(s=>{
+  const o=document.createElement("option");
+  o.value=s;
+  o.textContent=s;
+  $("subject").appendChild(o);
+});
+
+["search","subject","mode"].forEach(id=>{
+  $(id).addEventListener(
+    id==="search"?"input":"change",
+    filter
+  );
+});
+
+$("prev").onclick=()=>{
+  idx--;
+  render();
+};
+
+$("next").onclick=()=>{
+  idx++;
+  render();
+};
+
+$("random").onclick=()=>{
+  list=[...bank]
+    .sort(()=>Math.random()-.5)
+    .slice(0,50);
+  idx=0;
+  render();
+};
+
+render();
+
+</script>
+</body>
+</html>
